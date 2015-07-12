@@ -1,0 +1,8 @@
+Category1 = [Mg,Na,K,Glucose]
+Category2 = [Urine,Creatinine,BUN,Albumin,ALT,AST]
+Category3 = [PaCO2,PaO2,pH,HCO3,Lactate]
+Category4 = [MechVent,RespRate,SaO2,FiO2]
+Category5 = [HR,TropI,TropT,Cholesterol]
+Category6 = [GCS,Temp,Weight]
+Category7 = [Platelets,WBC,HCT,ALP,Bilirubin]
+Category8 = [SysABP,NISysABP,DiasABP,NIDiasABP,MAP,NIMAP]
