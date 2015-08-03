@@ -1,5 +1,7 @@
 package org.clinical3PO.services.hive;
 
+import java.io.IOException;
+
 import org.clinical3PO.services.JobSearchService;
 import org.clinical3PO.services.PatientSearchService;
 import org.slf4j.Logger;
@@ -53,6 +55,8 @@ public class HiveSearchEngine {
 				}
 			} catch(DataAccessException ae) {
 				logger.error("", ae);
+			} catch(IOException e) {
+				logger.error("", e);
 			}
 		} else {
 

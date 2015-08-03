@@ -17,6 +17,9 @@
                <omop.hive.death>death_t</omop.hive.death>
                <omop.hive.concept>concept_t</omop.hive.concept>
                <omop.hive.observation>observation_t</omop.hive.observation>
+
+			   <!-- Application lookup location for the hiveQueries.properties file-->
+			   <hive.query.file.location>/home/hdfs/c3po-dist/clinical3PO-hadoop-scripts</hive.query.file.location>
 			   
 			   <clinical3PO.hive.host>10.147.128.12</clinical3PO.hive.host>
 			   <clinical3PO.hive.port>10000</clinical3PO.hive.port>
