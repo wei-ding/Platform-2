@@ -26,6 +26,7 @@
 		<property name="omopHiveConceptTable" value="${omop.hive.concept}"/>
 		<property name="omopHiveDeathTable" value="${omop.hive.death}"/>
 		<property name="omopHiveObservationTable" value="${omop.hive.observation}"/>
+		<property name="hiveQueryFileLocation" value="${hive.query.file.location}"/>
 	</bean>
 	
 	<bean id="jsonServices" class="org.clinical3PO.services.JsonService">

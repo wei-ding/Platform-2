@@ -124,6 +124,13 @@
 			<filtered>true</filtered>
 			<fileMode>0755</fileMode>
 			<lineEnding>unix</lineEnding>
+		</file>
+		<file>
+			<source>${project.basedir}/src/main/resources/hiveQueries.properties</source>
+			<outputDirectory></outputDirectory>
+			<filtered>true</filtered>
+			<fileMode>0755</fileMode>
+			<lineEnding>unix</lineEnding>
 		</file>		
 	</files>
 
