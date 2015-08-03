@@ -25,6 +25,8 @@
     </properties>	
 
 	<modules>
+		<module>FEUtil</module>
+		<module>FExtract</module>
 		<module>services</module>
 		<module>data-services</module>
 		<module>app</module>

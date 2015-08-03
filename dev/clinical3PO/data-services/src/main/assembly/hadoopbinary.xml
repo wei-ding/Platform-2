@@ -12,6 +12,7 @@
 			<includes>
 				<include>org.clinical3PO.services:clinical3PO-services</include>
 				<include>org.clinical3PO.data:clinical3PO-data-services</include>
+				<include>org.clinical3PO.FExtract:clinical3PO-FExtract</include>
 				<include>nz.ac.waikato.cms.weka:weka-stable</include>
 				<include>aopalliance:aopalliance</include>
 				<include>commons-logging:commons-logging</include>
@@ -38,10 +39,6 @@
 	</dependencySets>
 
 	<files>
-		<file>
-            <source>src/main/lib/FExtract.jar</source>
-            <outputDirectory>lib</outputDirectory>
-        </file>
 		<file>
 			<source>${project.build.outputDirectory}/org/clinical3PO/arff/ArffGeneration.class</source>
 			<outputDirectory>lib/org/clinical3PO/arff</outputDirectory>
