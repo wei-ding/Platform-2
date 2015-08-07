@@ -328,10 +328,6 @@ then
 	
 	cp $3/$2/*.arff ${clinical3PO.app.dataDirectory}/mlflex/data/$4.arff
 	
-	##########################################################################
-	# REMOVE THIS LINE, ONCE ARFF IS CORRECTED.
-	sed -i "s/classAttribute_diasabp/class/g" "${clinical3PO.app.dataDirectory}/mlflex/data/$4.arff"
-	
 	if [ $? -ne 0 ]
     then
       	echo "Arff generation failed. Exiting."

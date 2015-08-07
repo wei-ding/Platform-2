@@ -30,7 +30,10 @@ public class FEConfiguration {
 	 * when looking up a class property handler, prepend this on the property name
 	 * let's make it be weka-legal
 	 */
-	public static final String classPropertyPrefix = "classAttribute_";
+//	public static final String classPropertyPrefix = "classAttribute_";
+	
+	// Replacing with previous line to generate proper arff format
+	public static final String classPropertyPrefix = "class";
 	
 	//little private class to handle line number/token pairs
 	class CFECToken {

@@ -21,6 +21,9 @@
 			   <!-- Application lookup location for the hiveQueries.properties file-->
 			   <hive.query.file.location>/home/hdfs/c3po-dist/clinical3PO-hadoop-scripts</hive.query.file.location>
 			   
+			   <!-- FEATURE EXTRACTION PROPERTIES -->
+			   <fe.number.reducers>10</fe.number.reducers>
+			   
 			   <clinical3PO.hive.host>10.147.128.12</clinical3PO.hive.host>
 			   <clinical3PO.hive.port>10000</clinical3PO.hive.port>
 			   <clinical3PO.hive.db>default</clinical3PO.hive.db>

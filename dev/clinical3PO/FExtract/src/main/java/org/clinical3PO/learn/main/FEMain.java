@@ -32,7 +32,7 @@ import org.clinical3PO.learn.util.FEEvaluatorBase;
 @SuppressWarnings("deprecation")
 public class FEMain {
 
-	
+
 	/**
 	 * helper function to read files
 	 * from http://stackoverflow.com/questions/326390/how-to-create-a-java-string-from-the-contents-of-a-file
@@ -58,12 +58,12 @@ public class FEMain {
 	 * separate class or separate map/reduce task
 	 * 
 	 */
-	private static boolean accumulateForReconcile(InputStream is, TreeMap<String,String> vecs) throws IOException {
+	private static TreeMap<String,String> accumulateForReconcile(InputStream is) throws IOException {
+
 		LineNumberReader lnr = new LineNumberReader(new InputStreamReader(is));
 		String theLine = null;
-		if(vecs == null) return false;
-		
-		//String lineSeparator = System.getProperty("line.separator");
+		TreeMap<String,String> vecs = new TreeMap<String,String>();
+
 		try {
 			do {
 				theLine = lnr.readLine();
@@ -71,16 +71,16 @@ public class FEMain {
 					//we should have PID, tab, comma-sep vector data.
 					//toks[0] will be PID, toks[1] the entire vector as a string.
 					String[] toks = theLine.split("\t", 2); 
-					
+
 					//sanity check pid and stuff?
 					if(toks[0].isEmpty()) {
 						//error - no data - though just warn, this may come up
 						System.err.println("accumulateForReconcile WARNING - empty PID");
-						
+
 					} else if(toks[1].isEmpty()) {
 						//error - no data - though just warn, this may come up
 						System.err.println("accumulateForReconcile WARNING - empty feature vector");
-						
+
 					} else {
 						//should be legit PID/vector
 						//if the pid doesn't exist in vecs, just record toks[0]->toks[1].
@@ -91,7 +91,7 @@ public class FEMain {
 							//here.
 							String[] featvalsOld = vecs.get(toks[0]).split(",");
 							String[] featvalsNew = toks[1].split(",");
-							
+
 							//TODO here make sure they have the same number of values
 							if(featvalsOld.length != featvalsNew.length) {
 								System.err.println("accumulateForReconcile WARNING - old and new feature vectors for pid |" + toks[0] + "| mismatch in length, input file line " + lnr.getLineNumber());
@@ -128,14 +128,13 @@ public class FEMain {
 					}
 				}
 			} while(theLine != null);
-			
-			return true;
+
+			return vecs;
 		} finally {
 			lnr.close();
 		}
-	}	
-	
-	
+	}
+
 	//cribbed from cookbook chapter 1 word count thing
 	public static void main(String[] args) throws Exception {
 		JobConf conf = new JobConf();
@@ -143,13 +142,7 @@ public class FEMain {
 		//test 1/30/14: Go back to using GenericOptionsParser and hand REMAINING args over to
 		//FECmdline.
 		String[] otherArgs = new GenericOptionsParser(conf, args).getRemainingArgs();
-		/* from original example - usage message, might make a FECmdline thing to police this
-        if (otherArgs.length != 2) {
-                System.err.println("Usage: S3MRATMain <in> <out>");
-                System.exit(2);
-        }
-        */
-		
+
 		//Let's say this; if there are no otherArgs, use the hadoop property way.
 		/*
 		for(String argy:otherArgs) {
@@ -163,9 +156,9 @@ public class FEMain {
 		for (Entry<String, String> entry: conf) {
 			System.out.printf("%s=%s\n", entry.getKey(), entry.getValue());
 		}
-		*/
+		 */
 
-		
+
 		//parse parameters - this is really just for first-pass checking, the mappers and redders will do
 		//their own version of it.
 		FECmdLine cmdline = new FECmdLine();
@@ -185,8 +178,8 @@ public class FEMain {
 				System.err.println("ERROR: property configuration incorrect");
 			}
 		}
-		
-		
+
+
 		//Build distributed cache BEFORE constructing job.
 		//see http://stackoverflow.com/questions/13746561/accessing-files-in-hadoop-distributed-cache
 		/*
@@ -195,7 +188,7 @@ public class FEMain {
 			Job job = new Job(conf, "wordcount");
 			/uufs/chpc.utah.edu/common/home/u0176876/bigdata/Clinical3PO/Scrums/Scrum5/FETests/filterconfig1.txt
 		 */
-		
+
 		/* DEPRECATED HORRIBLE!
 		//THIS WORKED ON EMBER and seems to on my laptop too
 		//DistributedCache.addCacheFile(new URI("/uufs/chpc.utah.edu/common/home/u0176876/bigdata/Clinical3PO/Scrums/Scrum5/FETests/filterconfig1.txt"), conf);
@@ -205,8 +198,8 @@ public class FEMain {
 		DistributedCache.addCacheFile(new URI(cmdline.feConfigFilePath), conf);
 		//let's try one we know doesn't exist - and YAY?, it does fail.
 		//DistributedCache.addCacheFile(new URI("/uufs/chpc.utah.edu/common/home/u0176876/bigdata/Clinical3PO/Scrums/Scrum5/FETests/hovbart.txt"), conf);
-		*/
-		
+		 */
+
 		//let's try this! This is a plain old java program, right?
 		//see if we can just send the config files as strings on the conf.
 		//I DON'T KNOW IF THIS WILL WORK ON A REAL HADOOP CLUSTER!
@@ -215,7 +208,7 @@ public class FEMain {
 		FSDataInputStream fsdis = null;
 		URI uri = null;
 		Path path = null;
-		
+
 		System.err.println("Reading filter config into conf string...");
 		uri = new URI(cmdline.filterConfigFilePath);
 		path = new Path(uri); //hopework
@@ -231,8 +224,8 @@ public class FEMain {
 		String feconfContents = readFile(fsdis);
 		conf.set("feconfContents", feconfContents);
 		System.err.println("..." + feconfContents.length() + " chars");
-		
-	
+
+
 		//so let's add our cmdline parameters to the configuration and see how that looks.
 		//could conceivably just add all the cmdline args and have the mappers and reducers run their own parse on it?
 		//trying what's at http://www.thecloudavenue.com/2011/11/passing-parameters-to-mappers-and.html
@@ -252,7 +245,7 @@ public class FEMain {
 		//configuration files:
 		C3POFilterConfiguration filtconf = null;
 		FEConfiguration feconf = null;
-		
+
 		if(conf.get("filtconfContents") != null) {
 			filtconf = new C3POFilterConfiguration();
 			filtconfContents = conf.get("filtconfContents");
@@ -270,7 +263,7 @@ public class FEMain {
 						//blank, assume global time range
 						System.err.println();
 					}
-					
+
 				}
 				is.close();
 			} else {
@@ -280,15 +273,15 @@ public class FEMain {
 		} else {
 			throw new Exception("No filter configuration given");
 		}
-		
+
 		//TODO LATER THERE WILL BE MORE THAN ONE OF THESE
 		if(conf.get("feconfContents") != null) {
 			feconfContents = conf.get("feconfContents");
 			System.err.println("-- feature ext config contents: " + feconfContents.length() + " chars");
-			
+
 			is  = new ByteArrayInputStream(feconfContents.getBytes(Charset.forName("UTF-8")));
 			if(feconf == null) feconf = new FEConfiguration();
-			
+
 			if(feconf.accumulateFromTextConfigFile(is,cmdline.classAttribute)) {
 				System.err.println("--- feature ext. configuration read successfully!");
 				//DEBUG OUTPUT???
@@ -297,18 +290,18 @@ public class FEMain {
 				throw new Exception("ERROR: unable to read feature extraction config file");
 			}
 			is.close();
-			
+
 			//check to make sure feconf is ok after all the accumulations done
 			if(!feconf.validateAfterAccumulation(cmdline.globalTimeRange,filtconf,cmdline.classAttribute,cmdline.classBinTime)) {
 				throw new Exception("ERROR: incorrect feature extraction configuration");
 			}
-			
+
 		} else {
 			throw new Exception("No feature extraction configuration given");
 		}
-		
+
 		//OK! all the command line / configuration stuff appears to be OK. Start the job.
-		    
+
 		Job job = new Job(conf, "Map/Reduce ARFF Test");
 		//what does this do? Finds out which jar file contains the given class and uses it as the jar all nodes should run...?
 		//see http://stackoverflow.com/questions/3912267/hadoop-query-regarding-setjarbyclass-method-of-job-class and
@@ -322,9 +315,10 @@ public class FEMain {
 		job.setOutputValueClass(Text.class);
 		FileInputFormat.addInputPath(job, new Path(cmdline.inputDirectory));
 		FileOutputFormat.setOutputPath(job, new Path(cmdline.outputDirectory));
+		job.setNumReduceTasks(cmdline.noOfReducers);
 		//original: System.exit(job.waitForCompletion(true) ? 0 : 1);
 		boolean jobSuccessful = job.waitForCompletion(true);
-		
+
 		//TODO: EXPERIMENT
 		//Here is a thing to try: wait for the completion of the job here and do the arff header emitting and
 		//feature vector reconciliation here - we should be able to see all the output part_x files and stuff in the hdfs.
@@ -341,33 +335,30 @@ public class FEMain {
 			System.err.println("Path for arff file is |" + arffPath + "|");
 			FSDataOutputStream fsdo = fs.create(arffPath, true);
 			PrintWriter pw = new PrintWriter(fsdo);
-			
+
 			//we haven't to this point read the config files in the main! So read them. 
 			//maybe should do this up above so that we fail out even before starting the job if they don't work -
 			//so off I go to do that.
-			
+
 			//debug:
 			//System.err.println("-- filter config: " + filtconf);
 			//System.err.println("-- feat.ext. config: " + feconf);
-			
+
 			ArffHeaderMaker hm = new ArffHeaderMaker();
 			boolean hdrresult = hm.writeArffHeader(pw, cmdline, filtconf, feconf);
 			//used to flush/close fsdis and pw here, but now we're adding the feature vectors
-			
+
 			if(!hdrresult) {
 				System.err.println("Failed to create arff header! |" + arffPathStr + "|");
 			} else {
 				System.err.println("-- Successfully wrote arff header |" + arffPathStr + "|");
-				
+
 				//OK! Got an arff header. Now let's look at the vector files we need to reconcile.
 				//Assume they're all in the output directory. So see what's in there! Assume that we don't
 				//need to do recursive descent - that's what the boolean on the listfiles call is.
 				RemoteIterator<LocatedFileStatus> filelistIter = fs.listFiles(new Path(cmdline.outputDirectory), false);
 				System.err.println("Reconciling feature vectors...");
-				
-				//we build a mapping from PID to featvec, accumulate function will allocate if needed.
-				TreeMap<String,String> featureVectors = new TreeMap<String,String>();
-				
+
 				while(filelistIter.hasNext()) {
 					LocatedFileStatus filstat = filelistIter.next();
 					//first let's just see what we've got. Try the path fields.
@@ -375,36 +366,42 @@ public class FEMain {
 					if(filstat.getPath().getName().startsWith("part-r-")) {
 						//aha, a "part" file.
 						System.err.println("-- processing: " + filstat.getPath().getName());
-						
+
 						fsdis = fs.open(filstat.getPath());
-						accumulateForReconcile(fsdis, featureVectors);
-					}
-				}
-				
-				//then once that's done, emit all the feature vectors, replacing any occurrence of the absent-feature
-				//value with ? - TODO LATER THIS MAY CHANGE
-				System.err.println("Emitting feature vectors...");
-				//open arff file for append and emit the strings on there
-				for(String pid:featureVectors.keySet()) {
-					//I THINK THIS IS RIGHT - this is a replace all of a with b, yes? And literal rather than regex
-					//for the match? That's what I want.
-					String vec = featureVectors.get(pid).replace(FEEvaluatorBase.absentFeatureValue, "?");
-					
-					//emit feature vector to our arff in progress.
-					//HERE IS WHERE WE LEAVE OUT UNKNOWN-CLASS VECTORS.
-					if(cmdline.includeUnknownClass) {
-						pw.println(vec);				//just print it in every case
-					} else {
-						//check for the last comma-delim thing being a ? - we can hardcode that because arff.
-						//it really should be the last thing in the whole line, yes? check to be sure there's
-						//a comma before it
-						//DANGER MAKE THIS SMARTER IF NEEDED
-						if(!vec.endsWith(",?")) {
-							pw.println(vec);			//print it out if not ending with ?
+						TreeMap<String,String> featureVectors = accumulateForReconcile(fsdis);
+
+						if(featureVectors != null && !featureVectors.isEmpty()) {
+
+							System.err.println("-- done: " + filstat.getPath().getName());
+
+							//then once that's done, emit all the feature vectors, replacing any occurrence of the absent-feature
+							//value with ? - TODO LATER THIS MAY CHANGE
+							//System.err.println("Emitting feature vectors...");
+							//open arff file for append and emit the strings on there
+							for(String pid:featureVectors.keySet()) {
+								//I THINK THIS IS RIGHT - this is a replace all of a with b, yes? And literal rather than regex
+								//for the match? That's what I want.
+								String vec = featureVectors.get(pid).replace(FEEvaluatorBase.absentFeatureValue, "?");
+
+								//emit feature vector to our arff in progress.
+								//HERE IS WHERE WE LEAVE OUT UNKNOWN-CLASS VECTORS.
+								if(cmdline.includeUnknownClass) {
+									pw.println(vec);				//just print it in every case
+								} else {
+									//check for the last comma-delim thing being a ? - we can hardcode that because arff.
+									//it really should be the last thing in the whole line, yes? check to be sure there's
+									//a comma before it
+									//DANGER MAKE THIS SMARTER IF NEEDED
+									if(!vec.endsWith(",?")) {
+										pw.println(vec);			//print it out if not ending with ?
+									}
+								}
+							}
+							featureVectors = null;
 						}
 					}
 				}
-				
+
 				//send an extra newline just in case - nice for files to have one at the end.
 				pw.println();
 			}
@@ -414,11 +411,10 @@ public class FEMain {
 			fsdo.flush();
 			pw.close();
 			fsdo.close();
-
 		} else {
 			System.err.println("NOTE: Feature vector extraction job failed; not creating arff header or output arff file");
 		}
-		
+
 		System.exit(jobSuccessful ? 0 : 1);
 	}	
 }

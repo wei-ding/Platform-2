@@ -34,7 +34,10 @@ public class ArffHeaderMaker {
 		
 		strat = feconf.getClassStrategyForProperty(cmdline.classAttribute);
 		
-		pw.println("@attribute " + FEConfiguration.classPropertyPrefix + cmdline.classAttribute + " " + strat.getEvaluator().getWekaAttributeType());
+//		pw.println("@attribute " + FEConfiguration.classPropertyPrefix + cmdline.classAttribute + " " + strat.getEvaluator().getWekaAttributeType());
+		
+		// Replacing with previous line to generate proper arff format
+		pw.println("@attribute " + FEConfiguration.classPropertyPrefix + " " + strat.getEvaluator().getWekaAttributeType());
 		
 		return true;
 	}

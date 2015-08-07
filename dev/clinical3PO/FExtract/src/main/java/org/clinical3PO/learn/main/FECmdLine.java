@@ -7,12 +7,15 @@ import org.apache.hadoop.conf.Configuration;
 import org.clinical3PO.learn.util.C3POTimeRange;
 
 public class FECmdLine {
+	
 	//classification feature - in this version, set with the -ca switch.
 	//attribute/bin combination
 	public String classAttribute; 
 	public String classBinTimestamp;
 	public C3POTimeRange globalTimeRange;
 	public long classBinTime;		//hm. as parsed by time range
+	public int noOfReducers;
+	
 	//paths - hadoop style - to filter configuration file, feature extraction config file,
 	//input directory, output directory
 	public String filterConfigFilePath;
@@ -27,7 +30,7 @@ public class FECmdLine {
 	public boolean excludeClassPropFromFeatureVector;	//optional: if true, don't include class property bins in feature vector, only as class. default false
 	
 	//prefix for hadoop properties related to this class
-	public static final String feCmdlinePrefix = "c3fe";
+	private static final String feCmdlinePrefix = "c3fe";
 
 	
 	//command line parser!
@@ -154,7 +157,7 @@ public class FECmdLine {
 		return sanityCheck(startTimestamp,endTimestamp);
 	}
 		
-	public boolean sanityCheck(String startTimestamp, String endTimestamp) throws Exception {
+	private boolean sanityCheck(String startTimestamp, String endTimestamp) throws Exception {
 		//Sanity check input - do we use 
 		//no longer a problem if(startTimestamp == null) throw new Exception("ERROR: no start timestamp given with -b, required");
 		//no longer a problem if(endTimestamp == null) throw new Exception("ERROR: no end timestamp given with -b, required");
@@ -166,9 +169,10 @@ public class FECmdLine {
 		if(feConfigFilePath == null) throw new Exception("ERROR: no feature extraction config file given with -fec, required");
 		
 		//construct default output arff path/name if none given
+		String fileSeparator = File.separator;
 		if(outputArffPathAndName == null) {
-			if(outputDirectory.endsWith("/")) outputArffPathAndName = outputDirectory + "output.arff";
-			else  outputArffPathAndName = outputDirectory + "/output.arff";
+			if(outputDirectory.endsWith(fileSeparator)) outputArffPathAndName = outputDirectory + "output.arff";
+			else  outputArffPathAndName = outputDirectory.concat(fileSeparator).concat("output.arff");
 		}
 		
 		//no longer a problem, see below if(configFilePath == null) throw new Exception("ERROR: no config file given with -c, required");
@@ -284,6 +288,7 @@ public class FECmdLine {
 		filterConfigFilePath = null;
 		classAttribute = null;
 		classBinTimestamp = null;				//NOT SURE HOW TO HANDLE THIS. Let's say always use last; will be derived
+		noOfReducers = 0;
 		
 		//we'll read these from -b and -e and use a C3POTimeRange object to contain the time range if they're both given
 		String startTimestamp = null;
@@ -328,6 +333,8 @@ public class FECmdLine {
 						outputDirectory = entry.getValue();
 					} else if(arg.equals("arffname")) {
 						outputArffPathAndName = entry.getValue();
+					} else if(arg.equals("noOfReducers")) {
+						noOfReducers = Integer.parseInt(entry.getValue());
 					} else {
 						//not a switch or parameter... ???
 						System.err.println("WARNING: skipping unrecognized input parameter \"" + arg + "\"");
