@@ -340,7 +340,7 @@ public class FEReducer extends Reducer<Text, Text, Text, Text> {
 				//number way - TODO later make a mapping thing from PID->index?
 				//FOR NOW ASSUME THEY'RE LEGIT - or try to force to integer...? That'll throw an exception if
 				//it doesn't work.
-				instanceLine.append(Integer.valueOf(key.toString()).toString() + ",");
+				instanceLine.append(key.toString() + ",");
 			}
 			
 			//THEN we can do that iteration a la a header maker

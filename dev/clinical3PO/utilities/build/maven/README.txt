@@ -23,6 +23,9 @@
 			   
 			   <!-- FEATURE EXTRACTION PROPERTIES -->
 			   <fe.number.reducers>10</fe.number.reducers>
+			   <fe.file.data>/user/hdfs/input/PhysionetData6G_FE.txt</fe.file.data>
+			   <fe.file.config>/user/hdfs/basicFEConfig.txt</fe.file.config>
+			   <fe.file.filter.config>/user/hdfs/filterconfig1.txt</fe.file.filter.config>
 			   
 			   <clinical3PO.hive.host>10.147.128.12</clinical3PO.hive.host>
 			   <clinical3PO.hive.port>10000</clinical3PO.hive.port>
