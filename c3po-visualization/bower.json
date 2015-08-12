@@ -1,0 +1,50 @@
+{
+  "name": "c3po",
+  "version": "0.1.0",
+  "dependencies": {
+    "angular": "~1.4.3",
+    "angular-animate": "~1.4.3",
+    "angular-cookies": "~1.4.3",
+    "angular-touch": "~1.4.3",
+    "angular-sanitize": "~1.4.3",
+    "angular-resource": "1.4.3",
+    "angular-messages": "1.4.3",
+    "angular-ui-router": "~0.2.13",
+    "angular-translate": "~2.7.2",
+    "angular-translate-loader-partial": "~2.7.2",
+    "angular-translate-storage-cookie": "~2.7.2",
+    "angular-translate-storage-local": "~2.7.2",
+    "angular-local-storage": "~0.2.2",
+    "font-awesome": "~4.3.0",
+    "material-design-iconic-font": "~1.1.1",
+    "textAngular": "~1.3.7",
+    "countUp.js": "1.5.0",
+    "angular-moment": "~0.10.1",
+    "animate.css-scss": "https://github.com/geoffgraham/animate.scss.git#master",
+    "jquery": "~2.1.3",
+    "angular-highlightjs": "~0.4.1",
+    "angular-google-maps": "~2.1.0",
+    "angular-linkify": "~1.2.0",
+    "angular-ui-calendar": "~1.0.0",
+    "angular-material": "master",
+    "angular-material-icons": "https://github.com/klarsys/angular-material-icons.git#master",
+    "d3": "~3.5.6",
+    "angular-object-table": "~0.1.9",
+    "angular-permission": "~0.3.1",
+    "highlightjs": "~8.6.0"
+  },
+  "devDependencies": {
+    "angular-mocks": "~1.4.3"
+  },
+  "resolutions": {
+    "angular": "~1.4.3"
+  },
+  "overrides": {
+    "weather-icons": {
+      "main": [
+        "./css/weather-icons.css",
+        "./font/*"
+      ]
+    }
+  }
+}
