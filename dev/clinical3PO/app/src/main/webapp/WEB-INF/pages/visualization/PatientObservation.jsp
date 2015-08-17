@@ -170,8 +170,8 @@ path {
         var line = d3.svg.line()
             .x(function(d){return time_scale(d.time);})
             .y(function(d){return percent_scale_local(d.value);})
-            //.interpolate("linear")
-			.interpolate("cardinal");
+            .interpolate("linear");
+			//.interpolate("cardinal");
         if(zz==-1){
 			color_id=id.split("_")[1];
 			color_id=color_id%10;
@@ -207,12 +207,12 @@ path {
         g.selectAll('circle')
             .transition()
             .delay(function(d, i) { return i / data.time_series.length * enter_duration; })
-            .attr('r', 5)
-            .each('end',function(d,i){
+            .attr('r', 5);
+          /*  .each('end',function(d,i){
                 if (i === data.time_series.length-1){
                     add_label(this,d,data.patient_number);
                 }
-            });
+            });*/
             
         
         g.selectAll('circle')
