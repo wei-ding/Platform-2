@@ -29,7 +29,7 @@ public class ArffHeaderMaker {
 	//command line configuration!
 	FECmdLine cmdline;
 	
-	public boolean emitClassAttribute(PrintWriter pw) throws Exception {
+	private boolean emitClassAttribute(PrintWriter pw) throws Exception {
 		FEStrategyBase strat;
 		
 		strat = feconf.getClassStrategyForProperty(cmdline.classAttribute);
@@ -42,7 +42,7 @@ public class ArffHeaderMaker {
 		return true;
 	}
 	
-	public boolean emitAttributesForProperty(PrintWriter pw, String prop) throws Exception {
+	private boolean emitAttributesForProperty(PrintWriter pw, String prop) throws Exception {
 		ArrayList<FEStrategyBase> strats;
 		FEStrategyBase strat;
 		

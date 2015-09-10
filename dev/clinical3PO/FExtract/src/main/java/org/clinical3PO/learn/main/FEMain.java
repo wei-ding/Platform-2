@@ -11,6 +11,7 @@ import java.nio.charset.Charset;
 import java.util.Scanner;
 import java.util.TreeMap;
 
+import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.FSDataInputStream;
 import org.apache.hadoop.fs.FSDataOutputStream;
 import org.apache.hadoop.fs.FileSystem;
@@ -18,7 +19,6 @@ import org.apache.hadoop.fs.LocatedFileStatus;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.fs.RemoteIterator;
 import org.apache.hadoop.io.Text;
-import org.apache.hadoop.mapred.JobConf;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
@@ -27,9 +27,6 @@ import org.clinical3PO.learn.util.C3POFilterConfiguration;
 import org.clinical3PO.learn.util.FEConfiguration;
 import org.clinical3PO.learn.util.FEEvaluatorBase;
 
-
-
-@SuppressWarnings("deprecation")
 public class FEMain {
 
 
@@ -137,32 +134,16 @@ public class FEMain {
 
 	//cribbed from cookbook chapter 1 word count thing
 	public static void main(String[] args) throws Exception {
-		JobConf conf = new JobConf();
 
-		//test 1/30/14: Go back to using GenericOptionsParser and hand REMAINING args over to
-		//FECmdline.
+		Configuration conf = new Configuration();	// initialize configuration
+		
+		// To read both Hadoop parameters(-D prefixed) and regular arguments. 
 		String[] otherArgs = new GenericOptionsParser(conf, args).getRemainingArgs();
-
-		//Let's say this; if there are no otherArgs, use the hadoop property way.
-		/*
-		for(String argy:otherArgs) {
-			System.err.println("Otherarg: " + argy);
-		}
-
-		//and before adding anything to the config, print out what if anything the genericoptions parser
-		//added to it: (h/t definitive guide)
-		//NOTE: VERBOSE.
-		//System.err.println("Conf before command line parse:");
-		for (Entry<String, String> entry: conf) {
-			System.out.printf("%s=%s\n", entry.getKey(), entry.getValue());
-		}
-		 */
-
 
 		//parse parameters - this is really just for first-pass checking, the mappers and redders will do
 		//their own version of it.
 		FECmdLine cmdline = new FECmdLine();
-		//if there are no otherArgs, let's try just fetching it out of hadoop properties.
+		
 		if(otherArgs.length != 0) {
 			System.err.println("-- getting configuration from command line arguments");
 			System.err.println("(If you want to use the hadoop configuration properties to configure this,");
@@ -171,7 +152,10 @@ public class FEMain {
 				System.err.println("ERROR: command line incorrect");
 				System.exit(1);
 			}
-		} else {		
+		} 
+		
+		//if there are no otherArgs, let's try just fetching it out of hadoop properties.
+		else {		
 			//new way:
 			System.err.println("-- getting configuration from hadoop configuration properties");
 			if(!cmdline.getCommandLineFromConfHadoopProperties(conf)) {
@@ -205,25 +189,26 @@ public class FEMain {
 		//I DON'T KNOW IF THIS WILL WORK ON A REAL HADOOP CLUSTER!
 		//let's do it this way:
 		FileSystem fs = FileSystem.get(conf);
-		FSDataInputStream fsdis = null;
-		URI uri = null;
+		FSDataInputStream FSInputStream = null;
 		Path path = null;
 
 		System.err.println("Reading filter config into conf string...");
-		uri = new URI(cmdline.filterConfigFilePath);
-		path = new Path(uri); //hopework
-		fsdis = fs.open(path);
-		String filtconfContents = readFile(fsdis);
+		path = new Path(new URI(cmdline.filterConfigFilePath)); //hopework
+		FSInputStream = fs.open(path);
+		String filtconfContents = readFile(FSInputStream);
 		conf.set("filtconfContents", filtconfContents);
 		System.err.println("..." + filtconfContents.length() + " chars");
+		System.err.println("################################################");
+		System.err.println(filtconfContents);
 
 		System.err.println("Reading feature extraction config into conf string...");
-		uri = new URI(cmdline.feConfigFilePath);
-		path = new Path(uri); //hopework
-		fsdis = fs.open(path);
-		String feconfContents = readFile(fsdis);
+		path = new Path(new URI(cmdline.feConfigFilePath)); //hopework
+		FSInputStream = fs.open(path);
+		String feconfContents = readFile(FSInputStream);
 		conf.set("feconfContents", feconfContents);
 		System.err.println("..." + feconfContents.length() + " chars");
+		System.err.println("################################################");
+		System.err.println(feconfContents);
 
 
 		//so let's add our cmdline parameters to the configuration and see how that looks.
@@ -255,7 +240,9 @@ public class FEMain {
 				System.err.println("--- filter configuration read successfully! attrs");
 				//DEBUG print out
 				for(String attr:filtconf.getPropertiesUsed().keySet()) {
+					System.err.println();
 					System.err.print(attr);
+					System.err.println();
 					if(filtconf.getPropertiesUsed().get(attr) != null) {
 						//print out time range
 						System.err.println(" " + filtconf.getPropertiesUsed().get(attr));
@@ -302,14 +289,12 @@ public class FEMain {
 
 		//OK! all the command line / configuration stuff appears to be OK. Start the job.
 
-		Job job = new Job(conf, "Map/Reduce ARFF Test");
+		Job job = Job.getInstance(conf, "Map/Reduce ARFF Test");
 		//what does this do? Finds out which jar file contains the given class and uses it as the jar all nodes should run...?
 		//see http://stackoverflow.com/questions/3912267/hadoop-query-regarding-setjarbyclass-method-of-job-class and
 		//http://search-hadoop.com/m/R7Uxr1dp4h&subj=setJarByClass+question
 		job.setJarByClass(FEMain.class);
 		job.setMapperClass(FEMapper.class);
-		//Uncomment this to ...? put in a combiner?
-		//job.setCombinerClass(IntSumReducer.class);
 		job.setReducerClass(FEReducer.class);
 		job.setOutputKeyClass(Text.class);
 		job.setOutputValueClass(Text.class);
@@ -367,8 +352,8 @@ public class FEMain {
 						//aha, a "part" file.
 						System.err.println("-- processing: " + filstat.getPath().getName());
 
-						fsdis = fs.open(filstat.getPath());
-						TreeMap<String,String> featureVectors = accumulateForReconcile(fsdis);
+						FSInputStream = fs.open(filstat.getPath());
+						TreeMap<String,String> featureVectors = accumulateForReconcile(FSInputStream);
 
 						if(featureVectors != null && !featureVectors.isEmpty()) {
 

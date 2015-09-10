@@ -28,6 +28,7 @@ public class FECmdLine {
 	public boolean includeUnknownClass;
 	public boolean includePatientID;		//optional: debug thing, default is false, includes patient ID as first attribute if true
 	public boolean excludeClassPropFromFeatureVector;	//optional: if true, don't include class property bins in feature vector, only as class. default false
+	public String conceptDirectory;
 	
 	//prefix for hadoop properties related to this class
 	private static final String feCmdlinePrefix = "c3fe";
@@ -102,7 +103,7 @@ public class FECmdLine {
 				if(j >= args.length) {
 					throw new Exception("ERROR: -ca given without parameter");
 				}
-				classAttribute = args[j];
+				classAttribute = args[j].toLowerCase();
 			} else if(arg.equals("-ct")) {
 				j++;
 				if(j >= args.length) {
@@ -289,6 +290,7 @@ public class FECmdLine {
 		classAttribute = null;
 		classBinTimestamp = null;				//NOT SURE HOW TO HANDLE THIS. Let's say always use last; will be derived
 		noOfReducers = 0;
+		conceptDirectory = null;
 		
 		//we'll read these from -b and -e and use a C3POTimeRange object to contain the time range if they're both given
 		String startTimestamp = null;
@@ -311,7 +313,7 @@ public class FECmdLine {
 					} else if(arg.equals("endtime")) {
 						endTimestamp = entry.getValue();			//will error-trap later
 					} else if(arg.equals("classproperty")) {
-						classAttribute = entry.getValue();
+						classAttribute = entry.getValue().toLowerCase();
 					} else if(arg.equals("classtime")) {
 						classBinTimestamp = entry.getValue();			//will error-trap later
 					} else if(arg.equals("filterconfig")) {
@@ -335,6 +337,8 @@ public class FECmdLine {
 						outputArffPathAndName = entry.getValue();
 					} else if(arg.equals("noOfReducers")) {
 						noOfReducers = Integer.parseInt(entry.getValue());
+					} else if(arg.equals("conceptFile")) {
+						conceptDirectory = entry.getValue();
 					} else {
 						//not a switch or parameter... ???
 						System.err.println("WARNING: skipping unrecognized input parameter \"" + arg + "\"");
@@ -342,7 +346,6 @@ public class FECmdLine {
 				}
 			}
 		}
-		
 		return sanityCheck(startTimestamp, endTimestamp);
 	}
 	

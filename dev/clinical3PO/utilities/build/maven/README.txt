@@ -22,8 +22,9 @@
 			   <hive.query.file.location>/home/hdfs/c3po-dist/clinical3PO-hadoop-scripts</hive.query.file.location>
 			   
 			   <!-- FEATURE EXTRACTION PROPERTIES -->
-			   <fe.number.reducers>10</fe.number.reducers>
-			   <fe.file.data>/user/hdfs/input/PhysionetData6G_FE.txt</fe.file.data>
+			   <!-- tune fe.number.reducers parameter based on FREE-RAM, INPUT file size.Statistics: FREE-RAM=2GB, INPUT=10GB. fe.number.reducers=20. NOTE: Expecting output size as 10GB, worst-case scenario. -->
+			   <fe.number.reducers>5</fe.number.reducers>
+			   <!-- <fe.file.data>/user/hdfs/input/PhysionetData6G_FE.txt</fe.file.data> -->
 			   <fe.file.config>/user/hdfs/basicFEConfig.txt</fe.file.config>
 			   <fe.file.filter.config>/user/hdfs/filterconfig1.txt</fe.file.filter.config>
 			   
@@ -55,6 +56,7 @@
 			   <clinical3PO.mlflex.directory>/home/c3po/ML-Flex</clinical3PO.mlflex.directory>
                
 			   <!-- Hadoop related local files -->
+			   <!-- Feature Extraction module is referring Concept & Observation files. Refer fextract.sh -->
                <hadoop.file.conceptFile>/c3po/datafiles/concept.txt</hadoop.file.conceptFile>
                <hadoop.file.observationFile>/c3po/datafiles/observation.txt</hadoop.file.observationFile>
                <hadoop.file.deathFile>/c3po/datafiles/death.txt</hadoop.file.deathFile>
