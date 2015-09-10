@@ -1,0 +1,25 @@
+// Dashboard
+
+// Dashboard Container
+.dashboard-container {
+  [layout-margin] {
+    margin: 0px;
+  }
+}
+// - Chart Container
+.dashboard-fullwidth-chart {
+  .chart-container {
+    position: relative;
+    left: -5px;
+    bottom: -5px;
+    width: calc(100% + 10px);
+  }
+}
+
+.dashboard-no-bar-tabs {
+  md-tabs-wrapper {
+    display: none;
+  }
+}
+
+

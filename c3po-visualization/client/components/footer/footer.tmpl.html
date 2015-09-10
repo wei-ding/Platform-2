@@ -1,0 +1,7 @@
+<md-toolbar id="footer" md-theme="{{cylonSkin.elements.toolbar}}" ng-controller="FooterController">
+    <div class="md-toolbar-tools md-body-1" layout="row" layout-align="space-between center">
+        <h2>{{footerInfo.appName}}</h2>
+        <h2>&copy; {{footerInfo.date | amDateFormat:'YYYY'}} clinical3po.org</h2>
+        <h2>v{{footerInfo.version}}</h2>
+    </div>
+</md-toolbar>

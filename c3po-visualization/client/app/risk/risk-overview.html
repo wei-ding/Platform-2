@@ -1,0 +1,147 @@
+<!--div class="risk-container overlay-10 padded-content-page" layout="column">
+    <div layout-gt-lg="row" layout-margin>
+        <widget server-widget flex flex-gt-lg="70">
+            <md-tabs md-dynamic-height md-border-bottom md-stretch-tabs="">
+                <md-tab label="{{'RISK.OVERVIEW.REAL_TIME' | translate}}">
+                    <md-content class="md-padding">
+                        <h1 class="md-headline">{{'RISK.OVERVIEW.BANDWIDTH' | translate}} <span class="md-caption">(Mbps)</span></h1>
+                        <canvas class="chart-line" data="serverCharts.bandwidth.data" labels="serverCharts.bandwidth.labels" legend="false" options="serverCharts.bandwidth.options" colours="serverCharts.bandwidth.colours"></canvas>
+                        <h1 class="md-headline">{{'RISK.OVERVIEW.CPU' | translate}} <span class="md-caption">(%)</span></h1>
+                        <canvas class="chart-line" data="serverCharts.cpu.data" labels="serverCharts.cpu.labels" legend="false" options="serverCharts.cpu.options" colours="serverCharts.cpu.colours"></canvas>
+                    </md-content>
+                </md-tab>
+                <md-tab label="{{'RISK.OVERVIEW.24HRS' | translate}}">
+                    <md-content class="md-padding">
+                        <canvas class="chart-bar" data="serverCharts.data24hrs.data" labels="serverCharts.data24hrs.labels" legend="true" options="serverCharts.data24hrs.options" series="serverCharts.data24hrs.series"></canvas>
+                    </md-content>
+                </md-tab>
+                <md-tab label="{{'RISK.OVERVIEW.7DAYS' | translate}}">
+                    <md-content class="md-padding">
+                        <canvas class="chart-bar" data="serverCharts.data7days.data" labels="serverCharts.data7days.labels" legend="true" options="serverCharts.data7days.options" series="serverCharts.data7days.series"></canvas>
+                    </md-content>
+                </md-tab>
+                <md-tab label="{{'RISK.OVERVIEW.365DAYS' | translate}}">
+                    <md-content class="md-padding">
+                        <canvas class="chart-bar" data="serverCharts.data365days.data" labels="serverCharts.data365days.labels" legend="true" options="serverCharts.data365days.options" series="serverCharts.data365days.series"></canvas>
+                    </md-content>
+                </md-tab>
+            </md-tabs>
+        </widget>
+        <div flex layout="column" layout-margin>
+            <widget palette-background="cyan:500" background="primary" content-layout="row" content-layout-align="space-between center" content-padding>
+                <div>
+                    <md-icon class="font-size-5 opacity-50" md-font-icon="icon-gps-fixed"></md-icon>
+                </div>
+                <div layout="column" layout-align="center end">
+                    <p class="md-display-1 font-weight-100 margin-top-0 margin-bottom-0 text-ellipsis">192.168.1.1</p>
+                    <p class="md-body-2 opacity-60 margin-top-0 margin-bottom-0">{{'RISK.OVERVIEW.IP' | translate}}</p>
+                </div>
+            </widget>
+            <widget palette-background="cyan:600" background="primary" content-layout="row" content-layout-align="space-between center" content-padding>
+                <div>
+                    <md-icon class="font-size-5 opacity-50" md-font-icon="icon-memory"></md-icon>
+                </div>
+                <div layout="column" layout-align="center end">
+                    <p class="md-display-1 font-weight-100 margin-top-0 margin-bottom-0 text-ellipsis" countupto="2" decimals="0" options="{suffix: 'Gb'}"></p>
+                    <p class="md-body-2 opacity-60 margin-top-0 margin-bottom-0">{{'RISK.OVERVIEW.MEMORY' | translate}}</p>
+                </div>
+            </widget>
+            <widget palette-background="cyan:700" background="primary" content-layout="row" content-layout-align="space-between center" content-padding>
+                <div>
+                    <md-icon class="font-size-5 opacity-50" md-font-icon="icon-storage"></md-icon>
+                </div>
+                <div layout="column" layout-align="center end">
+                    <p class="md-display-1 font-weight-100 margin-top-0 margin-bottom-0" countupto="30" decimals="0" options="{suffix: 'Gb'}"></p>
+                    <p class="md-body-2 opacity-60 margin-top-0 margin-bottom-0">{{'RISK.OVERVIEW.DISK' | translate}}</p>
+                </div>
+            </widget>
+            <widget palette-background="cyan:800" background="primary" content-layout="row" content-layout-align="space-between center" content-padding>
+                <div>
+                    <md-icon class="font-size-5 opacity-50" md-font-icon="icon-location-on"></md-icon>
+                </div>
+                <div layout="column" layout-align="center end">
+                    <p class="md-display-1 font-weight-100 margin-top-0 margin-bottom-0">London</p>
+                    <p class="md-body-2 opacity-60 margin-top-0 margin-bottom-0">{{'RISK.OVERVIEW.LOCATION' | translate}}</p>
+                </div>
+            </widget>
+        </div>
+    </div>
+
+    <div layout="row" layout-sm="column" layout-margin>
+        <widget flex="50" flex-sm="100" title="{{'RISK.OVERVIEW.DISKS' | translate}}">
+            <md-divider></md-divider>
+            <md-list>
+                <md-list-item ng-repeat="disk in disks">
+                    <md-icon md-font-icon="{{disk.icon}}" class="md-primary"></md-icon>
+                    <p class="text-ellipsis padding-right-50">{{disk.name}}</p>
+                    <md-switch class="md-secondary" ng-model="disk.enabled"></md-switch>
+                    <md-divider ng-hide="$last"></md-divider>
+                </md-list-item>
+            </md-list>
+        </widget>
+        <widget flex title="{{'RISK.OVERVIEW.JOB' | translate}}" background="primary">
+            <md-divider></md-divider>
+            <md-list>
+                <md-list-item class="md-2-line" ng-repeat="job in jobs">
+                    <div class="md-list-item-text">
+                        <h3>{{job.job}}</h3>
+                        <p>{{job.time}}</p>
+                    </div>
+                    <md-icon md-font-icon="icon-check alert-success" ng-show="job.complete"></md-icon>
+                    <md-icon md-font-icon="icon-close alert-error" ng-hide="job.complete"></md-icon>
+                    <md-divider ng-hide="$last"></md-divider>
+                </md-list-item>
+            </md-list>
+        </widget>
+
+    </div>
+
+    <div layout="row" layout-sm="column" layout-margin>
+        <widget chartjs-pie-widget flex="40" flex-md="40" flex-sm="100" title="{{'RISK.OVERVIEW.DISKUSAGE' | translate}}" subtitle="{{'RISK.OVERVIEW.DATE' | translate}}" content-padding>
+            <div flex>
+                <canvas class="chart-doughnut full-width" data="serverChart.data" legend="true" labels="serverChart.labels"></canvas>
+            </div>
+        </widget>
+        <widget flex-sm="100" title="{{'RISK.OVERVIEW.USAGE' | translate}}" palette-background="cyan:600" content-layout="column" content-layout-align="start center">
+            <div class="full-width" layout="row" layout-padding>
+                <h4 flex="20" class="opacity-80 margin-0 margin-right-20">
+                    {{'RISK.OVERVIEW.DISK' | translate}}
+                </h4>
+                <div flex>
+                    <md-progress-linear class="md-warn margin-bottom-10" md-mode="determinate" value="60"></md-progress-linear>
+                    <span class="md-caption">(60% {{'RISK.OVERVIEW.LIMIT' | translate}})</span>
+                </div>
+            </div>
+            <md-divider flex></md-divider>
+            <div class="full-width" layout="row" layout-padding>
+                <h4 flex="20" class="opacity-80 margin-0 margin-right-20">
+                    {{'RISK.OVERVIEW.BANDWIDTH' | translate}}
+                </h4>
+                <div flex>
+                    <md-progress-linear class="md-accent margin-bottom-10" md-mode="determinate" value="30"></md-progress-linear>
+                    <span class="md-caption">(30% {{'RISK.OVERVIEW.LIMIT' | translate}})</span>
+                </div>
+            </div>
+            <md-divider flex></md-divider>
+            <div class="full-width" layout="row" layout-padding>
+                <h4 flex="20" class="opacity-80 margin-0 margin-right-20">
+                    {{'RISK.OVERVIEW.USAGE' | translate}}
+                </h4>
+                <div flex>
+                    <md-progress-linear class="md-warn margin-bottom-10" md-mode="determinate" value="83"></md-progress-linear>
+                    <span class="md-caption">(83% {{'RISK.OVERVIEW.LIMIT' | translate}})</span>
+                </div>
+            </div>
+            <md-divider flex></md-divider>
+            <div class="full-width" layout="row" layout-padding>
+                <h4 flex="20" class="opacity-80 margin-0 margin-right-20">
+                    {{'RISK.OVERVIEW.MEMORY' | translate}}
+                </h4>
+                <div flex>
+                    <md-progress-linear class="md-accent margin-bottom-10" md-mode="determinate" value="65"></md-progress-linear>
+                    <span class="md-caption">(65% {{'RISK.OVERVIEW.LIMIT' | translate}})</span>
+                </div>
+            </div>
+        </widget>
+    </div>
+</div-->
