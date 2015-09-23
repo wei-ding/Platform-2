@@ -24,15 +24,17 @@ import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
-import org.apache.hadoop.mapreduce.lib.input.KeyValueTextInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import org.apache.hadoop.util.Tool;
 import org.apache.hadoop.util.ToolRunner;
 import org.apache.log4j.Logger;
 
 /**
- * @author doug
- *
+ * @author Doug Redd <doug_redd@gwu.edu>
+ * Executes Hadoop Map-Reduce jobs to apply a REDEx model to clinical notes.
+ * Input files must have a key on the first line and the text of the clinical note following,
+ * one clinical note per file. The key is a pipe delimited set of patient ID, document ID,
+ * and document date/time in ISO 8601 format, i.e. <patient ID>|<document ID>|<date/time>
  */
 public class REDExHadoop extends Configured implements Tool {
 	
@@ -50,29 +52,26 @@ public class REDExHadoop extends Configured implements Tool {
 	 */
 	@Override
 	public int run(String[] args) throws Exception {
-		LOG.info("> args = " + Arrays.asList(args));
+		System.err.println("> args = " + Arrays.asList(args));
 		if (args.length != 3) {
 			LOG.info("Usage: REDExHadoop <redex-model-file> <input file directory> <output file directory> [hadoop options]");
 			System.exit(2);
 		}
 		getConf().set("redex.model.file", args[0]);
-		getConf().set(
-				"mapreduce.input.keyvaluelinerecordreader.key.value.separator",
-				"\t");
-		getConf().set("key.value.separator.in.input.line", "\t");
+		getConf().set("annotation.type", args[1]);
 		Job job = Job.getInstance(getConf(), "REDExHadoop");
 		job.setJarByClass(REDExHadoop.class);
-		job.setMapperClass(REDExMapper.class);
-		job.setReducerClass(BioCReducer.class);
-		job.setInputFormatClass(KeyValueTextInputFormat.class);
 
 		job.setOutputKeyClass(Text.class);
 		job.setOutputValueClass(MatchedElementWritable.class);
 
-		job.setInputFormatClass(KeyValueTextInputFormat.class);
+		job.setInputFormatClass(WholeFileInputFormat.class);
 
-		FileInputFormat.addInputPath(job, new Path(args[1]));
-		FileOutputFormat.setOutputPath(job, new Path(args[2]));
+		job.setMapperClass(REDExMapper.class);
+		job.setReducerClass(BioCReducer.class);
+
+		FileInputFormat.addInputPath(job, new Path(args[2]));
+		FileOutputFormat.setOutputPath(job, new Path(args[3]));
 
 		return job.waitForCompletion(true) ? 0 : 1;
 	}

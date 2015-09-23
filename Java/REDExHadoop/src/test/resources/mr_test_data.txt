@@ -1,1 +1,3 @@
-p0|d0|2015-06-08	developed 1.1
+p0|d0|2015-06-08
+developed 1.1
+then developed 2.2

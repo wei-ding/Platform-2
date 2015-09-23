@@ -23,10 +23,13 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.Reader;
 import java.util.List;
+import java.util.regex.Pattern;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.fs.Path;
+import org.apache.hadoop.io.BytesWritable;
+import org.apache.hadoop.io.NullWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
 
@@ -34,16 +37,16 @@ import org.apache.hadoop.mapreduce.Mapper;
  * @author doug
  *
  */
-public class REDExMapper extends Mapper<Text, Text, Text, MatchedElementWritable> {
-
+public class REDExMapper extends Mapper<NullWritable, BytesWritable, Text, MatchedElementWritable> {
+	private static final Pattern EOL = Pattern.compile("[\r\n]+",
+			Pattern.MULTILINE);
 	private Configuration conf;
 	private REDExtractor rex;
 
 	@Override
 	protected void setup(
-			Mapper<Text, Text, Text, MatchedElementWritable>.Context context)
+			Mapper<NullWritable, BytesWritable, Text, MatchedElementWritable>.Context context)
 			throws IOException, InterruptedException {
-		super.setup(context);
 		conf = context.getConfiguration();
 		String redexModelFilename = conf.get("redex.model.file");
 		FileSystem fs = FileSystem.get(conf);
@@ -55,23 +58,25 @@ public class REDExMapper extends Mapper<Text, Text, Text, MatchedElementWritable
 
 	@Override
 	protected void map(
-			Text key,
-			Text value,
-			Mapper<Text, Text, Text, MatchedElementWritable>.Context context)
+			NullWritable key,
+			BytesWritable value,
+			Mapper<NullWritable, BytesWritable, Text, MatchedElementWritable>.Context context)
 			throws IOException, InterruptedException {
-		List<MatchedElement> matches = rex.extract(value.toString());
+		String valueStr = new String(value.getBytes());
+		String[] keyValue = EOL.split(valueStr, 2);
+		Text newKey = new Text(keyValue[0]);
+		List<MatchedElement> matches = rex.extract(keyValue[1]);
 		if (matches != null) {
 			for (MatchedElement me : matches) {
-				context.write(key, new MatchedElementWritable(me));
+				context.write(newKey, new MatchedElementWritable(me));
 			}
 		}
 	}
 
 	@Override
 	protected void cleanup(
-			Mapper<Text, Text, Text, MatchedElementWritable>.Context context)
+			Mapper<NullWritable, BytesWritable, Text, MatchedElementWritable>.Context context)
 			throws IOException, InterruptedException {
-		super.cleanup(context);
 	}
 	
 	

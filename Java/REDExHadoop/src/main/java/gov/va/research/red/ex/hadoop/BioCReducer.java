@@ -19,21 +19,17 @@ package gov.va.research.red.ex.hadoop;
 import gov.va.research.red.MatchedElement;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.text.DateFormat;
-import java.text.DecimalFormat;
-import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.TimeZone;
 
 import javax.xml.stream.XMLStreamException;
 
-import org.apache.hadoop.io.LongWritable;
+import org.apache.hadoop.io.NullWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Reducer;
-import org.apache.log4j.Logger;
 
 import bioc.BioCAnnotation;
 import bioc.BioCCollection;
@@ -41,15 +37,13 @@ import bioc.BioCDocument;
 import bioc.BioCLocation;
 import bioc.BioCPassage;
 import bioc.io.BioCCollectionWriter;
-import bioc.io.BioCDocumentWriter;
 import bioc.io.BioCFactory;
 
 /**
  * @author doug
  *
  */
-public class BioCReducer extends Reducer<Text, MatchedElementWritable, Text, Text> {
-
+public class BioCReducer extends Reducer<Text, MatchedElementWritable, Text, NullWritable> {
 	private BioCFactory biocFactory;
 	private DateFormat dateFormat;
 	private DateFormat dateTimeFormat;
@@ -58,7 +52,7 @@ public class BioCReducer extends Reducer<Text, MatchedElementWritable, Text, Tex
 	
 	@Override
 	protected void setup(
-			Reducer<Text, MatchedElementWritable, Text, Text>.Context context)
+			Reducer<Text, MatchedElementWritable, Text, NullWritable>.Context context)
 			throws IOException, InterruptedException {
 		biocFactory = BioCFactory.newFactory(BioCFactory.STANDARD);
 		TimeZone timezone = TimeZone.getTimeZone("UTC");
@@ -66,7 +60,7 @@ public class BioCReducer extends Reducer<Text, MatchedElementWritable, Text, Tex
 		dateFormat.setTimeZone(timezone);
 		dateTimeFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm'Z'");
 		dateTimeFormat.setTimeZone(timezone);
-		type = context.getConfiguration().get("label");
+		type = context.getConfiguration().get("annotation.type");
 		biocCollection = new BioCCollection();
 		biocCollection.setDate(dateTimeFormat.format(new Date()));
 		biocCollection.setKey("c3po.key");
@@ -76,7 +70,7 @@ public class BioCReducer extends Reducer<Text, MatchedElementWritable, Text, Tex
 	protected void reduce(
 			Text key,
 			Iterable<MatchedElementWritable> values,
-			Reducer<Text, MatchedElementWritable, Text, Text>.Context context)
+			Reducer<Text, MatchedElementWritable, Text, NullWritable>.Context context)
 			throws IOException, InterruptedException {
 		String[] ids = key.toString().split("\\|");
 		if (ids.length != 3) {
@@ -120,7 +114,7 @@ public class BioCReducer extends Reducer<Text, MatchedElementWritable, Text, Tex
 
 	@Override
 	protected void cleanup(
-			Reducer<Text, MatchedElementWritable, Text, Text>.Context context)
+			Reducer<Text, MatchedElementWritable, Text, NullWritable>.Context context)
 			throws IOException, InterruptedException {
 		StringWriter sw = new StringWriter();
 		BioCCollectionWriter cw = null;
@@ -135,7 +129,7 @@ public class BioCReducer extends Reducer<Text, MatchedElementWritable, Text, Tex
 			}
 		}
 		Text output = new Text(sw.toString());
-		context.write(output, new Text());
+		context.write(output, NullWritable.get());
 	}
 
 }

@@ -16,26 +16,20 @@
  */
 package gov.va.research.red.ex.hadoop;
 
-import static org.junit.Assert.fail;
 import gov.va.research.red.MatchedElement;
-import gov.va.research.red.ex.hadoop.BioCReducer;
-import gov.va.research.red.ex.hadoop.MatchedElementWritable;
-import gov.va.research.red.ex.hadoop.REDExMapper;
 
 import java.io.File;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.io.StringReader;
 import java.net.URL;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
 import javax.xml.stream.XMLStreamException;
 
-import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.io.BytesWritable;
+import org.apache.hadoop.io.NullWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mrunit.mapreduce.MapDriver;
 import org.apache.hadoop.mrunit.mapreduce.MapReduceDriver;
@@ -48,9 +42,6 @@ import org.junit.Test;
 
 import bioc.BioCAnnotation;
 import bioc.BioCDocument;
-import bioc.BioCPassage;
-import bioc.io.BioCCollectionReader;
-import bioc.io.BioCCollectionWriter;
 import bioc.io.BioCDocumentReader;
 import bioc.io.BioCFactory;
 
@@ -60,9 +51,9 @@ import bioc.io.BioCFactory;
  */
 public class TestREDExHadoop {
 
-	private MapDriver<Text, Text, Text, MatchedElementWritable> mapDriver;
-	private ReduceDriver<Text, MatchedElementWritable, Text, Text> reduceDriver;
-	private MapReduceDriver<Text, Text, Text, MatchedElementWritable, Text, Text> mapReduceDriver;
+	private MapDriver<NullWritable, BytesWritable, Text, MatchedElementWritable> mapDriver;
+	private ReduceDriver<Text, MatchedElementWritable, Text, NullWritable> reduceDriver;
+	private MapReduceDriver<NullWritable, BytesWritable, Text, MatchedElementWritable, Text, NullWritable> mapReduceDriver;
 
 	/**
 	 * @throws java.lang.Exception
@@ -86,15 +77,16 @@ public class TestREDExHadoop {
 		URL modelURL = this.getClass().getClassLoader().getResource("redex-pain.model");
 		File modelFile = new File(modelURL.toURI());
 		REDExMapper mapper = new REDExMapper();
-		mapDriver = new MapDriver<Text, Text, Text, MatchedElementWritable>(
+		mapDriver = new MapDriver<NullWritable, BytesWritable, Text, MatchedElementWritable>(
 				mapper);
 		mapDriver.getConfiguration().set("redex.model.file", modelFile.getPath());
+		mapDriver.getConfiguration().set("annotation.type", "pain");
 		BioCReducer reducer = new BioCReducer();
 		reduceDriver = ReduceDriver.newReduceDriver(reducer);
-		reduceDriver.getConfiguration().set("label", "pain");
+		reduceDriver.getConfiguration().set("annotation.type", "pain");
 		mapReduceDriver = MapReduceDriver.newMapReduceDriver(mapper, reducer);
 		mapReduceDriver.getConfiguration().set("redex.model.file", modelFile.getPath());
-		mapReduceDriver.getConfiguration().set("label", "pain");
+		mapReduceDriver.getConfiguration().set("annotation.type", "pain");
 	}
 
 	/**
@@ -108,8 +100,8 @@ public class TestREDExHadoop {
 	public void testMapper() {
 		MatchedElement me = new MatchedElement(10, 11, "1", "(?i)developed\\s{1,2}?((\\d+|zero|one|two|three|four|five|six|seven|eight|nine|ten))\\p{Punct}{1,2}?(?:\\d+?|zero|one|two|three|four|five|six|seven|eight|nine|ten)", 0.005767844268204758);
 		MatchedElementWritable mew = new MatchedElementWritable(me);
-		mapDriver.withInput(new Text("p0|d0|2015-06-08"), new Text(
-				"developed 1.1"));
+		mapDriver.withInput(NullWritable.get(), new BytesWritable(
+				"p0|d0|2015-06-08\ndeveloped 1.1".getBytes()));
 		mapDriver.withOutput(new Text("p0|d0|2015-06-08"), mew);
 		mapDriver.setValueComparator(new Comparator<MatchedElementWritable>() {
 			@Override
@@ -163,7 +155,7 @@ public class TestREDExHadoop {
 				+   "</document>"
 				+ "</collection>");
 		reduceDriver.withInput(new Text("p0|d0|2015-06-08"), mewList);
-		reduceDriver.withOutput(output, new Text());
+		reduceDriver.withOutput(output, NullWritable.get());
 		reduceDriver.setKeyComparator(new BioCXMLComparator());
 		try {
 			reduceDriver.runTest();
@@ -174,8 +166,7 @@ public class TestREDExHadoop {
 
 	@Test
 	public void testMapReduce() {
-		mapReduceDriver.withInput(new Text("p0|d0|2015-06-08"), new Text(
-				"developed 1.1"));
+		mapReduceDriver.withInput(NullWritable.get(), new BytesWritable("p0|d0|2015-06-08\ndeveloped 1.1".getBytes()));
 		Text output = new Text(
 				"<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
 				+ "<!DOCTYPE collection SYSTEM \"BioC.dtd\">"
@@ -199,7 +190,7 @@ public class TestREDExHadoop {
 				+     "</passage>"
 				+   "</document>"
 				+ "</collection>");
-		mapReduceDriver.withOutput(output, new Text());
+		mapReduceDriver.withOutput(output, NullWritable.get());
 		mapReduceDriver.setKeyComparator(new BioCXMLComparator());
 		try {
 			mapReduceDriver.runTest();
