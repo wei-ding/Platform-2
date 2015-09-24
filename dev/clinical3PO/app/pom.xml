@@ -292,20 +292,7 @@
     		<artifactId>spring-test</artifactId>
     		<version>3.2.3.RELEASE</version>
     		<scope>test</scope>
-		</dependency>
-		
-		<dependency>
-			<groupId>javax.el</groupId>
-        	<artifactId>javax.el-api</artifactId>
-    		<version>2.2.4</version>
-		</dependency>
-		
-		<dependency>
-   			<groupId>org.glassfish.web</groupId>
-  			<artifactId>javax.el</artifactId>
-   			<version>2.2.4</version>
-		</dependency>
-		
+		</dependency>		
 		
 	</dependencies>
 
