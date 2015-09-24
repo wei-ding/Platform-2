@@ -341,7 +341,7 @@ then
 	org.clinical3PO.fe.ExperimentFileGeneration ${clinical3PO.app.dataDirectory}/mlflex $4 $7 $8 $9
 	
 	cd ${clinical3PO.mlflex.directory}
-	java -Xmx1g -jar mlflex.jar EXPERIMENT_FILE=${clinical3PO.app.dataDirectory}/mlflex/experiments/$4.txt ACTION=Process DEBUG=true
+	java -Xmx1g -jar mlflex.jar EXPERIMENT_FILE=${clinical3PO.app.dataDirectory}/mlflex/experiments/$4.txt NUM_THREADS=2 THREAD_TIMEOUT_MINUTES=10 PAUSE_SECONDS=60 ACTION=Process DEBUG=true
 	
 	mv ${clinical3PO.mlflex.directory}/Output/$4_Experiment ${clinical3PO.app.dataDirectory}/mlflex/output/$5
 	cd ${clinical3PO.app.dataDirectory}/mlflex/output
