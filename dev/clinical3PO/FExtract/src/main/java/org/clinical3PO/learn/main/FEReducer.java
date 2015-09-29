@@ -212,7 +212,6 @@ public class FEReducer extends Reducer<Text, Text, Text, Text> {
 					//TODO MAKE A SET<STRING> OF pids that have had anything emitted for them, dummy or not, and
 					//don't emit a dummy if this pid is in there
 					if(!PIDsThatHaveOutput.contains(patientID)) {
-						//							System.err.println(patientID +" " + C3POFilterConfiguration.dummyPropertyName+"\t0\tx");
 					}
 				} else {
 					String[] output = reducerProcessing(processLineResults).split("\\s");

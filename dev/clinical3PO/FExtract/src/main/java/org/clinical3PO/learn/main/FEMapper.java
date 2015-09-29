@@ -7,6 +7,19 @@ import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
 
 
+/**
+ * Is a Hadoop Mapper Code.
+ * Previous Mapper(https://github.com/Clinical3PO/Stage/commit/e5acba642e1deefbdba5d556cf7c65bb5212ce25) intakes, Output of Wim's code.
+ * To similirize every module with OMPOPv4 format, changes have been done to the mapper.
+ * 
+ *  Reads line by line and picks important information like patientId, observation(key with ~ as separator), time, observation value(value with space as separator).
+ *  This is further written into context.
+ *  
+ *  NOTE: Previous Mapper code is put into Reducer. 
+ *  
+ * @author 3129891
+ *
+ */
 public class FEMapper extends Mapper<LongWritable, Text, Text, Text>{
 
 	private Text key_ = null;
