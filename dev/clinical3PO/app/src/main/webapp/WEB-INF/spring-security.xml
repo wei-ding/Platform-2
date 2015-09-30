@@ -13,6 +13,7 @@
 		<intercept-url pattern="/j_spring_security_check" access="permitAll"/>
 		<intercept-url pattern="/j_spring_security_logout" access="permitAll"/>
 		
+		<intercept-url pattern="/ang/**" access="permitAll" />
 		<intercept-url pattern="/**" access="hasAnyRole('ROLE_USER')" />
 		
 		<form-login login-page="/Login" default-target-url="/"

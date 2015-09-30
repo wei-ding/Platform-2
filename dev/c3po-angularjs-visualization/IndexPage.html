@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en" >
+	<head>
+		<style>
+			.error{
+				background-color: #ffffff;
+				border: 0 solid #fa5858;
+				color: #df0101;
+				padding: 1px;
+			}
+			.errorblock{
+				color: #ff0000;
+				background-color: #ffEEEE;
+				border: 3px solid #ff0000;
+				padding: 8px;
+				margin: 16px;
+			}
+		</style>
+		<meta charset="utf-8">
+	</head>
+	<body ng-app="approach">
+		<div ng-controller="cntrl">
+			<form class="form-horizontal ng-pristine ng-invalid ng-invalid-required" role="form" name="loginForm" data-ng-submit="login()" method="POST">
+				<table border="1" width="20%" style="margin-left:380px;margin-top:110px">
+					<tr><td colspan="2"><center><h3>clinical3PO Login</h3></center></td></tr>
+					<tr>
+						<td>User:</td>
+						<td><input type="text"  required=""  name='username' data-ng-model='credentials.username' value=''/></td>
+					</tr>
+					<tr>
+						<td>Password:</td>
+						<td><input type='password' name='password' data-ng-model="credentials.password" required/></td>
+					</tr>
+					<tr>
+						<td colspan="2"><center><input name="Submit" type="submit" value="Submit"/></a>
+						&nbsp;&nbsp;<input name="Reset" type="reset"  data-ng-click="val()"/></center></td>
+					</tr>
+					<tr>
+						<td colspan="2" ng-show="credentials.sub" >
+						<center class="errorblock">{{data}}</center>
+						</td>			
+				</table>
+			</form>
+		</div>
+	</body>
+
+	<script src="angular-messages-master/angular.min.js"></script>
+	<script src="angular-messages-master/angular-route.min.js"></script>
+	<script src="angular-messages-master/angular-messages.min.js"></script>
+	<script src="angular-messages-master/angular-cookies.min.js"></script>
+	<script src="controllers/module.js"></script>
+	<script src="controllers/logincntrl.js"></script>
+</html>

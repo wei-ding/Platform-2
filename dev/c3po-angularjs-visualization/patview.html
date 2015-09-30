@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en" >
+	<head>
+		<meta charset="utf-8">
+		<style>
+			.node {
+					cursor: pointer;	
+				}
+			.node circle {
+			  fill: #fff;
+			  stroke: steelblue;
+			  stroke-width: 1.5px;
+			}
+			.node text {
+			  font-size: 11px;
+			}
+			.link {
+			  fill: none;
+			  stroke: #ccc;
+			  stroke-width: 1.5px;
+			}
+		</style>
+		<link href="angular-messages-master/bootstrap.min.css" rel="stylesheet">
+	</head>
+	<body ng-app="patview">
+		<div ng-view>
+		</div>
+	</body>
+	<script src="angular-messages-master/angular.min.js"></script>
+	<script src="angular-messages-master/angular-route.min.js"></script>
+	<script src="angular-messages-master/angular-messages.min.js"></script>
+	<script src="controllers/patviewctrl.js"></script>
+	<script src="controllers/patobsctrl.js"></script>
+	<script src="http://d3js.org/d3.v3.min.js"></script>
+	<script src="angular-messages-master/ui-bootstrap-tpls-0.12.0.min.js"></script>
+</html>
