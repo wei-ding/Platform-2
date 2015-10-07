@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
+
 import org.clinical3PO.common.environment.EnvironmentType;
 import org.clinical3PO.common.form.beans.UserInfo;
 import org.clinical3PO.common.security.model.User;
@@ -16,6 +17,7 @@ import org.perf4j.aop.Profiled;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -49,8 +51,11 @@ public class MySearch {
 		response.setHeader("Access-Control-Max-Age", "3600");
 		response.setHeader("Access-Control-Allow-Headers", "Content-Type,X-Requested-With,accept,Origin,Access-Control-Request-Method,Access-Control-Request-Headers");
 		*/
-		List<JobSearch> jobs = jobSearch.getJobs(User.getId());
-	logger.info("hcUser "+User.getId());
+		User user=(User)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		assert (user != null);
+		
+		List<JobSearch> jobs = jobSearch.getJobs(user.getId());
+	logger.info("hcUser "+user.getId());
 	    String outJsonBuf=null;  
 	    
 	    JSONStringer jsonString = new JSONStringer();
