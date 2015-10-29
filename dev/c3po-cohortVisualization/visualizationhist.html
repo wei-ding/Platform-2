@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en" >
+	<head>
+		<meta charset="utf-8">
+		<style>
+		body{
+		left: 50px; 
+position: absolute; 
+top: 104px;
+ float: left;
+ width: 8em;
+ overflow-y: auto;
+ height: 450px;
+		}
+			.main {
+      overflow:auto;
+	  width:600px;
+	  position: absolute; 
+	  top: 50px;
+  
+        }
+		.main1 {
+      overflow:auto;
+	  width:600px;
+	   overflow-y: auto;
+	  left: 650px; 
+	  position: absolute; 
+	  top: 50px;
+  
+        }
+.swap{
+top: 50px;
+position: absolute; 
+ width: 5px;
+ overflow: auto;
+}
+ .axis {
+   font: 10px sans-serif;
+ }
+
+ .axis path,
+ .axis line {
+   fill: none;
+   stroke: #000;
+     stroke-width: 1;
+   shape-rendering: crispEdges;
+ }
+
+.yaxis {
+   font: 10px sans-serif;
+ }
+
+ .yaxis path,
+ .yaxis line {
+   fill: none;
+   stroke: #000;
+     stroke-width: 1;
+   shape-rendering: crispEdges;
+ }
+path { 
+    stroke: steelblue;
+    stroke-width: 2;
+    fill: none;
+}
+
+ .labelaxis{
+ font:10px sans-serif;
+ }
+  .label{
+ font:10px sans-serif;
+ }
+
+  .yaxis {
+   font: 10px sans-serif;
+ }
+
+ .yaxis path,
+ .yaxis line {
+   fill: none;
+   stroke: #000;
+   shape-rendering: crispEdges;
+ }
+#bottom {
+position:relative;
+top:500px;
+left:200px;
+height: 161px;
+padding: 20px;
+margin: 0 auto;
+width: 908px;
+
+}
+.key {
+	float: right;
+}
+
+.key_line {
+	font-size: 17px;
+	width: 60%;
+	float: left;
+}
+
+.key_square {
+    float: left;
+    height: 10px;
+    margin-left: 75px;
+    margin-right: -100px;
+    margin-top: 6px;
+    outline: 1px solid black;
+    width: 15px;
+}
+
+		</style>
+		
+	</head>
+	<body ng-app="visualization">
+	<script src="jquery-1.11.0.min.js"></script>
+		<div vis-hist>
+		<div id='main'></div>
+	
+	</body>
+	<script src="angular.min.js"></script>
+	<script src="cohortVisualization7.js"></script>
+	<script src="http://d3js.org/d3.v3.min.js"></script>
+</html>
