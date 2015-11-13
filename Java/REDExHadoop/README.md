@@ -4,7 +4,7 @@ Hadoop MapReduce instrumentation for REDEx
 ### To build
 * build the uber-jar:
 
-> mvn assembly:single
+> mvn clean install
 
 resulting jar will be named something like REDExHadoop-<version>-jar-with-dependencies.jar
 

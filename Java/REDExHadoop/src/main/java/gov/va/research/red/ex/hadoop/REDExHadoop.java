@@ -53,8 +53,8 @@ public class REDExHadoop extends Configured implements Tool {
 	@Override
 	public int run(String[] args) throws Exception {
 		System.err.println("> args = " + Arrays.asList(args));
-		if (args.length != 3) {
-			LOG.info("Usage: REDExHadoop <redex-model-file> <input file directory> <output file directory> [hadoop options]");
+		if (args.length != 4) {
+			LOG.info("Usage: REDExHadoop <redex-model-file> <annotation-type> <input file directory> <output file directory> [hadoop options]");
 			System.exit(2);
 		}
 		getConf().set("redex.model.file", args[0]);
