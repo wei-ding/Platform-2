@@ -101,7 +101,7 @@ public class ArffHeaderMaker {
 		
 		//let's make the relation be relation_(class name)
 		//and send an extra newline just to make it look nice
-		pw.println("@relation relation_" + cmdline.classAttribute);
+		pw.println("@relation " + cmdline.classAttribute);
 		pw.println();
 		
 		//THIS IS THE REALLY IMPORTANT STUFF BECAUSE IT WILL BE A LOT LIKE THE LOOP USED IN THE
@@ -111,7 +111,7 @@ public class ArffHeaderMaker {
 		//CURRENTLY ASSUMING IT'LL BE A STRING.
 		//NO ACTUALLY  NUMERIC
 		if(cmdline.includePatientID) {
-			pw.println("@attribute PatientID_debug NUMERIC");
+			pw.println("@attribute PatientID NUMERIC");
 		}
 		
 		//so. The absolute central thing is to step through the properties in the right order in every
