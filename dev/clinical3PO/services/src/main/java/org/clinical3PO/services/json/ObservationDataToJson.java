@@ -4,7 +4,6 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -19,11 +18,9 @@ import org.clinical3PO.common.environment.EnvironmentType;
 import org.clinical3PO.services.json.PatientViewObject.CategoryObject;
 import org.clinical3PO.services.json.PatientViewObject.ConceptsInCategory;
 import org.clinical3PO.services.json.PatientViewObject.TimeValue;
-import org.clinical3PO.services.json.TimeSeries;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.Resource;
 
 import com.google.gson.Gson;
 
@@ -34,10 +31,11 @@ public class ObservationDataToJson {
 
 	@Autowired
 	private EnvironmentType envType;
+	private String category;
 	Map<String,List<String>> categoryAndConceptsRaw = new HashMap<String,List<String>>();
 	private String colorOfDeath, colorOfSurvival, colorOfMissingData;
 
-	public ObservationDataToJson(Resource template, String c1, String c2, String c3) {
+	public ObservationDataToJson(String category, String c1, String c2, String c3) {
 
 		colorOfDeath = c1;
 		colorOfSurvival = c2;
@@ -46,10 +44,9 @@ public class ObservationDataToJson {
 		BufferedReader reader=null;
 
 		try {
-			reader = new BufferedReader(new InputStreamReader(template.getInputStream()));
+			reader = new BufferedReader(new FileReader(category));
 
 			String line;
-
 			while ((line = reader.readLine()) != null){
 				line = line.replaceAll("\\s","");
 				line = line.replaceAll("\\[", "");
@@ -59,15 +56,14 @@ public class ObservationDataToJson {
 				String[] conceptValue = parts[1].split(",");
 				categoryAndConceptsRaw.put(conceptKey, Arrays.asList(conceptValue));				
 			}
-
-			reader.close();
 		}
 		catch (IOException e) {
 			logger.error(e.toString());
 		}
 		finally{
 			try {
-				reader.close();
+				if(reader != null)
+					reader.close();
 			} catch (IOException e) {
 				logger.error(e.toString());
 			}
@@ -313,7 +309,6 @@ public class ObservationDataToJson {
 
 	public String generatePatientViewDataJson (String fileName, String patientID){
 
-		//		File categoryFile = new File("E:/Big_Data/UTAH/hadoop_out/category.txt");
 		Map<String,List<String>> conceptAndTimeValues = new HashMap<String,List<String>>();
 		Map<String,List<String>> categoryAndConcepts = new TreeMap<String,List<String>>();
 		categoryAndConcepts = new TreeMap<String,List<String>>(categoryAndConceptsRaw);
@@ -405,4 +400,11 @@ public class ObservationDataToJson {
 		return jsonData;
 	}
 
+	public String getCategory() {
+		return category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
+	}
 }

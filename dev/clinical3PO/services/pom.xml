@@ -164,6 +164,10 @@
 			<resource>
 				<directory>src/main/resources</directory>
 				<filtering>true</filtering>
+				<excludes>
+					<exclude>category.txt</exclude>
+					<exclude>hiveQueries.properties</exclude>
+				</excludes>
 			</resource>
 		</resources>
 		<plugins>
