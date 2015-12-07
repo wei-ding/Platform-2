@@ -10,8 +10,8 @@
       <properties>
                <db.driverClassName>com.mysql.jdbc.Driver</db.driverClassName>
                <db.url>jdbc:mysql://localhost:3306/clinical3PO</db.url>
-               <db.username>root</db.username>
-               <db.password>@adminpassword</db.password>
+               <db.username>c3po</db.username>
+               <db.password>#c3po123</db.password>
 
                <omop.hive.db>c3pohivedemo</omop.hive.db>
                <omop.hive.death>death_t</omop.hive.death>
@@ -24,15 +24,15 @@
 			   <!-- FEATURE EXTRACTION PROPERTIES -->
 			   <!-- tune fe.number.reducers parameter based on FREE-RAM, INPUT file size.Statistics: FREE-RAM=2GB, INPUT=10GB. fe.number.reducers=20. NOTE: Expecting output size as 10GB, worst-case scenario. -->
 			   <fe.number.reducers>5</fe.number.reducers>
-			   <!-- <fe.file.data>/user/hdfs/input/PhysionetData6G_FE.txt</fe.file.data> -->
+			   <fe.file.data>/user/hdfs/input/PhysionetData6G_FE.txt</fe.file.data> 
 			   <fe.file.config>/user/hdfs/basicFEConfig.txt</fe.file.config>
 			   <fe.file.filter.config>/user/hdfs/filterconfig1.txt</fe.file.filter.config>
 			   
-			   <clinical3PO.hive.host>10.147.128.12</clinical3PO.hive.host>
-			   <clinical3PO.hive.port>10000</clinical3PO.hive.port>
+			   <clinical3PO.hive.host>c3po-m-ambari.ec2.internal</clinical3PO.hive.host>
+			   <clinical3PO.hive.port>10010</clinical3PO.hive.port>
 			   <clinical3PO.hive.db>default</clinical3PO.hive.db>
-			   <clinical3PO.hive.user>hive</clinical3PO.hive.user>
-			   <clinical3PO.hive.password>c3po123</clinical3PO.hive.password>			   
+			   <clinical3PO.hive.user>hdfs</clinical3PO.hive.user>
+			   <clinical3PO.hive.password>H8d00p</clinical3PO.hive.password>			   
 
                <!-- Environment related (could be DEVELOPMENT, PRODUCTION)-->
                <clinical3PO.environment.type>DEVELOPMENT</clinical3PO.environment.type>
@@ -60,6 +60,9 @@
                <hadoop.file.conceptFile>/c3po/datafiles/concept.txt</hadoop.file.conceptFile>
                <hadoop.file.observationFile>/c3po/datafiles/observation.txt</hadoop.file.observationFile>
                <hadoop.file.deathFile>/c3po/datafiles/death.txt</hadoop.file.deathFile>
+			   
+			   <!-- Category file location -->
+			   <clinical3PO.visualization.category>/home/hdfs/c3po-dist/clinical3PO-hadoop-scripts/category.txt</clinical3PO.visualization.category>
 
                <!-- Uncomment the relevant one depending on compilation local or remote -->
                <!-- Hadoop local execution -->
