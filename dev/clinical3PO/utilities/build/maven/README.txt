@@ -61,8 +61,14 @@
                <hadoop.file.observationFile>/c3po/datafiles/observation.txt</hadoop.file.observationFile>
                <hadoop.file.deathFile>/c3po/datafiles/death.txt</hadoop.file.deathFile>
 			   
-			   <!-- Category file location -->
+			   <!-- VISUALIZATION - CATAGORY FILE location -->
+			    <!-- User can change the path and name of file accordingly. But, make sure the file is available in the specified path -->
 			   <clinical3PO.visualization.category>/home/hdfs/c3po-dist/clinical3PO-hadoop-scripts/category.txt</clinical3PO.visualization.category>
+			   
+			   <!-- CONCEPT TYPES IN A FILE -->
+			   <!-- This propery helps to add/modify/delete concept types. This reflect in observation search(drop down) -->
+			   <!-- User can change the path and name of file accordingly. But, make sure the file is available in the specified path -->
+			   <clinical3PO.observation.list>/home/hdfs/c3po-dist/clinical3PO-hadoop-scripts/observationList.csv</clinical3PO.observation.list>
 
                <!-- Uncomment the relevant one depending on compilation local or remote -->
                <!-- Hadoop local execution -->

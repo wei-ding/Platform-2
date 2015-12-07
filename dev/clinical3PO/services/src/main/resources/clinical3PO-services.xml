@@ -34,4 +34,8 @@
 		<property name="appDataDirectory" value="${clinical3PO.app.dataDirectory}"/>
 	</bean>
 	
+	<bean id="WebAppUtils" class="org.clinical3PO.common.utils.WebAppUtils" scope="singleton">
+		<constructor-arg index="0" name="observationFile" value="${clinical3PO.observation.list}"/>
+	</bean>
+	
 </beans>
