@@ -8,7 +8,7 @@
 #Once this is created, any query with a patient ID can be intiated for this particular attribute. In case the "Number_of_bins.csv" is modified, then this script should be executed again
 
 
-create_bins<-function(working_directory,observation_file,index_attribute){
+create_bins<-function(working_directory,observation_file,index_attribute,Starttime){
 	setwd(working_directory)
 
 	check_file<-paste(index_attribute,"_bins/Bins.csv",sep="")
@@ -27,7 +27,7 @@ create_bins<-function(working_directory,observation_file,index_attribute){
 		observation_Data<-subset(observation_Data, observation_concept_id==index_attribute)
 
 		observation_Data$date_time <- as.POSIXct(paste(observation_Data$observation_date, observation_Data$observation_time), format = "%m/%d/%y %H:%M")
-		start_time <- unclass(as.POSIXct("2014-01-01 0:00:00"))
+		start_time <- unclass(as.POSIXct(Starttime))
 		observation_Data$time <- (unclass(observation_Data$date_time) - start_time)/3600
 
 
