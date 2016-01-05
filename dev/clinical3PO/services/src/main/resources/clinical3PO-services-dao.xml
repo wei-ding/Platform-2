@@ -34,7 +34,11 @@
 	<bean id="patientSearchDAO" class="org.clinical3PO.services.data.dao.PatientSearchDAO">
 		<property name="hiveTemplate" ref="hiveTemplate" />
 	</bean>
-	
+
+	<bean id="NLPSearchDAO" class="org.clinical3PO.services.data.dao.NLPHiveTableUpdater">
+		<property name="hiveTemplate" ref="hiveTemplate" />
+	</bean>
+		
     <!-- basic Hive driver bean -->
     <bean id="hive-driver" class="org.apache.hive.jdbc.HiveDriver"/>
 
@@ -48,5 +52,5 @@
 
     <!-- standard JdbcTemplate declaration -->
     <bean id="hiveTemplate" class="org.springframework.jdbc.core.JdbcTemplate" c:data-source-ref="hive-ds"/>
-	
+    
 </beans>

@@ -68,11 +68,18 @@
 						<c:when test="${(job.searchOn == 'Patient ID User Prefs')}">
 							<a target="_blank" href="../Visualization/PatientWithUserPrefs/${job.id}">${job.status}</a>							
 						</c:when>
-						<c:when test="${(job.searchOn == 'Cross Validation') || (job.searchOn == 'Feature Extraction')}">
+						<c:when test="${(job.searchOn == 'Cross Validation') || (job.searchOn == 'Feature Extraction - MlFlex')}">
 							${job.status}
 							<a target="_blank" href="../MLCrossValidation/DownloadReport/${job.id}">Download Report</a>		
 							<a href="../FileDownload/DownloadFile/${job.id}">Download file</a>						
-						</c:when>													
+						</c:when>
+						<c:when test="${(job.searchOn == 'Feature Extraction - Ugene')}">
+							${job.status}
+							<a target="_blank" href="../FExtraction/DownloadUgeneReport/${job.id}">Download Report</a>
+						</c:when>
+						<c:when test="${(job.searchOn == 'NLP To Hive Update')}">
+							<a target="_blank">${job.status}</a>
+						</c:when>
 						<c:otherwise>			
 						</c:otherwise>
 					</c:choose>

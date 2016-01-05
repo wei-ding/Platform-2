@@ -27,14 +27,14 @@
 		<property name="omopHiveDeathTable" value="${omop.hive.death}"/>
 		<property name="omopHiveObservationTable" value="${omop.hive.observation}"/>
 		<property name="hiveQueryFileLocation" value="${hive.query.file.location}"/>
-		<!-- <property name="nlpHiveTableUpdater" ref="NLPSearchDAO"/> -->
+		<property name="nlpHiveTableUpdater" ref="NLPSearchDAO"/>
 	</bean>
 	
 	<bean id="jsonServices" class="org.clinical3PO.services.JsonService">
 		<property name="appDataDirectory" value="${clinical3PO.app.dataDirectory}"/>
 	</bean>
 	
-	<bean id="WebAppUtils" class="org.clinical3PO.common.utils.WebAppUtils" scope="singleton">
+	<bean id="WebAppUtils" class="org.clinical3PO.services.common.utils.WebAppUtils" scope="singleton">
 		<constructor-arg index="0" name="observationFile" value="${clinical3PO.observation.list}"/>
 	</bean>
 	

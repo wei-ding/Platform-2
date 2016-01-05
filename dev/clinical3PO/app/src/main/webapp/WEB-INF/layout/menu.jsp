@@ -143,9 +143,17 @@ $(document).ready(function(){
 			<li><a href="<c:url value = '/PatientSearchUserPrefs/'/>">Hadoop</a></li>
 		</ul>
 	 </li>
+	 	 
+	  <li class="menubar"><a href="#">Feature Extraction</a>
+		<ul>
+			<li><a href="<c:url value = '/FExtraction/ML-FLEX'/>" title="ML-FLEX">ML-FLEX</a></li>
+			<li><a href="<c:url value = '/FExtraction/Ugene'/>" title="Ugene">Ugene</a></li>
+			<!-- <li><a href="<c:url value = '/FExtraction/Visualization'/>" title="Visualization">Visualization</a></li>  -->
+		</ul>
+	 </li> 
 
 	 <li><a href="<c:url value = '/MLCrossValidation/'/>">ML - Cross Validation</a></li>
-	 <li><a href="<c:url value = '/MLCrossValidation/FExtraction'/>">ML - Feature Extraction</a></li>
+	 <li><a href="<c:url value = '/NLP/'/>">NLP-Hive Update</a></li>
 	</ul>
   </li>
 

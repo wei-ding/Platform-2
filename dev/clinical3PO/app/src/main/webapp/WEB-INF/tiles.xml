@@ -63,7 +63,22 @@
 	<definition name="MLCrossValidationView" extends="base.definition">
 		<put-attribute name="title" value="Patient Search With User Prefs" />
 		<put-attribute name="body" value="/WEB-INF/pages/MLCrossValidation.jsp" />
+	</definition>
+	
+	<definition name="FEMLFlex" extends="base.definition">
+		<put-attribute name="title" value="FExtract ML-Flex With User Prefs" />
+		<put-attribute name="body" value="/WEB-INF/pages/FEMlFlex.jsp" />
+	</definition>
+	
+	<definition name="FEUgene" extends="base.definition">
+		<put-attribute name="title" value="FExtract ML-Flex With User Prefs" />
+		<put-attribute name="body" value="/WEB-INF/pages/FEUgene.jsp" />
 	</definition>	
+	
+	<definition name="nlpview" extends="base.definition">
+		<put-attribute name="title" value="Search List" />
+		<put-attribute name="body" value="/WEB-INF/pages/NLP.jsp" />
+	</definition>
 		
 	<definition name="MysearchesView" extends="base.definition">
 		<put-attribute name="title" value="Search List" />
@@ -94,6 +109,5 @@
 		<put-attribute name="title" value="Patient Search With User Prefs" />
 		<put-attribute name="body" value="/WEB-INF/pages/visualization/MLFlexReport.jsp" />
 	</definition>	
-	
 	
 </tiles-definitions>

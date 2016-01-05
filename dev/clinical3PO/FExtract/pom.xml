@@ -59,6 +59,7 @@
 				<excludes>
 					<exclude>**/*.java</exclude>
 					<exclude>**/*.xml</exclude>
+					<exclude>**/*.txt</exclude>
 				</excludes>
 			</resource>
 		</resources>

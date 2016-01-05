@@ -7,20 +7,18 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Timestamp;
 import java.util.List;
-import java.util.regex.Pattern;
-
-import org.springframework.dao.EmptyResultDataAccessException;
-import org.springframework.jdbc.core.BatchPreparedStatementSetter;
-import org.springframework.jdbc.core.PreparedStatementCreator;
-import org.springframework.jdbc.core.support.JdbcDaoSupport;
-import org.springframework.jdbc.support.GeneratedKeyHolder;
-import org.springframework.jdbc.support.KeyHolder;
 
 import org.clinical3PO.model.JobSearchMapper;
 import org.clinical3PO.model.JobSearchParameter;
 import org.clinical3PO.model.JobSearchParameterMapper;
 import org.clinical3PO.services.constants.JobStatus;
 import org.clinical3PO.services.dao.model.JobSearch;
+import org.springframework.dao.EmptyResultDataAccessException;
+import org.springframework.jdbc.core.BatchPreparedStatementSetter;
+import org.springframework.jdbc.core.PreparedStatementCreator;
+import org.springframework.jdbc.core.support.JdbcDaoSupport;
+import org.springframework.jdbc.support.GeneratedKeyHolder;
+import org.springframework.jdbc.support.KeyHolder;
 
 
 

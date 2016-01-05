@@ -1,4 +1,4 @@
-package org.clinical3PO.common.utils;
+package org.clinical3PO.services.common.utils;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -10,6 +10,13 @@ import java.util.Map;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * This class is referred from app package.
+ * 
+ * Load's content menu from a file to display over multiple observation search.
+ * @author 3129891
+ *
+ */
 public class WebAppUtils {
 
 	private String observationFile;

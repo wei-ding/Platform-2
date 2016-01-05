@@ -313,7 +313,7 @@ public class FEMain {
 			//try this. We need a PrintWriter, command line object, and the configuration file objects.
 			//this is what we want 
 			//was String hdrPathStr = cmdline.outputDirectory+ "/arffhdr.txt";
-			String arffPathStr = cmdline.outputArffPathAndName;
+			String arffPathStr = cmdline.outputArffPathAndName+"/"+cmdline.outputArffPathAndName+".arff";
 			//try this debug - doesn't help
 			//String hdrPathStr = "arffhdr.txt";
 			Path arffPath = new Path(arffPathStr);

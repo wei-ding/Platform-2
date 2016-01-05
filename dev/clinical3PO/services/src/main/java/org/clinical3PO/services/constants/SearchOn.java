@@ -6,7 +6,8 @@ public enum SearchOn {
 	PATIENTIDUSERPREFS("Patient ID User Prefs"), PATIENTIDUSERPREFSBATCH("Patient ID User Prefs - Batch"), BATCHSEARCHRESTRICTED("Patient ID User Prefs - Batch Restricted"),
 	CROSSVALIDATION("Cross Validation"), PATIENTIDHIVE("Patient ID Hive"), OBSERVATIONIDHIVE("Observation ID Hive"),
 	PATIENTIDUSERPREFSBATCHHIVE("Patient ID User Prefs - Hive"),PATIENTIDR("Patient ID R"),OBSERVATIONIDR("Observation ID R"),
-	PATIENTIDUSERPREFSBATCHR("Patient ID User Prefs R- Batch"), FEATUREEXTRACTION("Feature Extraction");
+	PATIENTIDUSERPREFSBATCHR("Patient ID User Prefs R- Batch"), NLPse("NLP To Hive Update"),
+	FEMLFLEX("Feature Extraction - MlFlex"), FEUGENE("Feature Extraction - Ugene");
 	
 	private String searchOn;
 	

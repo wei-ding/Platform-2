@@ -55,7 +55,7 @@ public class MLCrossValidation {
 
 	private @Autowired ServletContext servletContext;
 
-	private static final Logger logger = LoggerFactory.getLogger(ObservationSearch.class);
+	private static final Logger logger = LoggerFactory.getLogger(MLCrossValidation.class);
 	
 	private static final String stringSeparator = "|";
 	
@@ -72,8 +72,7 @@ public class MLCrossValidation {
 		}
 				
 		assert (jobSearchService != null);
-		User user = (User) SecurityContextHolder.getContext()
-				.getAuthentication().getPrincipal();
+		User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 		assert (user != null);
 
 		if (batchFile.isEmpty()) {
@@ -189,8 +188,7 @@ public class MLCrossValidation {
         response.setContentLength((int) downloadFile.length());
  
         String headerKey = "Content-Disposition";
-        String headerValue = String.format("attachment; filename=\"%s\"",
-                downloadFile.getName());
+        String headerValue = String.format("attachment; filename=\"%s\"", downloadFile.getName());
         response.setHeader(headerKey, headerValue);
  
         OutputStream outStream = response.getOutputStream();
@@ -205,112 +203,4 @@ public class MLCrossValidation {
         inputStream.close();
         outStream.close();
     }
-	
-	
-	@RequestMapping(value = "/FExtraction", method = RequestMethod.POST)
-	public String getMLFeatureExtraction(
-			@RequestParam("batchFile") MultipartFile batchFile,
-			@Valid @ModelAttribute("crossValidationForm") CrossValidationForm crossValidationForm, 
-			BindingResult result,Model model) {
-		
-		if (result.hasErrors()) {
-			return "MLCrossValidationView";
-		}
-				
-		assert (jobSearchService != null);
-		User user = (User) SecurityContextHolder.getContext()
-				.getAuthentication().getPrincipal();
-		assert (user != null);
-
-		if (batchFile.isEmpty()) {
-			logger.error("Uploaded file is empty");
-			return "redirect:/MySearch/";
-		}
-
-		BufferedOutputStream stream = null;
-		BufferedReader reader = null;
-
-		try {
-			byte[] bytes = batchFile.getBytes();
-
-			File dir = new File(jobSearchService.getAppDataDirectory()+File.separator+"batchUploads");
-			
-			JobSearch jobSearch = new JobSearch();
-			jobSearch.setSearchBy(user.getId());
-
-			if (!dir.exists())
-				dir.mkdirs();
-
-			// Create the file on server
-			String name = "BatchFile"+ new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
-			File savedBatchFile = new File(dir.getAbsolutePath() + File.separator + name);
-			
-			if (envType == EnvironmentType.DEVELOPMENT && logger.isDebugEnabled()){
-				logger.debug("File uploaded path:"+savedBatchFile.getAbsolutePath());
-			}
-
-			try{
-				stream = new BufferedOutputStream(new FileOutputStream(savedBatchFile));
-				stream.write(bytes);
-			} catch (Exception e) {
-				logger.info("File upload directory not found");
-			} finally{
-				if (stream!=null) stream.close();
-			}
-						
-			String regexSeparator = "(?<!\\\\)" + Pattern.quote(stringSeparator);
-			List<JobSearchParameter> searchParameters = new ArrayList<JobSearchParameter>(1);
-			try{
-				reader = new BufferedReader(new FileReader(savedBatchFile));
-				String patientInfo = reader.readLine();
-
-				searchParameters.add(new JobSearchParameter(
-						JobSearchConstants.PATIENTIDS.getSearchKey(),
-						patientInfo.split(regexSeparator)[0], 1));
-				searchParameters.add(new JobSearchParameter(
-						JobSearchConstants.OBSERVATIONIDS.getSearchKey(),
-						patientInfo.split(regexSeparator)[1], 1));
-				searchParameters.add(new JobSearchParameter(
-						JobSearchConstants.BINS.getSearchKey(),
-						patientInfo.split(regexSeparator)[2], 1));
-				searchParameters.add(new JobSearchParameter(
-						JobSearchConstants.CLASSIFIER.getSearchKey(),
-						crossValidationForm.getClassificationAlgorithm(),1));
-				searchParameters.add(new JobSearchParameter(
-						JobSearchConstants.FOLDS.getSearchKey(),
-						crossValidationForm.getFolds().toString(),1));
-				searchParameters.add(new JobSearchParameter(
-						JobSearchConstants.NoITERATIONS.getSearchKey(),
-						crossValidationForm.getNumberOfIterations().toString(),1));
-				
-				jobSearch.setSearchParameters(searchParameters);
-			} catch (Exception e) {
-				logger.error("Unable to read uploaded file");
-			} finally{
-				if (reader!=null) reader.close();
-			}
-
-			JobSearchDetails jobSearchDetails = new JobSearchDetails();
-			jobSearchDetails.setSearchOn(SearchOn.FEATUREEXTRACTION.getSearchOn());
-			jobSearchDetails.setSearchType("FeatureExtraction");
-			jobSearchDetails.setScriptType(SearchScript.FEATUREEXTRACTION.getSearchScript());
-			jobSearchDetails.setScriptParameters(jobSearchService.getCrossValidationParameters(jobSearch));
-
-			jobSearchService.searchJob(jobSearch, jobSearchDetails);
-			
-			File newServerFile = new File(dir.getAbsolutePath() + File.separator + "UploadedFile-" + jobSearch.getId() + ".txt");
-			FileUtils.copyFile(savedBatchFile, newServerFile);
-
-			return "redirect:/MySearch/";
-		} catch (Exception e) {
-			logger.error(e.getMessage());
-			return "redirect:/MySearch/";
-		} 
-	}
-
-	@RequestMapping(value = "/FExtraction", method = RequestMethod.GET)
-	public String setMLFeatureExtraction(ModelMap model) {
-		model.addAttribute("crossValidationForm", new CrossValidationForm());
-		return "MLCrossValidationView";
-	}
 }

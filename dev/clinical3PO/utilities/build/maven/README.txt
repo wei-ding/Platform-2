@@ -100,6 +100,12 @@
                <clinical3PO.accumulo.table.observationIdSearch.observation>observation</clinical3PO.accumulo.table.observationIdSearch.observation>
                <clinical3PO.accumulo.table.observationIdSearch.index>personobservationid</clinical3PO.accumulo.table.observationIdSearch.index>
                <clinical3PO.accumulo.table.observation.death>death</clinical3PO.accumulo.table.observation.death>
+			   
+			   <!-- This is to spot jar of NLP. This jar output's an xml file with new patient attributes. -->
+			   <nlp.codebase.jar>/home/hdfs/codebase/Stage/Java/REDExHadoop/target</nlp.codebase.jar>
+			   
+			   <!-- Path of UGENE executable. Provide the path of compiled and executable(.exe) path -->
+			   <clinical3PO.ugene.directory>/opt/ugene</clinical3PO.ugene.directory>
 
       </properties>
     </profile>
