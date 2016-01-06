@@ -10,6 +10,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.clinical3PO.common.environment.EnvironmentType;
 import org.clinical3PO.model.JobSearchDetails;
 import org.clinical3PO.model.JobSearchParameter;
+import org.clinical3PO.services.common.utils.WebAppUtils;
 import org.clinical3PO.services.constants.JobStatus;
 import org.clinical3PO.services.constants.SearchOn;
 import org.clinical3PO.services.dao.JobSearchDAO;
@@ -33,6 +34,9 @@ public class JobSearchService {
 
 	@Autowired
 	private EnvironmentType envType;
+	
+	@Autowired
+	private WebAppUtils webAppUtils;
 
 	private PatientSearchService patientSearchService;
 
