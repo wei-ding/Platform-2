@@ -172,11 +172,12 @@
 				<directory>src/main/resources</directory>
 				<filtering>true</filtering>
 				<excludes>
-					<exclude>category.txt</exclude>
+					 <exclude>category.txt</exclude>
 					<exclude>hiveQueries.properties</exclude>
 				</excludes>
 			</resource>
 		</resources>
+		
 		<plugins>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>

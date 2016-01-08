@@ -29,8 +29,9 @@ public class MultiDeathMapperTest {
 		String input = "DEATH	138312	2013-01-06	43	NULL	NULL";
 		mapDriver.withInput(new LongWritable(1234567), new Text(input));
 		input="NO DEATH	138539	2013-01-06	43	NULL	NULL";
-		mapDriver.withOutput(new Text("Creatinine~138312"), new Text("Death"));
+		
 		mapDriver.withOutput(new Text("Creatinine~138539"), new Text("Alive"));
+		mapDriver.withOutput(new Text("Creatinine~138312"), new Text("Death"));		
 		mapDriver.runTest();
 
 	}
