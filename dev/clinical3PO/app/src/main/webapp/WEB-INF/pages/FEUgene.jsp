@@ -16,6 +16,31 @@
 		<td>Class Property</td>
 		<td><form:input path="classProperty" id="classPropertyInput" /></td>
 	</tr>
+	
+	<tr>
+		<td>class time</td>
+		<td>
+			<form:input path="classTime" id="classTimeInput" />
+			<form:errors path="classTime" cssClass="error" />
+		</td>
+		</tr>	
+		
+	<tr>
+		<td>start time</td>
+		<td>
+			<form:input path="startTime" id="startTimeInput" />
+			<form:errors path="startTime" cssClass="error" />
+		</td>
+	</tr>
+		
+	<tr>
+		<td>end time</td>
+		<td>
+			<form:input path="endTime" id="endTimeInput" />
+			<form:errors path="endTime" cssClass="error" />
+		</td>
+	</tr>
+	
 	<tr align="center">
 		<td colspan="2"><input type="submit" class="styled-button-4" value="Submit">
 		&nbsp;<input type="reset" class="styled-button-4" value="Clear"></td>

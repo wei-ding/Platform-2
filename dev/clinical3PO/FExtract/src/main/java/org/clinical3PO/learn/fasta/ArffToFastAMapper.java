@@ -12,7 +12,7 @@ import com.google.gson.Gson;
 public class ArffToFastAMapper extends Mapper<LongWritable, Text, Text, Text>{
 
 	private String[] attributes = null;
-	private int length = 17;
+	private int binsCount = 0;
 	private StringBuilder sb = null;
 	private boolean pidFlag = false;
 
@@ -25,6 +25,8 @@ public class ArffToFastAMapper extends Mapper<LongWritable, Text, Text, Text>{
 
 		// Following steps are part of De-serializing the ArffToFastAProperties class object using Gson API.
 		String deserObject = conf.get("properties");
+		String binsWithRespectiveEndTime = conf.get("c3po.binsWithRespectiveEndTime");
+		binsCount = Integer.parseInt(binsWithRespectiveEndTime.substring(0, binsWithRespectiveEndTime.indexOf(":")));
 		Gson gson = new Gson();
 		ArffToFastAProperties object = gson.fromJson(deserObject, ArffToFastAProperties.class);
 		pidFlag = object.getPidFlag();
@@ -69,7 +71,7 @@ public class ArffToFastAMapper extends Mapper<LongWritable, Text, Text, Text>{
 				if(pidFlag) {
 					sb.append(data[0]).append(",");
 				}
-				j=i+length;
+				j=i+binsCount;
 				while(i < j) {
 					sb.append(data[i]).append(",");
 					i++;

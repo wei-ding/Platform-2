@@ -68,6 +68,7 @@
 			   <!-- CONCEPT TYPES IN A FILE -->
 			   <!-- This propery helps to add/modify/delete concept types. This reflect in observation search(drop down) -->
 			   <!-- User can change the path and name of file accordingly. But, make sure the file is available in the specified path -->
+			   <!-- Create or copy from 'Stage/dev/clinical3PO/utilities/build/application/' -->
 			   <clinical3PO.observation.list>/home/hdfs/c3po-dist/clinical3PO-hadoop-scripts/observationList.csv</clinical3PO.observation.list>
 
                <!-- Uncomment the relevant one depending on compilation local or remote -->

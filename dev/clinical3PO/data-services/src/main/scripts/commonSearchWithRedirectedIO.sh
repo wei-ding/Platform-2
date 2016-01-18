@@ -56,12 +56,18 @@
 #$7 Classification Algorithm
 #$8 Folds (integer)
 #$9 Iterations (integer)
+#${10} ClassTime (String-hh:mm:ss)
+#${11} StartTime (String-hh:mm:ss)
+#${12} EndTime (String-hh:mm:ss)
 
 #Index 15 - NLP 
 # No input properties - atleast for now.
 
 #Index 16 - Feature Extraction - Ugene
 #$6 Class Property(Ex: diasabp or glucose)
+#$7 ClassTime (String-hh:mm:ss)
+#$8 StartTime (String-hh:mm:ss)
+#$9 EndTime (String-hh:mm:ss)
 
 
 # Check the command line arguments
@@ -146,9 +152,9 @@ then
 
 elif [ $1 -eq 14 ]
 then
-   if [ $# -ne 9 ]
+   if [ $# -ne 12 ]
    then
-       echo "Usage: $0 14 <Unique Output Dir> <LocalDirectory> <LocalFileName> <Job Id> <Class Property> <Classification ALgorithm> <Folds> <Iterations>"
+       echo "Usage: $0 14 <Unique Output Dir> <LocalDirectory> <LocalFileName> <Job Id> <Class Property> <Classification ALgorithm> <Folds> <Iterations> <Class Time> <Start Time> <End Time>"
        exit
    fi 
    
@@ -162,9 +168,9 @@ then
  
 elif [ $1 -eq 16 ]
 then
-   if [ $# -ne 6 ]
+   if [ $# -ne 9 ]
    then
-       echo "Usage: $0 16 <Unique Output Dir> <LocalDirectory> <LocalFileName> <Job Id> <Class Property> "
+       echo "Usage: $0 16 <Unique Output Dir> <LocalDirectory> <LocalFileName> <Job Id> <Class Property> <Class Time> <Start Time> <End Time>"
        exit
    fi        
 fi
@@ -234,12 +240,26 @@ elif [ $1 -eq 13 ]
 then
     Rscript ${clinical3PO.hadoop.shellscripts.dir}/BatchSearchrmr.R $6 ${hadoop.file.conceptFile} ${hadoop.file.deathFile} ${hadoop.file.observationFile} /user/$LOGNAME/$2 $3/$4
 
-elif [ $1 -eq 14 ] || [ $1 -eq 16 ]
+elif [ $1 -eq 14 ]
 then
 	echo "Initiating Feature Extraction Module With Ml-Flex. "
-	${clinical3PO.hadoop.shellscripts.dir}/fextract.sh $6 $2
+	
+	${clinical3PO.hadoop.shellscripts.dir}/fextract.sh $6 $2 ${10} ${11} ${12}
    
    	if [ $? -ne 0 ]
+   	then
+      	echo "Feature Extraction execution failed. Exiting."
+	    cd ${clinical3PO.hadoop.shellscripts.dir}/lib
+	    java -ea -cp "*" org.clinical3PO.services.JobStatusUpdate $5 FAIL
+      	exit
+   	fi
+
+elif [ $1 -eq 16 ]
+then
+	echo "Initiating Feature Extraction Module With UGENE. "
+	${clinical3PO.hadoop.shellscripts.dir}/fextract.sh $6 $2 $7 $8 $9
+	
+	if [ $? -ne 0 ]
    	then
       	echo "Feature Extraction execution failed. Exiting."
 	    cd ${clinical3PO.hadoop.shellscripts.dir}/lib
@@ -463,8 +483,8 @@ then
 	echo " ---------------------------------  "
 	cd ${clinical3PO.hadoop.shellscripts.dir}/lib
 	hadoop jar clinical3PO-FExtract-1.0.0-SNAPSHOT-jar-with-dependencies.jar org.clinical3PO.learn.fasta.ArffToFastADriver  \
-	-D c3fe.inputdir=$2/$2.arff -D c3fe.outputdir=$2/fasta  \
-	file://${clinical3PO.hadoop.shellscripts.dir}/fastaDescreteProperties.txt
+	-D c3fe.inputdir=$2/$2.arff -D c3fe.outputdir=$2/fasta -D c3po.binsWithRespectiveEndTime=$9 \
+	file://${clinical3PO.hadoop.shellscripts.dir}/fastaDescreteProperties.txt 
 	
 	if [ -d "${clinical3PO.app.dataDirectory}/ugene" ]
 	then

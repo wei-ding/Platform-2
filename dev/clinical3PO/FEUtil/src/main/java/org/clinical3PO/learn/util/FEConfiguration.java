@@ -643,7 +643,7 @@ public class FEConfiguration {
 		return accumulateFromTextConfigFile(configTokens, classProperty);
 	}
 		
-	public boolean accumulateFromTextConfigFile(ArrayList<CFECToken> configTokens, String classProperty) throws Exception {
+	public boolean accumulateFromTextConfigFile(ArrayList<CFECToken> configTokensList, String classProperty) throws Exception {
 		//was TreeMap<String,ArrayList<C3POFeatureExtractionStrategy>>
 		//here's what we'll build here:
 		//TreeMap<String,ArrayList<C3POFeatureExtractionStrategy>> propStrategies = new TreeMap<String,ArrayList<C3POFeatureExtractionStrategy>>();
@@ -658,14 +658,14 @@ public class FEConfiguration {
 		
 		while(!done) {
 			//now we allow either "property" or "class"
-			String keyword = configTokens.get(nextStart).token;
+			String keyword = configTokensList.get(nextStart).token;
 			//System.err.println("accumulateFromTextConfigFile sees keyword: |" + keyword + "|");			
 			
 			if(!keyword.equalsIgnoreCase("property") && !keyword.equalsIgnoreCase("class")) {
 				throw new Exception("Expected either 'property' or 'class' keyword");
 			}
 			
-			CFECEntity ent = parseKeywordPlusClass(configTokens, keyword, true, nextStart, configTokens.size());
+			CFECEntity ent = parseKeywordPlusClass(configTokensList, keyword, true, nextStart, configTokensList.size());
 			int propertyExtent = ent.lengthInTokens;
 			
 			System.err.println("Found a " + keyword + " block! Name " + ent.entityName + " class " + ent.entityClass + " start " + ent.firstToken + " offset to content " + ent.offsetToContent + " length " + ent.lengthInTokens);
@@ -707,7 +707,7 @@ public class FEConfiguration {
 				//fill in the components with parseSinglePropertyBlock
 				//step over the keyword, class name, opencurly with the entity's offset to content (and subtract that from the max # tokens)
 				//TODO maybe factor that in the entity's returned extent to make that less confusing? - that's now done
-				if(parseSinglePropertyBlock(configTokens, nextStart+ent.offsetToContent, nextStart+ent.offsetToContent+propertyExtent, strat)) {
+				if(parseSinglePropertyBlock(configTokensList, nextStart+ent.offsetToContent, nextStart+ent.offsetToContent+propertyExtent, strat)) {
 					System.err.println("Successfully parsed property " + ent.entityName);
 				}
 				
@@ -795,7 +795,7 @@ public class FEConfiguration {
 			}
 			
 			nextStart += ent.offsetToContent+propertyExtent;
-			if(nextStart >= configTokens.size()) {
+			if(nextStart >= configTokensList.size()) {
 				done = true;
 			}
 		}
