@@ -1,16 +1,12 @@
 package org.clinical3PO.learn.fasta;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.HashMap;
-import java.util.LinkedHashSet;
 import java.util.Map;
 import java.util.Set;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.conf.Configured;
-import org.apache.hadoop.fs.FSDataInputStream;
 import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.NullWritable;
@@ -35,14 +31,13 @@ import com.google.gson.Gson;
  */
 public class ArffToFastADriver extends Configured implements Tool {
 
-	private String relation = null;
-	private int bins = 0;
-	private Set<String> attributeSet = null;
-	private boolean pidFlag = false;
+//	private String relation = null;
+//	private Set<String> attributeSet = null;
+//	private boolean pidFlag = false;
 	
 	public ArffToFastADriver() {
 
-		attributeSet = new LinkedHashSet<String>();
+//		attributeSet = new LinkedHashSet<String>();
 	}
 	
 	public static void main(String[] args) throws Exception {
@@ -82,16 +77,17 @@ public class ArffToFastADriver extends Configured implements Tool {
 			System.exit(0);
 		}
 		
-		//method call
-		readParseArffHeaders(fs.open(input));
+		//Object creation & method call
+		ArffHeaderReader arffHeader = new ArffHeaderReader();
+		arffHeader.readParseArffHeaders(fs.open(input));
 		
 		/*
 		 * The following class parses properties file(xml format) located in local FS.
 		 * After parse get the object and pass it on to Gson API. 
 		 * 
-		 * Setting pidFlag(personID flag) so that mapper and reducer and react accordingly.
+		 * Setting pidFlag(personID flag) so that mapper and reducer will react accordingly.
 		 */
-		ArffToFastAProperties object = new ArffToFastAProperties(pidFlag);
+		ArffToFastAProperties object = new ArffToFastAProperties(arffHeader.isPidFlag());
 		boolean flag = object.parsePropertiesFile(localFS.open(propertiesFile));
 		if(!flag) {
 			System.out.println("Properties file not loaded");
@@ -109,6 +105,7 @@ public class ArffToFastADriver extends Configured implements Tool {
 		//setting conf with 'object-converted-json-string'
 		conf.set("properties", serializedObjet);
 
+		Set<String> attributeSet = arffHeader.getAttributeSet();
 		StringBuilder sb = new StringBuilder();
 		System.out.println("----------------------------------------------");
 		System.out.println(attributeSet);
@@ -119,7 +116,8 @@ public class ArffToFastADriver extends Configured implements Tool {
 			sb.append(attribute).append(",");
 		}
 
-		conf.set("relation", relation);
+		conf.setInt("bins", arffHeader.getBins());
+		conf.set("relation", arffHeader.getRelation());
 		conf.set("attribute", sb.substring(0, sb.length()-1));
 		sb.delete(0, sb.length());
 		sb = null;
@@ -154,79 +152,6 @@ public class ArffToFastADriver extends Configured implements Tool {
 		
 		job.setJarByClass(ArffToFastADriver.class);
 		return job.waitForCompletion(true) ? 0:1;
-	}
-
-	/**
-	 * Reading(from hdfs) Arff file header to get count of unique number of attributes and relation type.
-	 * While there's an information available(separated by '_') in each attribute, split accordingly and 
-	 * 	store the in linked list.   
-	 * @param fsds
-	 * @throws IOException
-	 */
-	private void readParseArffHeaders(FSDataInputStream fsds) throws IOException {
-
-		// Initializing reader to read arff file.
-		BufferedReader br = new BufferedReader(new InputStreamReader(fsds));
-		String arffHeader = null;
-		StringBuilder sb = null;
-		try {
-
-			sb = new StringBuilder();
-			arffHeader = br.readLine();	//line-by-line
-
-			// Loop over the line for not null && not empty
-			while(arffHeader != null) {
-
-				if(!arffHeader.isEmpty()) {
-
-					/*
-					 * There are 3 string in each @attribute line.
-					 * 1) @attribute itself
-					 * 2) unique attribute string
-					 * 3) type of unique attribute
-					 * NOTE: we are not using 3rd string/value (type of unique attribute)
-					 */
-					String[] inputLine= arffHeader.split("\\s+");
-
-					// very 1st line of arff file.
-					if(inputLine[0].equals("@relation")) {
-						relation = inputLine[1];
-					} else if(inputLine[0].equals("@attribute")) {
-
-						/*
-						 * All the @attribute String values contain information(separated by '_') expect PatientID & class attributes.
-						 * if helps to avoid PartientID and class attributes from insertion into set.
-						 * 
-						 * Only insert the unique name of the attribute instead of full name.
-						 * REASON:
-						 * n-unique attributes = n-fasta files with all patients of unique attributes.
-						 * Program to process above statement, have to remember the order of attributes in arff header.
-						 * Using LinkedSet to maintain the order. 
-						 */
-						String[] attribute = inputLine[1].split("_");
-						if(attribute.length == 1 && attribute[0].equalsIgnoreCase("PatientID")) {
-							pidFlag = true;
-						} else if(!attribute[0].equals("class")) {
-
-							sb.append(attribute[0]).append("_").append(attribute[1]).append("_").append(attribute[2]);
-							if(!attributeSet.contains(sb.toString())) {
-								attributeSet.add(sb.toString());
-							}
-						}
-						sb.delete(0, sb.length());
-					} else if(inputLine[0].equals("@data")) {	// hereafter arff data starts and header ends, so set 'conf' and break.
-						break;
-					} else {
-						continue;
-					}
-				}
-				arffHeader = br.readLine();		//read next line
-			}
-		} catch(IOException e) {
-			e.printStackTrace();
-		} finally {
-			br.close();
-		}
 	}
 
 	/**

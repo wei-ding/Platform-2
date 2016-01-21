@@ -9,6 +9,11 @@ import org.apache.hadoop.mapreduce.Mapper;
 
 import com.google.gson.Gson;
 
+/**
+ * This is a Mapper Class 
+ * @author 3129891
+ *
+ */
 public class ArffToFastAMapper extends Mapper<LongWritable, Text, Text, Text>{
 
 	private String[] attributes = null;
@@ -25,8 +30,7 @@ public class ArffToFastAMapper extends Mapper<LongWritable, Text, Text, Text>{
 
 		// Following steps are part of De-serializing the ArffToFastAProperties class object using Gson API.
 		String deserObject = conf.get("properties");
-		String binsWithRespectiveEndTime = conf.get("c3po.binsWithRespectiveEndTime");
-		binsCount = Integer.parseInt(binsWithRespectiveEndTime.substring(0, binsWithRespectiveEndTime.indexOf(":")));
+		binsCount = conf.getInt("bins", 0);
 		Gson gson = new Gson();
 		ArffToFastAProperties object = gson.fromJson(deserObject, ArffToFastAProperties.class);
 		pidFlag = object.getPidFlag();

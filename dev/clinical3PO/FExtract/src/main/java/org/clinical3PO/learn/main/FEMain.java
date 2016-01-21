@@ -191,24 +191,37 @@ public class FEMain {
 		FileSystem fs = FileSystem.get(conf);
 		FSDataInputStream FSInputStream = null;
 		Path path = null;
+		FileSystem localFS = null;
 
 		System.err.println("Reading filter config into conf string...");
-		path = new Path(new URI(cmdline.filterConfigFilePath)); //hopework
-		FSInputStream = fs.open(path);
+		
+		/*
+		 * Below are the two lines of code to read files from localFS (file:///) instead of hdfs (hdfs:///) 
+		 */
+		path = new Path(cmdline.filterConfigFilePath); 
+		localFS = FileSystem.get(path.toUri(), conf);
+		FSInputStream = localFS.open(path);
 		String filtconfContents = readFile(FSInputStream);
 		conf.set("filtconfContents", filtconfContents);
-		System.err.println("..." + filtconfContents.length() + " chars");
 		System.err.println("################################################");
 		System.err.println(filtconfContents);
+		FSInputStream = null;
+		localFS = null;
 
 		System.err.println("Reading feature extraction config into conf string...");
-		path = new Path(new URI(cmdline.feConfigFilePath)); //hopework
-		FSInputStream = fs.open(path);
+		
+		/*
+		 * Below are the two lines of code to read files from localFS (file:///) instead of hdfs (hdfs:///) 
+		 */
+		path = new Path(cmdline.feConfigFilePath);
+		localFS = FileSystem.get(path.toUri(), conf);
+		FSInputStream = localFS.open(path);
 		String feconfContents = readFile(FSInputStream);
 		conf.set("feconfContents", feconfContents);
-		System.err.println("..." + feconfContents.length() + " chars");
 		System.err.println("################################################");
 		System.err.println(feconfContents);
+		FSInputStream = null;
+		localFS = null;
 
 
 		//so let's add our cmdline parameters to the configuration and see how that looks.

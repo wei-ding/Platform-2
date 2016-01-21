@@ -483,7 +483,7 @@ then
 	echo " ---------------------------------  "
 	cd ${clinical3PO.hadoop.shellscripts.dir}/lib
 	hadoop jar clinical3PO-FExtract-1.0.0-SNAPSHOT-jar-with-dependencies.jar org.clinical3PO.learn.fasta.ArffToFastADriver  \
-	-D c3fe.inputdir=$2/$2.arff -D c3fe.outputdir=$2/fasta -D c3po.binsWithRespectiveEndTime=$9 \
+	-D c3fe.inputdir=$2/$2.arff -D c3fe.outputdir=$2/fasta \
 	file://${clinical3PO.hadoop.shellscripts.dir}/fastaDescreteProperties.txt 
 	
 	if [ -d "${clinical3PO.app.dataDirectory}/ugene" ]

@@ -11,10 +11,11 @@ echo End Time: \"$5\"
 
 cd ${clinical3PO.hadoop.shellscripts.dir}/lib/
 hadoop jar clinical3PO-FExtract-1.0.0-SNAPSHOT-jar-with-dependencies.jar org.clinical3PO.learn.main.FEMain \
--D c3fe.inputdir=${fe.file.data} -D c3fe.outputdir=output -D c3fe.incpid=true \
+-D c3fe.inputdir=${fe.file.data} -D c3fe.outputdir=$2 -D c3fe.incpid=true \
 -D c3fe.starttime=$4 -D c3fe.endtime=$5 -D c3fe.classproperty=$1 -D c3fe.classtime=$3 \
--D c3fe.filterconfig=${fe.file.filter.config} -D c3fe.feconfig=${fe.file.config} \
+-D c3fe.filterconfig=file://${clinical3PO.hadoop.shellscripts.dir}/filterconfig1.txt \
+-D c3fe.feconfig=file://${clinical3PO.hadoop.shellscripts.dir}/basicFEConfig.txt \
 -D c3fe.noOfReducers=${fe.number.reducers} -D c3fe.conceptFile=${hadoop.file.conceptFile} \
--D c3fe.outputdir=$2 -D c3fe.arffname=$2
+-D c3fe.arffname=$2
 
 exit $?

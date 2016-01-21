@@ -138,8 +138,21 @@
 			<filtered>true</filtered>
 			<fileMode>0755</fileMode>
 			<lineEnding>unix</lineEnding>
-		</file>	
-		
+		</file>
+		<file>
+			<source>${basedir}/../FExtract/src/main/resources/basicFEConfig.txt</source>
+			<outputDirectory></outputDirectory>
+			<filtered>true</filtered>
+			<fileMode>0755</fileMode>
+			<lineEnding>unix</lineEnding>
+		</file>
+		<file>
+			<source>${basedir}/../FExtract/src/main/resources/filterconfig1.txt</source>
+			<outputDirectory></outputDirectory>
+			<filtered>true</filtered>
+			<fileMode>0755</fileMode>
+			<lineEnding>unix</lineEnding>
+		</file>		
 		<file>
 			<source>${basedir}/../services/src/main/resources/category.txt</source>
 			<outputDirectory></outputDirectory>

@@ -24,9 +24,7 @@
 			   <!-- FEATURE EXTRACTION PROPERTIES -->
 			   <!-- tune fe.number.reducers parameter based on FREE-RAM, INPUT file size.Statistics: FREE-RAM=2GB, INPUT=10GB. fe.number.reducers=20. NOTE: Expecting output size as 10GB, worst-case scenario. -->
 			   <fe.number.reducers>5</fe.number.reducers>
-			   <fe.file.data>/user/hdfs/input/PhysionetData6G_FE.txt</fe.file.data> 
-			   <fe.file.config>/user/hdfs/basicFEConfig.txt</fe.file.config>
-			   <fe.file.filter.config>/user/hdfs/filterconfig1.txt</fe.file.filter.config>
+			   <fe.file.data>/user/hdfs/input/observationFromWimFile.txt</fe.file.data>
 			   
 			   <clinical3PO.hive.host>c3po-m-ambari.ec2.internal</clinical3PO.hive.host>
 			   <clinical3PO.hive.port>10010</clinical3PO.hive.port>
