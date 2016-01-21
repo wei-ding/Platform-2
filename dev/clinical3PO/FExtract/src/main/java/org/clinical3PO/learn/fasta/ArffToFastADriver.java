@@ -31,13 +31,7 @@ import com.google.gson.Gson;
  */
 public class ArffToFastADriver extends Configured implements Tool {
 
-//	private String relation = null;
-//	private Set<String> attributeSet = null;
-//	private boolean pidFlag = false;
-	
 	public ArffToFastADriver() {
-
-//		attributeSet = new LinkedHashSet<String>();
 	}
 	
 	public static void main(String[] args) throws Exception {

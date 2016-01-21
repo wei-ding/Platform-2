@@ -26,9 +26,15 @@ import org.clinical3PO.model.PatientSearchObservationDeatils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 
+/**
+ * This class is used for querying hive stuff for patientId, ObsrvationId, BatchSearch.
+ * Uses hiveQueries.properties file for dynamic query building, according to the user search criteria.
+ *  
+ * @author 3129891
+ *
+ */
 public class PatientSearchDAO {
 
 	@Autowired
@@ -46,265 +52,6 @@ public class PatientSearchDAO {
 	public void setHiveTemplate(JdbcTemplate hiveTemplate) {
 		this.hiveTemplate = hiveTemplate;
 	}
-
-	public void printPatientDeatils(String outputDir, String outputFile, String patientId, String omopHiveDbName,
-			String omopHiveConceptTable, String omopHiveObservationTable) throws DataAccessException{
-
-		String concept = omopHiveDbName.concat(".").concat(omopHiveConceptTable);//"c3pohivedemo.concept";
-		String observation = omopHiveDbName.concat(".").concat(omopHiveObservationTable);//"c3pohivedemo.observation";
-
-		String sql = "SELECT "+omopHiveConceptTable+".property_name, "
-				+omopHiveObservationTable+".observation_date, "
-				+ omopHiveObservationTable+".observation_time, "
-				+ omopHiveObservationTable+".value_as_number, "
-				+ omopHiveConceptTable+".value_units "
-				+ "FROM "+ observation +" "
-				+ "JOIN "+concept+" ON "
-				+ "("+omopHiveObservationTable+".observation_concept_id = "+omopHiveConceptTable+".src_concept_id) "
-				+ "WHERE "+omopHiveObservationTable+".person_id=" +patientId;
-
-		if (envType == EnvironmentType.DEVELOPMENT && logger.isDebugEnabled()){ 
-			logger.debug("Script for Patient Search:- " + sql);
-		}
-
-		List<PatientSearchObservationDeatils> patientObservations = hiveTemplate.query(
-				sql, new PatientSearchMapper(omopHiveConceptTable, omopHiveObservationTable));
-
-		if (envType == EnvironmentType.DEVELOPMENT && logger.isDebugEnabled()){ 
-			logger.debug("Patient Search Result Size:- " + patientObservations.size());
-		}
-
-		Iterator<PatientSearchObservationDeatils> it = patientObservations.iterator();
-
-		String OutPutDirecory = outputDir + File.separator + outputFile;
-		PrintWriter writer = null;
-		try {
-			writer = new PrintWriter(OutPutDirecory, "UTF-8");
-			while(it.hasNext()) {
-
-				writer.write(it.next().toString() + "\n");
-			}
-		} catch (FileNotFoundException e) {
-			logger.error("", e);
-		} catch (UnsupportedEncodingException e) {
-			logger.error("", e);
-		} finally {
-			if(writer != null) {
-				writer.flush();
-				writer.close();
-			}
-		}
-	}
-
-	public void getObservationDeatils(String outputDir, String outputFile, String patientId, 
-			String observationId, String omopHiveDbName, 
-			String omopHiveConceptTable, String omopHiveObservationTable,
-			String omompHiveDeathTable) throws DataAccessException{
-
-		String death = omopHiveDbName.concat(".").concat(omompHiveDeathTable); //"c3pohivedemo.death";
-		String concept = omopHiveDbName.concat(".").concat(omopHiveConceptTable);//"c3pohivedemo.concept";
-		String observation = omopHiveDbName.concat(".").concat(omopHiveObservationTable);//"c3pohivedemo.observation";
-
-		String[] patients = patientId.split(",");
-		int sizeOfPatients = patients.length;
-		String expression = " OR ";
-		String expression1 = omopHiveObservationTable+".person_id=";
-		String sql = "";
-		boolean flag = false;
-		for(int i = 0; i < sizeOfPatients; i++) {
-
-			if(flag){
-				sql = sql.concat(expression);
-			}
-			expression1 = expression1.concat(patients[i].trim()) ;
-			sql = sql.concat(expression1);
-			expression1 = omopHiveObservationTable+".person_id=";
-			flag = true;
-		}
-		String query = " SELECT "+omopHiveObservationTable+".person_id, "
-				+omopHiveObservationTable+".observation_date, "
-				+omopHiveObservationTable+".observation_time, "
-				+omopHiveObservationTable+".value_as_number, "
-				+omopHiveConceptTable+".value_units, "
-				+omopHiveConceptTable+".property_definition, "
-				+omompHiveDeathTable+".person_id FROM "+ observation +" "
-				+ "JOIN "+ concept +" ON ("
-				+omopHiveObservationTable+".observation_concept_id = "+omopHiveConceptTable+".src_concept_id) "
-				+ "LEFT OUTER JOIN "+ death +" ON ("
-				+omopHiveObservationTable+".person_id = "+omompHiveDeathTable+".person_id) "
-				+ "WHERE (" + sql +") AND "+omopHiveConceptTable+".property_name='"+observationId+"'";
-
-		if (envType == EnvironmentType.DEVELOPMENT && logger.isDebugEnabled()){
-			logger.debug("Script for Observation Search:- " + query);
-		}
-
-		List<ObservationSearchObservationDetails> observationSearch = hiveTemplate.query(
-				query, new ObservationSearchMapper(omompHiveDeathTable, omopHiveConceptTable, omopHiveObservationTable));
-
-		Iterator<ObservationSearchObservationDetails> it = observationSearch.iterator();
-		String OutPutDirecory = outputDir + File.separator + outputFile;
-		PrintWriter writer = null;
-		try {
-			writer = new PrintWriter(OutPutDirecory, "UTF-8");
-			while(it.hasNext()) {
-
-				writer.write(it.next().toString() + "\n");
-			}
-		} catch (FileNotFoundException e) {
-			logger.error("", e);
-		} catch (UnsupportedEncodingException e) {
-			logger.error("", e);
-		} finally {
-			if(writer != null) {
-				writer.flush();
-				writer.close();
-			}
-		}
-	}
-
-	public void getBatchSearchDeatils(String outputDir, String outputFile, String parameters, String omopHiveDbName, 
-			String omopHiveConceptTable, String omopHiveObservationTable,
-			String omompHiveDeathTable) throws DataAccessException{
-
-		String death = omopHiveDbName.concat(".").concat(omompHiveDeathTable); //"c3pohivedemo.death";
-		String concept = omopHiveDbName.concat(".").concat(omopHiveConceptTable);//"c3pohivedemo.concept";
-		String observation = omopHiveDbName.concat(".").concat(omopHiveObservationTable);//"c3pohivedemo.observation";
-
-		// calling method to parse input string.
-		String temp = parsingInputOfBatchSearchDeatils(parameters, omopHiveConceptTable, omopHiveObservationTable);
-
-		String query = "SELECT "+omopHiveConceptTable+".property_name, "
-				+omopHiveObservationTable+".person_id, "+omopHiveObservationTable+".observation_date, "
-				+omopHiveObservationTable+".observation_time, "
-				+omopHiveObservationTable+".value_as_number, "+omopHiveConceptTable+".value_units, "
-				+omopHiveConceptTable+".property_definition, "
-				+omompHiveDeathTable+".person_id FROM "+ observation +" "
-				+ "JOIN "+ concept +" ON ("
-				+omopHiveObservationTable+".observation_concept_id = "+omopHiveConceptTable+".src_concept_id) "
-				+ "LEFT OUTER JOIN "+ death +" ON ("
-				+omopHiveObservationTable+".person_id = "+omompHiveDeathTable+".person_id) "
-				+ "WHERE ("+ temp +")";
-
-		logger.info("Batch Search Query to execute " + query);
-		List<BatchSearchObservationDetails> batchSearch = hiveTemplate.query(
-				query, new BatchSearchMapper(omompHiveDeathTable, omopHiveConceptTable, omopHiveObservationTable));
-
-		Iterator<BatchSearchObservationDetails> it = batchSearch.iterator();
-		String OutPutDirecory = outputDir + File.separator + outputFile;
-		PrintWriter writer = null;
-		try {
-			writer = new PrintWriter(OutPutDirecory, "UTF-8");
-			while(it.hasNext()) {
-
-				writer.write(it.next().toString() + "\n");
-			}
-		} catch (FileNotFoundException e) {
-			logger.error("", e);
-		} catch (UnsupportedEncodingException e) {
-			logger.error("", e);
-		} finally {
-			if(writer != null) {
-				writer.flush();
-				writer.close();
-			}
-		}
-	}
-
-	private String parsingInputOfBatchSearchDeatils(String inputedFileForProcessing, 
-			String omopHiveConceptTable, String omopHiveObservationTable) {
-
-		String query = "";
-		boolean flag = false;
-		String expression = ",";
-		String obs_expression1 = "("+omopHiveObservationTable+".person_id IN (";
-		String con_expression = " AND ";
-		String con_expression1 = omopHiveConceptTable+".property_name IN (";
-
-		StringTokenizer inputSplits = new StringTokenizer(inputedFileForProcessing, "#");
-		Map<String, String> map = new HashMap<String, String>();
-		while(inputSplits.hasMoreTokens()) {
-
-			StringTokenizer tokens_Obs_ids_color = new StringTokenizer(inputSplits.nextToken(), "~");
-
-			String observation = tokens_Obs_ids_color.nextToken().trim();
-			String patientIds = tokens_Obs_ids_color.nextToken().trim();
-			if(map.containsKey(observation)) {
-
-				String val = map.get(observation);
-				if(val != patientIds) {
-
-					val = val.concat(",").concat(patientIds);
-					map.put(observation, val);
-				}
-			} else {
-				map.put(observation, patientIds);
-			}
-		}
-
-		Set<String> keys = map.keySet();
-		Set<String> values = new HashSet<String>(map.values());
-
-		int key_size = keys.size();
-		int values_size = values.size();
-		if(values_size == 1 && key_size >= 1) { 
-
-			for(String ids : values) {
-				query = obs_expression1.concat(ids).concat(")");
-			}
-			query = query.concat(con_expression).concat(con_expression1);
-			Iterator<String> it_keys = keys.iterator();
-			String temp = "";
-			while(it_keys.hasNext()) {
-
-				if(flag) {
-					temp = temp.concat(expression);
-				}
-				temp = temp.concat("'").concat(it_keys.next()).concat("'");
-				flag = true;
-			}
-			query = query.concat(temp).concat("))");
-
-		} else if(values_size >= 1 && key_size >= 1) {
-
-			Set<Map.Entry<String, String>> set = map.entrySet();
-			Iterator<Map.Entry<String, String>> it = set.iterator();
-
-			String temp = "";
-			while(it.hasNext()) {
-
-				if(flag) {
-					query = query + " OR ";
-				}
-				Map.Entry<String, String> me = it.next();
-				String k = me.getKey();
-				String val = me.getValue();
-				temp = temp + obs_expression1.concat(val).concat(")");
-				temp = temp.concat(con_expression);
-				temp = temp.concat(con_expression1).concat("'").concat(k).concat("'").concat("))");
-				query = query + temp;
-				temp = "";
-				flag = true;
-			}
-		}
-		return query;	
-	}
-
-
-	/*
-	 * ---------------------------------------------------------------------------------
-	 * #################################################################################
-	 * 
-	 * The above code is replicated here with the followign changes:
-	 * 1) Query is not written in the code, its read from the file. Body of the query is 
-	 * provided in properties file with key-value pair. Read and fill the required details.
-	 * Name and Location of properties file: 
-	 * 1) Name :- hiveQueries.properties
-	 * 2) Location :- clinical3PO/data-services/src/main/resources
-	 * 
-	 * 
-	 * #################################################################################
-	 * ---------------------------------------------------------------------------------
-	 */
 
 	/**
 	 * Reading properties file by initializing Properties. Closing the connection once the 
@@ -528,6 +275,7 @@ public class PatientSearchDAO {
 					patientId = patientId.replaceAll("\\s", "");
 					patientId = patientId.substring(1, patientId.length() -1);
 
+					query = query + " " +query_sub1;
 					query = query.replaceAll("\\$\\{personId\\}", patientId);
 					query = query.replaceAll("\\$\\{propertyName\\}", "'"+observationId+"'");
 					logger.info("Query to be executed: " + query +"\n");
