@@ -1,0 +1,10 @@
+[
+  ["Cluster","% of Total Pts","N of Top 20% High Risk","Most Freq Condition"  ],
+  ["CV Risk/Obesity","19.2%","27","86.4% Hypertension"  ],
+  ["Healthy","9.0%","15","100% Healthy"  ],
+  ["Hyperlipidemia","2.9%","0","100% Hyperlipidemia"  ],
+  ["Multi-Chronic","45.4%","1,092","63.8% Hypertension" ],
+  ["Obesity","10.3%","6","100% Obesity"  ],
+  ["COPD/Asthma","10.3%","220","99.7% COPD"  ],
+  ["Renal Disease","9.6%","723","88.9% HTN" ]
+]

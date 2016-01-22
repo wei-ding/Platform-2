@@ -1,0 +1,135 @@
+[
+  {
+    "@type": "d",
+    "@rid": "#17:107",
+    "@version": 1,
+    "@class": "Event",
+    "eventId": 10108,
+    "createUserId": "w.ding",
+    "data": {
+      "enableCors": true,
+      "updateDate": "2015-03-27T02:24:59.056",
+      "updateUserId": "w.ding",
+      "ruleClass": "org.clinical3po.backendservices.rule.user.RefreshTokenRule"
+    },
+    "name": "updCors",
+    "category": "rule",
+    "createDate": "2015-03-27T02:24:59.056",
+    "ipAddress": "127.0.0.1",
+    "@fieldTypes": "eventId=l,createDate=t"
+  },
+  {
+    "@type": "d",
+    "@rid": "#17:123",
+    "@version": 1,
+    "@class": "Event",
+    "eventId": 10124,
+    "createUserId": "w.ding",
+    "data": {
+      "enableCors": true,
+      "updateDate": "2015-03-20T01:17:23.407",
+      "updateUserId": "w.ding",
+      "ruleClass": "org.clinical3po.backendservices.rule.menu.GetMenuRule"
+    },
+    "name": "updCors",
+    "category": "rule",
+    "createDate": "2015-03-20T01:17:23.406",
+    "ipAddress": "127.0.0.1",
+    "@fieldTypes": "eventId=l,createDate=t"
+  },
+  {
+    "@type": "d",
+    "@rid": "#17:127",
+    "@version": 1,
+    "@class": "Event",
+    "eventId": 10128,
+    "createUserId": "w.ding",
+    "data": {
+      "enableCors": true,
+      "updateDate": "2015-03-20T01:27:11.135",
+      "updateUserId": "w.ding",
+      "ruleClass": "org.clinical3po.backendservices.rule.form.GetFormRule"
+    },
+    "name": "updCors",
+    "category": "rule",
+    "createDate": "2015-03-20T01:27:11.134",
+    "ipAddress": "127.0.0.1",
+    "@fieldTypes": "eventId=l,createDate=t"
+  },
+  {
+    "@type": "d",
+    "@rid": "#17:128",
+    "@version": 1,
+    "@class": "Event",
+    "eventId": 10129,
+    "createUserId": "w.ding",
+    "data": {
+      "enableCors": true,
+      "updateDate": "2015-03-20T01:27:25.345",
+      "updateUserId": "w.ding",
+      "ruleClass": "org.clinical3po.backendservices.rule.page.GetPageRule"
+    },
+    "name": "updCors",
+    "category": "rule",
+    "createDate": "2015-03-20T01:27:25.345",
+    "ipAddress": "127.0.0.1",
+    "@fieldTypes": "eventId=l,createDate=t"
+  },
+  {
+    "@type": "d",
+    "@rid": "#17:50",
+    "@version": 1,
+    "@class": "Event",
+    "eventId": 10051,
+    "createUserId": "w.ding",
+    "data": {
+      "enableCors": true,
+      "updateDate": "2015-03-24T01:00:01.879",
+      "updateUserId": "w.ding",
+      "ruleClass": "org.clinical3po.backendservices.rule.client.GetClientDropdownRule"
+    },
+    "name": "updCors",
+    "category": "rule",
+    "createDate": "2015-03-24T01:00:01.879",
+    "ipAddress": "198.16.252.9",
+    "@fieldTypes": "eventId=l,createDate=t"
+  },
+  {
+    "@type": "d",
+    "@rid": "#17:51",
+    "@version": 1,
+    "@class": "Event",
+    "eventId": 10052,
+    "createUserId": "w.ding",
+    "data": {
+      "enableCors": true,
+      "updateDate": "2015-03-24T01:00:21.578",
+      "updateUserId": "w.ding",
+      "ruleClass": "org.clinical3po.backendservices.rule.role.GetRoleDropdownRule"
+    },
+    "name": "updCors",
+    "category": "rule",
+    "createDate": "2015-03-24T01:00:21.576",
+    "ipAddress": "198.16.252.9",
+    "@fieldTypes": "eventId=l,createDate=t"
+  },
+  {
+    "@type": "d",
+    "@rid": "#17:229",
+    "@version": 1,
+    "@class": "Event",
+    "eventId": 10230,
+    "createUserId": "w.ding",
+    "data": {
+      "enableCors": true,
+      "updateDate": "2015-07-18T01:25:41.702",
+      "updateUserId": "w.ding",
+      "ruleClass": "org.clinical3po.backendservices.rule.user.SignInUserRule"
+    },
+    "name": "updCors",
+    "category": "rule",
+    "createDate": "2015-07-18T01:25:41.701",
+    "ipAddress": "127.0.0.1",
+    "@fieldTypes": "eventId=l,createDate=t"
+  }
+]

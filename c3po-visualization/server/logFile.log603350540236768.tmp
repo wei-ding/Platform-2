@@ -1,0 +1,20 @@
+2015-12-21 10:59:30,943 [main] INFO  c.n.light.server.Clinical3POServer.main(65) - server starts
+2015-12-21 10:59:35,853 [main] DEBUG org.jboss.logging.find(33) - Logging Provider: org.jboss.logging.Slf4jLoggerProvider
+2015-12-21 10:59:35,929 [main] INFO  org.xnio.<clinit>(92) - XNIO version 3.3.0.Beta1
+2015-12-21 10:59:35,940 [main] INFO  org.xnio.nio.<clinit>(56) - XNIO NIO Implementation Version 3.3.0.Beta1
+2015-12-21 10:59:35,967 [XNIO-1 I/O-1] DEBUG org.xnio.nio.run(429) - Started channel thread 'XNIO-1 I/O-1', selector sun.nio.ch.EPollSelectorImpl@5c332c57
+2015-12-21 10:59:35,967 [XNIO-1 I/O-2] DEBUG org.xnio.nio.run(429) - Started channel thread 'XNIO-1 I/O-2', selector sun.nio.ch.EPollSelectorImpl@195f660c
+2015-12-21 10:59:35,968 [XNIO-1 I/O-3] DEBUG org.xnio.nio.run(429) - Started channel thread 'XNIO-1 I/O-3', selector sun.nio.ch.EPollSelectorImpl@67094ef0
+2015-12-21 10:59:35,968 [XNIO-1 I/O-4] DEBUG org.xnio.nio.run(429) - Started channel thread 'XNIO-1 I/O-4', selector sun.nio.ch.EPollSelectorImpl@1bc6e301
+2015-12-21 10:59:35,968 [XNIO-1 I/O-5] DEBUG org.xnio.nio.run(429) - Started channel thread 'XNIO-1 I/O-5', selector sun.nio.ch.EPollSelectorImpl@7bd1e7ad
+2015-12-21 10:59:35,968 [XNIO-1 I/O-6] DEBUG org.xnio.nio.run(429) - Started channel thread 'XNIO-1 I/O-6', selector sun.nio.ch.EPollSelectorImpl@49661203
+2015-12-21 10:59:35,968 [XNIO-1 I/O-7] DEBUG org.xnio.nio.run(429) - Started channel thread 'XNIO-1 I/O-7', selector sun.nio.ch.EPollSelectorImpl@12baa140
+2015-12-21 10:59:35,968 [XNIO-1 I/O-8] DEBUG org.xnio.nio.run(429) - Started channel thread 'XNIO-1 I/O-8', selector sun.nio.ch.EPollSelectorImpl@1acaa61d
+2015-12-21 10:59:35,968 [XNIO-1 I/O-9] DEBUG org.xnio.nio.run(429) - Started channel thread 'XNIO-1 I/O-9', selector sun.nio.ch.EPollSelectorImpl@2123e9d8
+2015-12-21 10:59:35,968 [XNIO-1 I/O-10] DEBUG org.xnio.nio.run(429) - Started channel thread 'XNIO-1 I/O-10', selector sun.nio.ch.EPollSelectorImpl@31923088
+2015-12-21 10:59:35,968 [XNIO-1 I/O-11] DEBUG org.xnio.nio.run(429) - Started channel thread 'XNIO-1 I/O-11', selector sun.nio.ch.EPollSelectorImpl@33925ffa
+2015-12-21 10:59:35,969 [XNIO-1 I/O-12] DEBUG org.xnio.nio.run(429) - Started channel thread 'XNIO-1 I/O-12', selector sun.nio.ch.EPollSelectorImpl@3c738eb3
+2015-12-21 10:59:35,971 [XNIO-1 I/O-16] DEBUG org.xnio.nio.run(429) - Started channel thread 'XNIO-1 I/O-16', selector sun.nio.ch.EPollSelectorImpl@7ff89383
+2015-12-21 10:59:35,972 [XNIO-1 I/O-15] DEBUG org.xnio.nio.run(429) - Started channel thread 'XNIO-1 I/O-15', selector sun.nio.ch.EPollSelectorImpl@593c7282
+2015-12-21 10:59:35,973 [XNIO-1 I/O-14] DEBUG org.xnio.nio.run(429) - Started channel thread 'XNIO-1 I/O-14', selector sun.nio.ch.EPollSelectorImpl@7e7575fb
+2015-12-21 10:59:35,973 [XNIO-1 I/O-13] DEBUG org.xnio.nio.run(429) - Started channel thread 'XNIO-1 I/O-13', selector sun.nio.ch.EPollSelectorImpl@4473889c

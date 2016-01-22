@@ -1,0 +1,61 @@
+<div class="padded-content-page" layout="row" layout-align="space-around center">
+    <md-select placeholder="Choose a theme" ng-model="selectedTheme">
+        <md-option ng-repeat="theme in themes" ng-value="theme">{{theme.name}}</md-option>
+    </md-select>
+</div>
+
+<div class="padded-content-page" layout="row">
+    <div flex>
+        <h3 class="md-headline">Material CSS</h3>
+        <textarea ng-model="materialCSS" style="width:100%; height: 400px;"></textarea>
+    </div>
+    <div layout="row" layout-align="center center" layout-margin>
+        <md-button class="md-primary md-fab" ng-click="parseCSS()">
+            <md-icon md-font-icon="icon-play-arrow"></md-icon>
+        </md-button>
+    </div>
+    <div flex>
+        <h3 class="md-headline">Compiled CSS</h3>
+        <textarea ng-model="compiledCSS" style="width:100%; height: 400px;"></textarea>
+    </div>
+</div>
+
+<div class="padded-content-page" layout="row">
+    <div flex="60" layout="column">
+        <h3 class="md-headline">Theme Info</h3>
+        <table flex class="table">
+            <tbody>
+                <tr>
+                    <th>Name</th>
+                    <td colspan="3">{{selectedTheme.name}}</td>
+                </tr>
+                <tr>
+                    <th>isDark</th>
+                    <td>{{selectedTheme.isDark}}</td>
+                </tr>
+                <tr>
+                    <td ng-repeat="(intention, intentionColors) in selectedTheme.colors">
+                        <strong>{{intention}} - {{intentionColors.name}}</strong>
+                        <div class="padding-10" ng-repeat="(paletteName, paletteColor) in getPalette(intentionColors.name)" ng-style="{ 'background-color': rgba(paletteColor.value), 'color': rgba(paletteColor.contrast) }">
+                            <strong>{{paletteName}}</strong>
+                            <!-- <span>Color: {{rgba(paletteColor.value)}}</span> -->
+                            <!-- <span>Contrast: {{rgba(paletteColor.contrast)}}</span> -->
+                            <strong ng-repeat="(hueName, hueColor) in intentionColors.hues" ng-show="hueColor == paletteName"> - {{hueName}}</strong>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div flex layout="column" layout-align="center center" md-theme="{{selectedTheme.name}}">
+        <h3 class="md-headline">Examples</h3>
+        <div ng-repeat="intent in intentions">
+            <div ng-repeat="hue in hues">
+                <p class="md-caption">{{intent}} {{hue}}</p>
+                <md-button class="md-primary md-raised" ng-class="{{[intent, hue]}}">Simple Button</md-button>
+            </div>
+        </div>
+    </div>
+
+</div>

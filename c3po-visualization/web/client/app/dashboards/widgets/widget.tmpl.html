@@ -1,0 +1,34 @@
+<div class="widget md-whiteframe-z1" ng-class="{'widget-overlay-title': overlayTitle}" flex ng-attr-layout="{{widgetLayout}}">
+
+    <div class="widget-title" ng-if="title || subtitle" layout="row" layout-padding layout-align="space-between center" ng-attr-flex-order="{{titleOrder}}">
+        <div layout="column" ng-if="avatar">
+            <img ng-src="{{avatar}}" class="widget-avatar"/>
+        </div>
+        <div flex layout="column">
+            <h3 class="md-subhead" ng-if="title" ng-bind-html="title"></h3>
+            <p class="md-body-1" ng-if="subtitle" ng-bind-html="subtitle"></p>
+        </div>
+        <md-menu ng-if="menu">
+            <md-button class="widget-button md-icon-button" ng-click="$mdOpenMenu()">
+                <md-icon md-font-icon="{{menu.icon}}"></md-icon>
+            </md-button>
+            <md-menu-content>
+                <md-menu-item ng-repeat="item in menu.items">
+                    <md-button ng-click="item.click($event)">
+                        <md-icon ng-if="item.icon" md-font-icon="{{item.icon}}"></md-icon>
+                        {{item.title | translate}}
+                    </md-button>
+                </md-menu-item>
+            </md-menu-content>
+        </md-menu>
+    </div>
+
+    <div class="widget-content" ng-attr-layout="{{contentLayout}}" ng-attr-layout-align="{{contentLayoutAlign}}" ng-attr-layout-padding="{{contentPadding}}" ng-transclude ng-attr-flex-order="{{contentOrder}}"></div>
+
+    <div class="widget-loading ng-hide" ng-show="loading" layout layout-fill layout-align="center center">
+        <div class="widget-loading-inner" ng-show="loading">
+            <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+        </div>
+    </div>
+
+</div>
