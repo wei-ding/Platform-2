@@ -34,6 +34,8 @@ import java.util.Map;
 
 /**
  * Created by w.ding on 25/04/15.
+ * This class is a test only class.
+ *
  */
 public class CatalogRuleTest extends TestCase {
     ObjectMapper mapper = ServiceLocator.getInstance().getMapper();
