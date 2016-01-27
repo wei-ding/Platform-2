@@ -28,4 +28,6 @@ Merge into master branch if the modified ML-Flex is ready:
 
 >git merge --no-ff ML-Flex-Modified
 
+>git push
+
 
