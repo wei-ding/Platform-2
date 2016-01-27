@@ -14,6 +14,10 @@ Switch to ML-Flex-Modified branch:
 
 >git checkout ML-Flex-Modified
 
+if you want to merge the master branch into ML-Flex-Modified, plz run:
+
+> git rebase master
+
 modify the codes
 
 commit the codes
