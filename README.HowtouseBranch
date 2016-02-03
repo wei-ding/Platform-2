@@ -11,6 +11,11 @@ Setup github account
 >git config --global user.email "Your email address"
 >git config --global user.name "Your github account name"
 
+
+git clone  https://Your git account name@github.com/Clinical3PO/Stage.git
+
+>cd Stage
+
 Make sure stay on master branch first
 
 >git checkout master
