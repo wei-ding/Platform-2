@@ -1,3 +1,12 @@
+We have 3 branches:
+
+master
+version-0.1
+ML-Flex-Modified
+
+
+
+
 Setup github account
 >git config --global user.email "Your email address"
 >git config --global user.name "Your github account name"
@@ -31,6 +40,33 @@ Merge into master branch if the modified ML-Flex is ready:
 >git checkout master
 
 >git merge --no-ff ML-Flex-Modified
+
+>git push
+
+Switch to version-0.1 branch:
+
+>git checkout version-0.1
+
+if you want to merge the master branch into ML-Flex-Modified, plz run:
+
+>git checkout version-0.1
+
+> git rebase master
+
+modify the codes
+
+commit the codes
+
+> git commit -a -m "version-0.1 changed:"
+
+> git push version-0.1
+
+
+Merge into master branch if the modified ML-Flex is ready:
+
+>git checkout master
+
+>git merge --no-ff version-0.1
 
 >git push
 
