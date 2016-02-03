@@ -38,7 +38,7 @@ commit the codes
 
 > git commit -a -m "ML-Flex changed"
 
-> git push ML-Flex-Modified
+> git push
 
 Merge into master branch if the modified ML-Flex is ready:
 
@@ -64,10 +64,10 @@ commit the codes
 
 > git commit -a -m "version-0.1 changed:"
 
-> git push version-0.1
+> git push
 
 
-Merge into master branch if the modified ML-Flex is ready:
+Merge into master branch if the modified version-0.1 is ready:
 
 >git checkout master
 
