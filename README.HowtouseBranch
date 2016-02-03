@@ -67,7 +67,7 @@ commit the codes
 > git push version-0.1
 
 
-Merge into master branch if the modified ML-Flex is ready:
+Merge into master branch if the modified version-0.1 is ready:
 
 >git checkout master
 
