@@ -4,13 +4,13 @@ master
 version-0.1
 ML-Flex-Modified
 
-
-
-
 Setup github account
 >git config --global user.email "Your email address"
 >git config --global user.name "Your github account name"
 
+After doing this, you may fix the identity used for this commit with:
+
+>git commit --amend --reset-author
 
 git clone  https://Your git account name@github.com/Clinical3PO/Stage.git
 
