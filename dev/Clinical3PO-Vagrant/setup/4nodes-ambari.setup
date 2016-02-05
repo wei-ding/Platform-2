@@ -1,0 +1,15 @@
+{
+  "domain": "clinical3po.org",
+  "realm": "CLINICAL3PO.ORG",
+  "security": false,
+  "vm_mem": 2048,
+  "server_mem": 4096,
+  "client_mem": 2048,
+  "clients" : [ ],
+  "nodes": [
+    { "hostname": "ambari",  "ip": "10.0.10.10", "roles": [ "ambari-server" ] },
+    { "hostname": "master",  "ip": "10.0.10.11", "roles": [ "ambari-agent" ] },
+    { "hostname": "slave1",  "ip": "10.0.10.12", "roles": [ "ambari-agent" ] },
+    { "hostname": "slave2",  "ip": "10.0.10.13", "roles": [ "ambari-agent" ] }
+  ]
+}

@@ -1,0 +1,51 @@
+<%#
+   Licensed to the Apache Software Foundation (ASF) under one or more
+   contributor license agreements.  See the NOTICE file distributed with
+   this work for additional information regarding copyright ownership.
+   The ASF licenses this file to You under the Apache License, Version 2.0
+   (the "License"); you may not use this file except in compliance with
+   the License.  You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+-%>
+#!/bin/bash
+KEYDIR=/vagrant/generated/keytabs
+<% require 'set';
+   password = scope.lookupvar('kerberos_kdc::password');
+   nodelist = eval(nodes); 
+   # a map from roles to required users
+   users = {'nn' => ['nn', 'HTTP'],
+            'yarn' => ['rm', 'jhs', 'HTTP'],
+            'slave' => ['nm', 'dn', 'HTTP'],
+            'hive-meta' => ['hive'],
+            'oozie' => ['oozie', 'HTTP'],
+            'hbase-master' => ['hbase', 'HTTP'],
+            'hbase-regionserver' => ['hbase', 'HTTP'],
+            'zk' => ['zookeeper']}; -%>
+
+# ensure we don't have old keytabs
+rm -fr $KEYDIR
+<% nodelist.each do |node| -%>
+mkdir -p $KEYDIR/<%= node[:hostname] %>
+<% end -%>
+
+# create a new kerberos user database
+kdb5_util create -s -P <%= password %>
+
+# create the accounts and keytabs
+kadmin.local << EOF
+addprinc -pw <%= password %>  vagrant
+<% nodelist.each do |node|
+     node[:roles].map{|r| users[r]}.flatten.to_set.select {|n| n != nil}.
+        each do |user| -%>
+addprinc -randkey <%= user %>/<%= node[:hostname] %>.<%= domain %>@<%= realm %>
+xst -norandkey -k $KEYDIR/<%= node[:hostname] %>/<%= user %>.keytab <%= user %>/<%= node[:hostname] %>.<%= domain %>@<%= realm %>
+<%   end
+   end -%>
+EOF
