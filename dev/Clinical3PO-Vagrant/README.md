@@ -41,6 +41,21 @@ After VirtualBox installation finishes you will have to restart your computer.
 
 
 Install VBox on Windows. Using Windows VirtualBox Extension pack:
+
+Download this:
+http://download.virtualbox.org/virtualbox/5.0.14/Oracle_VM_VirtualBox_Extension_Pack-5.0.14.vbox-extpack
+
+From VirtualBox main window, go to File->Preferences. This will open VirtualBox Preferences window. 
+Navigate to Extension, Next, click on the small down arrow on the right side of the window. 
+Navigate and select the Extension Pack you downloaded in the previous step. You will be asked to confirm VirtualBox Extension Pack setup.
+Click “Install” to complete VirtualBox Extension Pack installation. You will have to reboot your host effect for the changes to take effect. 
+
+
+Mac:
+
+http://download.virtualbox.org/virtualbox/5.0.14/VirtualBox-5.0.14-105127-OSX.dmg
+
+Download this:
 http://download.virtualbox.org/virtualbox/5.0.14/Oracle_VM_VirtualBox_Extension_Pack-5.0.14.vbox-extpack
 
 From VirtualBox main window, go to File->Preferences. This will open VirtualBox Preferences window. 
@@ -115,8 +130,14 @@ under hdp_cluster_palnning:
 Running VirtualBox Via Vagrant
 --------------
 
+Start:
 vagrant up
-
+then:
 vagrant ssh
 
+Stop:
+vagrant halt
+
+Destroy it ( this command stops the running virutalbox machines and this command deletes all the files too:
+vagrant destory
 
