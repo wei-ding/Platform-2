@@ -24,7 +24,7 @@ class vm_users {
   user { 'c3po':
     ensure => present,
     gid => wheel,
-    groups => ['wheel'],
+    groups => ['wheel','ruby','c3po'],
     membership => inclusive,
   }
 
