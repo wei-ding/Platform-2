@@ -14,6 +14,8 @@ Usage
 Installing VirtualBOX
 -----------------
 
+Centos:
+
 cd /etc/yum.repos.d
 sudo wget http://download.virtualbox.org/virtualbox/rpm/rhel/virtualbox.repo
 
@@ -30,9 +32,27 @@ sudo yum install VirtualBox-5.0
 
 sudo usermod -a -G vboxusers username
 
+
+Windows:
+
+Download VirtualBox 5.0.14: 
+http://download.virtualbox.org/virtualbox/5.0.14/VirtualBox-5.0.14-105127-Win.exe
+After VirtualBox installation finishes you will have to restart your computer. 
+
+
+Install VBox on Windows. Using Windows VirtualBox Extension pack:
+http://download.virtualbox.org/virtualbox/5.0.14/Oracle_VM_VirtualBox_Extension_Pack-5.0.14.vbox-extpack
+
+From VirtualBox main window, go to File->Preferences. This will open VirtualBox Preferences window. 
+Navigate to Extension, Next, click on the small down arrow on the right side of the window. 
+Navigate and select the Extension Pack you downloaded in the previous step. You will be asked to confirm VirtualBox Extension Pack setup.
+Click “Install” to complete VirtualBox Extension Pack installation. You will have to reboot your host effect for the changes to take effect. 
+
+
 Installing Vagrant
 -----------------
 
+Centos:
 cd ~/usr/local/src
 wget https://releases.hashicorp.com/vagrant/1.8.1/vagrant_1.8.1_x86_64.rpm
 sudo rpm -i vagrant_1.8.1_x86_64.rpm 
@@ -44,6 +64,16 @@ vagrant plugin install vagrant-hosts
 ##Vagrant Cachier (for Repo caching):
 vagrant plugin install vagrant-cachier
 
+Windows:
+
+
+https://releases.hashicorp.com/vagrant/1.8.1/vagrant_1.8.1.msi
+
+
+
+Mac:
+
+https://releases.hashicorp.com/vagrant/1.8.1/vagrant_1.8.1.dmg
 
 
 Get Clinical3PO CentOS 6.7 iso file
@@ -56,36 +86,37 @@ Prepare Clinical3PO Cluster Planning file
 
 Example var file for 3 nodes
 
-vars-centos7.json
+3 nodes without ambari:
 
-```json
+under hdp_cluster_palnning:
+
+3nodes-noambari.setup
+
 {
-  "iso_url": "/home/frey/Downloads/CentOS-7-x86_64-Minimal.iso",
-  "iso_checksum": "f90e4d28fa377669b2db16cbcb451fcb9a89d2460e3645993e30e137ac37d284",
-  "iso_checksum_type": "sha256",
-  "guest_additions_path": "VBoxGuestAdditions.iso",
-  "redhat_release": "7.2"
+  "domain": "clinical3po.org",
+  "realm": "CLINICAL3PO.ORG",
+  "security": false,
+  "vm_mem": 2048,
+  "server_mem": 4096,
+  "client_mem": 2048,
+  "clients" : [ "hdfs", "hive", "oozie", "pig", "tez", "yarn", "zk" ],
+  "nodes": [
+    { "hostname": "clinical3po-gw", "ip": "240.0.0.10", "roles": [ "client" ] },
+    { "hostname": "clinical3po-nn", "ip": "240.0.0.11",
+      "roles": [ "kdc", "hive-db", "hive-meta", "nn", "yarn", "zk" ] },
+    { "hostname": "clinical3po-slave1", "ip": "240.0.0.12", "roles": [ "oozie", "slave" ] }
+  ]
 }
 
-```
-Example var file for CentOS 6.x:
 
-vars-centos6.json
-
-```json
-{
-  "iso_url": "/home/frey/Downloads/CentOS-6.7-x86_64-minimal.iso",
-  "iso_checksum": "9d3fec5897be6b3fed4d3dda80b8fa7bb62c616bbfd4bdcd27295ca9b764f498",
-  "iso_checksum_type": "sha256",
-  "guest_additions_path": "VBoxGuestAdditions.iso",
-  "redhat_release": "6.7"
-}
-
-}
 
 ```
 
-Running Packer
+Running VirtualBox Via Vagrant
 --------------
 
-`$ packer build -var-file=vars-centos6.json vagrant-centos.json` 
+vagrant up
+
+vagrant ssh
+
+
