@@ -18,6 +18,7 @@ class oozie_server {
   require hdp_select
   require hdfs_client
   require hive_client
+  require mysql_client
 
   $conf_dir = "/etc/oozie/conf"
   $keytab_dir = "/etc/security/hadoop"

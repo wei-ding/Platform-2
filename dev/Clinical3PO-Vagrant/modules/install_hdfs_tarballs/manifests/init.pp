@@ -29,7 +29,7 @@ class install_hdfs_tarballs {
         #command => "hadoop fs -put /usr/hdp/${hdp_version}/hadoop/mapreduce.tar.gz /hdp/apps/${hdp_version}/mapreduce/",
         #unless =>
             #"hadoop fs -test -e /hdp/apps/${hdp_version}/mapreduce/mapreduce.tar.gz",
-      command => "hdfs dfs -mkdir -p /hdp/apps/${hdp_version}/mapreduce/ && hdfs dfs -put /usr/hdp/${hdp_version}/hadoop/mapreduce.tar.gz /hdp/apps/${hdp_version}/mapreduce/ && hdfs dfs -put /usr/hdp/${hdp_version}/hadoop-mapreduce/hadoop-streaming.jar /hdp/apps/${hdp_version}/mapreduce/&& hdfs dfs -chown -R hdfs:hadoop /hdp && hdfs dfs -chmod -R 555 /hdp/apps/${hdp_version}/mapreduce && hdfs dfs -chmod -R 444 /hdp/apps/{hdp_version}/mapreduce/mapreduce.tar.gz && hdfs dfs -chmod -R 444 /hdp/apps/{hdp_version}/mapreduce/hadoop-streaming.jar",
+      command => "hdfs dfs -mkdir -p /hdp/apps/${hdp_version}/mapreduce/ && hdfs dfs -put /usr/hdp/${hdp_version}/hadoop/mapreduce.tar.gz /hdp/apps/${hdp_version}/mapreduce/ && hdfs dfs -put /usr/hdp/${hdp_version}/hadoop-mapreduce/hadoop-streaming.jar /hdp/apps/${hdp_version}/mapreduce/&& hdfs dfs -chown -R hdfs:hadoop /hdp && hdfs dfs -chmod -R 555 /hdp/apps/${hdp_version}/mapreduce && hdfs dfs -chmod -R 444 /hdp/apps/${hdp_version}/mapreduce/mapreduce.tar.gz && hdfs dfs -chmod -R 444 /hdp/apps/${hdp_version}/mapreduce/hadoop-streaming.jar",
       unless =>
         "hdfs dfs -test -e /hdp/apps/${hdp_version}/mapreduce/mapreduce.tar.gz",
 path => "$PATH",
