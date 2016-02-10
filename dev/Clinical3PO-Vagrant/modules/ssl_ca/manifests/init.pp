@@ -1,0 +1,54 @@
+#  Licensed to the Apache Software Foundation (ASF) under one or more
+#   contributor license agreements.  See the NOTICE file distributed with
+#   this work for additional information regarding copyright ownership.
+#   The ASF licenses this file to You under the Apache License, Version 2.0
+#   (the "License"); you may not use this file except in compliance with
+#   the License.  You may obtain a copy of the License at
+#
+#       http://www.apache.org/licenses/LICENSE-2.0
+#
+#   Unless required by applicable law or agreed to in writing, software
+#   distributed under the License is distributed on an "AS IS" BASIS,
+#   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+#   See the License for the specific language governing permissions and
+#   limitations under the License.
+
+# This module create a generated certificate authority that can be used to 
+# make certificates for all of the servers.
+class ssl_ca {
+  require jdk
+
+  $java="/usr/lib/jvm/java-1.8.0-openjdk.x86_64"
+  $path="${java}/bin:/bin:/usr/bin"
+  $cadir="/vagrant/generated/ssl-ca"
+
+  file { "${cadir}":
+    ensure => directory,
+  }
+  ->
+  exec {'openssl genrsa -out ca.key 4096':
+    cwd    => "${cadir}",
+    creates => "${cadir}/ca.key",
+    path => "$path",
+  }
+  ->
+  exec {"openssl req -new -x509 -days 36525 -key ca.key -out ca.crt < /vagrant/modules/ssl_ca/files/ca-info.txt":
+    cwd => "$cadir",
+    creates => "${cadir}/ca.crt",
+    path => "$path",
+  }
+
+  file {"${cadir}/ca.srl":
+    replace => no,
+    ensure => present,
+    content => "01",
+    mode => "600",
+  }
+
+  file {"${cadir}/ca.ser":
+    replace => no,
+    ensure => present,
+    content => "01",
+    mode => "600",
+  }
+}

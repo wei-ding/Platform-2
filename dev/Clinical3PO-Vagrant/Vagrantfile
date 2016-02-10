@@ -17,19 +17,19 @@ require 'json'
 
 VAGRANTFILE_API_VERSION = "2"
 
-# setup search path:
-$setup_dir = ["current.setup",
-                 "setups/3node-noambari.setup"]
+# HDP Cluster Planning setup search path:
+$planning_path = ["current.planning",
+                 "hdp_cluster_planning/3nodes-noambari.setup"]
 
 ###############################################################################
-# Loads a setup, which is a JSON file describing a specific configuation.
+# Loads a hdp cluster planning setup file, which is a JSON file describing a specific configuation.
 #
-# The user should create a symlink from current.setup to the desired
-# setup.
-def loadSetup()
-  $setup_dir.each { |file| 
+# The user should create a symlink from current.planning to the desired
+# planning
+def loadPlanning()
+  $planning_path.each { |file| 
     if file and File.file?(file)
-      puts "Loading setup %s\n" % [File.realpath(file)]
+      puts "Loading cluster planning setup file %s\n" % [File.realpath(file)]
       return JSON.parse( IO.read( file ), opts = { symbolize_names: true } )
     end
   }
@@ -37,7 +37,7 @@ end
 
 # Pull the HDP version out of the hdp.repo file
 def findVersion()
-  fileObj = File.new('etc/repos/hdp.repo', 'r')
+  fileObj = File.new('files/etc/repos/hdp.repo', 'r')
   match = /^#VERSION_NUMBER=(?<ver>[-0-9.]*)/.match(fileObj.gets)
   fileObj.close()
   result = match['ver']
@@ -48,7 +48,7 @@ end
 ###############################################################################
 # Define cluster
 
-setup = loadSetup()
+planning = loadPlanning()
 hdp_version = findVersion()
 rpm_version = hdp_version.gsub /[.-]/, '_'
 
@@ -63,19 +63,25 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "clinical3po-vagrant-centos-6.7.box"
 
   config.vm.provider :virtualbox do |vb|
-    vb.customize ["modifyvm", :id, "--memory", setup[:vm_mem] ]
+    vb.customize ["modifyvm", :id, "--memory", planning[:vm_mem] ]
   end
 
   config.vm.provider :vmware_fusion do |vm|
-    vm.vmx["memsize"] = setup[:vm_mem]
+    vm.vmx["memsize"] = planning[:vm_mem]
   end
 
-  setup[:nodes].each do |node|
+  planning[:nodes].each do |node|
     config.vm.define node[:hostname] do |node_config|
-      node_config.vm.hostname = node[:hostname] + "." + setup[:domain]
+      node_config.vm.hostname = node[:hostname] + "." + planning[:domain]
       node_config.vm.network :private_network, ip: node[:ip]
       node_config.ssh.forward_agent = true
+      node_config.ssh.username = "c3po"
+      node_config.ssh.password = "%PW135can%"
+      #node_config.vm.synced_folder "code", "/etc/puppetlabs/code"
       node_config.vm.provision "puppet" do |puppet|
+        #puppet.manifests_path = "puppet/manifests"
+        #puppet.manifest_file = "default.pp"
+        #puppet.module_path = "puppet/modules"
         puppet.module_path = "modules"
         puppet.options = ["--libdir", "/vagrant", 
 	    "--verbose", "--debug",
@@ -83,16 +89,16 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         puppet.facter = {
           "hostname" => node[:hostname],
           "roles" => node[:roles],
-          "nodes" => setup[:nodes],
+          "nodes" => planning[:nodes],
    	      "hdp_version" => hdp_version,
 	      "rpm_version" => rpm_version,
-          "domain" => setup[:domain],
-          "security" => setup[:security],
-          "realm" => setup[:realm],
-          "clients" => setup[:clients],
-          "server_mem" => setup[:server_mem],
-          "client_mem" => setup[:client_mem],
-          "setup" => setup
+          "domain" => planning[:domain],
+          "security" => planning[:security],
+          "realm" => planning[:realm],
+          "clients" => planning[:clients],
+          "server_mem" => planning[:server_mem],
+          "client_mem" => planning[:client_mem],
+          "planning" => planning
         }
       end
     end

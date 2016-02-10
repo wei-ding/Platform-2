@@ -1,0 +1,38 @@
+<%#
+   Licensed to the Apache Software Foundation (ASF) under one or more
+   contributor license agreements.  See the NOTICE file distributed with
+   this work for additional information regarding copyright ownership.
+   The ASF licenses this file to You under the Apache License, Version 2.0
+   (the "License"); you may not use this file except in compliance with
+   the License.  You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+-%>
+#!/bin/bash
+export PATH=<%= @path %>
+umask 077
+keytool -genkey -alias http -keyalg RSA -keystore server.jks -keysize 4096 \
+  -validity 36525 -storepass changeit << EOF
+<%= hostname %>.<%= domain %>
+<%= hostname %>
+Example Corp
+Palo Alto
+CA
+US
+yes
+EOF
+keytool -certreq -alias http -keystore server.jks -storepass changeit \
+  -file server.csr
+openssl x509 -req -days 36525 -in server.csr \
+ -CA /vagrant/generated/ssl-ca/ca.crt -CAkey /vagrant/generated/ssl-ca/ca.key \
+ -CAserial /vagrant/generated/ssl-ca/ca.ser -out server.crt
+keytool -import -alias http -keystore server.jks \
+  -storepass changeit -trustcacerts -file server.crt
+chown root:hadoop server.jks server.crt
+chmod 640 server.jks server.crt
