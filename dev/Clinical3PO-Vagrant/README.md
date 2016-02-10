@@ -173,5 +173,5 @@ Stop:
 vagrant halt
 
 Destroy it ( this command stops the running virutalbox machines and this command deletes all the files too:
-vagrant destory
+vagrant destroy
 

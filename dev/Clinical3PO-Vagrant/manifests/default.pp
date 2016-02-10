@@ -86,6 +86,9 @@ if hasrole($roles, 'hive-meta') {
 }
 
 if hasrole($roles, 'knox') {
+  include ldap
+  include stdlib
+  include knox_ldap
   include knox_gateway
 }
 

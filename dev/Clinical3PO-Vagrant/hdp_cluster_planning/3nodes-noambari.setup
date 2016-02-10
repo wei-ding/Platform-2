@@ -7,7 +7,7 @@
   "client_mem": 1048,
   "clients" : [ "hdfs", "hive", "oozie", "pig", "tez", "yarn", "zk" ],
   "nodes": [
-    { "hostname": "clinical3po-gw", "ip": "240.0.0.10", "roles": [ "client" ] },
+    { "hostname": "clinical3po-gw", "ip": "240.0.0.10", "roles": [  "knox", "client" ] },
     { "hostname": "clinical3po-nn", "ip": "240.0.0.11",
       "roles": [ "kdc", "hive-db", "hive-meta", "nn", "yarn", "zk" ] },
     { "hostname": "clinical3po-slave1", "ip": "240.0.0.12", "roles": [ "oozie", "slave" ] }

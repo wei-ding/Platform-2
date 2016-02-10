@@ -15,7 +15,7 @@
 
 class knox_gateway {
   require repos_setup 
-  require ldap
+  require knox_ldap
   require jdk
   
   package { "knox.noarch" :
