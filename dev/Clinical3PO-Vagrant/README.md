@@ -95,11 +95,12 @@ Get Clinical3PO CentOS 6.7 iso file
 -----------------
 wget http://c3po-develop.tk/downloads/clinical3po-vagrant-centos-6.7.box
 
+put it into this folder.
 
 Prepare Clinical3PO Cluster Planning file
 ----------------------
 
-Example var file for 3 nodes
+Example for 3 nodes
 
 3 nodes without ambari:
 
@@ -123,6 +124,31 @@ under hdp_cluster_palnning:
   ]
 }
 
+Example for 5 nodes
+
+5 nodes without ambari:
+
+under hdp_cluster_palnning:
+
+5nodes-noambari.setup
+
+{
+  "domain": "clinical3po.org",
+  "realm": "CLINICAL3PO.ORG",
+  "security": false,
+  "vm_mem": 2048,
+  "server_mem": 4096,
+  "client_mem": 2048,
+  "clients" : [ "hdfs", "hive", "oozie", "pig", "tez", "yarn", "zk" ],
+  "nodes": [
+    { "hostname": "clinical3po-gw", "ip": "240.0.0.10", "roles": [ "client" ] },
+    { "hostname": "clinical3po-nn", "ip": "240.0.0.11",
+      "roles": [ "kdc", "hive-db", "hive-meta", "nn", "yarn", "zk" ] },
+    { "hostname": "clinical3po-slave1", "ip": "240.0.0.12", "roles": [ "oozie", "slave" ] },
+    { "hostname": "clinical3po-slave2", "ip": "240.0.0.13", "roles": [ "slave" ] },
+    { "hostname": "clinical3po-slave3", "ip": "240.0.0.14", "roles": [ "slave" ] }
+  ]
+}
 
 
 ```
@@ -132,8 +158,16 @@ Running VirtualBox Via Vagrant
 
 Start:
 vagrant up
-then:
-vagrant ssh
+
+Access via ssh:
+vagrant ssh clinical3po-nn
+vagrant ssh clinical3po-gw
+vagrant ssh clinical3po-slave1
+vagrant ssh clinical3po-slave2
+vagrant ssh clinical3po-slave3
+
+user: c3po
+password: %PW135can%
 
 Stop:
 vagrant halt
