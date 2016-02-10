@@ -40,7 +40,7 @@ sudo rpm -i vagrant_1.8.1_x86_64.rpm
 
 Get Clinical3PO CentOS 6.7 iso file
 -----------------
-wget http://c3po-develop.tk/isos/x86_64/clinical3po-vagrant-centos-6.7.box
+wget http://c3po-develop.tk/downloads/clinical3po-vagrant-centos-6.7.box
 
 
 Prepare Clinical3PO Cluster Planning file
