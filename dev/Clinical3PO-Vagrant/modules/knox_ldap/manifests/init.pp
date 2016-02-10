@@ -25,7 +25,7 @@ class knox_ldap {
             basedn   => 'dc=clinical3po,dc=org',
                 rootdn   => 'cn=admin',
                 rootpw   => 'PWc3po',
-                @auth_who => 'anonymous'
+                auth_who => 'anonymous'
         }
 }
 
