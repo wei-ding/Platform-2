@@ -37,6 +37,14 @@ cd ~/usr/local/src
 wget https://releases.hashicorp.com/vagrant/1.8.1/vagrant_1.8.1_x86_64.rpm
 sudo rpm -i vagrant_1.8.1_x86_64.rpm 
 
+## Install Vagrant plugins: 
+gem install ffi
+##Vagrant Hosts:
+vagrant plugin install vagrant-hosts 
+##Vagrant Cachier (for Repo caching):
+vagrant plugin install vagrant-cachier
+
+
 
 Get Clinical3PO CentOS 6.7 iso file
 -----------------

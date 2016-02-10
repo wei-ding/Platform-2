@@ -73,7 +73,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   planning[:nodes].each do |node|
     config.vm.define node[:hostname] do |node_config|
       node_config.vm.hostname = node[:hostname] + "." + planning[:domain]
-      node_config.vm.network :private_network, ip: node[:ip]
+      node_config.vm.network :private_network, ip: node[:ip], 
+        virtualbox__intnet: true
       node_config.ssh.forward_agent = true
       node_config.ssh.username = "c3po"
       node_config.ssh.password = "%PW135can%"
