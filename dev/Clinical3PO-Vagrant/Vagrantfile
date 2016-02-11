@@ -78,8 +78,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       node_config.ssh.forward_agent = true
       node_config.ssh.username = "c3po"
       node_config.ssh.password = "%PW135can%"
-      node.config.vm.network "forwarded_port", guest: 8080, host: 8080, protocol: "tcp" 
-      #node_config.vm.synced_folder "code", "/etc/puppetlabs/code"
+      node_config.vm.network "forwarded_port", guest: 8080, host: 8080, protocol: "tcp" 
       node_config.vm.provision "puppet" do |puppet|
         #puppet.manifests_path = "puppet/manifests"
         #puppet.manifest_file = "default.pp"

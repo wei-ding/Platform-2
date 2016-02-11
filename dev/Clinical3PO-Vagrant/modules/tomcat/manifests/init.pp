@@ -14,19 +14,17 @@
 #   limitations under the License.
 
 class tomcat {
+
   require jdk
 
-  $conf_dir = "/etc/oozie/conf"
-  $keytab_dir = "/etc/security/hadoop"
-  $path="/bin:/usr/bin:/sbin:/usr/sbin:/usr/local/bin:/usr/hdp/${hdp_version}/oozie/bin"
+  $path="/bin:/usr/bin:/sbin:/usr/sbin:/usr/local/bin"
 
-  ->
   exec { 'installtomcat':
     path => $path,
     cwd => "/tmp",
-    command => 'wget http://apache.cs.utah.edu/tomcat/tomcat-7/v7.0.67/bin/apache-tomcat-7.0.67.tar.gz && sudo tar xzvf apache-tomcat-7.0.67.tar.gz -C /opt/ && sudo ln -s /opt/apache-tomcat-7.0.67 /opt/apache-tomcat',
+    command => "wget http://apache.cs.utah.edu/tomcat/tomcat-7/v7.0.67/bin/apache-tomcat-7.0.67.tar.gz && sudo tar xzvf apache-tomcat-7.0.67.tar.gz -C /opt/ && sudo ln -s /opt/apache-tomcat-7.0.67 /opt/apache-tomcat",
   }
-  ->
+
   file { "/etc/profile.d/tomcat.sh":
     ensure => file,
     owner => root,
@@ -34,26 +32,27 @@ class tomcat {
     mode => 0760,
     content => template('tomcat/tomcat-env.erb'),
   }
-  ->
+
   exec { "chmodtomcat":
     path => $path,
     command => "sudo chmod +x /etc/profile.d/tomcat.sh",
   }
-  ->
+
   exec { "chowntomcat":
     path => $path,
     command => "sudo chown -R c3po:hadoop /opt/apache-tomcat-7.0.67 && sudo chmod -R ug+rw /opt/apache-tomcat-7.0.67",
   }
-  ->
+
   file { "/etc/init.d/tomcat":
     ensure => file,
-    source => "puppet:///files/etc/init.d/knox",
+    source => "puppet:///files/etc/init.d/tomcat",
     owner => root,
     group => hadoop,
   }
-  ->
+
   service { "tomcat":
     ensure => running,
     enable => true,
   }
+
 }
