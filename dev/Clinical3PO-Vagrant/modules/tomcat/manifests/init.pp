@@ -18,133 +18,41 @@ class tomcat {
 
   $conf_dir = "/etc/oozie/conf"
   $keytab_dir = "/etc/security/hadoop"
-  $path="/bin:/usr/bin:/usr/hdp/${hdp_version}/oozie/bin"
+  $path="/bin:/usr/bin:/sbin:/usr/sbin:/usr/local/bin:/usr/hdp/${hdp_version}/oozie/bin"
 
-  if $security == "true" {
-    require kerberos_http
-
-    file { "${keytab_dir}/oozie.keytab":
-      ensure => file,
-      source => "/vagrant/generated/keytabs/${hostname}/oozie.keytab",
-      owner => oozie,
-      group => oozie,
-      mode => '400',
-    }
-    ->
-    exec { "kinit -k -t ${keytab_dir}/oozie.keytab oozie/${hostname}.${domain}":
-      path => $path,
-      user => 'oozie',
-    }
-    ->
-    Package["oozie_${rpm_version}"]
-
-    $prepare_war_opts = "-secure"
-  }
-
-  package { "oozie_${rpm_version}":
-    ensure => installed,
-  }
   ->
-  file { "/etc/oozie":
-    ensure => directory,
-    owner => "root",
-    group => "oozie",
-    mode => "0750",
-  }
-  ->
-  file { "${conf_dir}/adminusers.txt":
-    ensure => file,
-    content => template('oozie_server/adminusers.erb'),
-  }
-  ->
-  file { "${conf_dir}/oozie-site.xml":
-    ensure => file,
-    content => template('oozie_server/oozie-site.erb'),
-  }
-  ->
-  file { "${conf_dir}/oozie-env.sh":
-    ensure => file,
-    content => template('oozie_server/oozie-env.erb'),
-  }
-  ->
-  file { "/etc/init.d/oozie":
-    ensure => file,
-    content => template('oozie_server/oozie-service.erb'),
-    mode => "0755",
-  }
-  ->
-  package { "extjs":
-    ensure => installed,
-  }
-  ->
-  file { "/usr/hdp/${hdp_version}/oozie/libext/ext-2.2.zip":
-    ensure => link,
-    target => "/usr/share/HDP-oozie/ext-2.2.zip",
-  }
-  ->
-  file { "/usr/hdp/${hdp_version}/oozie/libext/hadoop-lzo.jar":
-    ensure => link,
-    target => "/usr/hdp/${hdp_version}/hadoop/lib/hadoop-lzo-0.6.0.${hdp_version}.jar",
-  }
-  ->
-  file { "/usr/hdp/${hdp_version}/oozie/libext/mysql-connector-java.jar":
-    ensure => link,
-    target => "/usr/share/java/mysql-connector-java.jar",
-  }
-  ->
-  exec { "oozie-prepare-war":
+  exec { 'installtomcat':
     path => $path,
-    command => "oozie-setup.sh prepare-war ${prepare_war_opts}",
-    creates => "/usr/hdp/${hdp_version}/oozie/oozie-server/webapps/oozie.war",
+    cwd => "/tmp",
+    command => 'wget http://apache.cs.utah.edu/tomcat/tomcat-7/v7.0.67/bin/apache-tomcat-7.0.67.tar.gz && sudo tar xzvf apache-tomcat-7.0.67.tar.gz -C /opt/ && sudo ln -s /opt/apache-tomcat-7.0.67 /opt/apache-tomcat',
   }
   ->
-  file { "/tmp/create-oozie-db-user.sh":
+  file { "/etc/profile.d/tomcat.sh":
     ensure => file,
     owner => root,
-    mode => 0700,
-    content => template('oozie_server/create-oozie-db-user.erb'),
+    group => 'hadoop',
+    mode => 0760,
+    content => template('tomcat/tomcat-env.erb'),
   }
   ->
-  exec { "oozie-db-user":
+  exec { "chmodtomcat":
     path => $path,
-    command => "/tmp/create-oozie-db-user.sh",
+    command => "sudo chmod +x /etc/profile.d/tomcat.sh",
   }
   ->
-  exec { "oozie-createdb":
+  exec { "chowntomcat":
     path => $path,
-    command => "ooziedb.sh create -sqlfile /tmp/oozie.sql -run",
-    creates => "/tmp/oozie.sql",
-    user => 'oozie',
-    group => 'oozie',
+    command => "sudo chown -R c3po:hadoop /opt/apache-tomcat-7.0.67 && sudo chmod -R ug+rw /opt/apache-tomcat-7.0.67",
   }
   ->
-  exec { "untar-oozie-sharelib":
-    path => $path,
-    cwd => "/tmp",
-    command => "tar xzf /usr/hdp/${hdp_version}/oozie/oozie-sharelib.tar.gz",
-    creates => "/tmp/share",
-    user => 'oozie',
-    group => 'oozie',
-  }
-  ->
-  file { "/tmp/share/lib/hive/mysql-connector-java.jar":
+  file { "/etc/init.d/tomcat":
     ensure => file,
-    source => "/usr/share/java/mysql-connector-java.jar",
-    owner => 'oozie',
-    group => 'oozie',
-    mode => "0644",
+    source => "puppet:///files/etc/init.d/knox",
+    owner => root,
+    group => hadoop,
   }
   ->
-  exec { "install-oozie-sharelib":
-    path => $path,
-    cwd => "/tmp",
-    command => "hadoop fs -put share /user/oozie/",
-    unless =>
-      "hadoop fs -test -e /user/oozie/share",
-    user => 'oozie',
-  }
-  ->
-  service { "oozie":
+  service { "tomcat":
     ensure => running,
     enable => true,
   }

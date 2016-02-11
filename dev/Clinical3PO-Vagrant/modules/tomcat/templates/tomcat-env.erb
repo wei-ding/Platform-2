@@ -14,13 +14,10 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 -%>
-<%
-  @db = eval(@nodes).select {|node| node[:roles].include? 'hive-db'
-                             }[0][:hostname] + "." + @domain;
--%>
 #!/bin/bash
-mysql -u root -pPWc3po -h <%= @db %> << EOF
-create database if not exists oozie;
-grant all privileges on oozie.* to 'oozie'@'localhost' identified by 'PWc3po';
-grant all privileges on oozie.* to 'oozie'@'%' identified by 'PWc3po';
-EOF
+
+export CATALINA_BASE=/opt/apache-tomcat
+export CATALINA_HOME=/opt/apache-tomcat
+export CATALINA_TMPDIR=/opt/apache-tomcat/temp
+export CLASSPATH=.:$CLASSPATH:/opt/apache-tomcat/bin/bootstrap.jar:/opt/apache-tomcat/bin/tomcat-juli.jar
+export PATH=$PATH:$CATALINA_HOME/bin
