@@ -1,11 +1,6 @@
-Packer Centos template
-==============
-
-Packer template to make VirtualBox images.
-
 Notes
 -----
-CentOS 64-bit VM, 400G disk, EPEL repo, Puppet 4, no SELinux, no firewall,
+HDP 2.3.4, OpenJDK 1.8, nginx, CentOS 64-bit VM, 400G disk, EPEL repo, Puppet 3, no SELinux, no firewall,
 
 
 Usage
