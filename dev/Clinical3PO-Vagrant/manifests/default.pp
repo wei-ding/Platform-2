@@ -30,6 +30,12 @@ if $security == "true" and hasrole($roles, 'kdc') {
   include kerberos_kdc
 }
 
+if hasrole($roles, 'tomcat') {
+  include tomcat
+}
+
+
+
 if hasrole($roles, 'ambari-agent') {
   include ambari_agent
 }
@@ -86,8 +92,8 @@ if hasrole($roles, 'hive-meta') {
 }
 
 if hasrole($roles, 'knox') {
-  include ldap
   include stdlib
+  include ldap
   include knox_ldap
   include knox_gateway
 }
