@@ -34,8 +34,6 @@ if hasrole($roles, 'tomcat') {
   include tomcat
 }
 
-
-
 if hasrole($roles, 'ambari-agent') {
   include ambari_agent
 }

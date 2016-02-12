@@ -19,7 +19,7 @@ VAGRANTFILE_API_VERSION = "2"
 
 # HDP Cluster Planning setup search path:
 $planning_path = ["current.planning",
-                 "hdp_cluster_planning/1nodes-noambari.setup"]
+                 "hdp_cluster_planning/2nodes-noambari.setup"]
 
 ###############################################################################
 # Loads a hdp cluster planning setup file, which is a JSON file describing a specific configuation.

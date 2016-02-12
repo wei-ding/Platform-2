@@ -65,182 +65,188 @@ class hdfs_namenode {
   }
   ->
   exec {"yarn-home-mkdir":
-    command => "hadoop fs -mkdir -p /user/yarn",
-    unless => "hadoop fs -test -e /user/yarn",
+    command => "hdfs dfs -mkdir -p /user/yarn",
+    unless => "hdfs dfs -test -e /user/yarn",
     path => "$PATH",
     user => "hdfs",
   }
   ->
   exec {"yarn-home-chown":
-    command => "hadoop fs -chown yarn:yarn /user/yarn",
+    command => "hdfs dfs -chown yarn:yarn /user/yarn",
     path => "$PATH",
     user => "hdfs",
   }
   ->
   exec {"yarn-home-chmod":
-    command => "hadoop fs -chmod 755 /user/yarn",
+    command => "hdfs dfs -chmod 755 /user/yarn",
     path => "$PATH",
     user => "hdfs",
   }
   ->
   exec {"yarn-history-mkdir":
-    command => "hadoop fs -mkdir -p /user/yarn/history",
-    unless => "hadoop fs -test -e /user/yarn/history",
+    command => "hdfs dfs -mkdir -p /user/yarn/history",
+    unless => "hdfs dfs -test -e /user/yarn/history",
     path => "$PATH",
     user => "hdfs",
   }
   ->
   exec {"yarn-history-chmod":
-    command => "hadoop fs -chmod 775 /user/yarn/history",
+    command => "hdfs dfs -chmod 775 /user/yarn/history",
     path => "$PATH",
     user => "hdfs",
   }
   ->
   exec {"yarn-history-chown":
-    command => "hadoop fs -chown -R mapred:mapred /user/yarn/history",
+    command => "hdfs dfs -chown -R mapred:mapred /user/yarn/history",
     path => "$PATH",
     user => "hdfs",
   }
   ->
   exec {"yarn-app-logs-mkdir":
-    command => "hadoop fs -mkdir /user/yarn/app-logs",
-    unless => "hadoop fs -test -e /user/yarn/app-logs",
+    command => "hdfs dfs -mkdir /user/yarn/app-logs",
+    unless => "hdfs dfs -test -e /user/yarn/app-logs",
     path => "$PATH",
     user => "hdfs",
   }
   ->
   exec {"yarn-app-logs-chmod":
-    command => "hadoop fs -chmod 1777 /user/yarn/app-logs",
+    command => "hdfs dfs -chmod 1777 /user/yarn/app-logs",
     path => "$PATH",
     user => "hdfs",
   }
   ->
   exec {"yarn-app-logs-chown":
-    command => "hadoop fs -chown yarn:mapred /user/yarn/app-logs",
+    command => "hdfs dfs -chown yarn:mapred /user/yarn/app-logs",
     path => "$PATH",
     user => "hdfs",
   }
   ->
   exec {"c3po-home-mkdir":
-    command => "hadoop fs -mkdir /user/c3po",
-    unless => "hadoop fs -test -e /user/c3po",
+    command => "hdfs dfs -mkdir /user/c3po",
+    unless => "hdfs dfs -test -e /user/c3po",
     path => "$PATH",
     user => "hdfs",
   }
   ->
   exec {"c3po-home-chown":
-    command => "hadoop fs -chown c3po:c3po /user/c3po",
+    command => "hdfs dfs -chown -R c3po:hadoop /user/c3po",
     path => "$PATH",
     user => "hdfs",
   }
   ->
+  exec {"c3po-home-chmod":
+    command => "hdfs dfs -chmod -R 775 /user/c3po",
+    path => "$PATH",
+    user => "hdfs",
+  }
+ ->
   exec {"hive-home-mkdir":
-    command => "hadoop fs -mkdir /user/hive",
-    unless => "hadoop fs -test -e /user/hive",
+    command => "hdfs dfs -mkdir /user/hive",
+    unless => "hdfs dfs -test -e /user/hive",
     path => "$PATH",
     user => "hdfs",
   }
   ->
   exec {"hive-home-chown":
-    command => "hadoop fs -chown hive:hive /user/hive",
+    command => "hdfs dfs -chown hive:hive /user/hive",
     path => "$PATH",
     user => "hdfs",
   }
   ->
   exec {"oozie-home":
-    command => "hadoop fs -mkdir -p /user/oozie",
-    unless => "hadoop fs -test -e /user/oozie",
+    command => "hdfs dfs -mkdir -p /user/oozie",
+    unless => "hdfs dfs -test -e /user/oozie",
     path => "$PATH",
     user => "hdfs",
   }
   ->
   exec {"oozie-home-chown":
-    command => "hadoop fs -chown oozie:oozie /user/oozie",
+    command => "hdfs dfs -chown oozie:oozie /user/oozie",
     path => "$PATH",
     user => "hdfs",
   }
   ->
   exec {"hive-warehouse":
-    command => "hadoop fs -mkdir -p /apps/hive/warehouse",
-    unless => "hadoop fs -test -e /apps/hive/warehouse",
+    command => "hdfs dfs -mkdir -p /apps/hive/warehouse",
+    unless => "hdfs dfs -test -e /apps/hive/warehouse",
     path => "$PATH",
     user => "hdfs",
   }
   ->
   exec {"hive-warehouse-chown":
-    command => "hadoop fs -chown hive:hive /apps/hive/warehouse",
+    command => "hdfs dfs -chown hive:hive /apps/hive/warehouse",
     path => "$PATH",
     user => "hdfs",
   }
   ->
   exec {"hive-warehouse-chmod":
-    command => "hadoop fs -chmod 1777 /apps/hive/warehouse",
+    command => "hdfs dfs -chmod 1777 /apps/hive/warehouse",
     path => "$PATH",
     user => "hdfs",
   }
   ->
   exec {"hbase-warehouse":
-    command => "hadoop fs -mkdir -p /apps/hbase",
-    unless => "hadoop fs -test -e /apps/hbase",
+    command => "hdfs dfs -mkdir -p /apps/hbase",
+    unless => "hdfs dfs -test -e /apps/hbase",
     path => "$PATH",
     user => "hdfs",
   }
   ->
   exec {"hbase-warehouse-chown":
-    command => "hadoop fs -chown hbase:hbase /apps/hbase",
+    command => "hdfs dfs -chown hbase:hbase /apps/hbase",
     path => "$PATH",
     user => "hdfs",
   }
   ->
   exec {"hbase-warehouse-chmod":
-    command => "hadoop fs -chmod 1777 /apps/hbase",
+    command => "hdfs dfs -chmod 1777 /apps/hbase",
     path => "$PATH",
     user => "hdfs",
   }
   ->
   exec {"hdfs-tmp":
-    command => "hadoop fs -mkdir /tmp",
-    unless => "hadoop fs -test -e /tmp",
+    command => "hdfs dfs -mkdir /tmp",
+    unless => "hdfs dfs -test -e /tmp",
     path => "$PATH",
     user => "hdfs",
   }
   ->
   exec {"hdfs-tmp-chmod":
-    command => "hadoop fs -chmod 1777 /tmp",
+    command => "hdfs dfs -chmod 1777 /tmp",
     path => "$PATH",
     user => "hdfs",
   }
   ->
   exec {"mr-tarball-dir":
-    command => "hadoop fs -mkdir -p /hdp/apps/${hdp_version}/mapreduce",
-    unless => "hadoop fs -test -e /hdp/apps/${hdp_version}/mapreduce",
+    command => "hdfs dfs -mkdir -p /hdp/apps/${hdp_version}/mapreduce",
+    unless => "hdfs dfs -test -e /hdp/apps/${hdp_version}/mapreduce",
     path => "$PATH",
     user => "hdfs",
   }
   ->
   exec {"tez-tarball-dir":
-    command => "hadoop fs -mkdir -p /hdp/apps/${hdp_version}/tez",
-    unless => "hadoop fs -test -e /hdp/apps/${hdp_version}/tez",
+    command => "hdfs dfs -mkdir -p /hdp/apps/${hdp_version}/tez",
+    unless => "hdfs dfs -test -e /hdp/apps/${hdp_version}/tez",
     path => "$PATH",
     user => "hdfs",
   }
   ->
   exec {"pig-tarball-dir":
-    command => "hadoop fs -mkdir -p /hdp/apps/${hdp_version}/pig",
-    unless => "hadoop fs -test -e /hdp/apps/${hdp_version}/pig",
+    command => "hdfs dfs -mkdir -p /hdp/apps/${hdp_version}/pig",
+    unless => "hdfs dfs -test -e /hdp/apps/${hdp_version}/pig",
     path => "$PATH",
     user => "hdfs",
   }
   ->
   exec {"hive-tarball-dir":
-    command => "hadoop fs -mkdir -p /hdp/apps/${hdp_version}/hive",
-    unless => "hadoop fs -test -e /hdp/apps/${hdp_version}/hive",
+    command => "hdfs dfs -mkdir -p /hdp/apps/${hdp_version}/hive",
+    unless => "hdfs dfs -test -e /hdp/apps/${hdp_version}/hive",
     path => "$PATH",
     user => "hdfs",
   }
   ->
   exec {"tarball-chmod":
-    command => "hadoop fs -chmod -R +rX /hdp",
+    command => "hdfs dfs -chmod -R +rX /hdp",
     path => "$PATH",
     user => "hdfs",
   }
