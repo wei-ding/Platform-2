@@ -1,4 +1,0 @@
-create user 'hive'@'%' identified by 'PWc3po';
-create database hive;
-grant all privileges on hive.* to 'hive'@'%';
-flush privileges;

@@ -12,5 +12,6 @@
       "roles": [ "kdc", "hive-db", "hive-meta", "nn", "yarn", "zk" ] },
     { "hostname": "clinical3po-slave1", "ip": "240.0.0.12", "roles": [ "oozie", "slave", "zk" ] },
     { "hostname": "clinical3po-slave2", "ip": "240.0.0.13", "roles": [ "slave", "zk" ] }
-  ]
+    { "hostname": "clinical3po-slave3", "ip": "240.0.0.13", "roles": [ "slave", "zk" ] }
+]
 }

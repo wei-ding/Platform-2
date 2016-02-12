@@ -14,23 +14,10 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 -%>
-<%
-  @db = eval(@nodes).select {|node| node[:roles].include? 'hive-db'
-                             }[0][:hostname] + "." + @domain;
--%>
 #!/bin/bash
-mysql -u root -pPWc3po -h <%= @db %> << EOF
-use clinical3po;
-select "Creating Schema Users";
-source /vagrant/modules/c3po_mysqldb/files/users.sql;
-select "Creating Schema Accumulo Roles";
-source /vagrant/modules/c3po_mysqldb/files/accumuloroles.sql;
-select "Creating Schema Role";
-source /vagrant/modules/c3po_mysqldb/files/role.sql;
-select "Creating Schema Search Repository";
-source /vagrant/modules/c3po_mysqldb/files/searchrepository.sql;
-select "Creating Schema Search Parameters";
-source /vagrant/modules/c3po_mysqldb/files/searchparameters.sql;
-select "Loading Application data";
-source /vagrant/modules/c3po_mysqldb/files/data.sql;
-EOF
+#By Wei
+#
+MAVEN_HOME=/opt/maven
+PATH=$MAVEN_HOME/bin:$PATH
+export PATH=$PATH:$MAVEN_HOME/bin
+export CLASSPATH=.

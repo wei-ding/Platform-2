@@ -13,34 +13,29 @@
 #   See the License for the specific language governing permissions and
 #   limitations under the License.
 
-class c3po_mysqldb {
-  require mysql_client
-  require hive_db
+class maven {
 
-  $path="/bin:/usr/bin"
+  require jdk
 
-  file { "/tmp/create-c3po-mysqldb-user.sh":
+  $path="/bin:/usr/bin:/sbin:/usr/sbin:/usr/local/bin"
+
+  exec { 'installmaven':
+    path => $path,
+    cwd => "/tmp",
+    command => "wget http://apache.cs.utah.edu/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.tar.gz && sudo tar xzvf apache-maven-3.3.9-bin.tar.gz -C /opt/ && sudo ln -s /opt/apache-maven-3.3.9/ /opt/maven",
+  }
+  ->
+  file { "/etc/profile.d/maven.sh":
     ensure => file,
     owner => root,
-    mode => 0700,
-    content => template('c3po_mysqldb/create-c3po-mysqldb-user.erb'),
+    group => 'hadoop',
+    mode => 0760,
+    content => template('maven/maven-env.erb'),
   }
   ->
-  exec { "c3po-mysqldb-user":
+  exec { "chmodmaven":
     path => $path,
-    command => "/tmp/create-c3po-mysqldb-user.sh",
-  }
-  ->
-  file { "/tmp/init-c3po-mysqldb.sh":
-    ensure => file,
-    owner => root,
-    mode => 0700,
-    content => template('c3po_mysqldb/init-c3po-mysqldb.erb'),
-  }
-  ->
-  exec { "c3po-mysqldb-init":
-    path => $path,
-    command => "/tmp/init-c3po-mysqldb.sh",
+    command => "sudo chmod +x /etc/profile.d/maven.sh",
   }
 
 }

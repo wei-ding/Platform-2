@@ -44,10 +44,6 @@ if hasrole($roles, 'ambari-server') {
   include ambari_server
 }
 
-if hasrole($roles, 'cert') {
-   include certification
-}
-
 if hasrole($roles, 'client') {
   if hasrole($clients, 'hbase') {
     include hbase_client
