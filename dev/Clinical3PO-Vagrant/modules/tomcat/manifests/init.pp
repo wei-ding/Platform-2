@@ -38,6 +38,14 @@ class tomcat {
     command => "sudo chmod +x /etc/profile.d/tomcat.sh",
   }
   ->
+  file { "/opt/apache-tomcat-7.0.67/conf/tomcat-users.xml":
+    ensure => file,
+    owner => c3po,
+    group => 'hadoop',
+    mode => 0760,
+    content => template('tomcat/tomcat-users.erb'),
+  }
+  ->
   exec { "chowntomcat":
     path => $path,
     command => "sudo chown -R c3po:hadoop /opt/apache-tomcat-7.0.67 && sudo chmod -R ug+rw /opt/apache-tomcat-7.0.67",
