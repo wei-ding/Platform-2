@@ -1,0 +1,12 @@
+{
+  "domain": "clinical3po.org",
+  "realm": "CLINICAL3PO.ORG",
+  "security": false,
+  "vm_mem": 8096,
+  "server_mem": 3096,
+  "client_mem": 1048,
+  "clients" : [ "hdfs", "hive", "oozie", "pig", "tez", "yarn", "zk" ],
+  "nodes": [
+    { "hostname": "clinical3po-gw", "ip": "240.0.0.10", "roles": [  "tomcat", "kdc", "hive-db", "hive-meta", "nn", "yarn", "zk", "oozie", "slave", "c3po" ] }
+  ]
+}

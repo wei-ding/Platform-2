@@ -102,6 +102,11 @@ if hasrole($roles, 'nn') {
   include hdfs_namenode
 }
 
+if hasrole($roles, 'c3po') {
+  include c3po_mysqldb
+}
+
+
 if hasrole($roles, 'oozie') {
   include oozie_server
 }
