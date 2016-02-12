@@ -397,8 +397,7 @@ if [ $1 -eq 7 ]
 then
 	echo "Generating ARFF data"	
 	cd ${clinical3PO.hadoop.shellscripts.dir}/lib
-	java -cp "*" \
-	org.clinical3PO.arff.ArffGeneration $3/$4 $6 ${clinical3PO.app.dataDirectory}/mlflex $4 $7 $8 $9
+	java -cp "*" org.clinical3PO.arff.ArffGeneration $3/$4 $6 ${clinical3PO.app.dataDirectory}/mlflex $4 $7 $8 $9
 	
 	cd ${clinical3PO.mlflex.directory}
 	java -Xmx1g -jar mlflex.jar EXPERIMENT_FILE=${clinical3PO.app.dataDirectory}/mlflex/experiments/$4.txt ACTION=Process 
