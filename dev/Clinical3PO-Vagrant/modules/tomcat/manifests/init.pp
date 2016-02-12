@@ -19,27 +19,6 @@ class tomcat {
 
   $path="/bin:/usr/bin:/sbin:/usr/sbin:/usr/local/bin"
 
-  user { 'c3po':
-    ensure => present,
-    gid => wheel,
-    groups => ['wheel','ruby','c3po','hadoop'],
-    membership => inclusive,
-  }
-
-  user { 'wed3':
-    ensure => present,
-    gid => wheel,
-    groups => ['wheel','ruby','wed3','hadoop'],
-    membership => inclusive,
-  }
-
-  user { 'frey':
-    ensure => present,
-    gid => wheel,
-    groups => ['wheel','ruby','frey','hadoop'],
-    membership => inclusive,
-  }
-
   exec { 'installtomcat':
     path => $path,
     cwd => "/tmp",

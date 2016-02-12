@@ -1,5 +1,11 @@
 #!/bin/bash
 #
+#chkconfig: 345 99 01
+#description: tomcat startup script
+#
+#345 - levels to configure
+#99 - startup order
+#01 - stop order
 # tomcat
 #
 # pidfile: /var/run/tomcat.pid
