@@ -16,6 +16,8 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.log4j.BasicConfigurator;
+import org.clinical3PO.environment.AppUtil;
+import org.clinical3PO.environment.EnvironmentType;
 import org.clinical3PO.services.json.TimeSeries;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -29,6 +31,7 @@ import weka.core.Instances;
 public class ArffGeneration {
 
 	private static final Logger logger = LoggerFactory.getLogger(ArffGeneration.class);
+	private static String envType = AppUtil.getProperty("environment.type");
 
 	public void generateArff (String[] args){
 		
@@ -243,9 +246,12 @@ public class ArffGeneration {
 		if (args.length!=7){
 			System.out.println("Usage: <hadoop output file> <input parameters> <desired arff file path> <arff file name> <classification algorithm> <folds> <iterations>");			
 			System.exit(-1);
+		} else {
+			if(envType !=null && EnvironmentType.DEVELOPMENT == EnvironmentType.valueOf(envType)) {
+				logger.info ("Input Param : " + args);
+			}
 		}
 		BasicConfigurator.configure();
-
 		ArffGeneration arffGeneration = new ArffGeneration();
 		arffGeneration.generateArff(args);
 	}
