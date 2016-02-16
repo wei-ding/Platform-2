@@ -34,6 +34,14 @@ if hasrole($roles, 'tomcat') {
   include tomcat
 }
 
+if hasrole($roles, 'nginx') {
+  include nginx
+}
+
+if hasrole($roles, 'maven') {
+  include maven
+}
+
 if hasrole($roles, 'ambari-agent') {
   include ambari_agent
 }
