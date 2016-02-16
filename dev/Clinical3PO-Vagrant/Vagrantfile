@@ -81,7 +81,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       node_config.vm.network "forwarded_port", guest: 8080, host: 8181, 
             protocol: "tcp", 
             auto_correct: true
-      node_config.vm.network "forwarded_port", guest: 80, host: 80, 
+      node_config.vm.network "forwarded_port", guest: 80, host: 8888, 
             protocol: "tcp", 
             auto_correct: true
       node_config.vm.network "forwarded_port", guest: 8088, host: 8088, 
