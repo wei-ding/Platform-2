@@ -21,6 +21,11 @@ class nginx {
     ensure => installed,
   }
   ->
+  service { 'nginx':
+    ensure => running,
+    enable => true,
+  }
+  ->
   file { "/etc/nginx/conf.d/default.conf":
     ensure => "file",
     content => template('nginx/defaultconf.erb'),
@@ -32,6 +37,14 @@ class nginx {
     unless => "getent group nginx | cut -d: -f4 | grep -s c3po",
     command => "usermod -aG nginx c3po",
     require => User['c3po'],
+  }
+  ->
+  # a fuller example, including permissions and ownership
+  file { '/var/www':
+    ensure => 'directory',
+    owner  => 'nginx',
+    group  => 'nginx',
+    mode   => '0770',
   }
   ->
   file { 'nginxwww':

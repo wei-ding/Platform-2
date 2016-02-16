@@ -81,6 +81,39 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       node_config.vm.network "forwarded_port", guest: 8080, host: 8181, 
             protocol: "tcp", 
             auto_correct: true
+      node_config.vm.network "forwarded_port", guest: 80, host: 80, 
+            protocol: "tcp", 
+            auto_correct: true
+      node_config.vm.network "forwarded_port", guest: 8088, host: 8088, 
+            protocol: "tcp", 
+            auto_correct: true
+      node_config.vm.network "forwarded_port", guest: 8020, host: 8020, 
+            protocol: "tcp", 
+            auto_correct: true
+      node_config.vm.network "forwarded_port", guest: 50070, host: 50070, 
+            protocol: "tcp", 
+            auto_correct: true
+      node_config.vm.network "forwarded_port", guest: 50475, host: 50475, 
+            protocol: "tcp", 
+            auto_correct: true
+      node_config.vm.network "forwarded_port", guest: 50075, host: 50075, 
+            protocol: "tcp", 
+            auto_correct: true
+      node_config.vm.network "forwarded_port", guest: 50090, host: 50090, 
+            protocol: "tcp", 
+            auto_correct: true
+      node_config.vm.network "forwarded_port", guest: 50105, host: 50105, 
+            protocol: "tcp", 
+            auto_correct: true
+      node_config.vm.network "forwarded_port", guest: 50030, host: 50030, 
+            protocol: "tcp", 
+            auto_correct: true
+      node_config.vm.network "forwarded_port", guest: 50060, host: 50060, 
+            protocol: "tcp", 
+            auto_correct: true
+      node_config.vm.network "forwarded_port", guest: 19888, host: 19888, 
+            protocol: "tcp", 
+            auto_correct: true
       node_config.vm.provision "puppet" do |puppet|
         #puppet.manifests_path = "puppet/manifests"
         #puppet.manifest_file = "default.pp"
