@@ -22,6 +22,10 @@ class nginx {
     ensure => installed,
   }
   ->
+  package { "elinks":
+    ensure => installed,
+  }
+  ->
   file { "/etc/nginx/conf.d/default.conf":
     ensure => "file",
     content => template('nginx/defaultconf.erb'),
@@ -57,14 +61,23 @@ class nginx {
    group   =>    'nginx',
    }
    ->
-  exec { "chmodnginx":
-    path => $path,
-    command => "sudo chmod ug+rw /var/www",
-  }
-  ->
-  service { 'nginx':
-    ensure => running,
-    enable => true,
-  }
+  file { 'nginxc3po':
+   path  => '/var/www/c3po',
+   ensure  =>  present,
+   recurse => remote,
+   source  =>  '/vagrant/modules/nginx/files/c3po',
+   owner     => 'nginx',
+   group   =>    'nginx',
+   }
+   ->
+   exec { "chmodnginx":
+     path => $path,
+     command => "sudo chmod ug+rw /var/www",
+   }
+   ->
+   service { 'nginx':
+     ensure => running,
+     enable => true,
+   }
  
 }
