@@ -17,18 +17,19 @@ class nginx {
 
   $path="/bin:/usr/bin:/sbin:/usr/sbin:/usr/local/bin"
 
+
   package { "nginx":
     ensure => installed,
-  }
-  ->
-  service { 'nginx':
-    ensure => running,
-    enable => true,
   }
   ->
   file { "/etc/nginx/conf.d/default.conf":
     ensure => "file",
     content => template('nginx/defaultconf.erb'),
+  }
+  ->
+  file { "/etc/nginx/conf.d/c3po.conf":
+    ensure => "file",
+    content => template('nginx/c3poconf.erb'),
   }
   ->
   exec {"usermod_nginx":
@@ -55,5 +56,15 @@ class nginx {
    owner     => 'nginx',
    group   =>    'nginx',
    }
+   ->
+  exec { "chmodnginx":
+    path => $path,
+    command => "sudo chmod ug+rw /var/www",
+  }
+  ->
+  service { 'nginx':
+    ensure => running,
+    enable => true,
+  }
  
 }
