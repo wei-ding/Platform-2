@@ -60,8 +60,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # All Vagrant configuration is done here. The most common configuration
   # Every Vagrant virtual environment requires a box to build off of.
-  config.vm.box = "clinical3po-vagrant-centos-6.7.box"
-  config.vm.box_url = "http://c3po-develop.tk/downloads/clinical3po-vagrant-centos-6.7.box"
+  config.vm.box = "dingw/vagrant-c3po-centos-6.7"
 
   config.vm.provider :virtualbox do |vb|
     vb.customize ["modifyvm", :id, "--memory", planning[:vm_mem] ]
