@@ -16,14 +16,73 @@
 class hdfs_client {
   require repos_setup
   require hdp_select
+  require vm_users
   require jdk
 
   $conf_dir="/etc/hadoop/hdp"
-  $path="${jdk::HOME}/bin:/bin:/usr/bin"
+  $path="${jdk::HOME}/bin:/bin:/usr/bin:/usr/sbin"
   $log_dir="/var/log/hadoop"
   $data_dir="/var/lib/hadoop"
   $pid_dir="/var/run/pid"
   $keytab_dir="/etc/security/hadoop"
+
+  group { 'hadoop':
+    ensure => present,
+  }
+  ->
+  exec {"usermod_c3po":
+    path => "$path",
+    #unless => "grep -q 'hadoop\\S*c3po' /etc/group",
+    unless => "getent group hadoop | cut -d: -f4 | grep -s c3po",
+    command => "usermod -aG hadoop c3po",
+    require => User['c3po'],
+  }
+  ->
+  group { 'mapred':
+    ensure => present,
+  }
+  ->
+  group { 'yarn':
+    ensure => present,
+  }
+  ->
+  group { 'oozie':
+    ensure => present,
+  } 
+  ->
+  user { 'hdfs':
+    ensure => present,
+    gid => hadoop,
+  }
+  ->
+  user { 'mapred':
+    ensure => present,
+    groups => ['mapred'],
+    gid => hadoop,
+  } 
+  ->
+  user { 'yarn':
+    ensure => present,
+    groups => ['yarn', 'mapred'],
+    gid => hadoop,
+  } 
+  ->
+  user { 'hive':
+    ensure => present,
+    gid => hadoop,
+  }
+  ->
+  user { 'oozie':
+    ensure => present,
+    groups => ['hadoop'],
+    gid => 'oozie',
+  }
+  ->
+  user { 'hbase':
+    ensure => present,
+    gid => 'hadoop',
+  }
+
 
   package { "hadoop_${rpm_version}":
     ensure => installed,

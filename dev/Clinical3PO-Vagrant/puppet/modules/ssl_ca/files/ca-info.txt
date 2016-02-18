@@ -1,7 +1,0 @@
-US
-California
-Palo Alto
-Hortonworks Certificate Authority
-Certificate Authority
-hortonworks.com
-.

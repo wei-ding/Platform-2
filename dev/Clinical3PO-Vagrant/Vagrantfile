@@ -60,7 +60,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # All Vagrant configuration is done here. The most common configuration
   # Every Vagrant virtual environment requires a box to build off of.
-  config.vm.box = "clinical3po-vagrant-centos-6.7.box"
+  config.vm.box = "dingw/vagrant-c3po-centos-6.7"
 
   config.vm.provider :virtualbox do |vb|
     vb.customize ["modifyvm", :id, "--memory", planning[:vm_mem] ]
@@ -78,7 +78,45 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       node_config.ssh.forward_agent = true
       node_config.ssh.username = "c3po"
       node_config.ssh.password = "%PW135can%"
-      node_config.vm.network "forwarded_port", guest: 8080, host: 8080, protocol: "tcp" 
+      node_config.vm.network "forwarded_port", guest: 8080, host: 8181, 
+            protocol: "tcp", 
+            auto_correct: true
+      node_config.vm.network "forwarded_port", guest: 8844, host: 8844, 
+            protocol: "tcp", 
+            auto_correct: true
+      node_config.vm.network "forwarded_port", guest: 80, host: 8888, 
+            protocol: "tcp", 
+            auto_correct: true
+      node_config.vm.network "forwarded_port", guest: 8088, host: 8088, 
+            protocol: "tcp", 
+            auto_correct: true
+      node_config.vm.network "forwarded_port", guest: 8020, host: 8020, 
+            protocol: "tcp", 
+            auto_correct: true
+      node_config.vm.network "forwarded_port", guest: 50070, host: 50070, 
+            protocol: "tcp", 
+            auto_correct: true
+      node_config.vm.network "forwarded_port", guest: 50475, host: 50475, 
+            protocol: "tcp", 
+            auto_correct: true
+      node_config.vm.network "forwarded_port", guest: 50075, host: 50075, 
+            protocol: "tcp", 
+            auto_correct: true
+      node_config.vm.network "forwarded_port", guest: 50090, host: 50090, 
+            protocol: "tcp", 
+            auto_correct: true
+      node_config.vm.network "forwarded_port", guest: 50105, host: 50105, 
+            protocol: "tcp", 
+            auto_correct: true
+      node_config.vm.network "forwarded_port", guest: 50030, host: 50030, 
+            protocol: "tcp", 
+            auto_correct: true
+      node_config.vm.network "forwarded_port", guest: 50060, host: 50060, 
+            protocol: "tcp", 
+            auto_correct: true
+      node_config.vm.network "forwarded_port", guest: 19888, host: 19888, 
+            protocol: "tcp", 
+            auto_correct: true
       node_config.vm.provision "puppet" do |puppet|
         #puppet.manifests_path = "puppet/manifests"
         #puppet.manifest_file = "default.pp"

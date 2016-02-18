@@ -34,7 +34,13 @@ if hasrole($roles, 'tomcat') {
   include tomcat
 }
 
+if hasrole($roles, 'nginx') {
+  include nginx
+}
 
+if hasrole($roles, 'maven') {
+  include maven
+}
 
 if hasrole($roles, 'ambari-agent') {
   include ambari_agent
@@ -42,10 +48,6 @@ if hasrole($roles, 'ambari-agent') {
 
 if hasrole($roles, 'ambari-server') {
   include ambari_server
-}
-
-if hasrole($roles, 'cert') {
-   include certification
 }
 
 if hasrole($roles, 'client') {
@@ -101,6 +103,11 @@ if hasrole($roles, 'knox') {
 if hasrole($roles, 'nn') {
   include hdfs_namenode
 }
+
+if hasrole($roles, 'c3po') {
+  include c3po_mysqldb
+}
+
 
 if hasrole($roles, 'oozie') {
   include oozie_server
