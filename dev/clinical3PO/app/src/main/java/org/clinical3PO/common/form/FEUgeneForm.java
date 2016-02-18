@@ -3,7 +3,9 @@ package org.clinical3PO.common.form;
 public class FEUgeneForm {
 
 	private String classProperty;
-	private String classTime;
+	private String classBinTime;
+	private String startDate;
+	private String endDate;
 	private String startTime;
 	private String endTime;
 	
@@ -15,12 +17,20 @@ public class FEUgeneForm {
 		this.classProperty = classProperty;
 	}
 	
-	public String getClassTime() {
-		return classTime;
+	public String getStartDate() {
+		return startDate;
 	}
 
-	public void setClassTime(String classTime) {
-		this.classTime = classTime;
+	public void setStartDate(String startDate) {
+		this.startDate = startDate;
+	}
+	
+	public String getEndDate() {
+		return endDate;
+	}
+
+	public void setEndDate(String endDate) {
+		this.endDate = endDate;
 	}
 
 	public String getStartTime() {
@@ -37,5 +47,13 @@ public class FEUgeneForm {
 
 	public void setEndTime(String endTime) {
 		this.endTime = endTime;
+	}
+	
+	public String getClassBinTime() {
+		return classBinTime;
+	}
+
+	public void setClassBinTime(String classBinTime) {
+		this.classBinTime = classBinTime;
 	}
 }

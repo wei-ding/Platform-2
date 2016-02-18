@@ -1,5 +1,6 @@
 package org.clinical3PO.learn.main;
 
+import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -7,6 +8,8 @@ import java.io.InputStreamReader;
 import java.io.LineNumberReader;
 import java.io.PrintWriter;
 import java.nio.charset.Charset;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 import java.util.TreeMap;
 
@@ -17,15 +20,31 @@ import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.fs.LocatedFileStatus;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.fs.RemoteIterator;
+import org.apache.hadoop.io.NullWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
+import org.apache.hadoop.mapreduce.lib.output.LazyOutputFormat;
+import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
 import org.apache.hadoop.util.GenericOptionsParser;
 import org.clinical3PO.learn.util.C3POFilterConfiguration;
 import org.clinical3PO.learn.util.FEConfiguration;
 import org.clinical3PO.learn.util.FEEvaluatorBase;
 
+import com.google.gson.Gson;
+
+/**
+ * Is a Hadoop program and this class acts as a driver.
+ * Brief: 
+ * 		Capture input params, parse and assign to defined object.
+ * 		Pre-calculate the required stuff such as basicFEConfig.txt and filterConfig.txt files.
+ * 		Initiate Hadoop job to query concept.txt for required info.
+ * 		Initiate Hadoop job on observation.txt, providing concept job output as input.
+ * 		Access, Read and Parse the output from observation Hadoop job to generate Arff. 
+ * @author 3129891
+ *
+ */
 public class FEMain {
 
 	public static void main(String[] args) throws Exception {
@@ -35,10 +54,13 @@ public class FEMain {
 		// To read both Hadoop parameters(-D prefixed) and regular arguments. 
 		String[] otherArgs = new GenericOptionsParser(conf, args).getRemainingArgs();
 
-		//parse parameters - this is really just for first-pass checking, the mappers and redders will do
-		//their own version of it.
+		//parse parameters - this is really just for first-pass checking, the mappers and redders will do their own version of it.
 		FECmdLine cmdLine = new FECmdLine();
 
+		/*
+		 * This condition checks if the input params are Hadoop Parsed(-D) or normal arguments.
+		 * Two different parsers are available to do the job. One for Hadoop parsed arguments, other for normal.
+		 */
 		if(otherArgs.length != 0) {
 			System.err.println("-- getting configuration from command line arguments");
 			System.err.println("(If you want to use the hadoop configuration properties to configure this,");
@@ -58,21 +80,26 @@ public class FEMain {
 			}
 		}
 
+		conf.set("classProperty", cmdLine.classAttribute);
 		FileSystem fs = FileSystem.get(conf);
 		FSDataInputStream FSInputStream = null;
 		Path loaclPath = null;
 		FileSystem localFS = null;
 
 		/*
+		 * Reading the input configuration files(which decides on what features data is to be fetched and on what parameters)
+		 * Code to read the Files from Local File System.
 		 * Below are the two lines of code to read files from localFS (file:///) instead of hdfs (hdfs:///) 
 		 */
-		loaclPath = new Path(cmdLine.filterConfigFilePath); 
-		localFS = FileSystem.get(loaclPath.toUri(), conf);
+		loaclPath = new Path(cmdLine.filterConfigFilePath); 	// Creating object for file path
+		localFS = FileSystem.get(loaclPath.toUri(), conf);		// Initializing FileSystem to get the connection
 		if(!localFS.exists(loaclPath)) {
 			System.err.println("Path doesn't exists: "+ loaclPath.getName() + " \nCheck the path properly.");
 			System.exit(1);
 		}
-		FSInputStream = localFS.open(loaclPath);
+		FSInputStream = localFS.open(loaclPath);	// connect and read file through a stream.
+		
+		// method call
 		String filtconfContents = readFile(FSInputStream);
 		conf.set("filtconfContents", filtconfContents);
 		System.err.println("################################################");
@@ -85,13 +112,15 @@ public class FEMain {
 		/*
 		 * Below are the two lines of code to read files from localFS (file:///) instead of hdfs (hdfs:///) 
 		 */
-		loaclPath = new Path(cmdLine.feConfigFilePath);
-		localFS = FileSystem.get(loaclPath.toUri(), conf);
+		loaclPath = new Path(cmdLine.feConfigFilePath);			// Creating object for file path
+		localFS = FileSystem.get(loaclPath.toUri(), conf);		// Initializing FileSystem to get the connection
 		if(!localFS.exists(loaclPath)) {
 			System.err.println("Path doesn't exists: "+ loaclPath.getName() + " \nCheck the path properly.");
 			System.exit(1);
 		}
-		FSInputStream = localFS.open(loaclPath);
+		FSInputStream = localFS.open(loaclPath);	// connect and read file through a stream.
+		
+		// method call
 		String feconfContents = readFile(FSInputStream);
 		conf.set("feconfContents", feconfContents);
 		System.err.println("################################################");
@@ -119,7 +148,11 @@ public class FEMain {
 		C3POFilterConfiguration filtConf = null;
 		if(conf.get("filtconfContents") != null) {
 
-			// method call
+			/*
+			 *  method call
+			 *  
+			 *  Parsing the configuration file - filterConfig (contains, for which class feature do we need to fetch features)
+			 */
 			filtConf = parseFilterConfigParameters(conf.get("filtconfContents"));		
 		} else {
 			throw new Exception("No filter configuration given");
@@ -128,29 +161,92 @@ public class FEMain {
 		FEConfiguration feConf = null;
 		if(conf.get("feconfContents") != null) {
 
-			// method call
+			/*
+			 *  method call
+			 *  
+			 *  Parsing the configuration file - basicFEConf (for every class properties were declared. 
+			 *  eg: binwidth, deviation type, legit type etc...)
+			 */
 			feConf = parseFeConfigParameters(conf.get("feconfContents"), cmdLine, filtConf);
 		} else {
 			throw new Exception("No feature extraction configuration given");
 		}
 
+		/**
+		 * This Driver deals with two Job's.
+		 *  1) A Job on Concept.txt to get relevant information.
+		 *  2) A Job on Input file to extract features using filters, such as concepts, date and time frames. 
+		 */
+		String conceptOutPutTemporaryFile = "conTempOut";	// Temporary path for dropping output from concept-Job
+		Path conceptOutput = new Path(conceptOutPutTemporaryFile);
+		fs.delete(conceptOutput, true);
+		
+		Job job_conceptFile = Job.getInstance(conf, "FE-ConceptExtract");
+		
+		FileInputFormat.setInputPaths(job_conceptFile, new Path(cmdLine.conceptDirectory));
+		FileOutputFormat.setOutputPath(job_conceptFile, conceptOutput);
+
+		job_conceptFile.setMapperClass(FEConceptMapper.class);
+		job_conceptFile.setMapOutputKeyClass(Text.class);
+		job_conceptFile.setMapOutputValueClass(NullWritable.class);
+
+		job_conceptFile.setJarByClass(FEMain.class);
+
+		LazyOutputFormat.setOutputFormatClass(job_conceptFile, TextOutputFormat.class);
+		int result = job_conceptFile.waitForCompletion(true) ? 0 : 1;
+
+		if(result == 1) {
+			System.err.println("Program to parse Concept file isn't sucesful.");
+			System.exit(result);
+		}
+		
+		if(!fs.exists(conceptOutput)) {
+			System.err.println("Path doesn't exists: "+ conceptOutput.getName() + " \nCheck the path properly.");
+			System.exit(1);
+		}
+
+		/*
+		 * method call
+		 * 
+		 * Reads output from concept-job output
+		 */
+		Object[] arrayOfObjects = readInputPaths(fs.open(new Path(conceptOutPutTemporaryFile+"/part-r-00000")));
+		fs.delete(conceptOutput, true);	// delete the output file for concept-job
+
+		/*
+		 * method call
+		 * 
+		 * Parse the output from concept-job to get a map of key value pair.
+		 * Convert the class into JSON using Gson class and get the reference to the JSON object.
+		 * Set the reference to the conf so that it could be accessed and used in Mapper/Reducer.
+		 */
+		FEUtils utilsObject = FEUtils.getFEUtils(arrayOfObjects);
+		Gson gson = new Gson();
+		String conceptData = gson.toJson(utilsObject);
+		conf.set("conceptData", conceptData);
+
 		//OK! all the command line / configuration stuff appears to be OK. Start the job.
-		Job job = Job.getInstance(conf, "Map/Reduce ARFF Test");
+		Job feCoreJob = Job.getInstance(conf, "FE-ArffGen");
 
-		job.setJarByClass(FEMain.class);
+		feCoreJob.setJarByClass(FEMain.class);
+		
+		feCoreJob.setMapperClass(FECoreMapper.class);
+		feCoreJob.setPartitionerClass(FECorePartitioner.class);
+		feCoreJob.setSortComparatorClass(FESortComparator.class);
+		feCoreJob.setGroupingComparatorClass(FEGroupingComparator.class);
+		feCoreJob.setReducerClass(FECoreReducer.class);
 
-		job.setMapperClass(FEMapper.class);
-		job.setReducerClass(FEReducer.class);
+		feCoreJob.setMapOutputKeyClass(FEDataObjects.class);
+		feCoreJob.setMapOutputValueClass(NullWritable.class);
+		feCoreJob.setOutputKeyClass(Text.class);
+		feCoreJob.setOutputValueClass(Text.class);
 
-		job.setOutputKeyClass(Text.class);
-		job.setOutputValueClass(Text.class);
+		FileInputFormat.addInputPath(feCoreJob, new Path(cmdLine.inputDirectory));
+		FileOutputFormat.setOutputPath(feCoreJob, new Path(cmdLine.outputDirectory));
 
-		FileInputFormat.addInputPath(job, new Path(cmdLine.inputDirectory));
-		FileOutputFormat.setOutputPath(job, new Path(cmdLine.outputDirectory));
+		feCoreJob.setNumReduceTasks(cmdLine.noOfReducers);
 
-		job.setNumReduceTasks(cmdLine.noOfReducers);
-
-		boolean jobSuccessful = job.waitForCompletion(true);
+		boolean jobSuccessful = feCoreJob.waitForCompletion(true);
 
 		/**
 		 * wait for the completion of the job here and do the arff header emitting and feature vector reconciliation here.
@@ -243,6 +339,8 @@ public class FEMain {
 
 		StringBuffer fileContents = new StringBuffer();
 		Scanner scanner = new Scanner(is);
+		
+		// If the line separator is changed, please do so in setup() method in FEConceptMapper.java
 		String lineSeparator = System.getProperty("line.separator");
 		try {
 			while(scanner.hasNextLine()) {      
@@ -252,6 +350,37 @@ public class FEMain {
 			scanner.close();
 		}
 		return fileContents.toString();
+	}
+	
+	/**
+	 * Read and parse the configuration file for list of observations, of whose Feature's to be extracted.
+	 * 
+	 * @param fsdis
+	 * @return list of observations as list
+	 * @throws IOException 
+	 */
+	private static Object[] readInputPaths(FSDataInputStream fsdis) throws IOException {
+
+		List<String> list = null;
+		BufferedReader br = null;
+		try {
+			br = new BufferedReader(new InputStreamReader(fsdis));
+			list = new ArrayList<String>();
+
+			String line = null;
+			while((line=br.readLine()) != null) {
+
+				if(line.isEmpty()) continue;
+				System.err.println("------------ " + line);
+				list.add(line.trim());
+			}
+		} catch (IOException e1) {
+			System.err.println("File Not Found" + e1);
+			System.exit(0);
+		} finally {
+			if(br != null)	br.close();
+		}
+		return list.toArray();
 	}
 
 	/**
@@ -355,6 +484,9 @@ public class FEMain {
 	 * helper function to read vectors from map/reduce output. May well end up splitting this off into a
 	 * separate class or separate map/reduce task
 	 * 
+	 * @param is
+	 * @return map
+	 * @throws IOException
 	 */
 	private static TreeMap<String,String> accumulateForReconcile(InputStream is) throws IOException {
 

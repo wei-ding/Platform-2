@@ -56,7 +56,7 @@
 		</tr>	
 		
 		<tr>
-			<td>class property</td>
+			<td>Class Property</td>
 			<td>
 				<form:input path="classProperty" id="classPropertyInput" />
 				<form:errors path="classProperty" cssClass="error" />
@@ -64,15 +64,31 @@
 		</tr>
 		
 		<tr>
-		<td>class time</td>
+			<td>Class Bin Time</td>
+			<td>
+				<form:input path="classBinTime" id="classBinTimeInput" />
+				<form:errors path="classBinTime" cssClass="error" />
+			</td>
+		</tr>
+		
+		<tr>
+		<td>Start Date</td>
 		<td>
-			<form:input path="classTime" id="classTimeInput" />
-			<form:errors path="classTime" cssClass="error" />
+			<form:input path="startDate" id="startDateInput" />
+			<form:errors path="startDate" cssClass="error" />
+		</td>
+		</tr>
+		
+		<tr>
+		<td>End Date</td>
+		<td>
+			<form:input path="endDate" id="endDateInput" />
+			<form:errors path="endDate" cssClass="error" />
 		</td>
 		</tr>	
 		
 		<tr>
-			<td>start time</td>
+			<td>Start Time</td>
 			<td>
 				<form:input path="startTime" id="startTimeInput" />
 				<form:errors path="startTime" cssClass="error" />
@@ -80,7 +96,7 @@
 		</tr>
 		
 		<tr>
-			<td>end time</td>
+			<td>End Time</td>
 			<td>
 				<form:input path="endTime" id="endTimeInput" />
 				<form:errors path="endTime" cssClass="error" />

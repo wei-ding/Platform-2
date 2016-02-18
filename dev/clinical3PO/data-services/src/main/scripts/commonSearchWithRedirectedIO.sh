@@ -56,18 +56,22 @@
 #$7 Classification Algorithm
 #$8 Folds (integer)
 #$9 Iterations (integer)
-#${10} ClassTime (String-hh:mm:ss)
-#${11} StartTime (String-hh:mm:ss)
-#${12} EndTime (String-hh:mm:ss)
+#${10} ClassBinTime (String-HH:mm)
+#${11} StartDate (String-MM/dd/yy)
+#${12} EndDate (String-MM/dd/yy)
+#${13} StartTime (String-HH:mm:ss)
+#${14} EndTime (String-HH:mm:ss)
 
 #Index 15 - NLP 
 # No input properties - atleast for now.
 
 #Index 16 - Feature Extraction - Ugene
 #$6 Class Property(Ex: diasabp or glucose)
-#$7 ClassTime (String-hh:mm:ss)
-#$8 StartTime (String-hh:mm:ss)
-#$9 EndTime (String-hh:mm:ss)
+#$7 ClassBinTime (String-HH:mm)
+#$8 StartDate (String-MM/dd/yy)
+#$9 EndDate (String-MM/dd/yy)
+#${10} StartTime (String-HH:mm:ss)
+#${11} EndTime (String-HH:mm:ss)
 
 
 # Check the command line arguments
@@ -152,9 +156,9 @@ then
 
 elif [ $1 -eq 14 ]
 then
-   if [ $# -ne 12 ]
+   if [ $# -ne 14 ]
    then
-       echo "Usage: $0 14 <Unique Output Dir> <LocalDirectory> <LocalFileName> <Job Id> <Class Property> <Classification ALgorithm> <Folds> <Iterations> <Class Time> <Start Time> <End Time>"
+       echo "Usage: $0 14 <Unique Output Dir> <LocalDirectory> <LocalFileName> <Job Id> <Class Property> <Classification ALgorithm> <Folds> <Iterations> <Class Time> <Start Date> <End Date> <Start Time> <End Time>"
        exit
    fi 
    
@@ -168,9 +172,9 @@ then
  
 elif [ $1 -eq 16 ]
 then
-   if [ $# -ne 9 ]
+   if [ $# -ne 11 ]
    then
-       echo "Usage: $0 16 <Unique Output Dir> <LocalDirectory> <LocalFileName> <Job Id> <Class Property> <Class Time> <Start Time> <End Time>"
+       echo "Usage: $0 16 <Unique Output Dir> <LocalDirectory> <LocalFileName> <Job Id> <Class Property> <Class Time> <Start Date> <End Date> <Start Time> <End Time>"
        exit
    fi        
 fi
@@ -244,7 +248,7 @@ elif [ $1 -eq 14 ]
 then
 	echo "Initiating Feature Extraction Module With Ml-Flex. "
 	
-	${clinical3PO.hadoop.shellscripts.dir}/fextract.sh $6 $2 ${10} ${11} ${12}
+	${clinical3PO.hadoop.shellscripts.dir}/fextract.sh $6 $2 ${10} ${11} ${12} ${13} ${14}
    
    	if [ $? -ne 0 ]
    	then
@@ -257,7 +261,7 @@ then
 elif [ $1 -eq 16 ]
 then
 	echo "Initiating Feature Extraction Module With UGENE. "
-	${clinical3PO.hadoop.shellscripts.dir}/fextract.sh $6 $2 $7 $8 $9
+	${clinical3PO.hadoop.shellscripts.dir}/fextract.sh $6 $2 $7 $8 $9 ${10} ${11}
 	
 	if [ $? -ne 0 ]
    	then

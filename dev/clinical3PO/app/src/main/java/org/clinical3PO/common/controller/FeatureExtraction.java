@@ -61,7 +61,9 @@ public class FeatureExtraction {
 		searchParameters.add(new JobSearchParameter(JobSearchConstants.CLASSIFIER.getSearchKey(), mlflexform.getClassificationAlgorithm(),1));
 		searchParameters.add(new JobSearchParameter(JobSearchConstants.FOLDS.getSearchKey(), mlflexform.getFolds().toString(),1));
 		searchParameters.add(new JobSearchParameter(JobSearchConstants.NoITERATIONS.getSearchKey(),mlflexform.getNumberOfIterations().toString(),1));
-		searchParameters.add(new JobSearchParameter(JobSearchConstants.CLASSTIME.getSearchKey(), mlflexform.getClassTime(),1));
+		searchParameters.add(new JobSearchParameter(JobSearchConstants.CLASSTIME.getSearchKey(), mlflexform.getClassBinTime(),1));
+		searchParameters.add(new JobSearchParameter(JobSearchConstants.STARTDATE.getSearchKey(), mlflexform.getStartDate(),1));
+		searchParameters.add(new JobSearchParameter(JobSearchConstants.ENDDATE.getSearchKey(), mlflexform.getEndDate(),1));
 		searchParameters.add(new JobSearchParameter(JobSearchConstants.STARTTIME.getSearchKey(), mlflexform.getStartTime(),1));
 		searchParameters.add(new JobSearchParameter(JobSearchConstants.ENDTIME.getSearchKey(), mlflexform.getEndTime(),1));
 
@@ -101,7 +103,9 @@ public class FeatureExtraction {
 		
 		List<JobSearchParameter> searchParameters = new ArrayList<JobSearchParameter>(4);
 		searchParameters.add(new JobSearchParameter(JobSearchConstants.CLASSPROPERTY.getSearchKey(), feUgeneForm.getClassProperty(), 1));
-		searchParameters.add(new JobSearchParameter(JobSearchConstants.CLASSTIME.getSearchKey(), feUgeneForm.getClassTime(),1));
+		searchParameters.add(new JobSearchParameter(JobSearchConstants.CLASSTIME.getSearchKey(), feUgeneForm.getClassBinTime(),1));
+		searchParameters.add(new JobSearchParameter(JobSearchConstants.STARTDATE.getSearchKey(), feUgeneForm.getStartDate(),1));
+		searchParameters.add(new JobSearchParameter(JobSearchConstants.ENDDATE.getSearchKey(), feUgeneForm.getEndDate(),1));
 		searchParameters.add(new JobSearchParameter(JobSearchConstants.STARTTIME.getSearchKey(), feUgeneForm.getStartTime(),1));
 		searchParameters.add(new JobSearchParameter(JobSearchConstants.ENDTIME.getSearchKey(), feUgeneForm.getEndTime(),1));
 		

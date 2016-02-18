@@ -1,6 +1,5 @@
 package org.clinical3PO.learn.main;
 
-import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -12,8 +11,7 @@ import java.util.Map;
 import java.util.TreeSet;
 
 import org.apache.hadoop.conf.Configuration;
-import org.apache.hadoop.fs.FileSystem;
-import org.apache.hadoop.fs.Path;
+import org.apache.hadoop.io.NullWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Reducer;
 import org.clinical3PO.learn.util.C3POFilterConfiguration;
@@ -23,26 +21,29 @@ import org.clinical3PO.learn.util.FEConfiguration;
 import org.clinical3PO.learn.util.FEEvaluatorBase;
 import org.clinical3PO.learn.util.FEStrategyBase;
 
-/**
- 	First pass dummy reducer:
-    - so dummy reducer could just do something like this: it receives all those tab-sep property/binvalue strings for each patient ID, yes?
-    - create a treemap<string,string>
-    - for each string, make an entry to that treemap 
-      - split by tab
-      - key = token[0] (propname)
-      - value = rest of tokens joined by ","
-    - then iterate through the keys of the treemap (IN REAL VERSION THIS WILL INSTEAD ITERATE THROUGH A LIST OF THE PROPERTIES WE WANT,
-      gleaned either from a property selection file or scanning the input patient data or something. But for now, don't worry about having
-      all the lines have the same bunch of stuff?)
- ***** REMEMBER that if we have multiple reducers there might be gaps (multiple reducers emitting parts of the patient vector.) So, if
-      there's a prop missing from the input, don't stew or error, just emit like x,x,x, for its number of bins - ? How do we know
-      how many bins? Also from the global feature profile, however that is communicated.
-    - emit those; output is PID as key and whole feature vector (all the comma-sep bin value strings in the map, themselves separated by commas)
-      - that will be very close to arff format, postprocess can knit together the output files and reconcile multiple incomplete vectors for a 
-        given PID, etc.
- */
+import com.google.gson.Gson;
 
-public class FEReducer extends Reducer<Text, Text, Text, Text> {
+/**
+ * First pass dummy reducer:
+ *  - so dummy reducer could just do something like this: it receives all those tab-sep property/binvalue strings for each patient ID, yes?
+ *  - create a treemap<string,string>
+ * 	- for each string, make an entry to that treemap 
+ *  - split by tab
+ *  - key = token[0] (propname)
+ *  - value = rest of tokens joined by ","
+ *  - then iterate through the keys of the treemap (IN REAL VERSION THIS WILL INSTEAD ITERATE THROUGH A LIST OF THE PROPERTIES WE WANT,
+ *    gleaned either from a property selection file or scanning the input patient data or something. But for now, don't worry about having
+ *    all the lines have the same bunch of stuff?)
+ *    
+ *    ***** REMEMBER that if we have multiple reducers there might be gaps (multiple reducers emitting parts of the patient vector.) So, if
+ *    there's a prop missing from the input, don't stew or error, just emit like x,x,x, for its number of bins - ? How do we know
+ *    how many bins? Also from the global feature profile, however that is communicated.
+ *    - emit those; output is PID as key and whole feature vector (all the comma-sep bin value strings in the map, themselves separated by commas)
+ *    - that will be very close to arff format, postprocess can knit together the output files and reconcile multiple incomplete vectors for a given PID, etc.
+ * 
+ * @author 3129891
+ */
+public class FECoreReducer extends Reducer<FEDataObjects, NullWritable, Text, Text> {
 
 	C3POFilterConfiguration filtconf;
 	FEConfiguration feconf;
@@ -52,26 +53,31 @@ public class FEReducer extends Reducer<Text, Text, Text, Text> {
 	private static final int IDToken = 0;
 	private static final int PropertyNameToken = 1;
 
-	private static final String regexp = "[\\s,;]+";
+	private static final String regexp = "[\\s+,;~]+";
 	private TreeSet<String> PIDsThatHaveOutput;
-	private HashMap<String, String> conceptProperties_Map;
+	private Map<String, String> conceptProperties_Map;
 
-	private Text key_ = null;
-	private Text value_ = null;
+	private StringBuilder builder = null;
 
+	private Text key = null;
+	private Text value = null;
 
 	@Override
 	public void setup(Context context) {
 
-		key_ = new Text();
-		value_ = new Text();
-
+		key = new Text();
+		value = new Text();
+		builder = new StringBuilder();
 		PIDsThatHaveOutput = new TreeSet<String>();
-		conceptProperties_Map = new HashMap<String, String>();
 
 		try {
 
 			Configuration conf = context.getConfiguration();
+
+			String conceptData = conf.get("conceptData", "");
+			Gson gson = new Gson();
+			FEUtils utils = gson.fromJson(conceptData, FEUtils.class);
+			conceptProperties_Map = utils.getMap();
 
 			//handle command line arguments from main
 			System.err.println("Reducer getting command line: ---");
@@ -80,10 +86,6 @@ public class FEReducer extends Reducer<Text, Text, Text, Text> {
 				System.err.println("Reducer ERROR: command line parse failed");
 				cmdline = null;
 			}
-
-			// method call
-			loadAndMatchObsevationIdsWithConceptIds(conf);
-
 
 			//new, see if I can read the filtconf and feconf from strings given in conf
 			//TODO LATER THERE WILL BE MULTIPLE FECONF?
@@ -133,7 +135,6 @@ public class FEReducer extends Reducer<Text, Text, Text, Text> {
 					is.close();
 					throw new Exception("ERROR: unable to read feature extraction config file");
 				}
-
 				is.close();
 
 				//check to make sure feconf is ok after all the accumulations done
@@ -150,51 +151,23 @@ public class FEReducer extends Reducer<Text, Text, Text, Text> {
 		}
 	}
 
-	/**
-	 * In order to pick observation attribute based on the number from observation file, reading concept file 
-	 * and storing first two attributes(numeric-value, observation-name) in the map as key-value pairs.
-	 * 
-	 * @param conf
-	 * @throws IOException
-	 */
-	private void loadAndMatchObsevationIdsWithConceptIds(Configuration conf) throws IOException {
 
-		String line = null;
-		FileSystem fs = null;
-		BufferedReader reader = null;
+	@SuppressWarnings("unused")
+	public void reduce(FEDataObjects key, Iterable<NullWritable> values, Context context) throws IOException, InterruptedException {
 
-		try {
-			fs = FileSystem.get(conf);
-			reader = new BufferedReader(new InputStreamReader(fs.open(new Path(cmdline.conceptDirectory))));
+		boolean flag = true;
+		for(NullWritable value : values) {
 
-			line = reader.readLine(); // Since there's header in line-1, ignoring it
-			line = reader.readLine();
-			String[] conceptTokens = null;
-			while(line != null && !line.isEmpty()) {
-
-				conceptTokens = line.split(regexp);
-				conceptProperties_Map.put(conceptTokens[0], conceptTokens[1].toLowerCase());
-				line = reader.readLine();
-				conceptTokens = null;
+			String data = key.toString();
+			String [] array = data.split(regexp);
+			if(flag) {
+				builder.append(array[0]).append("\t").append(array[1]).append("\t");
+				flag = false;
 			}
-		} catch(IOException e) {
-			System.err.print(e);
-		} finally {
-			if(reader != null)
-				reader.close();
+			builder.append(array[3]).append("\t").append(array[4]).append("\t");
 		}
-	}
-
-	private StringBuilder builder = new StringBuilder();
-
-	@Override
-	public void reduce(Text key, Iterable<Text> values, Context context) throws IOException, InterruptedException {
-
-		String[] units = key.toString().split("~");
-		builder.append(units[0]+ " "+units[1]).append(" ");
-		for(Text val:values) {
-			builder.append(val).append(" ");
-		}
+		System.err.println(builder.toString());
+		System.err.println("REDUCER: AFTER EVERY ITERATION ------------------------------------------");
 
 		String[] toks = builder.toString().split(regexp);
 		builder.delete(0, builder.length());
@@ -217,11 +190,11 @@ public class FEReducer extends Reducer<Text, Text, Text, Text> {
 					String[] output = reducerProcessing(processLineResults).split("\\s");
 					processLineResults = null;
 
-					key_.set(output[0]);
-					value_.set(output[1]);
-					context.write(key_, value_);
-					key_.clear();
-					value_.clear();
+					this.key.set(output[0]);
+					this.value.set(output[1]);
+					context.write(this.key, this.value);
+					this.key.clear();
+					this.value.clear();
 				}
 			} else {
 				//error! 
@@ -370,7 +343,6 @@ public class FEReducer extends Reducer<Text, Text, Text, Text> {
 		StringBuffer valstr;
 		String patientID = toks[IDToken];
 		String propertyName = conceptProperties_Map.get(toks[1]);
-
 
 		//OK. First, we have to convert all the timestamp/measurement pairs into 
 		//an ArrayList of C3POPatientPropertyMeasurement objects.
@@ -582,7 +554,6 @@ public class FEReducer extends Reducer<Text, Text, Text, Text> {
 				//*************************************************************************************************************
 				//*************************************************************************************************************
 				//*************************************************************************************************************
-
 
 				//now see if we're handling the class strategy, in which case handle it.
 				if(propertyName.equals(cmdline.classAttribute)) {

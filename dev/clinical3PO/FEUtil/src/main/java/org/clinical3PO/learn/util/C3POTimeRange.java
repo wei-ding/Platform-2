@@ -1,5 +1,9 @@
 package org.clinical3PO.learn.util;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class C3POTimeRange {
 	
 	//Where start time is inclusive and end time inclusive 
@@ -50,6 +54,15 @@ public class C3POTimeRange {
 	 */
 	public static boolean isTimestamp(String ts) throws Exception {
 		return (ts.matches("[0-9]+:[0-5][0-9]") || ts.matches("[0-9]+:[0-5][0-9]:[0-5][0-9]"));
+	}
+	
+	public static String validateTimestamp(String ts) {
+		if(ts.matches("[0-9]+:[0-5][0-9]")) {
+			ts =  ts.concat(":00");
+		} else if(ts.matches("[0-9]+:[0-5][0-9]:[0-5][0-9]")) {
+			return ts;
+		}
+		return ts;
 	}
 	
 	/*
@@ -121,6 +134,20 @@ public class C3POTimeRange {
 		}		
 		
 		return str;
+	}
+	
+	public static long parseDateToMillis(String dateString)  {
+
+		SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yy\tHH:mm:ss");
+		Date date = null;
+		try {
+			date = sdf.parse(dateString);
+			return date.getTime();
+		} catch (ParseException e) {
+			System.err.print("Unparsable Date: " + dateString);
+			System.exit(1);
+		}
+		return 0;
 	}
 	
 	public String toString() {
