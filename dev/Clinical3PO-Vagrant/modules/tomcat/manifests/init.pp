@@ -29,13 +29,21 @@ class tomcat {
     ensure => file,
     owner => root,
     group => 'hadoop',
-    mode => 0760,
+    mode => 0755,
     content => template('tomcat/tomcat-env.erb'),
   }
   ->
   exec { "chmodtomcat":
     path => $path,
     command => "sudo chmod +x /etc/profile.d/tomcat.sh",
+  }
+  ->
+  file { "/opt/apache-tomcat-7.0.67/conf/tomcat-users.xml":
+    ensure => file,
+    owner => c3po,
+    group => 'hadoop',
+    mode => 0760,
+    content => template('tomcat/tomcat-users.erb'),
   }
   ->
   exec { "chowntomcat":

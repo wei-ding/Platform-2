@@ -17,15 +17,12 @@
 # the veewee user from the base box.
 class vm_users {
 
-  user { 'veewee':
-    ensure => absent,
-  }
+  $path="/bin:/usr/bin"
 
   user { 'c3po':
     ensure => present,
     gid => wheel,
-    groups => ['wheel','ruby','c3po'],
+    groups => ['users', 'ruby','c3po'],
     membership => inclusive,
   }
-
 }

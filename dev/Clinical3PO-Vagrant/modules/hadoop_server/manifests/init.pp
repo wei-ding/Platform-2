@@ -21,55 +21,6 @@ class hadoop_server {
 
   $path="/bin:/usr/bin"
 
-  group { 'hadoop':
-    ensure => present,
-  }
-  ->
-  group { 'mapred':
-    ensure => present,
-  }
-  ->
-  group { 'yarn':
-    ensure => present,
-  }
-  ->
-  group { 'oozie':
-    ensure => present,
-  } 
-  ->
-  user { 'hdfs':
-    ensure => present,
-    gid => hadoop,
-  }
-  ->
-  user { 'mapred':
-    ensure => present,
-    groups => ['mapred'],
-    gid => hadoop,
-  } 
-  ->
-  user { 'yarn':
-    ensure => present,
-    groups => ['yarn', 'mapred'],
-    gid => hadoop,
-  } 
-  ->
-  user { 'hive':
-    ensure => present,
-    gid => hadoop,
-  }
-  ->
-  user { 'oozie':
-    ensure => present,
-    groups => ['hadoop'],
-    gid => 'oozie',
-  }
-  ->
-  user { 'hbase':
-    ensure => present,
-    gid => 'hadoop',
-  }
-
   file { "${hdfs_client::data_dir}":
     ensure => directory,
     owner => 'root',
