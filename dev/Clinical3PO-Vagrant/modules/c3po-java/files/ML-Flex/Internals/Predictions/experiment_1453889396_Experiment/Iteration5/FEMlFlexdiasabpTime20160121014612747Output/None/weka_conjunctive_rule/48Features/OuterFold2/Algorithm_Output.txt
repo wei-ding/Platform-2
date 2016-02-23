@@ -1,8 +1,0 @@
-=== Predictions on test data ===
-
- inst#     actual  predicted error distribution
-     1      3:low      3:low       0,0,*0.818,0.091,0.091 
-     2      3:low      3:low       0,0,*0.818,0.091,0.091 
-     3     2:high      3:low   +   0,0,*0.818,0.091,0.091 
-     4      3:low      3:low       0,0,*0.818,0.091,0.091 
-     5      3:low      3:low       0,0,*0.818,0.091,0.091
