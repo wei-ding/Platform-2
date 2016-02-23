@@ -21,6 +21,7 @@ class c3po_mysqldb {
 
   file { "/tmp/create-c3po-mysqldb-user.sh":
     ensure => file,
+
     owner => root,
     mode => 0700,
     content => template('c3po_mysqldb/create-c3po-mysqldb-user.erb'),

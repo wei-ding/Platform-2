@@ -162,7 +162,7 @@ vagrant ssh clinical3po-slave2
 vagrant ssh clinical3po-slave3
 
 user: c3po
-password: %PW135can%
+password: %CannonStreetHospital%
 
 Stop:
 vagrant halt
