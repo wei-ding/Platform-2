@@ -109,21 +109,23 @@ class c3po_java {
   file { "/home/c3po/.m2/settings.xml":
     ensure => file,
     owner => c3po,
-    group  => 'hadoop',
-    mode => 0770,
+    group => 'hadoop',
+    mode  => 0770,
     content => template('c3po_java/settingsxml.erb'),
   }
   ->
   file { "/tmp/mvnc3po-java.sh":
     ensure => file,
-    owner => root,
-    mode => 0700,
+    owner => c3po,
+    group => 'hadoop',
+    mode => 0770,
     content => template('c3po_java/mvnc3po-java.erb'),
   }
   ->
   exec { "c3po-java-mvn":
     path => $path,
     command => "/tmp/mvnc3po-java.sh",
+    user => "c3po",
   }
 
 }
