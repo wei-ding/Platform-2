@@ -106,7 +106,7 @@ if hasrole($roles, 'nn') {
 
 if hasrole($roles, 'c3po') {
   include c3po_mysqldb
-  #include c3po_java
+  include c3po_java
 }
 
 
