@@ -18,11 +18,24 @@
 class vm_users {
 
   $path="/bin:/usr/bin"
+  $password = '%CannonStreetHospital%'
 
+  package { "expect":
+    ensure => installed,
+  }
+  ->
   user { 'c3po':
+    path => "$path",
     ensure => present,
     gid => wheel,
     groups => ['users', 'ruby','c3po'],
+    password => generate('/bin/sh', '-c', "mkpasswd -m sha-512 ${password} | tr -d '\n'"),
     membership => inclusive,
+  }
+  ->
+  user {"root":
+    path => "$path",
+    ensure => 'present',
+    password => generate('/bin/sh', '-c', "mkpasswd -m sha-512 ${password} | tr -d '\n'"),
   }
 }

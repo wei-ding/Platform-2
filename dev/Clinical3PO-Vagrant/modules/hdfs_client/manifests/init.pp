@@ -26,12 +26,6 @@ class hdfs_client {
   $pid_dir="/var/run/pid"
   $keytab_dir="/etc/security/hadoop"
 
-  $password = '%CannonStreetHospital%'
-
-  package { "expect":
-    ensure => installed,
-  }
-  ->
   group { 'hadoop':
     ensure => present,
   }
@@ -42,18 +36,6 @@ class hdfs_client {
     unless => "getent group hadoop | cut -d: -f4 | grep -s c3po",
     command => "usermod -aG hadoop c3po",
     require => User['c3po'],
-  }
-  ->
-  user {"root":
-    path => "$path",
-    ensure => 'present',
-    password => generate('/bin/sh', '-c', "mkpasswd -m sha-512 ${password} | tr -d '\n'"),
-  }
-  ->
-  user {"c3po":
-    path => "$path",
-    ensure => 'present',
-    password => generate('/bin/sh', '-c', "mkpasswd -m sha-512 ${password} | tr -d '\n'"),
   }
   ->
   group { 'mapred':
