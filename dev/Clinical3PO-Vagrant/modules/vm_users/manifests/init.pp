@@ -18,14 +18,8 @@
 class vm_users {
 
   $path="/bin:/usr/bin"
-  $password = '%CannonStreetHospital%'
 
-  package { "expect":
-    ensure => installed,
-  }
-  ->
   user { 'c3po':
-    path => "$path",
     ensure => present,
     gid => wheel,
     groups => ['users', 'ruby','c3po'],
