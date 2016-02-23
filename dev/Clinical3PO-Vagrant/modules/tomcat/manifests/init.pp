@@ -22,7 +22,7 @@ class tomcat {
   exec { 'installtomcat':
     path => $path,
     cwd => "/tmp",
-    command => "wget http://apache.cs.utah.edu/tomcat/tomcat-7/v7.0.67/bin/apache-tomcat-7.0.67.tar.gz && sudo tar xzvf apache-tomcat-7.0.67.tar.gz -C /opt/ && sudo ln -s /opt/apache-tomcat-7.0.67 /opt/apache-tomcat",
+    command => "wget http://archive.apache.org/dist/tomcat/tomcat-7/v7.0.67/bin/apache-tomcat-7.0.67.tar.gz && sudo tar xzvf apache-tomcat-7.0.67.tar.gz -C /opt/ && sudo ln -s /opt/apache-tomcat-7.0.67 /opt/apache-tomcat",
   }
   ->
   file { "/etc/profile.d/tomcat.sh":
