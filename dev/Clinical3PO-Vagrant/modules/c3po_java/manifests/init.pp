@@ -16,6 +16,7 @@
 class c3po_java {
   require mysql_client
   require hdfs_client
+  require maven
   require c3po_mysqldb
 
   $path="/bin:/usr/bin"

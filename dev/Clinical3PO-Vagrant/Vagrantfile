@@ -77,7 +77,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         virtualbox__intnet: true
       node_config.ssh.forward_agent = true
       node_config.ssh.username = "c3po"
-      node_config.ssh.password = "%PW135can%"
+      node_config.ssh.password = "%CannonStreetHospital%"
       if node[:hostname] == 'clinical3po-gw'
         node_config.vm.network "forwarded_port", guest: 8080, guest_id: node[:ip], host: 8181, 
                 protocol: "tcp", 
