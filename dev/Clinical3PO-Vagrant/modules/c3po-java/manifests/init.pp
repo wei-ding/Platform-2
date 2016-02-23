@@ -115,6 +115,5 @@ class c3po_java {
     path => $path,
     command => "/tmp/mvnc3po-java.sh",
   }
-  ->
 
 }
