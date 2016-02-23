@@ -1,5 +1,0 @@
-=== Predictions on test data ===
-
- inst#     actual  predicted error distribution
-     1      2:low      2:low       0,*1,0,0 
-     2      2:low      2:low       0,*1,0,0

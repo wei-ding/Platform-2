@@ -1,5 +1,0 @@
-Instance_ID	Dependent_Variable_Value	Prediction	high_Probability	low_Probability	normal_Probability	verylow_Probability
-Instance1	low	low	0.0	1.0	0.0	0.0
-Instance4	verylow	low	0.0	1.0	0.0	0.0
-Instance8	high	low	0.0	1.0	0.0	0.0
-

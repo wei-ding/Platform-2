@@ -1,5 +1,0 @@
-Instance_ID	Dependent_Variable_Value	Prediction	Alive_Probability	Death_Probability
-Instance1	Death	Alive	1.0	0.0
-Instance5	Alive	Alive	1.0	0.0
-Instance6	Alive	Alive	1.0	0.0
-
