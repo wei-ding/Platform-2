@@ -16,13 +16,13 @@
 class hive_db {
   $PATH = "/bin:/usr/bin"
   
-  package {"mysql57":
-    provider=>rpm,
-    ensure=>installed,
-    install_options => ['--nodeps'],
-    source=>"http://dev.mysql.com/get/mysql57-community-release-el6-7.noarch.rpm",
-  }
-  ->
+  #package {"mysql57":
+  #  provider=>rpm,
+  #    ensure=>installed,
+  #    install_options => ['--nodeps'],
+  #    source=>"http://dev.mysql.com/get/mysql57-community-release-el6-7.noarch.rpm",
+  #  }
+  #  ->
   package { 'mysql-server':
     ensure => installed,
   }
