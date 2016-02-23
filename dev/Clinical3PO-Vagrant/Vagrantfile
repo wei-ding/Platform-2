@@ -82,43 +82,47 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         node_config.vm.network "forwarded_port", guest: 8080, guest_id: node[:ip], host: 8181, 
                 protocol: "tcp", 
                 auto_correct: true
-        node_config.vm.network "forwarded_port", guest: 8844, guest_id: node[:ip], host: 8844, 
-                protocol: "tcp", 
-                auto_correct: true
         node_config.vm.network "forwarded_port", guest: 80, guest_id: node[:ip], host: 8888, 
                 protocol: "tcp", 
                 auto_correct: true
         node_config.vm.network "forwarded_port", guest: 8088, guest_id: node[:ip], host: 8088, 
                 protocol: "tcp", 
                 auto_correct: true
-        node_config.vm.network "forwarded_port", guest: 8020, guest_id: node[:ip], host: 8020, 
-                protocol: "tcp", 
-                auto_correct: true
-        node_config.vm.network "forwarded_port", guest: 50070, guest_id: node[:ip], host: 50070, 
-                protocol: "tcp", 
-                auto_correct: true
-        node_config.vm.network "forwarded_port", guest: 50475, guest_id: node[:ip], host: 50475, 
-                protocol: "tcp", 
-                auto_correct: true
-        node_config.vm.network "forwarded_port", guest: 50075, guest_id: node[:ip], host: 50075, 
-                protocol: "tcp", 
-                auto_correct: true
-        node_config.vm.network "forwarded_port", guest: 50090, guest_id: node[:ip], host: 50090, 
-                protocol: "tcp", 
-                auto_correct: true
-        node_config.vm.network "forwarded_port", guest: 50105, guest_id: node[:ip], host: 50105, 
-                protocol: "tcp", 
-                auto_correct: true
-        node_config.vm.network "forwarded_port", guest: 50030, guest_id: node[:ip], host: 50030, 
-                protocol: "tcp", 
-                auto_correct: true
-        node_config.vm.network "forwarded_port", guest: 50060, guest_id: node[:ip], host: 50060, 
-                protocol: "tcp", 
-                auto_correct: true
-        node_config.vm.network "forwarded_port", guest: 19888, guest_id: node[:ip], host: 19888, 
-                protocol: "tcp", 
-                auto_correct: true
+      else if node[:hostname] == 'clinical3po-nn'
+             node_config.vm.network "forwarded_port", guest: 8844, guest_id: node[:ip], host: 8844, 
+                    protocol: "tcp", 
+                    auto_correct: true
+             node_config.vm.network "forwarded_port", guest: 8020, guest_id: node[:ip], host: 8020, 
+                    protocol: "tcp", 
+                    auto_correct: true
+             node_config.vm.network "forwarded_port", guest: 50070, guest_id: node[:ip], host: 50070, 
+                    protocol: "tcp", 
+                    auto_correct: true
+             node_config.vm.network "forwarded_port", guest: 50475, guest_id: node[:ip], host: 50475, 
+                    protocol: "tcp", 
+                    auto_correct: true
+             node_config.vm.network "forwarded_port", guest: 50075, guest_id: node[:ip], host: 50075, 
+                    protocol: "tcp", 
+                    auto_correct: true
+             node_config.vm.network "forwarded_port", guest: 50090, guest_id: node[:ip], host: 50090, 
+                    protocol: "tcp", 
+                    auto_correct: true
+             node_config.vm.network "forwarded_port", guest: 50105, guest_id: node[:ip], host: 50105, 
+                    protocol: "tcp", 
+                    auto_correct: true
+             node_config.vm.network "forwarded_port", guest: 50030, guest_id: node[:ip], host: 50030, 
+                    protocol: "tcp", 
+                    auto_correct: true
+             node_config.vm.network "forwarded_port", guest: 50060, guest_id: node[:ip], host: 50060, 
+                    protocol: "tcp", 
+                    auto_correct: true
+             node_config.vm.network "forwarded_port", guest: 19888, guest_id: node[:ip], host: 19888, 
+                    protocol: "tcp", 
+                    auto_correct: true
+           end
       end
+            
+         
       node_config.vm.provision "puppet" do |puppet|
         #puppet.manifests_path = "puppet/manifests"
         #puppet.manifest_file = "default.pp"
