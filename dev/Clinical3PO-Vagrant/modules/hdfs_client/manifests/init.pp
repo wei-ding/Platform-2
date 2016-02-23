@@ -50,7 +50,6 @@ class hdfs_client {
     password => generate('/bin/sh', '-c', "mkpasswd -m sha-512 ${password} | tr -d '\n'"),
   }
   ->
-  ->
   user {"c3po":
     path => "$path",
     ensure => 'present',
