@@ -1,0 +1,41 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+ 
+	<bean id="jobSearchService" class="org.clinical3PO.services.JobSearchService">
+		<property name="jobSearchDAO" ref="jobSearchDAO"/>
+		<property name="hadoopShellScriptDirectory" value="${clinical3PO.hadoop.shellscripts.dir}"/>
+		<property name="commonSearchScript" value="${clinical3PO.hadoop.shellscripts.commonSearchScript}"/>
+		<property name="hadoopLocalOutputDirectory" value="${clinical3PO.hadoop.localOutput.dir}"/>
+		<property name="appDataDirectory" value="${clinical3PO.app.dataDirectory}"/>
+		<property name="mlflexDirectory" value="${clinical3PO.mlflex.directory}"/>
+		<property name="patientSearchService" ref="patientSearchService"/>
+	</bean>
+	 
+	<bean id="observationDataToJson" class="org.clinical3PO.services.json.ObservationDataToJson" scope="singleton">
+		<constructor-arg index="0" name="category" value="${clinical3PO.visualization.category}"/>
+		<constructor-arg index="1" type="java.lang.String" value="ff0000"/>
+		<constructor-arg index="2" type="java.lang.String" value="114f00"/>
+		<constructor-arg index="3" type="java.lang.String" value="000000"/>
+	</bean>	
+	
+	<bean id="patientSearchService" class="org.clinical3PO.services.PatientSearchService">
+		<property name="patientSearchDAO" ref="patientSearchDAO"/>
+		<property name="omopHiveDbName" value="${omop.hive.db}"/>
+		<property name="omopHiveConceptTable" value="${omop.hive.concept}"/>
+		<property name="omopHiveDeathTable" value="${omop.hive.death}"/>
+		<property name="omopHiveObservationTable" value="${omop.hive.observation}"/>
+		<property name="hiveQueryFileLocation" value="${hive.query.file.location}"/>
+		<property name="nlpHiveTableUpdater" ref="NLPSearchDAO"/>
+	</bean>
+	
+	<bean id="jsonServices" class="org.clinical3PO.services.JsonService">
+		<property name="appDataDirectory" value="${clinical3PO.app.dataDirectory}"/>
+	</bean>
+	
+	<bean id="webAppUtils" class="org.clinical3PO.services.common.utils.WebAppUtils" scope="singleton">
+		<constructor-arg index="0" name="observationFile" value="${clinical3PO.observation.list}"/>
+	</bean>
+	
+</beans>

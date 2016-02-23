@@ -1,0 +1,5 @@
+=== Predictions on test data ===
+
+ inst#     actual  predicted error distribution
+     1     2:Dead     2:Dead       0,*1 
+     2    1:Alive     2:Dead   +   0,*1

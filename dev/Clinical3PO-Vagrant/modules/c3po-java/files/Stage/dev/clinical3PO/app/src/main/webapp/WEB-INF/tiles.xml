@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+<tiles-definitions>
+	<definition name="base.definition" template="/WEB-INF/layout/layout.jsp">
+		<put-attribute name="title" value="" />
+		<put-attribute name="header" value="/WEB-INF/layout/header.jsp" />
+		<put-attribute name="menu" value="/WEB-INF/layout/menu.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer" value="/WEB-INF/layout/footer.jsp" />
+	</definition>
+	
+	<definition name="nomenu.definition" template="/WEB-INF/layout/nomenu.jsp">
+		<put-attribute name="title" value="" />
+		<put-attribute name="header" value="/WEB-INF/layout/header.jsp" />
+		<put-attribute name="menu" value="/WEB-INF/layout/menu.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer" value="/WEB-INF/layout/footer.jsp" />
+	</definition>
+	
+	<definition name="Index" extends="base.definition">
+		<put-attribute name="title" value="Home" />
+		<put-attribute name="body" value="/WEB-INF/pages/Index.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/pages/blank.jsp" />
+	</definition>
+
+	<definition name="PatientSearchView" extends="base.definition">
+		<put-attribute name="title" value="Search A Patient" />
+		<put-attribute name="body" value="/WEB-INF/pages/PatientSearch.jsp" />
+	</definition>
+	
+	<definition name="PatientSearchViewRestricted" extends="base.definition">
+		<put-attribute name="title" value="Search A Patient In Accumulo" />
+		<put-attribute name="body" value="/WEB-INF/pages/PatientSearch.jsp" />
+	</definition>
+	
+	<definition name="PatientSearchHiveView" extends="base.definition">
+		<put-attribute name="title" value="Hive Patient" />
+		<put-attribute name="body" value="/WEB-INF/pages/PatientSearch.jsp" />
+	</definition>
+	
+	<definition name="ObservationSearchView" extends="base.definition">
+		<put-attribute name="title" value="Search An Observation" />
+		<put-attribute name="body" value="/WEB-INF/pages/ObservationSearch.jsp" />
+	</definition>
+
+	<definition name="ObservationSearchViewRestricted" extends="base.definition">
+		<put-attribute name="title" value="Search An Observation In Accumulo" />
+		<put-attribute name="body" value="/WEB-INF/pages/ObservationSearch.jsp" />
+	</definition>
+	
+	<definition name="PatientSearchUserPrefsView" extends="base.definition">
+		<put-attribute name="title" value="Patient Search With User Prefs" />
+		<put-attribute name="body" value="/WEB-INF/pages/PatientSearchUserPrefs.jsp" />
+	</definition>
+	
+	<definition name="PatientSearchBatch" extends="base.definition">
+		<put-attribute name="title" value="Patient Search via File" />
+		<put-attribute name="body" value="/WEB-INF/pages/PatientSearchBatch.jsp" />
+	</definition>
+	
+	<definition name="MLCrossValidationView" extends="base.definition">
+		<put-attribute name="title" value="Patient Search With User Prefs" />
+		<put-attribute name="body" value="/WEB-INF/pages/MLCrossValidation.jsp" />
+	</definition>
+	
+	<definition name="FEMLFlex" extends="base.definition">
+		<put-attribute name="title" value="FExtract ML-Flex With User Prefs" />
+		<put-attribute name="body" value="/WEB-INF/pages/FEMlFlex.jsp" />
+	</definition>
+	
+	<definition name="FEUgene" extends="base.definition">
+		<put-attribute name="title" value="FExtract ML-Flex With User Prefs" />
+		<put-attribute name="body" value="/WEB-INF/pages/FEUgene.jsp" />
+	</definition>	
+	
+	<definition name="nlpview" extends="base.definition">
+		<put-attribute name="title" value="Search List" />
+		<put-attribute name="body" value="/WEB-INF/pages/NLP.jsp" />
+	</definition>
+		
+	<definition name="MysearchesView" extends="base.definition">
+		<put-attribute name="title" value="Search List" />
+		<put-attribute name="body" value="/WEB-INF/pages/MySearches.jsp" />
+	</definition>
+	
+	<definition name="Login" extends="nomenu.definition">
+		<put-attribute name="title" value="clinical3PO Login" />
+		<put-attribute name="body" value="/WEB-INF/pages/Login.jsp" />
+	</definition>
+
+	<definition name="visualization/PatientView" extends="nomenu.definition">
+		<put-attribute name="title" value="Patient View" />
+		<put-attribute name="body" value="/WEB-INF/pages/visualization/PatientView.jsp" />
+	</definition>
+	
+	<definition name="visualization/PatientObservationView" extends="nomenu.definition">
+		<put-attribute name="title" value="Patient Observation" />
+		<put-attribute name="body" value="/WEB-INF/pages/visualization/PatientObservation.jsp" />
+	</definition>
+	
+	<definition name="visualization/PatientSearchWithUserPrefsView" extends="nomenu.definition">
+		<put-attribute name="title" value="Patient Search With User Prefs" />
+		<put-attribute name="body" value="/WEB-INF/pages/visualization/PatientObservation.jsp" />
+	</definition>
+	
+	<definition name="visualization/MLFlexReport" extends="nomenu.definition">
+		<put-attribute name="title" value="Patient Search With User Prefs" />
+		<put-attribute name="body" value="/WEB-INF/pages/visualization/MLFlexReport.jsp" />
+	</definition>	
+	
+</tiles-definitions>

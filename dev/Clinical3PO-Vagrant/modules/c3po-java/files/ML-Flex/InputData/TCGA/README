@@ -1,0 +1,3 @@
+The Cancer Genome Atlas (TCGA) is a large data repository funded by the National Cancer Institute and National Human Genome Research Institute. It houses a variety of clinical and molecular-level data for various forms of cancer. The data files provided here are partial samples based on what can be downloaded from http://tcga-data.nci.nih.gov/tcga/dataAccessMatrix.htm for glioblastoma multiforme, an advanced form of brain cancer.
+
+One intriguing aspect about TCGA, from a data-mining perspective, is that it contains multiple categories of genomic/genetic data plus clinical data for each patient.

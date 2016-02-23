@@ -1,0 +1,24 @@
+@relation diasabp 
+
+@attribute PatientID NUMERIC 
+@attribute diasabp_fbin_ebasmean_0_dbl_bin0 NUMERIC
+@attribute diasabp_fbin_ebasmean_0_dbl_bin1 NUMERIC
+@attribute diasabp_fbin_ebasmean_0_dbl_bin2 NUMERIC
+@attribute diasabp_fbin_ebasmean_0_dbl_bin3 NUMERIC
+@attribute diasabp_fbin_ebasmean_0_dbl_bin4 NUMERIC
+@attribute diasabp_fbin_ebasmean_0_dbl_bin5 NUMERIC
+@attribute diasabp_fbin_ebasmean_0_dbl_bin6 NUMERIC
+@attribute diasabp_fbin_ebasmean_0_dbl_bin7 NUMERIC
+@attribute diasabp_fbin_ebasmean_0_dbl_bin8 NUMERIC
+@attribute diasabp_fbin_ebasmean_0_dbl_bin9 NUMERIC
+@attribute diasabp_fbin_ebasmean_0_dbl_bin10 NUMERIC
+@attribute diasabp_fbin_ebasmean_0_dbl_bin11 NUMERIC
+@attribute diasabp_fbin_ebasmean_0_dbl_bin12 NUMERIC
+@attribute diasabp_fbin_ebasmean_0_dbl_bin13 NUMERIC
+@attribute diasabp_fbin_ebasmean_0_dbl_bin14 NUMERIC
+@attribute diasabp_fbin_ebasmean_0_dbl_bin15 NUMERIC
+@attribute diasabp_fbin_ebasmean_0_dbl_bin16 NUMERIC 
+@attribute class {verylow,low,normal,borderline,high}
+
+@data 
+132662,?,65.0,65.5,56.0,65.0,63.0,51.0,55.0,52.0,52.0,54.0,53.0,46.0,44.0,45.0,43.0,44.0,verylow

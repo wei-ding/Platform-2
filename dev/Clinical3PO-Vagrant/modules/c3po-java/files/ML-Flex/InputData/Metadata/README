@@ -1,0 +1,3 @@
+This directory contains metadata files to support processing of raw metadata.
+
+The HG-U133A.na30.annot.csv file provided here was downloaded from Affymetrix.com and is used to map between Affy U133A probesets and gene symbols.

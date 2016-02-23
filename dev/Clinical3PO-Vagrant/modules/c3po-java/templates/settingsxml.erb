@@ -1,0 +1,143 @@
+<%#
+   Licensed to the Apache Software Foundation (ASF) under one or more
+   contributor license agreements.  See the NOTICE file distributed with
+   this work for additional information regarding copyright ownership.
+   The ASF licenses this file to You under the Apache License, Version 2.0
+   (the "License"); you may not use this file except in compliance with
+   the License.  You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+-%>
+<%
+  @db = eval(@nodes).select {|node| node[:roles].include? 'hive-db'
+                             }[0][:hostname] + "." + @domain;
+  @nn = eval(@nodes).select {|node| node[:roles].include? 'nn'
+                             }[0][:hostname] + "." + @domain;
+-%>
+
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" 
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+
+  <profiles>
+  
+    <profile>
+        <id>env-properties</id>
+
+        <activation>
+            <activeByDefault>false</activeByDefault>
+        </activation>
+
+        <properties>
+            <db.driverClassName>com.mysql.jdbc.Driver</db.driverClassName>
+        <db.url>jdbc:mysql://<%= @db %>:3306/clinical3po</db.url>
+            <db.username>root</db.username>
+            <db.password>PWc3po</db.password>
+
+            <omop.hive.db>omopv4demo</omop.hive.db>
+            <omop.hive.death>death</omop.hive.death>
+            <omop.hive.concept>concept</omop.hive.concept>
+            <omop.hive.observation>observation</omop.hive.observation>
+
+            <!-- Application lookup location for the hiveQueries.properties file-->
+            <hive.query.file.location>/home/c3po/clinical3PO-hadoop-scripts</hive.query.file.location>
+
+              <!-- FEATURE EXTRACTION PROPERTIES -->
+               <fe.number.reducers>2</fe.number.reducers>
+               <fe.file.data>/user/c3po/PhysioNet/observation.csv</fe.file.data>
+
+            
+            <clinical3PO.hive.host> <%= @db %></clinical3PO.hive.host>
+            <clinical3PO.hive.port>10000</clinical3PO.hive.port>
+            <clinical3PO.hive.db>default</clinical3PO.hive.db>
+            <clinical3PO.hive.user>hive</clinical3PO.hive.user>
+            <clinical3PO.hive.password>PWc3po</clinical3PO.hive.password>   
+
+            <!-- Environment related (could be DEVELOPMENT, PRODUCTION)-->
+            <clinical3PO.environment.type>PRODUCTION</clinical3PO.environment.type>
+            <clinical3PO.logging.level>DEBUG</clinical3PO.logging.level>
+
+
+            <!-- Application log, output directory-->
+            <clinical3PO.logging.file>/home/c3po/clinical3PO-logs/clinical3PO.log</clinical3PO.logging.file>
+            <clinical3PO.perfLogging.file>/home/c3po/clinical3PO-logs/clinical3POPerf.log</clinical3PO.perfLogging.file>
+            
+            <!-- Application related batch upload files, output directory-->
+            <!--clinical3PO.batch.uploadedDirectory>/home/c3po/clinical3PO-app-data/batchUploads</clinical3PO.batch.uploadedDirectory-->
+            <clinical3PO.app.dataDirectory>/home/c3po/clinical3PO-app-data</clinical3PO.app.dataDirectory>
+
+
+            <!-- Directory where shell scripts related to hadoop search are stored -->
+            <clinical3PO.hadoop.shellscripts.dir>/home/c3po/clinical3PO-hadoop-scripts</clinical3PO.hadoop.shellscripts.dir>
+            <clinical3PO.hadoop.shellscripts.commonSearchScript>commonSearch.sh</clinical3PO.hadoop.shellscripts.commonSearchScript>
+
+            <!-- Local Directory where hadoop output(s) are present -->
+            <clinical3PO.hadoop.localOutput.dir>/home/c3po/clinical3PO-hadoop-output</clinical3PO.hadoop.localOutput.dir>
+
+            <!-- Directory to save uploaded files -->
+            <clinical3PO.mlflex.directory>/home/c3po/ML-Flex</clinical3PO.mlflex.directory>
+               
+
+            <!-- Hadoop related local files -->
+            <hadoop.file.conceptFile>/user/c3po/PhysioNet/concept.csv</hadoop.file.conceptFile>
+            <hadoop.file.observationFile>/user/c3po/PhysioNet/observation.csv</hadoop.file.observationFile>
+            <hadoop.file.deathFile>/usr/c3po/PhysioNet/death.txt</hadoop.file.deathFile>
+
+               <!-- Category file location -->
+               <clinical3PO.visualization.category>/home/c3po/clinical3PO-hadoop-scripts/category.txt</clinical3PO.visualization.category>
+                     
+               <!-- OBSERVATION TYPES IN A FILE -->
+               <!-- Create or copy from Stage/dev/clinical3PO/utilities/build/application/ -->
+               <clinical3PO.observation.list>/home/c3po/clinical3PO-hadoop-scripts/observationList.csv</clinical3PO.observation.list>
+
+
+            <!-- Hadoop remote execution -->
+            <clinical3PO.hadoop.opts>-D fs.defaultFS=hdfs://<%= @nn %> -D yarn.resourcemanager.address=<%= @nn %>:8050 -D yarn.resourcemanager.scheduler.address=<%= @nn %>:8030 -D mapreduce.input.fileinputformat.split.minsize=18253611008 -D mapreduce.map.memory.mb=3072 -D mapreduce.job.reduce.slowstart.completedmaps=0.80 -D mapreduce.map.speculative=false</clinical3PO.hadoop.opts>
+            <clinical3PO.hadoop.namenode>hdfs://<%= @nn %>:50070</clinical3PO.hadoop.namenode>
+
+            <!-- Accumulo related fields -->
+            <clinical3PO.accumulo.instance>c3po</clinical3PO.accumulo.instance>
+
+            <!-- Uncomment the relevant one depending on compilation local or remote -->
+            <!-- Accumulo local execution -->
+            <!--clinical3PO.accumulo.zookeeper>localhost:2181</clinical3PO.accumulo.zookeeper-->
+            <!-- Accumulo remote execution -->
+            <clinical3PO.accumulo.zookeeper><%= @nn %>:2181</clinical3PO.accumulo.zookeeper>
+
+            <clinical3PO.accumulo.user>root</clinical3PO.accumulo.user>
+            <clinical3PO.accumulo.password>PWc3po</clinical3PO.accumulo.password>
+
+            <!-- Accumulo related application table names -->
+            <clinical3PO.accumulo.table.concept>concept</clinical3PO.accumulo.table.concept>
+
+            <clinical3PO.accumulo.table.personIdSearch.personId>personid</clinical3PO.accumulo.table.personIdSearch.personId>
+            <clinical3PO.accumulo.table.personIdSearch.observation>observation</clinical3PO.accumulo.table.personIdSearch.observation>
+
+            <clinical3PO.accumulo.table.observationIdSearch.observation>observation</clinical3PO.accumulo.table.observationIdSearch.observation>
+            <clinical3PO.accumulo.table.observationIdSearch.index>personobservationid</clinical3PO.accumulo.table.observationIdSearch.index>
+            <clinical3PO.accumulo.table.observation.death>death</clinical3PO.accumulo.table.observation.death>
+
+               <!-- This is to spot jar of NLP. This jar output's an xml file with new patient attributes. -->
+               <nlp.codebase.jar>/home/c3po/codebase/Stage/Java/REDExHadoop/target</nlp.codebase.jar>
+                     
+               <!-- Path of UGENE executable. Ptovide the path of compiled and executionxecutable(.exe) path -->
+               <clinical3PO.ugene.directory>/home/c3po/ugene</clinical3PO.ugene.directory>
+
+      </properties>
+
+    </profile>
+
+    </profiles>
+ 
+    <activeProfiles>
+        <activeProfile>env-properties</activeProfile>
+    </activeProfiles>
+
+</settings>
+

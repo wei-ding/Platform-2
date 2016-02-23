@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en" >
+	<head>
+		<meta charset="utf-8">
+		<link href="angular-messages-master/css/homePage.css" rel="stylesheet">
+		<link href="angular-messages-master/bootstrap.min.css" rel="stylesheet">
+	</head>
+	<body ng-app="SearchCtrl" ng-controller="con">
+		<div class="full">
+			<div id="header" ><div class="title">clinical3PO</div></div>
+			<div class="topnav"> 
+				<ul class="nav nav-pills">
+				<li class="dropdown">
+					<a data-toggle="dropdown" class="dropdown-toggle">Search <!--<b class="caret"></b>--></a>
+					<ul class="dropdown-menu">
+						<li>
+							<a>PatientSearch <i class="icon-arrow-right"></i></a>
+							<ul class="dropdown-menu sub-menu">
+								<li><a href="#/PatHad">Hadoop</a></li>
+								<li><a href="#" ng-click="open()">Accumulo</a></li>
+								<li><a href="#">Hive</a></li>
+								<li><a href="#">R</a></li>
+							</ul>
+						</li>
+						<li><a>ObservationSearch</a>
+							<ul class="dropdown-menu sub-menu">
+								<li><a href="#">Hadoop</a></li>
+								<li><a href="#">Accumulo</a></li>
+								<li><a href="#">Hive</a></li>
+								<li><a href="#">R</a></li>
+							</ul>
+						</li>
+						<li><a>BatchSearch</a>
+							<ul class="dropdown-menu sub-menu">
+								<li><a href="#">Hadoop</a></li>
+								<li><a href="#">Accumulo</a></li>
+								<li><a href="#">Hive</a></li>
+								<li><a href="#">R</a></li>
+							</ul>
+						</li>
+						<li><a>PatientSearchUserPref</a>
+							<ul class="dropdown-menu sub-menu">
+								<br/>
+								<br/>
+								<br/>
+								<br/>
+								<li><a href="#">Hadoop</a></li>
+							</ul>
+						</li>
+						<li><a href="#">ML-Crossvalidation</a></li>
+						<li><a href="#">ML-FeatureExtraction</a></li>
+					</ul>
+				</li>
+				<li class="dropdown"><a data-toggle="dropdown" class="dropdown-toggle" href="#/MySearches">My Searches</a></li>
+				<li class="dropdown">
+					<a data-toggle="dropdown" class="dropdown-toggle">Utilities</a>
+					<ul class="dropdown-menu">
+						<li><a data-ng-click="logout()">Logout <i class="icon-arrow-right"></i></a></li>
+					</ul> 
+				</li>				
+			</div>
+		</div>
+		<div ng-view> </div>
+	</body>
+	<script src="angular-messages-master/angular.min.js"></script>
+	<script src="angular-messages-master/angular-route.min.js"></script>
+	<script src="angular-messages-master/angular-messages.min.js"></script>
+	<script src="angular-messages-master/angular-cookies.min.js"></script>
+	<script src="controllers/homeCtrl.js"></script>
+	<script src="controllers/mySearchCtrl.js"></script>
+	<script src="controllers/patientSearch.js"></script>
+	
+	
+	<script src="http://d3js.org/d3.v3.min.js"></script>
+	<script src="angular-messages-master/ui-bootstrap-tpls-0.12.0.min.js"></script>
+</html>

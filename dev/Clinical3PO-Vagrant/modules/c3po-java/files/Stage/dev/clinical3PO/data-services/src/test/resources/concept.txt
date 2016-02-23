@@ -1,0 +1,46 @@
+src_concept_id;property_name;property_definition;value_type;value_units;value_min;value_max
+1;Albumin;Albumin;float;g/dL;NULL;NULL
+2;ALP;Alkaline phosphatase;float;IU/L;NULL;NULL
+3;ALT;Alanine transaminase;float;IU/L;NULL;NULL
+4;AST;Aspartate transaminase;float;IU/L;NULL;NULL
+5;Bilirubin;Bilirubin;float;mg/dL;NULL;NULL
+6;BUN;Blood urea nitrogen;float;mg/dL;NULL;NULL
+7;Cholesterol;Cholesterol;float;mg/dL;NULL;NULL
+8;Creatinine;Serum creatinine;float;mg/dL;NULL;NULL
+9;DiasABP;Invasive diastolic arterial blood pressure;float;mmHg;NULL;NULL
+10;FiO2;Fractional inspired O2;float;;0;1
+11;GCS;Glasgow Coma Score;integer;;3;15
+12;Glucose;Serum glucose;float;mg/dL;NULL;NULL
+13;HCO3;Seum bicarbonate;float;mmol/L;NULL;NULL
+14;HCT;Hematocrit;float;%;NULL;NULL
+15;HR;Heart rate;float;bpm;NULL;NULL
+16;K;Serum potassium;float;mEq/L;NULL;NULL
+17;Lactate;Lactate;float;mmol/L;NULL;NULL
+18;Mg;Serum magnesium;float;mmol/L;NULL;NULL
+19;MAP;Invasive mean arterial blood pressure;float;mmHg;NULL;NULL
+20;MechVent;Mechanical ventilation respiration;boolean;;0;1
+21;Na;Serum sodium;float;mEq/L;NULL;NULL
+22;NIDiasABP;Non-invasive diastolic arterial blood pressure;float;mmHg;NULL;NULL
+23;NIMAP;Non-invasive mean arterial blood pressure;float;mmHg;NULL;NULL
+24;NISysABP;Non-invasive systolic arterial blood pressure;float;mmHg;NULL;NULL
+25;PaCO2;Partial pressure of arterial CO2;float;mmHg;NULL;NULL
+26;PaO2;Partial pressure of arterial O2;float;mmHg;NULL;NULL
+27;pH;Arterial pH;float;;0;14
+28;Platelets;Platelets;float;cells/nL;NULL;NULL
+29;RespRate;Respiration rate;float;bpm;NULL;NULL
+30;SaO2;O2 saturation in hemoglobin;float;%;NULL;NULL
+31;SysABP;Invasive systolic arterial blood pressure;float;mmHg;NULL;NULL
+32;Temp;Temperature;float;C;NULL;NULL
+33;TropI;Troponin-I;float;μg/L;NULL;NULL
+34;TropT;Troponin-T;float;μg/L;NULL;NULL
+35;Urine;Urine output;float;mL;NULL;NULL
+36;WBC;White blood cell count;float;cells/nL;NULL;NULL
+37;Weight;Weight;float;kg;NULL;NULL
+38;Height;Height;integer;cm;NULL;NULL
+39;SAPS-I;Simplified acute physiology score;integer;;0;163
+40;SOFA;Sequential Organ Failure Assessment (SOFA) score for prediction of mortality in intensive care unit (ICU) patients;integer;;0;24
+41;Survival;Days survived;integer;days;NULL;NULL
+42;LOS;length of stay;integer;days;NULL;NULL
+43;in_hosp_death;In hospital death;boolean;;0;1
+44;Age;Age of person;integer;years;0;120
+45;dob;Date of birth;integer;year;1800;2014
