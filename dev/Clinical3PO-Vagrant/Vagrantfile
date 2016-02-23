@@ -19,7 +19,7 @@ VAGRANTFILE_API_VERSION = "2"
 
 # HDP Cluster Planning setup search path:
 $planning_path = ["current.planning",
-                 "hdp_cluster_planning/3nodes-noambari.setup"]
+                 "hdp_cluster_planning/2nodes-noambari.setup"]
 
 ###############################################################################
 # Loads a hdp cluster planning setup file, which is a JSON file describing a specific configuation.
@@ -78,45 +78,47 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       node_config.ssh.forward_agent = true
       node_config.ssh.username = "c3po"
       node_config.ssh.password = "%PW135can%"
-      node_config.vm.network "forwarded_port", guest: 8080, host: 8181, 
-            protocol: "tcp", 
-            auto_correct: true
-      node_config.vm.network "forwarded_port", guest: 8844, host: 8844, 
-            protocol: "tcp", 
-            auto_correct: true
-      node_config.vm.network "forwarded_port", guest: 80, host: 8888, 
-            protocol: "tcp", 
-            auto_correct: true
-      node_config.vm.network "forwarded_port", guest: 8088, host: 8088, 
-            protocol: "tcp", 
-            auto_correct: true
-      node_config.vm.network "forwarded_port", guest: 8020, host: 8020, 
-            protocol: "tcp", 
-            auto_correct: true
-      node_config.vm.network "forwarded_port", guest: 50070, host: 50070, 
-            protocol: "tcp", 
-            auto_correct: true
-      node_config.vm.network "forwarded_port", guest: 50475, host: 50475, 
-            protocol: "tcp", 
-            auto_correct: true
-      node_config.vm.network "forwarded_port", guest: 50075, host: 50075, 
-            protocol: "tcp", 
-            auto_correct: true
-      node_config.vm.network "forwarded_port", guest: 50090, host: 50090, 
-            protocol: "tcp", 
-            auto_correct: true
-      node_config.vm.network "forwarded_port", guest: 50105, host: 50105, 
-            protocol: "tcp", 
-            auto_correct: true
-      node_config.vm.network "forwarded_port", guest: 50030, host: 50030, 
-            protocol: "tcp", 
-            auto_correct: true
-      node_config.vm.network "forwarded_port", guest: 50060, host: 50060, 
-            protocol: "tcp", 
-            auto_correct: true
-      node_config.vm.network "forwarded_port", guest: 19888, host: 19888, 
-            protocol: "tcp", 
-            auto_correct: true
+      if node[:hostname] == 'clinical3po-gw'
+        node_config.vm.network "forwarded_port", guest: 8080, guest_id: node[:ip], host: 8181, 
+                protocol: "tcp", 
+                auto_correct: true
+        node_config.vm.network "forwarded_port", guest: 8844, guest_id: node[:ip], host: 8844, 
+                protocol: "tcp", 
+                auto_correct: true
+        node_config.vm.network "forwarded_port", guest: 80, guest_id: node[:ip], host: 8888, 
+                protocol: "tcp", 
+                auto_correct: true
+        node_config.vm.network "forwarded_port", guest: 8088, guest_id: node[:ip], host: 8088, 
+                protocol: "tcp", 
+                auto_correct: true
+        node_config.vm.network "forwarded_port", guest: 8020, guest_id: node[:ip], host: 8020, 
+                protocol: "tcp", 
+                auto_correct: true
+        node_config.vm.network "forwarded_port", guest: 50070, guest_id: node[:ip], host: 50070, 
+                protocol: "tcp", 
+                auto_correct: true
+        node_config.vm.network "forwarded_port", guest: 50475, guest_id: node[:ip], host: 50475, 
+                protocol: "tcp", 
+                auto_correct: true
+        node_config.vm.network "forwarded_port", guest: 50075, guest_id: node[:ip], host: 50075, 
+                protocol: "tcp", 
+                auto_correct: true
+        node_config.vm.network "forwarded_port", guest: 50090, guest_id: node[:ip], host: 50090, 
+                protocol: "tcp", 
+                auto_correct: true
+        node_config.vm.network "forwarded_port", guest: 50105, guest_id: node[:ip], host: 50105, 
+                protocol: "tcp", 
+                auto_correct: true
+        node_config.vm.network "forwarded_port", guest: 50030, guest_id: node[:ip], host: 50030, 
+                protocol: "tcp", 
+                auto_correct: true
+        node_config.vm.network "forwarded_port", guest: 50060, guest_id: node[:ip], host: 50060, 
+                protocol: "tcp", 
+                auto_correct: true
+        node_config.vm.network "forwarded_port", guest: 19888, guest_id: node[:ip], host: 19888, 
+                protocol: "tcp", 
+                auto_correct: true
+      end
       node_config.vm.provision "puppet" do |puppet|
         #puppet.manifests_path = "puppet/manifests"
         #puppet.manifest_file = "default.pp"
