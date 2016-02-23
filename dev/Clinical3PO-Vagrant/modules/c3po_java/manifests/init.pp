@@ -65,7 +65,7 @@ class c3po_java {
   ->
   exec { "copyhdfsdatac3pojava":
     path => $path,
-    command => "hdfs dfs -copyFromLocal /vagrant/files/hdfs/PhysioNet /user/c3po/",
+    command => "sudo -u hdfs hdfs dfs -copyFromLocal /vagrant/files/hdfs/PhysioNet /user/c3po/",
   }
   ->
   file { 'sourcec3po':
