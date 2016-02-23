@@ -64,9 +64,18 @@ class c3po_java {
     mode   => '0770',
   }
   ->
+  exec { "rmhdfsdatac3pojava":
+    path => $path,
+    onlyif => "hdfs dfs -test -e /user/c3po/PhysioNet",
+    command => "hdfs dfs -rm -skipTrash -r /user/c3po/PhysioNet",
+    user => "hdfs",
+  }
+  ->
   exec { "copyhdfsdatac3pojava":
     path => $path,
-    command => "sudo -u hdfs hdfs dfs -copyFromLocal /vagrant/files/hdfs/PhysioNet /user/c3po/",
+    unless => "hdfs dfs -test -e /user/c3po/PhysioNet",
+    command => "hdfs dfs -copyFromLocal /vagrant/files/hdfs/PhysioNet /user/c3po/",
+    user => "c3po",
   }
   ->
   file { 'sourcec3po':
