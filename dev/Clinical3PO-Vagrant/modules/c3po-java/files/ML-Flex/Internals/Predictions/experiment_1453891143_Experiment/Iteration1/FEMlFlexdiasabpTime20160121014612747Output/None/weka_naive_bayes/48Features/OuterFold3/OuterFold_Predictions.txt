@@ -1,0 +1,6 @@
+Instance_ID	Dependent_Variable_Value	Prediction	borderline_Probability	high_Probability	low_Probability	normal_Probability	verylow_Probability
+Instance15	low	low	0.0	0.0	1.0	0.0	0.0
+Instance21	low	low	0.0	0.0	1.0	0.0	0.0
+Instance5	low	low	0.0	0.0	1.0	0.0	0.0
+Instance9	low	low	0.0	0.0	1.0	0.0	0.0
+

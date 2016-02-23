@@ -1,0 +1,14 @@
+
+Pre-requisites :
+
+1. Hadoop should be up and running.
+
+To Do :
+
+1. Provide exact local path, from where the files to be picked. Local directory path variable is "localFilePath".
+2. Provide exact hdfs path, into where the files to be dropped/inserted. Hdfs directory path variable is "hdfsFilePath".
+3. Provide exact file name, to be created in hdfs directory. File name variable is "hdfsFileName"
+
+Procedure :
+
+1. Run hadoopUpload.sh to load all you files into hdfs from local file system.

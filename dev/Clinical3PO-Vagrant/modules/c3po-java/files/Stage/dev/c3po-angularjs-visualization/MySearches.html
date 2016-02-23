@@ -1,0 +1,67 @@
+<head>
+	<link href="angular-messages-master/bootstrap.min.css" rel="stylesheet">
+	<link href="angular-messages-master/css/mysearch.css" rel="stylesheet">
+	
+</head>
+
+<table class="table table-striped table-condensed table-hover" border="1" >
+	<thead>
+		<tr>
+			<th  class="ds" custom-sort order="'searchOn'" sort="sort">SearchOn&nbsp;</th>
+			<th  class="ds" custom-sort order="'searchStartTime'" sort="sort">SearchStartTime&nbsp;</th>
+			<th  class="ds" custom-sort order="'searchEndTime'" sort="sort">SearchFinishTime&nbsp;</th>
+			<th  class="dsp" custom-sort order="'searchParameters'" sort="sort">SearchParameters&nbsp;</th>
+			<th  class="ds" custom-sort order="'status'" sort="sort">Status&nbsp;</th>
+		</tr>
+	</thead>
+	
+	<tbody>
+	<!--<tr ng-repeat="item in pagedItems[currentPage] | orderBy:sort.sortingOrder:sort.reverse">-->
+		<tr ng-repeat="item in pagedItems| orderBy:sort.sortingOrder:sort.reverse">
+			<td>{{item.searchOn}}</td>
+			<td>{{item.searchStartTime}}</td>
+			<td>{{item.searchEndTime}}</td>
+			<td><div class="div-scrollable">{{item.searchParameters}}</div></td>
+			<td >
+				<div>
+					<a ng-if="item.status == 'FINISHED' && (item.searchOn=='Patient ID User Prefs - Batch' || item.searchOn=='Patient ID User Prefs R- Batch'||item.searchOn=='Patient ID User Prefs'||item.searchOn=='Patient ID User Prefs - Hive'||item.searchOn=='Patient ID User Prefs - Batch Restricted')" ng-click="varlo(item.id,'PatientWithUserPrefs')" >{{item.status}} </a>
+					
+					<a ng-href='{{URL}}FileDownload/DownloadFile/{{item.id}}' ng-if="item.status == 'FINISHED' && (item.searchOn=='Patient ID User Prefs - Batch' || item.searchOn=='Patient ID User Prefs R- Batch'||item.searchOn=='Patient ID User Prefs - Hive'||item.searchOn=='Patient ID User Prefs - Batch Restricted')">Download file</a>
+				</div>
+				<div>
+					<a ng-if="item.status == 'FINISHED' && item.searchOn=='Patient ID User Prefs'" ng-click="varlo(item.id,'PatientWithUserPrefs')" >{{item.status}}</a
+				div>
+				<div>
+					<a  ng-if="item.status == 'FINISHED' && (item.searchOn=='Observation ID R' || item.searchOn=='Observation ID Restricted' || item.searchOn=='Observation ID Hive' || item.searchOn=='Observation ID')" ng-click="varlo(item.id,'Observation')" >{{item.status}}</a>
+				</div>
+				<div>
+					<a ng-href='{{URL}}MLCrossValidation/DownloadReport/{{item.id}}' ng-if="item.status == 'FINISHED' && (item.searchOn=='Cross Validation' || item.searchOn=='Feature Extraction')">Download Report</a>
+					<a ng-href='{{URL}}FileDownload/DownloadFile/{{item.id}}' ng-if="item.status == 'FINISHED' && (item.searchOn=='Cross Validation' || item.searchOn=='Feature Extraction')">Download file</a>
+				</div>
+				<div>
+					<a ng-if="item.status == 'FINISHED' && (item.searchOn=='Patient ID'|| item.searchOn=='Patient ID R' || item.searchOn=='Patient ID Restricted' || item.searchOn== 'Patient ID Hive')"  ng-click="varl(item.id)">{{item.status}} </a>
+				</div>
+				<div ng-if="item.status == 'IN-PROGRESS'">{{item.status}}</div>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<center>
+<!--
+<tfoot>
+	<td colspan="6">
+		<div>
+			<ul class="page">
+				<li ng-class="{disabled: currentPage == 0}"><a href ng-click="prevPage()">« Prev</a></li>
+				<li ng-repeat="n in range(pagedItems.length, currentPage, currentPage + gap) " ng-class="{active: n == currentPage}" ng-click="setPage()">
+					<a href ng-bind="n + 1">1</a>
+				</li>
+				<li ng-class="{disabled: (currentPage) == pagedItems.length - 1}">
+					<a href ng-click="nextPage()">Next »</a>
+				</li>
+			</ul>
+		</div>
+	</td>
+</tfoot>-->
+</center>
+<script src="angular-messages-master/ui-bootstrap-tpls-0.12.0.min.js"></script>

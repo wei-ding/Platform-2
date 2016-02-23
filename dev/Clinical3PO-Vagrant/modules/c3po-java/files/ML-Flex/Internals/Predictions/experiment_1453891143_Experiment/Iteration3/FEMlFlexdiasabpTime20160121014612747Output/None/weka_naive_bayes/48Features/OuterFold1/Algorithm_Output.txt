@@ -1,0 +1,8 @@
+=== Predictions on test data ===
+
+ inst#     actual  predicted error distribution
+     1 1:borderli      3:low   +   0,0,*1,0,0 
+     2  5:verylow      3:low   +   0,0,*1,0,0 
+     3      3:low      3:low       0,0,*1,0,0 
+     4      3:low      3:low       0,0,*1,0,0 
+     5      3:low      3:low       0,0,*1,0,0

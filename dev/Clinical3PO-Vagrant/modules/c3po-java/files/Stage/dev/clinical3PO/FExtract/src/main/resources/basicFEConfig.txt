@@ -1,0 +1,102 @@
+# Strategy configuration file
+
+# file is required to have a *default* property, which is used for any
+# property that occurs in the filter configuration file but doesn't have an 
+# explicit property in this file.
+# the big downside to a catchall strategy for properties is that the evaluator
+# here has a legitimate range specified, and it would be nice to have a separate
+# one of those for every property.
+
+property *default* org.clinical3PO.learn.util.FEBasicStrategy {
+
+	# value type is floating-point numbers; that is, it's assumed that patient
+	# measurements are, in the default case, numeric.
+	# valuetype is the INPUT; evaluator handles the output type.
+
+    valuetype org.clinical3PO.learn.util.FEDoubleValue {
+    }
+
+	# default binner (bin width 3600 seconds = 1 hour)
+    binner org.clinical3PO.learn.util.FEBasicBinner {
+        binWidth 3600.0
+    }
+    
+    # and default evaluator. legit range assumes that
+	# negative values are illegal and values over 1,000,000 are illegal.
+	# errorStrategy of "alwaysUnk" means to treat illegitimate values as unknown.
+	# emptyBinStrategy of "lastLegit" means that when the evaluator comes across
+	# an empty bin it will use the most recent previous non-unknown/error
+	# value, if any, and consider the bin an unknown if there isn't any.
+
+    evaluator org.clinical3PO.learn.util.FEBasicEvaluator {
+        derivation mean
+	    errorStrategy alwaysUnk 
+        emptyBinStrategy lastLegitOrUnk
+        legitLow 0.0
+        legitHigh 1000000.0
+    }
+} 
+
+# let's try a class config
+# class is like a property but only ever emits one bin, the one that
+# contains the class timestamp given on the command line (but will not
+# use any values from that bin that are from after that time.)
+class diasabp org.clinical3PO.learn.util.FEBasicStrategy {
+
+	# valuetype is the INPUT; evaluator handles the output type.
+	# let's see if commenting it out makes it use the default
+	# and indeed
+    #valuetype org.clinical3PO.learn.util.C3POFeatureExtractionDoubleValueType {
+    #}
+    
+	# default binner (bin width 3600 seconds = 1 hour)
+    binner org.clinical3PO.learn.util.FEBasicBinner {
+        binWidth 3600.0
+    }
+
+    # use discretizing evaluator. legit range is for diastolic bp (exaggerated)
+
+    evaluator org.clinical3PO.learn.util.FEDiscretizingRangeEvaluator {
+        derivation mean
+	    errorStrategy alwaysUnk 
+        emptyBinStrategy lastLegitOrUnk
+        legitLow 0.0
+        legitHigh 500.0
+		values verylow, low, normal , borderline, high
+		cutoff 50, 75, 85, 95
+    }
+    
+    
+} 
+
+# let's try a second class config
+class nisysabp org.clinical3PO.learn.util.FEBasicStrategy {
+
+	# valuetype is the INPUT; evaluator handles the output type.
+	# let's see if commenting it out makes it use the default
+	# and indeed
+    #valuetype org.clinical3PO.learn.util.C3POFeatureExtractionDoubleValueType {
+    #}
+    
+	# default binner (bin width 3600 seconds = 1 hour)
+    binner org.clinical3PO.learn.util.FEBasicBinner {
+        binWidth 3600.0
+    }
+
+    # use discretizing evaluator. legit range is for non-invasive systolic bp (guess)
+
+    evaluator org.clinical3PO.learn.util.FEDiscretizingRangeEvaluator {
+        derivation mean
+	    errorStrategy alwaysUnk 
+        emptyBinStrategy lastLegitOrUnk
+        legitLow 0.0
+        legitHigh 500.0
+		values low, normal , high
+		cutoff 80,100
+    }
+    
+    
+} 
+
+
+

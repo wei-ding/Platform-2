@@ -1,0 +1,103 @@
+=== Predictions on test data ===
+
+ inst#     actual  predicted error distribution
+     1    1:Alive    1:Alive       *0.941,0.059 
+     2    1:Alive    1:Alive       *0.716,0.284 
+     3    1:Alive    1:Alive       *0.982,0.018 
+     4    1:Alive    1:Alive       *0.996,0.004 
+     5    1:Alive    1:Alive       *0.99,0.01 
+     6    1:Alive    1:Alive       *0.886,0.114 
+     7    1:Alive    1:Alive       *0.555,0.445 
+     8     2:Dead     2:Dead       0.002,*0.998 
+     9    1:Alive     2:Dead   +   0.005,*0.995 
+    10    1:Alive    1:Alive       *0.996,0.004 
+    11    1:Alive    1:Alive       *0.979,0.021 
+    12    1:Alive    1:Alive       *0.85,0.15 
+    13    1:Alive    1:Alive       *0.89,0.11 
+    14    1:Alive    1:Alive       *0.983,0.017 
+    15    1:Alive    1:Alive       *0.994,0.006 
+    16    1:Alive    1:Alive       *0.989,0.011 
+    17    1:Alive     2:Dead   +   0.274,*0.726 
+    18    1:Alive    1:Alive       *0.981,0.019 
+    19    1:Alive    1:Alive       *0.978,0.022 
+    20    1:Alive    1:Alive       *0.998,0.002 
+    21    1:Alive    1:Alive       *0.973,0.027 
+    22    1:Alive     2:Dead   +   0.39,*0.61 
+    23    1:Alive    1:Alive       *0.986,0.014 
+    24     2:Dead     2:Dead       0.28,*0.72 
+    25    1:Alive    1:Alive       *0.992,0.008 
+    26    1:Alive    1:Alive       *0.538,0.462 
+    27     2:Dead    1:Alive   +   *0.53,0.47 
+    28    1:Alive    1:Alive       *0.569,0.431 
+    29     2:Dead    1:Alive   +   *0.607,0.393 
+    30    1:Alive    1:Alive       *0.968,0.032 
+    31    1:Alive    1:Alive       *0.994,0.006 
+    32    1:Alive    1:Alive       *0.993,0.007 
+    33    1:Alive    1:Alive       *0.998,0.002 
+    34     2:Dead     2:Dead       0.023,*0.977 
+    35    1:Alive    1:Alive       *0.977,0.023 
+    36    1:Alive    1:Alive       *0.946,0.054 
+    37    1:Alive    1:Alive       *0.772,0.228 
+    38    1:Alive    1:Alive       *0.994,0.006 
+    39    1:Alive    1:Alive       *0.626,0.374 
+    40    1:Alive    1:Alive       *0.947,0.053 
+    41    1:Alive     2:Dead   +   0.368,*0.632 
+    42    1:Alive    1:Alive       *0.998,0.002 
+    43    1:Alive    1:Alive       *0.912,0.088 
+    44    1:Alive     2:Dead   +   0.426,*0.574 
+    45    1:Alive     2:Dead   +   0.265,*0.735 
+    46    1:Alive    1:Alive       *0.994,0.006 
+    47    1:Alive    1:Alive       *0.977,0.023 
+    48    1:Alive     2:Dead   +   0.032,*0.968 
+    49    1:Alive    1:Alive       *0.997,0.003 
+    50    1:Alive    1:Alive       *0.997,0.003 
+    51     2:Dead     2:Dead       0.088,*0.912 
+    52    1:Alive    1:Alive       *0.842,0.158 
+    53    1:Alive    1:Alive       *0.988,0.012 
+    54    1:Alive     2:Dead   +   0.067,*0.933 
+    55    1:Alive    1:Alive       *0.992,0.008 
+    56    1:Alive    1:Alive       *0.997,0.003 
+    57    1:Alive    1:Alive       *0.982,0.018 
+    58    1:Alive    1:Alive       *0.983,0.017 
+    59    1:Alive    1:Alive       *0.985,0.015 
+    60    1:Alive    1:Alive       *0.882,0.118 
+    61     2:Dead    1:Alive   +   *0.695,0.305 
+    62    1:Alive    1:Alive       *0.998,0.002 
+    63    1:Alive    1:Alive       *0.99,0.01 
+    64    1:Alive     2:Dead   +   0.012,*0.988 
+    65    1:Alive     2:Dead   +   0.367,*0.633 
+    66    1:Alive    1:Alive       *0.592,0.408 
+    67    1:Alive    1:Alive       *0.992,0.008 
+    68    1:Alive    1:Alive       *0.996,0.004 
+    69    1:Alive    1:Alive       *0.961,0.039 
+    70    1:Alive    1:Alive       *0.995,0.005 
+    71     2:Dead     2:Dead       0.01,*0.99 
+    72    1:Alive    1:Alive       *0.991,0.009 
+    73    1:Alive    1:Alive       *0.686,0.314 
+    74    1:Alive    1:Alive       *0.976,0.024 
+    75    1:Alive    1:Alive       *0.921,0.079 
+    76    1:Alive    1:Alive       *0.821,0.179 
+    77     2:Dead    1:Alive   +   *0.815,0.185 
+    78    1:Alive    1:Alive       *0.67,0.33 
+    79     2:Dead    1:Alive   +   *0.941,0.059 
+    80    1:Alive    1:Alive       *0.957,0.043 
+    81    1:Alive    1:Alive       *0.939,0.061 
+    82    1:Alive    1:Alive       *0.802,0.198 
+    83    1:Alive    1:Alive       *0.995,0.005 
+    84    1:Alive    1:Alive       *0.973,0.027 
+    85     2:Dead     2:Dead       0.443,*0.557 
+    86    1:Alive    1:Alive       *0.999,0.001 
+    87    1:Alive    1:Alive       *0.884,0.116 
+    88    1:Alive    1:Alive       *0.996,0.004 
+    89     2:Dead    1:Alive   +   *0.546,0.454 
+    90    1:Alive    1:Alive       *0.994,0.006 
+    91    1:Alive    1:Alive       *0.95,0.05 
+    92     2:Dead    1:Alive   +   *0.905,0.095 
+    93    1:Alive    1:Alive       *0.989,0.011 
+    94    1:Alive    1:Alive       *0.817,0.183 
+    95    1:Alive    1:Alive       *0.978,0.022 
+    96    1:Alive    1:Alive       *0.996,0.004 
+    97    1:Alive    1:Alive       *0.92,0.08 
+    98    1:Alive    1:Alive       *0.976,0.024 
+    99    1:Alive    1:Alive       *0.996,0.004 
+   100    1:Alive    1:Alive       *0.968,0.032

@@ -1,0 +1,17 @@
+#!/bin/bash
+# INPUT Directories/Files ::
+export DATA_DIR=`pwd`/../../Data
+export OMOPV4_DIR=$DATA_DIR/omopv4
+export PHYSIONET_DIR=$DATA_DIR/physionet
+export OMOPV4_FILTERED=$OMOPV4_DIR/obs-out-filt  # This is a file and MUST be become a directory
+
+# OUTPUT Directories ::
+export OUTPUT_DIR=`pwd`/python-out
+
+python main.py --input_physionet $PHYSIONET_DIR/observation-temp.txt \
+               --input_mapreduce $OMOPV4_FILTERED/part-r-00000  \
+               --output $OUTPUT_DIR   \
+               -c $OMOPV4_DIR/config.dat  \
+               -u $OMOPV4_DIR/user.dat \
+               -r $OMOPV4_DIR/range.dat 
+

@@ -1,0 +1,3 @@
+This folder contains configuration files for "experiments" that can be performed by ML-Flex. Each experiment can be configured to use particular data sets, algorithms, number of cross-validation folds, etc. This way, when you run the experiment, you will not only have flexibility in how you configure it, but you will also have a record of the precise settings that were used to run the experiment.
+
+Please see the tutorial (http://mlflex.sourceforget.net/tutorial) for details about configuring experiments.

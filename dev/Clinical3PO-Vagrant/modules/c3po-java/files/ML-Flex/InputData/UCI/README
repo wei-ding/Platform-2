@@ -1,0 +1,3 @@
+The UCI Machine Learning Repository (http://archive.ics.uci.edu/ml/) contains a variety of data sets from various disciplines that are frequently used to test machine-learning algorithms. These data sets are freely accessible; however, in some cases it is important to cite the original providers of the data, so please refer to the UCI Machine Learning Respository citation policy (http://archive.ics.uci.edu/ml/citation_policy.html). In particular, the Breast (Wisconsin) data set requires the following citation:
+
+Wolberg WH, Mangasarian OL. Multisurface method of pattern separation for medical diagnosis applied to breast cytology. Proc Natl Acad Sci U S A. 1990;87(23):9193–6.

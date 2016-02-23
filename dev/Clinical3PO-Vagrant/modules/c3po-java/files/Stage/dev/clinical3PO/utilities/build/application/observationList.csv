@@ -1,0 +1,38 @@
+Albumin,Albumin
+ALP,Alkaline phosphatase
+ALT,Alanine transaminase
+AST,Aspartate transaminase
+Bilirubin,Bilirubin
+BUN,Blood urea nitrogen
+Cholesterol,Cholesterol
+Creatinine,Serum creatinine
+DiasABP,Invasive diastolic arterial blood pressure
+FiO2,Fractional inspired O2
+GCS,Glasgow Coma Score
+Glucose,Serum glucose
+HCO3,Seum bicarbonate
+HCT,Hematocrit
+HR,Heart Rate
+K,Serum potassium
+Lactate,Lactate
+Mg,Serum magnesium
+MAP,Invasive mean arterial blood pressure
+MechVent,Mechanical ventilation respiration
+Na,Serum sodium
+NIDiasABP,Non-invasive diastolic arterial blood pressure
+NIMAP,Non-invasive mean arterial blood pressure
+NISysABP,Non-invasive systolic arterial blood pressure
+PaCO2,Partial pressure of arterial CO2
+PaO2,Partial pressure of arterial O2
+pH,Arterial pH
+Platelets,Platelets
+RespRate,Respiration rate
+SaO2,O2 saturation in hemoglobin
+SysABP,Invasive systolic arterial blood pressure
+Temp,Temperature
+TropI,Troponin-I
+TropT,Troponin-T
+Urine,Urine
+WBC,White blood cell count
+Weight,Weight
+Height,Height

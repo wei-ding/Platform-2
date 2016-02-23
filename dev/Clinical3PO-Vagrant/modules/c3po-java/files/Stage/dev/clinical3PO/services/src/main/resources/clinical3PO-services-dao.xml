@@ -1,0 +1,56 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:batch="http://www.springframework.org/schema/batch"
+		xmlns:hdp="http://www.springframework.org/schema/hadoop" xmlns:context="http://www.springframework.org/schema/context"
+		xmlns:tx="http://www.springframework.org/schema/tx"
+		xmlns:c="http://www.springframework.org/schema/c" xmlns:p="http://www.springframework.org/schema/p"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/hadoop http://www.springframework.org/schema/hadoop/spring-hadoop.xsd">
+	
+	<!-- Enable Annotation based Declarative Transaction Management -->
+    <tx:annotation-driven proxy-target-class="true"
+        transaction-manager="transactionManager" />
+ 
+    <!-- Creating TransactionManager Bean, since JDBC we are creating of type
+        DataSourceTransactionManager -->
+    <bean id="transactionManager"
+        class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+ 
+	<bean id="jobSearchDAO" class="org.clinical3PO.services.dao.JobSearchDAO">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	
+	<bean id="dataSource" 
+         class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="${db.driverClassName}" />
+		<property name="url" value="${db.url}" />
+		<property name="username" value="${db.username}" />
+		<property name="password" value="${db.password}" />
+	</bean>
+
+	<bean id="patientSearchDAO" class="org.clinical3PO.services.data.dao.PatientSearchDAO">
+		<property name="hiveTemplate" ref="hiveTemplate" />
+	</bean>
+
+	<bean id="NLPSearchDAO" class="org.clinical3PO.services.data.dao.NLPHiveTableUpdater">
+		<property name="hiveTemplate" ref="hiveTemplate" />
+	</bean>
+		
+    <!-- basic Hive driver bean -->
+    <bean id="hive-driver" class="org.apache.hive.jdbc.HiveDriver"/>
+
+    <!-- wrapping a basic datasource around the driver -->
+    <!-- notice the 'c:' namespace (available in Spring 3.1+) for inlining constructor arguments, 
+         in this case the url (default is 'jdbc:hive://localhost:10000/default') -->
+         
+    <bean id="hive-ds" class="org.springframework.jdbc.datasource.SimpleDriverDataSource"
+       c:driver-ref="hive-driver" c:url="jdbc:hive2://${clinical3PO.hive.host}:${clinical3PO.hive.port}/${clinical3PO.hive.db}" 
+       c:username="${clinical3PO.hive.user}" c:password="${clinical3PO.hive.password}" />
+
+    <!-- standard JdbcTemplate declaration -->
+    <bean id="hiveTemplate" class="org.springframework.jdbc.core.JdbcTemplate" c:data-source-ref="hive-ds"/>
+    
+</beans>
