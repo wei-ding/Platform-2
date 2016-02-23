@@ -82,7 +82,7 @@ class c3po_java {
     path  => '/home/c3po/codebase/Stage',
     ensure  =>  present,
     recurse => remote,
-    source  =>  '/vagrant/modules/c3po-java/files/Stage',
+    source  =>  '/vagrant/modules/c3po_java/files/Stage',
     owner     => 'c3po',
     group   =>    'hadoop',
   }
@@ -96,7 +96,7 @@ class c3po_java {
     path  => '/home/c3po/ML-Flex',
     ensure  =>  present,
     recurse => remote,
-    source  =>  '/vagrant/modules/c3po-java/files/ML-Flex',
+    source  =>  '/vagrant/modules/c3po_java/files/ML-Flex',
     owner     => 'c3po',
     group   =>    'hadoop',
   }
