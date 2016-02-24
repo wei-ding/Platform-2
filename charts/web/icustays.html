@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <!--
+      <a href="http://academicdepartments.musc.edu/dw/index.html"
+        target="_blank"><img style="position: absolute; left: 0; top: 0 ; border: 0;"
+        src="img/BMIC_highres_transparent.png" width="200" height="85" </a>
+      -->
+    <title> BMIC CDW Patient Visit Index Demo</title>
+
+    <meta charset="UTF-8">
+
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script>
+        $(function(){
+            $("#header").load("header.html"); 
+        });
+    </script> 
+
+</head>
+
+
+<body>
+
+
+<div id="header"></div>
+
+
+<div class="container">
+
+  <h1>Predicting Mortality of ICU Patients </h1>
+
+  <p></p>
+  <p></p>
+
+  <strong> </strong> 
+  <p></p>
+
+ 
+
+  <div class="row">
+      <div id="gender-chart">
+          <strong>Gender</strong>
+          <a class="reset" href="javascript:genderChart.filterAll();dw.redrawAll();" style="display: none;">reset</a>
+          <div class="clearfix"></div>
+      </div>
+
+      <div id="ICUType-chart">
+          <strong>ICU Type</strong>
+          <a class="reset" href="javascript:ICUTypeChart.filterAll();dw.redrawAll();" style="display: none;">reset</a>
+
+          <div class="clearfix"></div>
+      </div>
+  </div>
+
+  <div class="row">
+    <div>
+        <div class="dw-data-count">
+            <span class="filter-count"></span> selected out of <span class="total-count"></span> records | <a
+                href="javascript:dw.filterAll(); dw.renderAll();">Reset All</a>
+        </div>
+    </div>
+
+    <table class="table table-hover dw-data-table">
+        <thead>
+        <tr class="header">
+            <th>PatientID</th>
+        </tr>
+        </thead>
+    </table>
+
+  </div>
+
+</div>
+
+<script type="text/javascript" src="js/d3.js"></script>
+<script type="text/javascript" src="js/crossfilter.js"></script>
+<script type="text/javascript" src="js/dw.js"></script>
+<script type="text/javascript" src="js/colorbrewer.js"></script>
+
+<script type="text/javascript" src="ptsummary.js"></script>
+
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-33628816-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function () {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+
+</body>
+</html>

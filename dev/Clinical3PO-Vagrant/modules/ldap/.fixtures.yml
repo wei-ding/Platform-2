@@ -1,4 +1,0 @@
-fixtures:
-  symlinks:
-    ldap: "#{source_dir}"
-    stdlib: "#{source_dir}/../stdlib"

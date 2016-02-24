@@ -1,0 +1,25 @@
+var bar = new NavBar(0);
+var menu;
+
+bar.setColors("#000000", "#ffffff", "#339933", "#000000", "#99cc99", "#000000", "#99cc99", "#ffffff", "#336633");
+bar.setFonts("MS Sans Serif, sans-serif", "plain", "bold", "8pt", "MS Sans Serif, sans-serif", "plain", "bold", "8pt");
+bar.setSizes(1, 4, 1);
+
+menu = new NavBarMenu(100, 0);
+menu.addItem(new NavBarMenuItem("Frames", ""));
+menu.addItem(new NavBarMenuItem("Bottom Frame 1", "javascript:parent.frames['main'].location='blank.html'"));
+menu.addItem(new NavBarMenuItem("Bottom Frame 2", "javascript:parent.frames['main'].location='main.html'"));
+bar.addMenu(menu);
+
+menu = new NavBarMenu(100, 0);
+menu.addItem(new NavBarMenuItem("Windows", ""));
+menu.addItem(new NavBarMenuItem("New Window 1", "javascript:window.open('blank.html')"));
+menu.addItem(new NavBarMenuItem("New Window 2", "javascript:window.open('blank.html', '', 'width=300,height=200')"));
+menu.addItem(new NavBarMenuItem("New Window 3", "javascript:window.open('blank.html', '', 'width=600,height=400')"));
+bar.addMenu(menu);
+
+menu = new NavBarMenu(100, 0);
+menu.addItem(new NavBarMenuItem("Main Window", "javascript:window.top.location='frames.html'"));
+menu.addItem(new NavBarMenuItem("Reload Frames", "javascript:window.top.location='frames.html'"));
+menu.addItem(new NavBarMenuItem("Back", "javascript:window.top.location='index2.html#frames'"));
+bar.addMenu(menu);

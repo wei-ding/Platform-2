@@ -11,7 +11,7 @@ The document briefly describes the setup instructions
 
 ### Architecture
 
-![Alt Text](/dev/clinical3PO/utilities/build/markdown/images/Architecture.png?raw=true "Architecture")
+![Alt Text](/clinical3PO/utilities/build/markdown/images/Architecture.png?raw=true "Architecture")
 
 ### Installation Instructions
 

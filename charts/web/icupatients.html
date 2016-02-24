@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- <meta name="viewport" content="width=device-width, initial-scale=1"> --!>
+<link rel="stylesheet" type="text/css" href="css/dw.css"/>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+<head>
+        <style>
+            .d1 {
+                background-color: #AAAAFF;
+                vertical-align: top;
+                margin-right: 5px;
+                display: inline-block;
+                width: 20%;
+                position: relative;
+                z-index: 0;
+            }
+
+            .d1 .cnt {
+                padding-right: 2px;
+            }
+
+            .d2 {
+                background-color: #AAFFAA;
+                vertical-align: top;
+                width: 80%;
+                display: inline-block;
+                position: relative;
+                z-index: 2;
+            }
+
+            .d3 {
+                background-color: #FFAAAA;
+                vertical-align: top;
+                margin-left: -75px;
+                display: inline-block;
+                width: 80%;
+                position: relative;
+                z-index: 1;
+            }
+
+            .d3 .cnt {
+                padding-left: 75px;
+            }
+            .top-buffer { 
+                margin-top:75px; 
+            }
+
+        </style>
+
+
+   <title>Predicting Mortality of ICU Patients Display Demo</title>
+   <meta charset="UTF-8">
+   <link rel="stylesheet" type="text/css" href="css/dw.css"/>
+
+   <script src="//code.jquery.com/jquery-1.11.1.js"></script>
+    <script>
+        $(function(){
+            $("#header").load("header.html"); 
+        });
+    </script> 
+
+</head>
+
+<body>
+
+  <div id="header"></div>
+
+    <div class="container">
+
+    <!-- Hierarchical heading table -->
+
+    <table id="ChartsTbl" cellspaceing="0" cellpadding="0" style="width: 100%"> 
+        <caption>Charts Test Area
+        </caption>
+        
+        <tbody>
+            <th scope="rowgroup" colspan="8"></th> 
+            <tr>
+                <th colspan="8">
+                    <div id="chart-ring-age" class="dw-chart">
+                        <strong>Age Groups</strong> 
+                        <div class="d1"><div class="cnt">
+                        <a class="reset" href="javascript:ageRingChart.filterAll();dw.redrawAll();"
+                            style="display: none;">reset</a>
+                        </div></div>
+                    </div>
+                    <div id="chart-pie-gender" class="dw-chart">
+                        <strong>Gender</strong> 
+                        <div class="d1"><div class="cnt">
+                        <a class="reset" href="javascript:genderChart.filterAll();dw.redrawAll();"
+                        style="display: none;">reset</a>
+                        </div></div>
+                    </div>
+                </th>
+            </tr>
+
+            <th scope="rowgroup" colspan="8"></th> 
+
+            <tr>
+                <th colspan="8">
+                    <div id="chart-pie-icutype" class="dw-chart">
+                        <strong>ICU Type                           </strong> 
+                        <div class="d1"><div class="cnt">
+                        <a class="reset" href="javascript:icutypeChart.filterAll();dw.redrawAll();"
+                        style="display: none;">reset</a>
+                        </div></div>
+                    </div>
+                    <div id="chart-pie-survival" class="dw-chart">
+                        <strong>Survival                          </strong> 
+                        <div class="d1"><div class="cnt">
+                        <a class="reset" href="javascript:survivalChart.filterAll();dw.redrawAll();"
+                        style="display: none;">reset</a>
+                        </div></div>
+                    </div>
+                    <div id="chart-pie-death" class="dw-chart">
+                        <strong>In-hospital Death</strong> 
+                        <div class="d1"><div class="cnt">
+                        <a class="reset" href="javascript:deathChart.filterAll();dw.redrawAll();"
+                        style="display: none;">reset</a>
+                        </div></div>
+                    </div>
+                    <!-- Mechanical ventilation respiration --!>
+                    <div id="chart-pie-MechVent" class="dw-chart">
+                        <strong>Mechanical respiration</strong> 
+                        <div class="d1"><div class="cnt">
+                        <a class="reset" href="javascript:MechVentCategoryChart.filterAll();dw.redrawAll();"
+                            style="display: none;">reset</a>
+                        </div></div>
+                    </div>
+                </th>
+            </tr>
+
+            <th scope="rowgroup" colspan="8"></th> 
+
+            <tr>
+                <th colspan="2">
+                    <div id="chart-area-bmi" class="dw-chart">
+                        <strong>BMI</strong> 
+                        <div class="d1"><div class="cnt">
+                        <a class="reset" href="javascript:bmiChart.filterAll();dw.redrawAll();"
+                        style="display: none;">reset</a>
+                        </div></div>
+                    </div>
+                </th>
+
+                <th colspan="6">
+                    <div id="chart-pie-bmi" class="dw-chart">
+                        <strong>BMI Category</strong> 
+                        <div class="d1"><div class="cnt">
+                        <a class="reset" href="javascript:bmiPieChart.filterAll();dw.redrawAll();"
+                            style="display: none;">reset</a>
+                        </div></div>
+                    </div>
+                </th>
+            </tr>
+
+            <th scope="rowgroup" colspan="8"></th> 
+
+            <tr>
+                <th colspan="2">
+                    <div id="chart-area-bp" class="dw-chart">
+                        <strong>MAP</strong> 
+                        <div class="d1"><div class="cnt">
+                        <a class="reset" href="javascript:bpChart.filterAll();dw.redrawAll();"
+                        style="display: none;">reset</a>
+                        </div></div>
+                    </div>
+                </th> 
+                <th colspan="6">
+                    <div id="chart-pie-bp" class="dw-chart">
+                        <strong>BP Category</strong> 
+                        <div class="d1"><div class="cnt">
+                        <a class="reset" href="javascript:bpCategoryChart.filterAll();dw.redrawAll();"
+                            style="display: none;">reset</a>
+                        </div></div>
+                    </div>
+                </th> 
+            </tr>
+
+            <th scope="rowgroup" colspan="8"></th> 
+
+            <tr>
+                <th colspan="1">
+                    <div id="chart-area-albumin" class="dw-chart">
+                        <strong>Albumin</strong> 
+                        <div class="d1"><div class="cnt">
+                        <a class="reset" href="javascript:albuminChart.filterAll();dw.redrawAll();"
+                        style="display: none;">reset</a>
+                        </div></div>
+                    </div>
+                </th>
+
+                <th colspan="1">
+                    <div id="chart-pie-albumin" class="dw-chart">
+                        <strong>Albumin level</strong> 
+                        <div class="d1"><div class="cnt">
+                        <a class="reset" href="javascript:albuminCategoryChart.filterAll();dw.redrawAll();"
+                            style="display: none;">reset</a>
+                        </div></div>
+                    </div>
+                </th>
+
+                <th colspan="1">
+                    <div id="chart-area-alp" class="dw-chart">
+                        <strong>ALP</strong> 
+                        <div class="d1"><div class="cnt">
+                        <a class="reset" href="javascript:alpChart.filterAll();dw.redrawAll();"
+                        style="display: none;">reset</a>
+                        </div></div>
+                    </div>
+                </th>
+
+                <th colspan="1">
+                    <div id="chart-pie-alp" class="dw-chart">
+                        <strong>ALP level</strong> 
+                        <div class="d1"><div class="cnt">
+                        <a class="reset" href="javascript:alpCategoryChart.filterAll();dw.redrawAll();"
+                            style="display: none;">reset</a>
+                        </div></div>
+                    </div>
+                </th>
+            </tr>
+
+            <th scope="rowgroup" colspan="8"></th> 
+
+            <tr>
+                <th colspan="1">
+                    <div id="chart-area-alt" class="dw-chart">
+                        <strong>ALT</strong> 
+                        <div class="d1"><div class="cnt">
+                        <a class="reset" href="javascript:altChart.filterAll();dw.redrawAll();"
+                        style="display: none;">reset</a>
+                        </div></div>
+                    </div>
+                </th>
+                <th colspan="1">
+                    <div id="chart-pie-alt" class="dw-chart">
+                        <strong>ALT level</strong> 
+                        <div class="d1"><div class="cnt">
+                        <a class="reset" href="javascript:altCategoryChart.filterAll();dw.redrawAll();"
+                            style="display: none;">reset</a>
+                        </div></div>
+                    </div>
+                </th>
+                <th colspan="1">
+                    <div id="chart-area-ast" class="dw-chart">
+                        <strong>AST</strong> 
+                        <div class="d1"><div class="cnt">
+                        <a class="reset" href="javascript:astChart.filterAll();dw.redrawAll();"
+                        style="display: none;">reset</a>
+                        </div></div>
+                    </div>
+                </th>
+                <th colspan="1">
+                    <div id="chart-pie-ast" class="dw-chart">
+                        <strong>AST level</strong> 
+                        <div class="d1"><div class="cnt">
+                        <a class="reset" href="javascript:altCategoryChart.filterAll();dw.redrawAll();"
+                            style="display: none;">reset</a>
+                        </div></div>
+                    </div>
+                </th>
+            </tr>
+
+            <th scope="rowgroup" colspan="8"></th> 
+
+            <tr>
+                <th colspan="1">
+                    <div id="chart-area-Bilirubin" class="dw-chart">
+                        <strong>Bilirubin</strong> 
+                        <div class="d1"><div class="cnt">
+                        <a class="reset" href="javascript:BilirubinChart.filterAll();dw.redrawAll();"
+                        style="display: none;">reset</a>
+                        </div></div>
+                    </div>
+                </th>
+                <th colspan="1">
+                    <div id="chart-pie-Bilirubin" class="dw-chart">
+                        <strong>Bilirubin level</strong> 
+                        <div class="d1"><div class="cnt">
+                        <a class="reset" href="javascript:BilirubinCategoryChart.filterAll();dw.redrawAll();"
+                            style="display: none;">reset</a>
+                        </div></div>
+                    </div>
+                </th>
+                <th colspan="1">
+                    <!-- Bun --!>
+                    <div id="chart-area-bun" class="dw-chart">
+                        <strong>BUN</strong> 
+                        <div class="d1"><div class="cnt">
+                        <a class="reset" href="javascript:bunChart.filterAll();dw.redrawAll();"
+                        style="display: none;">reset</a>
+                        </div></div>
+                    </div>
+                </th>
+                <th colspan="1">
+                    <div id="chart-pie-bun" class="dw-chart">
+                        <strong>BUN level</strong> 
+                        <div class="d1"><div class="cnt">
+                        <a class="reset" href="javascript:bunCategoryChart.filterAll();dw.redrawAll();"
+                            style="display: none;">reset</a>
+                        </div></div>
+                    </div>
+                </th>
+            </tr>
+
+            <th scope="rowgroup" colspan="8"></th> 
+
+            <tr>
+                <th colspan="1">
+                    <!-- Cholesterol --!>
+                    <div id="chart-area-Cholesterol" class="dw-chart">
+                        <strong>Cholesterol</strong> 
+                        <div class="d1"><div class="cnt">
+                        <a class="reset" href="javascript:CholesterolChart.filterAll();dw.redrawAll();"
+                        style="display: none;">reset</a>
+                        </div></div>
+                    </div>
+                </th>
+                <th colspan="1">
+                    <div id="chart-pie-Cholesterol" class="dw-chart">
+                        <strong>Cholesterol level</strong> 
+                        <div class="d1"><div class="cnt">
+                        <a class="reset" href="javascript:CholesterolCategoryChart.filterAll();dw.redrawAll();"
+                            style="display: none;">reset</a>
+                        </div></div>
+                    </div>
+                </th>
+                <th colspan="1">
+                    <!-- Creatinine --!>
+                    <div id="chart-area-Creatinine" class="dw-chart">
+                        <strong>Creatinine</strong> 
+                        <div class="d1"><div class="cnt">
+                        <a class="reset" href="javascript:CreatinineChart.filterAll();dw.redrawAll();"
+                        style="display: none;">reset</a>
+                        </div></div>
+                    </div>
+                </th>
+                <th colspan="1">
+                    <div id="chart-pie-Creatinine" class="dw-chart">
+                        <strong>Creatinine level</strong> 
+                        <div class="d1"><div class="cnt">
+                        <a class="reset" href="javascript:CreatinineCategoryChart.filterAll();dw.redrawAll();"
+                            style="display: none;">reset</a>
+                        </div></div>
+                    </div>
+                </th>
+            </tr>
+
+
+            <th scope="rowgroup" colspan="8"></th> 
+
+            <tr>
+                <th colspan="1">
+                    <!-- Glucose --!>
+                    <div id="chart-area-Glucose" class="dw-chart">
+                        <strong>Glucose</strong> 
+                        <div class="d1"><div class="cnt">
+                        <a class="reset" href="javascript:GlucoseChart.filterAll();dw.redrawAll();"
+                        style="display: none;">reset</a>
+                        </div></div>
+                    </div>
+                </th>
+                <th colspan="1">
+                    <div id="chart-pie-Glucose" class="dw-chart">
+                        <strong>Glucose level</strong> 
+                        <div class="d1"><div class="cnt">
+                        <a class="reset" href="javascript:GlucoseCategoryChart.filterAll();dw.redrawAll();"
+                            style="display: none;">reset</a>
+                        </div></div>
+                    </div>
+                </th>
+                <th colspan="1">
+                    <!-- HCO3 /Serum Bicarbonate --!>
+                    <div id="chart-area-HCO3" class="dw-chart">
+                        <strong>HCO3/Serum bicarbonate</strong> 
+                        <div class="d1"><div class="cnt">
+                        <a class="reset" href="javascript:HCO3Chart.filterAll();dw.redrawAll();"
+                        style="display: none;">reset</a>
+                        </div></div>
+                    </div>
+                </th>
+                <th colspan="1">
+                    <div id="chart-pie-HCO3" class="dw-chart">
+                        <strong>HCO3/Serum bicarbonate</strong> 
+                        <div class="d1"><div class="cnt">
+                        <a class="reset" href="javascript:HCO3CategoryChart.filterAll();dw.redrawAll();"
+                            style="display: none;">reset</a>
+                        </div></div>
+                    </div>
+                </th>
+            </tr>
+
+
+            <th scope="rowgroup" colspan="8"></th> 
+
+            <tr>
+                <th colspan="1">
+                    <!-- HCT Hematocrit--!>
+                    <div id="chart-area-HCT" class="dw-chart">
+                        <strong>HCT</strong> 
+                        <div class="d1"><div class="cnt">
+                        <a class="reset" href="javascript:HCTChart.filterAll();dw.redrawAll();"
+                        style="display: none;">reset</a>
+                        </div></div>
+                    </div>
+                </th>
+                <th colspan="1">
+                    <div id="chart-pie-HCT" class="dw-chart">
+                        <strong>HCT level</strong> 
+                        <div class="d1"><div class="cnt">
+                        <a class="reset" href="javascript:HCTCategoryChart.filterAll();dw.redrawAll();"
+                            style="display: none;">reset</a>
+                        </div></div>
+                    </div>
+                </th>
+                <th colspan="1">
+                    <!-- K Serum Potassium--!>
+                    <div id="chart-area-K" class="dw-chart">
+                        <strong>Serum Potassium</strong> 
+                        <div class="d1"><div class="cnt">
+                        <a class="reset" href="javascript:KChart.filterAll();dw.redrawAll();"
+                        style="display: none;">reset</a>
+                        </div></div>
+                    </div>
+                </th>
+                <th colspan="1">
+                    <div id="chart-pie-K" class="dw-chart">
+                        <strong>Serum Potassium level</strong> 
+                        <div class="d1"><div class="cnt">
+                        <a class="reset" href="javascript:KCategoryChart.filterAll();dw.redrawAll();"
+                            style="display: none;">reset</a>
+                        </div></div>
+                    </div>
+                </th>
+            </tr>
+
+            <th scope="rowgroup" colspan="8"></th> 
+
+            <tr>
+                <th colspan="1">
+                    <!-- Lactate --!>
+                    <div id="chart-area-Lactate" class="dw-chart">
+                        <strong>Lactate</strong> 
+                        <div class="d1"><div class="cnt">
+                        <a class="reset" href="javascript:LactateChart.filterAll();dw.redrawAll();"
+                        style="display: none;">reset</a>
+                        </div></div>
+                    </div>
+                </th>
+                <th colspan="1">
+                    <div id="chart-pie-Lactate" class="dw-chart">
+                        <strong>Lactate level</strong> 
+                        <div class="d1"><div class="cnt">
+                        <a class="reset" href="javascript:LactateCategoryChart.filterAll();dw.redrawAll();"
+                            style="display: none;">reset</a>
+                        </div></div>
+                    </div>
+                </th>
+                <th colspan="1">
+                    <!-- Serum magnesium --!>
+                    <div id="chart-area-Mg" class="dw-chart">
+                        <strong>Serum magnesium</strong> 
+                        <div class="d1"><div class="cnt">
+                        <a class="reset" href="javascript:MgChart.filterAll();dw.redrawAll();"
+                        style="display: none;">reset</a>
+                        </div></div>
+                    </div>
+                </th>
+                <th colspan="1">
+                    <div id="chart-pie-Mg" class="dw-chart">
+                        <strong>Serum magnesium level</strong> 
+                        <div class="d1"><div class="cnt">
+                        <a class="reset" href="javascript:MgCategoryChart.filterAll();dw.redrawAll();"
+                            style="display: none;">reset</a>
+                        </div></div>
+                    </div>
+                </th>
+            </tr>
+
+
+            <th scope="rowgroup" colspan="8"></th> 
+
+            <tr>
+                <th colspan="1">
+                    <!-- Serum Sodium--!>
+                    <div id="chart-area-Na" class="dw-chart">
+                        <strong>Serum Sodium</strong> 
+                        <div class="d1"><div class="cnt">
+                        <a class="reset" href="javascript:NaChart.filterAll();dw.redrawAll();"
+                        style="display: none;">reset</a>
+                        </div></div>
+                    </div>
+                </th>
+                <th colspan="1">
+                    <div id="chart-pie-Na" class="dw-chart">
+                        <strong>Serum Sodium Level</strong> 
+                        <div class="d1"><div class="cnt">
+                        <a class="reset" href="javascript:NaCategoryChart.filterAll();dw.redrawAll();"
+                            style="display: none;">reset</a>
+                        </div></div>
+                    </div>
+                </th>
+                <th colspan="1">
+                    <!-- PaCO2 --!>
+                    <div id="chart-area-PaCO2" class="dw-chart">
+                        <strong>PaCO2</strong> 
+                        <div class="d1"><div class="cnt">
+                        <a class="reset" href="javascript:PaCO2Chart.filterAll();dw.redrawAll();"
+                        style="display: none;">reset</a>
+                        </div></div>
+                    </div>
+                </th>
+                <th colspan="1">
+                    <div id="chart-pie-PaCO2" class="dw-chart">
+                        <strong>PaCO2 Level</strong> 
+                        <div class="d1"><div class="cnt">
+                        <a class="reset" href="javascript:PaCO2CategoryChart.filterAll();dw.redrawAll();"
+                            style="display: none;">reset</a>
+                        </div></div>
+                    </div>
+                </th>
+            </tr>
+
+            <th scope="rowgroup" colspan="8"></th> 
+
+            <tr>
+                <th colspan="1">
+                    <!-- PaO2 Pressure of arterial O2 (mmHg) --!>
+                    <div id="chart-area-PaO2" class="dw-chart">
+                        <strong>PaO2</strong> 
+                        <div class="d1"><div class="cnt">
+                        <a class="reset" href="javascript:PaO2Chart.filterAll();dw.redrawAll();"
+                        style="display: none;">reset</a>
+                        </div></div>
+                    </div>
+                </th>
+                <th colspan="1">
+                    <div id="chart-pie-PaO2" class="dw-chart">
+                        <strong>PaO2 Level</strong> 
+                        <div class="d1"><div class="cnt">
+                        <a class="reset" href="javascript:PaO2CategoryChart.filterAll();dw.redrawAll();"
+                            style="display: none;">reset</a>
+                        </div></div>
+                    </div>
+                </th>
+                <th colspan="1">
+                    <!-- pH Arterial pH --!>
+                    <div id="chart-area-pH" class="dw-chart">
+                        <strong>pH</strong> 
+                        <div class="d1"><div class="cnt">
+                        <a class="reset" href="javascript:pHChart.filterAll();dw.redrawAll();"
+                        style="display: none;">reset</a>
+                        </div></div>
+                    </div>
+                </th>
+                <th colspan="1">
+                    <div id="chart-pie-pH" class="dw-chart">
+                        <strong>pH Level</strong> 
+                        <div class="d1"><div class="cnt">
+                        <a class="reset" href="javascript:pHCategoryChart.filterAll();dw.redrawAll();"
+                            style="display: none;">reset</a>
+                        </div></div>
+                    </div>
+                </th>
+            </tr>
+
+            <th scope="rowgroup" colspan="8"></th> 
+
+            <tr>
+                <th colspan="1">
+                    <!-- Platelet --!>
+                    <div id="chart-area-Platelets" class="dw-chart">
+                        <strong>Platelets</strong> 
+                        <div class="d1"><div class="cnt">
+                        <a class="reset" href="javascript:PlateletsChart.filterAll();dw.redrawAll();"
+                        style="display: none;">reset</a>
+                        </div></div>
+                    </div>
+                </th>
+                <th colspan="1">
+                    <div id="chart-pie-Platelets" class="dw-chart">
+                        <strong>Platelets Level</strong> 
+                        <div class="d1"><div class="cnt">
+                        <a class="reset" href="javascript:PlateletsCategoryChart.filterAll();dw.redrawAll();"
+                            style="display: none;">reset</a>
+                        </div></div>
+                    </div>
+                </th>
+                <th colspan="1">
+                    <!-- RespRate --!>
+                    <div id="chart-area-RespRate" class="dw-chart">
+                        <strong>RespRate</strong> 
+                        <div class="d1"><div class="cnt">
+                        <a class="reset" href="javascript:RespRateChart.filterAll();dw.redrawAll();"
+                        style="display: none;">reset</a>
+                        </div></div>
+                    </div>
+                </th>
+                <th colspan="1">
+                    <div id="chart-pie-RespRate" class="dw-chart">
+                        <strong>RespRate Level</strong> 
+                        <div class="d1"><div class="cnt">
+                        <a class="reset" href="javascript:RespRateCategoryChart.filterAll();dw.redrawAll();"
+                            style="display: none;">reset</a>
+                        </div></div>
+                    </div>
+                </th>
+            </tr>
+
+            <th scope="rowgroup" colspan="8"></th> 
+
+            <tr>
+                <th colspan="1">
+                    <!-- SaO2 --!>
+                    <div id="chart-area-SaO2" class="dw-chart">
+                        <strong>SaO2</strong> 
+                        <div class="d1"><div class="cnt">
+                        <a class="reset" href="javascript:SaO2Chart.filterAll();dw.redrawAll();"
+                        style="display: none;">reset</a>
+                        </div></div>
+                    </div>
+                </th>
+                <th colspan="1">
+                    <div id="chart-pie-SaO2" class="dw-chart">
+                        <strong>SaO2 Level</strong> 
+                        <div class="d1"><div class="cnt">
+                        <a class="reset" href="javascript:SaO2CategoryChart.filterAll();dw.redrawAll();"
+                            style="display: none;">reset</a>
+                        </div></div>
+                    </div>
+                </th>
+                <th colspan="1">
+                    <!-- Temp --!>
+                    <div id="chart-area-Temp" class="dw-chart">
+                        <strong>Temp</strong> 
+                        <div class="d1"><div class="cnt">
+                        <a class="reset" href="javascript:TempChart.filterAll();dw.redrawAll();"
+                        style="display: none;">reset</a>
+                        </div></div>
+                    </div>
+                </th>
+                <th colspan="1">
+                    <div id="chart-pie-Temp" class="dw-chart">
+                        <strong>Temp Level</strong> 
+                        <div class="d1"><div class="cnt">
+                        <a class="reset" href="javascript:TempCategoryChart.filterAll();dw.redrawAll();"
+                            style="display: none;">reset</a>
+                        </div></div>
+                    </div>
+                </th>
+            </tr>
+
+            <th scope="rowgroup" colspan="8"></th> 
+
+            <tr>
+                <th colspan="1">
+                    <!-- Urine Output --!>
+                    <div id="chart-area-Urine" class="dw-chart">
+                        <strong>Urine Output</strong> 
+                        <div class="d1"><div class="cnt">
+                        <a class="reset" href="javascript:UrineChart.filterAll();dw.redrawAll();"
+                        style="display: none;">reset</a>
+                        </div></div>
+                    </div>
+                </th>
+                <th colspan="1">
+                    <div id="chart-pie-Urine" class="dw-chart">
+                        <strong>Urine Output Level</strong> 
+                        <div class="d1"><div class="cnt">
+                        <a class="reset" href="javascript:UrineCategoryChart.filterAll();dw.redrawAll();"
+                            style="display: none;">reset</a>
+                        </div></div>
+                    </div>
+                </th>
+                <th colspan="1">
+                    <!-- WBC Output --!>
+                    <div id="chart-area-WBC" class="dw-chart">
+                        <strong>WBC</strong> 
+                        <div class="d1"><div class="cnt">
+                        <a class="reset" href="javascript:WBCChart.filterAll();dw.redrawAll();"
+                        style="display: none;">reset</a>
+                        </div></div>
+                    </div>
+                </th>
+                <th colspan="1">
+                    <div id="chart-pie-WBC" class="dw-chart">
+                        <strong>WBC</strong> 
+                        <div class="d1"><div class="cnt">
+                        <a class="reset" href="javascript:WBCCategoryChart.filterAll();dw.redrawAll();"
+                            style="display: none;">reset</a>
+                        </div></div>
+                    </div>
+                </th>
+            </tr>
+
+        </tbody>
+    </table>
+
+
+</div>
+
+
+<script type="text/javascript" src="js/d3.js"></script>
+<script type="text/javascript" src="js/crossfilter.js"></script>
+<script type="text/javascript" src="js/dw.js"></script>
+<script type="text/javascript" src="s_icupatients.js"></script>
+
+</body>
+</html>

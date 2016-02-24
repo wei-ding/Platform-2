@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>dpc3po</title>
+</head>
+<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+<style>
+	* { margin:0; padding:0; }
+	body, html { overflow: hidden; height:100%; width:100%; }
+
+	div {
+		position: absolute;
+		width:100%; height:100%;
+		opacity:.2;
+		background: url(soda.jpg);
+		background-size:   100% 100%;
+		background-repeat: no-repeat;
+		z-index: -10;
+	}
+
+	textarea {
+		display:block; position:absolute;
+		top:0; left:0;
+		width:25%; height:100%;
+		padding:0 .3% 0 1.2%;
+		line-height: 1.3em;
+		border:0;
+
+		background: white;
+		scroll:auto; opacity:.4;
+
+		font-family: 'Roboto', sans-serif;
+		font-size: 12px;
+	}
+	textarea:focus {
+		opacity: .6;
+	}
+
+	svg {
+		display:block; position:absolute;
+		top:0; left:26.5%;
+	}
+
+	.node circle { fill: #fff; stroke: steelblue; stroke-width: 1.5px; }
+	.node { font: 10px sans-serif;}
+	.link { fill: none; stroke: #999; stroke-width: .5px; }
+
+</style>
+<body>
+
+<div></div>
+
+<form>
+
+<textarea name="Prescription" spellcheck='false'>
+
+patient id = 10, 12 , 12 
+patient id > 10 and < 120, 
+hypertension patients
+older than 18 younger than 70
+live in south carolina, north carolina
+bmi greater than 30 
+
+</textarea>
+
+</form>
+
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script>
+
+	function draw_graph() {
+
+		var text = $("textarea").val();
+
+		$.ajax({
+			type: "POST",
+			url: "/projects/dpc3po/parse",
+			data: {Prescription: text},
+			success: function(root) {
+
+				$('svg').remove();
+
+				var tree = d3.layout.tree()
+					.size([360, (window.innerHeight/2) - 80])
+					.separation(function(a, b) { return (a.parent == b.parent ? 1 : 2) / a.depth; });
+
+				var diagonal = d3.svg.diagonal.radial()
+					.projection(function(d) { return [d.y, d.x / 180 * Math.PI]; });
+
+				var svg = d3.select("body").append("svg")
+					.attr("width", window.innerWidth*.735)
+					.attr("height", window.innerHeight)
+				  .append("g")
+					.attr("transform", "translate(" + (window.innerWidth*.735) / 2 + "," + window.innerHeight / 2 + ")");
+
+				var nodes = tree.nodes(root),
+					links = tree.links(nodes);
+
+				var link = svg.selectAll(".link")
+					.data(links)
+					.enter().append("path")
+					.attr("class", "link")
+					.attr("d", diagonal);
+
+				var node = svg.selectAll(".node")
+					.data(nodes)
+					.enter().append("g")
+					.attr("class", "node")
+					.attr("transform", function(d) { return "rotate(" + (d.x - 90) + ")translate(" + d.y + ")"; })
+
+				node.append("circle")
+					.attr("r", 4.5);
+
+				node.append("text")
+					.attr("dy", ".31em")
+					.attr("text-anchor", function(d) { return d.x < 180 ? "start" : "end"; })
+					.attr("transform", function(d) { return d.x < 180 ? "translate(8)" : "rotate(180)translate(-8)"; })
+					.text(function(d) { return d.value || d.name; });
+
+			}
+		});
+
+	}
+
+	function redraw(e) {
+		clearTimeout(redraw.timeout);
+		redraw.timeout = setTimeout(draw_graph, 200);
+	}
+
+	$("textarea").keyup(redraw);
+	$(window).resize(redraw);
+
+	draw_graph();
+
+</script>
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-3011328-5', 'jasonmooberry.com');
+	ga('send', 'pageview');
+</script>
+</body>
+</html>

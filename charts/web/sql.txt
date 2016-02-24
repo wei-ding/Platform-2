@@ -1,0 +1,142 @@
+# Create Table
+create table pt_summary(pt_id bigint unsigned not null, age varchar(50), gender varchar(50), icu_type varchar(50), height varchar(50), first_weight varchar(50),first_bmi float, last_weight varchar(50), last_bmi float, GCS varchar(50), HR varchar(50), NIDiasABP varchar(50), NIMAP varchar(50), NISysABP varchar(50), RespRate varchar(50), Temp varchar(50), Urine varchar(50), HCT varchar(50), BUN varchar(50), Creatinine varchar(50), Glucose varchar(50), HCO3 varchar(50), Mg varchar(50), Platelets varchar(50), K varchar(50), Na varchar(50), WBC varchar(50), pH varchar(50), PaCO2 varchar(50), PaO2 varchar(50), DiasABP varchar(50), FiO2 varchar(50), MAP varchar(50), MechVent varchar(50), SysABP varchar(50), SaO2 varchar(50), Albumin varchar(50), ALP varchar(50), ALT varchar(50), AST varchar(50), Bilirubin varchar(50), Lactate varchar(50), Cholesterol varchar(50), TroponinI varchar(50), TroponinT varchar(50), saps_i int, sofa int, los int, survival int, in_hosp_death int, PRIMARY KEY (`pt_id`));
+
+# Get Patients status infos
+INSERT INTO pt_summary (pt_id,saps_i,sofa,los,survival,in_hosp_death) select person_id,saps_i,sofa,los,survival,in_hosp_death from pt_outcome;                                                  
+
+
+# Age
+update pt_summary a, pt_data_eav b  set a.age=b.val where a.pt_id=b.pt_id and b.var='Age' and b.val is not null;
+
+# Gender
+update pt_summary a, pt_data_eav b  set a.gender=b.val where a.pt_id=b.pt_id and b.var='Gender' and b.val is not null;
+
+# ICU Type
+update pt_summary a, pt_data_eav b  set a.icu_type=b.val where a.pt_id=b.pt_id and b.var='ICUType' and b.val is not null;
+
+# Height
+update pt_summary a, pt_data_eav b  set a.height=b.val where a.pt_id=b.pt_id and b.var='Height' and b.val is not null;
+
+# First Weight
+UPDATE pt_summary t1 join ( SELECT pt_id, val, min(dts) as update_time FROM pt_data_eav where var='Weight' GROUP BY pt_id ) AS t2 ON t1.pt_id = t2.pt_id SET t1.first_weight = t2.val;
+# Last Weight
+UPDATE pt_summary t1 join ( SELECT pt_id, val, max(dts) as update_time FROM pt_data_eav where var='Weight' GROUP BY pt_id ) AS t2 ON t1.pt_id = t2.pt_id SET t1.last_weight = t2.val;
+
+# First BMI
+update pt_summary set first_bmi= first_weight / ((height/100) * (height/100)) where height is not null and first_weight is not null;
+# Last BMI
+update pt_summary set last_bmi= last_weight / ( (height/100) * (height/100)) where height is not null and last_weight is not null;
+
+# Last NIDiasABP
+UPDATE pt_summary t1 join ( SELECT pt_id, val, max(dts) as update_time FROM pt_data_eav where var='NIDiasABP' GROUP BY pt_id ) AS t2 ON t1.pt_id = t2.pt_id SET t1.NIDiasABP= t2.val;
+
+# Last NIMAP
+UPDATE pt_summary t1 join ( SELECT pt_id, val, max(dts) as update_time FROM pt_data_eav where var='NIMAP' GROUP BY pt_id ) AS t2 ON t1.pt_id = t2.pt_id SET t1.NIMAP= t2.val;
+
+# Last NISysABP
+UPDATE pt_summary t1 join ( SELECT pt_id, val, max(dts) as update_time FROM pt_data_eav where var='NISysABP' GROUP BY pt_id ) AS t2 ON t1.pt_id = t2.pt_id SET t1.NISysABP= t2.val;
+
+# Last RespRate 
+UPDATE pt_summary t1 join ( SELECT pt_id, val, max(dts) as update_time FROM pt_data_eav where var='RespRate' GROUP BY pt_id ) AS t2 ON t1.pt_id = t2.pt_id SET t1.RespRate= t2.val;
+
+# Last Temp 
+UPDATE pt_summary t1 join ( SELECT pt_id, val, max(dts) as update_time FROM pt_data_eav where var='Temp' GROUP BY pt_id ) AS t2 ON t1.pt_id = t2.pt_id SET t1.Temp= t2.val;
+
+# Last Temp  
+UPDATE pt_summary t1 join ( SELECT pt_id, val, max(dts) as update_time FROM pt_data_eav where var='Urine' GROUP BY pt_id ) AS t2 ON t1.pt_id = t2.pt_id SET t1.Urine= t2.val;
+
+# Last HCT 
+UPDATE pt_summary t1 join ( SELECT pt_id, val, max(dts) as update_time FROM pt_data_eav where var='HCT' GROUP BY pt_id ) AS t2 ON t1.pt_id = t2.pt_id SET t1.HCT= t2.val;
+
+# Last BUN 
+UPDATE pt_summary t1 join ( SELECT pt_id, val, max(dts) as update_time FROM pt_data_eav where var='BUN' GROUP BY pt_id ) AS t2 ON t1.pt_id = t2.pt_id SET t1.BUN= t2.val;
+
+# Last Creatinine 
+UPDATE pt_summary t1 join ( SELECT pt_id, val, max(dts) as update_time FROM pt_data_eav where var='Creatinine' GROUP BY pt_id ) AS t2 ON t1.pt_id = t2.pt_id SET t1.Creatinine= t2.val;
+
+# Last Glucose 
+UPDATE pt_summary t1 join ( SELECT pt_id, val, max(dts) as update_time FROM pt_data_eav where var='Glucose' GROUP BY pt_id ) AS t2 ON t1.pt_id = t2.pt_id SET t1.Glucose= t2.val;
+
+# Last HCO3 
+UPDATE pt_summary t1 join ( SELECT pt_id, val, max(dts) as update_time FROM pt_data_eav where var='HCO3' GROUP BY pt_id ) AS t2 ON t1.pt_id = t2.pt_id SET t1.HCO3= t2.val;
+
+# Last Mg 
+UPDATE pt_summary t1 join ( SELECT pt_id, val, max(dts) as update_time FROM pt_data_eav where var='Mg' GROUP BY pt_id ) AS t2 ON t1.pt_id = t2.pt_id SET t1.Mg= t2.val;
+
+# Last Platelets 
+UPDATE pt_summary t1 join ( SELECT pt_id, val, max(dts) as update_time FROM pt_data_eav where var='Platelets' GROUP BY pt_id ) AS t2 ON t1.pt_id = t2.pt_id SET t1.Platelets= t2.val;
+
+# Last K 
+UPDATE pt_summary t1 join ( SELECT pt_id, val, max(dts) as update_time FROM pt_data_eav where var='K' GROUP BY pt_id ) AS t2 ON t1.pt_id = t2.pt_id SET t1.K= t2.val;
+
+# Last Na 
+UPDATE pt_summary t1 join ( SELECT pt_id, val, max(dts) as update_time FROM pt_data_eav where var='Na' GROUP BY pt_id ) AS t2 ON t1.pt_id = t2.pt_id SET t1.Na= t2.val;
+
+# Last WBC
+UPDATE pt_summary t1 join ( SELECT pt_id, val, max(dts) as update_time FROM pt_data_eav where var='WBC' GROUP BY pt_id ) AS t2 ON t1.pt_id = t2.pt_id SET t1.WBC= t2.val;
+
+# Last pH
+UPDATE pt_summary t1 join ( SELECT pt_id, val, max(dts) as update_time FROM pt_data_eav where var='pH' GROUP BY pt_id ) AS t2 ON t1.pt_id = t2.pt_id SET t1.pH= t2.val;
+
+# Last PaCO2 
+UPDATE pt_summary t1 join ( SELECT pt_id, val, max(dts) as update_time FROM pt_data_eav where var='PaCO2' GROUP BY pt_id ) AS t2 ON t1.pt_id = t2.pt_id SET t1.PaCO2= t2.val;
+
+# Last PaO2 
+UPDATE pt_summary t1 join ( SELECT pt_id, val, max(dts) as update_time FROM pt_data_eav where var='PaO2' GROUP BY pt_id ) AS t2 ON t1.pt_id = t2.pt_id SET t1.PaO2= t2.val;
+ 
+# Last DiasABP 
+UPDATE pt_summary t1 join ( SELECT pt_id, val, max(dts) as update_time FROM pt_data_eav where var='DiasABP' GROUP BY pt_id ) AS t2 ON t1.pt_id = t2.pt_id SET t1.DiasABP= t2.val;
+
+# Last FiO2 
+UPDATE pt_summary t1 join ( SELECT pt_id, val, max(dts) as update_time FROM pt_data_eav where var='FiO2' GROUP BY pt_id ) AS t2 ON t1.pt_id = t2.pt_id SET t1.FiO2= t2.val;
+
+
+# Last MAP 
+UPDATE pt_summary t1 join ( SELECT pt_id, val, max(dts) as update_time FROM pt_data_eav where var='MAP' GROUP BY pt_id ) AS t2 ON t1.pt_id = t2.pt_id SET t1.MAP= t2.val;
+
+# Last MechVent 
+UPDATE pt_summary t1 join ( SELECT pt_id, val, max(dts) as update_time FROM pt_data_eav where var='MechVent' GROUP BY pt_id ) AS t2 ON t1.pt_id = t2.pt_id SET t1.MechVent= t2.val;
+
+# Last SysABP 
+UPDATE pt_summary t1 join ( SELECT pt_id, val, max(dts) as update_time FROM pt_data_eav where var='SysABP' GROUP BY pt_id ) AS t2 ON t1.pt_id = t2.pt_id SET t1.SysABP= t2.val;
+
+# Last SaO2 
+UPDATE pt_summary t1 join ( SELECT pt_id, val, max(dts) as update_time FROM pt_data_eav where var='SaO2' GROUP BY pt_id ) AS t2 ON t1.pt_id = t2.pt_id SET t1.SaO2= t2.val;
+
+# Last Albumin 
+UPDATE pt_summary t1 join ( SELECT pt_id, val, max(dts) as update_time FROM pt_data_eav where var='Albumin' GROUP BY pt_id ) AS t2 ON t1.pt_id = t2.pt_id SET t1.Albumin= t2.val;
+
+# Last ALP 
+UPDATE pt_summary t1 join ( SELECT pt_id, val, max(dts) as update_time FROM pt_data_eav where var='ALP' GROUP BY pt_id ) AS t2 ON t1.pt_id = t2.pt_id SET t1.ALP= t2.val;
+
+# Last ALT 
+UPDATE pt_summary t1 join ( SELECT pt_id, val, max(dts) as update_time FROM pt_data_eav where var='ALT' GROUP BY pt_id ) AS t2 ON t1.pt_id = t2.pt_id SET t1.ALT= t2.val;
+
+# Last AST
+UPDATE pt_summary t1 join ( SELECT pt_id, val, max(dts) as update_time FROM pt_data_eav where var='AST' GROUP BY pt_id ) AS t2 ON t1.pt_id = t2.pt_id SET t1.AST= t2.val;
+
+# Last Bilirubin
+UPDATE pt_summary t1 join ( SELECT pt_id, val, max(dts) as update_time FROM pt_data_eav where var='Bilirubin' GROUP BY pt_id ) AS t2 ON t1.pt_id = t2.pt_id SET t1.Bilirubin= t2.val;
+
+
+# Last Lactate 
+UPDATE pt_summary t1 join ( SELECT pt_id, val, max(dts) as update_time FROM pt_data_eav where var='Lactate' GROUP BY pt_id ) AS t2 ON t1.pt_id = t2.pt_id SET t1.Lactate= t2.val;
+
+# Last Cholesterol 
+UPDATE pt_summary t1 join ( SELECT pt_id, val, max(dts) as update_time FROM pt_data_eav where var='Cholesterol' GROUP BY pt_id ) AS t2 ON t1.pt_id = t2.pt_id SET t1.Cholesterol= t2.val;
+
+# Last TroponinI 
+UPDATE pt_summary t1 join ( SELECT pt_id, val, max(dts) as update_time FROM pt_data_eav where var='TroponinI' GROUP BY pt_id ) AS t2 ON t1.pt_id = t2.pt_id SET t1.TroponinI= t2.val;
+
+
+# Last TroponinT 
+UPDATE pt_summary t1 join ( SELECT pt_id, val, max(dts) as update_time FROM pt_data_eav where var='TroponinT' GROUP BY pt_id ) AS t2 ON t1.pt_id = t2.pt_id SET t1.TroponinT= t2.val;
+
+
+
+
+select  `COLUMN_NAME`  FROM `INFORMATION_SCHEMA`.`COLUMNS` WHERE `TABLE_SCHEMA`='physionet' AND `TABLE_NAME`='pt_summary';
+
+( select 'pt_id','age','gender','icu_type','height','first_weight','first_bmi','last_weight','last_bmi','GCS','HR','NIDiasABP','NIMAP','NISysABP','RespRate','Temp','Urine','HCT','BUN','Creatinine','Glucose','HCO3','Mg','Platelets','K','Na','WBC','pH','PaCO2','PaO2','DiasABP','FiO2','MAP','MechVent','SysABP','SaO2','Albumin','ALP','ALT','AST','Bilirubin','Lactate','Cholesterol','TroponinI','TroponinT','saps_i','sofa','los','survival','in_hosp_death' ) UNION (select IFNULL(pt_id,''),IFNULL(age,''),IFNULL(gender,''),IFNULL(icu_type,''),IFNULL(height,''),IFNULL(first_weight,''),IFNULL(first_bmi,''),IFNULL(last_weight,''),IFNULL(last_bmi,''),IFNULL(GCS,''),IFNULL(HR,''),IFNULL(NIDiasABP,''),IFNULL(NIMAP,''),IFNULL(NISysABP,''),IFNULL(RespRate,''),IFNULL(Temp,''),IFNULL(Urine,''),IFNULL(HCT,''),IFNULL(BUN,''),IFNULL(Creatinine,''),IFNULL(Glucose,''),IFNULL(HCO3,''),IFNULL(Mg,''),IFNULL(Platelets,''),IFNULL(K,''),IFNULL(Na,''),IFNULL(WBC,''),IFNULL(pH,''),IFNULL(PaCO2,''),IFNULL(PaO2,''),IFNULL(DiasABP,''),IFNULL(FiO2,''),IFNULL(MAP,''),IFNULL(MechVent,''),IFNULL(SysABP,''),IFNULL(SaO2,''),IFNULL(Albumin,''),IFNULL(ALP,''),IFNULL(ALT,''),IFNULL(AST,''),IFNULL(Bilirubin,''),IFNULL(Lactate,''),IFNULL(Cholesterol,''),IFNULL(TroponinI,''),IFNULL(TroponinT,''),IFNULL(saps_i,''),IFNULL(sofa,''),IFNULL(los,''),IFNULL(survival,''),IFNULL(in_hosp_death,'') from pt_summary INTO OUTFILE 'pt_summary.csv' FIELDS ENCLOSED BY '"' TERMINATED BY ';' ESCAPED BY '"' LINES TERMINATED BY '\r\n' );
+
+ 

@@ -1,8 +1,0 @@
-<%
-   regionservers = eval(@nodes).
-      select {|node| node[:roles].include? 'hbase-regionserver'}.
-      map{|node| node[:hostname] + "." + @domain};
- -%>
-<% regionservers.each do |node| -%>
-<%= node %>
-<% end -%>

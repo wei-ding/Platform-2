@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title> BMIC CDW Patient Visit Index Demo</title>
+
+    <link rel="stylesheet" type="text/css" href="css/dw.css"/>
+    <script src="//code.jquery.com/jquery-1.11.1.js"></script>
+    <script> 
+        $(function(){
+            $("#header").load("header.html"); 
+        });
+    </script> 
+
+</head>
+
+
+
+
+<body>
+
+<div id="header"></div>
+
+
+<div class="container">
+
+<h1>BMIC Patient visit Index - Demo</h1>
+
+<p>
+    d3.js demo is a javascript charting demo support and allowing highly efficient exploration on 
+    large multi-dimensional dataset. It leverages  <a href="http://d3js.org/">d3</a> 
+    engine to render charts in css friendly svg format. Charts
+    rendered using d3.js are naturally data driven and reactive therefore providing instant feedback on user's
+    interaction. The main objective of this project is to provide an easy yet powerful javascript library to Dr. Frey
+    which can be utilized to perform data visualization anda analysis in browser as well as on mobile device.
+</p>
+
+
+
+<p>
+    The following charts provide a live example of d3.js used against BMIC patient vistis index for the last couple years. ( 
+    I'm sorry for I made up this dataset). This demo can show us is Friday or Monday the most visit day for hospitals? Is spring had more vists than winter?
+    etc...    
+</p>
+<p></p>
+<p></p>
+
+<strong>BMIC CDW Patient visit Index 1985-2014</strong> 
+<p></p>
+
+<div class="row">
+    <div id="yearly-bubble-chart" class="dw-chart">
+        <strong>Yearly Performance</strong> (fluctuation/index ratio, )
+        <a class="reset" href="javascript:yearlyBubbleChart.filterAll();dw.redrawAll();"
+           style="display: none;">reset</a>
+
+        <div class="clearfix"></div>
+    </div>
+</div>
+
+<div class="row">
+    <div id="gender-chart">
+        <strong>Male/Female</strong>
+        <a class="reset" href="javascript:genderChart.filterAll();dw.redrawAll();" style="display: none;">reset</a>
+
+        <div class="clearfix"></div>
+    </div>
+
+    <div id="quarter-chart">
+        <strong>Quarters</strong>
+        <a class="reset" href="javascript:quarterChart.filterAll();dw.redrawAll();" style="display: none;">reset</a>
+
+        <div class="clearfix"></div>
+    </div>
+
+    <div id="day-of-week-chart">
+        <strong>Day of Week</strong>
+        <a class="reset" href="javascript:dayOfWeekChart.filterAll();dw.redrawAll();" style="display: none;">reset</a>
+
+        <div class="clearfix"></div>
+    </div>
+
+    <div id="fluctuation-chart">
+        <strong>Days by Fluctuation(%)</strong>
+        <span class="reset" style="display: none;">range: <span class="filter"></span></span>
+        <a class="reset" href="javascript:fluctuationChart.filterAll();dw.redrawAll();" style="display: none;">reset</a>
+
+        <div class="clearfix"></div>
+    </div>
+</div>
+
+<div class="row">
+    <div id="monthly-move-chart">
+        <strong>Monthly Visit Chart</strong>
+        <span class="reset" style="display: none;">range: <span class="filter"></span></span>
+        <a class="reset" href="javascript:moveChart.filterAll();visitChart.filterAll();dw.redrawAll();"
+           style="display: none;">reset</a>
+
+        <div class="clearfix"></div>
+    </div>
+</div>
+
+<div class="row">
+    <div id="monthly-visit-chart">
+    </div>
+    <p class="muted pull-right" style="margin-right: 15px;">select a time range to zoom in</p>
+</div>
+
+<div class="row">
+    <div>
+        <div class="dw-data-count">
+            <span class="filter-count"></span> selected out of <span class="total-count"></span> records | <a
+                href="javascript:dw.filterAll(); dw.renderAll();">Reset All</a>
+        </div>
+    </div>
+    <table class="table table-hover dw-data-table">
+        <thead>
+        <tr class="header">
+            <th>Date</th>
+            <th>Visits</th>
+        </tr>
+        </thead>
+    </table>
+</div>
+
+
+</div>
+
+<script type="text/javascript" src="js/d3.js"></script>
+<script type="text/javascript" src="js/crossfilter.js"></script>
+<script type="text/javascript" src="js/dw.js"></script>
+<script type="text/javascript" src="js/colorbrewer.js"></script>
+
+<script type="text/javascript" src="yearly.js"></script>
+
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-33628816-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function () {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    });
+</script>
+
+</body>
+</html>
