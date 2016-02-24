@@ -86,12 +86,6 @@ Mac:
 https://releases.hashicorp.com/vagrant/1.8.1/vagrant_1.8.1.dmg
 
 
-Get Clinical3PO CentOS 6.7 iso file
------------------
-wget http://c3po-develop.tk/downloads/clinical3po-vagrant-centos-6.7.box
-
-put it into this folder.
-
 Prepare Clinical3PO Cluster Planning file
 ----------------------
 
@@ -107,15 +101,15 @@ under hdp_cluster_palnning:
   "domain": "clinical3po.org",
   "realm": "CLINICAL3PO.ORG",
   "security": false,
-  "vm_mem": 2048,
+  "vm_mem": 5096,
   "server_mem": 4096,
-  "client_mem": 2048,
+  "client_mem": 3072,
   "clients" : [ "hdfs", "hive", "oozie", "pig", "tez", "yarn", "zk" ],
   "nodes": [
-    { "hostname": "clinical3po-gw", "ip": "240.0.0.10", "roles": [ "client" ] },
     { "hostname": "clinical3po-nn", "ip": "240.0.0.11",
       "roles": [ "kdc", "hive-db", "hive-meta", "nn", "yarn", "zk" ] },
-    { "hostname": "clinical3po-slave1", "ip": "240.0.0.12", "roles": [ "oozie", "slave" ] }
+    { "hostname": "clinical3po-slave1", "ip": "240.0.0.12", "roles": [ "oozie", "slave" ] },
+    { "hostname": "clinical3po-gw", "ip": "240.0.0.10", "roles": [ "client", "tomcat", "nginx", "c3po", "maven" ] }
   ]
 }
 
@@ -131,17 +125,17 @@ under hdp_cluster_palnning:
   "domain": "clinical3po.org",
   "realm": "CLINICAL3PO.ORG",
   "security": false,
-  "vm_mem": 2048,
+  "vm_mem": 5096,
   "server_mem": 4096,
-  "client_mem": 2048,
+  "client_mem": 3172,
   "clients" : [ "hdfs", "hive", "oozie", "pig", "tez", "yarn", "zk" ],
   "nodes": [
-    { "hostname": "clinical3po-gw", "ip": "240.0.0.10", "roles": [ "client" ] },
     { "hostname": "clinical3po-nn", "ip": "240.0.0.11",
       "roles": [ "kdc", "hive-db", "hive-meta", "nn", "yarn", "zk" ] },
     { "hostname": "clinical3po-slave1", "ip": "240.0.0.12", "roles": [ "oozie", "slave" ] },
     { "hostname": "clinical3po-slave2", "ip": "240.0.0.13", "roles": [ "slave" ] },
-    { "hostname": "clinical3po-slave3", "ip": "240.0.0.14", "roles": [ "slave" ] }
+    { "hostname": "clinical3po-slave3", "ip": "240.0.0.14", "roles": [ "slave" ] },
+    { "hostname": "clinical3po-gw", "ip": "240.0.0.10", "roles": [ "client","tomcat", "maven", "nginx", "c3po" ] }
   ]
 }
 
@@ -165,8 +159,26 @@ user: c3po
 password: %CannonStreetHospital%
 
 Stop:
+stop all:
 vagrant halt
+or stop one:
+vagrant halt clinical3po-gw
 
 Destroy it ( this command stops the running virutalbox machines and this command deletes all the files too:
+delete all:
 vagrant destroy
+or delete one:
+vagrant destroy clinical3po-gw
+
+
+tomcat:
+user:admin
+password:PWc3po
+
+mysql:
+user:root
+password:PWc3po
+user:c3po
+password:PWc3po
+
 
