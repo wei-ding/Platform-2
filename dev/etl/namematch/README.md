@@ -16,5 +16,4 @@ $ ./sbt package
 
 ## Contact ##
 
-- Wei Ding
-- <a href="vvei.ding@gmail.com">vvei.ding@gmail.com</a>
+- Clinical3PO 

@@ -127,6 +127,23 @@ libraryDependencies ++= Seq (
   // "org.scalacheck" %% "scalacheck" % "1.10.0" % "test",
   // "org.specs2" %% "specs2" % "1.13",
   // "org.scalatest" % "scalatest_2.10" % "2.0.M5b"
+    "org.apache.opennlp" % "opennlp-maxent" % "3.0.3",
+    "org.apache.opennlp" % "opennlp-tools" % "1.6.0",
+    "org.apache.lucene" % "lucene-core" % "5.5.0",
+    "org.apache.lucene" % "lucene-queries" % "5.5.0",
+    "org.apache.lucene" % "lucene-analyzers-common" % "5.5.0",
+    "org.apache.lucene" % "lucene-queryparser" % "5.5.0",
+    "org.apache.solr" % "solr-solrj" % "5.5.0",
+    "org.neo4j" % "neo4j" % "2.3.2",
+    "org.neo4j" % "neo4j-rest-graphdb" % "2.0.1",
+    "nz.ac.waikato.cms.weka" % "weka-dev" % "3.7.13",
+    "org.apache.commons" % "commons-lang3" % "3.4",
+    "net.sourceforge.collections" % "collections-generic" % "4.01",
+    "commons-beanutils" % "commons-beanutils" % "1.9.2",
+    "commons-io" % "commons-io" % "2.4",
+    "io.spray" %% "spray-json" % "1.3.2",
+    "log4j" % "log4j" % "1.2.14",
+    "com.novocode" % "junit-interface" % "0.8" % "test"
 )
 
 /* you may need these repos */
@@ -138,7 +155,8 @@ resolvers ++= Seq(
   // Resolver.typesafeRepo("snapshots")
   // JavaNet2Repository,
   // JavaNet1Repository,
-  // "spray repo" at "http://repo.spray.io",
+  "spray repo" at "http://repo.spray.io",
+  "neo4j repo" at "https://m2.neo4j.org/content/repositories/releases"
 )
 
 // ivyXML := <dependencies>
