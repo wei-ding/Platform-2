@@ -9,6 +9,11 @@ $ ./sbt
 > +run
 ```
 
+## Package ##
+
+```sh
+$ ./sbt package
+
 ## Contact ##
 
 - Wei Ding
