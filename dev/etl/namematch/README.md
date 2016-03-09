@@ -13,6 +13,7 @@ $ ./sbt
 
 ```sh
 $ ./sbt package
+```
 
 ## Contact ##
 

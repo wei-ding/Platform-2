@@ -7,6 +7,7 @@ https://physionet.org/mimic2/demo/mimic2_flatfiles.tar.gz
 
 ``` sh
 $ for i in *.tar.gz; do echo working on $i; tar xvzf $i ; done
+```
 
 merge all the small files
 
@@ -23,6 +24,7 @@ $ ./sbt
 
 ```sh
 $ ./sbt package
+```
 
 ## Contact ##
 
