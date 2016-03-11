@@ -77,9 +77,9 @@ scalacOptions <++= scalaVersion map { sv =>
 javacOptions ++= Seq("-Xlint:unchecked", "-Xlint:deprecation")
 
 /* entry point */
-mainClass in (Compile, packageBin) := Some("org.clinical3po.namematch.Main")
+mainClass in (Compile, packageBin) := Some("org.clinical3po.namematcher.Main")
 
-mainClass in (Compile, run) := Some("org.clinical3po.namematch.Main")
+mainClass in (Compile, run) := Some("org.clinical3po.namematcher.Main")
 
 // CONTINUATIONS
 // autoCompilerPlugins := true
