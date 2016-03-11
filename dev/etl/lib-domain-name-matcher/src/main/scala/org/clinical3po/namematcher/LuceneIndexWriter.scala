@@ -24,7 +24,7 @@ import javax.annotation.Nonnull
 /**
  * Provides a method to write to the index
  */
-trait LuceneIndexWriter { self: LuceneDirectory with LuceneAnalyzerProvider with LuceneVersion =>
+trait LuceneIndexWriter { self: LuceneDirectory with LuceneAnalyzerProvider =>
 
   /**
    * Calls the passed function with an IndexWriter that writes to the current index.

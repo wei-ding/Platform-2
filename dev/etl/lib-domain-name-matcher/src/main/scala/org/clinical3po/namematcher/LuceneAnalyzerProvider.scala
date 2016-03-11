@@ -30,6 +30,6 @@ trait LuceneAnalyzerProvider {
 /**
  * A LuceneAnalyzerProvider that provides a StandardAnalyzer
  */
-trait LuceneStandardAnalyzer extends LuceneAnalyzerProvider { self: LuceneVersion =>
+trait LuceneStandardAnalyzer extends LuceneAnalyzerProvider { 
   protected val luceneAnalyzer = new StandardAnalyzer()
 }
