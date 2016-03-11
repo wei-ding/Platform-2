@@ -222,6 +222,6 @@ pomExtra := (
 // http://www.scala-sbt.org/using_sonatype.html
 
 /* assembly plugin */
-mainClass in assembly := Some("org.clinical3po.namematch.Main")
+mainClass in assembly := Some("org.clinical3po.namematcher.Main")
 
 test in assembly := {}
