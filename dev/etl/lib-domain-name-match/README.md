@@ -22,8 +22,8 @@ $ ./sbt package
 
 ## Supported Domains ##
 
-lab
-drug
+- lab
+- drug
 
 
 ## Contact ##
