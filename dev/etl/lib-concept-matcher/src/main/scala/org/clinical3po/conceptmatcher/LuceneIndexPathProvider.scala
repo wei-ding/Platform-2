@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.clinical3po.namematcher
+package org.clinical3po.conceptmatcher
 
 
 import java.io.{File => JFile, FileSystem => JFileSystem, _} //TODO: Scala 2.10 does not like java.io._
@@ -33,6 +33,15 @@ trait LuceneIndexPathProvider {
    */
   protected def withIndexPath[T](f: (Path) => T): T
 }
+
+/** 
+  * Base trait that provides the domains to a ServiceRootLucenePathProvider
+  */
+trait Domain
+trait Lab extends Domain { override def toString() = "Lab" }
+trait Drug extends Domain { override def toString() = "Drug" }
+trait Condition extends Domain { override def toString() = "Condition" }
+trait Procedure extends Domain { override def toString() = "Korean" }
 
 /**
  * A LuceneIndexPathProvider that provides a directory path that is the

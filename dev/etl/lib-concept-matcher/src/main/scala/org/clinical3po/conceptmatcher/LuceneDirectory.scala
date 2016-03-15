@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.clinical3po.namematcher
+package org.clinical3po.conceptmatcher
 
 import java.nio.file.Path
 import java.io.File
@@ -89,4 +89,9 @@ trait FSLuceneDirectory extends LuceneDirectory {
 trait DefaultFSLuceneDirectory
   extends FSLuceneDirectory
   with ServiceRootLucenePathProvider
+  with SimpleFSLuceneDirectoryCreator
+
+trait LabFSLuceneDirectory
+  extends FSLuceneDirectory
+  with ServiceRootLabLucenePathProvider
   with SimpleFSLuceneDirectoryCreator

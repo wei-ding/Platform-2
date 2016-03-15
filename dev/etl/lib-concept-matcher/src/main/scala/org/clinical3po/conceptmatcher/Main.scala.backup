@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.clinical3po.namematcher
+package org.clinical3po.conceptmatcher
 
 import java.nio.file.Path 
 import java.nio.file.Paths
@@ -28,13 +28,15 @@ import java.io.StringReader
 import java.util.concurrent.atomic.AtomicLong
 import java.util.regex.Pattern
 
-import scala.Array.canBuildFrom
-import scala.Array.fallbackCanBuildFrom
-import scala.collection.mutable.ArrayBuffer
-import org.apache.lucene.analysis.standard.StandardAnalyzer
-import org.apache.lucene.analysis.tokenattributes.CharTermAttribute
-import LuceneFieldHelpers._
-import LuceneText._
+//import scala.Array.canBuildFrom
+//import scala.Array.fallbackCanBuildFrom
+//import scala.collection.mutable.ArrayBuffer
+//import org.apache.lucene.analysis.standard.StandardAnalyzer
+//import org.apache.lucene.analysis.tokenattributes.CharTermAttribute
+//import org.apache.lucene.document.Document
+//import LuceneFieldHelpers._
+//import LuceneText._
+//import java.util.Calendar
 
 object Main {
   val punctPattern = Pattern.compile("\\p{Punct}")
@@ -98,33 +100,60 @@ object Main {
         .replaceAll("\"", "")
         .split("\t")
       val strNorm = normalizeCasePunct(conceptname)
+      //println("%s %s".format("normalizeCasePunct",Calendar.getInstance.getTime))
       val strSorted = sortWords(strNorm)
+      //println("%s %s".format("sortwords",Calendar.getInstance.getTime))
       val strStemmed = stemWords(strNorm)
+      //println("%s %s".format("stemWords",Calendar.getInstance.getTime))
       val fid = counter.incrementAndGet()
+      //println("%s %s".format("fid",Calendar.getInstance.getTime))
       val fdoc = new Document
+      //println("%s %s".format("new fdoc",Calendar.getInstance.getTime))
       fdoc.addIndexedStoredField("id", fid.toString)
+      //println("%s %s".format("addIdx_id",Calendar.getInstance.getTime))
       fdoc.addIndexedStoredField("conceptid", conceptid)
+      //println("%s %s".format("addIdx_conceptid",Calendar.getInstance.getTime))
       fdoc.addIndexedStoredField("conceptname", conceptname)
-      fdoc.addIndexedStoredField("conceptname_norm", strNorm)
-      fdoc.addIndexedStoredField("conceptname_sorted", strSorted)
-      fdoc.addIndexedStoredField("conceptname_stemmed", strStemmed)
-      fdoc.addIndexedOnlyField("optional_int", Option(42))
-      fdoc.addStoredOnlyField("long_value", 12345678L)
+      //println("%s %s".format("addIdx_conceptname",Calendar.getInstance.getTime))
+      //fdoc.addIndexedStoredField("conceptname_norm", strNorm)
+      //fdoc.addIndexedStoredField("conceptname_sorted", strSorted)
+      //fdoc.addIndexedStoredField("conceptname_stemmed", strStemmed)
+      //fdoc.addIndexedOnlyField("optional_int", Option(42))
+      //fdoc.addStoredOnlyField("long_value", 12345678L)
       index.addDocument(fdoc)
+      //println("%s %s".format("addDoc",Calendar.getInstance.getTime))
  
       //if (fid % 1000 == 0) writer.commit()
     })
   }
 
-
   def testBuild(): Unit = {
     val url= getClass.getResource("/lab_dict.csv")
     val input = new JFile(url.getPath())
-    val output = Paths.get("%s%s".format(getClass.getResource(""),"/lab_dict.index"))
-    buildIndex1(input, output)
+
+    lazy val INDEX_DIRECTORY = "index"
+    lazy val serviceRootPath = System.getProperty("user.dir")
+    lazy val indexPath = new JFile(serviceRootPath, INDEX_DIRECTORY).getAbsolutePath
+
+    val indexFilePath = new JFile(indexPath)
+    try{    
+        indexFilePath.mkdirs() // make sure path exist
+    } catch {
+        case ioe: IOException =>
+            val sw = new StringWriter
+            ioe.printStackTrace(new PrintWriter(sw))
+            println(sw.toString)
+        case e: Exception => 
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+    }
+
+    val output = Paths.get(indexFilePath.getAbsolutePath())
+
+    buildIndex(input, output)
   }
   
-  def testMapSingleConcept(): Unit = {
+  def testMapSingleConcept_scala(): Unit = {
     val index = new ReadableLuceneIndex
         with WritableLuceneIndex
         with LuceneStandardAnalyzer 
@@ -132,7 +161,7 @@ object Main {
 
     val strs = List("10-HYDROXYCARBAZEPINE [MOLES/VOLUME] IN SERUM OR PLASMA", "BP")
     strs.foreach(str => {
-        val queryParser = index.queryParserForDefaultField("conceptname_norm")
+        val queryParser = index.queryParserForDefaultField("conceptname")
         val query = queryParser.parse(str)
         val results = index.searchTopDocuments(query, 1)
         println("Query: " + str)
@@ -140,6 +169,22 @@ object Main {
         //Assert.assertEquals(1, concepts.size)
         //Assert.assertEquals(100.0D, concepts.head._1, 0.1D)
     })
+  }
+
+  def testMapSingleConcept_java(): Unit = {
+    lazy val INDEX_DIRECTORY = "index"
+    lazy val serviceRootPath = System.getProperty("user.dir")
+    lazy val indexPath = new JFile(serviceRootPath, INDEX_DIRECTORY).getAbsolutePath
+    val luceneDir = Paths.get(indexPath.getAbsolutePath())
+    val tagger = new Namematcher()
+    val strs = List("10-HYDROXYCARBAZEPINE [MOLES/VOLUME] IN SERUM OR PLASMA", "BP")
+        strs.foreach(str => {
+        val concepts = tagger.annotateConcepts(str, luceneDir)
+        Console.println("Query: " + str)
+        tagger.printConcepts(concepts)
+        Assert.assertEquals(1, concepts.size)
+        Assert.assertEquals(100.0D, concepts.head._1, 0.1D)
+        })
   }
 
   def testMapMultipleConcepts(): Unit = {

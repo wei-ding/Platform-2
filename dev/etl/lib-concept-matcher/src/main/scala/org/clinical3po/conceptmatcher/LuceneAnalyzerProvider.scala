@@ -15,30 +15,21 @@
  * limitations under the License.
  */
 
-package org.clinical3po.namematcher
+package org.clinical3po.conceptmatcher
 
-
-import org.apache.lucene.index.{IndexWriter, IndexWriterConfig}
-import javax.annotation.Nonnull
+import org.apache.lucene.analysis.standard.StandardAnalyzer
+import org.apache.lucene.analysis.Analyzer
 
 /**
- * Provides a method to write to the index
+ * Provides a Lucene Analyzer
  */
-trait LuceneIndexWriter { self: LuceneDirectory with LuceneAnalyzerProvider =>
+trait LuceneAnalyzerProvider {
+  protected val luceneAnalyzer: Analyzer
+}
 
-  /**
-   * Calls the passed function with an IndexWriter that writes to the current index.
-   * Makes sure to close the IndexWriter once the function returns.
-   */
-  @Nonnull
-  def withIndexWriter[T](@Nonnull f: IndexWriter => T): T = {
-    //val iwriter = new IndexWriter(directory, new IndexWriterConfig(luceneVersion, luceneAnalyzer))
-    val iwriter = new IndexWriter(directory, new IndexWriterConfig(luceneAnalyzer))
-    try {
-      f(iwriter)
-    } finally {
-      iwriter.close()
-    }
-  }
-
+/**
+ * A LuceneAnalyzerProvider that provides a StandardAnalyzer
+ */
+trait LuceneStandardAnalyzer extends LuceneAnalyzerProvider { 
+  protected val luceneAnalyzer = new StandardAnalyzer()
 }

@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.clinical3po.namematcher
+package org.clinical3po.conceptmatcher
 
 import org.apache.lucene.queryparser.classic.QueryParser
 import javax.annotation.Nonnull

@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.clinical3po.namematcher
+package org.clinical3po.conceptmatcher
 
 import org.json4s._
 import org.json4s.jackson.JsonMethods._
@@ -39,6 +39,9 @@ import org.apache.lucene.document.Field
 import org.apache.lucene.document.Field.Index
 import org.apache.lucene.document.Field.Store
 import org.apache.lucene.document.StoredField
+import org.apache.lucene.document.LongField;
+import org.apache.lucene.document.StringField;
+import org.apache.lucene.document.TextField;
 import org.apache.lucene.index.DirectoryReader
 import org.apache.lucene.index.IndexReader
 import org.apache.lucene.index.IndexWriter
@@ -51,6 +54,7 @@ import org.apache.lucene.search.ScoreDoc
 import org.apache.lucene.search.TermQuery
 import org.apache.lucene.store.SimpleFSDirectory
 import org.apache.lucene.util.Version
+import LuceneText._
 
 class NameMatcher {
 
@@ -86,12 +90,12 @@ class NameMatcher {
       // str_stemmed = str_sorted stemmed
       val fdoc = new Document()
       val fid = counter.incrementAndGet()
-      fdoc.add(new StoredField("id", fid.toString))
-      fdoc.add(new StoredField("cui", cui ))
-      fdoc.add(new StoredField("str", str ))
-      fdoc.add(new StoredField("str_norm", strNorm ))
-      fdoc.add(new StoredField("str_sorted", strSorted ))
-      fdoc.add(new StoredField("str_stemmed", strStemmed))
+      fdoc.add(new LongField("id", fid, Field.Store.NO))
+      fdoc.add(new StringField("cui",cui, Field.Store.YES))
+      fdoc.add(new TextField("str", str, Field.Store.YES))
+      fdoc.add(new TextField("str_norm", strNorm, Field.Store.YES))
+      fdoc.add(new TextField("str_sorted", strSorted, Field.Store.YES))
+      fdoc.add(new TextField("str_stemmed", strStemmed, Field.Store.YES))
       writer.addDocument(fdoc)
       if (fid % 1000 == 0) writer.commit()
     })
@@ -106,6 +110,7 @@ class NameMatcher {
     val reader = DirectoryReader.open(
       new SimpleFSDirectory(luceneDir)) 
     val searcher = new IndexSearcher(reader)
+
     // try to match full string
     suggestions ++= cascadeSearch(searcher, reader, 
       phrase, 1.0)
@@ -204,10 +209,14 @@ class NameMatcher {
       List[(Double,String,String)] = {
     val results = ArrayBuffer[(Double,String,String)]()
     // exact match (100.0%)
+    println("results"+results)
     val query1 = new TermQuery(new Term("str", phrase))
+    println("query1"+query1)
     val hits1 = searcher.search(query1, 1).scoreDocs
+    println("hits1 "+hits1.size)
     if (hits1.size > 0) {
       results += hits1.map(hit => {
+        println("hit "+hit)
         val doc = getDocument(reader, hit)
         (100.0 * ratio, doc.str, doc.cui)
       })

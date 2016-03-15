@@ -15,21 +15,8 @@
  * limitations under the License.
  */
 
-package org.clinical3po.namematcher
+package org.clinical3po.conceptmatcher
 
-import org.apache.lucene.analysis.standard.StandardAnalyzer
-import org.apache.lucene.analysis.Analyzer
-
-/**
- * Provides a Lucene Analyzer
- */
-trait LuceneAnalyzerProvider {
-  protected val luceneAnalyzer: Analyzer
-}
-
-/**
- * A LuceneAnalyzerProvider that provides a StandardAnalyzer
- */
-trait LuceneStandardAnalyzer extends LuceneAnalyzerProvider { 
-  protected val luceneAnalyzer = new StandardAnalyzer()
+trait WritableLuceneIndex extends LuceneDocumentAdder with LuceneIndexWriter {
+  _: LuceneDirectory with LuceneAnalyzerProvider =>
 }

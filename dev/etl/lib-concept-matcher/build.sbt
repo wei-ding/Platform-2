@@ -2,15 +2,15 @@ import de.johoop.jacoco4sbt._
 import JacocoPlugin._
 
 /* basic project info */
-name := "lib-domain-name-matcher"
+name := "lib-concept-matcher"
 
 organization := "org.clinical3po"
 
 version := "0.1.0"
 
-description := "this project can find concept name match."
+description := "this project can do concept name match."
 
-homepage := Some(url("https://github.com/wei-ding/lib-domain-name-matcher"))
+homepage := Some(url("https://github.com/wei-ding/lib-concept-matcher"))
 
 startYear := Some(2016)
 
@@ -20,9 +20,9 @@ licenses := Seq(
 
 scmInfo := Some(
   ScmInfo(
-    url("https://github.com/wei-ding/lib-domain-name-matcher"),
-    "scm:git:https://github.com/wei-ding/lib-domain-name-matcher.git",
-    Some("scm:git:git@github.com:wei-ding/lib-domain-name-matcher.git")
+    url("https://github.com/wei-ding/lib-concept-matcher"),
+    "scm:git:https://github.com/wei-ding/lib-concept-matcher.git",
+    Some("scm:git:git@github.com:wei-ding/lib-concept-matcher.git")
   )
 )
 
@@ -77,9 +77,9 @@ scalacOptions <++= scalaVersion map { sv =>
 javacOptions ++= Seq("-Xlint:unchecked", "-Xlint:deprecation")
 
 /* entry point */
-mainClass in (Compile, packageBin) := Some("org.clinical3po.namematcher.Main")
+mainClass in (Compile, packageBin) := Some("org.clinical3po.conceptmatcher.Main")
 
-mainClass in (Compile, run) := Some("org.clinical3po.namematcher.Main")
+mainClass in (Compile, run) := Some("org.clinical3po.conceptmatcher.Main")
 
 // CONTINUATIONS
 // autoCompilerPlugins := true
@@ -152,6 +152,7 @@ libraryDependencies ++= Seq (
     "com.github.pathikrit" %% "better-files" % "2.15.0",
     "org.json4s" %% "json4s-jackson" % "3.3.0",
     "junit" % "junit" % "4.12",
+    "com.github.tototoshi" %% "scala-csv" % "1.3.0",
     "com.novocode" % "junit-interface" % "0.11" % "test",
     "org.mockito" % "mockito-all" % "1.9.0" % "test"
 )
