@@ -1,16 +1,21 @@
 package org.clinical3PO.learn.fasta;
 
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
+import java.io.InputStream;
+import java.nio.charset.Charset;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.TreeMap;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.io.NullWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Reducer;
 import org.apache.hadoop.mapreduce.lib.output.MultipleOutputs;
-
-import com.google.gson.Gson;
+import org.clinical3PO.learn.util.FEConfiguration;
+import org.clinical3PO.learn.util.FEEvaluatorBase;
+import org.clinical3PO.learn.util.FEStrategyBase;
 
 public class ArffToFastAReducer extends Reducer<Text, Text, Text, NullWritable>{
 
@@ -18,24 +23,26 @@ public class ArffToFastAReducer extends Reducer<Text, Text, Text, NullWritable>{
 	private String relation = null;
 	private boolean pidFlag = false;
 	private StringBuilder builder = null;
-	private Map<String, HashMap<String, String>> propertiesMap = null; 
+	private FEEvaluatorBase feBase_default = null;
+	private FEEvaluatorBase feBase_classProperty = null;
 	private MultipleOutputs<Text, NullWritable> mos = null;
 
 	@Override
 	public void setup(Context context) throws IOException {
 
 		Configuration conf = context.getConfiguration();
-		relation = conf.get("relation");
-
-		// Following steps are part of De-serializing the ArffToFastAProperties class object using Gson API.
-		String deserObject = conf.get("properties");
-		Gson gson = new Gson();
-		ArffToFastAProperties object = gson.fromJson(deserObject, ArffToFastAProperties.class);
-		propertiesMap = object.getPropertiesMap();
-		pidFlag = object.getPidFlag();
+		relation = conf.get("relation");		
+		pidFlag = Boolean.parseBoolean(conf.get("patientIdBoolen"));
 		builder = new StringBuilder();
 		text = new Text();
-		
+
+		// method call to get objects required for descritization.
+		try {
+			parseConfigObjectToGetDescreteProperties(conf.get("configFileAsString"), conf.get("c3fe.classproperty"));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
 		mos = new MultipleOutputs<Text, NullWritable>(context);
 	}
 
@@ -44,9 +51,6 @@ public class ArffToFastAReducer extends Reducer<Text, Text, Text, NullWritable>{
 			throws IOException, InterruptedException {
 
 		String in_key = key.toString();
-		String[] key_array = in_key.split("_");
-		String attribute = key_array[0];
-
 		String[] tokens = null;
 
 		// Iterate over all the values for each unique key.
@@ -79,7 +83,7 @@ public class ArffToFastAReducer extends Reducer<Text, Text, Text, NullWritable>{
 
 				String ch = tokens[i];
 				if(ch.equals("?")) {
-					builder.append("N");				
+					builder.append(feBase_default.getDescreteValue(ch));
 				} else {
 					if(ch.equalsIgnoreCase("low")) {
 						builder.append("Z");
@@ -99,10 +103,7 @@ public class ArffToFastAReducer extends Reducer<Text, Text, Text, NullWritable>{
 					 */
 					else {
 						try {
-							float value = Float.parseFloat(ch);
-
-							//method call
-							builder.append(descritize(value, attribute));
+							builder.append(feBase_classProperty.getDescreteValue(ch));
 						} catch(NumberFormatException ne) {
 							System.err.println(ne);
 						}
@@ -110,10 +111,10 @@ public class ArffToFastAReducer extends Reducer<Text, Text, Text, NullWritable>{
 				}
 			}
 			text.set(builder.toString());
-			
+
 			//DO NOT REMOVE THIS TO UNDERSTAND THE BELOW CODE.
 			//context.write(text, NullWritable.get());
-			
+
 			/*
 			 * Writing to context would reflect in part-r-0000 series(1-to-n).
 			 * Writing to mos(MultipleOutputs) would reflect in filename-r-0000 series.
@@ -129,39 +130,72 @@ public class ArffToFastAReducer extends Reducer<Text, Text, Text, NullWritable>{
 			tokens = null;
 		}
 	}
-	
+
 	@Override
 	public void cleanup(Context context) throws IOException, InterruptedException {
 		mos.close();
 	}
 
 	/**
-	 * This method perform descritization of string/values.
-	 * Descritize values are available in propertiesMap. Based on the keys, get the appropriate descritized values.
+	 * Method is used to parse the config object received from the driver.
+	 * Getting 'FEEvaluatorBase' objects to extract descrete values out of them to perform descritization.
 	 * 
-	 * @param value
-	 * @param attribute
-	 * @return descritized string (EX: ADVGDSESSEC)
+	 * @param feConfigObjet
+	 * @param classProperty
+	 * @throws Exception 
+	 * @throws IOException 
 	 */
-	private String descritize(float value, String attribute) {
+	private void parseConfigObjectToGetDescreteProperties(String configFileAsString, String classProperty) throws IOException, Exception {
 
-		String discreteValue = null;
-		Map<String, String> map = propertiesMap.get(attribute);
-		if(map != null) {
+		FEConfiguration feConfig = new FEConfiguration();
+		InputStream is = new ByteArrayInputStream(configFileAsString.getBytes(Charset.forName("UTF-8")));
 
-			if(!map.get("min").isEmpty() && !map.get("max").isEmpty() 
-					&& !map.get("descritize_in").isEmpty() && !map.get("descritize_out").isEmpty()) {
-
-				float min = Float.parseFloat(map.get("min"));
-				float max = Float.parseFloat(map.get("max"));
-
-				if(value >= min && value <= max) {
-					discreteValue = map.get("descritize_in");
-				} else {
-					discreteValue = map.get("descritize_out");
-				}				
-			}
+		if(feConfig.accumulateFromTextConfigFile(is, classProperty)) {
+			System.err.println("--- feature ext. configuration read successfully!");
+			System.err.println("--- size of Map: " +feConfig.getStrategies());
+		} else {
+			is.close();
+			throw new Exception("ERROR: unable to read feature extraction config file");
 		}
-		return discreteValue;
+		
+		is.close();
+		
+		// Since map contains 'class' as prefix for the class property, adding class using Builder.		 
+		classProperty = new StringBuilder().append("class").append(classProperty).toString();
+		System.err.println("CLASS PROPERTY " + classProperty);
+		
+		// Getting the Map with properties of FEconfig file.
+		final TreeMap<String,ArrayList<FEStrategyBase>> mapOfConfiguration = feConfig.getStrategies();
+
+		if(mapOfConfiguration.containsKey(classProperty)) {
+
+			List<String> keyList = new ArrayList<String>(mapOfConfiguration.keySet());
+			System.err.println("Keys from the Map: "+ keyList);
+			
+			ArrayList<FEStrategyBase> list = mapOfConfiguration.get(classProperty);
+			if (list.size() == 1) {
+				FEStrategyBase object = list.get(0);
+				System.err.println("----------" +object);
+				feBase_classProperty = object.getEvaluator();
+				System.out.println(feBase_classProperty.getDescreteValue("80.0f"));
+			} else {
+				System.err.println("+++++++++++ " + list);
+			}
+
+			// After this line, list is left with only one key.
+			keyList.remove(classProperty);
+
+			ArrayList<FEStrategyBase> defaultList = mapOfConfiguration.get(keyList.get(0));
+			if (defaultList.size() == 1) {
+				FEStrategyBase object = defaultList.get(0);
+				System.err.println("----------" +object);
+				feBase_default = object.getEvaluator();
+				System.out.println(feBase_default.getDescreteValue("80.0f"));
+			} else {
+				System.err.println("+++++++++++ " + list);
+			}
+		} else {
+			System.err.println("Map from FEConfiguration doesn't have the key of class property. I.e."+classProperty);
+		}
 	}
 }

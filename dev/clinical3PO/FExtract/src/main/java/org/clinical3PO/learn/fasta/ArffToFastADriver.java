@@ -1,8 +1,10 @@
 package org.clinical3PO.learn.fasta;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Scanner;
 import java.util.Set;
 
 import org.apache.hadoop.conf.Configuration;
@@ -21,8 +23,6 @@ import org.apache.hadoop.util.GenericOptionsParser;
 import org.apache.hadoop.util.Tool;
 import org.apache.hadoop.util.ToolRunner;
 
-import com.google.gson.Gson;
-
 /**
  * Main/Driver class of Hadoop.
  * 
@@ -33,78 +33,63 @@ public class ArffToFastADriver extends Configured implements Tool {
 
 	public ArffToFastADriver() {
 	}
-	
+
 	public static void main(String[] args) throws Exception {
 
 		int exit = ToolRunner.run(new Configuration(), new ArffToFastADriver(), args);
 		System.exit(exit);
 	}
 
-	public int run(String[] args) throws IOException, ClassNotFoundException, InterruptedException {
+	public int run(String[] args) throws Exception {
 
 		Configuration conf = this.getConf();
-		
+
 		/*
 		 * Helps to read and separate arguments from to program.
 		 * Read Hadoop arguments(-D) into conf, other arguments into string[].
 		 */
+		@SuppressWarnings("unused")
 		String[] otherParams = new GenericOptionsParser(conf, args).getRemainingArgs();
 
-		if(otherParams.length != 1) {
-			System.out.println("Path for xml file in LOCAL FILE SYSTEM is not set. " );
-			System.exit(0);
-		} 
-		
-		//Code to read properties file from Local FS.
-		Path propertiesFile = new Path(otherParams[0]);
-		FileSystem localFS = FileSystem.get(propertiesFile.toUri(), conf);
-		
+		/*
+		 * Reading the input configuration files(which decides on what features data is to be fetched and on what parameters)
+		 * Code to read the Files from Local File System.
+		 * Below are the two lines of code to read files from localFS (file:///) instead of hdfs (hdfs:///) 
+		 */
+		Path propertiesFile = new Path(conf.get("c3fe.feconfig")); 	// Creating object for file path
+		FileSystem localFS = FileSystem.get(propertiesFile.toUri(), conf);		// Initializing FileSystem to get the connection
 		if(!localFS.exists(propertiesFile)) {
-			System.out.println("Path for xml file in LOCAL FILE SYSTEM is WRONG");
-			System.exit(0);
+			System.err.println("Path doesn't exists: "+ propertiesFile.getName() + " \nCheck the path properly.");
+			System.exit(1);
 		}
-		
+
+		/*
+		 * Reading properties from the basicFEConfig.txt file.
+		 */
+		// method call
+		String configFileAsString = readFile(localFS.open(propertiesFile));
+		conf.set("configFileAsString", configFileAsString);
+
 		Path input = new Path(conf.get("c3fe.inputdir"));
 		FileSystem fs = FileSystem.get(conf);
 
 		if(!fs.exists(input)) {
 			System.exit(0);
 		}
-		
+
 		//Object creation & method call
 		ArffHeaderReader arffHeader = new ArffHeaderReader();
 		arffHeader.readParseArffHeaders(fs.open(input));
-		
-		/*
-		 * The following class parses properties file(xml format) located in local FS.
-		 * After parse get the object and pass it on to Gson API. 
-		 * 
-		 * Setting pidFlag(personID flag) so that mapper and reducer will react accordingly.
-		 */
-		ArffToFastAProperties object = new ArffToFastAProperties(arffHeader.isPidFlag());
-		boolean flag = object.parsePropertiesFile(localFS.open(propertiesFile));
-		if(!flag) {
-			System.out.println("Properties file not loaded");
-			System.exit(0);
-		}
 
-		/*
-		 * Gson is a Java library that can be used to convert Java Objects into their JSON representation. 
-		 * It can also be used to convert a JSON string to an equivalent Java object. 
-		 * Gson can work with arbitrary Java objects including pre-existing objects that you do not have source-code of
-		 */
-		Gson gson = new Gson();
-		String serializedObjet = gson.toJson(object);
+		String patientIdBoolen = String.valueOf(arffHeader.isPidFlag());
+		conf.set("patientIdBoolen", patientIdBoolen);
 		
-		//setting conf with 'object-converted-json-string'
-		conf.set("properties", serializedObjet);
-
 		Set<String> attributeSet = arffHeader.getAttributeSet();
 		StringBuilder sb = new StringBuilder();
 		System.out.println("----------------------------------------------");
 		System.out.println(attributeSet);
 		System.out.println("----------------------------------------------");
-		
+
 		// for mapper and reducer to access the order of attributes from arff file, construct a string with comma separator and add to conf.
 		for(String attribute : attributeSet) {
 			sb.append(attribute).append(",");
@@ -130,7 +115,7 @@ public class ArffToFastADriver extends Configured implements Tool {
 		job.setMapOutputValueClass(Text.class);
 		job.setOutputKeyClass(Text.class);
 		job.setOutputValueClass(NullWritable.class);
-		
+
 		/*
 		 * A Convenience class that creates output lazily.
 		 * Story: 
@@ -143,7 +128,7 @@ public class ArffToFastADriver extends Configured implements Tool {
 		 * LazyOutputFormat.class helps "not to create part-r-0000 files unless, MapReduce writes into context.write() function". 
 		 */
 		LazyOutputFormat.setOutputFormatClass(job, TextOutputFormat.class);
-		
+
 		job.setJarByClass(ArffToFastADriver.class);
 		return job.waitForCompletion(true) ? 0:1;
 	}
@@ -183,5 +168,28 @@ public class ArffToFastADriver extends Configured implements Tool {
 				return count;
 			}			
 		}
+	}
+
+	/**
+	 * helper function to read files
+	 * from http://stackoverflow.com/questions/326390/how-to-create-a-java-string-from-the-contents-of-a-file
+	 * THIS IS FOR PLAIN OLD JAVA ON FILESYSTEM, don't know if it'll work on hadoop
+	 * adapting to use an input stream, should work on hadoop
+	 */
+	private static String readFile(InputStream is) throws IOException {
+
+		StringBuffer fileContents = new StringBuffer();
+		Scanner scanner = new Scanner(is);
+
+		// If the line separator is changed, please do so in setup() method in FEConceptMapper.java
+		String lineSeparator = System.getProperty("line.separator");
+		try {
+			while(scanner.hasNextLine()) {      
+				fileContents.append(scanner.nextLine() + lineSeparator);
+			}
+		} finally {
+			scanner.close();
+		}
+		return fileContents.toString();
 	}
 }

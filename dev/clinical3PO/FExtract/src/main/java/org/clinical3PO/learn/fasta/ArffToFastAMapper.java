@@ -7,8 +7,6 @@ import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
 
-import com.google.gson.Gson;
-
 /**
  * This is a Mapper Class 
  * @author 3129891
@@ -27,13 +25,8 @@ public class ArffToFastAMapper extends Mapper<LongWritable, Text, Text, Text>{
 		Configuration conf = context.getConfiguration();
 		attributes = conf.get("attribute").split(",");
 		sb = new StringBuilder();
-
-		// Following steps are part of De-serializing the ArffToFastAProperties class object using Gson API.
-		String deserObject = conf.get("properties");
 		binsCount = conf.getInt("bins", 0);
-		Gson gson = new Gson();
-		ArffToFastAProperties object = gson.fromJson(deserObject, ArffToFastAProperties.class);
-		pidFlag = object.getPidFlag();
+		pidFlag = Boolean.parseBoolean(conf.get("patientIdBoolen"));
 	}
 
 	@Override

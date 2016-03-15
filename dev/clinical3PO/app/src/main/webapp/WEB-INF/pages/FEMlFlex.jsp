@@ -64,10 +64,10 @@
 		</tr>
 		
 		<tr>
-			<td>Class Bin Time</td>
+			<td>Class Time</td>
 			<td>
-				<form:input path="classBinTime" id="classBinTimeInput" />
-				<form:errors path="classBinTime" cssClass="error" />
+				<form:input path="classTime" id="classTimeInput" />
+				<form:errors path="classTime" cssClass="error" />
 			</td>
 		</tr>
 		

@@ -39,6 +39,8 @@ public abstract class FEEvaluatorBase {
 	//legit range - DANGER! this is numeric-value chauvinist.
 	double legitLow;				//any value less than this will be considered erroneous (low is inclusive)
 	double legitHigh;				//any value greater than or equal to this this will be considered erroneous (high is exclusive)
+	
+	protected String discrete; 
 
 	//ArrayList of actual values created by evaluate()
 	//TODO: DOES THIS BELONG IN BASE CLASS? THERE MIGHT BE DIFFERENT WAYS TO REPRESENT OUTPUT VALUES
@@ -152,7 +154,13 @@ public abstract class FEEvaluatorBase {
 		this.values = values;
 	}
 
-
+	public void setDiscrete(String discrete) {
+		this.discrete = discrete;
+	}
+	
+	public String getDiscrete() {
+		return discrete;
+	}
 
 	/**
 	 * evaluate() does the actual derivation of bin values based on 
@@ -212,5 +220,5 @@ public abstract class FEEvaluatorBase {
 	 */
 	public abstract boolean instantiateFrom(String paramBlock, int startLine) throws Exception;
 
-
+	public abstract String getDescreteValue(String f);
 }

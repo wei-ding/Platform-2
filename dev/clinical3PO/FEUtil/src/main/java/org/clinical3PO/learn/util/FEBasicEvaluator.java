@@ -493,6 +493,8 @@ public class FEBasicEvaluator extends FEEvaluatorBase {
 				} else if(toks[0].equalsIgnoreCase("legitHigh")) {
 					double hi = Double.valueOf(toks[1]);
 					setLegitHigh(hi);
+				} else if(toks[0].equalsIgnoreCase("descrete") || toks[0].equalsIgnoreCase("discrete")) {
+					setDiscrete(toks[1].trim());
 				}
 				//DON'T WORRY ABOUT UNRECOGNIZED so we can subclass and have it call this to handle
 				//the superclass bits.
@@ -509,6 +511,11 @@ public class FEBasicEvaluator extends FEEvaluatorBase {
 	public String getWekaAttributeType() {
 		// since basic evaluator emits a double, call it Weka NUMERIC
 		return "NUMERIC";
+	}
+
+	@Override
+	public String getDescreteValue(String s) {
+		return getDiscrete();
 	}
 	
 }

@@ -75,8 +75,8 @@
                <!--clinical3PO.hadoop.namenode>hdfs://localhost:9000</clinical3PO.hadoop.namenode-->
 
                <!-- Hadoop remote execution -->
-               <!--clinical3PO.hadoop.opts>-D fs.defaultFS=hdfs://ec2-m1.ec2.internal:9000 -D yarn.resourcemanager.address=ec2-m1.ec2.internal:8032 -D yarn.resourcemanager.scheduler.address=ec2-m1.ec2.internal:8030 -D mapreduce.input.fileinputformat.split.minsize=18253611008 -D mapreduce.map.memory.mb=3072 -D mapreduce.job.reduce.slowstart.completedmaps=0.80 -D mapreduce.map.speculative=false</clinical3PO.hadoop.opts-->
-               <!--clinical3PO.hadoop.namenode>hdfs://ec2-m1.ec2.internal:9000</clinical3PO.hadoop.namenode-->
+               <clinical3PO.hadoop.opts>-D fs.defaultFS=hdfs://c3pohaclusteraws -D yarn.resourcemanager.address=c3po-m-rm.ec2.internal:8050 -D yarn.resourcemanager.scheduler.address=c3po-m-rm.ec2.internal:8030 -D mapreduce.input.fileinputformat.split.minsize=18253611008 -D mapreduce.map.memory.mb=3072 -D mapreduce.job.reduce.slowstart.completedmaps=0.80 -D mapreduce.map.speculative=false</clinical3PO.hadoop.opts>
+               <clinical3PO.hadoop.namenode>hdfs://c3pohaclusteraws</clinical3PO.hadoop.namenode>
 
                <!-- Accumulo related fields -->
                <!--clinical3PO.accumulo.instance>c3po</clinical3PO.accumulo.instance-->

@@ -257,6 +257,8 @@ public class FECountEvaluator extends FEEvaluatorBase {
 				} else if(toks[0].equalsIgnoreCase("legitHigh")) {
 					double hi = Double.valueOf(toks[1]);
 					setLegitHigh(hi);
+				} else if(toks[0].equalsIgnoreCase("descrete")) {
+					setDiscrete(toks[1]);
 				}
 				//DON'T WORRY ABOUT UNRECOGNIZED so we can subclass and have it call this to handle
 				//the superclass bits.
@@ -272,6 +274,11 @@ public class FECountEvaluator extends FEEvaluatorBase {
 		}
 		
 		return true;
+	}
+
+	@Override
+	public String getDescreteValue(String f) {
+		return getDiscrete();
 	}
 
 }

@@ -1,12 +1,13 @@
 package org.clinical3PO.learn.util;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 
 //let's try subclassing the basicEvaluator and just changing the bits that need it
-public class FEDiscretizingRangeEvaluator extends
-		FEBasicEvaluator {
+public class FEDiscretizingRangeEvaluator extends FEBasicEvaluator {
 	
 	//discretized output variables: the ordered list of possible values,
 	//and the cutoffs for them
@@ -15,9 +16,9 @@ public class FEDiscretizingRangeEvaluator extends
 	//... 
 	//else use output val n (so there must be 1 fewer cutoff than output values and output val n
 	//is used for any value > cutoff n-1.
-	ArrayList<String> outputValues;
-	ArrayList<Double> cutoffs;
-	
+	private ArrayList<String> outputValues;
+	private ArrayList<Double> cutoffs;
+	private List<String> discreteValues;
 	
 	
 	public FEDiscretizingRangeEvaluator() {
@@ -95,6 +96,31 @@ public class FEDiscretizingRangeEvaluator extends
 		}
 		return "edrunk";
 	}
+	
+	@Override
+	public String getDescreteValue(String s) {
+		
+		float f = Float.parseFloat(s);
+		double previous = 0.0;
+		String descrete = null;
+		for(int j = 0; j < cutoffs.size(); j++) {
+			
+			double current = cutoffs.get(j);
+			
+			if((f <= previous && f <= current) || (f >= previous && f <= current)) {
+				descrete = discreteValues.get(j);
+				return descrete;
+			} else {
+				previous = current;
+			}
+		}
+		
+		// If the value is beyond the final range, then pick last element of the descrete list.
+		if(descrete == null) {
+			descrete = discreteValues.get(discreteValues.size() - 1);
+		}
+		return descrete;
+	}
 
 	@Override
 	public boolean instantiateFrom(String paramBlock, int startLine)
@@ -132,7 +158,10 @@ public class FEDiscretizingRangeEvaluator extends
 					String[] cuts = toks[1].split(",\\s*");
 					cutoffs = new ArrayList<Double>();
 					for(String cut:cuts) cutoffs.add(Double.valueOf(cut));
-				} 
+				} else if(toks[0].equalsIgnoreCase("discrete") || toks[0].equalsIgnoreCase("descrete")) {
+					String[] descValues = toks[1].split(",\\s*");
+					discreteValues = Arrays.asList(descValues);
+				}
 				//DON'T WORRY ABOUT UNRECOGNIZED so we can subclass and have it call this to handle
 				//the superclass bits.
 			}			
@@ -152,5 +181,4 @@ public class FEDiscretizingRangeEvaluator extends
 		s.close();
 		return true;
 	}
-
 }
