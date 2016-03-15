@@ -15,7 +15,7 @@ public class FEMlFlexForm {
 	@NotNull @Min(1)
 	private Integer numberOfIterations;
 	
-	private String classBinTime;
+	private String classTime;
 	private String startDate;
 	private String endDate;
 	private String startTime;
@@ -85,11 +85,11 @@ public class FEMlFlexForm {
 		this.endTime = endTime;
 	}
 	
-	public String getClassBinTime() {
-		return classBinTime;
+	public String getClassTime() {
+		return classTime;
 	}
 
-	public void setClassBinTime(String classBinTime) {
-		this.classBinTime = classBinTime;
+	public void setClassTime(String classTime) {
+		this.classTime = classTime;
 	}
 }

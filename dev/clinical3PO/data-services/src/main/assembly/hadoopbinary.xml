@@ -131,13 +131,6 @@
 			<filtered>true</filtered>
 			<fileMode>0755</fileMode>
 			<lineEnding>unix</lineEnding>
-		</file>	
-		<file>
-			<source>${basedir}/../FExtract/src/main/resources/fastaDescreteProperties.txt</source>
-			<outputDirectory></outputDirectory>
-			<filtered>true</filtered>
-			<fileMode>0755</fileMode>
-			<lineEnding>unix</lineEnding>
 		</file>
 		<file>
 			<source>${basedir}/../FExtract/src/main/resources/basicFEConfig.txt</source>

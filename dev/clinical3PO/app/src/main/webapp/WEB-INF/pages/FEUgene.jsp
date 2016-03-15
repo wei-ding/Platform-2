@@ -14,19 +14,38 @@
 	<table class="gridtable">
 	<tr>
 		<td>Class Property</td>
-		<td><form:input path="classProperty" id="classPropertyInput" /></td>
+		<td>
+			<form:input path="classProperty" id="classPropertyInput" />
+			<form:errors path="classProperty" cssClass="error" />
+		</td>
 	</tr>
 	
 	<tr>
-		<td>class time</td>
+		<td>Class Time</td>
 		<td>
 			<form:input path="classTime" id="classTimeInput" />
 			<form:errors path="classTime" cssClass="error" />
 		</td>
-		</tr>	
+	</tr>
+	
+	<tr>
+		<td>Start Date</td>
+		<td>
+			<form:input path="startDate" id="startDateInput" />
+			<form:errors path="startDate" cssClass="error" />
+		</td>
+		</tr>
 		
 	<tr>
-		<td>start time</td>
+		<td>End Date</td>
+		<td>
+			<form:input path="endDate" id="endDateInput" />
+			<form:errors path="endDate" cssClass="error" />
+		</td>
+	</tr>
+		
+	<tr>
+		<td>Start Time</td>
 		<td>
 			<form:input path="startTime" id="startTimeInput" />
 			<form:errors path="startTime" cssClass="error" />
@@ -34,7 +53,7 @@
 	</tr>
 		
 	<tr>
-		<td>end time</td>
+		<td>End Time</td>
 		<td>
 			<form:input path="endTime" id="endTimeInput" />
 			<form:errors path="endTime" cssClass="error" />
@@ -44,12 +63,6 @@
 	<tr align="center">
 		<td colspan="2"><input type="submit" class="styled-button-4" value="Submit">
 		&nbsp;<input type="reset" class="styled-button-4" value="Clear"></td>
-	</tr>
-	
-	<tr>
-		<td colspan="2">
-			<form:errors path="classProperty" cssClass="error" />
-		</td>
 	</tr>
 	
 	</table>
