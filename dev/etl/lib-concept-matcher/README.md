@@ -1,10 +1,10 @@
-# lib-domain-name-match #
+# lib-concept-match #
 
 ## Build & run ##
 
 ```sh
 $ git clone git@github.com:Clinical3PO/Stage.git
-$ cd Stage/dev/etl/lib-domain-name-match/lib-domain-name-match
+$ cd Stage/dev/etl/lib-concept-matcher
 $ chmod u+x sbt
 $ ./sbt clean && ./sbt compile && ./sbt run
 ```
