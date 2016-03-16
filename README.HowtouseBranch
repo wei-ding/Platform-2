@@ -1,19 +1,24 @@
-#We have 2 branches:
-
-master
-ML-Flex-Modified
-
 ##Setup github account
 
 ```
 git config --global user.email "Your email address"
 git config --global user.name "Your github account name"
 ```
-
 ##After doing this, you may fix the identity used for this commit with:
 
 ```bash
 git commit --amend --reset-author
+```
+
+## Adding a new SSH key to your GitHub account
+Please follow this guide to setup your local computer password less access:
+
+[https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/]
+
+#We have 2 branches:
+
+master
+ML-Flex-Modified
 
 git clone git@github.com:Clinical3PO/Stage.git
 
