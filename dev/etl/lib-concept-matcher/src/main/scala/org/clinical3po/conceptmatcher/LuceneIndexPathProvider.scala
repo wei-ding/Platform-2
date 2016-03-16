@@ -49,7 +49,7 @@ import scala.reflect._
  */
 
 
-trait Domain {override def toString() = "Domain" }
+trait Domain 
 trait Drug extends Domain { override def toString() = "Drug" }
 //trait Drug_RxNorm extends Domain { override def toString() = "Drug_RxNorm" }
 //trait Drug_NDFRT extends Domain { override def toString() = "Drug_NDFRT" }

@@ -1,49 +1,68 @@
-We have 2 branches:
+#We have 2 branches:
 
 master
 ML-Flex-Modified
 
-Setup github account
->git config --global user.email "Your email address"
->git config --global user.name "Your github account name"
+##Setup github account
 
-After doing this, you may fix the identity used for this commit with:
+```
+git config --global user.email "Your email address"
+git config --global user.name "Your github account name"
+```
 
->git commit --amend --reset-author
+##After doing this, you may fix the identity used for this commit with:
 
-git clone  https://Your git account name@github.com/Clinical3PO/Stage.git
+```bash
+git commit --amend --reset-author
 
->cd Stage
+git clone git@github.com:Clinical3PO/Stage.git
 
-Make sure stay on master branch first
+cd Stage
+```
 
->git checkout master
+##Make sure stay on master branch first
 
-Make sure all the local codes are updated from github.
+```
+git checkout master
+```
 
->git pull
+##Make sure all the local codes are updated from github.
 
-Switch to ML-Flex-Modified branch:
+```
+git pull
+```
 
->git checkout ML-Flex-Modified
+##Switch to ML-Flex-Modified branch:
 
-if you want to merge the master branch into ML-Flex-Modified, plz run:
+```
+git checkout ML-Flex-Modified
+```
 
-> git rebase master
+##if you want to merge the master branch into ML-Flex-Modified, plz run:
 
-modify the codes
+```
+git rebase master
+```
 
-commit the codes
+##modify the codes
 
-> git commit -a -m "ML-Flex changed"
+##commit the codes
 
-> git push
+```
+git commit -a -m "ML-Flex changed"
+```
 
-Merge into master branch if the modified ML-Flex is ready:
+```
+git push
+```
 
->git checkout master
+##Merge into master branch if the modified ML-Flex is ready:
 
->git merge --no-ff ML-Flex-Modified
+```
+git checkout master
 
->git push
+git merge --no-ff ML-Flex-Modified
+
+git push
+```
 
