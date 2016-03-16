@@ -1,10 +1,11 @@
 ##Setup github account
 
 1. global user setup
-```
-git config --global user.email "Your email address"
-git config --global user.name "Your github account name"
-```
+
+   *```
+   git config --global user.email "Your email address"
+   git config --global user.name "Your github account name"
+   *```
 
 2. After doing this, you may fix the identity used for this commit with:
 
