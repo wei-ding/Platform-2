@@ -1,0 +1,319 @@
+concept_id	concept_name	concept_code	concept_class	concept_level	vocabulary_id	vocabulary_name
+38000137	Gastrointestinal nonspecific inflammation and dysfunctional conditions	75	Standardized MedDRA Query	3	31	SMQ
+38000116	Acute central respiratory depression (narrow)	2	Standardized MedDRA Query	1	31	SMQ
+38000157	Eosinophilic pneumonia (narrow)	68	Standardized MedDRA Query	1	31	SMQ
+38004533	Drug related hepatic disorders - comprehensive search	102	Standardized MedDRA Query	2	31	SMQ
+38004631	Lens disorders (broad)	128	Standardized MedDRA Query	1	31	SMQ
+38000073	Dementia (narrow)	55	Standardized MedDRA Query	1	31	SMQ
+38004625	Hyponatraemia/SIADH (broad)	119	Standardized MedDRA Query	1	31	SMQ
+38000123	Biliary system related investigations, signs and symptoms (narrow)	23	Standardized MedDRA Query	1	31	SMQ
+38000165	Cerebrovascular disorders, not specified as haemorrhagic or ischaemic (narrow)	51	Standardized MedDRA Query	1	31	SMQ
+38000060	Cerebrovascular disorders	46	Standardized MedDRA Query	3	31	SMQ
+38004529	Biliary tumours of unspecified malignancy (narrow)	19	Standardized MedDRA Query	1	31	SMQ
+38000051	Arrhythmia related investigations, signs and symptoms (narrow)	32	Standardized MedDRA Query	1	31	SMQ
+38000142	Hostility/aggression (narrow)	116	Standardized MedDRA Query	1	31	SMQ
+38004573	Agranulocytosis (broad)	9	Standardized MedDRA Query	1	31	SMQ
+38004557	Periorbital and eyelid disorders (narrow)	155	Standardized MedDRA Query	1	31	SMQ
+38004550	Normal pregnancy conditions and outcomes (narrow)	164	Standardized MedDRA Query	1	31	SMQ
+38000094	Tumour markers (narrow)	136	Standardized MedDRA Query	1	31	SMQ
+38004566	Tumours of unspecified malignancy (narrow)	135	Standardized MedDRA Query	1	31	SMQ
+38004611	Haematopoietic thrombocytopenia (broad)	91	Standardized MedDRA Query	1	31	SMQ
+38000124	Gallbladder related disorders (narrow)	24	Standardized MedDRA Query	1	31	SMQ
+38004641	Osteoporosis/osteopenia (broad)	151	Standardized MedDRA Query	1	31	SMQ
+38000130	Pulmonary hypertension (narrow)	178	Standardized MedDRA Query	1	31	SMQ
+38000112	Oropharyngeal allergic conditions (narrow)	146	Standardized MedDRA Query	1	31	SMQ
+38004666	Skin tumours of unspecified malignancy (broad)	194	Standardized MedDRA Query	1	31	SMQ
+38004582	Supraventricular tachyarrhythmias (broad)	40	Standardized MedDRA Query	1	31	SMQ
+38000168	Other ischaemic heart disease (narrow)	124	Standardized MedDRA Query	1	31	SMQ
+38004664	Toxic-septic shock conditions (broad)	191	Standardized MedDRA Query	1	31	SMQ
+38004590	Corneal disorders (broad)	54	Standardized MedDRA Query	1	31	SMQ
+38004563	Skin malignant tumours (narrow)	193	Standardized MedDRA Query	1	31	SMQ
+38000156	Corneal disorders (narrow)	54	Standardized MedDRA Query	1	31	SMQ
+38000028	Cytopenia and haematopoietic disorders affecting more than one type of blood cell (narrow)	20000028	Standardized MedDRA Query	1	31	SMQ
+38004569	Accidents and injuries (broad)	1	Standardized MedDRA Query	1	31	SMQ
+38004537	Haematopoietic cytopenias affecting more than one type of blood cell (narrow)	88	Standardized MedDRA Query	1	31	SMQ
+38000092	Malignancy related conditions (narrow)	131	Standardized MedDRA Query	1	31	SMQ
+38004542	Lactation related topics (incl neonatal exposure through breast milk)	160	Standardized MedDRA Query	2	31	SMQ
+38000170	Hearing and vestibular disorders	97	Standardized MedDRA Query	3	31	SMQ
+38000014	Congenital, familial, neonatal and genetic disorders of the liver (narrow)	101	Standardized MedDRA Query	1	31	SMQ
+38000134	Noninfectious meningitis (narrow)	140	Standardized MedDRA Query	1	31	SMQ
+38004626	Interstitial lung disease (broad)	120	Standardized MedDRA Query	1	31	SMQ
+38000110	Oropharyngeal neoplasms (narrow)	149	Standardized MedDRA Query	1	31	SMQ
+38004595	Drug withdrawal (broad)	62	Standardized MedDRA Query	1	31	SMQ
+38000129	Biliary neoplasms benign (incl cysts and polyps) (narrow)	16	Standardized MedDRA Query	1	31	SMQ
+38004553	Osteonecrosis (narrow)	150	Standardized MedDRA Query	1	31	SMQ
+38000144	Ischaemic colitis (narrow)	121	Standardized MedDRA Query	1	31	SMQ
+38000001	Torsade de pointes/QT prolongation (narrow)	201	Standardized MedDRA Query	1	31	SMQ
+38000045	Systemic lupus erythematosus (narrow)	195	Standardized MedDRA Query	1	31	SMQ
+38000108	Gastrointestinal haemorrhage (narrow)	80	Standardized MedDRA Query	1	31	SMQ
+38000043	Ischaemic heart disease	122	Standardized MedDRA Query	3	31	SMQ
+38004589	Convulsions (broad)	53	Standardized MedDRA Query	1	31	SMQ
+38000080	Pseudomembranous colitis (narrow)	176	Standardized MedDRA Query	1	31	SMQ
+38004543	Lipodystrophy (narrow)	129	Standardized MedDRA Query	1	31	SMQ
+38004667	Systemic lupus erythematosus (broad)	195	Standardized MedDRA Query	1	31	SMQ
+38004538	Haematopoietic erythropenia (narrow)	89	Standardized MedDRA Query	1	31	SMQ
+38004635	Noninfectious encephalopathy/delirium (broad)	139	Standardized MedDRA Query	1	31	SMQ
+38004588	Cerebrovascular disorders, not specified as haemorrhagic or ischaemic (broad)	51	Standardized MedDRA Query	1	31	SMQ
+38000162	Cardiac arrhythmia terms, nonspecific (narrow)	38	Standardized MedDRA Query	1	31	SMQ
+38004621	Liver infections (broad)	114	Standardized MedDRA Query	1	31	SMQ
+38004567	Uterine and fallopian tube malignant tumours (narrow)	203	Standardized MedDRA Query	1	31	SMQ
+38000101	Drug abuse (narrow)	61	Standardized MedDRA Query	1	31	SMQ
+43125845	Chronic kidney disease	20000213	Standardized MedDRA Query	1	31	SMQ
+38000044	Neuroleptic malignant syndrome (narrow)	137	Standardized MedDRA Query	1	31	SMQ
+38004607	Guillain-Barre syndrome (broad)	86	Standardized MedDRA Query	1	31	SMQ
+38004604	Gastrointestinal nonspecific symptoms and therapeutic procedures (broad)	78	Standardized MedDRA Query	1	31	SMQ
+38000115	Thrombophlebitis (narrow)	197	Standardized MedDRA Query	1	31	SMQ
+38004596	Eosinophilic pneumonia (broad)	68	Standardized MedDRA Query	1	31	SMQ
+38004586	Cardiomyopathy (broad)	45	Standardized MedDRA Query	1	31	SMQ
+38004615	Vestibular disorders (broad)	99	Standardized MedDRA Query	1	31	SMQ
+38004623	Hyperglycaemia/new onset diabetes mellitus (broad)	117	Standardized MedDRA Query	1	31	SMQ
+38000171	Hearing impairment (narrow)	98	Standardized MedDRA Query	1	31	SMQ
+38004620	Liver related investigations, signs and symptoms (broad)	111	Standardized MedDRA Query	1	31	SMQ
+38000025	Asthma/bronchospasm (narrow)	13	Standardized MedDRA Query	1	31	SMQ
+38004646	Neonatal disorders (broad)	163	Standardized MedDRA Query	1	31	SMQ
+38000173	Skin neoplasms, malignant and unspecified	192	Standardized MedDRA Query	3	31	SMQ
+38004536	Functional lactation disorders (narrow)	161	Standardized MedDRA Query	1	31	SMQ
+38000009	Cholestasis and jaundice of hepatic origin (narrow)	103	Standardized MedDRA Query	1	31	SMQ
+38004530	Breast malignant tumours (narrow)	29	Standardized MedDRA Query	1	31	SMQ
+38004597	Akathisia (broad)	70	Standardized MedDRA Query	1	31	SMQ
+38004584	Congenital and neonatal arrhythmias (broad)	43	Standardized MedDRA Query	1	31	SMQ
+38004587	Conditions associated with central nervous system haemorrhages and cerebrovascular accidents (broad)	48	Standardized MedDRA Query	1	31	SMQ
+38004638	Ocular motility disorders (broad)	142	Standardized MedDRA Query	1	31	SMQ
+38004574	Anaphylactic reaction (broad)	10	Standardized MedDRA Query	1	31	SMQ
+38000046	Taste and smell disorders (narrow)	196	Standardized MedDRA Query	1	31	SMQ
+38000041	Hyperglycaemia/new onset diabetes mellitus (narrow)	117	Standardized MedDRA Query	1	31	SMQ
+38000140	Gastrointestinal nonspecific symptoms and therapeutic procedures (narrow)	78	Standardized MedDRA Query	1	31	SMQ
+38004559	Prostate malignant tumours (narrow)	174	Standardized MedDRA Query	1	31	SMQ
+38000099	Parkinson-like events (narrow)	73	Standardized MedDRA Query	1	31	SMQ
+38000113	Gingival disorders (narrow)	145	Standardized MedDRA Query	1	31	SMQ
+38004599	Dystonia (broad)	72	Standardized MedDRA Query	1	31	SMQ
+38000049	Cardiac arrhythmias	31	Standardized MedDRA Query	3	31	SMQ
+38004578	Biliary system related investigations, signs and symptoms (broad)	23	Standardized MedDRA Query	1	31	SMQ
+38000019	Haemolytic disorders (narrow)	93	Standardized MedDRA Query	1	31	SMQ
+38004618	Hepatic failure, fibrosis and cirrhosis and other liver damage-related conditions (broad)	105	Standardized MedDRA Query	1	31	SMQ
+38004558	Pregnancy, labour and delivery complications and risk factors (excl abortions and stillbirth) (narrow)	165	Standardized MedDRA Query	1	31	SMQ
+38000052	Congenital and neonatal arrhythmias (narrow)	43	Standardized MedDRA Query	1	31	SMQ
+38004627	Ischaemic colitis (broad)	121	Standardized MedDRA Query	1	31	SMQ
+38000012	Liver neoplasms, benign (incl cysts and polyps) (narrow)	107	Standardized MedDRA Query	1	31	SMQ
+38000087	Gastrointestinal premalignant disorders (narrow)	169	Standardized MedDRA Query	1	31	SMQ
+38000139	Gastrointestinal nonspecific dysfunction (narrow)	76	Standardized MedDRA Query	1	31	SMQ
+38000145	Haemodynamic oedema, effusions and fluid overload (narrow)	92	Standardized MedDRA Query	1	31	SMQ
+38000117	Psychosis and psychotic disorders (narrow)	177	Standardized MedDRA Query	1	31	SMQ
+43125844	Biliary tract disorders	20000125	Standardized MedDRA Query	1	31	SMQ
+38004551	Ocular infections (narrow)	141	Standardized MedDRA Query	1	31	SMQ
+38000172	Vestibular disorders (narrow)	99	Standardized MedDRA Query	1	31	SMQ
+38004643	Ovarian tumours of unspecified malignancy (broad)	154	Standardized MedDRA Query	1	31	SMQ
+38000082	Embolic and thrombotic events, arterial (narrow)	65	Standardized MedDRA Query	1	31	SMQ
+38000091	Malignant or unspecified tumours	133	Standardized MedDRA Query	2	31	SMQ
+38004630	Lactic acidosis (broad)	127	Standardized MedDRA Query	1	31	SMQ
+38000095	Extrapyramidal syndrome	69	Standardized MedDRA Query	3	31	SMQ
+38000159	Thyroid dysfunction	198	Standardized MedDRA Query	3	31	SMQ
+38004570	Acute central respiratory depression (broad)	2	Standardized MedDRA Query	1	31	SMQ
+38000151	Ovarian neoplasms, malignant and unspecified	152	Standardized MedDRA Query	3	31	SMQ
+38000024	Angioedema (narrow)	11	Standardized MedDRA Query	1	31	SMQ
+38004670	Hypothyroidism (broad)	200	Standardized MedDRA Query	1	31	SMQ
+38000118	Biliary disorders	14	Standardized MedDRA Query	3	31	SMQ
+38000034	Peripheral neuropathy (narrow)	156	Standardized MedDRA Query	1	31	SMQ
+38000010	Hepatitis, non-infectious (narrow)	106	Standardized MedDRA Query	1	31	SMQ
+38004648	Pregnancy, labour and delivery complications and risk factors (excl abortions and stillbirth) (broad)	165	Standardized MedDRA Query	1	31	SMQ
+38004539	Haematopoietic leukopenia (narrow)	90	Standardized MedDRA Query	1	31	SMQ
+38000006	Pregnancy and neonatal topics	157	Standardized MedDRA Query	3	31	SMQ
+38004629	Other ischaemic heart disease (broad)	124	Standardized MedDRA Query	1	31	SMQ
+38004532	Conjunctival disorders (narrow)	52	Standardized MedDRA Query	1	31	SMQ
+38004674	Vasculitis (broad)	205	Standardized MedDRA Query	1	31	SMQ
+38000066	Shock	185	Standardized MedDRA Query	3	31	SMQ
+38000152	Prostate neoplasms, malignant and unspecified	173	Standardized MedDRA Query	3	31	SMQ
+38004546	Liver-related coagulation and bleeding disturbances (narrow)	112	Standardized MedDRA Query	1	31	SMQ
+38000090	Malignancies	130	Standardized MedDRA Query	3	31	SMQ
+38004572	Acute renal failure (broad)	4	Standardized MedDRA Query	1	31	SMQ
+38004647	Normal pregnancy conditions and outcomes (broad)	164	Standardized MedDRA Query	1	31	SMQ
+38000133	Noninfectious encephalopathy/delirium (narrow)	139	Standardized MedDRA Query	1	31	SMQ
+38004606	Glaucoma (broad)	85	Standardized MedDRA Query	1	31	SMQ
+38000088	Reproductive premalignant disorders (narrow)	171	Standardized MedDRA Query	1	31	SMQ
+38000029	Erythropenia (narrow)	20000029	Standardized MedDRA Query	1	31	SMQ
+38004672	Uterine and fallopian tube malignant tumours (broad)	203	Standardized MedDRA Query	1	31	SMQ
+38000061	Central nervous system haemorrhages and cerebrovascular conditions	47	Standardized MedDRA Query	2	31	SMQ
+38004665	Skin malignant tumours (broad)	193	Standardized MedDRA Query	1	31	SMQ
+38000158	Retinal disorders (narrow)	180	Standardized MedDRA Query	1	31	SMQ
+38000008	Liver related investigations, signs and symptoms (narrow)	111	Standardized MedDRA Query	1	31	SMQ
+38000003	Acute renal failure (narrow)	4	Standardized MedDRA Query	1	31	SMQ
+38000064	Haemorrhagic cerebrovascular conditions (narrow)	49	Standardized MedDRA Query	1	31	SMQ
+38000030	Leukopenia (narrow)	20000030	Standardized MedDRA Query	1	31	SMQ
+38004649	Prostate malignant tumours (broad)	174	Standardized MedDRA Query	1	31	SMQ
+38004656	Retroperitoneal fibrosis (broad)	181	Standardized MedDRA Query	1	31	SMQ
+38000148	Optic nerve disorders (narrow)	143	Standardized MedDRA Query	1	31	SMQ
+38004616	Congenital, familial, neonatal and genetic disorders of the liver (broad)	101	Standardized MedDRA Query	1	31	SMQ
+38004662	Shock-associated circulatory or cardiac conditions (excl torsade de pointes) (broad)	189	Standardized MedDRA Query	1	31	SMQ
+38004602	Gastrointestinal nonspecific dysfunction (broad)	76	Standardized MedDRA Query	1	31	SMQ
+38000027	Haematopoietic cytopenias	87	Standardized MedDRA Query	3	31	SMQ
+38000038	Haemorrhages	94	Standardized MedDRA Query	3	31	SMQ
+38004535	Foetal disorders (narrow)	159	Standardized MedDRA Query	1	31	SMQ
+38000032	Lack of efficacy/effect (narrow)	125	Standardized MedDRA Query	1	31	SMQ
+38004554	Osteoporosis/osteopenia (narrow)	151	Standardized MedDRA Query	1	31	SMQ
+38000031	Thrombocytopenia (narrow)	20000031	Standardized MedDRA Query	1	31	SMQ
+38004637	Ocular infections (broad)	141	Standardized MedDRA Query	1	31	SMQ
+38000033	Lactic acidosis (narrow)	127	Standardized MedDRA Query	1	31	SMQ
+38000163	Bradyarrhythmia terms, nonspecific (narrow)	35	Standardized MedDRA Query	1	31	SMQ
+38004653	Pulmonary hypertension (broad)	178	Standardized MedDRA Query	1	31	SMQ
+38004583	Ventricular tachyarrhythmias (broad)	42	Standardized MedDRA Query	1	31	SMQ
+38000103	Gastrointestinal perforation, ulceration, haemorrhage or obstruction	79	Standardized MedDRA Query	3	31	SMQ
+38000167	Depression (excl suicide and self injury) (narrow)	58	Standardized MedDRA Query	1	31	SMQ
+38000107	Gastrointestinal perforation (narrow)	82	Standardized MedDRA Query	1	31	SMQ
+38000160	Hypothyroidism (narrow)	200	Standardized MedDRA Query	1	31	SMQ
+38000119	Functional, inflammatory and gallstone related biliary disorders	21	Standardized MedDRA Query	2	31	SMQ
+38004541	Lacrimal disorders (narrow)	126	Standardized MedDRA Query	1	31	SMQ
+38004673	Uterine and fallopian tube tumours of unspecified malignancy (broad)	204	Standardized MedDRA Query	1	31	SMQ
+38004552	Ocular motility disorders (narrow)	142	Standardized MedDRA Query	1	31	SMQ
+38004580	Breast tumours of unspecified malignancy (broad)	30	Standardized MedDRA Query	1	31	SMQ
+38000079	Convulsions (narrow)	53	Standardized MedDRA Query	1	31	SMQ
+38004547	Malignant tumours (narrow)	134	Standardized MedDRA Query	1	31	SMQ
+38004612	Haemolytic disorders (broad)	93	Standardized MedDRA Query	1	31	SMQ
+38000127	Gallstone related disorders (narrow)	25	Standardized MedDRA Query	1	31	SMQ
+38004601	Extravasation events (injections, infusions and implants) (broad)	74	Standardized MedDRA Query	1	31	SMQ
+38000083	Embolic and thrombotic events, vessel type unspecified and mixed arterial and venous (narrow)	67	Standardized MedDRA Query	1	31	SMQ
+38004605	Gastrointestinal perforation, ulcer, haemorrhage, obstruction non-specific findings/procedures (broad)	83	Standardized MedDRA Query	1	31	SMQ
+38000155	Lens disorders (narrow)	128	Standardized MedDRA Query	1	31	SMQ
+38000050	Cardiac arrhythmia terms (incl bradyarrhythmias and tachyarrhythmias)	33	Standardized MedDRA Query	2	31	SMQ
+43125850	Malignant lymphomas	20000215	Standardized MedDRA Query	1	31	SMQ
+38004576	Anticholinergic syndrome (broad)	12	Standardized MedDRA Query	1	31	SMQ
+38004592	Demyelination (broad)	56	Standardized MedDRA Query	1	31	SMQ
+38004669	Hyperthyroidism (broad)	199	Standardized MedDRA Query	1	31	SMQ
+38000106	Gastrointestinal ulceration (narrow)	84	Standardized MedDRA Query	1	31	SMQ
+38000149	Breast neoplasms, malignant and unspecified	28	Standardized MedDRA Query	3	31	SMQ
+38004528	Biliary malignant tumours (narrow)	18	Standardized MedDRA Query	1	31	SMQ
+38000102	Drug withdrawal (narrow)	62	Standardized MedDRA Query	1	31	SMQ
+38000141	Hyponatraemia/SIADH (narrow)	119	Standardized MedDRA Query	1	31	SMQ
+43125849	Hypotonic-hyporesponsive episode	20000211	Standardized MedDRA Query	1	31	SMQ
+43125848	Hypersensitivity	20000214	Standardized MedDRA Query	1	31	SMQ
+38000004	Cardiac failure (narrow)	44	Standardized MedDRA Query	1	31	SMQ
+38004544	Liver malignant tumours (narrow)	109	Standardized MedDRA Query	1	31	SMQ
+38004636	Noninfectious meningitis (broad)	140	Standardized MedDRA Query	1	31	SMQ
+38000096	Akathisia (narrow)	70	Standardized MedDRA Query	1	31	SMQ
+38004581	Arrhythmia related investigations, signs and symptoms (broad)	32	Standardized MedDRA Query	1	31	SMQ
+38000065	Retroperitoneal fibrosis (narrow)	181	Standardized MedDRA Query	1	31	SMQ
+38000136	Extravasation events (injections, infusions and implants) (narrow)	74	Standardized MedDRA Query	1	31	SMQ
+38000131	Guillain-Barre syndrome (narrow)	86	Standardized MedDRA Query	1	31	SMQ
+38004585	Cardiac failure (broad)	44	Standardized MedDRA Query	1	31	SMQ
+38004575	Angioedema (broad)	11	Standardized MedDRA Query	1	31	SMQ
+38000047	Myocardial infarction (narrow)	123	Standardized MedDRA Query	1	31	SMQ
+38000039	Haemorrhage terms (excl laboratory terms) (narrow)	96	Standardized MedDRA Query	1	31	SMQ
+38004622	Hostility/aggression (broad)	116	Standardized MedDRA Query	1	31	SMQ
+38004531	Breast tumours of unspecified malignancy (narrow)	30	Standardized MedDRA Query	1	31	SMQ
+38000071	Anaphylactic/anaphylactoid shock conditions (narrow)	186	Standardized MedDRA Query	1	31	SMQ
+38000164	Tachyarrhythmia terms, nonspecific (narrow)	41	Standardized MedDRA Query	1	31	SMQ
+38004560	Prostate tumours of unspecified malignancy (narrow)	175	Standardized MedDRA Query	1	31	SMQ
+38004561	Renovascular disorders (narrow)	179	Standardized MedDRA Query	1	31	SMQ
+38000020	Severe cutaneous adverse reactions (narrow)	184	Standardized MedDRA Query	1	31	SMQ
+38000100	Drug abuse, dependence and withdrawal	60	Standardized MedDRA Query	3	31	SMQ
+38000022	Acute pancreatitis (narrow)	3	Standardized MedDRA Query	1	31	SMQ
+38004644	Peripheral neuropathy (broad)	156	Standardized MedDRA Query	1	31	SMQ
+38004660	Hypoglycaemic and neurogenic shock conditions (broad)	187	Standardized MedDRA Query	1	31	SMQ
+38000070	Toxic-septic shock conditions (narrow)	191	Standardized MedDRA Query	1	31	SMQ
+38000069	Hypovolaemic shock conditions (narrow)	188	Standardized MedDRA Query	1	31	SMQ
+38000150	Cardiomyopathy (narrow)	45	Standardized MedDRA Query	1	31	SMQ
+38000105	Gastrointestinal obstruction (narrow)	81	Standardized MedDRA Query	1	31	SMQ
+38000042	Interstitial lung disease (narrow)	120	Standardized MedDRA Query	1	31	SMQ
+38000007	Possible drug related hepatic disorders - severe events only	20000007	Standardized MedDRA Query	1	31	SMQ
+38004613	Haemorrhage laboratory terms (broad)	95	Standardized MedDRA Query	1	31	SMQ
+38004654	Renovascular disorders (broad)	179	Standardized MedDRA Query	1	31	SMQ
+38004603	Gastrointestinal nonspecific inflammation (broad)	77	Standardized MedDRA Query	1	31	SMQ
+38000169	Premalignant disorders, general conditions and other site specific disorders (narrow)	170	Standardized MedDRA Query	1	31	SMQ
+38004549	Neonatal exposures via breast milk (narrow)	162	Standardized MedDRA Query	1	31	SMQ
+38000016	Liver infections (narrow)	114	Standardized MedDRA Query	1	31	SMQ
+38000015	Possible liver-related coagulation and bleeding disturbances (narrow)	20000015	Standardized MedDRA Query	1	31	SMQ
+38004632	Lipodystrophy (broad)	129	Standardized MedDRA Query	1	31	SMQ
+38000161	Hyperthyroidism (narrow)	199	Standardized MedDRA Query	1	31	SMQ
+38000128	Biliary neoplasms malignant and unspecified	17	Standardized MedDRA Query	3	31	SMQ
+38000138	Gastrointestinal nonspecific inflammation (narrow)	77	Standardized MedDRA Query	1	31	SMQ
+38000017	Events specifically reported as alcohol-related (narrow)	113	Standardized MedDRA Query	1	31	SMQ
+38004663	Torsade de pointes, shock-associated conditions (broad)	190	Standardized MedDRA Query	1	31	SMQ
+38004577	Asthma/bronchospasm (broad)	13	Standardized MedDRA Query	1	31	SMQ
+38004619	Hepatitis, non-infectious (broad)	106	Standardized MedDRA Query	1	31	SMQ
+38004545	Liver tumours of unspecified malignancy (narrow)	110	Standardized MedDRA Query	1	31	SMQ
+38000166	Conditions associated with central nervous system haemorrhages and cerebrovascular accidents (narrow)	48	Standardized MedDRA Query	1	31	SMQ
+38004610	Haematopoietic leukopenia (broad)	90	Standardized MedDRA Query	1	31	SMQ
+38004555	Ovarian malignant tumours (narrow)	153	Standardized MedDRA Query	1	31	SMQ
+38000048	Anticholinergic syndrome (narrow)	12	Standardized MedDRA Query	1	31	SMQ
+38004634	Noninfectious encephalitis (broad)	138	Standardized MedDRA Query	1	31	SMQ
+38000174	Vasculitis (narrow)	205	Standardized MedDRA Query	1	31	SMQ
+38004617	Cholestasis and jaundice of hepatic origin (broad)	103	Standardized MedDRA Query	1	31	SMQ
+38000018	Pregnancy-related hepatic disorders (narrow)	115	Standardized MedDRA Query	1	31	SMQ
+43125847	Generalised convulsive seizures following immunisation	20000212	Standardized MedDRA Query	1	31	SMQ
+38000147	Hypertension (narrow)	118	Standardized MedDRA Query	1	31	SMQ
+38000111	Oropharyngeal infections (narrow)	147	Standardized MedDRA Query	1	31	SMQ
+38000109	Oropharyngeal disorders	144	Standardized MedDRA Query	3	31	SMQ
+38004565	Termination of pregnancy and risk of abortion (narrow)	166	Standardized MedDRA Query	1	31	SMQ
+38000093	Malignancy related therapeutic and diagnostic procedures (narrow)	132	Standardized MedDRA Query	1	31	SMQ
+38000135	Accidents and injuries (narrow)	1	Standardized MedDRA Query	1	31	SMQ
+38004579	Breast malignant tumours (broad)	29	Standardized MedDRA Query	1	31	SMQ
+38000021	Anaphylactic reaction (narrow)	10	Standardized MedDRA Query	1	31	SMQ
+43125846	Fertility disorders	20000210	Standardized MedDRA Query	1	31	SMQ
+38000122	Congenital biliary disorders (narrow)	20	Standardized MedDRA Query	1	31	SMQ
+38000154	Demyelination (narrow)	56	Standardized MedDRA Query	1	31	SMQ
+38004640	Osteonecrosis (broad)	150	Standardized MedDRA Query	1	31	SMQ
+38004562	Scleral disorders (narrow)	183	Standardized MedDRA Query	1	31	SMQ
+38004609	Haematopoietic erythropenia (broad)	89	Standardized MedDRA Query	1	31	SMQ
+38004594	Drug abuse (broad)	61	Standardized MedDRA Query	1	31	SMQ
+38004645	Foetal disorders (broad)	159	Standardized MedDRA Query	1	31	SMQ
+38004571	Acute pancreatitis (broad)	3	Standardized MedDRA Query	1	31	SMQ
+38000055	Disorders of sinus node function (narrow)	37	Standardized MedDRA Query	1	31	SMQ
+38000077	Congenital, familial and genetic disorders (narrow)	158	Standardized MedDRA Query	1	31	SMQ
+38004655	Retinal disorders (broad)	180	Standardized MedDRA Query	1	31	SMQ
+38004652	Psychosis and psychotic disorders (broad)	177	Standardized MedDRA Query	1	31	SMQ
+38004628	Myocardial infarction (broad)	123	Standardized MedDRA Query	1	31	SMQ
+38000056	Conduction defects (narrow)	36	Standardized MedDRA Query	1	31	SMQ
+38004651	Pseudomembranous colitis (broad)	176	Standardized MedDRA Query	1	31	SMQ
+38000023	Agranulocytosis (narrow)	9	Standardized MedDRA Query	1	31	SMQ
+38004564	Skin tumours of unspecified malignancy (narrow)	194	Standardized MedDRA Query	1	31	SMQ
+38004624	Hypertension (broad)	118	Standardized MedDRA Query	1	31	SMQ
+38000146	Glaucoma (narrow)	85	Standardized MedDRA Query	1	31	SMQ
+38000086	Blood premalignant disorders (narrow)	168	Standardized MedDRA Query	1	31	SMQ
+38000067	Shock-associated circulatory or cardiac conditions (excl torsade de pointes) (narrow)	189	Standardized MedDRA Query	1	31	SMQ
+38004661	Hypovolaemic shock conditions (broad)	188	Standardized MedDRA Query	1	31	SMQ
+38000072	Hypoglycaemic and neurogenic shock conditions (narrow)	187	Standardized MedDRA Query	1	31	SMQ
+38004593	Depression (excl suicide and self injury) (broad)	58	Standardized MedDRA Query	1	31	SMQ
+38000121	Biliary neoplasms	15	Standardized MedDRA Query	1	31	SMQ
+38004642	Ovarian malignant tumours (broad)	153	Standardized MedDRA Query	1	31	SMQ
+38000104	Gastrointestinal perforation, ulcer, haemorrhage, obstruction non-specific findings/procedures (narrow)	83	Standardized MedDRA Query	1	31	SMQ
+38000011	Liver neoplasms, malignant and unspecified	108	Standardized MedDRA Query	2	31	SMQ
+38004534	Drug related hepatic disorders - severe events only	104	Standardized MedDRA Query	2	31	SMQ
+38004658	Severe cutaneous adverse reactions (broad)	184	Standardized MedDRA Query	1	31	SMQ
+38004548	Neonatal disorders (narrow)	163	Standardized MedDRA Query	1	31	SMQ
+38000089	Skin premalignant disorders (narrow)	172	Standardized MedDRA Query	1	31	SMQ
+38004540	Haematopoietic thrombocytopenia (narrow)	91	Standardized MedDRA Query	1	31	SMQ
+38000114	Oropharyngeal lesions, non-neoplastic, non-infectious and non-allergic (narrow)	148	Standardized MedDRA Query	1	31	SMQ
+38000097	Dyskinesia (narrow)	71	Standardized MedDRA Query	1	31	SMQ
+38004598	Dyskinesia (broad)	71	Standardized MedDRA Query	1	31	SMQ
+38004659	Anaphylactic/anaphylactoid shock conditions (broad)	186	Standardized MedDRA Query	1	31	SMQ
+38004608	Haematopoietic cytopenias affecting more than one type of blood cell (broad)	88	Standardized MedDRA Query	1	31	SMQ
+38000013	Hepatic failure, fibrosis and cirrhosis and other liver damage-related conditions (narrow)	105	Standardized MedDRA Query	1	31	SMQ
+38000057	Supraventricular tachyarrhythmias (narrow)	40	Standardized MedDRA Query	1	31	SMQ
+38000081	Embolic and thrombotic events	64	Standardized MedDRA Query	3	31	SMQ
+38004633	Neuroleptic malignant syndrome (broad)	137	Standardized MedDRA Query	1	31	SMQ
+38000120	Infectious biliary disorders (narrow)	27	Standardized MedDRA Query	1	31	SMQ
+38004668	Thrombophlebitis (broad)	197	Standardized MedDRA Query	1	31	SMQ
+38000035	Depression and suicide/self-injury	57	Standardized MedDRA Query	3	31	SMQ
+38004650	Prostate tumours of unspecified malignancy (broad)	175	Standardized MedDRA Query	1	31	SMQ
+38000002	Rhabdomyolysis/myopathy (narrow)	182	Standardized MedDRA Query	1	31	SMQ
+38000084	Embolic and thrombotic events, venous (narrow)	66	Standardized MedDRA Query	1	31	SMQ
+38004591	Dementia (broad)	55	Standardized MedDRA Query	1	31	SMQ
+38004568	Uterine and fallopian tube tumours of unspecified malignancy (narrow)	204	Standardized MedDRA Query	1	31	SMQ
+38000068	Torsade de pointes, shock-associated conditions (narrow)	190	Standardized MedDRA Query	1	31	SMQ
+38000098	Dystonia (narrow)	72	Standardized MedDRA Query	1	31	SMQ
+38000037	Suicide/self-injury (narrow)	59	Standardized MedDRA Query	1	31	SMQ
+38000153	Uterine and fallopian tube neoplasms, malignant and unspecified	202	Standardized MedDRA Query	3	31	SMQ
+38000054	Tachyarrhythmias (incl supraventricular and ventricular tachyarrhythmias)	39	Standardized MedDRA Query	2	31	SMQ
+38000005	Hepatic disorders	100	Standardized MedDRA Query	3	31	SMQ
+38004614	Hearing impairment (broad)	98	Standardized MedDRA Query	1	31	SMQ
+38004671	Torsade de pointes/QT prolongation (broad)	201	Standardized MedDRA Query	1	31	SMQ
+38000132	Noninfectious encephalitis (narrow)	138	Standardized MedDRA Query	1	31	SMQ
+38000053	Bradyarrhythmias (incl conduction defects and disorders of sinus node function)	34	Standardized MedDRA Query	2	31	SMQ
+38004556	Ovarian tumours of unspecified malignancy (narrow)	154	Standardized MedDRA Query	1	31	SMQ
+38000026	Dyslipidaemia (narrow)	63	Standardized MedDRA Query	1	31	SMQ
+38000063	Ischaemic cerebrovascular conditions (narrow)	50	Standardized MedDRA Query	1	31	SMQ
+38004639	Optic nerve disorders (broad)	143	Standardized MedDRA Query	1	31	SMQ
+38000085	Premalignant disorders	167	Standardized MedDRA Query	3	31	SMQ
+38000058	Ventricular tachyarrhythmias (narrow)	42	Standardized MedDRA Query	1	31	SMQ
+38004657	Rhabdomyolysis/myopathy (broad)	182	Standardized MedDRA Query	1	31	SMQ
+38000040	Haemorrhage laboratory terms (narrow)	95	Standardized MedDRA Query	1	31	SMQ
+38004600	Parkinson-like events (broad)	73	Standardized MedDRA Query	1	31	SMQ

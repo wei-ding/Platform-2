@@ -15,14 +15,14 @@
  * limitations under the License.
  */
 
-package org.clinical3po.namematcher
+package org.clinical3po.conceptmatcher
 
 import org.junit.Test
 import java.nio.file.Path 
 import java.nio.file.Paths
 import org.junit.Assert
 
-class NameMatcherTest {
+class ConceptMatcherTest {
 
   @Test
   def testSortWords(): Unit = {
