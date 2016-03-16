@@ -1,14 +1,13 @@
 ##Setup github account
 
 1. global user setup
-   *
-   ```
+   *```sh
    git config --global user.email "Your email address"
    git config --global user.name "Your github account name"
-   ```
+   *```
 2. After doing this, you may fix the identity used for this commit with:
    *
-    ```bash
+    ```sh
     git commit --amend --reset-author
     ```
 3. Adding a new SSH key to your GitHub account
