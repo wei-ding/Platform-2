@@ -28,9 +28,14 @@ $ ./sbt package
 
 ## Supported Domains ##
 
-1. `Lab`
-2. `Drug`
-
+1. `Demographic`
+2. `Visit`
+3. `Procedure`
+4. `Condition`
+5. `Drug`
+6. `Observation`
+7. `Type_Concepts`
+8. `Cohort`
 
 ## Contact ##
 
@@ -39,4 +44,3 @@ $ ./sbt package
 ## License
 
 The content of this project itself is licensed under the [Apache License 2.0 license](http://www.apache.org/licenses/LICENSE-2.0), and the underlying source code used to format and display that content is licensed under the [Apache License 2.0 license](http://www.apache.org/licenses/LICENSE-2.0).
-
