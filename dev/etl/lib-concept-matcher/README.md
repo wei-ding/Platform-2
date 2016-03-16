@@ -2,17 +2,23 @@
 
 ## Build & run ##
 
-```sh
-$ git clone git@github.com:Clinical3PO/Stage.git
-$ cd Stage/dev/etl/lib-concept-matcher
-$ chmod u+x sbt
-$ ./sbt clean && ./sbt compile && ./sbt run
-```
-or
-```
-$ ./sbt
-> +run
-```
+1. Get the source codes: 
+
+    ```sh
+    $ git clone git@github.com:Clinical3PO/Stage.git
+    $ cd Stage/dev/etl/lib-concept-matcher
+    ```
+2. Build and Run
+    
+    ```sh
+    chmod u+x sbt
+    ./sbt clean && ./sbt compile && ./sbt run
+    ```
+    or
+    ```
+    ./sbt
+    > +run
+    ```
 
 ## Package ##
 
@@ -22,8 +28,8 @@ $ ./sbt package
 
 ## Supported Domains ##
 
-* `Lab`
-* `Drug`
+1. `Lab`
+2. `Drug`
 
 
 ## Contact ##
