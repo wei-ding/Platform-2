@@ -49,6 +49,21 @@ import scala.reflect._
  */
 
 
+
+/**
+ * Base trait that provides a path to an FSLuceneDirectory
+ */
+trait LuceneIndexPathProvider {
+  override def toString() = {
+    println("Getting class name!")  // To see how many times we're called
+    this.getClass.getSuperclass.getName
+  }
+  /**
+   * Provides the index directory path to the function f
+   */
+  protected def withIndexPath[T](f: (Path) => T): T
+}
+
 trait Domain 
 trait Drug extends Domain { override def toString() = "Drug" }
 //trait Drug_RxNorm extends Domain { override def toString() = "Drug_RxNorm" }
@@ -69,17 +84,6 @@ trait Provider extends Domain { override def toString() = "Provider" }
 trait Cost extends Domain { override def toString() = "Cost" }
 trait Cohort extends Domain { override def toString() = "Cohort" }
 trait Type_Concepts extends Domain { override def toString() = "Type_Concepts" }
-
-
-/**
- * Base trait that provides a path to an FSLuceneDirectory
- */
-trait LuceneIndexPathProvider {
-  /**
-   * Provides the index directory path to the function f
-   */
-  protected def withIndexPath[T](f: (Path) => T): T
-}
 
 
 /**

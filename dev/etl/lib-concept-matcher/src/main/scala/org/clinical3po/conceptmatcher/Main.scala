@@ -26,13 +26,13 @@ import scala.io.Source
 object Main {
   def testSortWords(): Unit = {
     val s = "heart attack and diabetes"
-    val matcher = new NameMatcher()
+    val matcher = new ConceptMatcher()
     Assert.assertEquals("and attack diabetes heart", matcher.sortWords(s))
   }
   
   def testStemWords(): Unit = {
     val s = "and attack diabetes heart"
-    val matcher = new NameMatcher()
+    val matcher = new ConceptMatcher()
     Assert.assertEquals("attack diabetes heart", matcher.stemWords(s))
   }
 
@@ -58,7 +58,7 @@ object Main {
     }
 
     val output = Paths.get(indexFilePath.getAbsolutePath())
-    val matcher = new NameMatcher()
+    val matcher = new ConceptMatcher()
     matcher.buildIndex(input, output)
 
   }
@@ -68,7 +68,7 @@ object Main {
     lazy val serviceRootPath = System.getProperty("user.dir")
     val indexPath = new JFile(serviceRootPath, INDEX_DIRECTORY).getAbsolutePath
     val luceneDir = Paths.get(indexPath)
-    val tagger = new NameMatcher()
+    val tagger = new ConceptMatcher()
     val strs = List("10-HYDROXYCARBAZEPINE [MOLES/VOLUME] IN SERUM OR PLASMA", "BP")
         strs.foreach(str => {
         val concepts = tagger.annotateConcepts(str, luceneDir)
@@ -83,7 +83,7 @@ object Main {
 
   def testMapMultipleConcepts(): Unit = {
     val luceneDir = Paths.get("%s%s".format(getClass.getResource(""),"/lab_dict.index"))
-    val matcher = new NameMatcher()
+    val matcher = new ConceptMatcher()
     val strs = List(
         "Heart Attack and diabetes",
         "carcinoma (small-cell) of lung",
