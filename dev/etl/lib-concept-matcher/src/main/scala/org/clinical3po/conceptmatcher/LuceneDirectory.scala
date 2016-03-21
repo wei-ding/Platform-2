@@ -91,7 +91,3 @@ trait DefaultFSLuceneDirectory
   with ServiceRootLucenePathProvider
   with SimpleFSLuceneDirectoryCreator
 
-trait LabFSLuceneDirectory
-  extends FSLuceneDirectory
-  with ServiceRootLabLucenePathProvider
-  with SimpleFSLuceneDirectoryCreator
