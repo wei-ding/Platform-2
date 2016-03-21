@@ -1,5 +1,6 @@
 InputData
 *.tar.gz
+*.log
 logback.xml
 release
 build
