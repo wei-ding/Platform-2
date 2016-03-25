@@ -34,7 +34,7 @@ property *default* org.clinical3PO.learn.util.FEBasicStrategy {
         emptyBinStrategy lastLegitOrUnk
         legitLow 0.0
         legitHigh 1000000.0
-		discrete N
+		discrete U
     }
 } 
 
@@ -96,7 +96,34 @@ class nisysabp org.clinical3PO.learn.util.FEBasicStrategy {
 		values low, normal , high
 		cutoff 80,100
 		discrete F,G,H
+    }  
+} 
+
+
+# let's try a second class config
+class glucose org.clinical3PO.learn.util.FEBasicStrategy {
+
+	# valuetype is the INPUT; evaluator handles the output type.
+	# let's see if commenting it out makes it use the default
+	# and indeed
+    #valuetype org.clinical3PO.learn.util.C3POFeatureExtractionDoubleValueType {
+    #}
+    
+	# default binner (bin width 3600 seconds = 1 hour)
+    binner org.clinical3PO.learn.util.FEBasicBinner {
+        binWidth 3600.0
     }
-    
-    
+
+    # use discretizing evaluator. legit range is for non-invasive systolic bp (guess)
+
+    evaluator org.clinical3PO.learn.util.FEDiscretizingRangeEvaluator {
+        derivation mean
+	    errorStrategy alwaysUnk 
+        emptyBinStrategy lastLegitOrUnk
+        legitLow 0.0
+        legitHigh 500.0
+		values verylow, low, normal, borderline, high
+		cutoff 20,40,75,100
+		discrete A,B,C,D,E
+    }
 } 
