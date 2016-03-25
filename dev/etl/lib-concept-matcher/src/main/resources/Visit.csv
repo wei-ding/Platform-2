@@ -1,0 +1,54 @@
+concept_id	concept_name	concept_code	concept_class	concept_level	vocabulary_id	vocabulary_name
+8650	Birthing Center	25	Place of Service	1	14	Place of Service
+8960	Tribal 638 Provider-based Facility	8	Place of Service	1	14	Place of Service
+8584	Mobile Unit	15	Place of Service	1	14	Place of Service
+8920	Comprehensive Inpatient Rehabilitation Facility	61	Place of Service	1	14	Place of Service
+8851	Group Home	14	Place of Service	1	14	Place of Service
+8858	Mass Immunization Center	60	Place of Service	1	14	Place of Service
+8850	Ambulance - Air or Water	42	Place of Service	1	14	Place of Service
+8562	Pharmacy	1	Place of Service	1	14	Place of Service
+8677	Outpatient NEC	95	Place of Service	1	14	Place of Service
+8940	Office	11	Place of Service	1	14	Place of Service
+8717	Inpatient Hospital	21	Place of Service	1	14	Place of Service
+8883	Ambulatory Surgical Center	24	Place of Service	1	14	Place of Service
+8782	Urgent Care Facility	20	Place of Service	1	14	Place of Service
+8976	Psychiatric Residential Treatment Center	56	Place of Service	1	14	Place of Service
+9201	Inpatient Visit	IP	Visit	2	24	Visit
+8905	Military Treatment Facility	26	Place of Service	1	14	Place of Service
+8964	Community Mental Health Center	53	Place of Service	1	14	Place of Service
+8971	Inpatient Psychiatric Facility	51	Place of Service	1	14	Place of Service
+8827	Custodial Care Facility	33	Place of Service	1	14	Place of Service
+8676	Nursing Facility	32	Place of Service	1	14	Place of Service
+8977	Public Health Clinic	71	Place of Service	1	14	Place of Service
+8761	Rural Health Clinic	72	Place of Service	1	14	Place of Service
+8870	Emergency Room - Hospital	23	Place of Service	1	14	Place of Service
+8546	Hospice	34	Place of Service	1	14	Place of Service
+8957	Residential Substance Abuse Treatment Facility	55	Place of Service	1	14	Place of Service
+8716	Independent Clinic	49	Place of Service	1	14	Place of Service
+8969	Indian Health Service Provider-based Facility	6	Place of Service	1	14	Place of Service
+38003619	Prison/Correctional Facility	9	Place of Service	1	14	Place of Service
+8672	Homeless Shelter	4	Place of Service	1	14	Place of Service
+8615	Assisted Living Facility	13	Place of Service	1	14	Place of Service
+8970	Inpatient Long-term Care	27	Place of Service	1	14	Place of Service
+8536	Home	12	Place of Service	1	14	Place of Service
+8892	Other Inpatient Care	28	Place of Service	1	14	Place of Service
+8602	Temporary Lodging	16	Place of Service	1	14	Place of Service
+8668	Ambulance - Land	41	Place of Service	1	14	Place of Service
+42898160	Long Term Care Visit	LTCP	Visit	2	24	Visit
+8913	Psychiatric Facility-Partial Hospitalization	52	Place of Service	1	14	Place of Service
+8844	Other Place of Service	99	Place of Service	1	14	Place of Service
+8949	End-Stage Renal Disease Treatment Facility	65	Place of Service	1	14	Place of Service
+8974	Non-residential Substance Abuse Treatment Facility	57	Place of Service	1	14	Place of Service
+38003620	Walk-in Retail Health Clinic	17	Place of Service	1	14	Place of Service
+8966	Federally Qualified Health Center	50	Place of Service	1	14	Place of Service
+8882	Adult Living Care Facility	35	Place of Service	1	14	Place of Service
+8863	Skilled Nursing Facility	31	Place of Service	1	14	Place of Service
+8941	Tribal 638 Free-standing Facility	7	Place of Service	1	14	Place of Service
+8968	Indian Health Service Free-standing Facility	5	Place of Service	1	14	Place of Service
+8756	Outpatient Hospital	22	Place of Service	1	14	Place of Service
+8951	Intermediate Care Facility/Mentally Retarded	54	Place of Service	1	14	Place of Service
+8537	School	3	Place of Service	1	14	Place of Service
+9202	Outpatient Visit	OP	Visit	2	24	Visit
+8809	Independent Laboratory	81	Place of Service	1	14	Place of Service
+8947	Comprehensive Outpatient Rehabilitation Facility	62	Place of Service	1	14	Place of Service
+9203	Emergency Room Visit	ER	Visit	2	24	Visit

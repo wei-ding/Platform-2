@@ -1,0 +1,2675 @@
+concept_id	concept_name	concept_code	concept_class	concept_level	vocabulary_id	vocabulary_name
+38001591	Allergic reactions w/o MCC	916	MS-DRG	1	40	DRG
+38001780	Infusion Therapy Except Chemotherapy	0120	APC	1	42	APC
+38002359	Cyanocobalamin cobalt co57	1089	APC	1	42	APC
+38003498	Other Therapeutic Services - Cardiac Rehabilitation	0943	Revenue Code	1	43	Revenue Code
+38001560	Other infectious & parasitic diseases diagnoses w MCC	867	MS-DRG	1	40	DRG
+38002624	Tc99m gluceptate	1649	APC	1	42	APC
+38003497	Other Therapeutic Services - Education/Training	0942	Revenue Code	1	43	Revenue Code
+38002734	Sermorelin acetate injection	3050	APC	1	42	APC
+38003045	Room & Board - Semi-private Two Bed (Medical or General) - Psychiatric	0124	Revenue Code	1	43	Revenue Code
+38001893	Cataract Procedures with IOL Insert	0246	APC	1	42	APC
+38003136	All inclusive Ancillary - Specialty	0243	Revenue Code	1	43	Revenue Code
+38003362	Home IV Therapy - Training Disabled Patient, Central Line	0646	Revenue Code	1	43	Revenue Code
+38001977	Level II Transfusion Laboratory Procedures	0346	APC	1	42	APC
+38000939	Intracranial hemorrhage or cerebral infarction w/o CC/MCC	066	MS-DRG	1	40	DRG
+38002562	New Technology - Level XVIII ($1600-$1700)	1555	APC	1	42	APC
+38003091	Nursery - Other	0179	Revenue Code	1	43	Revenue Code
+38003360	Home IV Therapy - Nonroutine Nursing, Peripheral Line	0644	Revenue Code	1	43	Revenue Code
+38001061	Cardiac valve & oth maj cardiothoracic proc w/o card cath w/o CC/MCC	221	MS-DRG	1	40	DRG
+38001528	Myeloprolif disord or poorly diff neopl w maj O.R. proc w MCC	826	MS-DRG	1	40	DRG
+38001423	Admit for renal dialysis	685	MS-DRG	1	40	DRG
+38003179	Laboratory - Urology	0307	Revenue Code	1	43	Revenue Code
+38003216	Anesthesia - Acupuncture	0374	Revenue Code	1	43	Revenue Code
+38002953	Cabazitaxel injection	9276	APC	1	42	APC
+38001822	Level II Urinary and Anal Procedures	0164	APC	1	42	APC
+38001838	Prostate Biopsy	0184	APC	1	42	APC
+38003296	Free-Standing Clinic - RHC/FQHC visit to other non RHC/FQHC site	0528	Revenue Code	1	43	Revenue Code
+38001153	Rectal resection w/o CC/MCC	334	MS-DRG	1	40	DRG
+38003508	Professional Fees - Psychiatric	0961	Revenue Code	1	43	Revenue Code
+38002252	Gallium nitrate injection	0878	APC	1	42	APC
+38003435	Hemodialysis - Outpatient or Home - Support Services	0825	Revenue Code	1	43	Revenue Code
+38000997	Salivary gland procedures	139	MS-DRG	1	40	DRG
+38002648	Digoxin immune fab (ovine)	1687	APC	1	42	APC
+38001104	Cardiac pacemaker revision except device replacement w/o CC/MCC	262	MS-DRG	1	40	DRG
+38003367	Hospice Service - Routine Home Care	0651	Revenue Code	1	43	Revenue Code
+38002977	Porcine implant, Permacol	9364	APC	1	42	APC
+38002281	Gamma globulin 6 CC inj	0920	APC	1	42	APC
+38001259	Major joint replacement or reattachment of lower extremity w/o MCC	470	MS-DRG	1	40	DRG
+38001241	Disorders of the biliary tract w/o CC/MCC	446	MS-DRG	1	40	DRG
+38001034	Pleural effusion w/o CC/MCC	188	MS-DRG	1	40	DRG
+38002698	Telescopic intraocular lens	1840	APC	1	42	APC
+38000956	Traumatic stupor & coma, coma >1 hr w CC	083	MS-DRG	1	40	DRG
+38002742	Elliotts b solution per ml	7022	APC	1	42	APC
+38001733	Level II Endoscopy Upper Airway	0072	APC	1	42	APC
+38001086	Perc cardiovasc proc w drug-eluting stent w MCC or 4+ vessels/stents	246	MS-DRG	1	40	DRG
+38000957	Traumatic stupor & coma, coma >1 hr w/o CC/MCC	084	MS-DRG	1	40	DRG
+38002503	New Technology - Level IA ($0-$10)	1496	APC	1	42	APC
+38001561	Other infectious & parasitic diseases diagnoses w CC	868	MS-DRG	1	40	DRG
+38002556	New Technology - Level XII ($1000 - $1100)	1549	APC	1	42	APC
+38002873	Inj Gad-base MR contrast,1ml	9164	APC	1	42	APC
+38002948	Velaglucerase alfa	9271	APC	1	42	APC
+38001193	Uncomplicated peptic ulcer w MCC	383	MS-DRG	1	40	DRG
+38001027	Respiratory neoplasms w CC	181	MS-DRG	1	40	DRG
+38003298	Osteopathic Services - General Classification	0530	Revenue Code	1	43	Revenue Code
+38001122	Deep vein thrombophlebitis w CC/MCC	294	MS-DRG	1	40	DRG
+38001806	Level I Anal/Rectal Procedures	0148	APC	1	42	APC
+38002885	Integra	9206	APC	1	42	APC
+38000899	Tracheostomy for face,mouth & neck diagnoses w/o CC/MCC	013	MS-DRG	1	40	DRG
+38001181	Major gastrointestinal disorders & peritoneal infections w MCC	371	MS-DRG	1	40	DRG
+38003244	Physical Therapy - Group Rate	0423	Revenue Code	1	43	Revenue Code
+38003439	Peritoneal Dialysis - Outpatient or Home - Home Supplies	0832	Revenue Code	1	43	Revenue Code
+38000914	Ventricular shunt procedures w CC	032	MS-DRG	1	40	DRG
+38001386	Other endocrine, nutrit & metab O.R. proc w/o CC/MCC	630	MS-DRG	1	40	DRG
+38003044	Room & Board - Semi-private Two Bed (Medical or General) - Pediatric	0123	Revenue Code	1	43	Revenue Code
+38001480	Infections, female reproductive system w MCC	757	MS-DRG	1	40	DRG
+38002193	Carboplatin injection	0811	APC	1	42	APC
+38002483	Oral fludarabine phosphate	1339	APC	1	42	APC
+38002845	Paclitaxel protein pr	9127	APC	1	42	APC
+38000902	Intracranial vascular procedures w PDX hemorrhage w MCC	020	MS-DRG	1	40	DRG
+38001979	Fertility Laboratory Procedures	0348	APC	1	42	APC
+38000970	Non-bacterial infect of nervous sys exc viral meningitis w MCC	097	MS-DRG	1	40	DRG
+38003524	Professional Fees - Emergency Room	0981	Revenue Code	1	43	Revenue Code
+38003413	Telemedicine - General	0780	Revenue Code	1	43	Revenue Code
+38001460	Pelvic evisceration, rad hysterectomy & rad vulvectomy w CC/MCC	734	MS-DRG	1	40	DRG
+38001847	Level VI Female Reproductive Procedures	0195	APC	1	42	APC
+38002019	Hematologic Processing & Studies	0393	APC	1	42	APC
+38002942	Romidepsin injection	9265	APC	1	42	APC
+38002788	Caspofungin acetate	9019	APC	1	42	APC
+38002076	High Level Emergency Visits	0612	APC	1	42	APC
+38003496	Other Therapeutic Services - Recreational Therapy	0941	Revenue Code	1	43	Revenue Code
+38002224	Doxorubic hcl chemo	0847	APC	1	42	APC
+38002273	Ganciclovir sodium injection	0907	APC	1	42	APC
+38001671	Level I Incision & Drainage	0006	APC	1	42	APC
+38002304	Gamunex injection	0948	APC	1	42	APC
+38000994	Sinus & mastoid procedures w/o CC/MCC	136	MS-DRG	1	40	DRG
+38002356	Gallium nitrate injection	1085	APC	1	42	APC
+38003036	Room & Board - Private (Medical or General) - Hospice	0115	Revenue Code	1	43	Revenue Code
+38002402	Sincalide injection	1224	APC	1	42	APC
+38003012	Carmus bischl nitro inj	9437	APC	1	42	APC
+38001069	Other cardiothoracic procedures w CC	229	MS-DRG	1	40	DRG
+38001520	Reticuloendothelial & immunity disorders w CC	815	MS-DRG	1	40	DRG
+38000933	Multiple sclerosis & cerebellar ataxia w/o CC/MCC	060	MS-DRG	1	40	DRG
+38002471	Urea injection	1306	APC	1	42	APC
+38002070	Level 3 Hospital Clinic Visits	0606	APC	1	42	APC
+38002391	Antihemophilic viii/vwf comp	1213	APC	1	42	APC
+38001709	Arthroplasty without Prosthesis	0047	APC	1	42	APC
+38002371	I131 iodide sol, rx	1150	APC	1	42	APC
+38002568	New Technology - Level XXIV ($3000-$3500)	1561	APC	1	42	APC
+38003359	Home IV Therapy - IV Start/Change, Peripheral Line	0643	Revenue Code	1	43	Revenue Code
+38002305	Frozen plasma, pooled, sd	0949	APC	1	42	APC
+38001770	Removal/Repair of Implanted Devices	0109	APC	1	42	APC
+38001585	Other O.R. procedures for injuries w MCC	907	MS-DRG	1	40	DRG
+38002963	Injection, belatacept	9286	APC	1	42	APC
+38001176	Other digestive system O.R. procedures w CC	357	MS-DRG	1	40	DRG
+38002778	Palivizumab	9003	APC	1	42	APC
+38001652	Male Reproductive System	12	MDC	2	41	MDC
+38002636	P32 Na phosphate	1675	APC	1	42	APC
+38002326	Cryoprecipitatereducedplasma	1009	APC	1	42	APC
+38001309	Fractures of hip & pelvis w MCC	535	MS-DRG	1	40	DRG
+38002824	Antithymocyte globuln rabbit	9104	APC	1	42	APC
+38003305	Ambulance - Oxygen	0544	Revenue Code	1	43	Revenue Code
+38002034	Level III Tumor/Infection Imaging	0408	APC	1	42	APC
+38002881	Inj octafluoropropane mic,ml	9202	APC	1	42	APC
+38001735	Level IV Endoscopy Upper Airway	0074	APC	1	42	APC
+38000975	Headaches w MCC	102	MS-DRG	1	40	DRG
+38002260	Tacrolimus oral	0891	APC	1	42	APC
+38002429	Gammagraft skin sub	1252	APC	1	42	APC
+38002960	Injection, acetaminophen	9283	APC	1	42	APC
+38001281	Lower extrem & humer proc except hip,foot,femur w MCC	492	MS-DRG	1	40	DRG
+38003512	Professional Fees - Other	0969	Revenue Code	1	43	Revenue Code
+38001773	Apheresis and Stem Cell Procedures	0112	APC	1	42	APC
+38001729	CPAP Initiation	0068	APC	1	42	APC
+38002367	Protein c concentrate	1139	APC	1	42	APC
+38001508	Splenectomy w CC	800	MS-DRG	1	40	DRG
+38003399	EKG/ECG - Holter monitor	0731	Revenue Code	1	43	Revenue Code
+38001998	Therapeutic Phlebotomy	0372	APC	1	42	APC
+38002199	Cytarabine hcl inj	0817	APC	1	42	APC
+38001179	Major esophageal disorders w CC	369	MS-DRG	1	40	DRG
+38001316	Pathological fractures & musculoskelet & conn tiss malig w MCC	542	MS-DRG	1	40	DRG
+38001923	Level II Digestive Radiology	0277	APC	1	42	APC
+38002086	Level III Vascular Access Procedures	0623	APC	1	42	APC
+38003254	Speech-Language Pathology Therapy - Visit charge	0441	Revenue Code	1	43	Revenue Code
+38003312	Skilled Nursing - Visit Charge	0551	Revenue Code	1	43	Revenue Code
+38002513	New Technology - Level VI ($400 - $500)	1506	APC	1	42	APC
+38000952	Hypertensive encephalopathy w/o CC/MCC	079	MS-DRG	1	40	DRG
+38001583	Skin grafts for injuries w/o CC/MCC	905	MS-DRG	1	40	DRG
+38001248	Spinal fusion except cervical w MCC	459	MS-DRG	1	40	DRG
+38001595	Complications of treatment w CC	920	MS-DRG	1	40	DRG
+38003038	Room & Board - Private (Medical or General) - Oncology	0117	Revenue Code	1	43	Revenue Code
+38002268	Injection,onabotulinumtoxinA	0902	APC	1	42	APC
+38002436	Antithrombin iii injection	1263	APC	1	42	APC
+38003089	Newborn - Level IV	0174	Revenue Code	1	43	Revenue Code
+38002994	Cisplatin inj, brand	9418	APC	1	42	APC
+38003486	Other Diagnostic Services - General Classification	0920	Revenue Code	1	43	Revenue Code
+38002012	Level II Prosthetic Urological Procedures	0386	APC	1	42	APC
+38001737	Level I Endoscopy Lower Airway	0076	APC	1	42	APC
+38002794	Rubidium-Rb-82	9025	APC	1	42	APC
+38003247	Occupational Therapy - General classification	0430	Revenue Code	1	43	Revenue Code
+38001696	Partial Hospitalization	0033	APC	1	42	APC
+38002017	Level II Endocrine Imaging	0391	APC	1	42	APC
+38003015	Vinorelbine tar,brand	9440	APC	1	42	APC
+38003516	Professional Fees - Radiology - Therapeutic	0973	Revenue Code	1	43	Revenue Code
+38003231	Other Imaging Services - General classification	0400	Revenue Code	1	43	Revenue Code
+38001660	Alcohol/Drug Use & Alcohol/Drug Induced Organic Mental Disorders	20	MDC	2	41	MDC
+38002492	Matristem wound matrix	1351	APC	1	42	APC
+38001002	Epistaxis w MCC	150	MS-DRG	1	40	DRG
+38002389	Oxytetracycline injection	1211	APC	1	42	APC
+38001730	Thoracoscopy	0069	APC	1	42	APC
+38003108	Intensive Care - Pediatric	0203	Revenue Code	1	43	Revenue Code
+38001594	Complications of treatment w MCC	919	MS-DRG	1	40	DRG
+38001082	Permanent cardiac pacemaker implant w MCC	242	MS-DRG	1	40	DRG
+38001481	Infections, female reproductive system w CC	758	MS-DRG	1	40	DRG
+38001917	Level III Echocardiogram Without Contrast	0270	APC	1	42	APC
+38003554	Alternative Therapy Services - Biofeedback	2105	Revenue Code	1	43	Revenue Code
+38002422	Dermagraft skin sub	1245	APC	1	42	APC
+38002215	Interferon alfa-2b inj	0836	APC	1	42	APC
+38002929	C1 esterase inhibitor inj	9251	APC	1	42	APC
+38001542	Other myeloprolif dis or poorly diff neopl diag w MCC	843	MS-DRG	1	40	DRG
+38003256	Speech-Language Pathology Therapy - Group rate	0443	Revenue Code	1	43	Revenue Code
+38001052	Other respiratory system diagnoses w/o MCC	206	MS-DRG	1	40	DRG
+38002244	IVIG lyophil 10 mg	0870	APC	1	42	APC
+38002147	Tc99m pentetate	0722	APC	1	42	APC
+38003373	Hospice Service - Other	0659	Revenue Code	1	43	Revenue Code
+38001945	Level II Therapeutic Radiation Treatment Preparation	0305	APC	1	42	APC
+38002567	New Technology - Level XXIII ($2500-$3000)	1560	APC	1	42	APC
+38002243	IVIG lyophil 1g	0869	APC	1	42	APC
+38000965	Other disorders of nervous system w CC	092	MS-DRG	1	40	DRG
+38001732	Level I Endoscopy Upper Airway	0071	APC	1	42	APC
+38003140	Pharmacy - Non-generic Drugs	0252	Revenue Code	1	43	Revenue Code
+38003363	Home IV Therapy - Training, Patient/ Caregiver, Peripheral Line	0647	Revenue Code	1	43	Revenue Code
+38002095	Complex Interstitial Radiation Source Application	0651	APC	1	42	APC
+38002445	Fondaparinux sodium	1276	APC	1	42	APC
+38001160	Appendectomy w/o complicated principal diag w MCC	341	MS-DRG	1	40	DRG
+38002945	Capsaicin 8% patch	9268	APC	1	42	APC
+38003192	Radiology - Therapeutic - General Classification	0330	Revenue Code	1	43	Revenue Code
+38001661	Injuries, Poisonings and Toxic Effects of Drugs	21	MDC	2	41	MDC
+38001552	Postoperative or post-traumatic infections w O.R. proc w MCC	856	MS-DRG	1	40	DRG
+38002293	Factor IX recombinant	0932	APC	1	42	APC
+38001693	Level III Breast Surgery	0030	APC	1	42	APC
+38002062	Level VI Drug Administration	0441	APC	1	42	APC
+38001451	Malignancy, male reproductive system w MCC	722	MS-DRG	1	40	DRG
+38001764	Miscellaneous Vascular Procedures	0103	APC	1	42	APC
+38003054	Semi-Private - Three and Four Beds - Pediatric	0133	Revenue Code	1	43	Revenue Code
+38002936	Pralatrexate injection	9259	APC	1	42	APC
+38001228	Cirrhosis & alcoholic hepatitis w CC	433	MS-DRG	1	40	DRG
+38002850	Varicella-zoster ig, im	9135	APC	1	42	APC
+38001289	Soft tissue procedures w MCC	500	MS-DRG	1	40	DRG
+38002398	Calcitonin salmon injection	1220	APC	1	42	APC
+38003464	Other Donor Bank - Organ (other than Kidney)	0892	Revenue Code	1	43	Revenue Code
+38000991	Other ear, nose, mouth & throat O.R. procedures w CC/MCC	133	MS-DRG	1	40	DRG
+38003221	Blood - Plasma	0383	Revenue Code	1	43	Revenue Code
+38000919	Extracranial procedures w MCC	037	MS-DRG	1	40	DRG
+38003506	Other therapeutic services-(940x) Kinesiotherapy	0952	Revenue Code	1	43	Revenue Code
+38003344	Medical/Surgical Supplies - Incident to radiology	0621	Revenue Code	1	43	Revenue Code
+38002751	Teniposide	7035	APC	1	42	APC
+38003561	Adult Care - Foster Care - Daily	3105	Revenue Code	1	43	Revenue Code
+38001759	Injection of Sclerosing Solution	0098	APC	1	42	APC
+38003316	Medical Social Services - Visit Charge	0561	Revenue Code	1	43	Revenue Code
+38002428	Integra flowable wound matri	1251	APC	1	42	APC
+38002584	TL201 thallium	1603	APC	1	42	APC
+38002068	Level 1 Hospital Clinic Visits	0604	APC	1	42	APC
+38001975	Level IV Pathology	0344	APC	1	42	APC
+43125852	AUTOLOGOUS BONE MARROW TRANSPLANT W/O CC/MCC	017	MS-DRG	1	40	DRG
+38001881	Level IV Anterior Segment Eye Procedures	0234	APC	1	42	APC
+38000954	Nontraumatic stupor & coma w/o MCC	081	MS-DRG	1	40	DRG
+38002968	Neuromatrix nerve cuff, cm	9355	APC	1	42	APC
+38002287	Factor VIII (porcine)	0926	APC	1	42	APC
+38001392	Inborn errors of metabolism	642	MS-DRG	1	40	DRG
+38002354	Adalimumab injection	1083	APC	1	42	APC
+38000998	Ear, nose, mouth & throat malignancy w MCC	146	MS-DRG	1	40	DRG
+38002205	Etoposide inj	0824	APC	1	42	APC
+38001113	Acute myocardial infarction, expired w/o CC/MCC	285	MS-DRG	1	40	DRG
+38001225	Other hepatobiliary or pancreas O.R. procedures w CC	424	MS-DRG	1	40	DRG
+38003105	Intensive Care - General Classification	0200	Revenue Code	1	43	Revenue Code
+38000983	Acute major eye infections w/o CC/MCC	122	MS-DRG	1	40	DRG
+38002090	Level 2 Type B Emergency Visits	0627	APC	1	42	APC
+38002278	Injection imiglucerase /unit	0916	APC	1	42	APC
+38001199	G.I. obstruction w CC	389	MS-DRG	1	40	DRG
+38002383	Cyclosporin parenteral	1204	APC	1	42	APC
+38003458	Miscellaneous Dialysis - General Classification	0880	Revenue Code	1	43	Revenue Code
+38003530	Professional Fees -Hospital Visit	0987	Revenue Code	1	43	Revenue Code
+38002752	Urokinase 250,000 IU inj	7036	APC	1	42	APC
+38003537	Patient Convenience Items - Tv/Radio	0994	Revenue Code	1	43	Revenue Code
+38002430	Triamcinolone A inj PRS-free	1253	APC	1	42	APC
+38001237	Disorders of liver except malig,cirr,alc hepa w CC	442	MS-DRG	1	40	DRG
+38002416	Rotavirus vacc 2 dose oral	1239	APC	1	42	APC
+38002007	Single Allergy Tests	0381	APC	1	42	APC
+38002884	Oxaliplatin	9205	APC	1	42	APC
+38002393	Inj iron dextran	1215	APC	1	42	APC
+38003473	Psychiatric/Psychological Trt: Intensive Out Serv - Chem Dep	0906	Revenue Code	1	43	Revenue Code
+38001565	Septicemia or severe sepsis w/o MV 96+ hours w/o MCC	872	MS-DRG	1	40	DRG
+38001974	Level III Pathology	0343	APC	1	42	APC
+38003177	Laboratory - Hematology	0305	Revenue Code	1	43	Revenue Code
+38002493	Wilate injection	1352	APC	1	42	APC
+38001580	Wound debridements for injuries w CC	902	MS-DRG	1	40	DRG
+38003378	Respite Care (HHA only) - Other respite care	0669	Revenue Code	1	43	Revenue Code
+38001789	Level I Closed Treatment Fracture Finger/Toe/Trunk	0129	APC	1	42	APC
+38001622	Other multiple significant trauma w/o CC/MCC	965	MS-DRG	1	40	DRG
+38001597	Other injury, poisoning & toxic effect diag w MCC	922	MS-DRG	1	40	DRG
+38003073	Room & Board Ward (Medical or General) - OB	0152	Revenue Code	1	43	Revenue Code
+38002748	Hemin	7030	APC	1	42	APC
+38001895	Laser Retinal Procedures	0248	APC	1	42	APC
+38001393	Endocrine disorders w MCC	643	MS-DRG	1	40	DRG
+38001448	Other male reproductive system O.R. proc for malignancy w/o CC/MCC	716	MS-DRG	1	40	DRG
+38002596	Basiliximab	1615	APC	1	42	APC
+38001468	Uterine & adnexa proc for non-malignancy w CC/MCC	742	MS-DRG	1	40	DRG
+38001973	Level I Pathology	0342	APC	1	42	APC
+38001134	Cardiac congenital & valvular disorders w MCC	306	MS-DRG	1	40	DRG
+38000892	Liver transplant w/o MCC	006	MS-DRG	1	40	DRG
+38002143	Sm 153 lexidronm	0702	APC	1	42	APC
+38001276	Knee procedures w pdx of infection w/o CC/MCC	487	MS-DRG	1	40	DRG
+38002989	Ganciclovir implant, brand	9412	APC	1	42	APC
+38001232	Malignancy of hepatobiliary system or pancreas w/o CC/MCC	437	MS-DRG	1	40	DRG
+38002284	Gamma globulin 9 CC inj	0923	APC	1	42	APC
+38001102	Cardiac pacemaker revision except device replacement w MCC	260	MS-DRG	1	40	DRG
+38001438	Other kidney & urinary tract diagnoses w/o CC/MCC	700	MS-DRG	1	40	DRG
+38001739	Level III Pulmonary Treatment	0078	APC	1	42	APC
+38001474	Female reproductive system reconstructive procedures	748	MS-DRG	1	40	DRG
+43125855	SKIN DEBRIDEMENT W/O CC/MCC	572	MS-DRG	1	40	DRG
+38002822	Lepirudin	9057	APC	1	42	APC
+38001258	Major joint replacement or reattachment of lower extremity w MCC	469	MS-DRG	1	40	DRG
+38001399	Major bladder procedures w/o CC/MCC	655	MS-DRG	1	40	DRG
+38003499	Other Therapeutic Services - Drug Rehabilitation	0944	Revenue Code	1	43	Revenue Code
+38002401	Pentobarbital sodium inj	1223	APC	1	42	APC
+38002605	Hep b ig, im	1630	APC	1	42	APC
+38002608	Alefacept	1633	APC	1	42	APC
+38001479	Malignancy, female reproductive system w/o CC/MCC	756	MS-DRG	1	40	DRG
+38003337	MRI - Brain (including Brainstem)	0611	Revenue Code	1	43	Revenue Code
+38003205	CT Scan - Head Scan	0351	Revenue Code	1	43	Revenue Code
+38003008	Mitomycin inj, brand	9432	APC	1	42	APC
+38002384	Dimecaprol injection	1206	APC	1	42	APC
+38003236	Other Imaging Services - Other	0409	Revenue Code	1	43	Revenue Code
+38001504	Full term neonate w major problems	793	MS-DRG	1	40	DRG
+38002051	Level III Sigmoidoscopy and Anoscopy	0428	APC	1	42	APC
+38002152	Injection, Meropenem	0729	APC	1	42	APC
+38003102	Subacute care - Level III	0193	Revenue Code	1	43	Revenue Code
+38001901	Level V ENT Procedures	0254	APC	1	42	APC
+38001458	Other male reproductive system diagnoses w CC/MCC	729	MS-DRG	1	40	DRG
+38002982	Th I131 so iodide cap, brand	9402	APC	1	42	APC
+38001679	Level III Debridement & Destruction	0015	APC	1	42	APC
+38001788	Echocardiogram with Contrast	0128	APC	1	42	APC
+38003060	Semi-Private - Three and Four Beds - Other	0139	Revenue Code	1	43	Revenue Code
+38000992	Other ear, nose, mouth & throat O.R. procedures w/o CC/MCC	134	MS-DRG	1	40	DRG
+38002749	Octreotide acetate injection	7031	APC	1	42	APC
+38002129	Revision/Removal of Neurostimulator Electrodes	0687	APC	1	42	APC
+38003096	Leave of Absence - ICF/MR - any reason	0184	Revenue Code	1	43	Revenue Code
+38003138	Pharmacy - General Classification	0250	Revenue Code	1	43	Revenue Code
+38002222	Phentolaine mesylate inj	0845	APC	1	42	APC
+38003103	Subacute care - Level IV	0194	Revenue Code	1	43	Revenue Code
+38002044	Insertion of Left Ventricular Pacing Elect.	0418	APC	1	42	APC
+38001550	Infectious & parasitic diseases w O.R. procedure w CC	854	MS-DRG	1	40	DRG
+38003181	Laboratory Pathological - General Classification	0310	Revenue Code	1	43	Revenue Code
+38002457	AbobotulinumtoxinA	1289	APC	1	42	APC
+38002087	Phlebotomy and Minor Vascular Access Device Procedures	0624	APC	1	42	APC
+38002097	Vascular Reconstruction/Fistula Repair with Device	0653	APC	1	42	APC
+38003470	Psychiatric/Psychological Treatments - Play Therapy	0903	Revenue Code	1	43	Revenue Code
+38001785	Refilling of Infusion Pump	0125	APC	1	42	APC
+38001996	Allergy Tests	0370	APC	1	42	APC
+38003118	Coronary Care - Post-CCU	0214	Revenue Code	1	43	Revenue Code
+38000977	Orbital procedures w CC/MCC	113	MS-DRG	1	40	DRG
+38003461	Miscellaneous Dialysis - Misc. Dialysis Other	0889	Revenue Code	1	43	Revenue Code
+38002253	Pentastarch 10% solution	0880	APC	1	42	APC
+38002207	Floxuridine injection	0827	APC	1	42	APC
+38003117	Coronary Care - Heart Transplant	0213	Revenue Code	1	43	Revenue Code
+38002563	New Technology - Level XIX ($1700-$1800)	1556	APC	1	42	APC
+38002307	Reclast injection	0951	APC	1	42	APC
+38003309	Ambulance - Telephone Transmission EKG	0548	Revenue Code	1	43	Revenue Code
+38003552	Alternative Therapy Services - Massage	2103	Revenue Code	1	43	Revenue Code
+38003131	Incremental Nursing Charge Rate - Hospice	0235	Revenue Code	1	43	Revenue Code
+38003006	Leuprolide acetate inj, bran	9430	APC	1	42	APC
+38002727	Inj metaraminol bitartrate	3039	APC	1	42	APC
+38003025	Total Charge	0001	Revenue Code	1	43	Revenue Code
+38002880	Dermagraft	9201	APC	1	42	APC
+38001422	Renal failure w/o CC/MCC	684	MS-DRG	1	40	DRG
+38003197	Radiology - Therapeutic - Other	0339	Revenue Code	1	43	Revenue Code
+38002089	Level 1 Type B Emergency Visits	0626	APC	1	42	APC
+38001180	Major esophageal disorders w/o CC/MCC	370	MS-DRG	1	40	DRG
+38002053	Drug Preadministration-Related Services	0430	APC	1	42	APC
+38002766	Cyclosporine oral 25 mg	7515	APC	1	42	APC
+38003124	Special Charges - Late Discharge, medically necessary	0224	Revenue Code	1	43	Revenue Code
+38001952	Brachytherapy	0313	APC	1	42	APC
+38001601	Full thickness burn w skin graft or inhal inj w/o CC/MCC	929	MS-DRG	1	40	DRG
+38001340	Other musculoskeletal sys & connective tissue diagnoses w/o CC/MCC	566	MS-DRG	1	40	DRG
+38002774	MRI and MRA without Contrast Composite	8007	APC	1	42	APC
+38002289	Factor ix complex	0928	APC	1	42	APC
+38001507	Splenectomy w MCC	799	MS-DRG	1	40	DRG
+38002476	Canakinumab injection	1311	APC	1	42	APC
+38003239	Respiratory Services - Hyperbaric Oxygen Therapy	0413	Revenue Code	1	43	Revenue Code
+38001432	Urinary stones w/o esw lithotripsy w/o MCC	694	MS-DRG	1	40	DRG
+38001317	Pathological fractures & musculoskelet & conn tiss malig w CC	543	MS-DRG	1	40	DRG
+38000890	Trach w MV 96+ hrs or PDX exc face, mouth & neck w/o maj O.R.	004	MS-DRG	1	40	DRG
+38002589	Eptifibatide injection	1607	APC	1	42	APC
+38002450	Gamma globulin 2 CC inj	1282	APC	1	42	APC
+38003446	CAPD - Outpatient or Home - Home Supplies	0842	Revenue Code	1	43	Revenue Code
+38002612	Hyaluronidase injection	1637	APC	1	42	APC
+38001642	Eye	2	MDC	2	41	MDC
+38003459	Miscellaneous Dialysis - Ultrafiltration	0881	Revenue Code	1	43	Revenue Code
+38001173	Hernia procedures except inguinal & femoral w CC	354	MS-DRG	1	40	DRG
+38002890	Inj, alefacept, IV	9211	APC	1	42	APC
+38001586	Other O.R. procedures for injuries w CC	908	MS-DRG	1	40	DRG
+38002738	Inj milrinone lactate	7007	APC	1	42	APC
+38001305	Other musculoskelet sys & conn tiss O.R. proc w CC	516	MS-DRG	1	40	DRG
+38000929	Degenerative nervous system disorders w MCC	056	MS-DRG	1	40	DRG
+38001475	Other female reproductive system O.R. procedures w CC/MCC	749	MS-DRG	1	40	DRG
+38001842	Level I Hysteroscopy	0190	APC	1	42	APC
+38003491	Other Diagnostic Services - Pregnancy Test	0925	Revenue Code	1	43	Revenue Code
+38003263	Emergency Room - Other	0459	Revenue Code	1	43	Revenue Code
+38001312	Sprains, strains, & dislocations of hip, pelvis & thigh w/o CC/MCC	538	MS-DRG	1	40	DRG
+38002656	Nesiritide injection	1695	APC	1	42	APC
+38003111	Intensive Care - Burn Care	0207	Revenue Code	1	43	Revenue Code
+38002446	Insulin for insulin pump use	1277	APC	1	42	APC
+38003502	Other Therapeutic Services - Complex Medical Equipment - Ancillary	0947	Revenue Code	1	43	Revenue Code
+38002035	Red Blood Cell Tests	0409	APC	1	42	APC
+38002803	Brompheniramine maleate inj	9034	APC	1	42	APC
+38001728	Level III Stereotactic Radiosurgery, MRgFUS, and MEG	0067	APC	1	42	APC
+38003056	Semi-Private - Three and Four Beds - Hospice	0135	Revenue Code	1	43	Revenue Code
+38003273	Echocardiology	0483	Revenue Code	1	43	Revenue Code
+38001414	Transurethral procedures w/o CC/MCC	670	MS-DRG	1	40	DRG
+38001271	Hip & femur procedures except major joint w/o CC/MCC	482	MS-DRG	1	40	DRG
+38001192	Complicated peptic ulcer w/o CC/MCC	382	MS-DRG	1	40	DRG
+38000925	Spinal disorders & injuries w CC/MCC	052	MS-DRG	1	40	DRG
+38001704	Level I Arthroscopy	0041	APC	1	42	APC
+38000947	Cranial & peripheral nerve disorders w/o MCC	074	MS-DRG	1	40	DRG
+38002955	Incobotulinumtoxin A	9278	APC	1	42	APC
+38003507	Professional Fees - General Classification	0960	Revenue Code	1	43	Revenue Code
+38002296	Clonidine hydrochloride	0935	APC	1	42	APC
+38002732	Doxorubic hcl 10 MG vl chemo	3048	APC	1	42	APC
+38000904	Intracranial vascular procedures w PDX hemorrhage w/o CC/MCC	022	MS-DRG	1	40	DRG
+38001373	Amputat of lower limb for endocrine,nutrit,& metabol dis w CC	617	MS-DRG	1	40	DRG
+38003374	Respite Care (HHA only) - General Classification	0660	Revenue Code	1	43	Revenue Code
+38002105	Level V Pathology	0661	APC	1	42	APC
+38001960	Brief Individual Psychotherapy	0322	APC	1	42	APC
+38002343	Thiamine hcl	1049	APC	1	42	APC
+38001142	Other circulatory system diagnoses w MCC	314	MS-DRG	1	40	DRG
+38003242	Physical Therapy - Visit Charge	0421	Revenue Code	1	43	Revenue Code
+38001929	Computed Tomography with Contrast	0283	APC	1	42	APC
+38003452	CCPD - Outpatient or Home - CCPD/Composite or other rate	0851	Revenue Code	1	43	Revenue Code
+38002701	Lead coronary venous	1900	APC	1	42	APC
+38003401	EKG/ECG - Other	0739	Revenue Code	1	43	Revenue Code
+38002862	I123 iodide cap, dx	9148	APC	1	42	APC
+38002872	LOCM >= 400 mg/ml iodine,1ml	9163	APC	1	42	APC
+38001687	Exploration Penetrating Wound	0023	APC	1	42	APC
+38002512	New Technology - Level V ($300 - $400)	1505	APC	1	42	APC
+38002875	Dyphylline injection	9166	APC	1	42	APC
+38002155	Mesna injection	0732	APC	1	42	APC
+38002302	Hepagam b im injection	0946	APC	1	42	APC
+38001249	Spinal fusion except cervical w/o MCC	460	MS-DRG	1	40	DRG
+38002882	Inj perflexane lip micros,ml	9203	APC	1	42	APC
+38002156	Non esrd epoetin alpha inj	0733	APC	1	42	APC
+38001110	Acute myocardial infarction, discharged alive w/o CC/MCC	282	MS-DRG	1	40	DRG
+38002726	Inj biperiden lactate/5 mg	3038	APC	1	42	APC
+38002317	Albumin (human), 5%, 250 ml	0963	APC	1	42	APC
+38001454	Benign prostatic hypertrophy w MCC	725	MS-DRG	1	40	DRG
+38003141	Pharmacy - Take Home Drugs	0253	Revenue Code	1	43	Revenue Code
+38003156	Medical/Surgical Supplies and Devices - Sterile	0272	Revenue Code	1	43	Revenue Code
+38003166	Durable Medical Equipment - General Classification	0290	Revenue Code	1	43	Revenue Code
+38001467	Uterine,adnexa proc for non-ovarian/adnexal malig w/o CC/MCC	741	MS-DRG	1	40	DRG
+38001382	Thyroid, parathyroid & thyroglossal procedures w CC	626	MS-DRG	1	40	DRG
+38003112	Intensive Care - Trauma	0208	Revenue Code	1	43	Revenue Code
+38003182	Laboratory Pathological - Cytology	0311	Revenue Code	1	43	Revenue Code
+38003232	Other Imaging Services - Diagnostic Mammography	0401	Revenue Code	1	43	Revenue Code
+38002378	Acetylcysteine injection	1186	APC	1	42	APC
+38002911	Idursulfase injection	9232	APC	1	42	APC
+38001322	Septic arthritis w MCC	548	MS-DRG	1	40	DRG
+38002316	Albumin (human),5%, 50ml	0961	APC	1	42	APC
+38002972	Implnt,bon void filler-putty	9359	APC	1	42	APC
+38002974	NeuroMend nerve wrap	9361	APC	1	42	APC
+38002551	New Technology - Level VII ($500 - $600)	1544	APC	1	42	APC
+38001925	Level II Angiography and Venography	0279	APC	1	42	APC
+38001818	Level I Cystourethroscopy and other Genitourinary Procedures	0160	APC	1	42	APC
+38001667	Fine Needle Biopsy/Aspiration	0002	APC	1	42	APC
+38002138	Level I Echocardiogram Without Contrast	0697	APC	1	42	APC
+38003009	Thiotepa inj, brand	9433	APC	1	42	APC
+38002889	Palonosetron hcl	9210	APC	1	42	APC
+38003505	Other therapeutic services-(940x) Athletic training	0951	Revenue Code	1	43	Revenue Code
+38002583	Tc99m apcitide	1602	APC	1	42	APC
+38003361	Home IV Therapy - Training Patient/Caregiver,Central Line	0645	Revenue Code	1	43	Revenue Code
+38003346	Itemized Charges for Surgical Dressings	0623	Revenue Code	1	43	Revenue Code
+38002668	Oral dexamethasone	1708	APC	1	42	APC
+38001734	Level III Endoscopy Upper Airway	0073	APC	1	42	APC
+38001850	Pregnancy and Neonatal Care Procedures	0198	APC	1	42	APC
+38000924	Periph/cranial nerve & other nerv syst proc w/o CC/MCC	042	MS-DRG	1	40	DRG
+38002405	Urea injection	1227	APC	1	42	APC
+38002299	Octagam injection	0943	APC	1	42	APC
+38003092	Leave of Absence - General Classification	0180	Revenue Code	1	43	Revenue Code
+38001009	Other ear, nose, mouth & throat diagnoses w CC	155	MS-DRG	1	40	DRG
+38003032	Room & Board - Private (Medical or General) - Medical/Surgical/Gyn	0111	Revenue Code	1	43	Revenue Code
+38001245	Spinal fus exc cerv w spinal curv/malig/infec or 9+ fus w MCC	456	MS-DRG	1	40	DRG
+38001117	Acute & subacute endocarditis w CC	289	MS-DRG	1	40	DRG
+38002468	Inj benztropine mesylate	1302	APC	1	42	APC
+38000961	Concussion w MCC	088	MS-DRG	1	40	DRG
+38003425	Organ Acquisition - Cadaver Donor - Kidney	0812	Revenue Code	1	43	Revenue Code
+38001655	Newborn & Other Neonates (Perinatal Period)	15	MDC	2	41	MDC
+38001493	Postpartum & post abortion diagnoses w/o O.R. procedure	776	MS-DRG	1	40	DRG
+38002694	Tissue localization-excision dev	1819	APC	1	42	APC
+38001436	Other kidney & urinary tract diagnoses w MCC	698	MS-DRG	1	40	DRG
+38001816	Colorectal Cancer Screening: Colonoscopy	0158	APC	1	42	APC
+38003442	Peritoneal Dialysis - Outpatient or Home - Support Services	0835	Revenue Code	1	43	Revenue Code
+38001231	Malignancy of hepatobiliary system or pancreas w CC	436	MS-DRG	1	40	DRG
+38003541	Patient Convenience Items - Beauty Shop/Barber	0998	Revenue Code	1	43	Revenue Code
+38001589	Traumatic injury w/o MCC	914	MS-DRG	1	40	DRG
+38003336	MRI - General Classification	0610	Revenue Code	1	43	Revenue Code
+38002965	Neuragen nerve guide, per cm	9350	APC	1	42	APC
+38001778	Chemotherapy Administration by Infusion Only	0117	APC	1	42	APC
+38003071	Room & Board Ward (Medical or General) - General classification	0150	Revenue Code	1	43	Revenue Code
+38002654	Lepirudin	1693	APC	1	42	APC
+38002139	Level II Eye Tests & Treatments	0698	APC	1	42	APC
+38001177	Other digestive system O.R. procedures w/o CC/MCC	358	MS-DRG	1	40	DRG
+38001532	Myeloprolif disord or poorly diff neopl w other O.R. proc w/o CC/MCC	830	MS-DRG	1	40	DRG
+38002869	LOCM 250-299mg/ml iodine,1ml	9160	APC	1	42	APC
+38001695	Insertion of Central Venous/Arterial Catheter	0032	APC	1	42	APC
+38002991	Etoposide oral, brand	9414	APC	1	42	APC
+38002626	F18 fdg	1651	APC	1	42	APC
+38002245	IVIG non-lyophil 1g	0871	APC	1	42	APC
+38003049	Room & Board - Semi-private Two Bed (Medical or General) - Rehabilitation	0128	Revenue Code	1	43	Revenue Code
+38002524	New Technology - Level XVII ($1500-$1600)	1517	APC	1	42	APC
+38001229	Cirrhosis & alcoholic hepatitis w/o CC/MCC	434	MS-DRG	1	40	DRG
+38002380	TC 99M Sodium Glucoheptonat	1200	APC	1	42	APC
+38002634	Tc99m labeled rbc	1673	APC	1	42	APC
+38001891	Corneal and Amniotic Membrane Transplant	0244	APC	1	42	APC
+38002059	Level III Drug Administration	0438	APC	1	42	APC
+38001063	Cardiac defib implant w cardiac cath w AMI/HF/shock w/o MCC	223	MS-DRG	1	40	DRG
+38003258	Speech-Language Pathology Therapy - Other	0449	Revenue Code	1	43	Revenue Code
+38003471	Psychiatric/Psychological Trt: Activity Therapy	0904	Revenue Code	1	43	Revenue Code
+38002978	Oasis Ultra Tri-Layer Matrix	9365	APC	1	42	APC
+38002564	New Technology - Level XX ($1800-$1900)	1557	APC	1	42	APC
+38001124	Cardiac arrest, unexplained w MCC	296	MS-DRG	1	40	DRG
+38000935	Acute ischemic stroke w use of thrombolytic agent w CC	062	MS-DRG	1	40	DRG
+38003266	Audiology - General Classification	0470	Revenue Code	1	43	Revenue Code
+38002065	Low Level Clinic Visits	0600	APC	1	42	APC
+38003416	Lithotripsy - Other	0799	Revenue Code	1	43	Revenue Code
+38002115	Level III Posterior Segment Eye Procedures	0672	APC	1	42	APC
+38002420	Integra BMWD skin sub	1243	APC	1	42	APC
+38002045	Prolonged Physiologic Monitoring	0421	APC	1	42	APC
+38002091	Level 3 Type B Emergency Visits	0628	APC	1	42	APC
+38002434	Enfuvirtide injection	1257	APC	1	42	APC
+38002950	Sipleucel-T auto CD54+	9273	APC	1	42	APC
+38003281	Clinic - Dental Clinic	0512	Revenue Code	1	43	Revenue Code
+38002515	New Technology - Level VIII ($600 - $700)	1508	APC	1	42	APC
+38002208	Gemcitabine hcl injection	0828	APC	1	42	APC
+38002324	Inj biperiden lactate/5 mg	0998	APC	1	42	APC
+38002559	New Technology - Level XV ($1300 - $1400)	1552	APC	1	42	APC
+38003557	Adult Care - Day Care - Medical And Social - Hourly	3101	Revenue Code	1	43	Revenue Code
+38001041	Simple pneumonia & pleurisy w/o CC/MCC	195	MS-DRG	1	40	DRG
+38002427	Graftjacket express allograf	1250	APC	1	42	APC
+38002264	Gamma globulin 2 CC inj	0898	APC	1	42	APC
+38001514	Major hematol/immun diag exc sickle cell crisis & coagul w CC	809	MS-DRG	1	40	DRG
+38001285	Local excision & removal int fix devices exc hip & femur w CC	496	MS-DRG	1	40	DRG
+38000960	Traumatic stupor & coma, coma <1 hr w/o CC/MCC	087	MS-DRG	1	40	DRG
+38003456	CCPD - Outpatient or Home - Support Services	0855	Revenue Code	1	43	Revenue Code
+38002140	Level IV Eye Tests & Treatments	0699	APC	1	42	APC
+38001546	Chemotherapy w/o acute leukemia as secondary diagnosis w CC	847	MS-DRG	1	40	DRG
+38002623	Technetium tc99m arcitumomab	1648	APC	1	42	APC
+38002119	Thrombolysis and Other Device Revisions	0676	APC	1	42	APC
+38001533	Acute leukemia w/o major O.R. procedure w MCC	834	MS-DRG	1	40	DRG
+38002187	Mecasermin injection	0805	APC	1	42	APC
+38003379	Outpatient Special Residence Charges - General	0670	Revenue Code	1	43	Revenue Code
+38003043	Room & Board - Semi-private Two Bed (Medical or General) - OB	0122	Revenue Code	1	43	Revenue Code
+38003035	Room & Board - Private (Medical or General) - Psychiatric	0114	Revenue Code	1	43	Revenue Code
+38002550	New Technology - Level VI ($400 - $500)	1543	APC	1	42	APC
+38003104	Subacute care - Other	0199	Revenue Code	1	43	Revenue Code
+38002073	Level 1 Type A Emergency Visits	0609	APC	1	42	APC
+38001910	Level I Miscellaneous Radiology Procedures	0263	APC	1	42	APC
+38001146	Stomach, esophageal & duodenal proc w CC	327	MS-DRG	1	40	DRG
+38000918	Carotid artery stent procedure w/o CC/MCC	036	MS-DRG	1	40	DRG
+38001081	Amputation for circ sys disorders exc upper limb & toe w/o CC/MCC	241	MS-DRG	1	40	DRG
+38001669	Level I Needle Biopsy/ Aspiration Except Bone Marrow	0004	APC	1	42	APC
+38003555	Alternative Therapy Services - Hypnosis	2106	Revenue Code	1	43	Revenue Code
+38001670	Level II Needle Biopsy/Aspiration Except Bone Marrow	0005	APC	1	42	APC
+38002893	Bevacizumab injection	9214	APC	1	42	APC
+38002195	Cisplatin injection	0813	APC	1	42	APC
+38003342	MRA - Other	0618	Revenue Code	1	43	Revenue Code
+38002128	Level III Skin Repair	0686	APC	1	42	APC
+38001187	G.I. hemorrhage w MCC	377	MS-DRG	1	40	DRG
+38001922	Level I Digestive Radiology	0276	APC	1	42	APC
+38000969	Bacterial & tuberculous infections of nervous system w/o CC/MCC	096	MS-DRG	1	40	DRG
+38003003	Ifosfomide inj, brand	9427	APC	1	42	APC
+38002680	Brachytx sour, Palladium 103	1720	APC	1	42	APC
+38003345	Medical/Surgical Supplies - Incident to other diagnostic services	0622	Revenue Code	1	43	Revenue Code
+38002632	Ga67 gallium	1671	APC	1	42	APC
+38002491	Topotecan injection	1350	APC	1	42	APC
+38002715	Brachytx, stranded, C-131	2642	APC	1	42	APC
+38001337	Fx, sprn, strn & disl except femur, hip, pelvis & thigh w/o MCC	563	MS-DRG	1	40	DRG
+38001616	Limb reattachment, hip & femur proc for multiple significant trauma	956	MS-DRG	1	40	DRG
+38002460	Cyclosporine oral 100 mg	1292	APC	1	42	APC
+38002927	Certolizumab pegol inj	9249	APC	1	42	APC
+38002969	TenoGlide tendon prot, cm2	9356	APC	1	42	APC
+38001575	Alcohol/drug abuse or dependence, left AMA	894	MS-DRG	1	40	DRG
+38003178	Laboratory - Bacteriology and Microbiology	0306	Revenue Code	1	43	Revenue Code
+38002366	Hepagam b intravenous, inj	1138	APC	1	42	APC
+38003228	Blood Storage and Processing - Blood Administration	0391	Revenue Code	1	43	Revenue Code
+38002386	Factor VIII (porcine)	1208	APC	1	42	APC
+38001219	Laparoscopic cholecystectomy w/o c.d.e. w CC	418	MS-DRG	1	40	DRG
+38002344	Pyridoxine hcl	1050	APC	1	42	APC
+38002983	Dx I131 so iodide cap, brand	9403	APC	1	42	APC
+38003098	Leave of Absence - Other	0189	Revenue Code	1	43	Revenue Code
+38000898	Tracheostomy for face,mouth & neck diagnoses w CC	012	MS-DRG	1	40	DRG
+38002537	New Technology - Level XXX ($6000-$6500)	1530	APC	1	42	APC
+38001453	Malignancy, male reproductive system w/o CC/MCC	724	MS-DRG	1	40	DRG
+38003457	CCPD - Outpatient or Home - Other	0859	Revenue Code	1	43	Revenue Code
+38001189	G.I. hemorrhage w/o CC/MCC	379	MS-DRG	1	40	DRG
+38001614	Other factors influencing health status	951	MS-DRG	1	40	DRG
+38002160	Nitrogen N-13 ammonia	0737	APC	1	42	APC
+38001571	Organic disturbances & mental retardation	884	MS-DRG	1	40	DRG
+38001584	Hand procedures for injuries	906	MS-DRG	1	40	DRG
+38002232	Bleomycin sulfate injection	0857	APC	1	42	APC
+38002069	Level 2 Hospital Clinic Visits	0605	APC	1	42	APC
+38002002	Level II Cardiac Imaging	0376	APC	1	42	APC
+38002894	Cetuximab injection	9215	APC	1	42	APC
+38001796	Level IV Skin Repair	0136	APC	1	42	APC
+38001629	Extensive O.R. procedure unrelated to principal diagnosis w MCC	981	MS-DRG	1	40	DRG
+38003191	Radiology - Diagnostic - Other	0329	Revenue Code	1	43	Revenue Code
+38001026	Respiratory neoplasms w MCC	180	MS-DRG	1	40	DRG
+38002217	Interferon gamma 1-b inj	0838	APC	1	42	APC
+38001966	Computed Tomography without Contrast followed by Contrast	0333	APC	1	42	APC
+38003406	Treatment/Observation Room - General Classification	0760	Revenue Code	1	43	Revenue Code
+38002100	Transcatheter Placement of Intracoronary Drug-Eluting Stents	0656	APC	1	42	APC
+38000967	Bacterial & tuberculous infections of nervous system w MCC	094	MS-DRG	1	40	DRG
+38002853	Hep a/hep b vacc, adult im	9138	APC	1	42	APC
+38001632	Prostatic O.R. procedure unrelated to principal diagnosis w MCC	984	MS-DRG	1	40	DRG
+38002449	Bevacizumab injection	1281	APC	1	42	APC
+38001387	Diabetes w MCC	637	MS-DRG	1	40	DRG
+38003409	Treatment/Observation Room - Other	0769	Revenue Code	1	43	Revenue Code
+38001710	Level I Arthroplasty or Implantation with Prosthesis	0048	APC	1	42	APC
+38002802	Cidofovir injection	9033	APC	1	42	APC
+38000963	Concussion w/o CC/MCC	090	MS-DRG	1	40	DRG
+38001598	Other injury, poisoning & toxic effect diag w/o MCC	923	MS-DRG	1	40	DRG
+38002545	New Technology - Level I ($0 - $50)	1538	APC	1	42	APC
+38002433	Brompheniramine maleate inj	1256	APC	1	42	APC
+38001170	Inguinal & femoral hernia procedures w CC	351	MS-DRG	1	40	DRG
+38001342	Skin graft &/or debrid for skn ulcer or cellulitis w CC	574	MS-DRG	1	40	DRG
+38002933	Paliperidone palmitate inj	9255	APC	1	42	APC
+38002585	In111 capromab	1604	APC	1	42	APC
+38001592	Poisoning & toxic effects of drugs w MCC	917	MS-DRG	1	40	DRG
+38001634	Prostatic O.R. procedure unrelated to principal diagnosis w/o CC/MCC	986	MS-DRG	1	40	DRG
+38002064	Overnight Pulse Oximetry	0443	APC	1	42	APC
+38002481	Antithrombin recombinant	1332	APC	1	42	APC
+38002247	Hyalgan/supartz inj per dose	0873	APC	1	42	APC
+38003210	Operating Room Services - Organ transplant other than Kidney	0362	Revenue Code	1	43	Revenue Code
+38001286	Local excision & removal int fix devices exc hip & femur w/o CC/MCC	497	MS-DRG	1	40	DRG
+38001873	Implantation of Drug Infusion Reservoir	0226	APC	1	42	APC
+38001711	Level I Musculoskeletal Procedures Except Hand and Foot	0049	APC	1	42	APC
+38001635	Non-extensive O.R. proc unrelated to principal diagnosis w MCC	987	MS-DRG	1	40	DRG
+38001483	Menstrual & other female reproductive system disorders w CC/MCC	760	MS-DRG	1	40	DRG
+38002922	Regadenoson injection	9244	APC	1	42	APC
+38001028	Respiratory neoplasms w/o CC/MCC	182	MS-DRG	1	40	DRG
+38000927	Nervous system neoplasms w MCC	054	MS-DRG	1	40	DRG
+38002779	Gemtuzumab ozogamicin inj	9004	APC	1	42	APC
+38001136	Cardiac arrhythmia & conduction disorders w MCC	308	MS-DRG	1	40	DRG
+38001602	Extensive burns or full thickness burns w MV 96+ hrs w/o skin graft	933	MS-DRG	1	40	DRG
+38001782	Level II Tube changes and Repositioning	0122	APC	1	42	APC
+38002912	Ranibizumab injection	9233	APC	1	42	APC
+38001826	Level II Urethral Procedures	0168	APC	1	42	APC
+38002403	Somatrem injection	1225	APC	1	42	APC
+38001703	Percutaneous Implantation of Neurostimulator Electrodes	0040	APC	1	42	APC
+38002261	Edetate calcium disodium inj	0892	APC	1	42	APC
+38002347	I131 iodide cap, rx	1064	APC	1	42	APC
+38003534	Patient Convenience Items - Cafeteria/Guest Tray	0991	Revenue Code	1	43	Revenue Code
+38000908	Craniotomy & endovascular intracranial procedures w CC	026	MS-DRG	1	40	DRG
+38001956	Implantation of Cranial Neurostimulator Pulse Generator and Electrode	0318	APC	1	42	APC
+38002329	Platelets leukocytes reduced	1013	APC	1	42	APC
+38002908	Ibandronate sodium injection	9229	APC	1	42	APC
+38001644	Respiratory System	4	MDC	2	41	MDC
+38001049	Bronchitis & asthma w/o CC/MCC	203	MS-DRG	1	40	DRG
+38002209	Technetium TC-99m aerosol	0829	APC	1	42	APC
+38002350	CO 57/58	1079	APC	1	42	APC
+38001823	Level IV Urinary and Anal Procedures	0165	APC	1	42	APC
+38001224	Other hepatobiliary or pancreas O.R. procedures w MCC	423	MS-DRG	1	40	DRG
+38002658	Pegaptanib sodium injection	1697	APC	1	42	APC
+38002996	Cyclophosphamide inj, brand	9420	APC	1	42	APC
+38001208	Pancreas, liver & shunt procedures w/o CC/MCC	407	MS-DRG	1	40	DRG
+38002339	Aud osseo dev, int/ext comp	1032	APC	1	42	APC
+38001476	Other female reproductive system O.R. procedures w/o CC/MCC	750	MS-DRG	1	40	DRG
+38002773	CT and CTA with Contrast Composite	8006	APC	1	42	APC
+38003275	Ambulatory Surgical Care - General Classification	0490	Revenue Code	1	43	Revenue Code
+38003246	Physical Therapy - Other	0429	Revenue Code	1	43	Revenue Code
+38001534	Acute leukemia w/o major O.R. procedure w CC	835	MS-DRG	1	40	DRG
+38002112	Digital Mammography	0669	APC	1	42	APC
+38002728	Bivalirudin	3041	APC	1	42	APC
+38001080	Amputation for circ sys disorders exc upper limb & toe w CC	240	MS-DRG	1	40	DRG
+38002874	Oral MR contrast, 100 ml	9165	APC	1	42	APC
+38001509	Splenectomy w/o CC/MCC	801	MS-DRG	1	40	DRG
+38001513	Major hematol/immun diag exc sickle cell crisis & coagul w MCC	808	MS-DRG	1	40	DRG
+38002279	Adenosine injection	0917	APC	1	42	APC
+38003079	Room & Board Ward (Medical or General) - Rehabilitation	0158	Revenue Code	1	43	Revenue Code
+38003467	Psychiatric/Psychological Treatments - General Classification	0900	Revenue Code	1	43	Revenue Code
+38003353	Drugs Identification - Erythropoietin (EPO) more than 10,000 units	0635	Revenue Code	1	43	Revenue Code
+38002823	I131 serum albumin, dx	9100	APC	1	42	APC
+38002621	In111 oxyquinoline	1646	APC	1	42	APC
+38002835	Yttrium 90 ibritumomab tiuxetan	9117	APC	1	42	APC
+38001795	Level III Skin Repair	0135	APC	1	42	APC
+38002681	HOCM 250-299mg/ml iodine	1734	APC	1	42	APC
+38003391	Recovery Room - Other	0719	Revenue Code	1	43	Revenue Code
+38001619	Other O.R. procedures for multiple significant trauma w/o CC/MCC	959	MS-DRG	1	40	DRG
+38003472	Psychiatric/Psychological Trt: Intensive Outpatient Serv-Sych	0905	Revenue Code	1	43	Revenue Code
+38003023	Platelets, pheresis	9507	APC	1	42	APC
+38000988	Major head & neck procedures w/o CC/MCC	130	MS-DRG	1	40	DRG
+38000921	Extracranial procedures w/o CC/MCC	039	MS-DRG	1	40	DRG
+38003278	Outpatient Services - Other	0509	Revenue Code	1	43	Revenue Code
+38002369	Primatrix tissue	1141	APC	1	42	APC
+38003238	Respiratory Services - Inhalation Services	0412	Revenue Code	1	43	Revenue Code
+38003066	Private (Deluxe) - Hospice	0145	Revenue Code	1	43	Revenue Code
+38002331	Blood, l/r, froz/degly/wash	1016	APC	1	42	APC
+38002327	Blood, l/r, cmv-neg	1010	APC	1	42	APC
+38003440	Peritoneal Dialysis - Outpatient or Home - Home Equipment	0833	Revenue Code	1	43	Revenue Code
+38002363	Technetium TC 99M Depreotide	1095	APC	1	42	APC
+38002820	Metabolically active tissue	9054	APC	1	42	APC
+38003390	Recovery Room - General Classification	0710	Revenue Code	1	43	Revenue Code
+38001091	Perc cardiovasc proc w/o coronary artery stent w MCC	250	MS-DRG	1	40	DRG
+38001517	Red blood cell disorders w/o MCC	812	MS-DRG	1	40	DRG
+38003176	Laboratory - Non-Routine Dialysis	0304	Revenue Code	1	43	Revenue Code
+38001048	Bronchitis & asthma w CC/MCC	202	MS-DRG	1	40	DRG
+38001416	Urethral procedures w/o CC/MCC	672	MS-DRG	1	40	DRG
+38001930	Magnetic Resonance Imaging and Magnetic Resonance Angiography with Contrast	0284	APC	1	42	APC
+38002088	Level IV Vascular Access Procedures	0625	APC	1	42	APC
+38001835	Circumcision	0180	APC	1	42	APC
+38002345	Injection, voriconazole	1052	APC	1	42	APC
+38001995	Level III Pulmonary Tests	0369	APC	1	42	APC
+38002239	Interferon alfa-n3 inj	0865	APC	1	42	APC
+38003510	Professional Fees - Anesthesiologist (MD)	0963	Revenue Code	1	43	Revenue Code
+38001772	Blood Product Exchange	0111	APC	1	42	APC
+38000934	Acute ischemic stroke w use of thrombolytic agent w MCC	061	MS-DRG	1	40	DRG
+38001421	Renal failure w CC	683	MS-DRG	1	40	DRG
+38002784	Arsenic trioxide injection	9012	APC	1	42	APC
+38002690	FDG, per dose (4-40 mCi/ml)	1775	APC	1	42	APC
+38003437	Peritoneal Dialysis - Outpatient or Home - General Classification	0830	Revenue Code	1	43	Revenue Code
+38001646	Digestive System	6	MDC	2	41	MDC
+38001157	Appendectomy w complicated principal diag w MCC	338	MS-DRG	1	40	DRG
+38001638	Principal diagnosis invalid as discharge diagnosis	998	MS-DRG	1	40	DRG
+38003335	Oxygen (Home Health) - Other oxygen	0609	Revenue Code	1	43	Revenue Code
+38002370	Supprelin LA implant	1142	APC	1	42	APC
+38002250	Caffeine citrate injection	0876	APC	1	42	APC
+38003514	Professional Fees - Laboratory	0971	Revenue Code	1	43	Revenue Code
+38002716	Brachytx, non-stranded,C-131	2643	APC	1	42	APC
+38001367	Trauma to the skin, subcut tiss & breast w/o MCC	605	MS-DRG	1	40	DRG
+38002677	Brachytx, non-str, HDR Ir-192	1717	APC	1	42	APC
+38001456	Inflammation of the male reproductive system w MCC	727	MS-DRG	1	40	DRG
+38001753	Level I Vascular Ligation	0092	APC	1	42	APC
+38002387	Diethylstilbestrol injection	1209	APC	1	42	APC
+38002579	New Technology - Level XXXV ($8500-$9000)	1572	APC	1	42	APC
+38003162	Medical/Surgical Supplies and Devices - Other Implants	0278	Revenue Code	1	43	Revenue Code
+38001599	Extensive burns or full thickness burns w MV 96+ hrs w skin graft	927	MS-DRG	1	40	DRG
+38002763	Leuprolide acetate implant	7051	APC	1	42	APC
+38002635	Tc99m mertiatide	1674	APC	1	42	APC
+38001624	HIV w extensive O.R. procedure w/o MCC	970	MS-DRG	1	40	DRG
+38003438	Peritoneal Dialysis - Outpatient or Home - Peritoneal Composite or other rate	0831	Revenue Code	1	43	Revenue Code
+38001957	Endovascular Revascularization of the Lower Extremity	0319	APC	1	42	APC
+38001588	Traumatic injury w MCC	913	MS-DRG	1	40	DRG
+38002646	Darbepoetin alfa, non-esrd	1685	APC	1	42	APC
+38003240	Respiratory Services - Other	0419	Revenue Code	1	43	Revenue Code
+38001116	Acute & subacute endocarditis w MCC	288	MS-DRG	1	40	DRG
+38002474	Paclitaxel injection	1309	APC	1	42	APC
+38001999	Level I Neuropsychological Testing	0373	APC	1	42	APC
+38002642	Amikacin sulfate injection	1681	APC	1	42	APC
+38002938	Ustekinumab injection	9261	APC	1	42	APC
+38002876	Valrubicin, 200 mg	9167	APC	1	42	APC
+38001630	Extensive O.R. procedure unrelated to principal diagnosis w CC	982	MS-DRG	1	40	DRG
+38001625	HIV w major related condition w MCC	974	MS-DRG	1	40	DRG
+38002821	Injectable human tissue	9055	APC	1	42	APC
+38002525	New Technology - Level XVIII ($1600-$1700)	1518	APC	1	42	APC
+38002790	Immune globulin 10 mg	9021	APC	1	42	APC
+38001851	Obstetrical Care Service	0199	APC	1	42	APC
+38002235	Leuprolide acetate injeciton	0861	APC	1	42	APC
+38002162	Tc99m depreotide	0739	APC	1	42	APC
+38001535	Acute leukemia w/o major O.R. procedure w/o CC/MCC	836	MS-DRG	1	40	DRG
+38002813	Iron sucrose injection	9046	APC	1	42	APC
+38002183	Ondansetron hcl 8 mg oral	0769	APC	1	42	APC
+38001242	Combined anterior/posterior spinal fusion w MCC	453	MS-DRG	1	40	DRG
+38003005	Idarubicin hcl inj, brand	9429	APC	1	42	APC
+38001023	Respiratory infections & inflammations w MCC	177	MS-DRG	1	40	DRG
+38002178	Granisetron hcl injection	0764	APC	1	42	APC
+38002509	New Technology - Level II ($50 - $100)	1502	APC	1	42	APC
+38001426	Kidney & urinary tract neoplasms w/o CC/MCC	688	MS-DRG	1	40	DRG
+38002926	Inj, clevidipine butyrate	9248	APC	1	42	APC
+38001378	Skin grafts & wound debrid for endoc, nutrit & metab dis w MCC	622	MS-DRG	1	40	DRG
+38003291	Free-Standing Clinic - Family Practice	0523	Revenue Code	1	43	Revenue Code
+38001527	Lymphoma & non-acute leukemia w other O.R. proc w/o CC/MCC	825	MS-DRG	1	40	DRG
+38003262	Urgent Care	0456	Revenue Code	1	43	Revenue Code
+38001079	Amputation for circ sys disorders exc upper limb & toe w MCC	239	MS-DRG	1	40	DRG
+38002756	Tirofiban HCl	7041	APC	1	42	APC
+38001099	Upper limb & toe amputation for circ system disorders w/o CC/MCC	257	MS-DRG	1	40	DRG
+38001413	Transurethral procedures w CC	669	MS-DRG	1	40	DRG
+38001265	Amputation for musculoskeletal sys & conn tissue dis w/o CC/MCC	476	MS-DRG	1	40	DRG
+38000946	Cranial & peripheral nerve disorders w MCC	073	MS-DRG	1	40	DRG
+38002711	Brachytx, stranded, I-125	2638	APC	1	42	APC
+38002213	Interferon alfa-2a inj	0834	APC	1	42	APC
+38003289	Free-Standing Clinic - Rural Health-Clinic	0521	Revenue Code	1	43	Revenue Code
+38001247	Spinal fus exc cerv w spinal curv/malig/infec or 9+ fus w/o CC/MCC	458	MS-DRG	1	40	DRG
+38001250	Bilateral or multiple major joint procs of lower extremity w MCC	461	MS-DRG	1	40	DRG
+38001626	HIV w major related condition w CC	975	MS-DRG	1	40	DRG
+38003314	Skilled Nursing - Other	0559	Revenue Code	1	43	Revenue Code
+38002630	Tinzaparin sodium injection	1655	APC	1	42	APC
+38003031	Room & Board - Private (Medical or General) - General classification	0110	Revenue Code	1	43	Revenue Code
+38002263	Deferoxamine mesylate inj	0895	APC	1	42	APC
+38002233	Inj cladribine	0858	APC	1	42	APC
+38001194	Uncomplicated peptic ulcer w/o MCC	384	MS-DRG	1	40	DRG
+38001226	Other hepatobiliary or pancreas O.R. procedures w/o CC/MCC	425	MS-DRG	1	40	DRG
+38003220	Blood - Whole Blood	0382	Revenue Code	1	43	Revenue Code
+38002645	Corticorelin ovine triflutal	1684	APC	1	42	APC
+38003338	MRI - Spinal Cord (including Spine)	0612	Revenue Code	1	43	Revenue Code
+38002939	Oral Fludarabine phosphate	9262	APC	1	42	APC
+38002172	Mechlorethamine hcl inj	0751	APC	1	42	APC
+38001531	Myeloprolif disord or poorly diff neopl w other O.R. proc w CC/MCC	829	MS-DRG	1	40	DRG
+38001831	Level II Partial Hospitalization (4 or more services) for CMHCs	0173	APC	1	42	APC
+38001556	Postoperative & post-traumatic infections w/o MCC	863	MS-DRG	1	40	DRG
+38002093	Level 5 Type B Emergency Visits	0630	APC	1	42	APC
+38001827	Lithotripsy	0169	APC	1	42	APC
+38001366	Trauma to the skin, subcut tiss & breast w MCC	604	MS-DRG	1	40	DRG
+38001385	Other endocrine, nutrit & metab O.R. proc w CC	629	MS-DRG	1	40	DRG
+38001582	Skin grafts for injuries w CC/MCC	904	MS-DRG	1	40	DRG
+38001934	Needle Localization for Breast Biopsy	0289	APC	1	42	APC
+38001319	Connective tissue disorders w MCC	545	MS-DRG	1	40	DRG
+38002846	Inj pegaptamib sodium	9128	APC	1	42	APC
+38001346	Skin graft &/or debrid exc for skin ulcer or cellulitis w/o CC/MCC	578	MS-DRG	1	40	DRG
+38001396	Kidney transplant	652	MS-DRG	1	40	DRG
+38001627	HIV w major related condition w/o CC/MCC	976	MS-DRG	1	40	DRG
+38001472	Vagina, cervix & vulva procedures w CC/MCC	746	MS-DRG	1	40	DRG
+38003509	Professional Fees - Ophthalmology	0962	Revenue Code	1	43	Revenue Code
+38002832	Nesiritide	9114	APC	1	42	APC
+38001478	Malignancy, female reproductive system w CC	755	MS-DRG	1	40	DRG
+38000936	Acute ischemic stroke w use of thrombolytic agent w/o CC/MCC	063	MS-DRG	1	40	DRG
+38002026	Hematopoietic Imaging	0400	APC	1	42	APC
+38003243	Physical Therapy - Hourly Charge	0422	Revenue Code	1	43	Revenue Code
+38003480	Psychiatric/Psychological Services - Individual Therapy	0914	Revenue Code	1	43	Revenue Code
+38003522	Professional Fees - Speech Pathology	0979	Revenue Code	1	43	Revenue Code
+38001293	Foot procedures w CC	504	MS-DRG	1	40	DRG
+38001941	Level II Radiation Therapy	0301	APC	1	42	APC
+38002544	New Technology - Level XXXVII ($9500-$10000)	1537	APC	1	42	APC
+38002851	Adenovirus vaccine, type 4	9136	APC	1	42	APC
+38003126	Incremental Nursing Charge Rate - General Classification	0230	Revenue Code	1	43	Revenue Code
+38002546	New Technology - Level II ($50 - $100)	1539	APC	1	42	APC
+38003148	IV Therapy - General classification	0260	Revenue Code	1	43	Revenue Code
+38002308	Cryoprecipitate each unit	0952	APC	1	42	APC
+38003466	Other Donor Bank - Other	0899	Revenue Code	1	43	Revenue Code
+38001437	Other kidney & urinary tract diagnoses w CC	699	MS-DRG	1	40	DRG
+38003562	Adult Care - Other	3109	Revenue Code	1	43	Revenue Code
+38003020	RBC deglycerolized	9504	APC	1	42	APC
+38003451	CCPD - Outpatient or Home - General Classification	0850	Revenue Code	1	43	Revenue Code
+38000964	Other disorders of nervous system w MCC	091	MS-DRG	1	40	DRG
+38001328	Bone diseases & arthropathies w/o MCC	554	MS-DRG	1	40	DRG
+38001853	Level VI Female Reproductive Proc	0201	APC	1	42	APC
+38001332	Tendonitis, myositis & bursitis w/o MCC	558	MS-DRG	1	40	DRG
+38002075	Mid Level Emergency Visits	0611	APC	1	42	APC
+38002693	Integrated keratoprosthesis	1818	APC	1	42	APC
+38002084	Level I Vascular Access Procedures	0621	APC	1	42	APC
+38002227	Streptozocin injection	0850	APC	1	42	APC
+38003187	Radiology - Diagnostic - Angiocardiography	0321	Revenue Code	1	43	Revenue Code
+38003225	Blood - Other derivatives (Cryopricipitates)	0387	Revenue Code	1	43	Revenue Code
+38001352	Breast biopsy, local excision & other breast procedures w CC/MCC	584	MS-DRG	1	40	DRG
+38001779	Implantation of Infusion Pump	0119	APC	1	42	APC
+38002957	Injection, eribulin mesylate	9280	APC	1	42	APC
+38001005	Otitis media & URI w/o MCC	153	MS-DRG	1	40	DRG
+38001540	Lymphoma & non-acute leukemia w CC	841	MS-DRG	1	40	DRG
+38001898	Level II ENT Procedures	0251	APC	1	42	APC
+38002467	Gadofosveset trisodium inj	1299	APC	1	42	APC
+38002280	Gamma globulin 5 CC inj	0919	APC	1	42	APC
+38002883	Ziprasidone mesylate	9204	APC	1	42	APC
+38003441	Peritoneal Dialysis - Outpatient or Home - Maintenance/100%	0834	Revenue Code	1	43	Revenue Code
+38001334	Aftercare, musculoskeletal system & connective tissue w CC	560	MS-DRG	1	40	DRG
+38000906	Cranio w major dev impl/acute complex CNS PDX w/o MCC	024	MS-DRG	1	40	DRG
+38002206	Nelarabine injection	0825	APC	1	42	APC
+38003001	Etoposide inj, brand	9425	APC	1	42	APC
+38001191	Complicated peptic ulcer w CC	381	MS-DRG	1	40	DRG
+38003052	Semi-Private - Three and Four Beds - Medical/Surgical/Gyn	0131	Revenue Code	1	43	Revenue Code
+38003307	Ambulance - Neonatal Ambulance Services	0546	Revenue Code	1	43	Revenue Code
+38003274	Cardiology - Other	0489	Revenue Code	1	43	Revenue Code
+38003488	Other Diagnostic Services - Electromyelgram	0922	Revenue Code	1	43	Revenue Code
+38001887	Level III Repair and Plastic Eye Procedures	0240	APC	1	42	APC
+38002506	New Technology - Level ID($30-$40)	1499	APC	1	42	APC
+38002837	Injection, pegfilgrastim 6mg	9119	APC	1	42	APC
+38003222	Blood - Platelets	0384	Revenue Code	1	43	Revenue Code
+38001685	Level III Excision/ Biopsy	0021	APC	1	42	APC
+38001820	Level III Cystourethroscopy and other Genitourinary Procedures	0162	APC	1	42	APC
+38002072	Level 5 Hospital Clinic Visits	0608	APC	1	42	APC
+38001814	Level III Urinary and Anal Procedures	0156	APC	1	42	APC
+38001425	Kidney & urinary tract neoplasms w CC	687	MS-DRG	1	40	DRG
+38001967	Magnetic Resonance Imaging, Miscellaneous	0335	APC	1	42	APC
+38001577	Alcohol/drug abuse or dependence w/o rehabilitation therapy w MCC	896	MS-DRG	1	40	DRG
+43125851	AUTOLOGOUS BONE MARROW TRANSPLANT W CC/MCC	016	MS-DRG	1	40	DRG
+38002151	Filgrastim 300 mcg injection	0728	APC	1	42	APC
+38002628	I125 iothalamate, dx	1653	APC	1	42	APC
+38002458	Human fibrinogen conc inj	1290	APC	1	42	APC
+38001466	Uterine,adnexa proc for non-ovarian/adnexal malig w CC	740	MS-DRG	1	40	DRG
+38001341	Skin graft &/or debrid for skn ulcer or cellulitis w MCC	573	MS-DRG	1	40	DRG
+38001095	Other vascular procedures w CC	253	MS-DRG	1	40	DRG
+38003493	Medical rehab - half day	0931	Revenue Code	1	43	Revenue Code
+38003427	Organ Acquisition - Other Kidney Acquisition	0814	Revenue Code	1	43	Revenue Code
+38002484	Collagenase, clost hist inj	1340	APC	1	42	APC
+38003492	Other Diagnostic Services - Other	0929	Revenue Code	1	43	Revenue Code
+38000978	Orbital procedures w/o CC/MCC	114	MS-DRG	1	40	DRG
+38002971	SurgiMend, fetal	9358	APC	1	42	APC
+38002412	Valrubicin injection	1235	APC	1	42	APC
+38002310	Plasma, frz between 8-24hour	0955	APC	1	42	APC
+38000909	Craniotomy & endovascular intracranial procedures w/o CC/MCC	027	MS-DRG	1	40	DRG
+38001037	Chronic obstructive pulmonary disease w CC	191	MS-DRG	1	40	DRG
+38002042	Level I Intravascular and Intracardiac Ultrasound and Flow Reserve	0416	APC	1	42	APC
+38003526	Professional Fees - Clinic	0983	Revenue Code	1	43	Revenue Code
+38001899	Level III ENT Procedures	0252	APC	1	42	APC
+38001664	Multiple Significant Trauma	24	MDC	2	41	MDC
+38002464	Degarelix injection	1296	APC	1	42	APC
+38001473	Vagina, cervix & vulva procedures w/o CC/MCC	747	MS-DRG	1	40	DRG
+38001559	Viral illness w/o MCC	866	MS-DRG	1	40	DRG
+38001496	Abortion w/o D&C	779	MS-DRG	1	40	DRG
+38002641	Acetylcysteine injection	1680	APC	1	42	APC
+38002798	Amiodarone HCl	9029	APC	1	42	APC
+38001331	Tendonitis, myositis & bursitis w MCC	557	MS-DRG	1	40	DRG
+38002470	Apligraf	1305	APC	1	42	APC
+38001978	Level III Transfusion Laboratory Procedures	0347	APC	1	42	APC
+38003407	Treatment/Observation Room - Treatment Room	0761	Revenue Code	1	43	Revenue Code
+38001958	Electroconvulsive Therapy	0320	APC	1	42	APC
+38003475	Psychiatric/Psychological Treatments - Other	0909	Revenue Code	1	43	Revenue Code
+38001287	Local excision & removal int fix devices of hip & femur w CC/MCC	498	MS-DRG	1	40	DRG
+38001345	Skin graft &/or debrid exc for skin ulcer or cellulitis w CC	577	MS-DRG	1	40	DRG
+38001097	Upper limb & toe amputation for circ system disorders w MCC	255	MS-DRG	1	40	DRG
+38001450	Other male reproductive system O.R. proc exc malignancy w/o CC/MCC	718	MS-DRG	1	40	DRG
+38001159	Appendectomy w complicated principal diag w/o CC/MCC	340	MS-DRG	1	40	DRG
+38001674	Nail Procedures	0009	APC	1	42	APC
+38002899	Sodium hyaluronate	9220	APC	1	42	APC
+38001608	Rehabilitation w CC/MCC	945	MS-DRG	1	40	DRG
+38002554	New Technology - Level X ($800 - $900)	1547	APC	1	42	APC
+38003397	Labor Room/Delivery - Other	0729	Revenue Code	1	43	Revenue Code
+38002083	Critical Care	0620	APC	1	42	APC
+38002528	New Technology - Level XXI ($1900-$2000)	1521	APC	1	42	APC
+38003334	Oxygen (Home Health) - Portable add-on	0604	Revenue Code	1	43	Revenue Code
+38001206	Pancreas, liver & shunt procedures w MCC	405	MS-DRG	1	40	DRG
+38001570	Disorders of personality & impulse control	883	MS-DRG	1	40	DRG
+38000943	Nonspecific cerebrovascular disorders w MCC	070	MS-DRG	1	40	DRG
+38002016	Level I Endocrine Imaging	0390	APC	1	42	APC
+38000948	Viral meningitis w CC/MCC	075	MS-DRG	1	40	DRG
+38001590	Allergic reactions w MCC	915	MS-DRG	1	40	DRG
+38001195	Inflammatory bowel disease w MCC	385	MS-DRG	1	40	DRG
+38002999	Dacarbazine inj, brand	9423	APC	1	42	APC
+38002781	Tacrolimus injection	9006	APC	1	42	APC
+38003213	Anesthesia - General Classification	0370	Revenue Code	1	43	Revenue Code
+38002661	Inj secretin synthetic human	1700	APC	1	42	APC
+38002432	Rotovirus vacc 3 dose, oral	1255	APC	1	42	APC
+38002542	New Technology - Level XXXV ($8500-$9000)	1535	APC	1	42	APC
+38002404	Inj streptokinase /250000 IU	1226	APC	1	42	APC
+38002407	Nabilone oral	1230	APC	1	42	APC
+38002157	Injection, darbepoetin alfa (for non-ESRD), per 1 mcg	0734	APC	1	42	APC
+38000962	Concussion w CC	089	MS-DRG	1	40	DRG
+38002789	Sirolimus, oral	9020	APC	1	42	APC
+38003431	Hemodialysis - Outpatient or Home - Hemodialysis/Composite or other rate	0821	Revenue Code	1	43	Revenue Code
+38002285	Gamma globulin 10 CC inj	0924	APC	1	42	APC
+38002745	Ethanolamine oleate	7026	APC	1	42	APC
+38002163	Tc99m gluceptate	0740	APC	1	42	APC
+38001829	Level V Anal/Rectal Procedures	0171	APC	1	42	APC
+38003487	Other Diagnostic Services - Peripheral Vascular Lab	0921	Revenue Code	1	43	Revenue Code
+38003172	Laboratory - General Classification	0300	Revenue Code	1	43	Revenue Code
+38002902	Inj adenosine, tx dx	9223	APC	1	42	APC
+38001947	Myocardial Positron Emission Tomography (PET) imaging	0307	APC	1	42	APC
+38001054	Respiratory system diagnosis w ventilator support <96 hours	208	MS-DRG	1	40	DRG
+38002986	Dx I-123 ioflupane, per dose	9406	APC	1	42	APC
+38002917	Inj, levetiracetam	9238	APC	1	42	APC
+38002817	Na ferric gluconate complex	9050	APC	1	42	APC
+38001356	Skin ulcers w/o CC/MCC	594	MS-DRG	1	40	DRG
+38002783	Baclofen refill kit - per 2000 mcg	9009	APC	1	42	APC
+38003453	CCPD - Outpatient or Home - Home Supplies	0852	Revenue Code	1	43	Revenue Code
+38002600	Technetium tc99m mertiatide	1622	APC	1	42	APC
+38001301	Shoulder,elbow or forearm proc,exc major joint proc w/o CC/MCC	512	MS-DRG	1	40	DRG
+38001725	Level III Treatment Fracture/Dislocation	0064	APC	1	42	APC
+38003133	All Inclusive Ancillary - General Classification	0240	Revenue Code	1	43	Revenue Code
+38001327	Bone diseases & arthropathies w MCC	553	MS-DRG	1	40	DRG
+38002399	Dimethyl sulfoxide 50%	1221	APC	1	42	APC
+38001718	Level II Foot Musculoskeletal Procedures	0056	APC	1	42	APC
+38002118	Prostatic Thermotherapy	0675	APC	1	42	APC
+38002719	Pralidoxime chloride inj	2730	APC	1	42	APC
+38003403	EEG - Other	0749	Revenue Code	1	43	Revenue Code
+38003217	Anesthesia - Other Anesthesia	0379	Revenue Code	1	43	Revenue Code
+38001569	Neuroses except depressive	882	MS-DRG	1	40	DRG
+38002189	Aldesleukin injection	0807	APC	1	42	APC
+38003376	Respite Care (HHA only) - Hourly Charge/Home Health Aide/Homemaker	0662	Revenue Code	1	43	Revenue Code
+38003065	Private (Deluxe) - Psychiatric	0144	Revenue Code	1	43	Revenue Code
+38003110	Intensive Care - Post ICU	0206	Revenue Code	1	43	Revenue Code
+38002191	Bcg live intravesical vac	0809	APC	1	42	APC
+38002805	Dimethyl sulfoxide 50%	9036	APC	1	42	APC
+38003084	Other Room & Board - Other	0169	Revenue Code	1	43	Revenue Code
+38002739	Oprelvekin injection	7011	APC	1	42	APC
+38001055	Other heart assist system implant	215	MS-DRG	1	40	DRG
+38002757	Capecitabine, oral	7042	APC	1	42	APC
+38002712	Brachytx, non-stranded,I-125	2639	APC	1	42	APC
+38001821	Level IV Cystourethroscopy and other Genitourinary Procedures	0163	APC	1	42	APC
+38002667	Non-human, metabolic tissue	1707	APC	1	42	APC
+38001148	Major small & large bowel procedures w MCC	329	MS-DRG	1	40	DRG
+38003069	Private (Deluxe) - Rehabilitation	0148	Revenue Code	1	43	Revenue Code
+38003352	Drugs Identification - Erythropoietin (EPO) less than 10,000 units	0634	Revenue Code	1	43	Revenue Code
+38002221	Pentostatin injection	0844	APC	1	42	APC
+38002539	New Technology - Level XXXII ($7000-$7500)	1532	APC	1	42	APC
+38002141	Antepartum Manipulation	0700	APC	1	42	APC
+38002447	Factor VIII (porcine)	1279	APC	1	42	APC
+38002591	Rho(D) immune globulin h, sd	1609	APC	1	42	APC
+38002419	Oasis burn matrix skin sub	1242	APC	1	42	APC
+38002592	Hylan G-F 20 injection	1611	APC	1	42	APC
+38002937	Ofatumumab injection	9260	APC	1	42	APC
+38003432	Hemodialysis - Outpatient or Home supplies	0822	Revenue Code	1	43	Revenue Code
+38001748	Cardiac Electrophysiologic Recording/Mapping	0087	APC	1	42	APC
+38002777	Tenecteplase injection	9002	APC	1	42	APC
+38002964	Omalizumab injection	9300	APC	1	42	APC
+38002202	Daunorubicin citrate inj	0821	APC	1	42	APC
+38000937	Intracranial hemorrhage or cerebral infarction w MCC	064	MS-DRG	1	40	DRG
+38002182	Ondansetron hcl injection	0768	APC	1	42	APC
+38001251	Bilateral or multiple major joint procs of lower extremity w/o MCC	462	MS-DRG	1	40	DRG
+38001410	Prostatectomy w CC	666	MS-DRG	1	40	DRG
+38001750	Insertion/Replacement of Permanent Pacemaker and Electrodes	0089	APC	1	42	APC
+38001742	Non-Coronary Angioplasty or Atherectomy	0081	APC	1	42	APC
+38001988	Contact Lens and Spectacle Services	0362	APC	1	42	APC
+38002699	Embolization Protect syst	1884	APC	1	42	APC
+38002520	New Technology - Level XIII ($1100 - $1200)	1513	APC	1	42	APC
+38002903	Galsulfase injection	9224	APC	1	42	APC
+38001541	Lymphoma & non-acute leukemia w/o CC/MCC	842	MS-DRG	1	40	DRG
+38002085	Level II Vascular Access Procedures	0622	APC	1	42	APC
+38003223	Blood - Leucocytes	0385	Revenue Code	1	43	Revenue Code
+38002577	New Technology - Level XXXIII ($7500-$8000)	1570	APC	1	42	APC
+38001722	Laminectomy, Laparoscopy, or Incision for Implantation of Neurostimulator Electr	0061	APC	1	42	APC
+38002987	Dexrazoxane HCl inj, brand	9410	APC	1	42	APC
+38001909	Plain Film of Teeth	0262	APC	1	42	APC
+38002487	Penicillin g procaine inj	1346	APC	1	42	APC
+38001395	Endocrine disorders w/o CC/MCC	645	MS-DRG	1	40	DRG
+38001024	Respiratory infections & inflammations w CC	178	MS-DRG	1	40	DRG
+38001547	Chemotherapy w/o acute leukemia as secondary diagnosis w/o CC/MCC	848	MS-DRG	1	40	DRG
+38002740	Oral busulfan	7015	APC	1	42	APC
+38002574	New Technology - Level XXX ($6000-$6500)	1567	APC	1	42	APC
+38001147	Stomach, esophageal & duodenal proc w/o CC/MCC	328	MS-DRG	1	40	DRG
+38002337	RBC, l/r, cmv-neg, irrad	1022	APC	1	42	APC
+38001144	Other circulatory system diagnoses w/o CC/MCC	316	MS-DRG	1	40	DRG
+38003371	Hospice Service - Physician Services	0657	Revenue Code	1	43	Revenue Code
+38002840	Triptorelin pamoate	9122	APC	1	42	APC
+38002223	Cilastatin sodium injection	0846	APC	1	42	APC
+38001253	Wnd debrid & skn grft exc hand, for musculo-conn tiss dis w CC	464	MS-DRG	1	40	DRG
+38002870	LOCM 300-349mg/ml iodine,1ml	9161	APC	1	42	APC
+38000893	Lung transplant	007	MS-DRG	1	40	DRG
+38002306	Whole blood for transfusion	0950	APC	1	42	APC
+38001659	Mental Diseases & Disorders	19	MDC	2	41	MDC
+38001567	Acute adjustment reaction & psychosocial dysfunction	880	MS-DRG	1	40	DRG
+38003233	Other Imaging Services - Ultrasound	0402	Revenue Code	1	43	Revenue Code
+38002463	Sm 153 lexidronam	1295	APC	1	42	APC
+38002684	HOCM>= 400mg/ml iodine	1737	APC	1	42	APC
+38002498	New Technology - Level IA ($0-$10)	1491	APC	1	42	APC
+38001217	Cholecystectomy except by laparoscope w/o c.d.e. w/o CC/MCC	416	MS-DRG	1	40	DRG
+38001516	Red blood cell disorders w MCC	811	MS-DRG	1	40	DRG
+38001433	Kidney & urinary tract signs & symptoms w MCC	695	MS-DRG	1	40	DRG
+38001213	Cholecystectomy w c.d.e. w CC	412	MS-DRG	1	40	DRG
+38001918	Mammography	0271	APC	1	42	APC
+38001867	Level I Nerve Procedures	0220	APC	1	42	APC
+38001690	Level IV Skin Repair	0027	APC	1	42	APC
+38003429	Organ Acquisition - Other Organ Acquisition	0819	Revenue Code	1	43	Revenue Code
+38002604	Nonmetabolic act d/e tissue	1629	APC	1	42	APC
+38002109	Bone Density:AppendicularSkeleton	0665	APC	1	42	APC
+38003048	Room & Board - Semi-private Two Bed (Medical or General) - Oncology	0127	Revenue Code	1	43	Revenue Code
+38001283	Lower extrem & humer proc except hip,foot,femur w/o CC/MCC	494	MS-DRG	1	40	DRG
+38003419	Inpatient Renal Dialysis - Inpatient Peritoneal (Non-CAPD)	0802	Revenue Code	1	43	Revenue Code
+38002134	Level II Electronic Analysis of Devices	0692	APC	1	42	APC
+38001688	Level I Skin Repair	0024	APC	1	42	APC
+38000942	Transient ischemia	069	MS-DRG	1	40	DRG
+38002708	Brachytx, non-str, HA, P-103	2635	APC	1	42	APC
+38001269	Hip & femur procedures except major joint w MCC	480	MS-DRG	1	40	DRG
+38003226	Blood - Other Blood	0389	Revenue Code	1	43	Revenue Code
+38003063	Private (Deluxe) - OB	0142	Revenue Code	1	43	Revenue Code
+38001720	Level I Strapping and Cast Application	0058	APC	1	42	APC
+38002792	Rho d immune globulin	9023	APC	1	42	APC
+38002508	New Technology - Level I ($0 - $50)	1501	APC	1	42	APC
+38002863	I131 max 100uCi	9149	APC	1	42	APC
+38003500	Other Therapeutic Services - Alcohol Rehabilitation	0945	Revenue Code	1	43	Revenue Code
+38001697	Mental Health Services Composite	0034	APC	1	42	APC
+38001072	Coronary bypass w PTCA w/o MCC	232	MS-DRG	1	40	DRG
+38003517	Professional Fees - Radiology - Nuclear Medicine	0974	Revenue Code	1	43	Revenue Code
+38002448	Corticotropin injection	1280	APC	1	42	APC
+38000897	Tracheostomy for face,mouth & neck diagnoses w MCC	011	MS-DRG	1	40	DRG
+38001924	Diagnostic Urography	0278	APC	1	42	APC
+38001233	Disorders of pancreas except malignancy w MCC	438	MS-DRG	1	40	DRG
+38003328	Units of Service (Home Health) - General Classification	0590	Revenue Code	1	43	Revenue Code
+38003369	Hospice Service - Impatient Respite Care	0655	Revenue Code	1	43	Revenue Code
+38001936	Level II Therapeutic Radiologic Procedures	0296	APC	1	42	APC
+38001363	Non-malignant breast disorders w/o CC/MCC	601	MS-DRG	1	40	DRG
+38002640	Technetium TC-99m aerosol	1679	APC	1	42	APC
+38003422	Inpatient Renal Dialysis - Other	0809	Revenue Code	1	43	Revenue Code
+38003196	Radiology - Therapeutic - Chemotherapy - IV	0335	Revenue Code	1	43	Revenue Code
+38003013	Cyclosporine oral, brand	9438	APC	1	42	APC
+38003329	Units of Service (Home Health) - Other Units	0599	Revenue Code	1	43	Revenue Code
+38001400	Kidney & ureter procedures for neoplasm w MCC	656	MS-DRG	1	40	DRG
+38001731	Thoracentesis/Lavage Procedures	0070	APC	1	42	APC
+38002011	Level I Prosthetic Urological Procedures	0385	APC	1	42	APC
+38001618	Other O.R. procedures for multiple significant trauma w CC	958	MS-DRG	1	40	DRG
+38001970	Observation	0339	APC	1	42	APC
+38003087	Newborn - Level II	0172	Revenue Code	1	43	Revenue Code
+38001526	Lymphoma & non-acute leukemia w other O.R. proc w CC	824	MS-DRG	1	40	DRG
+38002413	Levoleucovorin injection	1236	APC	1	42	APC
+38001564	Septicemia or severe sepsis w/o MV 96+ hours w MCC	871	MS-DRG	1	40	DRG
+38002576	New Technology - Level XXXII ($7000-$7500)	1569	APC	1	42	APC
+38002443	Edetate calcium disodium inj	1274	APC	1	42	APC
+38000990	Cranial/facial procedures w/o CC/MCC	132	MS-DRG	1	40	DRG
+38001158	Appendectomy w complicated principal diag w CC	339	MS-DRG	1	40	DRG
+38001752	Level II Vascular Ligation	0091	APC	1	42	APC
+38002710	Brachy,non-str,Ytterbium-169	2637	APC	1	42	APC
+38002689	Endo, colon, retro imaging	1749	APC	1	42	APC
+38003144	Pharmacy - Experimental Drugs	0256	Revenue Code	1	43	Revenue Code
+38001555	Postoperative & post-traumatic infections w MCC	862	MS-DRG	1	40	DRG
+38002388	Inj dihydroergotamine mesylt	1210	APC	1	42	APC
+38002531	New Technology - Level XXIV ($3000-$3500)	1524	APC	1	42	APC
+38001074	Coronary bypass w cardiac cath w/o MCC	234	MS-DRG	1	40	DRG
+38002071	Level 4 Hospital Clinic Visits	0607	APC	1	42	APC
+38002720	Immune globulin, powder	2731	APC	1	42	APC
+38002993	Bleomycin sulfate inj, brand	9417	APC	1	42	APC
+38001657	Myeloproliferative Diseases & Disorders, Poorly Diff Neoplasm	17	MDC	2	41	MDC
+38002237	Paclitaxel injection	0863	APC	1	42	APC
+38003377	Respite Care (HHA only) - Daily Respite Charge	0663	Revenue Code	1	43	Revenue Code
+38003538	Patient Convenience Items - Nonpatient Room Rentals	0995	Revenue Code	1	43	Revenue Code
+38002340	Plicamycin (mithramycin) inj	1041	APC	1	42	APC
+38002295	Capecitabine, oral	0934	APC	1	42	APC
+38002023	Vascular Imaging	0397	APC	1	42	APC
+38001885	Level I Repair and Plastic Eye Procedures	0238	APC	1	42	APC
+38001943	Treatment Device Construction	0303	APC	1	42	APC
+38002074	Low Level Emergency Visits	0610	APC	1	42	APC
+43125854	SKIN DEBRIDEMENT W CC	571	MS-DRG	1	40	DRG
+38003082	Other Room & Board - Sterile Environment	0164	Revenue Code	1	43	Revenue Code
+38003384	Trauma Response - Level II	0682	Revenue Code	1	43	Revenue Code
+38001691	Level I Breast Surgery	0028	APC	1	42	APC
+38002932	Injection, lacosamide	9254	APC	1	42	APC
+38002021	GI Tract Imaging	0395	APC	1	42	APC
+38001118	Acute & subacute endocarditis w/o CC/MCC	290	MS-DRG	1	40	DRG
+38002444	Vivaglobin, inj	1275	APC	1	42	APC
+38002315	Washed red blood cells unit	0960	APC	1	42	APC
+38001031	Major chest trauma w/o CC/MCC	185	MS-DRG	1	40	DRG
+38001663	Factors Influencing Hlth Stat & Other Contacts with Hlth Services	23	MDC	2	41	MDC
+38001007	Other ear, nose, mouth & throat diagnoses w MCC	154	MS-DRG	1	40	DRG
+38002131	Level II Electronic Analysis of Devices	0689	APC	1	42	APC
+38001681	Level V Debridement & Destruction	0017	APC	1	42	APC
+38001501	Extreme immaturity or respiratory distress syndrome, neonate	790	MS-DRG	1	40	DRG
+38001683	Level I Excision/ Biopsy	0019	APC	1	42	APC
+38002006	Dipyridamole injection	0380	APC	1	42	APC
+38002760	Doxorubicin hcl liposome inj	7046	APC	1	42	APC
+38001783	Bone Marrow Harvesting and Bone Marrow/Stem Cell Transplant	0123	APC	1	42	APC
+38001234	Disorders of pancreas except malignancy w CC	439	MS-DRG	1	40	DRG
+38001743	Coronary or Non-Coronary Atherectomy	0082	APC	1	42	APC
+38002096	Insertion of Intraperitoneal and Pleural Catheters	0652	APC	1	42	APC
+38002966	Tissuemend tissue	9351	APC	1	42	APC
+38003007	Paclitaxel inj, brand	9431	APC	1	42	APC
+38003053	Semi-Private - Three and Four Beds - OB	0132	Revenue Code	1	43	Revenue Code
+38001109	Acute myocardial infarction, discharged alive w CC	281	MS-DRG	1	40	DRG
+38002842	Daptomycin injection	9124	APC	1	42	APC
+38002373	Cytarabine liposome inj	1166	APC	1	42	APC
+38002865	Nonmetabolic active tissue	9156	APC	1	42	APC
+38001121	Heart failure & shock w/o CC/MCC	293	MS-DRG	1	40	DRG
+38001497	FALSE labor	780	MS-DRG	1	40	DRG
+38002729	Foscarnet sodium injection	3042	APC	1	42	APC
+38002179	Granisetron hcl 1 mg oral	0765	APC	1	42	APC
+38002381	TC 99M SUCCIMER, PER Vial	1201	APC	1	42	APC
+38002047	Level II Percutaneous Abdominal and Biliary Procedures	0423	APC	1	42	APC
+38001186	Digestive malignancy w/o CC/MCC	376	MS-DRG	1	40	DRG
+38002887	Agalsidase beta injection	9208	APC	1	42	APC
+38001716	Level II Hand Musculoskeletal Procedures	0054	APC	1	42	APC
+38001075	Coronary bypass w/o cardiac cath w MCC	235	MS-DRG	1	40	DRG
+38002529	New Technology - Level XXII ($2000-$2500)	1522	APC	1	42	APC
+38003511	Professional Fees - Anesthetist (CRNA)	0964	Revenue Code	1	43	Revenue Code
+38001994	Level II Pulmonary Tests	0368	APC	1	42	APC
+38000932	Multiple sclerosis & cerebellar ataxia w CC	059	MS-DRG	1	40	DRG
+38001044	Interstitial lung disease w/o CC/MCC	198	MS-DRG	1	40	DRG
+38002527	New Technology - Level XX ($1800-$1900)	1520	APC	1	42	APC
+38001348	Other skin, subcut tiss & breast proc w CC	580	MS-DRG	1	40	DRG
+38001089	Perc cardiovasc proc w non-drug-eluting stent w/o MCC	249	MS-DRG	1	40	DRG
+38001950	Level III Therapeutic Radiation Treatment Preparation	0310	APC	1	42	APC
+38003462	Other Donor Bank - General Classification	0890	Revenue Code	1	43	Revenue Code
+38002219	Fludarabine phosphate inj	0842	APC	1	42	APC
+38001539	Lymphoma & non-acute leukemia w MCC	840	MS-DRG	1	40	DRG
+38001894	Laser Eye Procedures	0247	APC	1	42	APC
+38002144	Butorphanol tartrate	0703	APC	1	42	APC
+38001846	Level VIII Female Reproductive Proc	0194	APC	1	42	APC
+38001576	Alcohol/drug abuse or dependence w rehabilitation therapy	895	MS-DRG	1	40	DRG
+38003290	Free-Standing Clinic - Rural Health-Home	0522	Revenue Code	1	43	Revenue Code
+38003086	Newborn - Level I	0171	Revenue Code	1	43	Revenue Code
+38003364	Home IV Therapy - Training Disabled Patient, Peripheral Line	0648	Revenue Code	1	43	Revenue Code
+38001654	Pregnancy, Childbirth & the Puerperium	14	MDC	2	41	MDC
+38003165	Oncology - Other	0289	Revenue Code	1	43	Revenue Code
+38002110	Level II Proton Beam Radiation Therapy	0667	APC	1	42	APC
+38001900	Level IV ENT Procedures	0253	APC	1	42	APC
+38001799	Level III Closed Treatment Fracture Finger/Toe/Trunk	0139	APC	1	42	APC
+38001132	Hypertension w MCC	304	MS-DRG	1	40	DRG
+38002814	Itraconazole injection	9047	APC	1	42	APC
+38003200	Nuclear Medicine -Therapeutic	0342	Revenue Code	1	43	Revenue Code
+38002122	Level II Resuscitation and Cardioversion	0679	APC	1	42	APC
+38002906	Micafungin sodium injection	9227	APC	1	42	APC
+38003525	Professional Fees - Outpatient Services	0982	Revenue Code	1	43	Revenue Code
+38001297	Major shoulder or elbow joint procedures w/o CC/MCC	508	MS-DRG	1	40	DRG
+38001211	Biliary tract proc except only cholecyst w or w/o c.d.e. w/o CC/MCC	410	MS-DRG	1	40	DRG
+38003385	Trauma Response - Level III	0683	Revenue Code	1	43	Revenue Code
+38003482	Psychiatric/Psychological Services - Family Therapy	0916	Revenue Code	1	43	Revenue Code
+38003074	Room & Board Ward (Medical or General) - Pediatric	0153	Revenue Code	1	43	Revenue Code
+38001984	Level II Immunizations	0356	APC	1	42	APC
+38002440	Cholera vaccine, injectable	1271	APC	1	42	APC
+38001944	Level I Therapeutic Radiation Treatment Preparation	0304	APC	1	42	APC
+38002323	RBC leukoreduced irradiated	0969	APC	1	42	APC
+38002390	Diphtheria antitoxin	1212	APC	1	42	APC
+38002322	Platelets leukoreduced irrad	0968	APC	1	42	APC
+38001830	Level I Partial Hospitalization (3 services) for CMHCs	0172	APC	1	42	APC
+38002027	Level I Pulmonary Imaging	0401	APC	1	42	APC
+38003396	Labor Room/Delivery - Birthing Centre	0724	Revenue Code	1	43	Revenue Code
+38003174	Laboratory - Immunologu	0302	Revenue Code	1	43	Revenue Code
+38001650	Endocrine, Nutritional & Metabolic Diseases & Disorders	10	MDC	2	41	MDC
+38002092	Level 4 Type B Emergency Visits	0629	APC	1	42	APC
+38002271	Immune globulin, 1g	0905	APC	1	42	APC
+38002910	Decitabine injection	9231	APC	1	42	APC
+38001442	Penis procedures w/o CC/MCC	710	MS-DRG	1	40	DRG
+38003503	Other Therapeutic Services - Pulmonary Rehabilitation	0948	Revenue Code	1	43	Revenue Code
+38002008	Level II Neuropsychological Testing	0382	APC	1	42	APC
+38002283	Gamma globulin 8 CC inj	0922	APC	1	42	APC
+38001127	Peripheral vascular disorders w MCC	299	MS-DRG	1	40	DRG
+38003297	Free-Standing Clinic - Other Freestanding Clinic	0529	Revenue Code	1	43	Revenue Code
+38003560	Adult Care - Day Care - Social - Daily	3104	Revenue Code	1	43	Revenue Code
+38001510	Other O.R. proc of the blood & blood forming organs w MCC	802	MS-DRG	1	40	DRG
+38002142	Sr89 strontium	0701	APC	1	42	APC
+38001243	Combined anterior/posterior spinal fusion w CC	454	MS-DRG	1	40	DRG
+38002455	Alloskin skin sub	1287	APC	1	42	APC
+38002054	Health and Behavior Services	0432	APC	1	42	APC
+38002185	Etoposide oral	0802	APC	1	42	APC
+38002335	Plt, pher, l/r cmv-neg, irr	1020	APC	1	42	APC
+38001084	Permanent cardiac pacemaker implant w/o CC/MCC	244	MS-DRG	1	40	DRG
+38003323	Other Visits (Home Health) - General Classification	0580	Revenue Code	1	43	Revenue Code
+38001166	Anal & stomal procedures w MCC	347	MS-DRG	1	40	DRG
+38001668	Bone Marrow Biopsy/Aspiration	0003	APC	1	42	APC
+38001302	Hand or wrist proc, except major thumb or joint proc w CC/MCC	513	MS-DRG	1	40	DRG
+38002768	LDR Prostate Brachytherapy Composite	8001	APC	1	42	APC
+38001713	Level III Musculoskeletal Procedures Except Hand and Foot	0051	APC	1	42	APC
+38002046	Level II Upper GI Procedures	0422	APC	1	42	APC
+38001581	Wound debridements for injuries w/o CC/MCC	903	MS-DRG	1	40	DRG
+38001938	Level IV Therapeutic Radiologic Procedures	0298	APC	1	42	APC
+38001768	Insertion of Cardioverter-Defibrillator	0107	APC	1	42	APC
+38001875	Creation of Lumbar Subarachnoid Shunt	0228	APC	1	42	APC
+38003068	Private (Deluxe) - Oncology	0147	Revenue Code	1	43	Revenue Code
+38002607	Metabolic active D/E tissue	1632	APC	1	42	APC
+38001492	Vaginal delivery w/o complicating diagnoses	775	MS-DRG	1	40	DRG
+38001933	Bone Density:Axial Skeleton	0288	APC	1	42	APC
+38002707	Brachytx, non-str, HA, I-125	2634	APC	1	42	APC
+38002722	Quinupristin/dalfopristin	2770	APC	1	42	APC
+38001675	Level I Destruction of Lesion	0010	APC	1	42	APC
+38003024	Plasma 1 donor frz w/in 8 hr	9508	APC	1	42	APC
+38001981	Level I Injections	0352	APC	1	42	APC
+38002312	Platelets, each unit	0957	APC	1	42	APC
+38001639	Ungroupable	999	MS-DRG	1	40	DRG
+38000945	Nonspecific cerebrovascular disorders w/o CC/MCC	072	MS-DRG	1	40	DRG
+38002637	P32 chromic phosphate	1676	APC	1	42	APC
+38001511	Other O.R. proc of the blood & blood forming organs w CC	803	MS-DRG	1	40	DRG
+38001391	Nutritional & misc metabolic disorders w/o MCC	641	MS-DRG	1	40	DRG
+38001384	Other endocrine, nutrit & metab O.R. proc w MCC	628	MS-DRG	1	40	DRG
+38001673	Level III Incision and Drainage	0008	APC	1	42	APC
+38003163	Medical/Surgical Supplies and Devices - Other Supplies/Devices	0279	Revenue Code	1	43	Revenue Code
+38003085	Nursery - General Classification	0170	Revenue Code	1	43	Revenue Code
+38001903	Level VI ENT Procedures	0256	APC	1	42	APC
+38001347	Other skin, subcut tiss & breast proc w MCC	579	MS-DRG	1	40	DRG
+38002631	Tetanus immune globulin inj	1670	APC	1	42	APC
+38003075	Room & Board Ward (Medical or General) - Psychiatric	0154	Revenue Code	1	43	Revenue Code
+38002755	Pentastarch 10% solution	7040	APC	1	42	APC
+38002101	Placement of Tissue Clips	0657	APC	1	42	APC
+38002652	Iron dextran 165 injection	1691	APC	1	42	APC
+38002967	Veritas collagen matrix, cm2	9354	APC	1	42	APC
+38001290	Soft tissue procedures w CC	501	MS-DRG	1	40	DRG
+38003383	Trauma Response - Level I	0681	Revenue Code	1	43	Revenue Code
+38001807	Level III Anal/Rectal Procedures	0149	APC	1	42	APC
+38002081	Critical Care	0617	APC	1	42	APC
+38001498	Other antepartum diagnoses w medical complications	781	MS-DRG	1	40	DRG
+38003116	Coronary Care - Pulmonary Care	0212	Revenue Code	1	43	Revenue Code
+38001488	Vaginal delivery w O.R. proc except steril &/or D&C	768	MS-DRG	1	40	DRG
+38003123	Special Charges - U.R. Service Charge	0223	Revenue Code	1	43	Revenue Code
+38001485	Cesarean section w CC/MCC	765	MS-DRG	1	40	DRG
+38000915	Ventricular shunt procedures w/o CC/MCC	033	MS-DRG	1	40	DRG
+38003519	Professional Fees - Respiratory Therapy	0976	Revenue Code	1	43	Revenue Code
+38002990	Sodium hyaluronate inj, brand	9413	APC	1	42	APC
+38002949	Inj, denosumab	9272	APC	1	42	APC
+38000920	Extracranial procedures w CC	038	MS-DRG	1	40	DRG
+38003142	Pharmacy - Drugs Incident to other Diagnostic Services	0254	Revenue Code	1	43	Revenue Code
+38001912	Level I Diagnostic and Screening Ultrasound	0265	APC	1	42	APC
+38002067	High Level Clinic Visits	0602	APC	1	42	APC
+38002055	Level II Pathology	0433	APC	1	42	APC
+38001270	Hip & femur procedures except major joint w CC	481	MS-DRG	1	40	DRG
+38001525	Lymphoma & non-acute leukemia w other O.R. proc w MCC	823	MS-DRG	1	40	DRG
+38002351	I-131 tositumomab, dx	1080	APC	1	42	APC
+38002218	Inj melphalan hydrochl	0840	APC	1	42	APC
+38002836	In-111 ibritumomab tiuxetan	9118	APC	1	42	APC
+38002555	New Technology - Level XI ($900 - $1000)	1548	APC	1	42	APC
+38001333	Aftercare, musculoskeletal system & connective tissue w MCC	559	MS-DRG	1	40	DRG
+38002811	Ibutilide fumarate injection	9044	APC	1	42	APC
+38001062	Cardiac defib implant w cardiac cath w AMI/HF/shock w MCC	222	MS-DRG	1	40	DRG
+38003150	IV Therapy - Pharmacy Svcs	0262	Revenue Code	1	43	Revenue Code
+38001874	Implantation of Drug Infusion Device	0227	APC	1	42	APC
+38001130	Atherosclerosis w MCC	302	MS-DRG	1	40	DRG
+38003463	Other Donor Bank - Bone	0891	Revenue Code	1	43	Revenue Code
+38002135	Breast Reconstruction	0693	APC	1	42	APC
+38001256	Revision of hip or knee replacement w CC	467	MS-DRG	1	40	DRG
+38001949	Level II Ultrasound Guidance Procedures	0309	APC	1	42	APC
+38001140	Syncope & collapse	312	MS-DRG	1	40	DRG
+38003070	Private (Deluxe) - Other	0149	Revenue Code	1	43	Revenue Code
+38002166	Tc99m mertiatide	0743	APC	1	42	APC
+38000984	Neurological eye disorders	123	MS-DRG	1	40	DRG
+38003412	Other preventive care services	0779	Revenue Code	1	43	Revenue Code
+38001093	Perc cardiovasc proc w/o coronary artery stent w/o MCC	251	MS-DRG	1	40	DRG
+38002536	New Technology - Level XXIX ($5500-$6000)	1529	APC	1	42	APC
+38001182	Major gastrointestinal disorders & peritoneal infections w CC	372	MS-DRG	1	40	DRG
+38002489	Sincalide injection	1348	APC	1	42	APC
+38003394	Labor Room/Delivery - Delivery	0722	Revenue Code	1	43	Revenue Code
+38002829	Inj, bivalirudin	9111	APC	1	42	APC
+38001864	Level I Nerve and Muscle Tests	0215	APC	1	42	APC
+38001613	Aftercare w/o CC/MCC	950	MS-DRG	1	40	DRG
+38001817	Colorectal Cancer Screening: Flexible Sigmoidoscopy	0159	APC	1	42	APC
+38003146	Pharmacy - IV Solutions	0258	Revenue Code	1	43	Revenue Code
+38003318	Medical Social Services - Other	0569	Revenue Code	1	43	Revenue Code
+38001362	Non-malignant breast disorders w CC/MCC	600	MS-DRG	1	40	DRG
+38002609	Td vaccine no prsrv >/= 7 im	1634	APC	1	42	APC
+38001937	Level III Therapeutic Radiologic Procedures	0297	APC	1	42	APC
+38001067	Cardiac defibrillator implant w/o cardiac cath w/o MCC	227	MS-DRG	1	40	DRG
+38002126	Level II Photochemotherapy	0683	APC	1	42	APC
+38002620	I131 tositumomab, rx	1645	APC	1	42	APC
+38001686	Level IV Excision/ Biopsy	0022	APC	1	42	APC
+38002997	Cyclophosphamide lyo, brand	9421	APC	1	42	APC
+38002653	Iron dextran 267 injection	1692	APC	1	42	APC
+38002998	Cytarabine hcl inj, brand	9422	APC	1	42	APC
+38002309	RBC leukocytes reduced	0954	APC	1	42	APC
+38001876	Transcatherter Placement of Intravascular Shunt and Stents	0229	APC	1	42	APC
+38003026	HIPPS	0022	Revenue Code	1	43	Revenue Code
+38001372	Amputat of lower limb for endocrine,nutrit,& metabol dis w MCC	616	MS-DRG	1	40	DRG
+38002346	Acyclovir	1062	APC	1	42	APC
+38002970	Flowable Wound Matrix, 1 cc	9357	APC	1	42	APC
+38003027	HIPPS	0023	Revenue Code	1	43	Revenue Code
+38002318	Albumin (human), 25%, 20 ml	0964	APC	1	42	APC
+38001207	Pancreas, liver & shunt procedures w CC	406	MS-DRG	1	40	DRG
+38001676	Level II Destruction of Lesion	0011	APC	1	42	APC
+38001447	Other male reproductive system O.R. proc for malignancy w CC/MCC	715	MS-DRG	1	40	DRG
+38002962	Patch, lidocaine/tetracaine	9285	APC	1	42	APC
+38002664	Ovine, 1000 USP units	1703	APC	1	42	APC
+38002735	Amifostine	7000	APC	1	42	APC
+38003408	Treatment/Observation Room - Observation Room	0762	Revenue Code	1	43	Revenue Code
+38001360	Malignant breast disorders w CC	598	MS-DRG	1	40	DRG
+38001299	Shoulder,elbow or forearm proc,exc major joint proc w MCC	510	MS-DRG	1	40	DRG
+38001702	Level I Implantation of Neurostimulator Generator	0039	APC	1	42	APC
+38001916	Level II Echocardiogram Without Contrast	0269	APC	1	42	APC
+38001351	Mastectomy for malignancy w/o CC/MCC	583	MS-DRG	1	40	DRG
+38001445	Transurethral prostatectomy w CC/MCC	713	MS-DRG	1	40	DRG
+38001896	Level II Cataract Procedures without IOL Insert	0249	APC	1	42	APC
+38003559	Adult Care - Day Care - Medical And Social - Daily	3103	Revenue Code	1	43	Revenue Code
+38003501	Other Therapeutic Services - Complex Medical Equipment - Routine	0946	Revenue Code	1	43	Revenue Code
+38001637	Non-extensive O.R. proc unrelated to principal diagnosis w/o CC/MCC	989	MS-DRG	1	40	DRG
+38001888	Level IV Repair and Plastic Eye Procedures	0241	APC	1	42	APC
+38002737	Gonadorelin hydroch	7005	APC	1	42	APC
+38002540	New Technology - Level XXXIII ($7500-$8000)	1533	APC	1	42	APC
+38002935	Telavancin injection	9258	APC	1	42	APC
+38002946	C-1 esterase, berinert	9269	APC	1	42	APC
+38001620	Other multiple significant trauma w MCC	963	MS-DRG	1	40	DRG
+38001745	Level I Electrophysiologic Procedures	0084	APC	1	42	APC
+38002200	Dacarbazine 100 mg inj	0819	APC	1	42	APC
+38002164	Cr51 chromate	0741	APC	1	42	APC
+38002001	Ancillary Outpatient Services When Patient Expires	0375	APC	1	42	APC
+38001855	Level IV Nerve Injections	0203	APC	1	42	APC
+38002679	Brachytx, NS, Non-HDRIr-192	1719	APC	1	42	APC
+38003107	Intensive Care - Medical	0202	Revenue Code	1	43	Revenue Code
+38001462	Uterine & adnexa proc for ovarian or adnexal malignancy w MCC	736	MS-DRG	1	40	DRG
+38003330	Oxygen (Home Health) - General Classification	0600	Revenue Code	1	43	Revenue Code
+38003349	Drugs Identification - Single Source Drug	0631	Revenue Code	1	43	Revenue Code
+38001907	Level I Plain Film Except Teeth	0260	APC	1	42	APC
+38003386	Trauma Response - Level IV	0684	Revenue Code	1	43	Revenue Code
+38002806	Methadone injection	9037	APC	1	42	APC
+38001959	Biofeedback and Other Training	0321	APC	1	42	APC
+38002730	Gamma globulin 1 CC inj	3043	APC	1	42	APC
+38000995	Mouth procedures w CC/MCC	137	MS-DRG	1	40	DRG
+38001202	Esophagitis, gastroent & misc digest disorders w/o MCC	392	MS-DRG	1	40	DRG
+38002833	Zoledronic acid	9115	APC	1	42	APC
+38003168	Durable Medical Equipment - Purchase of new DME	0292	Revenue Code	1	43	Revenue Code
+38002167	Plague vaccine, im	0744	APC	1	42	APC
+38001872	Implantation of Neurostimulator Electrodes, Cranial Nerve	0225	APC	1	42	APC
+38002328	Platelets, hla-m, l/r, unit	1011	APC	1	42	APC
+38001724	Level II Treatment Fracture/Dislocation	0063	APC	1	42	APC
+38003145	Pharmacy - Non-prescription	0257	Revenue Code	1	43	Revenue Code
+38002229	Topotecan injection	0852	APC	1	42	APC
+38001406	Minor bladder procedures w MCC	662	MS-DRG	1	40	DRG
+38001863	Electroencephalogram	0214	APC	1	42	APC
+38001502	Prematurity w major problems	791	MS-DRG	1	40	DRG
+38002114	Level II Echocardiogram Except Transesophageal	0671	APC	1	42	APC
+38003400	EKG/ECG - Telemetry	0732	Revenue Code	1	43	Revenue Code
+38002891	Inj, alefacept, IM	9212	APC	1	42	APC
+38000985	Other disorders of the eye w MCC	124	MS-DRG	1	40	DRG
+38000979	Extraocular procedures except orbit	115	MS-DRG	1	40	DRG
+38002613	Dimecaprol injection	1638	APC	1	42	APC
+38003106	Intensive Care - Surgical	0201	Revenue Code	1	43	Revenue Code
+38001701	Spontaneous MEG	0038	APC	1	42	APC
+38002396	Triflupromazine hcl inj	1218	APC	1	42	APC
+38002741	Aprotinin	7019	APC	1	42	APC
+38002234	Plicamycin (mithramycin) inj	0860	APC	1	42	APC
+38002377	Busulfan injection	1178	APC	1	42	APC
+38001538	Chemo w acute leukemia as sdx w/o CC/MCC	839	MS-DRG	1	40	DRG
+38003370	Hospice Service - General Inpatient Care (Non-respite)	0656	Revenue Code	1	43	Revenue Code
+38003375	Respite Care (HHA only) - Hourly Charge/Skilled Nursing	0661	Revenue Code	1	43	Revenue Code
+38002849	Rabies ig, heat treated	9134	APC	1	42	APC
+38003047	Room & Board - Semi-private Two Bed (Medical or General) - Detoxification	0126	Revenue Code	1	43	Revenue Code
+38001115	Circulatory disorders except AMI, w card cath w/o MCC	287	MS-DRG	1	40	DRG
+38002522	New Technology - Level XV ($1300 - $1400)	1515	APC	1	42	APC
+38003355	Drugs Identification - Drugs Requiring Specific ID: Self admin drugs	0637	Revenue Code	1	43	Revenue Code
+38001708	Open/Percutaneous Treatment Fracture or Dislocation	0046	APC	1	42	APC
+38002111	Level I Angiography and Venography	0668	APC	1	42	APC
+38000901	Autologous bone marrow transplant	015	MS-DRG	1	40	DRG
+38002535	New Technology - Level XXVIII ($5000-$5500)	1528	APC	1	42	APC
+38002622	In111 pentetate	1647	APC	1	42	APC
+38003037	Room & Board - Private (Medical or General) - Detoxification	0116	Revenue Code	1	43	Revenue Code
+38002196	Asparaginase injection	0814	APC	1	42	APC
+38002485	Matristem micromatrix	1342	APC	1	42	APC
+38002004	Level II Pulmonary Imaging	0378	APC	1	42	APC
+38002266	Alglucerase injection	0900	APC	1	42	APC
+38001942	Computer Assisted Navigational Procedures	0302	APC	1	42	APC
+38002201	Daunorubicin injection	0820	APC	1	42	APC
+38002606	Baclofen intrathecal trial	1631	APC	1	42	APC
+38002676	Brachytx, non-str, Gold-198	1716	APC	1	42	APC
+38000949	Viral meningitis w/o CC/MCC	076	MS-DRG	1	40	DRG
+38001357	Major skin disorders w MCC	595	MS-DRG	1	40	DRG
+38003494	Medical rehab - full day	0932	Revenue Code	1	43	Revenue Code
+38001920	Myelography	0274	APC	1	42	APC
+38003293	Free-Standing Clinic - RHC/FQHC visit in noncovered SNF, NF, ICFMR or other	0525	Revenue Code	1	43	Revenue Code
+38002094	Level IV Breast Surgery	0648	APC	1	42	APC
+38002392	Inj IVIG privigen 500 mg	1214	APC	1	42	APC
+38002988	Pamidronate disodium, brand	9411	APC	1	42	APC
+38001640	Ungroupable	0	MDC	2	41	MDC
+38002907	Tigecycline injection	9228	APC	1	42	APC
+38002022	Bone Imaging	0396	APC	1	42	APC
+38002033	Level I Radionuclide Therapy	0407	APC	1	42	APC
+38001698	Vascular Puncture and Minor Diagnostic Procedures	0035	APC	1	42	APC
+38003417	Inpatient Renal Dialysis - General Classification	0800	Revenue Code	1	43	Revenue Code
+38000938	Intracranial hemorrhage or cerebral infarction w CC	065	MS-DRG	1	40	DRG
+38003421	Inpatient Renal Dialysis - Inpatient Continuous Cycling Peritoneal Dialysis	0804	Revenue Code	1	43	Revenue Code
+38002785	Co 57 cobaltous chloride	9013	APC	1	42	APC
+38001839	Miscellaneous Placement/Repositioning	0187	APC	1	42	APC
+38003271	Cardiology - Cardiac Cath Lab	0481	Revenue Code	1	43	Revenue Code
+38001001	Dysequilibrium	149	MS-DRG	1	40	DRG
+38002614	Aurothioglucose injeciton	1639	APC	1	42	APC
+38002220	Pegaspargase injection	0843	APC	1	42	APC
+38003317	Medical Social Services - Hourly Charge	0562	Revenue Code	1	43	Revenue Code
+38003019	Fr frz plasma donor retested	9503	APC	1	42	APC
+38003002	Floxuridine inj, brand	9426	APC	1	42	APC
+38002547	New Technology - Level III ($100 - $200)	1540	APC	1	42	APC
+38003436	Hemodialysis - Outpatient or Home - Other	0829	Revenue Code	1	43	Revenue Code
+38003301	Ambulance - General Classification	0540	Revenue Code	1	43	Revenue Code
+38003090	Nursey - Neonatal ICU	0175	Revenue Code	1	43	Revenue Code
+38001717	Level I Foot Musculoskeletal Procedures	0055	APC	1	42	APC
+38003513	Professional Fees - General Classification	0970	Revenue Code	1	43	Revenue Code
+38002321	Blood split unit	0967	APC	1	42	APC
+38001946	Myocardial Positron Emission Tomography (PET) imaging, single study, metabolic evaluation	0306	APC	1	42	APC
+38003081	Other Room & Board - General Classification	0160	Revenue Code	1	43	Revenue Code
+38001296	Major shoulder or elbow joint procedures w CC/MCC	507	MS-DRG	1	40	DRG
+38003430	Hemodialysis - Outpatient or Home - General Classification	0820	Revenue Code	1	43	Revenue Code
+38000930	Degenerative nervous system disorders w/o MCC	057	MS-DRG	1	40	DRG
+38003189	Radiology - Diagnostic - Arteriography	0323	Revenue Code	1	43	Revenue Code
+38003343	MRI - Other	0619	Revenue Code	1	43	Revenue Code
+38002003	Level II Cardiac Imaging	0377	APC	1	42	APC
+38001931	Myocardial Positron Emission Tomography (PET)	0285	APC	1	42	APC
+38001105	Vein ligation & stripping	263	MS-DRG	1	40	DRG
+38001051	Other respiratory system diagnoses w MCC	205	MS-DRG	1	40	DRG
+38003405	Gastro Intestinal Services - Other	0759	Revenue Code	1	43	Revenue Code
+38001263	Amputation for musculoskeletal sys & conn tissue dis w MCC	474	MS-DRG	1	40	DRG
+38003311	Skilled Nursing - General Classification	0550	Revenue Code	1	43	Revenue Code
+38001682	Biopsy of Skin/Puncture of Lesion	0018	APC	1	42	APC
+38003219	Blood - Packed Red Cells	0381	Revenue Code	1	43	Revenue Code
+38001129	Peripheral vascular disorders w/o CC/MCC	301	MS-DRG	1	40	DRG
+38002548	New Technology - Level IV ($200 - $300)	1541	APC	1	42	APC
+38003129	Incremental Nursing Charge Rate - ICU	0233	Revenue Code	1	43	Revenue Code
+38001736	Level V Endoscopy Upper Airway	0075	APC	1	42	APC
+38003270	Cardiology - General Classification	0480	Revenue Code	1	43	Revenue Code
+38001407	Minor bladder procedures w CC	663	MS-DRG	1	40	DRG
+38001968	Magnetic Resonance Imaging and Magnetic Resonance Angiography without Contrast	0336	APC	1	42	APC
+38003468	Psychiatric/Psychological Treatments - Electroshock Treatment	0901	Revenue Code	1	43	Revenue Code
+38002916	Inj, lanreotide acetate	9237	APC	1	42	APC
+38001948	Non-Myocardial Positron Emission Tomography (PET) imaging	0308	APC	1	42	APC
+38003151	IV Therapy - Drug/Supply Delivery	0263	Revenue Code	1	43	Revenue Code
+38002348	I131 iodide sol, dx	1065	APC	1	42	APC
+38002395	Penicillin g benzathine inj	1217	APC	1	42	APC
+38003372	Hospice Room & Board-Nursing facility	0658	Revenue Code	1	43	Revenue Code
+38002145	In111 satumomab	0704	APC	1	42	APC
+38002809	Gamma globulin inj	9041	APC	1	42	APC
+38001719	Bunion Procedures	0057	APC	1	42	APC
+38002500	New Technology - Level IC ($20-$30)	1493	APC	1	42	APC
+38001300	Shoulder,elbow or forearm proc,exc major joint proc w CC	511	MS-DRG	1	40	DRG
+38001388	Diabetes w CC	638	MS-DRG	1	40	DRG
+38001537	Chemo w acute leukemia as sdx w CC or high dose chemo agent	838	MS-DRG	1	40	DRG
+38001491	Vaginal delivery w complicating diagnoses	774	MS-DRG	1	40	DRG
+38003477	Psychiatric/Psychological Services - Rehabilitation	0911	Revenue Code	1	43	Revenue Code
+38002066	Mid Level Clinic Visits	0601	APC	1	42	APC
+38002855	Rabies vaccine, id	9140	APC	1	42	APC
+38001120	Heart failure & shock w CC	292	MS-DRG	1	40	DRG
+38002856	Measles-rubella vaccine, sc	9141	APC	1	42	APC
+38002941	Tocilizumab injection	9264	APC	1	42	APC
+38003203	Nuclear Medicine - Other	0349	Revenue Code	1	43	Revenue Code
+38001106	Other circulatory system O.R. procedures	264	MS-DRG	1	40	DRG
+38000888	Heart transplant or implant of heart assist system w/o MCC	002	MS-DRG	1	40	DRG
+38001282	Lower extrem & humer proc except hip,foot,femur w CC	493	MS-DRG	1	40	DRG
+38001254	Wnd debrid & skn grft exc hand, for musculo-conn tiss dis w/o CC/MCC	465	MS-DRG	1	40	DRG
+38002819	Nasal vaccine inhalation	9053	APC	1	42	APC
+38001369	Minor skin disorders w/o MCC	607	MS-DRG	1	40	DRG
+38003426	Organ Acquisition - Unknown Donor - Kidney	0813	Revenue Code	1	43	Revenue Code
+38003455	CCPD - Outpatient or Home - Maintenance/100%	0854	Revenue Code	1	43	Revenue Code
+38002746	Fomepizole	7027	APC	1	42	APC
+38001103	Cardiac pacemaker revision except device replacement w CC	261	MS-DRG	1	40	DRG
+38002127	Level III Needle Biopsy/Aspiration Except Bone Marrow	0685	APC	1	42	APC
+38002844	Natalizumab injection	9126	APC	1	42	APC
+38002441	Acetylcysteine injection	1272	APC	1	42	APC
+38003527	Professional Fees - Medical Social Services	0984	Revenue Code	1	43	Revenue Code
+38002857	Chicken pox vaccine, sc	9142	APC	1	42	APC
+38001325	Medical back problems w MCC	551	MS-DRG	1	40	DRG
+38001313	Osteomyelitis w MCC	539	MS-DRG	1	40	DRG
+38001611	Signs & symptoms w/o MCC	948	MS-DRG	1	40	DRG
+38001457	Inflammation of the male reproductive system w/o MCC	728	MS-DRG	1	40	DRG
+38003095	Leave of Absence - Therapeutic Leave	0183	Revenue Code	1	43	Revenue Code
+38003100	Subacute care - Level I	0191	Revenue Code	1	43	Revenue Code
+38002847	Inj clofarabine	9129	APC	1	42	APC
+38003495	Other Therapeutic Services - General Classification	0940	Revenue Code	1	43	Revenue Code
+38002571	New Technology - Level XXVII ($4500-$5000)	1564	APC	1	42	APC
+38000894	Simultaneous pancreas/kidney transplant	008	MS-DRG	1	40	DRG
+38002700	Catheter, ablation, non-cardiac, endovascular (implantable)	1888	APC	1	42	APC
+38003520	Professional Fees - Physical Therapy	0977	Revenue Code	1	43	Revenue Code
+38001098	Upper limb & toe amputation for circ system disorders w CC	256	MS-DRG	1	40	DRG
+38003269	Audiology - Other	0479	Revenue Code	1	43	Revenue Code
+38002238	Mitoxantrone hydrochl	0864	APC	1	42	APC
+38001859	Laminotomies and Laminectomies	0208	APC	1	42	APC
+38001240	Disorders of the biliary tract w CC	445	MS-DRG	1	40	DRG
+38001035	Pulmonary edema & respiratory failure	189	MS-DRG	1	40	DRG
+38002787	Inj, rimabotulinumtoxinB	9018	APC	1	42	APC
+38003034	Room & Board - Private (Medical or General) - Pediatric	0113	Revenue Code	1	43	Revenue Code
+38001904	Level I Therapeutic Radiologic Procedures	0257	APC	1	42	APC
+38002897	Injection, Azacitidine	9218	APC	1	42	APC
+38003433	Hemodialysis - Outpatient or Home equipment	0823	Revenue Code	1	43	Revenue Code
+38001940	Level I Radiation Therapy	0300	APC	1	42	APC
+38002488	Oxacillin sodium injeciton	1347	APC	1	42	APC
+38002465	Ferumoxytol, non-esrd	1297	APC	1	42	APC
+38001744	Coronary or Non-Coronary Angioplasty and Percutaneous Valvuloplasty	0083	APC	1	42	APC
+38003454	CCPD - Outpatient or Home - Home Equipment	0853	Revenue Code	1	43	Revenue Code
+38002355	Denileukin diftitox inj	1084	APC	1	42	APC
+38002174	Spectinomycn di-hcl inj	0753	APC	1	42	APC
+38001656	Blood, Blood Forming Organs, Immunological Disorders	16	MDC	2	41	MDC
+38000891	Liver transplant w MCC or intestinal transplant	005	MS-DRG	1	40	DRG
+38002834	Inj, Ertapenem sodium, per 500 mg	9116	APC	1	42	APC
+38002696	Interspinous implant	1821	APC	1	42	APC
+38003167	Durable Medical Equipment - Rental	0291	Revenue Code	1	43	Revenue Code
+38002490	Anidulafungin injection	1349	APC	1	42	APC
+38002565	New Technology - Level XXI ($1900-$2000)	1558	APC	1	42	APC
+38003143	Pharmacy - Drugs incident to Radiology	0255	Revenue Code	1	43	Revenue Code
+38000926	Spinal disorders & injuries w/o CC/MCC	053	MS-DRG	1	40	DRG
+38002325	Edetate calcium disodium inj	0999	APC	1	42	APC
+38001021	Pulmonary embolism w MCC	175	MS-DRG	1	40	DRG
+38002580	New Technology - Level XXXVI ($9000-$9500)	1573	APC	1	42	APC
+38001965	Computed Tomography without Contrast	0332	APC	1	42	APC
+38001244	Combined anterior/posterior spinal fusion w/o CC/MCC	455	MS-DRG	1	40	DRG
+38001169	Inguinal & femoral hernia procedures w MCC	350	MS-DRG	1	40	DRG
+38001025	Respiratory infections & inflammations w/o CC/MCC	179	MS-DRG	1	40	DRG
+38001125	Cardiac arrest, unexplained w CC	297	MS-DRG	1	40	DRG
+38002951	Crotalidae Poly Immune Fab	9274	APC	1	42	APC
+38001101	Cardiac pacemaker device replacement w/o MCC	259	MS-DRG	1	40	DRG
+38001751	Insertion/Replacement of Pacemaker Pulse Generator	0090	APC	1	42	APC
+38003139	Pharmacy - Generic Drugs	0251	Revenue Code	1	43	Revenue Code
+38002212	Idarubicin hcl injection	0832	APC	1	42	APC
+38003286	Clinic - Family clinic	0517	Revenue Code	1	43	Revenue Code
+38002650	Fomepizole	1689	APC	1	42	APC
+38001011	Other ear, nose, mouth & throat diagnoses w/o CC/MCC	156	MS-DRG	1	40	DRG
+38003535	Patient Convenience Items - Private Linen Service	0992	Revenue Code	1	43	Revenue Code
+38001982	Level II Injections	0353	APC	1	42	APC
+38001279	Back & neck proc exc spinal fusion w CC/MCC or disc device/neurostim	490	MS-DRG	1	40	DRG
+38002931	Temozolomide injection	9253	APC	1	42	APC
+38001906	Level VII ENT Procedures	0259	APC	1	42	APC
+38002486	Theraskin	1345	APC	1	42	APC
+38001039	Simple pneumonia & pleurisy w MCC	193	MS-DRG	1	40	DRG
+38000916	Carotid artery stent procedure w MCC	034	MS-DRG	1	40	DRG
+38003485	Psychiatric/Psychological Services - Other	0919	Revenue Code	1	43	Revenue Code
+38001678	Level II Debridement & Destruction	0013	APC	1	42	APC
+38001990	Level I Audiometry	0364	APC	1	42	APC
+38002860	Meningococcal vaccine, im	9145	APC	1	42	APC
+38001389	Diabetes w/o CC/MCC	639	MS-DRG	1	40	DRG
+38002040	Level II Tumor/Infection Imaging	0414	APC	1	42	APC
+38002838	Injection, Fulvestrant	9120	APC	1	42	APC
+38001304	Other musculoskelet sys & conn tiss O.R. proc w MCC	515	MS-DRG	1	40	DRG
+38002320	Plasmaprotein fract,5%,250ml	0966	APC	1	42	APC
+38001149	Major small & large bowel procedures w CC	330	MS-DRG	1	40	DRG
+38003504	Other Therapeutic Services - Other	0949	Revenue Code	1	43	Revenue Code
+38002475	Pneumococcal vacc, 13 val im	1310	APC	1	42	APC
+38003284	Clinic - Pediatric Clinic	0515	Revenue Code	1	43	Revenue Code
+38001971	Minor Ancillary Procedures	0340	APC	1	42	APC
+38002639	Tc99m fanolesomab	1678	APC	1	42	APC
+38002871	LOCM 350-399mg/ml iodine,1ml	9162	APC	1	42	APC
+38001215	Cholecystectomy except by laparoscope w/o c.d.e. w MCC	414	MS-DRG	1	40	DRG
+38001288	Local excision & removal int fix devices of hip & femur w/o CC/MCC	499	MS-DRG	1	40	DRG
+38001798	Level II Closed Treatment Fracture Finger/Toe/Trunk	0138	APC	1	42	APC
+38003404	Gastro Intestinal Services - General Classification	0750	Revenue Code	1	43	Revenue Code
+38001280	Back & neck proc exc spinal fusion w/o CC/MCC	491	MS-DRG	1	40	DRG
+38001112	Acute myocardial infarction, expired w CC	284	MS-DRG	1	40	DRG
+38002025	Nuclear Medicine Add-on Imaging	0399	APC	1	42	APC
+38002479	Ergonovine maleate injection	1330	APC	1	42	APC
+38001364	Cellulitis w MCC	602	MS-DRG	1	40	DRG
+38001262	Cervical spinal fusion w/o CC/MCC	473	MS-DRG	1	40	DRG
+38002203	Diethylstilbestrol injection	0822	APC	1	42	APC
+38001529	Myeloprolif disord or poorly diff neopl w maj O.R. proc w CC	827	MS-DRG	1	40	DRG
+38000941	Nonspecific CVA & precerebral occlusion w/o infarct w/o MCC	068	MS-DRG	1	40	DRG
+38001985	Level III Injections	0359	APC	1	42	APC
+38002775	MRI and MRA with Contrast Composite	8008	APC	1	42	APC
+38003004	Mesna injection, brand	9428	APC	1	42	APC
+38002473	Mecasermin injection	1308	APC	1	42	APC
+38002688	Urofollitropin, 75 iu	1741	APC	1	42	APC
+38001840	Level II Female Reproductive Proc	0188	APC	1	42	APC
+38003380	Outpatient Special Residence Charges - Hospital based	0671	Revenue Code	1	43	Revenue Code
+38002103	Hyperbaric Oxygen	0659	APC	1	42	APC
+38001085	AICD generator procedures	245	MS-DRG	1	40	DRG
+38002744	Digoxin immune FAB (ovine)	7025	APC	1	42	APC
+38002469	Perphenazine injeciton	1304	APC	1	42	APC
+38003078	Room & Board Ward (Medical or General) - Oncology	0157	Revenue Code	1	43	Revenue Code
+38002116	Level V Anterior Segment Eye Procedures	0673	APC	1	42	APC
+38002590	Etanercept injection	1608	APC	1	42	APC
+38003540	Patient Convenience Items - Admission Kits	0997	Revenue Code	1	43	Revenue Code
+38001230	Malignancy of hepatobiliary system or pancreas w MCC	435	MS-DRG	1	40	DRG
+38002504	New Technology - Level IB($10-$20)	1497	APC	1	42	APC
+38002184	Leuprolide acetate	0800	APC	1	42	APC
+38003543	Behavioral Health Accommodations	1000	Revenue Code	1	43	Revenue Code
+38003292	Free-Standing Clinic - RHC/FQHC visit in Part A covered SNF	0524	Revenue Code	1	43	Revenue Code
+38003553	Alternative Therapy Services - Reflexology	2104	Revenue Code	1	43	Revenue Code
+38002771	Ultrasound Composite	8004	APC	1	42	APC
+38003518	Professional Fees - Operating Room	0975	Revenue Code	1	43	Revenue Code
+38002810	Glucagon hydrochloride	9042	APC	1	42	APC
+38000900	Allogeneic bone marrow transplant	014	MS-DRG	1	40	DRG
+38001298	Arthroscopy	509	MS-DRG	1	40	DRG
+38003481	Psychiatric/Psychological Services - Group Therapy	0915	Revenue Code	1	43	Revenue Code
+38002507	New Technology - Level IE ($40-$50)	1500	APC	1	42	APC
+38001070	Other cardiothoracic procedures w/o CC/MCC	230	MS-DRG	1	40	DRG
+38002573	New Technology - Level XXIX ($5500-$6000)	1566	APC	1	42	APC
+38001861	Nervous System Injections	0212	APC	1	42	APC
+38001487	Vaginal delivery w sterilization &/or D&C	767	MS-DRG	1	40	DRG
+38003546	Residential Treatment - Supervised Living	1003	Revenue Code	1	43	Revenue Code
+38003077	Room & Board Ward (Medical or General) - Detoxification	0156	Revenue Code	1	43	Revenue Code
+38002330	Injection glatiramer acetate	1015	APC	1	42	APC
+38003253	Speech-Language Pathology Therapy - General classification	0440	Revenue Code	1	43	Revenue Code
+38002048	Level II Arthroplasty or Implantation with Prosthesis	0425	APC	1	42	APC
+38002421	Integra DRT skin sub	1244	APC	1	42	APC
+38003528	Professional Fees - EKG	0985	Revenue Code	1	43	Revenue Code
+38002303	Flebogamma injection	0947	APC	1	42	APC
+38001321	Connective tissue disorders w/o CC/MCC	547	MS-DRG	1	40	DRG
+38001512	Other O.R. proc of the blood & blood forming organs w/o CC/MCC	804	MS-DRG	1	40	DRG
+38002361	IN 111 Pentetate	1092	APC	1	42	APC
+38002353	Treprostinil	1082	APC	1	42	APC
+38002660	Sincalide injection	1699	APC	1	42	APC
+38001800	Esophageal Dilation without Endoscopy	0140	APC	1	42	APC
+38002336	RBC, frz/deg/wsh, l/r, irrad	1021	APC	1	42	APC
+38001870	Implantation or Revision of Pain Management Catheter	0223	APC	1	42	APC
+38002177	Dolasetron mesylate oral	0763	APC	1	42	APC
+38001435	Urethral stricture	697	MS-DRG	1	40	DRG
+38000907	Craniotomy & endovascular intracranial procedures w MCC	025	MS-DRG	1	40	DRG
+38002921	Bendamustine injection	9243	APC	1	42	APC
+38002292	Factor IX non-recombinant	0931	APC	1	42	APC
+38001123	Deep vein thrombophlebitis w/o CC/MCC	295	MS-DRG	1	40	DRG
+38001155	Peritoneal adhesiolysis w CC	336	MS-DRG	1	40	DRG
+38003532	Professional Fees - Private Duty Nurse	0989	Revenue Code	1	43	Revenue Code
+38000980	Intraocular procedures w CC/MCC	116	MS-DRG	1	40	DRG
+38001183	Major gastrointestinal disorders & peritoneal infections w/o CC/MCC	373	MS-DRG	1	40	DRG
+38000944	Nonspecific cerebrovascular disorders w CC	071	MS-DRG	1	40	DRG
+38001165	Minor small & large bowel procedures w/o CC/MCC	346	MS-DRG	1	40	DRG
+38003251	Occupational Therapy - Evaluation or Re-evaluation	0434	Revenue Code	1	43	Revenue Code
+38002231	Porfimer sodium injection	0856	APC	1	42	APC
+38002372	Aripiprazole injection	1165	APC	1	42	APC
+38002900	Graftjacket Reg Matrix	9221	APC	1	42	APC
+38002313	Plaelet rich plasma unit	0958	APC	1	42	APC
+38002256	Rho d immune globulin inj	0884	APC	1	42	APC
+38001427	Kidney & urinary tract infections w MCC	689	MS-DRG	1	40	DRG
+38001411	Prostatectomy w/o CC/MCC	667	MS-DRG	1	40	DRG
+38001854	Level VII Female Reproductive Procedures	0202	APC	1	42	APC
+38002980	Thallous chloride, brand	9400	APC	1	42	APC
+38001137	Cardiac arrhythmia & conduction disorders w CC	309	MS-DRG	1	40	DRG
+38002148	Co57/58	0723	APC	1	42	APC
+38001636	Non-extensive O.R. proc unrelated to principal diagnosis w CC	988	MS-DRG	1	40	DRG
+38001495	Threatened abortion	778	MS-DRG	1	40	DRG
+38001402	Kidney & ureter procedures for neoplasm w/o CC/MCC	658	MS-DRG	1	40	DRG
+38001307	Fractures of femur w MCC	533	MS-DRG	1	40	DRG
+38001326	Medical back problems w/o MCC	552	MS-DRG	1	40	DRG
+38001658	Infectious and Parasitic Diseases, Systemic or Unspecified Sites	18	MDC	2	41	MDC
+38002319	Albumin (human), 25%, 50ml	0965	APC	1	42	APC
+38003550	Alternative Therapy Services - Acupuncture	2101	Revenue Code	1	43	Revenue Code
+38000917	Carotid artery stent procedure w CC	035	MS-DRG	1	40	DRG
+38002257	Azathioprine parenteral	0887	APC	1	42	APC
+38002686	Pegademase bovine, 25 iu	1739	APC	1	42	APC
+38002173	Dactinomycin injection	0752	APC	1	42	APC
+38002400	Pentastarch 10% solution	1222	APC	1	42	APC
+38002301	Rhophylac injection	0945	APC	1	42	APC
+38003033	Room & Board - Private (Medical or General) - OB	0112	Revenue Code	1	43	Revenue Code
+38002682	HOCM 300-349mg/ml iodine	1735	APC	1	42	APC
+38002502	New Technology - Level IE ($40-$50)	1495	APC	1	42	APC
+38003164	Oncology - General Classification	0280	Revenue Code	1	43	Revenue Code
+38002159	Amphotericin b liposome inj	0736	APC	1	42	APC
+38003410	Preventive Care Services - General	0770	Revenue Code	1	43	Revenue Code
+38001200	G.I. obstruction w/o CC/MCC	390	MS-DRG	1	40	DRG
+38000999	Ear, nose, mouth & throat malignancy w CC	147	MS-DRG	1	40	DRG
+38002246	IVIG non-lyophil 10 mg	0872	APC	1	42	APC
+38002124	Knee Arthroplasty	0681	APC	1	42	APC
+38002697	Power bone marrow bx needle	1830	APC	1	42	APC
+38002578	New Technology - Level XXXIV ($8000-$8500)	1571	APC	1	42	APC
+38003415	Lithotripsy - General Classification	0790	Revenue Code	1	43	Revenue Code
+38002439	Alloderm skin sub	1270	APC	1	42	APC
+38001409	Prostatectomy w MCC	665	MS-DRG	1	40	DRG
+38001197	Inflammatory bowel disease w/o CC/MCC	387	MS-DRG	1	40	DRG
+38003332	Oxygen (Home Health) - State/Equip/Suppl/Under 1 LPM	0602	Revenue Code	1	43	Revenue Code
+38001374	Amputat of lower limb for endocrine,nutrit,& metabol dis w/o CC/MCC	618	MS-DRG	1	40	DRG
+38001615	Craniotomy for multiple significant trauma	955	MS-DRG	1	40	DRG
+38001398	Major bladder procedures w CC	654	MS-DRG	1	40	DRG
+38003067	Private (Deluxe) - Detoxification	0146	Revenue Code	1	43	Revenue Code
+38002581	New Technology - Level XXXVII ($9500-$10000)	1574	APC	1	42	APC
+38002394	Lyme disease vaccine, im	1216	APC	1	42	APC
+38001294	Foot procedures w/o CC/MCC	505	MS-DRG	1	40	DRG
+38002379	Foscarnet sodium injection	1189	APC	1	42	APC
+38002593	Daclizumab, parenteral	1612	APC	1	42	APC
+38002358	Iodine I-131 iodide cap, dx	1088	APC	1	42	APC
+38001377	O.R. procedures for obesity w/o CC/MCC	621	MS-DRG	1	40	DRG
+38002776	Linezolid injection	9001	APC	1	42	APC
+38002984	Dx I131 so iodide sol, brand	9404	APC	1	42	APC
+38003207	CT Scan - Other CT Scans	0359	Revenue Code	1	43	Revenue Code
+38002150	Dexrazoxane HCl injection	0726	APC	1	42	APC
+38002056	Cardiac Defect Repair	0434	APC	1	42	APC
+38001860	Level II Extended EEG, Sleep, and Cardiovascular Studies	0209	APC	1	42	APC
+38003171	Durable Medical Equipment - Other Equipment	0299	Revenue Code	1	43	Revenue Code
+38002582	Tc99m sestamibi	1600	APC	1	42	APC
+38003368	Hospice Service - Continuous Home Care	0652	Revenue Code	1	43	Revenue Code
+38001424	Kidney & urinary tract neoplasms w MCC	686	MS-DRG	1	40	DRG
+38003158	Medical/Surgical Supplies and Devices - Prosthetic/Orthotic Devices	0274	Revenue Code	1	43	Revenue Code
+38001836	Level II Male Genital Procedures	0181	APC	1	42	APC
+38001643	Ear, Nose, Mouth & Throat	3	MDC	2	41	MDC
+38002905	Ziconotide intrathecal inf	9226	APC	1	42	APC
+38001303	Hand or wrist proc, except major thumb or joint proc w/o CC/MCC	514	MS-DRG	1	40	DRG
+38003325	Other Visits (Home Health) - Hourly Charge	0582	Revenue Code	1	43	Revenue Code
+38001505	Neonate w other significant problems	794	MS-DRG	1	40	DRG
+38001261	Cervical spinal fusion w CC	472	MS-DRG	1	40	DRG
+38002063	Dosimetric Drug Administration	0442	APC	1	42	APC
+38001562	Other infectious & parasitic diseases diagnoses w/o CC/MCC	869	MS-DRG	1	40	DRG
+38001138	Cardiac arrhythmia & conduction disorders w/o CC/MCC	310	MS-DRG	1	40	DRG
+38001983	Level I Immunizations	0355	APC	1	42	APC
+38002561	New Technology - Level XVII ($1500-$1600)	1554	APC	1	42	APC
+38001928	Miscellaneous Computed Axial Tomography	0282	APC	1	42	APC
+38001573	Behavioral & developmental disorders	886	MS-DRG	1	40	DRG
+38002043	Computerized Reconstruction	0417	APC	1	42	APC
+38001651	Kidney & Urinary Tract	11	MDC	2	41	MDC
+38002552	New Technology - Level VIII ($600 - $700)	1545	APC	1	42	APC
+38003017	Platelet pheres leukoreduced	9501	APC	1	42	APC
+38001911	Level II Miscellaneous Radiology Procedures	0264	APC	1	42	APC
+38002920	Injection, fosaprepitant	9242	APC	1	42	APC
+38003521	Professional Fees - Occupational Therapy	0978	Revenue Code	1	43	Revenue Code
+38002452	Gamma globulin 5 CC inj	1284	APC	1	42	APC
+38001786	Level I Urinary and Anal Procedures	0126	APC	1	42	APC
+38002706	Brachytx source, Cesium-131	2633	APC	1	42	APC
+38001455	Benign prostatic hypertrophy w/o MCC	726	MS-DRG	1	40	DRG
+38002120	Level I Thrombolysis and Thrombectomy	0677	APC	1	42	APC
+38002382	Verteporfin injection	1203	APC	1	42	APC
+38002886	Bortezomib injection	9207	APC	1	42	APC
+38003076	Room & Board Ward (Medical or General) - Hospice	0155	Revenue Code	1	43	Revenue Code
+38003039	Room & Board - Private (Medical or General) - Rehabilitation	0118	Revenue Code	1	43	Revenue Code
+38003515	Professional Fees - Radiology - Diagnostic	0972	Revenue Code	1	43	Revenue Code
+38002975	Implnt,bon void filler-strip	9362	APC	1	42	APC
+38002961	Injection, ipilimumab	9284	APC	1	42	APC
+38002675	HOCM 200-249mg/ml iodine	1715	APC	1	42	APC
+38003064	Private (Deluxe) - Pediatric	0143	Revenue Code	1	43	Revenue Code
+38003490	Other Diagnostic Services - Allergy Test	0924	Revenue Code	1	43	Revenue Code
+38001607	O.R. proc w diagnoses of other contact w health services w/o CC/MCC	941	MS-DRG	1	40	DRG
+38003259	Emergency Room - General Classification	0450	Revenue Code	1	43	Revenue Code
+38002267	Alpha 1 proteinase inhibitor	0901	APC	1	42	APC
+38002801	Baclofen 10 MG injection	9032	APC	1	42	APC
+38003018	Platelet pheresis irradiated	9502	APC	1	42	APC
+38002534	New Technology - Level XXVII ($4500-$5000)	1527	APC	1	42	APC
+38002709	Brachy linear, non-str,P-103	2636	APC	1	42	APC
+38002731	Meropenem	3045	APC	1	42	APC
+38001449	Other male reproductive system O.R. proc exc malignancy w CC/MCC	717	MS-DRG	1	40	DRG
+38001767	Insertion/Replacement of Pacemaker Leads and/or Electrodes	0106	APC	1	42	APC
+38001536	Chemo w acute leukemia as sdx or w high dose chemo agent w MCC	837	MS-DRG	1	40	DRG
+38003083	Other Room & Board - Self Care	0167	Revenue Code	1	43	Revenue Code
+38000911	Spinal procedures w CC or spinal neurostimulators	029	MS-DRG	1	40	DRG
+38003021	RBC irradiated	9505	APC	1	42	APC
+38002678	Brachytx source, Iodine 125	1718	APC	1	42	APC
+38001335	Aftercare, musculoskeletal system & connective tissue w/o CC/MCC	561	MS-DRG	1	40	DRG
+38003204	CT Scan - General Classification	0350	Revenue Code	1	43	Revenue Code
+38000986	Other disorders of the eye w/o MCC	125	MS-DRG	1	40	DRG
+38002827	Tirofliban hcl, per 6.25 mg	9109	APC	1	42	APC
+38002175	Naltrexone, depot form	0759	APC	1	42	APC
+38001963	Group Psychotherapy	0325	APC	1	42	APC
+38001833	Level I Partial Hospitalization (3 services) for Hospital-based PHPs	0175	APC	1	42	APC
+38003548	Residential Treatment - Group Home	1005	Revenue Code	1	43	Revenue Code
+38002251	Orthovisc inj per dose	0877	APC	1	42	APC
+38001914	Level III Diagnostic and Screening Ultrasound	0267	APC	1	42	APC
+38002102	Percutaneous Breast Biopsies	0658	APC	1	42	APC
+38003444	CAPD - Outpatient or Home - General Classification	0840	Revenue Code	1	43	Revenue Code
+38002462	Cyclosporine oral 25 mg	1294	APC	1	42	APC
+38002018	Level II Non-imaging Nuclear Medicine	0392	APC	1	42	APC
+38002665	Humate-P, inj	1704	APC	1	42	APC
+38001621	Other multiple significant trauma w CC	964	MS-DRG	1	40	DRG
+38003250	Occupational Therapy - Group rate	0433	Revenue Code	1	43	Revenue Code
+38003160	Medical/Surgical Supplies and Devices - Intraocular Lens	0276	Revenue Code	1	43	Revenue Code
+38002913	Alglucosidase alfa injection	9234	APC	1	42	APC
+38001886	Level II Repair and Plastic Eye Procedures	0239	APC	1	42	APC
+38001579	Wound debridements for injuries w MCC	901	MS-DRG	1	40	DRG
+38003218	Blood - General classification	0380	Revenue Code	1	43	Revenue Code
+38002831	Inj, pantoprazole sodium, vial	9113	APC	1	42	APC
+38001030	Major chest trauma w CC	184	MS-DRG	1	40	DRG
+38001178	Major esophageal disorders w MCC	368	MS-DRG	1	40	DRG
+38003183	Laboratory Pathological - Histology	0312	Revenue Code	1	43	Revenue Code
+38001987	Level II Alimentary Tests	0361	APC	1	42	APC
+38001227	Cirrhosis & alcoholic hepatitis w MCC	432	MS-DRG	1	40	DRG
+38001808	Level IV Anal/Rectal Procedures	0150	APC	1	42	APC
+38002743	Corticorelin ovine triflutat	7024	APC	1	42	APC
+38003288	Free-Standing Clinic - General Classification	0520	Revenue Code	1	43	Revenue Code
+38003299	Osteopathic Services - Osteopathic Therapy	0531	Revenue Code	1	43	Revenue Code
+38002843	Risperidone, long acting	9125	APC	1	42	APC
+38002478	Imiglucerase injection	1327	APC	1	42	APC
+38000958	Traumatic stupor & coma, coma <1 hr w MCC	085	MS-DRG	1	40	DRG
+38001714	Level IV Musculoskeletal Procedures Except Hand and Foot	0052	APC	1	42	APC
+38001022	Pulmonary embolism w/o MCC	176	MS-DRG	1	40	DRG
+38001126	Cardiac arrest, unexplained w/o CC/MCC	298	MS-DRG	1	40	DRG
+38002113	Level II Intravascular and Intracardiac Ultrasound and Flow Reserve	0670	APC	1	42	APC
+38003030	All-Inclusive Room and Board	0101	Revenue Code	1	43	Revenue Code
+38002338	Pralidoxime chloride inj	1023	APC	1	42	APC
+38001128	Peripheral vascular disorders w CC	300	MS-DRG	1	40	DRG
+38003127	Incremental Nursing Charge Rate - Nursery	0231	Revenue Code	1	43	Revenue Code
+38003322	Home Health Aide - Other	0579	Revenue Code	1	43	Revenue Code
+38001596	Complications of treatment w/o CC/MCC	921	MS-DRG	1	40	DRG
+38001308	Fractures of femur w/o MCC	534	MS-DRG	1	40	DRG
+38002438	Xyntha inj	1268	APC	1	42	APC
+38002098	Insertion/Replacement of a permanent dual chamber pacemaker	0654	APC	1	42	APC
+38002674	HOCM <=149 mg/ml iodine	1714	APC	1	42	APC
+38003351	Drugs Identification - Restrictive Prescription	0633	Revenue Code	1	43	Revenue Code
+38002979	Endoform Dermal Template	9367	APC	1	42	APC
+38001578	Alcohol/drug abuse or dependence w/o rehabilitation therapy w/o MCC	897	MS-DRG	1	40	DRG
+38002799	Amphotericin B	9030	APC	1	42	APC
+38002959	Injection, ceftaroline fosamil	9282	APC	1	42	APC
+38003094	Leave of Absence - Patient Convenience	0182	Revenue Code	1	43	Revenue Code
+38001794	Level II Skin Repair	0134	APC	1	42	APC
+38002297	Mitomycin 20 MG inj	0941	APC	1	42	APC
+38001441	Penis procedures w CC/MCC	709	MS-DRG	1	40	DRG
+38003202	Therapeutic Radiopharms	0344	Revenue Code	1	43	Revenue Code
+38003529	Professional Fees - EEG	0986	Revenue Code	1	43	Revenue Code
+38000959	Traumatic stupor & coma, coma <1 hr w CC	086	MS-DRG	1	40	DRG
+38003434	Hemodialysis - Outpatient or Home Maintenance 100%	0824	Revenue Code	1	43	Revenue Code
+38002437	Interferon alfacon-1 inj	1266	APC	1	42	APC
+38001204	Other digestive system diagnoses w CC	394	MS-DRG	1	40	DRG
+38002825	Hep B imm glob	9105	APC	1	42	APC
+38003252	Occupational Therapy - Other	0439	Revenue Code	1	43	Revenue Code
+38002816	Inj protirelin	9049	APC	1	42	APC
+38002411	Mitomycin 40 MG inj	1234	APC	1	42	APC
+38001415	Urethral procedures w CC/MCC	671	MS-DRG	1	40	DRG
+38003331	Oxygen (Home Health) - State/Equip/Suppl/or Cont	0601	Revenue Code	1	43	Revenue Code
+38003155	Medical/Surgical Supplies and Devices - Non Sterile	0271	Revenue Code	1	43	Revenue Code
+38002704	Brachytx, non-str,Yttrium-90	2616	APC	1	42	APC
+38003109	Intensive Care - Psychiatric	0204	Revenue Code	1	43	Revenue Code
+38002414	Inj iron dextran	1237	APC	1	42	APC
+38001712	Level II Musculoskeletal Procedures Except Hand and Foot	0050	APC	1	42	APC
+38002762	Filgrastim 480 mcg injection	7049	APC	1	42	APC
+38000953	Nontraumatic stupor & coma w MCC	080	MS-DRG	1	40	DRG
+38001953	Hyperthermic Therapies	0314	APC	1	42	APC
+38001417	Other kidney & urinary tract procedures w MCC	673	MS-DRG	1	40	DRG
+38002543	New Technology - Level XXXVI ($9000-$9500)	1536	APC	1	42	APC
+38003014	Diethylstilbestrol injection	9439	APC	1	42	APC
+38003542	Patient Convenience Items - Other	0999	Revenue Code	1	43	Revenue Code
+38002518	New Technology - Level XI ($900 - $1000)	1511	APC	1	42	APC
+38001784	Revision of Implanted Infusion Pump	0124	APC	1	42	APC
+38003051	Semi-Private - Three and Four Beds - General classification	0130	Revenue Code	1	43	Revenue Code
+38002947	Gammaplex IVIG	9270	APC	1	42	APC
+38001418	Other kidney & urinary tract procedures w CC	674	MS-DRG	1	40	DRG
+38003170	Durable Medical Equipment - Supplies/Drugs for DME Effectiveness	0294	Revenue Code	1	43	Revenue Code
+38001738	Level I Pulmonary Treatment	0077	APC	1	42	APC
+38000987	Major head & neck procedures w CC/MCC or major device	129	MS-DRG	1	40	DRG
+38002761	Alteplase recombinant	7048	APC	1	42	APC
+38003120	Special Charges - General classification	0220	Revenue Code	1	43	Revenue Code
+38001992	Level III Audiometry	0366	APC	1	42	APC
+38001314	Osteomyelitis w CC	540	MS-DRG	1	40	DRG
+38001428	Kidney & urinary tract infections w/o MCC	690	MS-DRG	1	40	DRG
+38002815	Inj desmopressin acetate	9048	APC	1	42	APC
+38001459	Other male reproductive system diagnoses w/o CC/MCC	730	MS-DRG	1	40	DRG
+38001878	Level III Eye Tests & Treatments	0231	APC	1	42	APC
+38003201	Diagnostic Radiopharms	0343	Revenue Code	1	43	Revenue Code
+38002038	IMRT Treatment Delivery	0412	APC	1	42	APC
+38001790	Level I Laparoscopy	0130	APC	1	42	APC
+38001791	Level II Laparoscopy	0131	APC	1	42	APC
+38001315	Osteomyelitis w/o CC/MCC	541	MS-DRG	1	40	DRG
+38001264	Amputation for musculoskeletal sys & conn tissue dis w CC	475	MS-DRG	1	40	DRG
+38003423	Organ Acquisition - General Classification	0810	Revenue Code	1	43	Revenue Code
+38002538	New Technology - Level XXXI ($6500-$7000)	1531	APC	1	42	APC
+38001412	Transurethral procedures w MCC	668	MS-DRG	1	40	DRG
+38001016	Major chest procedures w CC	164	MS-DRG	1	40	DRG
+38002240	Foscarnet sodium injection	0866	APC	1	42	APC
+38002981	Strontium-89 chloride, brand	9401	APC	1	42	APC
+38002050	Level II Tube or Catheter Changes or Repositioning	0427	APC	1	42	APC
+38002036	Mammogram Add On	0410	APC	1	42	APC
+38002037	Respiratory Procedures	0411	APC	1	42	APC
+38001419	Other kidney & urinary tract procedures w/o CC/MCC	675	MS-DRG	1	40	DRG
+38000974	Seizures w/o MCC	101	MS-DRG	1	40	DRG
+38003398	EKG/ECG - General Classification	0730	Revenue Code	1	43	Revenue Code
+38002804	Medroxyprogesterone injection	9035	APC	1	42	APC
+38001692	Level II Breast Surgery	0029	APC	1	42	APC
+38001972	Skin Tests	0341	APC	1	42	APC
+38001185	Digestive malignancy w CC	375	MS-DRG	1	40	DRG
+38000996	Mouth procedures w/o CC/MCC	138	MS-DRG	1	40	DRG
+38001819	Level II Cystourethroscopy and other Genitourinary Procedures	0161	APC	1	42	APC
+38001628	HIV w or w/o other related condition	977	MS-DRG	1	40	DRG
+38002533	New Technology - Level XXVI ($4000-$4500)	1526	APC	1	42	APC
+38001238	Disorders of liver except malig,cirr,alc hepa w/o CC/MCC	443	MS-DRG	1	40	DRG
+38002599	Technetium tc99m bicisate	1620	APC	1	42	APC
+38000971	Non-bacterial infect of nervous sys exc viral meningitis w CC	098	MS-DRG	1	40	DRG
+38001167	Anal & stomal procedures w CC	348	MS-DRG	1	40	DRG
+38001058	Cardiac valve & oth maj cardiothoracic proc w card cath w/o CC/MCC	218	MS-DRG	1	40	DRG
+38002171	Dolasetron mesylate	0750	APC	1	42	APC
+38001523	Lymphoma & leukemia w major O.R. procedure w CC	821	MS-DRG	1	40	DRG
+38001057	Cardiac valve & oth maj cardiothoracic proc w card cath w CC	217	MS-DRG	1	40	DRG
+38001797	Level V Skin Repair	0137	APC	1	42	APC
+38001777	Chemotherapy Administration by Other Technique Except Infusion	0116	APC	1	42	APC
+38002417	Apligraf skin sub	1240	APC	1	42	APC
+38001094	Other vascular procedures w MCC	252	MS-DRG	1	40	DRG
+38001260	Cervical spinal fusion w MCC	471	MS-DRG	1	40	DRG
+38001755	Level I Resuscitation and Cardioversion	0094	APC	1	42	APC
+38002858	Meningococcal vaccine, sc	9143	APC	1	42	APC
+38003119	Coronary Care - Other	0219	Revenue Code	1	43	Revenue Code
+38001275	Knee procedures w pdx of infection w CC	486	MS-DRG	1	40	DRG
+38003115	Coronary Care - Myocardial Infarction	0211	Revenue Code	1	43	Revenue Code
+38002136	Mohs Surgery	0694	APC	1	42	APC
+38001877	Level I Eye Tests & Treatments	0230	APC	1	42	APC
+38001246	Spinal fus exc cerv w spinal curv/malig/infec or 9+ fus w CC	457	MS-DRG	1	40	DRG
+38002516	New Technology - Level IX ($700 - $800)	1509	APC	1	42	APC
+38002691	Ocular implant, aqueous drain device	1783	APC	1	42	APC
+38002228	Thiotepa injection	0851	APC	1	42	APC
+38003556	Alternative Therapy Services - Other	2109	Revenue Code	1	43	Revenue Code
+38001964	Dental Procedures	0330	APC	1	42	APC
+38003050	Room & Board - Semi-private Two Bed (Medical or General) - Other	0129	Revenue Code	1	43	Revenue Code
+38001361	Malignant breast disorders w/o CC/MCC	599	MS-DRG	1	40	DRG
+38003121	Special Charges - Admission Charge	0221	Revenue Code	1	43	Revenue Code
+38003173	Laboratory - Chemistry	0301	Revenue Code	1	43	Revenue Code
+38001076	Coronary bypass w/o cardiac cath w/o MCC	236	MS-DRG	1	40	DRG
+38003280	Clinic - Chronic Pain Center	0511	Revenue Code	1	43	Revenue Code
+38001741	Diagnostic Cardiac Catheterization	0080	APC	1	42	APC
+38001273	Major joint & limb reattachment proc of upper extremity w/o CC/MCC	484	MS-DRG	1	40	DRG
+38002010	GI Procedures with Stents	0384	APC	1	42	APC
+38002992	Doxorubic hcl chemo, brand	9415	APC	1	42	APC
+38001255	Revision of hip or knee replacement w MCC	466	MS-DRG	1	40	DRG
+43125853	SKIN DEBRIDEMENT W MCC	570	MS-DRG	1	40	DRG
+38001647	Hepatobiliary System & Pancreas	7	MDC	2	41	MDC
+38003206	CT Scan - Body Scan	0352	Revenue Code	1	43	Revenue Code
+38002549	New Technology - Level V ($300 - $400)	1542	APC	1	42	APC
+38001545	Chemotherapy w/o acute leukemia as secondary diagnosis w MCC	846	MS-DRG	1	40	DRG
+38003169	Durable Medical Equipment - Purchase of used DME	0293	Revenue Code	1	43	Revenue Code
+38003304	Ambulance - Heart Mobile	0543	Revenue Code	1	43	Revenue Code
+38002812	Iron dextran	9045	APC	1	42	APC
+38003402	EEG - General classification	0740	Revenue Code	1	43	Revenue Code
+38002671	Vantas implant	1711	APC	1	42	APC
+38001775	Thyroid/Lymphadenectomy Procedures	0114	APC	1	42	APC
+38001380	Skin grafts & wound debrid for endoc, nutrit & metab dis w/o CC/MCC	624	MS-DRG	1	40	DRG
+38001815	Colorectal Cancer Screening: Barium Enema	0157	APC	1	42	APC
+38002808	Intraocular Fomivirsen na	9040	APC	1	42	APC
+38002269	Cytomegalovirus imm IV /vial	0903	APC	1	42	APC
+38001295	Major thumb or joint procedures	506	MS-DRG	1	40	DRG
+38002611	Yellow fever vaccine, sc	1636	APC	1	42	APC
+38002431	Adenovirus vaccine, type 4	1254	APC	1	42	APC
+38003483	Psychiatric/Psychological Services - Bio FeedBack	0917	Revenue Code	1	43	Revenue Code
+38001381	Thyroid, parathyroid & thyroglossal procedures w MCC	625	MS-DRG	1	40	DRG
+38003261	ER beyond EMTALA Screening	0452	Revenue Code	1	43	Revenue Code
+38002796	Supp-paramagnetic contrast material	9027	APC	1	42	APC
+38001078	Major cardiovasc procedures w/o MCC	238	MS-DRG	1	40	DRG
+38002375	Inj, temsirolimus	1168	APC	1	42	APC
+38001077	Major cardiovasc procedures w MCC or thoracic aortic aneurysm repair	237	MS-DRG	1	40	DRG
+38002204	Docetaxel injection	0823	APC	1	42	APC
+38002786	Mycophenolate mofetil oral	9015	APC	1	42	APC
+38001141	Chest pain	313	MS-DRG	1	40	DRG
+38003545	Residential Treatment - Chemical Dependency	1002	Revenue Code	1	43	Revenue Code
+38001375	O.R. procedures for obesity w MCC	619	MS-DRG	1	40	DRG
+38002154	Sargramostim injection	0731	APC	1	42	APC
+38002923	Romiplostim injection	9245	APC	1	42	APC
+38001420	Renal failure w MCC	682	MS-DRG	1	40	DRG
+38001196	Inflammatory bowel disease w CC	386	MS-DRG	1	40	DRG
+38002930	Plerixafor injection	9252	APC	1	42	APC
+38002649	Ethanolamine oleate	1688	APC	1	42	APC
+38001471	D&C, conization, laparoscopy & tubal interruption w/o CC/MCC	745	MS-DRG	1	40	DRG
+38001214	Cholecystectomy w c.d.e. w/o CC/MCC	413	MS-DRG	1	40	DRG
+38001890	Strabismus/Muscle Procedures	0243	APC	1	42	APC
+38001955	Level II Miscellaneous Radiology Procedures	0317	APC	1	42	APC
+38002099	Insertion/Replacement/Conversion of a permanent dual chamber pacemaker	0655	APC	1	42	APC
+38001792	Level III Laparoscopy	0132	APC	1	42	APC
+38001969	Magnetic Resonance Imaging and Magnetic Resonance Angiography without Contrast followed by Contrast	0337	APC	1	42	APC
+38001699	Level II Fine Needle Biopsy/Aspiration	0036	APC	1	42	APC
+38002764	Aminolevulinic acid hcl top	7308	APC	1	42	APC
+38002586	Abciximab injection	1605	APC	1	42	APC
+38002666	Factor viia	1705	APC	1	42	APC
+38003114	Coronary care - General Classification	0210	Revenue Code	1	43	Revenue Code
+38001266	Biopsies of musculoskeletal system & connective tissue w MCC	477	MS-DRG	1	40	DRG
+38003113	Intensive Care - Other Intensive Care	0209	Revenue Code	1	43	Revenue Code
+38001672	Level II Incision & Drainage	0007	APC	1	42	APC
+38002332	Plt, aph/pher, l/r, cmv-neg	1017	APC	1	42	APC
+38002236	Mitomycin 5 MG inj	0862	APC	1	42	APC
+38002165	Tc99m labeled rbc	0742	APC	1	42	APC
+38001469	Uterine & adnexa proc for non-malignancy w/o CC/MCC	743	MS-DRG	1	40	DRG
+38001203	Other digestive system diagnoses w MCC	393	MS-DRG	1	40	DRG
+38002039	Level II Radionuclide Therapy	0413	APC	1	42	APC
+38001600	Full thickness burn w skin graft or inhal inj w CC/MCC	928	MS-DRG	1	40	DRG
+38001603	Full thickness burn w/o skin grft or inhal inj	934	MS-DRG	1	40	DRG
+38002818	Urea injection	9051	APC	1	42	APC
+38001866	Level II Nerve and Muscle Tests	0218	APC	1	42	APC
+38001631	Extensive O.R. procedure unrelated to principal diagnosis w/o CC/MCC	983	MS-DRG	1	40	DRG
+38001662	Burns	22	MDC	2	41	MDC
+38001868	Level II Nerve Procedures	0221	APC	1	42	APC
+38001359	Malignant breast disorders w MCC	597	MS-DRG	1	40	DRG
+38002995	Inj cladribine, brand	9419	APC	1	42	APC
+38002895	Abarelix injection	9216	APC	1	42	APC
+38003161	Medical/Surgical Supplies and Devices - Oxygen-Take Home	0277	Revenue Code	1	43	Revenue Code
+38001543	Other myeloprolif dis or poorly diff neopl diag w CC	844	MS-DRG	1	40	DRG
+38003315	Medical Social Services - General Classification	0560	Revenue Code	1	43	Revenue Code
+38002952	Hexaminolevulinate HCl	9275	APC	1	42	APC
+38003186	Radiology - Diagnostic - General Classification	0320	Revenue Code	1	43	Revenue Code
+38002015	Level I Non-imaging Nuclear Medicine	0389	APC	1	42	APC
+38002603	Chromic phosphate p32	1628	APC	1	42	APC
+38001383	Thyroid, parathyroid & thyroglossal procedures w/o CC/MCC	627	MS-DRG	1	40	DRG
+38003476	Psychiatric/Psychological Services - General Classification	0910	Revenue Code	1	43	Revenue Code
+38001530	Myeloprolif disord or poorly diff neopl w maj O.R. proc w/o CC/MCC	828	MS-DRG	1	40	DRG
+38003135	All inclusive Ancillary - Comprehensive	0242	Revenue Code	1	43	Revenue Code
+38002494	Belimumab injection	1353	APC	1	42	APC
+38002879	Orcel	9200	APC	1	42	APC
+38001765	Transcatheter Placement of Intracoronary Stents	0104	APC	1	42	APC
+38001139	Angina pectoris	311	MS-DRG	1	40	DRG
+38001291	Soft tissue procedures w/o CC/MCC	502	MS-DRG	1	40	DRG
+38002705	Iodine I-125 sodium iodide	2632	APC	1	42	APC
+38001544	Other myeloprolif dis or poorly diff neopl diag w/o CC/MCC	845	MS-DRG	1	40	DRG
+38002615	Injection, methylene blue	1640	APC	1	42	APC
+38002859	Encephalitis vaccine, sc	9144	APC	1	42	APC
+38001174	Hernia procedures except inguinal & femoral w/o CC/MCC	355	MS-DRG	1	40	DRG
+38001003	Epistaxis w/o MCC	151	MS-DRG	1	40	DRG
+38001921	Arthrography	0275	APC	1	42	APC
+38002985	Th I131 so iodide sol, brand	9405	APC	1	42	APC
+38002107	Level I Electronic Analysis of Devices	0663	APC	1	42	APC
+38002194	Carmustine injection	0812	APC	1	42	APC
+38002915	Eculizumab injection	9236	APC	1	42	APC
+38003313	Skilled Nursing - Hourly Charge	0552	Revenue Code	1	43	Revenue Code
+38002275	Inj streptokinase /250000 IU	0911	APC	1	42	APC
+38002259	Lymphocyte immune globulin	0890	APC	1	42	APC
+38000966	Other disorders of nervous system w/o CC/MCC	093	MS-DRG	1	40	DRG
+38002300	Gammagard liquid injection	0944	APC	1	42	APC
+38001939	Hyperthermia and Radiation Treatment Procedures	0299	APC	1	42	APC
+38002277	Ganciclovir long act implant	0913	APC	1	42	APC
+38002570	New Technology - Level XXVI ($4000-$4500)	1563	APC	1	42	APC
+38002770	Level II Extended Assessment & Management Composite	8003	APC	1	42	APC
+38002214	Cosyntropin injection NOS	0835	APC	1	42	APC
+38001954	Level II Implantation of Neurostimulator Generator	0315	APC	1	42	APC
+38002435	Nandrolone decanoate 100 MG	1260	APC	1	42	APC
+38003010	Gonadorelin hydroch, brand	9435	APC	1	42	APC
+38001267	Biopsies of musculoskeletal system & connective tissue w CC	478	MS-DRG	1	40	DRG
+38002793	Amphotericin b lipid complex	9024	APC	1	42	APC
+38003327	Other Visits (Home Health) - Other	0589	Revenue Code	1	43	Revenue Code
+38002060	Level IV Drug Administration	0439	APC	1	42	APC
+38001114	Circulatory disorders except AMI, w card cath w MCC	286	MS-DRG	1	40	DRG
+38002364	Tc99m exametazime	1096	APC	1	42	APC
+38001430	Urinary stones w esw lithotripsy w/o CC/MCC	692	MS-DRG	1	40	DRG
+38002594	Trastuzumab injection	1613	APC	1	42	APC
+38001932	Complex Venography	0287	APC	1	42	APC
+38002558	New Technology - Level XIV ($1200- $1300)	1551	APC	1	42	APC
+38002791	IM inj interferon beta 1-a	9022	APC	1	42	APC
+38002852	Bcg vaccine, percut	9137	APC	1	42	APC
+38000982	Acute major eye infections w CC/MCC	121	MS-DRG	1	40	DRG
+38003080	Room & Board Ward (Medical or General) - Other	0159	Revenue Code	1	43	Revenue Code
+38002132	Level I Electronic Analysis of Devices	0690	APC	1	42	APC
+38003268	Audiology - Treatment	0472	Revenue Code	1	43	Revenue Code
+38002032	Level I Tumor/Infection Imaging	0406	APC	1	42	APC
+38001503	Prematurity w/o major problems	792	MS-DRG	1	40	DRG
+38003366	Hospice Service - General Classification	0650	Revenue Code	1	43	Revenue Code
+38003478	Psychiatric/Psychological Services - Day Care	0912	Revenue Code	1	43	Revenue Code
+38001500	Neonates, died or transferred to another acute care facility	789	MS-DRG	1	40	DRG
+38001056	Cardiac valve & oth maj cardiothoracic proc w card cath w MCC	216	MS-DRG	1	40	DRG
+38003040	Room & Board - Private (Medical or General) - Other	0119	Revenue Code	1	43	Revenue Code
+38001689	Level II Skin Repair	0025	APC	1	42	APC
+38003282	Clinic - Psychiatric Clinic	0513	Revenue Code	1	43	Revenue Code
+38003310	Ambulance - Other	0549	Revenue Code	1	43	Revenue Code
+38001033	Pleural effusion w CC	187	MS-DRG	1	40	DRG
+38003443	Peritoneal Dialysis - Outpatient or Home - Other	0839	Revenue Code	1	43	Revenue Code
+38001349	Other skin, subcut tiss & breast proc w/o CC/MCC	581	MS-DRG	1	40	DRG
+38002557	New Technology - Level XIII ($1100 - $1200)	1550	APC	1	42	APC
+38001318	Pathological fractures & musculoskelet & conn tiss malig w/o CC/MCC	544	MS-DRG	1	40	DRG
+38001700	Level IV Needle Biopsy/Aspiration Except Bone Marrow	0037	APC	1	42	APC
+38002725	Dtp/hib vaccine, im	3032	APC	1	42	APC
+38001810	Level I Percutaneous Abdominal and Biliary Procedures	0152	APC	1	42	APC
+38001845	Level V Female Reproductive Proc	0193	APC	1	42	APC
+38001843	Level I Female Reproductive Proc	0191	APC	1	42	APC
+38001145	Stomach, esophageal & duodenal proc w MCC	326	MS-DRG	1	40	DRG
+38003088	Newborn - Level III	0173	Revenue Code	1	43	Revenue Code
+38002188	Hyaluronidase recombinant	0806	APC	1	42	APC
+38003414	Other Telemedicine	0789	Revenue Code	1	43	Revenue Code
+38001108	Acute myocardial infarction, discharged alive w MCC	280	MS-DRG	1	40	DRG
+38002602	Indium 111-in pentetreotide	1625	APC	1	42	APC
+38001066	Cardiac defibrillator implant w/o cardiac cath w MCC	226	MS-DRG	1	40	DRG
+38001623	HIV w extensive O.R. procedure w MCC	969	MS-DRG	1	40	DRG
+38002482	Methyl aminolevulinate, top	1338	APC	1	42	APC
+38002523	New Technology - Level XVI ($1400 - $1500)	1516	APC	1	42	APC
+38003195	Radiology - Therapeutic - Radiation Therapy	0333	Revenue Code	1	43	Revenue Code
+38002029	Level I Nervous System Imaging	0403	APC	1	42	APC
+38001913	Level II Diagnostic and Screening Ultrasound	0266	APC	1	42	APC
+38001574	Other mental disorder diagnoses	887	MS-DRG	1	40	DRG
+38001482	Infections, female reproductive system w/o CC/MCC	759	MS-DRG	1	40	DRG
+38001329	Signs & symptoms of musculoskeletal system & conn tissue w MCC	555	MS-DRG	1	40	DRG
+38002618	Y90 ibritumomab, rx	1643	APC	1	42	APC
+38001323	Septic arthritis w CC	549	MS-DRG	1	40	DRG
+38002750	Somatropin injection	7034	APC	1	42	APC
+38001404	Kidney & ureter procedures for non-neoplasm w CC	660	MS-DRG	1	40	DRG
+38002362	TC99M fanolesomab	1093	APC	1	42	APC
+38001882	Level I Posterior Segment Eye Procedures	0235	APC	1	42	APC
+38002657	Palifermin injection	1696	APC	1	42	APC
+38003057	Semi-Private - Three and Four Beds - Detoxification	0136	Revenue Code	1	43	Revenue Code
+38001064	Cardiac defib implant w cardiac cath w/o AMI/HF/shock w MCC	224	MS-DRG	1	40	DRG
+38002290	Anti-inhibitor	0929	APC	1	42	APC
+38001464	Uterine & adnexa proc for ovarian or adnexal malignancy w/o CC/MCC	738	MS-DRG	1	40	DRG
+38001880	Level III Anterior Segment Eye Procedures	0233	APC	1	42	APC
+38002659	Pentastarch 10% solution	1698	APC	1	42	APC
+38001747	Level III Electrophysiologic Procedures	0086	APC	1	42	APC
+38003022	Granulocytes, pheresis unit	9506	APC	1	42	APC
+38002532	New Technology - Level XXV ($3500-$4000)	1525	APC	1	42	APC
+38002258	Cyclosporine oral	0888	APC	1	42	APC
+38003260	EMTALA Emergency Medical Screening Services	0451	Revenue Code	1	43	Revenue Code
+38001013	Dental & oral diseases w CC	158	MS-DRG	1	40	DRG
+38001604	Non-extensive burns	935	MS-DRG	1	40	DRG
+38003319	Home Health Aide - General Classification	0570	Revenue Code	1	43	Revenue Code
+38003547	Residential Treatment - Halfway House	1004	Revenue Code	1	43	Revenue Code
+38001379	Skin grafts & wound debrid for endoc, nutrit & metab dis w CC	623	MS-DRG	1	40	DRG
+38001371	Adrenal & pituitary procedures w/o CC/MCC	615	MS-DRG	1	40	DRG
+38002616	Tc99m depreotide	1641	APC	1	42	APC
+38003058	Semi-Private - Three and Four Beds - Oncology	0137	Revenue Code	1	43	Revenue Code
+38003072	Room & Board Ward (Medical or General) - Medical/Surgical/Gyn	0151	Revenue Code	1	43	Revenue Code
+38001036	Chronic obstructive pulmonary disease w MCC	190	MS-DRG	1	40	DRG
+38003549	Alternative Therapy Services - General	2100	Revenue Code	1	43	Revenue Code
+38002747	Fosphenytoin	7028	APC	1	42	APC
+38002341	I131 iodobenguate, dx	1045	APC	1	42	APC
+38002944	Injection, Wilate	9267	APC	1	42	APC
+38002282	Gamma globulin 7 CC inj	0921	APC	1	42	APC
+38002158	Ampho b cholesteryl sulfate	0735	APC	1	42	APC
+38002759	Inj trimetrexate glucoronate	7045	APC	1	42	APC
+38001355	Skin ulcers w CC	593	MS-DRG	1	40	DRG
+38001844	Level IV Female Reproductive Proc	0192	APC	1	42	APC
+38002176	Anidulafungin injection	0760	APC	1	42	APC
+38003132	Incremental Nursing Charge Rate - Other	0239	Revenue Code	1	43	Revenue Code
+38002717	Brachytx, stranded, NOS	2698	APC	1	42	APC
+38002168	Dacarbazine 100 mg inj	0746	APC	1	42	APC
+38002511	New Technology - Level IV ($200 - $300)	1504	APC	1	42	APC
+38001060	Cardiac valve & oth maj cardiothoracic proc w/o card cath w CC	220	MS-DRG	1	40	DRG
+38002211	Ifosfomide injection	0831	APC	1	42	APC
+38002456	Visualization adjunct	1288	APC	1	42	APC
+38002795	High dose contrast MRI	9026	APC	1	42	APC
+38001096	Other vascular procedures w/o CC/MCC	254	MS-DRG	1	40	DRG
+38001553	Postoperative or post-traumatic infections w O.R. proc w CC	857	MS-DRG	1	40	DRG
+38001403	Kidney & ureter procedures for non-neoplasm w MCC	659	MS-DRG	1	40	DRG
+38002499	New Technology - Level IB ($10-$20)	1492	APC	1	42	APC
+38001222	Hepatobiliary diagnostic procedures w CC	421	MS-DRG	1	40	DRG
+38002352	I-131 tositumomab, tx	1081	APC	1	42	APC
+38001812	Hernia/Hydrocele Procedures	0154	APC	1	42	APC
+38003227	Blood Storage and Processing - General Classification	0390	Revenue Code	1	43	Revenue Code
+38001470	D&C, conization, laparoscopy & tubal interruption w CC/MCC	744	MS-DRG	1	40	DRG
+38001190	Complicated peptic ulcer w MCC	380	MS-DRG	1	40	DRG
+38002005	Injection adenosine 6 MG	0379	APC	1	42	APC
+38000887	Heart transplant or implant of heart assist system w MCC	001	MS-DRG	1	40	DRG
+38002685	Oxaliplatin	1738	APC	1	42	APC
+38002079	Level 4 Type A Emergency Visits	0615	APC	1	42	APC
+38002226	Rituximab injection	0849	APC	1	42	APC
+38001889	Level V Repair and Plastic Eye Procedures	0242	APC	1	42	APC
+38002505	New Technology - Level IC ($20-$30)	1498	APC	1	42	APC
+38001715	Level I Hand Musculoskeletal Procedures	0053	APC	1	42	APC
+38002519	New Technology - Level XII ($1000 - $1100)	1512	APC	1	42	APC
+38003028	HIPPS	0024	Revenue Code	1	43	Revenue Code
+38002265	Gamma globulin 3 CC inj	0899	APC	1	42	APC
+38001707	Bone/Joint Manipulation Under Anesthesia	0045	APC	1	42	APC
+38001666	Level I Photochemotherapy	0001	APC	1	42	APC
+38002270	Gamma globulin 4 CC inj	0904	APC	1	42	APC
+38001879	Level I Anterior Segment Eye Procedures	0232	APC	1	42	APC
+38003185	Laboratory Pathological - Other	0319	Revenue Code	1	43	Revenue Code
+38001175	Other digestive system O.R. procedures w MCC	356	MS-DRG	1	40	DRG
+38001162	Appendectomy w/o complicated principal diag w/o CC/MCC	343	MS-DRG	1	40	DRG
+38001809	Endoscopic Retrograde Cholangio-Pancreatography (ERCP)	0151	APC	1	42	APC
+38003424	Organ Acquisition - Living Donor - Kidney	0811	Revenue Code	1	43	Revenue Code
+38003558	Adult Care - Day Care - Social - Hourly	3102	Revenue Code	1	43	Revenue Code
+38003154	Medical/Surgical Supplies and Devices - General Classification	0270	Revenue Code	1	43	Revenue Code
+38003214	Anesthesia - Incident to Radiology	0371	Revenue Code	1	43	Revenue Code
+38002703	Probe, percutaneous lumbar disc	2614	APC	1	42	APC
+38001152	Rectal resection w CC	333	MS-DRG	1	40	DRG
+38002943	Collagenase clostridum histo	9266	APC	1	42	APC
+38002501	New Technology - Level ID ($30-$40)	1494	APC	1	42	APC
+38001869	Level II Implantation of Neurostimulator	0222	APC	1	42	APC
+38003188	Radiology - Diagnostic - Arthography	0322	Revenue Code	1	43	Revenue Code
+38001746	Level II Electrophysiologic Procedures	0085	APC	1	42	APC
+38002928	Artiss fibrin sealant	9250	APC	1	42	APC
+38002314	Red blood cells unit	0959	APC	1	42	APC
+38002106	CT Angiography	0662	APC	1	42	APC
+38002453	Nandrolone decanoate 50 MG	1285	APC	1	42	APC
+38002877	Anthrax vaccine, sc	9169	APC	1	42	APC
+38002288	Factor viii recombinant	0927	APC	1	42	APC
+38002758	Infliximab injection	7043	APC	1	42	APC
+38002197	Cyclophosphamide inj	0815	APC	1	42	APC
+38001521	Reticuloendothelial & immunity disorders w/o CC/MCC	816	MS-DRG	1	40	DRG
+38001014	Dental & oral diseases w/o CC/MCC	159	MS-DRG	1	40	DRG
+38002415	Topotecan oral	1238	APC	1	42	APC
+38001405	Kidney & ureter procedures for non-neoplasm w/o CC/MCC	661	MS-DRG	1	40	DRG
+38002598	Gallium ga 67	1619	APC	1	42	APC
+38001107	AICD lead procedures	265	MS-DRG	1	40	DRG
+38001310	Fractures of hip & pelvis w/o MCC	536	MS-DRG	1	40	DRG
+38000968	Bacterial & tuberculous infections of nervous system w CC	095	MS-DRG	1	40	DRG
+38001205	Other digestive system diagnoses w/o CC/MCC	395	MS-DRG	1	40	DRG
+38000976	Headaches w/o MCC	103	MS-DRG	1	40	DRG
+38001774	Excision Lymphatic System	0113	APC	1	42	APC
+38001446	Transurethral prostatectomy w/o CC/MCC	714	MS-DRG	1	40	DRG
+38003339	MRI - Other	0614	Revenue Code	1	43	Revenue Code
+38003125	Special Charges - Other Special Charges	0229	Revenue Code	1	43	Revenue Code
+38001961	Extended Individual Psychotherapy	0323	APC	1	42	APC
+38002601	Sodium phosphate p32	1624	APC	1	42	APC
+38002052	Level V Cystourethroscopy and other Genitourinary Procedures	0429	APC	1	42	APC
+38001857	Level II Nerve Injections	0206	APC	1	42	APC
+38003180	Laboratory - Other	0309	Revenue Code	1	43	Revenue Code
+38002242	Oral aprepitant	0868	APC	1	42	APC
+38002146	Tc99m tetrofosmin	0705	APC	1	42	APC
+38002495	Hydroxyprogesterone caproate	1354	APC	1	42	APC
+38001463	Uterine & adnexa proc for ovarian or adnexal malignancy w CC	737	MS-DRG	1	40	DRG
+38003302	Ambulance - Supplies	0541	Revenue Code	1	43	Revenue Code
+38003230	Blood Storage and Processing - Other	0399	Revenue Code	1	43	Revenue Code
+38003308	Ambulance - Pharmacy	0547	Revenue Code	1	43	Revenue Code
+38001088	Perc cardiovasc proc w non-drug-eluting stent w MCC or 4+ ves/stents	248	MS-DRG	1	40	DRG
+38001684	Level II Excision/ Biopsy	0020	APC	1	42	APC
+38002125	Level V Debridement & Destruction	0682	APC	1	42	APC
+38002830	Inj perflutren lip micros,ml	9112	APC	1	42	APC
+38001212	Cholecystectomy w c.d.e. w MCC	411	MS-DRG	1	40	DRG
+38003340	MRA - Head and Neck	0615	Revenue Code	1	43	Revenue Code
+38001926	Level III Angiography and Venography	0280	APC	1	42	APC
+38003295	Free-Standing Clinic - Nurse visit to home in a HH shortage area	0527	Revenue Code	1	43	Revenue Code
+38002692	Retinal tamp, silicone oil	1814	APC	1	42	APC
+38003264	Pulmonary Function - General Classification	0460	Revenue Code	1	43	Revenue Code
+38001394	Endocrine disorders w CC	644	MS-DRG	1	40	DRG
+38001824	Level I Urethral Procedures	0166	APC	1	42	APC
+38002713	Brachytx, stranded, P-103	2640	APC	1	42	APC
+38001706	Closed Treatment Fracture Finger/Toe/Trunk	0043	APC	1	42	APC
+38003287	Clinic - Other Clinic	0519	Revenue Code	1	43	Revenue Code
+38003341	MRA - Lower Ext	0616	Revenue Code	1	43	Revenue Code
+38003551	Alternative Therapy Services - Acupressure	2102	Revenue Code	1	43	Revenue Code
+38001068	Other cardiothoracic procedures w MCC	228	MS-DRG	1	40	DRG
+38001439	Major male pelvic procedures w CC/MCC	707	MS-DRG	1	40	DRG
+38002408	Plicamycin (mithramycin) inj	1231	APC	1	42	APC
+38002365	TC 99M arcitumomab, per vial	1122	APC	1	42	APC
+38003235	Other Imaging Services - Positron Emission Tomography	0404	Revenue Code	1	43	Revenue Code
+38003159	Medical/Surgical Supplies and Devices - Pace Maker	0275	Revenue Code	1	43	Revenue Code
+38001494	Ectopic pregnancy	777	MS-DRG	1	40	DRG
+38001376	O.R. procedures for obesity w CC	620	MS-DRG	1	40	DRG
+38001045	Pneumothorax w MCC	199	MS-DRG	1	40	DRG
+38001612	Aftercare w CC/MCC	949	MS-DRG	1	40	DRG
+38001951	Radioelement Applications	0312	APC	1	42	APC
+38002472	Oral busulfan	1307	APC	1	42	APC
+38002956	Injection, ibuprofen	9279	APC	1	42	APC
+38001515	Major hematol/immun diag exc sickle cell crisis & coagul w/o CC/MCC	810	MS-DRG	1	40	DRG
+38002108	Level I Proton Beam Radiation Therapy	0664	APC	1	42	APC
+38001813	Level II Anal/Rectal Procedures	0155	APC	1	42	APC
+38002702	Methyldopate hcl injection	2210	APC	1	42	APC
+38002854	Rabies vaccine, im	9139	APC	1	42	APC
+38002057	Level I Drug Administration	0436	APC	1	42	APC
+38002294	Gamma globulin > 10 CC inj	0933	APC	1	42	APC
+38001272	Major joint & limb reattachment proc of upper extremity w CC/MCC	483	MS-DRG	1	40	DRG
+38001029	Major chest trauma w MCC	183	MS-DRG	1	40	DRG
+38003042	Room & Board - Semi-private Two Bed (Medical or General) - Medical/Surgical/Gyn	0121	Revenue Code	1	43	Revenue Code
+38002878	Lyme disease vaccine, im	9170	APC	1	42	APC
+38001694	Smoking Cessation Services	0031	APC	1	42	APC
+38002597	Vonwillebrandfactrcmplx, per iu	1618	APC	1	42	APC
+38002397	Dtap-ipv vacc 4-6 yr im	1219	APC	1	42	APC
+38001004	Otitis media & URI w MCC	152	MS-DRG	1	40	DRG
+38002153	Pamidronate disodium	0730	APC	1	42	APC
+38001721	Manipulation Therapy	0060	APC	1	42	APC
+38001252	Wnd debrid & skn grft exc hand, for musculo-conn tiss dis w MCC	463	MS-DRG	1	40	DRG
+38002901	Injectable human tissue	9222	APC	1	42	APC
+38001368	Minor skin disorders w MCC	606	MS-DRG	1	40	DRG
+38001852	Level VII Female Reproductive Proc	0200	APC	1	42	APC
+38001354	Skin ulcers w MCC	592	MS-DRG	1	40	DRG
+38003122	Special Charges - Technical Support Charge	0222	Revenue Code	1	43	Revenue Code
+38001980	Administration of flu and PPV vaccine	0350	APC	1	42	APC
+38001236	Disorders of liver except malig,cirr,alc hepa w MCC	441	MS-DRG	1	40	DRG
+38000931	Multiple sclerosis & cerebellar ataxia w MCC	058	MS-DRG	1	40	DRG
+38003267	Audiology - Diagnostic	0471	Revenue Code	1	43	Revenue Code
+38001431	Urinary stones w/o esw lithotripsy w MCC	693	MS-DRG	1	40	DRG
+38001568	Depressive neuroses	881	MS-DRG	1	40	DRG
+38001087	Perc cardiovasc proc w drug-eluting stent w/o MCC	247	MS-DRG	1	40	DRG
+38002286	Factor viii	0925	APC	1	42	APC
+38002192	Goserelin acetate implant	0810	APC	1	42	APC
+38003093	Leave of Absence - RESERVED	0181	Revenue Code	1	43	Revenue Code
+38002385	Octreotide injection, depot	1207	APC	1	42	APC
+38002714	Brachytx, non-stranded,P-103	2641	APC	1	42	APC
+38001440	Major male pelvic procedures w/o CC/MCC	708	MS-DRG	1	40	DRG
+38001554	Postoperative or post-traumatic infections w O.R. proc w/o CC/MCC	858	MS-DRG	1	40	DRG
+38001749	Thrombectomy	0088	APC	1	42	APC
+38003479	Psychiatric/Psychological Services - Night Care	0913	Revenue Code	1	43	Revenue Code
+38002687	Diazoxide injection	1740	APC	1	42	APC
+38002572	New Technology - Level XXVIII ($5000-$5500)	1565	APC	1	42	APC
+38003449	CAPD - Outpatient or Home - Support Services	0845	Revenue Code	1	43	Revenue Code
+38000896	Pancreas transplant	010	MS-DRG	1	40	DRG
+38001841	Level III Female Reproductive Proc	0189	APC	1	42	APC
+38002077	Level 2 Type A Emergency Visits	0613	APC	1	42	APC
+38001883	Level II Posterior Segment Eye Procedures	0236	APC	1	42	APC
+38001519	Reticuloendothelial & immunity disorders w MCC	814	MS-DRG	1	40	DRG
+38001757	Level II Noninvasive Physiologic Studies	0096	APC	1	42	APC
+38002517	New Technology - Level X ($800 - $900)	1510	APC	1	42	APC
+38001828	Dialysis	0170	APC	1	42	APC
+38001641	Nervous System	1	MDC	2	41	MDC
+38002461	Bladder calculi irrig sol	1293	APC	1	42	APC
+38001000	Ear, nose, mouth & throat malignancy w/o CC/MCC	148	MS-DRG	1	40	DRG
+38003300	Osteopathic Services - Other	0539	Revenue Code	1	43	Revenue Code
+38001848	Dilation and Curettage	0196	APC	1	42	APC
+38001209	Biliary tract proc except only cholecyst w or w/o c.d.e. w MCC	408	MS-DRG	1	40	DRG
+38002210	Irinotecan injection	0830	APC	1	42	APC
+38001444	Testes procedures w/o CC/MCC	712	MS-DRG	1	40	DRG
+38001802	Small Intestine Endoscopy	0142	APC	1	42	APC
+38001524	Lymphoma & leukemia w major O.R. procedure w/o CC/MCC	822	MS-DRG	1	40	DRG
+38003395	Labor Room/Delivery - Circumcision	0723	Revenue Code	1	43	Revenue Code
+38002058	Level II Drug Administration	0437	APC	1	42	APC
+38002896	Leuprolide acetate suspnsion	9217	APC	1	42	APC
+38002249	Euflexxa inj per dose	0875	APC	1	42	APC
+38002030	Renal and Genitourinary Studies	0404	APC	1	42	APC
+38002170	Bleomycin sulfate injection	0748	APC	1	42	APC
+38001047	Pneumothorax w/o CC/MCC	201	MS-DRG	1	40	DRG
+38001754	Vascular Reconstruction/Fistula Repair without Device	0093	APC	1	42	APC
+38001370	Adrenal & pituitary procedures w CC/MCC	614	MS-DRG	1	40	DRG
+38002459	Rilonacept injection	1291	APC	1	42	APC
+38003411	Vaccine Administration	0771	Revenue Code	1	43	Revenue Code
+38001865	Level III Nerve and Muscle Tests	0216	APC	1	42	APC
+38003320	Home Health Aide - Visit Charge	0571	Revenue Code	1	43	Revenue Code
+38003306	Ambulance - Air	0545	Revenue Code	1	43	Revenue Code
+38003198	Nuclear Medicine - General Classification	0340	Revenue Code	1	43	Revenue Code
+38002241	Methacholine chloride, neb	0867	APC	1	42	APC
+38001434	Kidney & urinary tract signs & symptoms w/o MCC	696	MS-DRG	1	40	DRG
+38003147	Pharmacy - Other Pharmacy	0259	Revenue Code	1	43	Revenue Code
+38001776	Cannula/Access Device Procedures	0115	APC	1	42	APC
+38001171	Inguinal & femoral hernia procedures w/o CC/MCC	352	MS-DRG	1	40	DRG
+38002888	Laronidase injection	9209	APC	1	42	APC
+38002625	Tc99m succimer	1650	APC	1	42	APC
+38002123	Insertion of Patient Activated Event Recorders	0680	APC	1	42	APC
+38002180	Apomorphine hydrochloride	0766	APC	1	42	APC
+38001962	Family Psychotherapy	0324	APC	1	42	APC
+38001365	Cellulitis w/o MCC	603	MS-DRG	1	40	DRG
+38003157	Medical/Surgical Supplies and Devices - Take Home	0273	Revenue Code	1	43	Revenue Code
+38002588	Anistreplase	1606	APC	1	42	APC
+38002718	Brachytx, non-stranded, NOS	2699	APC	1	42	APC
+38002186	Vivaglobin, inj	0804	APC	1	42	APC
+38002000	Monitoring Psychiatric Drugs	0374	APC	1	42	APC
+38003489	Other Diagnostic Services - Pap smear	0923	Revenue Code	1	43	Revenue Code
+38001311	Sprains, strains, & dislocations of hip, pelvis & thigh w CC/MCC	537	MS-DRG	1	40	DRG
+38003175	Laboratory - Renal Patient (Home)	0303	Revenue Code	1	43	Revenue Code
+38003303	Ambulance - Medical Transport	0542	Revenue Code	1	43	Revenue Code
+38002733	Cyclophosphamide lyophilized	3049	APC	1	42	APC
+38002169	Chlorothiazide sodium inj	0747	APC	1	42	APC
+38001020	Other resp system O.R. procedures w/o CC/MCC	168	MS-DRG	1	40	DRG
+38002655	Ziconotide injection	1694	APC	1	42	APC
+38003097	Leave of Absence - Nursing home ( for hospitalization)	0185	Revenue Code	1	43	Revenue Code
+38001837	Level I Male Genital Procedures	0183	APC	1	42	APC
+38001871	Implantation of Catheter/Reservoir/Shunt	0224	APC	1	42	APC
+38000922	Periph/cranial nerve & other nerv syst proc w MCC	040	MS-DRG	1	40	DRG
+38001397	Major bladder procedures w MCC	653	MS-DRG	1	40	DRG
+38003382	Outpatient Special Residence Charges - Other	0679	Revenue Code	1	43	Revenue Code
+38003241	Physical Therapy - General Classification	0420	Revenue Code	1	43	Revenue Code
+38001908	Level II Plain Film Except Teeth Including Bone Density Measurement	0261	APC	1	42	APC
+38003193	Radiology - Therapeutic - Chemotherapy - Injected	0331	Revenue Code	1	43	Revenue Code
+38002595	Valrubicin, 200 mg	1614	APC	1	42	APC
+38001135	Cardiac congenital & valvular disorders w/o MCC	307	MS-DRG	1	40	DRG
+38002198	Cyclophosphamide lyophilized	0816	APC	1	42	APC
+38002797	Tetracyclin injection	9028	APC	1	42	APC
+38003460	Miscellaneous Dialysis - Home Dialysis Aid Visit	0882	Revenue Code	1	43	Revenue Code
+38001353	Breast biopsy, local excision & other breast procedures w/o CC/MCC	585	MS-DRG	1	40	DRG
+38002368	Integra matrix tissue	1140	APC	1	42	APC
+38001073	Coronary bypass w cardiac cath w MCC	233	MS-DRG	1	40	DRG
+38003061	Private (Deluxe) - General classification	0140	Revenue Code	1	43	Revenue Code
+38001609	Rehabilitation w/o CC/MCC	946	MS-DRG	1	40	DRG
+38002311	Plasma protein fract,5%,50ml	0956	APC	1	42	APC
+38001032	Pleural effusion w MCC	186	MS-DRG	1	40	DRG
+38003272	Cardiology - Stress Test	0482	Revenue Code	1	43	Revenue Code
+38002772	CT and CTA without Contrast Composite	8005	APC	1	42	APC
+38002663	Ovine, up to 999 USP units	1702	APC	1	42	APC
+38003418	Inpatient Renal Dialysis - Inpatient Hemodialysis	0801	Revenue Code	1	43	Revenue Code
+38001292	Foot procedures w MCC	503	MS-DRG	1	40	DRG
+38001268	Biopsies of musculoskeletal system & connective tissue w/o CC/MCC	479	MS-DRG	1	40	DRG
+38001277	Knee procedures w/o pdx of infection w CC/MCC	488	MS-DRG	1	40	DRG
+38002530	New Technology - Level XXIII ($2500-$3000)	1523	APC	1	42	APC
+38001221	Hepatobiliary diagnostic procedures w MCC	420	MS-DRG	1	40	DRG
+38002670	Clofarabine injection	1710	APC	1	42	APC
+38001665	Human Immunodeficiency Virus Infections	25	MDC	2	41	MDC
+38003255	Speech-Language Pathology Therapy - Hourly charge	0442	Revenue Code	1	43	Revenue Code
+38002342	Inj, moxifloxacin	1046	APC	1	42	APC
+38003224	Blood - Other components	0386	Revenue Code	1	43	Revenue Code
+38000912	Spinal procedures w/o CC/MCC	030	MS-DRG	1	40	DRG
+38002629	Rb82 rubidium	1654	APC	1	42	APC
+38001649	Skin, Subcutaneous Tissue & Breast	9	MDC	2	41	MDC
+38000950	Hypertensive encephalopathy w MCC	077	MS-DRG	1	40	DRG
+38001858	Level III Nerve Injections	0207	APC	1	42	APC
+38003381	Outpatient Special Residence Charges - Contracted	0672	Revenue Code	1	43	Revenue Code
+38001461	Pelvic evisceration, rad hysterectomy & rad vulvectomy w/o CC/MCC	735	MS-DRG	1	40	DRG
+38001740	Ventilation Initiation and Management	0079	APC	1	42	APC
+38002526	New Technology - Level IXX ($1700-$1800)	1519	APC	1	42	APC
+38002028	Level II Nervous System Imaging	0402	APC	1	42	APC
+38003365	Home IV Therapy - Other IV Therapy Services	0649	Revenue Code	1	43	Revenue Code
+38002934	Dexamethasone intra implant	9256	APC	1	42	APC
+38001018	Other resp system O.R. procedures w MCC	166	MS-DRG	1	40	DRG
+38003279	Clinic - General Classification	0510	Revenue Code	1	43	Revenue Code
+38003257	Speech-Language Pathology Therapy - Evaluation or Re-evaluation	0444	Revenue Code	1	43	Revenue Code
+38003469	Psychiatric/Psychological Treatments - Milieu Therapy	0902	Revenue Code	1	43	Revenue Code
+38001184	Digestive malignancy w MCC	374	MS-DRG	1	40	DRG
+38001549	Infectious & parasitic diseases w O.R. procedure w MCC	853	MS-DRG	1	40	DRG
+38002334	Plate pheres leukoredu irrad	1019	APC	1	42	APC
+38002617	In111 ibritumomab, dx	1642	APC	1	42	APC
+38002976	Integra Meshed Bil Wound Mat	9363	APC	1	42	APC
+38002868	LOCM 200-249mg/ml iodine,1ml	9159	APC	1	42	APC
+38001083	Permanent cardiac pacemaker implant w CC	243	MS-DRG	1	40	DRG
+38001216	Cholecystectomy except by laparoscope w/o c.d.e. w CC	415	MS-DRG	1	40	DRG
+38001856	Level I Nerve Injections	0204	APC	1	42	APC
+38001566	O.R. procedure w principal diagnoses of mental illness	876	MS-DRG	1	40	DRG
+38002298	Mitomycin 40 MG inj	0942	APC	1	42	APC
+38002753	Urofollitropin	7037	APC	1	42	APC
+38001653	Female Reproductive System	13	MDC	2	41	MDC
+38001401	Kidney & ureter procedures for neoplasm w CC	657	MS-DRG	1	40	DRG
+38001905	Tonsil and Adenoid Procedures	0258	APC	1	42	APC
+38000951	Hypertensive encephalopathy w CC	078	MS-DRG	1	40	DRG
+38003130	Incremental Nursing Charge Rate - CCU	0234	Revenue Code	1	43	Revenue Code
+38001811	Peritoneal and Abdominal Procedures	0153	APC	1	42	APC
+38003347	Med - Surg Supplies Ext. of 270: Investigational Device (IDE)	0624	Revenue Code	1	43	Revenue Code
+38003276	Ambulatory Surgical Care - Other	0499	Revenue Code	1	43	Revenue Code
+38002024	Level I Cardiac Imaging	0398	APC	1	42	APC
+38002724	Sumatriptan succinate	3030	APC	1	42	APC
+38000889	ECMO or trach w MV 96+ hrs or PDX exc face, mouth & neck w maj O.R.	003	MS-DRG	1	40	DRG
+38002767	Cardiac Electrophysiologic Evaluation and Ablation Composite	8000	APC	1	42	APC
+38003333	Oxygen (Home Health) - State/Equip/Over 4 LPM	0603	Revenue Code	1	43	Revenue Code
+38001993	Level I Pulmonary Test	0367	APC	1	42	APC
+38001324	Septic arthritis w/o CC/MCC	550	MS-DRG	1	40	DRG
+38002497	Etidronate disodium inj	1436	APC	1	42	APC
+38000973	Seizures w MCC	100	MS-DRG	1	40	DRG
+38002117	Prostate Cryoablation	0674	APC	1	42	APC
+38001015	Major chest procedures w MCC	163	MS-DRG	1	40	DRG
+38001489	Postpartum & post abortion diagnoses w O.R. procedure	769	MS-DRG	1	40	DRG
+38002133	Level III Electronic Analysis of Devices	0691	APC	1	42	APC
+38001563	Septicemia or severe sepsis w MV 96+ hours	870	MS-DRG	1	40	DRG
+38003388	Cast Room - General Classification	0700	Revenue Code	1	43	Revenue Code
+38001119	Heart failure & shock w MCC	291	MS-DRG	1	40	DRG
+38002807	Inj estrogen conjugate	9038	APC	1	42	APC
+38002248	Synvisc or synvisc-one	0874	APC	1	42	APC
+38002410	Mitomycin 20 MG inj	1233	APC	1	42	APC
+38002014	Discography	0388	APC	1	42	APC
+38002291	Antithrombin iii injection	0930	APC	1	42	APC
+38001558	Viral illness w MCC	865	MS-DRG	1	40	DRG
+38002418	Oasis wound matrix skin sub	1241	APC	1	42	APC
+38001758	Level I Noninvasive Physiologic Studies	0097	APC	1	42	APC
+38002861	Tc99m disofenin	9146	APC	1	42	APC
+38001557	Fever	864	MS-DRG	1	40	DRG
+38002909	Abatacept injection	9230	APC	1	42	APC
+38002651	Hemin	1690	APC	1	42	APC
+38001834	Level II Partial Hospitalization (4 or more services) for Hospital-based PHPs	0176	APC	1	42	APC
+38001218	Laparoscopic cholecystectomy w/o c.d.e. w MCC	417	MS-DRG	1	40	DRG
+38001059	Cardiac valve & oth maj cardiothoracic proc w/o card cath w MCC	219	MS-DRG	1	40	DRG
+38001892	Level I Cataract Procedures without IOL Insert	0245	APC	1	42	APC
+38000923	Periph/cranial nerve & other nerv syst proc w CC or periph neurostim	041	MS-DRG	1	40	DRG
+38001390	Nutritional & misc metabolic disorders w MCC	640	MS-DRG	1	40	DRG
+38001172	Hernia procedures except inguinal & femoral w MCC	353	MS-DRG	1	40	DRG
+38001645	Circulatory System	5	MDC	2	41	MDC
+38001306	Other musculoskelet sys & conn tiss O.R. proc w/o CC/MCC	517	MS-DRG	1	40	DRG
+38003533	Patient Convenience Items - General Classification	0990	Revenue Code	1	43	Revenue Code
+38002553	New Technology - Level IX ($700 - $800)	1546	APC	1	42	APC
+38002973	SurgiMend, neonatal	9360	APC	1	42	APC
+38003215	Anesthesia - Incident to other Diagnostic Services	0372	Revenue Code	1	43	Revenue Code
+38002276	Interferon alfacon-1	0912	APC	1	42	APC
+38002360	IN 111 Oxyquinoline	1091	APC	1	42	APC
+38001350	Mastectomy for malignancy w CC/MCC	582	MS-DRG	1	40	DRG
+38001572	Psychoses	885	MS-DRG	1	40	DRG
+38002049	Level II Strapping and Cast Application	0426	APC	1	42	APC
+38001610	Signs & symptoms w MCC	947	MS-DRG	1	40	DRG
+38001723	Level I Treatment Fracture/Dislocation	0062	APC	1	42	APC
+38003294	Free-Standing Clinic - Urgent Care Clinic	0526	Revenue Code	1	43	Revenue Code
+38001040	Simple pneumonia & pleurisy w CC	194	MS-DRG	1	40	DRG
+38001477	Malignancy, female reproductive system w MCC	754	MS-DRG	1	40	DRG
+38002423	Graftjacket skin sub	1246	APC	1	42	APC
+38002137	Level VII Debridement & Destruction	0695	APC	1	42	APC
+38003447	CAPD - Outpatient or Home - Home Equipment	0843	Revenue Code	1	43	Revenue Code
+38003208	Operating Room Services - General Classification	0360	Revenue Code	1	43	Revenue Code
+38000913	Ventricular shunt procedures w MCC	031	MS-DRG	1	40	DRG
+38003229	Blood Storage and Processing - Processing and Storage	0392	Revenue Code	1	43	Revenue Code
+38002020	Hepatobiliary Imaging	0394	APC	1	42	APC
+38003234	Other Imaging Services - Screening Mammography	0403	Revenue Code	1	43	Revenue Code
+38003046	Room & Board - Semi-private Two Bed (Medical or General) - Hospice	0125	Revenue Code	1	43	Revenue Code
+38003055	Semi-Private - Three and Four Beds - Psychiatric	0134	Revenue Code	1	43	Revenue Code
+38003199	Nuclear Medicine - Diagnostic	0341	Revenue Code	1	43	Revenue Code
+38001915	Level I Ultrasound Guidance Procedures	0268	APC	1	42	APC
+38002754	Monoclonal antibodies	7038	APC	1	42	APC
+38003358	Home IV Therapy - IV Site Care, Central Line	0642	Revenue Code	1	43	Revenue Code
+38001919	Fluoroscopy	0272	APC	1	42	APC
+38001274	Knee procedures w pdx of infection w MCC	485	MS-DRG	1	40	DRG
+38001927	Venography of Extremity	0281	APC	1	42	APC
+38002575	New Technology - Level XXXI ($6500-$7000)	1568	APC	1	42	APC
+38002765	Sodium hyaluronate injection	7316	APC	1	42	APC
+38001506	Normal newborn	795	MS-DRG	1	40	DRG
+38001763	Level II Pulmonary Treatment	0102	APC	1	42	APC
+38002848	Rabies ig, im/sc	9133	APC	1	42	APC
+38001633	Prostatic O.R. procedure unrelated to principal diagnosis w CC	985	MS-DRG	1	40	DRG
+38002190	Nabilone oral	0808	APC	1	42	APC
+38002349	Dopamine hcl	1070	APC	1	42	APC
+38001133	Hypertension w/o MCC	305	MS-DRG	1	40	DRG
+38002477	Hizentra injection	1312	APC	1	42	APC
+38003011	Azathioprine parenteral,brand	9436	APC	1	42	APC
+38002442	Dimecaprol injection	1273	APC	1	42	APC
+38002695	Generator neuro rechg bat sys	1820	APC	1	42	APC
+38001832	Level IV Laparoscopy	0174	APC	1	42	APC
+38003265	Pulmonary Function - Other	0469	Revenue Code	1	43	Revenue Code
+38001760	Electrocardiograms/Cardiography	0099	APC	1	42	APC
+38001223	Hepatobiliary diagnostic procedures w/o CC/MCC	422	MS-DRG	1	40	DRG
+38001762	Tilt Table Evaluation	0101	APC	1	42	APC
+38003029	All-Inclusive Room and Board Plus Ancillary	0100	Revenue Code	1	43	Revenue Code
+38003101	Subacute care - Level II	0192	Revenue Code	1	43	Revenue Code
+38001804	Level I Sigmoidoscopy and Anoscopy	0146	APC	1	42	APC
+38002954	Lumizyme, 1 mg	9277	APC	1	42	APC
+38001198	G.I. obstruction w MCC	388	MS-DRG	1	40	DRG
+38000910	Spinal procedures w MCC	028	MS-DRG	1	40	DRG
+38001989	Level I Otorhinolaryngologic Function Tests	0363	APC	1	42	APC
+38001769	Insertion/Replacement/Repair of Cardioverter-Defibrillator Leads	0108	APC	1	42	APC
+38001042	Interstitial lung disease w MCC	196	MS-DRG	1	40	DRG
+38001220	Laparoscopic cholecystectomy w/o c.d.e. w/o CC/MCC	419	MS-DRG	1	40	DRG
+38003209	Operating Room Services - Minor Surgery	0361	Revenue Code	1	43	Revenue Code
+38001235	Disorders of pancreas except malignancy w/o CC/MCC	440	MS-DRG	1	40	DRG
+38001143	Other circulatory system diagnoses w CC	315	MS-DRG	1	40	DRG
+38000981	Intraocular procedures w/o CC/MCC	117	MS-DRG	1	40	DRG
+38003450	CAPD - Outpatient or Home - Other	0849	Revenue Code	1	43	Revenue Code
+38001284	Local excision & removal int fix devices exc hip & femur w MCC	495	MS-DRG	1	40	DRG
+38001648	Musculoskeletal System & Connective Tissue	8	MDC	2	41	MDC
+38003059	Semi-Private - Three and Four Beds - Rehabilitation	0138	Revenue Code	1	43	Revenue Code
+38002406	Hyaluronidase recombinant	1228	APC	1	42	APC
+38002925	Inj, iobenguane, I-123, dx	9247	APC	1	42	APC
+38002566	New Technology - Level XXII ($2000-$2500)	1559	APC	1	42	APC
+38001605	O.R. proc w diagnoses of other contact w health services w MCC	939	MS-DRG	1	40	DRG
+38003354	Drugs Identification - Drugs Requiring Detailed Coding	0636	Revenue Code	1	43	Revenue Code
+38002958	Injection, pegloticase	9281	APC	1	42	APC
+38002225	Testosterone enanthate inj	0848	APC	1	42	APC
+38001617	Other O.R. procedures for multiple significant trauma w MCC	957	MS-DRG	1	40	DRG
+38002662	Treprostinil injection	1701	APC	1	42	APC
+38002424	Integra matrix skin sub	1247	APC	1	42	APC
+38002940	Ecallantide injection	9263	APC	1	42	APC
+38002466	Cosyntropin cortrosyn inj	1298	APC	1	42	APC
+38001897	Level I ENT Procedures	0250	APC	1	42	APC
+38003387	Trauma Response - Other	0689	Revenue Code	1	43	Revenue Code
+38002839	Injection, argatroban	9121	APC	1	42	APC
+38002425	Primatrix skin sub	1248	APC	1	42	APC
+38001239	Disorders of the biliary tract w MCC	444	MS-DRG	1	40	DRG
+38002121	External Counterpulsation	0678	APC	1	42	APC
+38002560	New Technology - Level XVI ($1400 - $1500)	1553	APC	1	42	APC
+38002230	Vinorelbine tartrate inj	0855	APC	1	42	APC
+38001862	Level I Extended EEG, Sleep, and Cardiovascular Studies	0213	APC	1	42	APC
+38001452	Malignancy, male reproductive system w CC	723	MS-DRG	1	40	DRG
+38003324	Other Visits (Home Health) - Visit Charge	0581	Revenue Code	1	43	Revenue Code
+38002647	Epoetin alfa, non-esrd	1686	APC	1	42	APC
+38002782	Baclofen Refill Kit-500mcg	9008	APC	1	42	APC
+38001330	Signs & symptoms of musculoskeletal system & conn tissue w/o MCC	556	MS-DRG	1	40	DRG
+38001484	Menstrual & other female reproductive system disorders w/o CC/MCC	761	MS-DRG	1	40	DRG
+38003184	Laboratory Pathological - Biopsy	0314	Revenue Code	1	43	Revenue Code
+38002867	LOCM 150-199mg/ml iodine,1ml	9158	APC	1	42	APC
+38003128	Incremental Nursing Charge Rate - OB	0232	Revenue Code	1	43	Revenue Code
+38002130	Revision/Removal of Neurostimulator Pulse Generator Receiver	0688	APC	1	42	APC
+38003211	Operating Room Services - Kidney transplant	0367	Revenue Code	1	43	Revenue Code
+38003283	Clinic - OB-GYN Clinic	0514	Revenue Code	1	43	Revenue Code
+38002638	In111 pentetreotide	1677	APC	1	42	APC
+38001201	Esophagitis, gastroent & misc digest disorders w MCC	391	MS-DRG	1	40	DRG
+38003041	Room & Board - Semi-private Two Bed (Medical or General) - General classification	0120	Revenue Code	1	43	Revenue Code
+38001787	Level IV Stereotactic Radiosurgery, MRgFUS, and MEG	0127	APC	1	42	APC
+38001338	Other musculoskeletal sys & connective tissue diagnoses w MCC	564	MS-DRG	1	40	DRG
+38003212	Operating Room Services - Other Operating Room Services	0369	Revenue Code	1	43	Revenue Code
+38000940	Nonspecific CVA & precerebral occlusion w/o infarct w MCC	067	MS-DRG	1	40	DRG
+38001100	Cardiac pacemaker device replacement w MCC	258	MS-DRG	1	40	DRG
+38002841	Transcyte	9123	APC	1	42	APC
+38000989	Cranial/facial procedures w CC/MCC	131	MS-DRG	1	40	DRG
+38001210	Biliary tract proc except only cholecyst w or w/o c.d.e. w CC	409	MS-DRG	1	40	DRG
+38002919	Injection, doripenem	9241	APC	1	42	APC
+38002633	Tc99m bicisate	1672	APC	1	42	APC
+38000972	Non-bacterial infect of nervous sys exc viral meningitis w/o CC/MCC	099	MS-DRG	1	40	DRG
+38003137	All Inclusive Ancillary - Other Inclusive Ancillary	0249	Revenue Code	1	43	Revenue Code
+38001408	Minor bladder procedures w/o CC/MCC	664	MS-DRG	1	40	DRG
+38003237	Respiratory Services - General Classification	0410	Revenue Code	1	43	Revenue Code
+38001257	Revision of hip or knee replacement w/o CC/MCC	468	MS-DRG	1	40	DRG
+38001849	Infertility Procedures	0197	APC	1	42	APC
+38002376	Neurawrap nerve protector,cm	1169	APC	1	42	APC
+38003285	Clinic - Urgent care clinic	0516	Revenue Code	1	43	Revenue Code
+38001050	Respiratory signs & symptoms	204	MS-DRG	1	40	DRG
+38001168	Anal & stomal procedures w/o CC/MCC	349	MS-DRG	1	40	DRG
+38002521	New Technology - Level XIV ($1200- $1300)	1514	APC	1	42	APC
+38001518	Coagulation disorders	813	MS-DRG	1	40	DRG
+38002374	Inj, epirubicin hcl	1167	APC	1	42	APC
+38003389	Cast Room - Other	0709	Revenue Code	1	43	Revenue Code
+38003245	Physical Therapy - Evaluation Or Re-Evaluation	0424	Revenue Code	1	43	Revenue Code
+38002669	Azacitidine injection	1709	APC	1	42	APC
+38001154	Peritoneal adhesiolysis w MCC	335	MS-DRG	1	40	DRG
+38003277	Outpatient Services - General Classification	0500	Revenue Code	1	43	Revenue Code
+38001680	Level IV Debridement & Destruction	0016	APC	1	42	APC
+38002041	Level II Endoscopy Lower Airway	0415	APC	1	42	APC
+38002080	Level 5 Type A Emergency Visits	0616	APC	1	42	APC
+38002914	Panitumumab injection	9235	APC	1	42	APC
+38001587	Other O.R. procedures for injuries w/o CC/MCC	909	MS-DRG	1	40	DRG
+38001551	Infectious & parasitic diseases w O.R. procedure w/o CC/MCC	855	MS-DRG	1	40	DRG
+38002510	New Technology - Level III ($100 - $200)	1503	APC	1	42	APC
+38002255	Fondaparinux sodium	0883	APC	1	42	APC
+38002619	I131 tositumomab, dx	1644	APC	1	42	APC
+38002892	Pemetrexed injection	9213	APC	1	42	APC
+38003190	Radiology - Diagnostic - Chest X-Ray	0324	Revenue Code	1	43	Revenue Code
+38003539	Patient Convenience Items - Late Discharge Charge	0996	Revenue Code	1	43	Revenue Code
+38003000	Daunorubicin, brand	9424	APC	1	42	APC
+38002683	HOCM 350-399mg/ml iodine	1736	APC	1	42	APC
+38001156	Peritoneal adhesiolysis w/o CC/MCC	337	MS-DRG	1	40	DRG
+38001761	Cardiac Stress Tests	0100	APC	1	42	APC
+38001499	Other antepartum diagnoses w/o medical complications	782	MS-DRG	1	40	DRG
+38002496	Factor viia recombinant	1409	APC	1	42	APC
+38002898	Mycophenolic acid	9219	APC	1	42	APC
+38002610	Oxacillin sodium injeciton	1635	APC	1	42	APC
+38000905	Cranio w major dev impl/acute complex CNS PDX w MCC or chemo implant	023	MS-DRG	1	40	DRG
+38003249	Occupational Therapy - Hourly charge	0432	Revenue Code	1	43	Revenue Code
+38003248	Occupational Therapy - Visit charge	0431	Revenue Code	1	43	Revenue Code
+38002104	Level II Otorhinolaryngologic Function Tests	0660	APC	1	42	APC
+38002274	Interferon beta-1b / .25 MG	0910	APC	1	42	APC
+38001163	Minor small & large bowel procedures w MCC	344	MS-DRG	1	40	DRG
+38002181	Enfuvirtide injection	0767	APC	1	42	APC
+38003194	Radiology - Therapeutic - Chemotherapy - Oral	0332	Revenue Code	1	43	Revenue Code
+38000903	Intracranial vascular procedures w PDX hemorrhage w CC	021	MS-DRG	1	40	DRG
+38002149	Co57 cyano	0724	APC	1	42	APC
+38003153	IV Therapy - Other	0269	Revenue Code	1	43	Revenue Code
+38001151	Rectal resection w MCC	332	MS-DRG	1	40	DRG
+38003428	Organ Acquisition - Cadaver Donor - Heart	0815	Revenue Code	1	43	Revenue Code
+38002569	New Technology - Level XXV ($3500-$4000)	1562	APC	1	42	APC
+38000955	Traumatic stupor & coma, coma >1 hr w MCC	082	MS-DRG	1	40	DRG
+38003134	All inclusive Ancillary - Basic	0241	Revenue Code	1	43	Revenue Code
+38002643	Aprotonin, 10,000 kiu	1682	APC	1	42	APC
+38001053	Respiratory system diagnosis w ventilator support 96+ hours	207	MS-DRG	1	40	DRG
+38001043	Interstitial lung disease w CC	197	MS-DRG	1	40	DRG
+38002828	Alemtuzumab injection	9110	APC	1	42	APC
+38001150	Major small & large bowel procedures w/o CC/MCC	331	MS-DRG	1	40	DRG
+38001705	Level II Arthroscopy	0042	APC	1	42	APC
+38003356	Home IV Therapy - General Classification	0640	Revenue Code	1	43	Revenue Code
+38002924	Gadoxetate disodium inj	9246	APC	1	42	APC
+38002721	Immune globulin, liquid	2732	APC	1	42	APC
+38001065	Cardiac defib implant w cardiac cath w/o AMI/HF/shock w/o MCC	225	MS-DRG	1	40	DRG
+38002514	New Technology - Level VII ($500 - $600)	1507	APC	1	42	APC
+38000928	Nervous system neoplasms w/o MCC	055	MS-DRG	1	40	DRG
+38003445	CAPD - Outpatient or Home - CAPD/Composite or other rate	0841	Revenue Code	1	43	Revenue Code
+38001756	Cardiac Rehabilitation	0095	APC	1	42	APC
+38003393	Labor Room/Delivery - Labor	0721	Revenue Code	1	43	Revenue Code
+38002013	Level II Hysteroscopy	0387	APC	1	42	APC
+38003357	Home IV Therapy - Nonroutine Nursing, Central Line	0641	Revenue Code	1	43	Revenue Code
+38002736	Epoprostenol injection	7003	APC	1	42	APC
+38002409	Mitomycin 5 MG inj	1232	APC	1	42	APC
+38001012	Dental & oral diseases w MCC	157	MS-DRG	1	40	DRG
+38002780	Reteplase injection	9005	APC	1	42	APC
+38003474	Psychiatric/Psychological Trt: Comm Behavioral Program	0907	Revenue Code	1	43	Revenue Code
+38003465	Other Donor Bank - Skin	0893	Revenue Code	1	43	Revenue Code
+38003016	Platelets, irradiated	9500	APC	1	42	APC
+38001902	Level II Anterior Segment Eye Procedures	0255	APC	1	42	APC
+38002864	I125 serum albumin, dx	9150	APC	1	42	APC
+38001766	Repair/Revision/Removal of Pacemakers, AICDs, or Vascular Devices	0105	APC	1	42	APC
+38003536	Patient Convenience Items - Telephone/Telegraph	0993	Revenue Code	1	43	Revenue Code
+38002333	Blood, l/r, irradiated	1018	APC	1	42	APC
+38001781	Level I Tube or Catheter Changes or Repositioning	0121	APC	1	42	APC
+38001803	Lower GI Endoscopy	0143	APC	1	42	APC
+38002866	LOCM <=149 mg/ml iodine, 1ml	9157	APC	1	42	APC
+38003544	Residential Treatment - Psychiatric	1001	Revenue Code	1	43	Revenue Code
+38003392	Labor Room/Delivery - General Classification	0720	Revenue Code	1	43	Revenue Code
+38003448	CAPD - Outpatient or Home - Maintenance/100%	0844	Revenue Code	1	43	Revenue Code
+38003348	Drugs Identification - General Classification	0630	Revenue Code	1	43	Revenue Code
+38002078	Level 3 Type A Emergency Visits	0614	APC	1	42	APC
+38001019	Other resp system O.R. procedures w CC	167	MS-DRG	1	40	DRG
+38002357	Temozolomide	1086	APC	1	42	APC
+38002262	Calcitonin salmon injection	0893	APC	1	42	APC
+38001465	Uterine,adnexa proc for non-ovarian/adnexal malig w MCC	739	MS-DRG	1	40	DRG
+38003062	Private (Deluxe) - Medical/Surgical/Gyn	0141	Revenue Code	1	43	Revenue Code
+38001793	Level I Skin Repair	0133	APC	1	42	APC
+38003321	Home Health Aide - Hourly Charge	0572	Revenue Code	1	43	Revenue Code
+38001038	Chronic obstructive pulmonary disease w/o CC/MCC	192	MS-DRG	1	40	DRG
+38001935	Level VI Anterior Segment Eye Procedures	0293	APC	1	42	APC
+38001339	Other musculoskeletal sys & connective tissue diagnoses w CC	565	MS-DRG	1	40	DRG
+38002800	Arbutamine HCl injection	9031	APC	1	42	APC
+38001606	O.R. proc w diagnoses of other contact w health services w CC	940	MS-DRG	1	40	DRG
+38002672	Paclitaxel protein bound	1712	APC	1	42	APC
+38001677	Level I Debridement & Destruction	0012	APC	1	42	APC
+38001486	Cesarean section w/o CC/MCC	766	MS-DRG	1	40	DRG
+38001336	Fx, sprn, strn & disl except femur, hip, pelvis & thigh w MCC	562	MS-DRG	1	40	DRG
+38001443	Testes procedures w CC/MCC	711	MS-DRG	1	40	DRG
+38002627	Cr51 chromate	1652	APC	1	42	APC
+38002480	Olanzapine long-acting inj	1331	APC	1	42	APC
+38001188	G.I. hemorrhage w CC	378	MS-DRG	1	40	DRG
+38003152	IV Therapy - Supplies	0264	Revenue Code	1	43	Revenue Code
+38002216	Non-human, non-metab tissue	0837	APC	1	42	APC
+38002031	Renal and Genitourinary Studies Level II	0405	APC	1	42	APC
+38002826	Thyrotropin injection	9108	APC	1	42	APC
+38002009	Cardiac Computed Tomographic Imaging	0383	APC	1	42	APC
+38001805	Level II Sigmoidoscopy and Anoscopy	0147	APC	1	42	APC
+38001017	Major chest procedures w/o CC/MCC	165	MS-DRG	1	40	DRG
+38001986	Level I Alimentary Tests	0360	APC	1	42	APC
+38003484	Psychiatric/Psychological Services - Testing	0918	Revenue Code	1	43	Revenue Code
+38001825	Level III Urethral Procedures	0167	APC	1	42	APC
+38002769	Level I Extended Assessment & Management Composite	8002	APC	1	42	APC
+38002426	Cymetra allograft	1249	APC	1	42	APC
+38001884	Level II Posterior Segment Eye Procedures	0237	APC	1	42	APC
+38002451	Gamma globulin 3 CC inj	1283	APC	1	42	APC
+38003149	IV Therapy - Infusion Pump	0261	Revenue Code	1	43	Revenue Code
+38001344	Skin graft &/or debrid exc for skin ulcer or cellulitis w MCC	576	MS-DRG	1	40	DRG
+38002454	Nandrolone decanoate 200 MG	1286	APC	1	42	APC
+38001161	Appendectomy w/o complicated principal diag w CC	342	MS-DRG	1	40	DRG
+38003350	Drugs Identification - Multiple Source Drug	0632	Revenue Code	1	43	Revenue Code
+38001429	Urinary stones w esw lithotripsy w CC/MCC	691	MS-DRG	1	40	DRG
+38001522	Lymphoma & leukemia w major O.R. procedure w MCC	820	MS-DRG	1	40	DRG
+38002644	Basiliximab	1683	APC	1	42	APC
+38003099	Subacute care - General Classification	0190	Revenue Code	1	43	Revenue Code
+38001111	Acute myocardial infarction, expired w MCC	283	MS-DRG	1	40	DRG
+38002723	Somatrem injection	2940	APC	1	42	APC
+38001991	Level II Audiometry	0365	APC	1	42	APC
+38001343	Skin graft &/or debrid for skn ulcer or cellulitis w/o CC/MCC	575	MS-DRG	1	40	DRG
+38001801	Level I Upper GI Procedures	0141	APC	1	42	APC
+38002254	Melphalan oral	0882	APC	1	42	APC
+38001046	Pneumothorax w CC	200	MS-DRG	1	40	DRG
+38000993	Sinus & mastoid procedures w CC/MCC	135	MS-DRG	1	40	DRG
+38002541	New Technology - Level XXXIV ($8000-$8500)	1534	APC	1	42	APC
+38001490	Abortion w D&C, aspiration curettage or hysterotomy	770	MS-DRG	1	40	DRG
+38001727	Level II Stereotactic Radiosurgery, MRgFUS, and MEG	0066	APC	1	42	APC
+38001164	Minor small & large bowel procedures w CC	345	MS-DRG	1	40	DRG
+38001131	Atherosclerosis w/o MCC	303	MS-DRG	1	40	DRG
+38001548	Radiotherapy	849	MS-DRG	1	40	DRG
+38003326	Other Visits (Home Health) - Assessment	0583	Revenue Code	1	43	Revenue Code
+38001771	Transfusion	0110	APC	1	42	APC
+38001976	Level I Transfusion Laboratory Procedures	0345	APC	1	42	APC
+38002673	Inj Fe-based MR contrast,1ml	1713	APC	1	42	APC
+38001726	Level I Stereotactic Radiosurgery, MRgFUS, and MEG	0065	APC	1	42	APC
+38001593	Poisoning & toxic effects of drugs w/o MCC	918	MS-DRG	1	40	DRG
+38002904	Fluocinolone acetonide implt	9225	APC	1	42	APC
+38001997	Level I Allergy Injections	0371	APC	1	42	APC
+38002918	Injection, ixabepilone	9240	APC	1	42	APC
+38002082	Trauma Response with Critical Care	0618	APC	1	42	APC
+38001278	Knee procedures w/o pdx of infection w/o CC/MCC	489	MS-DRG	1	40	DRG
+38002061	Level V Drug Administration	0440	APC	1	42	APC
+38002161	Rasburicase	0738	APC	1	42	APC
+38001071	Coronary bypass w PTCA w MCC	231	MS-DRG	1	40	DRG
+38002272	RSV-ivig	0906	APC	1	42	APC
+38003523	Professional Fees - General Classification	0980	Revenue Code	1	43	Revenue Code
+38003420	Inpatient Renal Dialysis - Inpatient Continuous Ambulatory Peritoneal Dialysis	0803	Revenue Code	1	43	Revenue Code
+38001320	Connective tissue disorders w CC	546	MS-DRG	1	40	DRG
+38001358	Major skin disorders w/o MCC	596	MS-DRG	1	40	DRG
+38003531	Professional Fees - Consultation	0988	Revenue Code	1	43	Revenue Code

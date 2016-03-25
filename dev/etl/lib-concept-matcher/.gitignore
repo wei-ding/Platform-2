@@ -1,0 +1,14 @@
+target/
+/.lib/
+
+*~
+/.ensime
+
+/.cache
+/.classpath
+/.project
+/.settings/
+
+index/
+project/write.lock
+write.lock

@@ -1,0 +1,227 @@
+concept_id	concept_name	concept_code	concept_class	concept_level	vocabulary_id	vocabulary_name
+45756894	Outpatient detail - 40th position	OMOP generated	Procedure Type	1	38	Procedure Type
+44777970	Randomized Drug	OMOP generated	Drug Type	1	36	Drug Type
+45756889	Outpatient detail - 35th position	OMOP generated	Procedure Type	1	38	Procedure Type
+45756884	Outpatient detail - 30th position	OMOP generated	Procedure Type	1	38	Procedure Type
+38000214	Inpatient header - 15th position	OMOP generated	Condition Type	1	37	Condition Type
+45756882	Outpatient detail - 28th position	OMOP generated	Procedure Type	1	38	Procedure Type
+38003568	Medical claim DRG code indicating death	OMOP generated	Death Type	1	45	Death Type
+38000208	Inpatient header - 9th position	OMOP generated	Condition Type	1	37	Condition Type
+38000211	Inpatient header - 12th position	OMOP generated	Condition Type	1	37	Condition Type
+45756861	Outpatient detail - 7th position	OMOP generated	Procedure Type	1	38	Procedure Type
+45756867	Outpatient detail - 13th position	OMOP generated	Procedure Type	1	38	Procedure Type
+38000261	Inpatient header - 11th position	OMOP generated	Procedure Type	1	38	Procedure Type
+45756911	Carrier claim detail - 12th position	OMOP generated	Procedure Type	1	38	Procedure Type
+45756856	Outpatient detail - 2nd position	OMOP generated	Procedure Type	1	38	Procedure Type
+38000270	Outpatient header - 2nd position	OMOP generated	Procedure Type	1	38	Procedure Type
+38000239	Outpatient header - 10th position	OMOP generated	Condition Type	1	37	Condition Type
+44818713	Inpatient detail - 20th position	OMOP generated	Condition Type	1	37	Condition Type
+45756895	Outpatient detail - 41th position	OMOP generated	Procedure Type	1	38	Procedure Type
+45756878	Outpatient detail - 24th position	OMOP generated	Procedure Type	1	38	Procedure Type
+42865905	Facility header	OMOP generated	Procedure Type	1	38	Procedure Type
+45756853	Carrier claim detail - 11th position	OMOP generated	Condition Type	1	37	Condition Type
+38000262	Inpatient header - 12th position	OMOP generated	Procedure Type	1	38	Procedure Type
+42865906	Condition Procedure	OMOP generated	Procedure Type	1	38	Procedure Type
+45756880	Outpatient detail - 26th position	OMOP generated	Procedure Type	1	38	Procedure Type
+38000181	Drug era - 0 days persistence window	OMOP generated	Drug Type	1	36	Drug Type
+38000205	Inpatient header - 6th position	OMOP generated	Condition Type	1	37	Condition Type
+43542354	Physician administered drug (identified as procedure)	OMOP generated	Procedure Type	1	38	Procedure Type
+45756885	Outpatient detail - 31th position	OMOP generated	Procedure Type	1	38	Procedure Type
+38000269	Outpatient header - 1st position	OMOP generated	Procedure Type	1	38	Procedure Type
+38000191	Inpatient detail - 8th position	OMOP generated	Condition Type	1	37	Condition Type
+45756873	Outpatient detail - 19th position	OMOP generated	Procedure Type	1	38	Procedure Type
+38003617	Death Certificate contributory cause	OMOP generated	Death Type	1	45	Death Type
+38000190	Inpatient detail - 7th position	OMOP generated	Condition Type	1	37	Condition Type
+45756854	Carrier claim detail - 12th position	OMOP generated	Condition Type	1	37	Condition Type
+45756837	Carrier claim header - 3rd position	OMOP generated	Condition Type	1	37	Condition Type
+45756912	Carrier claim detail - 13th position	OMOP generated	Procedure Type	1	38	Procedure Type
+44818712	Inpatient detail - 19th position	OMOP generated	Condition Type	1	37	Condition Type
+45756886	Outpatient detail - 32th position	OMOP generated	Procedure Type	1	38	Procedure Type
+38000206	Inpatient header - 7th position	OMOP generated	Condition Type	1	37	Condition Type
+45756843	Carrier claim detail - 1st position	OMOP generated	Condition Type	1	37	Condition Type
+38000246	Condition era - 0 days persistence window	OMOP generated	Condition Type	1	37	Condition Type
+45756852	Carrier claim detail - 10th position	OMOP generated	Condition Type	1	37	Condition Type
+38000176	Prescription dispensed through mail order	OMOP generated	Drug Type	1	36	Drug Type
+38000232	Outpatient header - 3rd position	OMOP generated	Condition Type	1	37	Condition Type
+38003570	Death Certificate immediate cause	OMOP generated	Death Type	1	45	Death Type
+44786629	Secondary Condition	OMOP generated	Condition Type	1	37	Condition Type
+38000210	Inpatient header - 11th position	OMOP generated	Condition Type	1	37	Condition Type
+45756899	Outpatient detail - 45th position	OMOP generated	Procedure Type	1	38	Procedure Type
+45756883	Outpatient detail - 29th position	OMOP generated	Procedure Type	1	38	Procedure Type
+38000225	Outpatient detail - 11th position	OMOP generated	Condition Type	1	37	Condition Type
+38000231	Outpatient header - 2nd position	OMOP generated	Condition Type	1	37	Condition Type
+38000258	Inpatient header - 8th position	OMOP generated	Procedure Type	1	38	Procedure Type
+38000230	Outpatient header - 1st position	OMOP generated	Condition Type	1	37	Condition Type
+45756903	Carrier claim detail - 4th position	OMOP generated	Procedure Type	1	38	Procedure Type
+45756866	Outpatient detail - 12th position	OMOP generated	Procedure Type	1	38	Procedure Type
+38000247	Condition era - 30 days persistence window	OMOP generated	Condition Type	1	37	Condition Type
+45756890	Outpatient detail - 36th position	OMOP generated	Procedure Type	1	38	Procedure Type
+38000264	Inpatient header - 14th position	OMOP generated	Procedure Type	1	38	Procedure Type
+45756849	Carrier claim detail - 7th position	OMOP generated	Condition Type	1	37	Condition Type
+38000223	Outpatient detail - 9th position	OMOP generated	Condition Type	1	37	Condition Type
+38000245	EHR problem list entry	OMOP generated	Condition Type	1	37	Condition Type
+38000178	Medication list entry	OMOP generated	Drug Type	1	36	Drug Type
+38003621	Procedure recorded as lab test	OMOP generated	Procedure Type	1	38	Procedure Type
+38000199	Inpatient header - primary	OMOP generated	Condition Type	1	37	Condition Type
+38000217	Outpatient detail - 3rd position	OMOP generated	Condition Type	1	37	Condition Type
+38000236	Outpatient header - 7th position	OMOP generated	Condition Type	1	37	Condition Type
+38000281	Observation recorded from EHR with text result	OMOP generated	Observation Type	1	39	Observation Type
+45756902	Carrier claim detail - 3rd position	OMOP generated	Procedure Type	1	38	Procedure Type
+38000212	Inpatient header - 13th position	OMOP generated	Condition Type	1	37	Condition Type
+45756904	Carrier claim detail - 5th position	OMOP generated	Procedure Type	1	38	Procedure Type
+38000248	Inpatient detail - primary position	OMOP generated	Procedure Type	1	38	Procedure Type
+38000197	Inpatient detail - 14th position	OMOP generated	Condition Type	1	37	Condition Type
+45756907	Carrier claim detail - 8th position	OMOP generated	Procedure Type	1	38	Procedure Type
+38000260	Inpatient header - 10th position	OMOP generated	Procedure Type	1	38	Procedure Type
+44818516	EHR discharge status Expired	OMOP generated	Death Type	1	45	Death Type
+38000238	Outpatient header - 9th position	OMOP generated	Condition Type	1	37	Condition Type
+45756875	Outpatient detail - 21th position	OMOP generated	Procedure Type	1	38	Procedure Type
+38000263	Inpatient header - 13th position	OMOP generated	Procedure Type	1	38	Procedure Type
+38000243	Outpatient header - 14th position	OMOP generated	Condition Type	1	37	Condition Type
+45756855	Carrier claim detail - 13th position	OMOP generated	Condition Type	1	37	Condition Type
+44786630	Primary Procedure	OMOP generated	Procedure Type	1	38	Procedure Type
+45756891	Outpatient detail - 37th position	OMOP generated	Procedure Type	1	38	Procedure Type
+38000275	EHR order list entry	OMOP generated	Procedure Type	1	38	Procedure Type
+38000252	Inpatient header - 2nd position	OMOP generated	Procedure Type	1	38	Procedure Type
+43542356	Physician administered drug (identified from EHR problem list)	OMOP generated	Drug Type	1	36	Drug Type
+45756847	Carrier claim detail - 5th position	OMOP generated	Condition Type	1	37	Condition Type
+42898140	Referral record	OMOP generated	Condition Type	1	37	Condition Type
+38000282	Chief complaint	OMOP generated	Observation Type	1	39	Observation Type
+45756848	Carrier claim detail - 6th position	OMOP generated	Condition Type	1	37	Condition Type
+38000179	Physician administered drug (identified as procedure)	OMOP generated	Drug Type	1	36	Drug Type
+38000189	Inpatient detail - 6th position	OMOP generated	Condition Type	1	37	Condition Type
+38003567	Medical claim diagnostic code indicating death	OMOP generated	Death Type	1	45	Death Type
+45756864	Outpatient detail - 10th position	OMOP generated	Procedure Type	1	38	Procedure Type
+38000249	Inpatient detail - 1st position	OMOP generated	Procedure Type	1	38	Procedure Type
+45756838	Carrier claim header - 4th position	OMOP generated	Condition Type	1	37	Condition Type
+38000195	Inpatient detail - 12th position	OMOP generated	Condition Type	1	37	Condition Type
+38000254	Inpatient header - 4th position	OMOP generated	Procedure Type	1	38	Procedure Type
+45756897	Outpatient detail - 43th position	OMOP generated	Procedure Type	1	38	Procedure Type
+45756871	Outpatient detail - 17th position	OMOP generated	Procedure Type	1	38	Procedure Type
+38003569	EHR record patient status Deceased	OMOP generated	Death Type	1	45	Death Type
+38000218	Outpatient detail - 4th position	OMOP generated	Condition Type	1	37	Condition Type
+38000272	Outpatient header - 4th position	OMOP generated	Procedure Type	1	38	Procedure Type
+38000237	Outpatient header - 8th position	OMOP generated	Condition Type	1	37	Condition Type
+44787730	Patient Self-Reported Medication	OMOP generated	Drug Type	1	36	Drug Type
+38000222	Outpatient detail - 8th position	OMOP generated	Condition Type	1	37	Condition Type
+38000198	Inpatient detail - 15th position	OMOP generated	Condition Type	1	37	Condition Type
+38000235	Outpatient header - 6th position	OMOP generated	Condition Type	1	37	Condition Type
+38000203	Inpatient header - 4th position	OMOP generated	Condition Type	1	37	Condition Type
+38000201	Inpatient header - 2nd position	OMOP generated	Condition Type	1	37	Condition Type
+45756846	Carrier claim detail - 4th position	OMOP generated	Condition Type	1	37	Condition Type
+38000224	Outpatient detail - 10th position	OMOP generated	Condition Type	1	37	Condition Type
+44818711	Inpatient detail - 18th position	OMOP generated	Condition Type	1	37	Condition Type
+38000227	Outpatient detail - 13th position	OMOP generated	Condition Type	1	37	Condition Type
+45756877	Outpatient detail - 23th position	OMOP generated	Procedure Type	1	38	Procedure Type
+45756869	Outpatient detail - 15th position	OMOP generated	Procedure Type	1	38	Procedure Type
+45756906	Carrier claim detail - 7th position	OMOP generated	Procedure Type	1	38	Procedure Type
+45756870	Outpatient detail - 16th position	OMOP generated	Procedure Type	1	38	Procedure Type
+38000207	Inpatient header - 8th position	OMOP generated	Condition Type	1	37	Condition Type
+45754805	EHR Episode Entry	OMOP generated	Condition Type	1	37	Condition Type
+38000229	Outpatient detail - 15th position	OMOP generated	Condition Type	1	37	Condition Type
+43542358	Physician administered drug (identified from EHR observation)	OMOP generated	Drug Type	1	36	Drug Type
+38000256	Inpatient header - 6th position	OMOP generated	Procedure Type	1	38	Procedure Type
+38000221	Outpatient detail - 7th position	OMOP generated	Condition Type	1	37	Condition Type
+45756836	Carrier claim header - 2nd position	OMOP generated	Condition Type	1	37	Condition Type
+38000257	Inpatient header - 7th position	OMOP generated	Procedure Type	1	38	Procedure Type
+38000233	Outpatient header - 4th position	OMOP generated	Condition Type	1	37	Condition Type
+43542355	Referral Record	OMOP generated	Observation Type	1	39	Observation Type
+45756844	Carrier claim detail - 2nd position	OMOP generated	Condition Type	1	37	Condition Type
+45756872	Outpatient detail - 18th position	OMOP generated	Procedure Type	1	38	Procedure Type
+45756862	Outpatient detail - 8th position	OMOP generated	Procedure Type	1	38	Procedure Type
+38000216	Outpatient detail - 2nd position	OMOP generated	Condition Type	1	37	Condition Type
+38000204	Inpatient header - 5th position	OMOP generated	Condition Type	1	37	Condition Type
+38000194	Inpatient detail - 11th position	OMOP generated	Condition Type	1	37	Condition Type
+45756857	Outpatient detail - 3rd position	OMOP generated	Procedure Type	1	38	Procedure Type
+45756893	Outpatient detail - 39th position	OMOP generated	Procedure Type	1	38	Procedure Type
+38000186	Inpatient detail - 3rd position	OMOP generated	Condition Type	1	37	Condition Type
+38000183	Inpatient detail - primary	OMOP generated	Condition Type	1	37	Condition Type
+42894222	EHR Chief Complaint	OMOP generated	Condition Type	1	37	Condition Type
+38000219	Outpatient detail - 5th position	OMOP generated	Condition Type	1	37	Condition Type
+43542353	Observation recorded from EHR	OMOP generated	Condition Type	1	37	Condition Type
+45756858	Outpatient detail - 4th position	OMOP generated	Procedure Type	1	38	Procedure Type
+38000234	Outpatient header - 5th position	OMOP generated	Condition Type	1	37	Condition Type
+38003565	Payer enrollment status Deceased	OMOP generated	Death Type	1	45	Death Type
+44818710	Inpatient detail - 17th position	OMOP generated	Condition Type	1	37	Condition Type
+45905770	Patient Self-Reported Condition	OMOP generated	Condition Type	1	37	Condition Type
+38003618	Death Certificate underlying cause	OMOP generated	Death Type	1	45	Death Type
+38000177	Prescription written	OMOP generated	Drug Type	1	36	Drug Type
+45756841	Carrier claim header - 7th position	OMOP generated	Condition Type	1	37	Condition Type
+38000188	Inpatient detail - 5th position	OMOP generated	Condition Type	1	37	Condition Type
+38000240	Outpatient header - 11th position	OMOP generated	Condition Type	1	37	Condition Type
+45756842	Carrier claim header - 8th position	OMOP generated	Condition Type	1	37	Condition Type
+38000268	Outpatient header - primary position	OMOP generated	Procedure Type	1	38	Procedure Type
+38000200	Inpatient header - 1st position	OMOP generated	Condition Type	1	37	Condition Type
+44818709	Inpatient detail - 16th position	OMOP generated	Condition Type	1	37	Condition Type
+38000278	Lab observation text	OMOP generated	Observation Type	1	39	Observation Type
+45756896	Outpatient detail - 42th position	OMOP generated	Procedure Type	1	38	Procedure Type
+38000202	Inpatient header - 3rd position	OMOP generated	Condition Type	1	37	Condition Type
+45756881	Outpatient detail - 27th position	OMOP generated	Procedure Type	1	38	Procedure Type
+42898141	Referral record	OMOP generated	Procedure Type	1	38	Procedure Type
+45756901	Carrier claim detail - 2nd position	OMOP generated	Procedure Type	1	38	Procedure Type
+45756865	Outpatient detail - 11th position	OMOP generated	Procedure Type	1	38	Procedure Type
+45756905	Carrier claim detail - 6th position	OMOP generated	Procedure Type	1	38	Procedure Type
+38000193	Inpatient detail - 10th position	OMOP generated	Condition Type	1	37	Condition Type
+38000185	Inpatient detail - 2nd position	OMOP generated	Condition Type	1	37	Condition Type
+45756839	Carrier claim header - 5th position	OMOP generated	Condition Type	1	37	Condition Type
+45756840	Carrier claim header - 6th position	OMOP generated	Condition Type	1	37	Condition Type
+44786634	HRA Observation Text	OMOP generated	Observation Type	1	39	Observation Type
+44786633	HRA Observation Numeric Result	OMOP generated	Observation Type	1	39	Observation Type
+38000226	Outpatient detail - 12th position	OMOP generated	Condition Type	1	37	Condition Type
+43542357	Physician administered drug (identified from referral record)	OMOP generated	Drug Type	1	36	Drug Type
+38000244	Outpatient header - 15th position	OMOP generated	Condition Type	1	37	Condition Type
+38000175	Prescription dispensed in pharmacy	OMOP generated	Drug Type	1	36	Drug Type
+38000265	Inpatient header - 15th position	OMOP generated	Procedure Type	1	38	Procedure Type
+45756835	Carrier claim header - 1st position	OMOP generated	Condition Type	1	37	Condition Type
+38000280	Observation recorded from EHR	OMOP generated	Observation Type	1	39	Observation Type
+38000271	Outpatient header - 3rd position	OMOP generated	Procedure Type	1	38	Procedure Type
+45756876	Outpatient detail - 22th position	OMOP generated	Procedure Type	1	38	Procedure Type
+38000273	Outpatient header - 5th position	OMOP generated	Procedure Type	1	38	Procedure Type
+38000241	Outpatient header - 12th position	OMOP generated	Condition Type	1	37	Condition Type
+45756908	Carrier claim detail - 9th position	OMOP generated	Procedure Type	1	38	Procedure Type
+45756845	Carrier claim detail - 3rd position	OMOP generated	Condition Type	1	37	Condition Type
+38000250	Inpatient header - primary position	OMOP generated	Procedure Type	1	38	Procedure Type
+38003622	Procedure recorded as diagnostic code	OMOP generated	Procedure Type	1	38	Procedure Type
+38000242	Outpatient header - 13th position	OMOP generated	Condition Type	1	37	Condition Type
+45756888	Outpatient detail - 34th position	OMOP generated	Procedure Type	1	38	Procedure Type
+38000187	Inpatient detail - 4th position	OMOP generated	Condition Type	1	37	Condition Type
+38000266	Outpatient detail - primary position	OMOP generated	Procedure Type	1	38	Procedure Type
+45756850	Carrier claim detail - 8th position	OMOP generated	Condition Type	1	37	Condition Type
+44786628	First Position Condition	OMOP generated	Condition Type	1	37	Condition Type
+45756860	Outpatient detail - 6th position	OMOP generated	Procedure Type	1	38	Procedure Type
+45756879	Outpatient detail - 25th position	OMOP generated	Procedure Type	1	38	Procedure Type
+45756898	Outpatient detail - 44th position	OMOP generated	Procedure Type	1	38	Procedure Type
+38003566	Medical claim discharge status Died	OMOP generated	Death Type	1	45	Death Type
+38000215	Outpatient detail - 1st position	OMOP generated	Condition Type	1	37	Condition Type
+45756874	Outpatient detail - 20th position	OMOP generated	Procedure Type	1	38	Procedure Type
+45756900	Carrier claim detail - 1st position	OMOP generated	Procedure Type	1	38	Procedure Type
+38000192	Inpatient detail - 9th position	OMOP generated	Condition Type	1	37	Condition Type
+45756887	Outpatient detail - 33th position	OMOP generated	Procedure Type	1	38	Procedure Type
+38000209	Inpatient header - 10th position	OMOP generated	Condition Type	1	37	Condition Type
+38000255	Inpatient header - 5th position	OMOP generated	Procedure Type	1	38	Procedure Type
+38000279	Lab observation concept code result	OMOP generated	Observation Type	1	39	Observation Type
+38000276	Problem list from EHR	OMOP generated	Observation Type	1	39	Observation Type
+38000253	Inpatient header - 3rd position	OMOP generated	Procedure Type	1	38	Procedure Type
+45756868	Outpatient detail - 14th position	OMOP generated	Procedure Type	1	38	Procedure Type
+45905771	Observation Recorded from a Survey	OMOP generated	Observation Type	1	39	Observation Type
+44814721	Patient reported	OMOP generated	Observation Type	1	39	Observation Type
+38000277	Lab observation numeric result	OMOP generated	Observation Type	1	39	Observation Type
+38000259	Inpatient header - 9th position	OMOP generated	Procedure Type	1	38	Procedure Type
+38000182	Drug era - 30 days persistence window	OMOP generated	Drug Type	1	36	Drug Type
+38000251	Inpatient header - 1st position	OMOP generated	Procedure Type	1	38	Procedure Type
+38000184	Inpatient detail - 1st position	OMOP generated	Condition Type	1	37	Condition Type
+38000228	Outpatient detail - 14th position	OMOP generated	Condition Type	1	37	Condition Type
+45756863	Outpatient detail - 9th position	OMOP generated	Procedure Type	1	38	Procedure Type
+45756892	Outpatient detail - 38th position	OMOP generated	Procedure Type	1	38	Procedure Type
+38000213	Inpatient header - 14th position	OMOP generated	Condition Type	1	37	Condition Type
+45756910	Carrier claim detail - 11th position	OMOP generated	Procedure Type	1	38	Procedure Type
+38000180	Inpatient administration	OMOP generated	Drug Type	1	36	Drug Type
+45756909	Carrier claim detail - 10th position	OMOP generated	Procedure Type	1	38	Procedure Type
+38000274	Outpatient header - 6th position	OMOP generated	Procedure Type	1	38	Procedure Type
+38000196	Inpatient detail - 13th position	OMOP generated	Condition Type	1	37	Condition Type
+38000220	Outpatient detail - 6th position	OMOP generated	Condition Type	1	37	Condition Type
+44786627	Primary Condition	OMOP generated	Condition Type	1	37	Condition Type
+38000267	Outpatient detail - 1st position	OMOP generated	Procedure Type	1	38	Procedure Type
+44786631	Secondary Procedure	OMOP generated	Procedure Type	1	38	Procedure Type
+45756851	Carrier claim detail - 9th position	OMOP generated	Condition Type	1	37	Condition Type
+45756859	Outpatient detail - 5th position	OMOP generated	Procedure Type	1	38	Procedure Type
