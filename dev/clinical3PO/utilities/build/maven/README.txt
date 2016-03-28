@@ -10,8 +10,8 @@
       <properties>
                <db.driverClassName>com.mysql.jdbc.Driver</db.driverClassName>
                <db.url>jdbc:mysql://localhost:3306/clinical3PO</db.url>
-               <db.username>c3po</db.username>
-               <db.password>#c3po123</db.password>
+               <db.username>USERNAMEHERE</db.username>
+               <db.password>PASSWORDHERE</db.password>
 
                <omop.hive.db>c3pohivedemo</omop.hive.db>
                <omop.hive.death>death_t</omop.hive.death>
@@ -29,8 +29,8 @@
 			   <clinical3PO.hive.host>c3po-m-ambari.ec2.internal</clinical3PO.hive.host>
 			   <clinical3PO.hive.port>10010</clinical3PO.hive.port>
 			   <clinical3PO.hive.db>default</clinical3PO.hive.db>
-			   <clinical3PO.hive.user>hdfs</clinical3PO.hive.user>
-			   <clinical3PO.hive.password>H8d00p</clinical3PO.hive.password>			   
+			   <clinical3PO.hive.user>USERNAMEHERE</clinical3PO.hive.user>
+			   <clinical3PO.hive.password>PASSWORDHERE</clinical3PO.hive.password>			   
 
                <!-- Environment related (could be DEVELOPMENT, PRODUCTION)-->
                <clinical3PO.environment.type>DEVELOPMENT</clinical3PO.environment.type>
@@ -87,8 +87,8 @@
                <!-- Accumulo remote execution -->
                <!--clinical3PO.accumulo.zookeeper>ec2-m1.ec2.internal:2181,ec2-m2.ec2.internal:2181,ec2-m3.ec2.internal:2181</clinical3PO.accumulo.zookeeper-->
 
-               <clinical3PO.accumulo.user>root</clinical3PO.accumulo.user>
-               <clinical3PO.accumulo.password>c3po123</clinical3PO.accumulo.password>
+               <clinical3PO.accumulo.user>USERNAMEHERE</clinical3PO.accumulo.user>
+               <clinical3PO.accumulo.password>PASSWORDHERE</clinical3PO.accumulo.password>
 
                <!-- Accumulo related application table names -->
                <clinical3PO.accumulo.table.concept>concept</clinical3PO.accumulo.table.concept>
