@@ -1,8 +1,8 @@
 # AWS Auto Scaling for ML-Flex Paralleling System
 
-## Boto Installation ##
+## Boto Installation 
 
-### Install via `pip`_:
+### Install via pip:
 
     ```sh
     pip install boto
