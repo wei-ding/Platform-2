@@ -55,7 +55,7 @@ import scala.reflect._
  */
 trait LuceneIndexPathProvider {
   override def toString() = {
-    println("Getting class name!")  // To see how many times we're called
+    println("Getting sub index name!")  // To see how many times we're called
     this.getClass.getSuperclass.getName
   }
   /**
@@ -64,7 +64,7 @@ trait LuceneIndexPathProvider {
   protected def withIndexPath[T](f: (Path) => T): T
 }
 
-trait Domain 
+trait Domain
 trait Drug extends Domain { override def toString() = "Drug" }
 //trait Drug_RxNorm extends Domain { override def toString() = "Drug_RxNorm" }
 //trait Drug_NDFRT extends Domain { override def toString() = "Drug_NDFRT" }
