@@ -4,17 +4,17 @@
 
 ### Install via pip:
 
-    ```sh
-    pip install boto
-    ```
+```sh
+pip install boto
+```
 
 ###Install from source:
 
-    ```sh
-    $ git clone git://github.com/boto/boto.git
-    $ cd boto
-    $ python setup.py install
-    ```
+```sh
+$ git clone git://github.com/boto/boto.git
+$ cd boto
+$ python setup.py install
+```
 
 ## Run ##
 
