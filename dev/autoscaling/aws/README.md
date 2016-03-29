@@ -1,4 +1,4 @@
-# AWS Auto Scaling for ML-Flex Paralleling System
+# AWS Auto Scaling for Clinical3PO Paralleling System
 
 ## Boto Installation 
 
