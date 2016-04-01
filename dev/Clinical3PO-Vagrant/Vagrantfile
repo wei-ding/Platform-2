@@ -70,6 +70,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     vm.vmx["memsize"] = planning[:vm_mem]
   end
 
+
   planning[:nodes].each do |node|
     config.vm.define node[:hostname] do |node_config|
       node_config.vm.hostname = node[:hostname] + "." + planning[:domain]
@@ -122,7 +123,12 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
            end
       end
             
-         
+      # Install puppet modules
+      config.vm.provision :shell, path: 'bootstrap.sh', args: %w(
+          puppetlabs-stdlib
+          puppetlabs/vcsrepo
+      )
+
       node_config.vm.provision "puppet" do |puppet|
         #puppet.manifests_path = "puppet/manifests"
         #puppet.manifest_file = "default.pp"

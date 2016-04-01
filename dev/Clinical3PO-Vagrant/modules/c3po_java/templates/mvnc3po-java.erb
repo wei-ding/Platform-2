@@ -25,20 +25,20 @@
 export PATH=$PATH:/opt/maven/bin
 
 
-cd /home/c3po/codebase/Stage/dev/clinical3PO  && /opt/maven/bin/mvn clean install -DskipTests 
-cd /home/c3po/codebase/Stage/dev/clinical3PO/batch && /opt/maven/bin/mvn clean install -DskipTests
-cd /home/c3po/codebase/Stage/dev/clinical3PO/services && /opt/maven/bin/mvn clean install -DskipTests
-cd /home/c3po/codebase/Stage/dev/clinical3PO/data-services && /opt/maven/bin/mvn clean install -DskipTests
-cd /home/c3po/codebase/Stage/dev/clinical3PO/FEUtil && /opt/maven/bin/mvn clean install -DskipTests
-cd /home/c3po/codebase/Stage/dev/clinical3PO/FExtract && /opt/maven/bin/mvn clean install -DskipTests
-cd /home/c3po/codebase/Stage/dev/clinical3PO/app && /opt/maven/bin/mvn clean install -DskipTests
-cd /home/c3po/codebase/Stage/dev/clinical3PO/app && /opt/maven/bin/mvn clean package -DskipTests
+cd /home/c3po/codebase/Clinical3PO-Platform/dev/clinical3PO  && /opt/maven/bin/mvn clean install -DskipTests 
+cd /home/c3po/codebase/Clinical3PO-Platform/dev/clinical3PO/batch && /opt/maven/bin/mvn clean install -DskipTests
+cd /home/c3po/codebase/Clinical3PO-Platform/dev/clinical3PO/services && /opt/maven/bin/mvn clean install -DskipTests
+cd /home/c3po/codebase/Clinical3PO-Platform/dev/clinical3PO/data-services && /opt/maven/bin/mvn clean install -DskipTests
+cd /home/c3po/codebase/Clinical3PO-Platform/dev/clinical3PO/FEUtil && /opt/maven/bin/mvn clean install -DskipTests
+cd /home/c3po/codebase/Clinical3PO-Platform/dev/clinical3PO/FExtract && /opt/maven/bin/mvn clean install -DskipTests
+cd /home/c3po/codebase/Clinical3PO-Platform/dev/clinical3PO/app && /opt/maven/bin/mvn clean install -DskipTests
+cd /home/c3po/codebase/Clinical3PO-Platform/dev/clinical3PO/app && /opt/maven/bin/mvn clean package -DskipTests
 
-cd /home/c3po/codebase/Stage/dev/clinical3PO/FEUtil && /opt/maven/bin/mvn clean install -DskipTests
-cd /home/c3po/codebase/Stage/dev/clinical3PO/FExtract && /opt/maven/bin/mvn clean install -DskipTests
-cd /home/c3po/codebase/Stage/dev/clinical3PO/batch && /opt/maven/bin/mvn clean install -DskipTests
-cd /home/c3po/codebase/Stage/dev/clinical3PO/data-services && /opt/maven/bin/mvn clean install -DskipTests && /opt/maven/bin/mvn clean assembly:assembly -Dbinary=true -DskipTests
-tar -xvf /home/c3po/codebase/Stage/dev/clinical3PO/data-services/target/clinical3PO-data-services-1.0.0-SNAPSHOT-bin.tar -C /home/c3po/clinical3PO-hadoop-scripts/
+cd /home/c3po/codebase/Clinical3PO-Platform/dev/clinical3PO/FEUtil && /opt/maven/bin/mvn clean install -DskipTests
+cd /home/c3po/codebase/Clinical3PO-Platform/dev/clinical3PO/FExtract && /opt/maven/bin/mvn clean install -DskipTests
+cd /home/c3po/codebase/Clinical3PO-Platform/dev/clinical3PO/batch && /opt/maven/bin/mvn clean install -DskipTests
+cd /home/c3po/codebase/Clinical3PO-Platform/dev/clinical3PO/data-services && /opt/maven/bin/mvn clean install -DskipTests && /opt/maven/bin/mvn clean assembly:assembly -Dbinary=true -DskipTests
+tar -xvf /home/c3po/codebase/Clinical3PO-Platform/dev/clinical3PO/data-services/target/clinical3PO-data-services-1.0.0-SNAPSHOT-bin.tar -C /home/c3po/clinical3PO-hadoop-scripts/
 
-sudo cp /home/c3po/codebase/Stage/dev/clinical3PO/app/target/clinical3PO.war /opt/apache-tomcat/webapps
+sudo cp /home/c3po/codebase/Clinical3PO-Platform/dev/clinical3PO/app/target/clinical3PO.war /opt/apache-tomcat/webapps
 

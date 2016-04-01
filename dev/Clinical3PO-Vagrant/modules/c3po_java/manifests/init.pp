@@ -78,25 +78,24 @@ class c3po_java {
     user => "c3po",
   }
   ->
-  file { 'sourcec3po':
-    path  => '/home/c3po/codebase/Stage',
-    ensure  =>  present,
-    recurse => remote,
-    source  =>  '/vagrant/modules/c3po_java/files/Stage',
-    owner     => 'c3po',
-    group   =>    'hadoop',
+  vcsrepo { '/home/c3po/codebase/Clinical3PO-Platform':
+    ensure   => latest,
+    provider => git,
+    source   => 'https://github.com/Clinical3PO/Platform.git',
+    user     => 'c3po',
+    owner    => 'c3po',
+    group    => 'hadoop',
   }
   ->
   exec { "chmodc3postage":
     path => $path,
-    command => "sudo chmod ug+rw /home/c3po/codebase/Stage",
+    command => "sudo chmod ug+rw /home/c3po/codebase/Clinical3PO-Platform",
   }
   ->
   file { 'sourcemlflex':
     path  => '/home/c3po/ML-Flex',
     ensure  =>  present,
-    recurse => remote,
-    source  =>  '/vagrant/modules/c3po_java/files/ML-Flex',
+    source  =>  '/home/c3po/codebase/Clinical3PO-Platform/dev/ML-Flex',
     owner     => 'c3po',
     group   =>    'hadoop',
   }
