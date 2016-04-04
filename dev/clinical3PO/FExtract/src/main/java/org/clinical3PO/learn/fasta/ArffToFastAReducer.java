@@ -44,6 +44,7 @@ public class ArffToFastAReducer extends Reducer<Text, Text, Text, NullWritable>{
 		}
 
 		mos = new MultipleOutputs<Text, NullWritable>(context);
+		System.err.println("------------------- END OF SETUP-------------------");
 	}
 
 	@Override
@@ -175,9 +176,9 @@ public class ArffToFastAReducer extends Reducer<Text, Text, Text, NullWritable>{
 			ArrayList<FEStrategyBase> list = mapOfConfiguration.get(classProperty);
 			if (list.size() == 1) {
 				FEStrategyBase object = list.get(0);
-				System.err.println("----------" +object);
+				System.err.println("---------- class " +object);
 				feBase_classProperty = object.getEvaluator();
-				System.out.println(feBase_classProperty.getDescreteValue("80.0f"));
+				System.err.println("Class Object: " + feBase_classProperty);
 			} else {
 				System.err.println("+++++++++++ " + list);
 			}
@@ -188,9 +189,9 @@ public class ArffToFastAReducer extends Reducer<Text, Text, Text, NullWritable>{
 			ArrayList<FEStrategyBase> defaultList = mapOfConfiguration.get(keyList.get(0));
 			if (defaultList.size() == 1) {
 				FEStrategyBase object = defaultList.get(0);
-				System.err.println("----------" +object);
+				System.err.println("---------- default " +object);
 				feBase_default = object.getEvaluator();
-				System.out.println(feBase_default.getDescreteValue("80.0f"));
+				System.err.println("Default Object: " + feBase_classProperty);
 			} else {
 				System.err.println("+++++++++++ " + list);
 			}

@@ -6,7 +6,7 @@ public enum JobSearchConstants {
 	XML("Update Hive Table With NLP Genearted XML file details"), CLASSPROPERTY("Feature Extraction Class Property"),
 	CLASSTIME("Feature Extraction Class Time"),	STARTDATE("Feature Extraction Start Date"), 
 	ENDDATE("Feature Extraction End Date"),	STARTTIME("Feature Extraction Start Time"),
-	ENDTIME("Feature Extraction End Time");
+	ENDTIME("Feature Extraction End Time"), UGENETYPE("Ugene Algorithom");
 	
 	private String searchKey;
 	

@@ -4,3 +4,4 @@ diasabp
 cholesterol
 paco2
 nisysabp
+glucose

@@ -1,5 +1,8 @@
 package org.clinical3PO.common.form;
 
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+
 public class FEUgeneForm {
 
 	private String classProperty;
@@ -8,6 +11,14 @@ public class FEUgeneForm {
 	private String endDate;
 	private String startTime;
 	private String endTime;
+	private String classificationAlgorithm;	
+	private String ugeneAlgorithm;	
+	
+	@NotNull @Min(1)
+	private Integer folds;
+	
+	@NotNull @Min(1)
+	private Integer numberOfIterations;
 	
 	public String getClassProperty() {
 		return classProperty;
@@ -55,5 +66,37 @@ public class FEUgeneForm {
 
 	public void setClassTime(String classTime) {
 		this.classTime = classTime;
+	}
+	
+	public String getClassificationAlgorithm() {
+		return classificationAlgorithm;
+	}
+
+	public void setClassificationAlgorithm(String classificationAlgorithm) {
+		this.classificationAlgorithm = classificationAlgorithm;
+	}
+
+	public Integer getFolds() {
+		return folds;
+	}
+
+	public void setFolds(Integer folds) {
+		this.folds = folds;
+	}
+
+	public Integer getNumberOfIterations() {
+		return numberOfIterations;
+	}
+
+	public void setNumberOfIterations(Integer numberOfIterations) {
+		this.numberOfIterations = numberOfIterations;
+	}
+
+	public String getUgeneAlgorithm() {
+		return ugeneAlgorithm;
+	}
+
+	public void setUgeneAlgorithm(String ugeneAlgorithm) {
+		this.ugeneAlgorithm = ugeneAlgorithm;
 	}
 }

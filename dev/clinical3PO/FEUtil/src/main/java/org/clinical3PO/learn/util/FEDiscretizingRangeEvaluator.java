@@ -101,6 +101,7 @@ public class FEDiscretizingRangeEvaluator extends FEBasicEvaluator {
 	public String getDescreteValue(String s) {
 		
 		float f = Float.parseFloat(s);
+		System.err.println("VALUE IS : " + f);
 		double previous = 0.0;
 		String descrete = null;
 		for(int j = 0; j < cutoffs.size(); j++) {

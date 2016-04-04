@@ -104,9 +104,8 @@
 		</tr>		
 		
 		<tr align="center">
-			<td colspan="2"><input type="submit" class="styled-button-4"
-				value="Submit"> &nbsp;<input type="reset"
-				class="styled-button-4" value="Clear"></td>
+			<td colspan="2"><input type="submit" class="styled-button-4" value="Submit"> 
+			&nbsp;<input type="reset" class="styled-button-4" value="Clear"></td>
 		</tr>
 		
 	</table>

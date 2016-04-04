@@ -72,7 +72,10 @@
 #$9 EndDate (String-MM/dd/yy)
 #${10} StartTime (String-HH:mm:ss)
 #${11} EndTime (String-HH:mm:ss)
-
+#${12} Classification Algorithm
+#${13} Folds (integer)
+#${14} Iterations (integer)
+#${15} Ugene Algorithm
 
 # Check the command line arguments
 if [ $1 -eq 1 ]
@@ -172,9 +175,9 @@ then
  
 elif [ $1 -eq 16 ]
 then
-   if [ $# -ne 11 ]
+   if [ $# -ne 15 ]
    then
-       echo "Usage: $0 16 <Unique Output Dir> <LocalDirectory> <LocalFileName> <Job Id> <Class Property> <Class Time> <Start Date> <End Date> <Start Time> <End Time>"
+       echo "Usage: $0 16 <Unique Output Dir> <LocalDirectory> <LocalFileName> <Job Id> <Class Property> <Class Time> <Start Date> <End Date> <Start Time> <End Time> <Classification ALgorithm> <Folds> <Iterations> <Ugene Algorithm>"
        exit
    fi        
 fi
@@ -404,7 +407,7 @@ then
 	java -cp "*" org.clinical3PO.arff.ArffGeneration $3/$4 $6 ${clinical3PO.app.dataDirectory}/mlflex $4 $7 $8 $9
 	
 	cd ${clinical3PO.mlflex.directory}
-	java -Xmx1g -jar mlflex.jar EXPERIMENT_FILE=${clinical3PO.app.dataDirectory}/mlflex/experiments/$4.txt ACTION=Process 
+	java -Xmx1g -jar mlflex.jar EXPERIMENT_FILE=${clinical3PO.app.dataDirectory}/mlflex/experiments/$4.txt NUM_THREADS=2 THREAD_TIMEOUT_MINUTES=10 PAUSE_SECONDS=60 ACTION=Process DEBUG=true 
 		
 	mv ${clinical3PO.mlflex.directory}/Output/$4_Experiment ${clinical3PO.app.dataDirectory}/mlflex/output/$5
 	cd ${clinical3PO.app.dataDirectory}/mlflex/output
@@ -492,17 +495,17 @@ then
 	if [ -d "${clinical3PO.app.dataDirectory}/ugene" ]
 	then
 		echo "Directory FASTA already exists"
-		else
-			mkdir ${clinical3PO.app.dataDirectory}/ugene
-			echo "FASTA Directory doesn't exists. Created new."
+	else
+		mkdir ${clinical3PO.app.dataDirectory}/ugene
+		echo "FASTA Directory doesn't exists. Created new."
 	fi
 	
 	if [ -d "${clinical3PO.app.dataDirectory}/ugene/fasta" ]
 	then
 		echo "Directory FASTA already exists"
-		else
-			mkdir ${clinical3PO.app.dataDirectory}/ugene/fasta
-			echo "FASTA Directory doesn't exists. Created new."
+	else
+		mkdir ${clinical3PO.app.dataDirectory}/ugene/fasta
+		echo "FASTA Directory doesn't exists. Created new."
 	fi
 	
 	echo " ---------------------------------------- "
@@ -536,26 +539,13 @@ then
    	fi
 	
 	##############################################################
-	########### INTEGRATING FASTA-UGENE ##########################
+	########### INTEGRATING FASTA-UGENE-ARFF ##########################
 	##############################################################
 	echo " ---------------------------------  "
-	echo "STARTED GENERATING DISTANCE MATRICES FROM UGENE EXECUTABLE"
+	echo "STARTED GENERATING DISTANCE MATRICES FROM UGENE EXECUTABLE && ARFF"
 	echo " ---------------------------------  "
-	sh ${clinical3PO.ugene.directory}/scripts/genDistance.sh ${clinical3PO.app.dataDirectory}/ugene/fasta/$4 > ${clinical3PO.ugene.directory}/logs/log_`date '+%Y-%m-%d_%H-%M-%S'`.txt
 	
-	if [ $? -ne 0 ]
-   	then
-    	echo "FAILED - GENERATING DISTANCE MATRICES FROM UGINE TOOL. Exiting."
-	 	cd ${clinical3PO.hadoop.shellscripts.dir}/lib
-		java -ea -cp "*" org.clinical3PO.services.JobStatusUpdate $5 FAIL
-    	exit
-    else
-    	echo " ---------------------------------  "
-		echo "COMPLETED GENERATING DISTANCE MATRICES FROM UGENE EXECUTABLE"
-		echo " ---------------------------------  "
-   	fi
-   	
-   	if [ -d "${clinical3PO.app.dataDirectory}/ugene/output" ]
+	if [ -d "${clinical3PO.app.dataDirectory}/ugene/output" ]
 	then
 		echo "Directory ${clinical3PO.app.dataDirectory}/ugene/output already exists"
 	else
@@ -563,14 +553,75 @@ then
 		echo "Directory ${clinical3PO.app.dataDirectory}/ugene/output doesn't exists. Created new."
 	fi
 	
-	mkdir ${clinical3PO.app.dataDirectory}/ugene/output/$5
-   	mv ${clinical3PO.ugene.directory}/distanceMatrices ${clinical3PO.app.dataDirectory}/ugene/output/$5
-	cd ${clinical3PO.app.dataDirectory}/ugene/output
-	tar -cvf feUgeneReport$5.tar.gz $5/
+	if [ ${15} -eq 0 ]
+	then
+		echo " "
+		echo "User choose to run Non-Oligo type ugene implementation"
+		echo " "
+		sh ${clinical3PO.ugene.directory}/scripts/genDistance.sh ${clinical3PO.app.dataDirectory}/ugene/fasta/$4 > ${clinical3PO.ugene.directory}/logs/log_`date '+%Y-%m-%d_%H-%M-%S'`.txt
+		
+		if [ $? -ne 0 ]
+   		then
+    		echo "FAILED - GENERATING DISTANCE MATRICES FROM UGINE TOOL. Exiting."
+	 		cd ${clinical3PO.hadoop.shellscripts.dir}/lib
+			java -ea -cp "*" org.clinical3PO.services.JobStatusUpdate $5 FAIL
+    		exit
+   		else
+    		echo " ---------------------------------  "
+			echo "COMPLETED GENERATING DISTANCE MATRICES FROM UGENE EXECUTABLE"
+			echo " ---------------------------------  "
+   		fi
+		
+		mkdir ${clinical3PO.app.dataDirectory}/ugene/output/$5
+    	mv ${clinical3PO.ugene.directory}/distanceMatrices ${clinical3PO.app.dataDirectory}/ugene/output/$5
+ 		cd ${clinical3PO.app.dataDirectory}/ugene/output
+ 		tar -cvf feUgeneReport$5.tar.gz $5/
+	elif [ ${15} -eq 1 ]
+	then
+		echo " "
+		echo "User choose to run Oligo type ugene implementation"
+		echo " "
+		sh ${clinical3PO.ugene.directory}/scripts/Oligos/generateARFF.sh ${clinical3PO.app.dataDirectory}/ugene/fasta/$4 ${clinical3PO.ugene.directory}/oligos_dump/ > ${clinical3PO.ugene.directory}/logs/log_`date '+%Y-%m-%d_%H-%M-%S'`.txt
+		
+		if [ $? -ne 0 ]
+   		then
+    		echo "FAILED - GENERATING DISTANCE MATRIX & ARFF FROM UGINE TOOL. Exiting."
+	 		cd ${clinical3PO.hadoop.shellscripts.dir}/lib
+			java -ea -cp "*" org.clinical3PO.services.JobStatusUpdate $5 FAIL
+    		exit
+   		else
+    		echo " ---------------------------------  "
+			echo "COMPLETED GENERATING DISTANCE MATRICES & ARFF FROM UGENE EXECUTABLE"
+			echo " ---------------------------------  "
+   		fi
+		
+		cp ${clinical3PO.ugene.directory}/ARFF_dump/*.arff ${clinical3PO.app.dataDirectory}/mlflex/data/$4.arff
+		
+		if [ $? -ne 0 ]
+   		then
+    		echo "Failed copying .arff from ${clinical3PO.ugene.directory}/ARFF_dump/. Exiting."
+	    	cd ${clinical3PO.hadoop.shellscripts.dir}/lib
+	    	java -ea -cp "*" org.clinical3PO.services.JobStatusUpdate $5 FAIL
+      		exit
+    	fi
+		
+		###################################################################################
+   		## CALLING ML-FLEX CODE
+   	
+   		cd ${clinical3PO.hadoop.shellscripts.dir}/lib
+		java -cp "*" org.clinical3PO.fe.ExperimentFileGeneration ${clinical3PO.app.dataDirectory}/mlflex $4 ${12} ${13} ${14}
+	
+		cd ${clinical3PO.mlflex.directory}
+		java -Xmx1g -jar mlflex.jar EXPERIMENT_FILE=${clinical3PO.app.dataDirectory}/mlflex/experiments/$4.txt NUM_THREADS=2 THREAD_TIMEOUT_MINUTES=10 PAUSE_SECONDS=60 ACTION=Process DEBUG=true
+	
+		mv ${clinical3PO.mlflex.directory}/Output/$4_Experiment ${clinical3PO.app.dataDirectory}/ugene/output/$5
+		cd ${clinical3PO.app.dataDirectory}/ugene/output
+		tar -cvf feUgeneReport$5.tar.gz $5/
+	fi
 	
 	if [ $? -ne 0 ]
    	then
-    	echo "FAILED - Could not copy UGENE output to ${clinical3PO.app.dataDirectory}/ugene/output/$5. Exiting."
+    	echo "FAILED - GENERATING DISTANCE MATRICES FROM UGINE TOOL. Exiting."
 	 	cd ${clinical3PO.hadoop.shellscripts.dir}/lib
 		java -ea -cp "*" org.clinical3PO.services.JobStatusUpdate $5 FAIL
     	exit

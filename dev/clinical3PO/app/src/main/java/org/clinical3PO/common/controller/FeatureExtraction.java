@@ -56,11 +56,11 @@ public class FeatureExtraction {
 		User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 		assert (user != null);
 		
-		List<JobSearchParameter> searchParameters = new ArrayList<JobSearchParameter>(7);
+		List<JobSearchParameter> searchParameters = new ArrayList<JobSearchParameter>(9);
 		searchParameters.add(new JobSearchParameter(JobSearchConstants.CLASSPROPERTY.getSearchKey(), mlflexform.getClassProperty(), 1));
 		searchParameters.add(new JobSearchParameter(JobSearchConstants.CLASSIFIER.getSearchKey(), mlflexform.getClassificationAlgorithm(),1));
 		searchParameters.add(new JobSearchParameter(JobSearchConstants.FOLDS.getSearchKey(), mlflexform.getFolds().toString(),1));
-		searchParameters.add(new JobSearchParameter(JobSearchConstants.NoITERATIONS.getSearchKey(),mlflexform.getNumberOfIterations().toString(),1));
+		searchParameters.add(new JobSearchParameter(JobSearchConstants.NoITERATIONS.getSearchKey(), mlflexform.getNumberOfIterations().toString(),1));
 		searchParameters.add(new JobSearchParameter(JobSearchConstants.CLASSTIME.getSearchKey(), mlflexform.getClassTime(),1));
 		searchParameters.add(new JobSearchParameter(JobSearchConstants.STARTDATE.getSearchKey(), mlflexform.getStartDate(),1));
 		searchParameters.add(new JobSearchParameter(JobSearchConstants.ENDDATE.getSearchKey(), mlflexform.getEndDate(),1));
@@ -101,13 +101,17 @@ public class FeatureExtraction {
 		User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 		assert (user != null);
 		
-		List<JobSearchParameter> searchParameters = new ArrayList<JobSearchParameter>(4);
+		List<JobSearchParameter> searchParameters = new ArrayList<JobSearchParameter>(9);
 		searchParameters.add(new JobSearchParameter(JobSearchConstants.CLASSPROPERTY.getSearchKey(), feUgeneForm.getClassProperty(), 1));
 		searchParameters.add(new JobSearchParameter(JobSearchConstants.CLASSTIME.getSearchKey(), feUgeneForm.getClassTime(),1));
 		searchParameters.add(new JobSearchParameter(JobSearchConstants.STARTDATE.getSearchKey(), feUgeneForm.getStartDate(),1));
 		searchParameters.add(new JobSearchParameter(JobSearchConstants.ENDDATE.getSearchKey(), feUgeneForm.getEndDate(),1));
 		searchParameters.add(new JobSearchParameter(JobSearchConstants.STARTTIME.getSearchKey(), feUgeneForm.getStartTime(),1));
 		searchParameters.add(new JobSearchParameter(JobSearchConstants.ENDTIME.getSearchKey(), feUgeneForm.getEndTime(),1));
+		searchParameters.add(new JobSearchParameter(JobSearchConstants.CLASSIFIER.getSearchKey(), feUgeneForm.getClassificationAlgorithm(),1));
+		searchParameters.add(new JobSearchParameter(JobSearchConstants.FOLDS.getSearchKey(), feUgeneForm.getFolds().toString(),1));
+		searchParameters.add(new JobSearchParameter(JobSearchConstants.NoITERATIONS.getSearchKey(), feUgeneForm.getNumberOfIterations().toString(),1));
+		searchParameters.add(new JobSearchParameter(JobSearchConstants.UGENETYPE.getSearchKey(), feUgeneForm.getUgeneAlgorithm(),1));
 		
 		JobSearch jobSearch = new JobSearch();
 		jobSearch.setSearchBy(user.getId());
