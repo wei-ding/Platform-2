@@ -30,7 +30,7 @@ $ ./sbt package
 
 - Clinical3PO
 
-## mimic2 to omop using Kettle/Pentaho ##
+## mimic2 to omop using Kettle/Pentaho ## ----
 
 About Pentaho:
 	Pentaho's Big Data story revolves around Pentaho Data Integration AKA Kettle. Kettle is a powerful Extraction, Transformation and Loading (ETL) engine that uses a metadata-driven approach. The kettle engine provides data services for, and is embedded in, most of the applications within the Pentaho BI suite. 
@@ -38,7 +38,7 @@ About Pentaho:
 
 Spoon Installation:   
     - Install the Sun Microsystems Java Runtime Environment version 1.5 or higher. You can download a JRE for free at http://www.javasoft.com/.
-    - Download the pentaho Data Integration - pdi-ce-5.0.1.A-stable from : https://sourceforge.net/projects/pentaho/files/Data%20Integration/5.0.1-stable/
+    - Download the pentaho Data Integration - pdi-ce-6.0.1.0-stable from : http://community.pentaho.com/
 	- Inorder to start the spoon tool we need to unzip the data integration folder which is downloaded and start the spoon.bat for windows and spoon.sh for Unix like platforms like Linux, Apple OSX, Solaris.
  
 User Interface Overview:
@@ -58,3 +58,38 @@ Create the Tranformation and step:
 	- We need to do the above steps for all the tables.
 	
 	- Once we are done with above steps click Run to run this tranformation.
+	
+Look over the files: ETLfrommimic2toomopforGit.ktr and 
+
+## Execute R script through ETL penatho/Kettle -- ETLRscriptJobForGit.kjb
+
+--There is step called "R script executor" to excute an R script from within a PDI transformation. The R script Executor step is already installed in PDI(Pentaho Data Integration). The following is the link which gives instructions to configure the environment to use the step. This step is only available in Pentaho Enterprise Edition of PDI. It is not available in Community edition.
+
+http://wiki.pentaho.com/display/EAI/R+script+executor
+
+--Here we are using Community Edition to run the transformations because it is open source. 
+
+There is an alternative step to execute the R script in ETL through job entry named called "Shell".
+
+To view the "Shell" step we need to create the Job through spoon File -> New -> Job.
+
+--The following are the steps to execute the R script and keep the output in Hadoop environment.
+
+1. To start the Job we need to use the START from General -> START in design section.
+
+2. After that our actual job starts. Drag the Shell from Scripting -> Shell. Right click on the shell step and then go to Edit option. We can see the window called Execute shell script with general and script tabs. In the General section there is an option called Insert script- if we check that option we can use the script tab to write the script with in the Execute shell script window and the script file name option will disable. Here I checked the insert script option. In the Working directory option we need to give the path where our R code is resides. Here I used the R code which is available in https://github.com/Clinical3PO/Stage/blob/master/dev/clinical3PO/utilities/Other-Projects/R_Package/ObservationFileCreation/createObservation.R. In the script tab I added following line of code Rscript createObservation.R. Here I used windows machine to run it. That is the reason I installed Cygwin. It provides the linux like environment for windows to run the shell scripts. Linux users can directly to run it. Connect the hop between START and Shell. Here is the Link for Shell Documentation http://wiki.pentaho.com/display/EAI/Shell
+
+3. Step 1 and step 2 will generate the output from R script according to location specified in the Rscript. 
+
+4. Copy Files step is used to copy files or folders from source to destination environment. Drag the copy files step after the Shell. Connect hop between Shell and Copy Files. Right on the Copy Files. Click on Edit to set the sourde and destination environments and File/Folder names. Here is the Link for Copy Files Documentation http://wiki.pentaho.com/display/EAI/Copy+Files
+
+5. Move Files step is used to move the Files/Folder to alternate locations. Drag the Move Files after the Copy Files. When we click on the Edit in Move Files it will give Move Files window with General, Destination File and Advanced tabs. In the General tab we need to specify the File/Folder source and destination source. In the Destination File tab we need to check the Destination is a File, Specify Date time format and Add date before extension options. In the date time format I chose yyyyMMddHHmmss and in the destination file exists I chose Overwrite the destination file option. Connect the hop between Copy Files and Move Files step. Here is the Link for Move Files Documentation http://wiki.pentaho.com/display/EAI/Move+files
+
+6. Hadoop Copy Files is used to copy files in a Hadoop cluster from one location to another. Drag the Hadoop Copy Files after the Move Files. Connect the Hop between Move Files and Hadoop Copy Files. When we click on the Edit in Move Files it will give Hadoop Copy Files window with Files and settings tabs. In the Files tab we need to give the source,destination environment and source, destination Files/Folder location. In the settings tab I checked the  remove source Files option. Here is the documentation for http://wiki.pentaho.com/display/EAI/Hadoop+Copy+Files.
+
+
+
+
+
+
+
