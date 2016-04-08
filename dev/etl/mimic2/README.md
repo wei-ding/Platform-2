@@ -88,7 +88,13 @@ To view the "Shell" step we need to create the Job through spoon File -> New -> 
 6. Hadoop Copy Files is used to copy files in a Hadoop cluster from one location to another. Drag the Hadoop Copy Files after the Move Files. Connect the Hop between Move Files and Hadoop Copy Files. When we click on the Edit in Move Files it will give Hadoop Copy Files window with Files and settings tabs. In the Files tab we need to give the source,destination environment and source, destination Files/Folder location. In the settings tab I checked the  remove source Files option. Here is the documentation for http://wiki.pentaho.com/display/EAI/Hadoop+Copy+Files.
 
 
+## ETL Pentaho/Kettle jobs through Kitchen -- ETLRjobforkitchen.bat
 
+Kitchen: Kitchen is the command line interface and is quite convenient for executing that ETL job. It is used to execute the kettle jobs at the command line with out opening the spoon GUI. 
+
+We can find the kitchen user documentation here: http://wiki.pentaho.com/display/EAI/Kitchen+User+Documentation#KitchenUserDocumentation-Runajobfromfile
+
+In order to run the RscriptJob from the command line without opening the spoon GUI by double clicking the ETLRjobforkitchen.bat. 
 
 
 

@@ -1,0 +1,1 @@
+kitchen.bat /file:C:\pdi-ce-6.0.1.0-386\data-integration\ETLRscriptJob.kjb /level:Basic > C:\Temp\trans.log
