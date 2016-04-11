@@ -1,0 +1,1 @@
+pan.bat /file:C:\pdi-ce-6.0.1.0-386\data-integration\ETLfrommimic2toomopForGit.ktr /level:Basic > C:\Temp\trans.log
