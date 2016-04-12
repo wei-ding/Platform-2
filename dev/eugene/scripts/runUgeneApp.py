@@ -8,7 +8,7 @@ import datetime
 ### Each FASTA file is divided into individual .gb file based on patient Id
 ### This is step is required because each patient has to be compared with all other patients using Smith Waterman algorithm from Ugene
 ### This will run Ugene application for a FASTA file and output files are created accordingly
-### 
+###
 
 def main(argv):
     try:
@@ -30,7 +30,7 @@ def createDirectory(dir_name):
         print "Exception: %" % (e)
 
 def splitMethod(fasta_dump_dir):
-    current = None 
+    current = None
     parts = []
     dirs = os.listdir( fasta_dump_dir )
     todays_date=(datetime.datetime.now().strftime("%d-%b-%Y")).upper()
@@ -39,7 +39,7 @@ def splitMethod(fasta_dump_dir):
     createDirectory("/tmp/distance")
 
     for file in dirs:
-        #Create directory for each 
+        #Create directory for each
         dir_name=file.split('-')[0]
         createDirectory("/tmp/distance/%s" % (dir_name))
 
@@ -67,7 +67,7 @@ def splitMethod(fasta_dump_dir):
             outfile=open(createFile,'w')
             ouputStrings ="LOCUS       %s                       5 hr                         %s\nUNIMARK     %s\nORIGIN\n        1 %s\n//" % (pid,todays_date, pid, text)
             #ouputStrings ="LOCUS       %s                       5 hr                         20-NOV-2015\nUNIMARK     %s\nORIGIN\n        1 %s\n//" % (pid, pid, text)
- 
+
             outfile.write(ouputStrings)
             outfile.close()
         file.close()
@@ -76,7 +76,7 @@ def runUgene(fasta_dump_dir):
     createDirectory("/tmp/outfiles") #temporary output files wil be stored here
 
     dir_fasta_dump=fasta_dump_dir
-    
+
     # Open a file
     for fasta_file_name in os.listdir(dir_fasta_dump):
         complete_file_path="%s/%s" % (dir_fasta_dump, fasta_file_name)
@@ -90,7 +90,8 @@ def runUgene(fasta_dump_dir):
         for file in dirs:
             #Following is with score=90 default
             #command_to_run="ugene find-sw --ref=%s --ptrn=/tmp/distance/%s/%s --out=/tmp/outfiles/%s/%s --filter=none --matrix=cpppo --log-level-details " % (complete_file_path, temp_dir_name, file, temp_dir_name, file)
-            command_to_run="ugene find-sw --ref=%s --ptrn=/tmp/distance/%s/%s --out=/tmp/outfiles/%s/%s --filter=none --matrix=cpppo --log-level-details > /dev/null " % (complete_file_path, temp_dir_name, file, temp_dir_name, file)
+            #--command_to_run="ugene find-sw --ref=%s --ptrn=/tmp/distance/%s/%s --out=/tmp/outfiles/%s/%s --filter=none --matrix=glucose --log-level-details > /dev/null " % (complete_file_path, temp_dir_name, file, temp_dir_name, file)
+            command_to_run="ugene find-sw --ref=%s --ptrn=/tmp/distance/%s/%s --out=/tmp/outfiles/%s/%s --filter=none --matrix=%s --log-level-details > /dev/null " % (complete_file_path, temp_dir_name, file, temp_dir_name, file, temp_dir_name)
 
             print command_to_run
             os.system(command_to_run)
