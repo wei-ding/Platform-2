@@ -34,7 +34,7 @@ property *default* org.clinical3PO.learn.util.FEBasicStrategy {
         emptyBinStrategy lastLegitOrUnk
         legitLow 0.0
         legitHigh 1000000.0
-		discrete U
+		discrete N
     }
 } 
 

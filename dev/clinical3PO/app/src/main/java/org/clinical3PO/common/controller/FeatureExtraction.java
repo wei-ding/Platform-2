@@ -138,7 +138,7 @@ public class FeatureExtraction {
     public void doDownload(@PathVariable("id") String reportID, HttpServletRequest request,
             HttpServletResponse response) throws IOException {
  
-    	String fileName = "feUgeneReport"+ reportID + ".tar.gz";
+    	String fileName = "mlFlexReport"+ reportID + ".tar.gz";
     	String fullPath = jobSearchService.getAppDataDirectory() + File.separator + "ugene"+ File.separator + "output" + File.separator + fileName;
     	
     	File downloadFile = new File(fullPath);
