@@ -4,5 +4,5 @@ CREATE TABLE IF NOT EXISTS `accumuloroles` (
   `userId` int(10) unsigned NOT NULL,
   PRIMARY KEY (`id`),
   CONSTRAINT `fk_accumulorole_userid` FOREIGN KEY (`userId`) REFERENCES `users` (`id`)
-)DEFAULT CHARSET=utf8mb4;
+)DEFAULT CHARSET=utf8;
 

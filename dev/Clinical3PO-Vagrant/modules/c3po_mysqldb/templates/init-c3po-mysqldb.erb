@@ -22,15 +22,15 @@
 mysql -u root -pPWc3po -h <%= @db %> << EOF
 use clinical3po;
 select "Creating Schema Users";
-source /vagrant/modules/c3po_mysqldb/files/users.sql;
+source /home/c3po/codebase/Clinical3PO-Platform/dev/clinical3PO/utilities/db-objects/users.sql;
 select "Creating Schema Accumulo Roles";
-source /vagrant/modules/c3po_mysqldb/files/accumuloroles.sql;
+source /home/c3po/codebase/Clinical3PO-Platform/dev/clinical3PO/utilities/db-objects/accumuloroles.sql;
 select "Creating Schema Role";
-source /vagrant/modules/c3po_mysqldb/files/role.sql;
+source /home/c3po/codebase/Clinical3PO-Platform/dev/clinical3PO/utilities/db-objects/role.sql;
 select "Creating Schema Search Repository";
-source /vagrant/modules/c3po_mysqldb/files/searchrepository.sql;
+source /home/c3po/codebase/Clinical3PO-Platform/dev/clinical3PO/utilities/db-objects/searchrepository.sql;
 select "Creating Schema Search Parameters";
-source /vagrant/modules/c3po_mysqldb/files/searchparameters.sql;
+source /home/c3po/codebase/Clinical3PO-Platform/dev/clinical3PO/utilities/db-objects/searchparameters.sql;
 select "Loading Application data";
-source /vagrant/modules/c3po_mysqldb/files/data.sql;
+source /home/c3po/codebase/Clinical3PO-Platform/dev/clinical3PO/utilities/db-objects/data.sql;
 EOF

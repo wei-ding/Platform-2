@@ -17,18 +17,12 @@ class c3po_java {
   require mysql_client
   require hdfs_client
   require maven
+  require c3po_codebase
   require c3po_mysqldb
 
   $path="/bin:/usr/bin"
 
   # a fuller example, including permissions and ownership
-  file { '/home/c3po/codebase':
-    ensure => 'directory',
-    owner  => 'c3po',
-    group  => 'hadoop',
-    mode   => '0770',
-  }
-  ->
   file { '/home/c3po/.m2':
     ensure => 'directory',
     owner  => 'c3po',
@@ -64,32 +58,51 @@ class c3po_java {
     mode   => '0770',
   }
   ->
-  exec { "rmhdfsdatac3pojava":
-    path => $path,
-    onlyif => "hdfs dfs -test -e /user/c3po/PhysioNet",
-    command => "hdfs dfs -rm -skipTrash -r /user/c3po/PhysioNet",
+  exec {"c3po-java-cdw-mkdir":
+    command => "hadoop fs -mkdir -p /data/C3PO_CDW/care_site /data/C3PO_CDW/cohort /data/C3PO_CDW/condition_era /data/C3PO_CDW/death /data/C3PO_CDW/ drug_cost /data/C3PO_CDW/drug_era /data/C3PO_CDW/durg_exposure /data/C3PO_CDW/location /data/C3PO_CDW/measurement /data/C3PO_CDW/note /data/C3PO_CDW/observation /data/C3PO_CDW/observation_period /data/C3PO_CDW/organization /data/C3PO_CDW/payer_plan_period /data/C3PO_CDW/person /data/C3PO_CDW/procedure_cost /data/C3PO_CDW/procedure_occurrence /data/C3PO_CDW/provider /data/C3PO_CDW/specimen /data/C3PO_CDW/visit_occurrence",
+    unless => "hdfs dfs -test -e /data/C3PO_CDW",
+    path => "$PATH",
     user => "hdfs",
   }
   ->
-  exec { "copyhdfsdatac3pojava":
+  exec {"c3po-java-cdw-chown":
+    command => "hdfs dfs -chown -R c3po:hadoop /data",
+    path => "$PATH",
+    user => "hdfs",
+  }
+  ->
+  exec {"c3po-java-cdw-chmod":
+    command => "hdfs dfs -chmod -R 775 /data",
+    path => "$PATH",
+    user => "hdfs",
+  }
+  ->
+  exec { "copyhdfsdata_concept":
     path => $path,
-    unless => "hdfs dfs -test -e /user/c3po/PhysioNet",
-    command => "hdfs dfs -copyFromLocal /vagrant/files/hdfs/PhysioNet /user/c3po/",
+    unless => "hdfs dfs -test -e /data/C3PO_CDW/concept.txt",
+    command => "hdfs dfs -copyFromLocal /vagrant/modules/c3po_mysqldb/files/concept.txt /data/C3PO_CDW/concept.txt",
     user => "c3po",
   }
   ->
-  vcsrepo { '/home/c3po/codebase/Clinical3PO-Platform':
-    ensure   => latest,
-    provider => git,
-    source   => 'https://github.com/Clinical3PO/Platform.git',
-    user     => 'c3po',
-    owner    => 'c3po',
-    group    => 'hadoop',
+  exec { "copyhdfsdata_person":
+    path => $path,
+    unless => "hdfs dfs -test -e /data/C3PO_CDW/person-merged.txt",
+    command => "hdfs dfs -copyFromLocal /vagrant/modules/c3po_mysqldb/files/person-merged.txt /data/C3PO_CDW/person-merged.txt",
+    user => "c3po",
   }
   ->
-  exec { "chmodc3postage":
+  exec { "copyhdfsdata_death":
     path => $path,
-    command => "sudo chmod ug+rw /home/c3po/codebase/Clinical3PO-Platform",
+    unless => "hdfs dfs -test -e /data/C3PO_CDW/death-merged.txt",
+    command => "hdfs dfs -copyFromLocal /vagrant/modules/c3po_mysqldb/files/death-merged.txt /data/C3PO_CDW/death-merged.txt",
+    user => "c3po",
+  }
+  ->
+  exec { "copyhdfsdata_obs":
+    path => $path,
+    unless => "hdfs dfs -test -e /data/C3PO_CDW/observation-merged.txt",
+    command => "hdfs dfs -copyFromLocal /vagrant/modules/c3po_mysqldb/files/observation-merged.txt /data/C3PO_CDW/observation-merged.txt",
+    user => "c3po",
   }
   ->
   file { 'sourcemlflex':

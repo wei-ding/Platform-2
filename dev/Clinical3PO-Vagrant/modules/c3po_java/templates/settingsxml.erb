@@ -50,8 +50,7 @@
 
               <!-- FEATURE EXTRACTION PROPERTIES -->
                <fe.number.reducers>2</fe.number.reducers>
-               <fe.file.data>/user/c3po/PhysioNet/observation.csv</fe.file.data>
-
+               <fe.file.data>/data/C3PO_CDW/observation-merged.txt</fe.file.data>
             
             <clinical3PO.hive.host> <%= @db %></clinical3PO.hive.host>
             <clinical3PO.hive.port>10000</clinical3PO.hive.port>
@@ -85,9 +84,9 @@
                
 
             <!-- Hadoop related local files -->
-            <hadoop.file.conceptFile>/user/c3po/PhysioNet/concept.csv</hadoop.file.conceptFile>
-            <hadoop.file.observationFile>/user/c3po/PhysioNet/observation.csv</hadoop.file.observationFile>
-            <hadoop.file.deathFile>/user/c3po/PhysioNet/death.txt</hadoop.file.deathFile>
+            <hadoop.file.conceptFile>/data/C3PO_CDW/concept.txt</hadoop.file.conceptFile>
+            <hadoop.file.observationFile>/data/C3PO_CDW/observation-merged.txt</hadoop.file.observationFile>
+            <hadoop.file.deathFile>/data/C3PO_CDW/death-merged.txt</hadoop.file.deathFile>
 
                <!-- Category file location -->
                <clinical3PO.visualization.category>/home/c3po/clinical3PO-hadoop-scripts/category.txt</clinical3PO.visualization.category>

@@ -13,7 +13,7 @@ ECHO ON
 ECHO Creating Database 
 
 ECHO OFF
-mysql -u%USERNAME% -p%PASSWORD% -h%HOST_NAME% -e "CREATE DATABASE %DB_NAME% CHARACTER SET utf8mb4"
+mysql -u%USERNAME% -p%PASSWORD% -h%HOST_NAME% -e "CREATE DATABASE %DB_NAME% CHARACTER SET utf8"
 
 ECHO "Creating Schema Users"
 

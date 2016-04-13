@@ -12,7 +12,7 @@ PASSWORD=
 echo "Creating Database"
 
 
-mysql -u$USERNAME -p$PASSWORD -h$HOST_NAME -e "CREATE DATABASE $DB_NAME CHARACTER SET utf8mb4"
+mysql -u$USERNAME -p$PASSWORD -h$HOST_NAME -e "CREATE DATABASE $DB_NAME CHARACTER SET utf8"
 
 echo "Creating Schema Users"
 

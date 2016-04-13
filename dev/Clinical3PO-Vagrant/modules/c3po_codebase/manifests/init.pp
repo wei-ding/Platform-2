@@ -13,36 +13,31 @@
 #   See the License for the specific language governing permissions and
 #   limitations under the License.
 
-class c3po_mysqldb {
-  require mysql_client
-  require hive_db
-  require c3po_codebase
+class c3po_codebase {
+  require hdfs_client
+  require maven
 
   $path="/bin:/usr/bin"
 
-  file { "/tmp/create-c3po-mysqldb-user.sh":
-    ensure => file,
-
-    owner => root,
-    mode => 0700,
-    content => template('c3po_mysqldb/create-c3po-mysqldb-user.erb'),
+  # a fuller example, including permissions and ownership
+  file { '/home/c3po/codebase':
+    ensure => 'directory',
+    owner  => 'c3po',
+    group  => 'hadoop',
+    mode   => '0770',
   }
   ->
-  exec { "c3po-mysqldb-user":
+  vcsrepo { '/home/c3po/codebase/Clinical3PO-Platform':
+    ensure   => latest,
+    provider => git,
+    source   => 'https://github.com/Clinical3PO/Platform.git',
+    user     => 'c3po',
+    owner    => 'c3po',
+    group    => 'hadoop',
+  }
+  ->
+  exec { "chmodc3postage":
     path => $path,
-    command => "/tmp/create-c3po-mysqldb-user.sh",
+    command => "sudo chmod ug+rw /home/c3po/codebase/Clinical3PO-Platform",
   }
-  ->
-  file { "/tmp/init-c3po-mysqldb.sh":
-    ensure => file,
-    owner => root,
-    mode => 0700,
-    content => template('c3po_mysqldb/init-c3po-mysqldb.erb'),
-  }
-  ->
-  exec { "c3po-mysqldb-init":
-    path => $path,
-    command => "/tmp/init-c3po-mysqldb.sh",
-  }
-
 }

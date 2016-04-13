@@ -10,4 +10,4 @@ CREATE TABLE IF NOT EXISTS `users` (
   `credentialsNonExpired` tinyint(4) NOT NULL DEFAULT '0',
   `enabled` tinyint(4) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) DEFAULT CHARSET=utf8mb4;
+) DEFAULT CHARSET=utf8;

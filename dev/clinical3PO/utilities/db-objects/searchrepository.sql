@@ -11,7 +11,7 @@ CREATE TABLE IF NOT EXISTS `searchrepository` (
   `status` varchar(100) NOT NULL,
   `hadoopOutputDirectory` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
-) DEFAULT CHARSET=utf8mb4;
+) DEFAULT CHARSET=utf8;
 
 /* Alter table for adding user details */
 
