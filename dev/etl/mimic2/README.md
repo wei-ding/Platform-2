@@ -94,8 +94,14 @@ Kitchen: Kitchen is the command line interface and is quite convenient for execu
 
 We can find the kitchen user documentation here: http://wiki.pentaho.com/display/EAI/Kitchen+User+Documentation#KitchenUserDocumentation-Runajobfromfile
 
-In order to run the RscriptJob from the command line without opening the spoon GUI by double clicking the ETLRjobforkitchen.bat. 
+In order to run the RscriptJob from the command line without opening the spoon GUI by opening the ETLRjobforkitchen.bat. 
 
 
+## ETL Pentaho/Kettle transformations through Pan -- ETLmimic2TransformationForPan.bat, ETLosimTransformationForPan.bat 
 
+Pan: Pan is a program that can execute transformations designed in Spoon when stored as a KTR file or in a repository.
+
+We can find the Pan user documentation here: http://wiki.pentaho.com/display/EAI/Pan+User+Documentation
+
+In order to run the Mimic2 to OMOP from the command line without opening the spoon GUI by opening the ETLmimic2TransformationForPan.bat. Once we finished running the ETLmimic2TransformationForPan.bat then we need to run the ETLosimTransformationForPan.bat
 
