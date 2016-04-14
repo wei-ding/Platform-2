@@ -33,7 +33,7 @@ class hive_db {
   }
   ->
   exec { "secure-mysqld":
-    command => "mysql_secure_installation < files/secure-mysql.txt",
+    command => "mysql_secure_installation < /vagrant/modules/hive_db/files/secure-mysql.txt",
     path => "${PATH}",
     cwd => "/vagrant/modules/hive_db",
   }
@@ -44,7 +44,7 @@ class hive_db {
   }
   ->
   exec { "create-hivedb":
-    command => "mysql -u root --password=PWc3po < files/setup-hive.txt",
+    command => "mysql -u root --password=PWc3po < /vagrant/modules/hive_db/files/setup-hive.txt",
     path => "${PATH}",
     cwd => "/vagrant/modules/hive_db",
     creates => "/var/lib/mysql/hive",

@@ -197,15 +197,17 @@ Users
 --------------
 
 - Tomcat:
+  ```
   user:admin
   password:PWc3po
-
+  ```
 - mysql:
+  ```
   user:root
   password:PWc3po
   user:c3po
   password:PWc3po
-
+  ```
 
 Remote Access to Clinical3PO
 --------------
