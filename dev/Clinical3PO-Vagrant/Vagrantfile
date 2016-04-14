@@ -54,9 +54,25 @@ rpm_version = hdp_version.gsub /[.-]/, '_'
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   required_plugins = %w( vagrant-cachier vagrant-env)
+
+
+  needs_restart = false
+
   required_plugins.each do |plugin|
-      exec "vagrant plugin install #{plugin};vagrant #{ARGV.join(" ")}" unless Vagrant.has_plugin? plugin || ARGV[0] == 'plugin'
+    unless Vagrant.has_plugin? plugin
+        if system "vagrant plugin install #{plugin}"
+            needs_restart = true
+        else
+            abort "Installation of ${plugin} has failed. The Vagrant is Aborting."
+        end
+    end
   end
+
+  if needs_restart
+    exec "vagrant #{ARGV.join' '}"
+  end
+
+
   if Vagrant.has_plugin?("vagrant-cachier")
     # Configure cached packages to be shared between instances of the same base box.
     config.cache.scope = :box
@@ -83,7 +99,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       node_config.ssh.forward_agent = true
       node_config.ssh.username = "c3po"
       node_config.ssh.password = "%CannonStreetHospital%"
-      node_config.env.enable # enable the plugin
+      if Vagrant.has_plugin?("vagrant-env")
+        node_config.env.enable # enable the plugin
+      end 
 
       if node[:hostname] == 'clinical3po-gw'
         node_config.vm.network "forwarded_port", guest: 8080, guest_id: node[:ip], host: 8181, 
