@@ -9,81 +9,85 @@ Usage
 Installing VirtualBOX
 -----------------
 
-Centos:
+- Centos:
 
-cd /etc/yum.repos.d
-sudo wget http://download.virtualbox.org/virtualbox/rpm/rhel/virtualbox.repo
+  ```
+  cd /etc/yum.repos.d
+  sudo wget http://download.virtualbox.org/virtualbox/rpm/rhel/virtualbox.repo
+  ```
 
+  Install dkms
+  ```
+  sudo yum --enablerepo rpmforge install dkms
+  ```
+  or:
+  ```
+  sudo yum --enablerepo epel install dkms 
+  ```
 
+  ```
+  sudo yum groupinstall "Development Tools"
+  sudo yum install kernel-devel
+  sudo yum install VirtualBox-5.0
+  sudo usermod -a -G vboxusers username
+  ```
 
-sudo yum --enablerepo rpmforge install dkms
-or:
-sudo yum --enablerepo epel install dkms 
+- Windows:
 
-sudo yum groupinstall "Development Tools"
-sudo yum install kernel-devel
-
-sudo yum install VirtualBox-5.0
-
-sudo usermod -a -G vboxusers username
-
-
-Windows:
-
-Download VirtualBox 5.0.14: 
-http://download.virtualbox.org/virtualbox/5.0.14/VirtualBox-5.0.14-105127-Win.exe
-After VirtualBox installation finishes you will have to restart your computer. 
-
-
-Install VBox on Windows. Using Windows VirtualBox Extension pack:
-
-Download this:
-http://download.virtualbox.org/virtualbox/5.0.14/Oracle_VM_VirtualBox_Extension_Pack-5.0.14.vbox-extpack
-
-From VirtualBox main window, go to File->Preferences. This will open VirtualBox Preferences window. 
-Navigate to Extension, Next, click on the small down arrow on the right side of the window. 
-Navigate and select the Extension Pack you downloaded in the previous step. You will be asked to confirm VirtualBox Extension Pack setup.
-Click “Install” to complete VirtualBox Extension Pack installation. You will have to reboot your host effect for the changes to take effect. 
+  Download VirtualBox 5.0.14: 
+  [VirtualBox Download](http://download.virtualbox.org/virtualbox/5.0.14/VirtualBox-5.0.14-105127-Win.exe)
+  After VirtualBox installation finishes you will have to restart your computer. 
 
 
-Mac:
+  Install VBox on Windows. Using Windows VirtualBox Extension pack:
+  
+  Download this:
+  [VirtualBox Extension Pack Download](http://download.virtualbox.org/virtualbox/5.0.14/Oracle_VM_VirtualBox_Extension_Pack-5.0.14.vbox-extpack)
+  
+  From VirtualBox main window, go to File->Preferences. This will open VirtualBox Preferences window. 
+  Navigate to Extension, Next, click on the small down arrow on the right side of the window. 
+  Navigate and select the Extension Pack you downloaded in the previous step. You will be asked to confirm VirtualBox Extension Pack setup.
+  Click “Install” to complete VirtualBox Extension Pack installation. You will have to reboot your host effect for the changes to take effect. 
 
-http://download.virtualbox.org/virtualbox/5.0.14/VirtualBox-5.0.14-105127-OSX.dmg
 
-Download this:
-http://download.virtualbox.org/virtualbox/5.0.14/Oracle_VM_VirtualBox_Extension_Pack-5.0.14.vbox-extpack
+- Mac:
 
-From VirtualBox main window, go to File->Preferences. This will open VirtualBox Preferences window. 
-Navigate to Extension, Next, click on the small down arrow on the right side of the window. 
-Navigate and select the Extension Pack you downloaded in the previous step. You will be asked to confirm VirtualBox Extension Pack setup.
-Click “Install” to complete VirtualBox Extension Pack installation. You will have to reboot your host effect for the changes to take effect. 
+  http://download.virtualbox.org/virtualbox/5.0.14/VirtualBox-5.0.14-105127-OSX.dmg
+  
+  Download this:
+  http://download.virtualbox.org/virtualbox/5.0.14/Oracle_VM_VirtualBox_Extension_Pack-5.0.14.vbox-extpack
+
+  From VirtualBox main window, go to File->Preferences. This will open VirtualBox Preferences window. 
+  Navigate to Extension, Next, click on the small down arrow on the right side of the window. 
+  Navigate and select the Extension Pack you downloaded in the previous step. You will be asked to confirm VirtualBox Extension Pack setup.
+  Click “Install” to complete VirtualBox Extension Pack installation. You will have to reboot your host effect for the changes to take effect. 
 
 
 Installing Vagrant
 -----------------
 
-Centos:
-cd ~/usr/local/src
-wget https://releases.hashicorp.com/vagrant/1.8.1/vagrant_1.8.1_x86_64.rpm
-sudo rpm -i vagrant_1.8.1_x86_64.rpm 
+- Centos:
+  ```
+  cd ~/usr/local/src
+  wget https://releases.hashicorp.com/vagrant/1.8.1/vagrant_1.8.1_x86_64.rpm
+  sudo rpm -i vagrant_1.8.1_x86_64.rpm 
+  ``` 
 
-## Install Vagrant plugins: 
-gem install ffi
-##Vagrant Hosts:
-vagrant plugin install vagrant-hosts 
-##Vagrant Cachier (for Repo caching):
-vagrant plugin install vagrant-cachier
-
-Windows:
-
-
-https://releases.hashicorp.com/vagrant/1.8.1/vagrant_1.8.1.msi
+  ## Install Vagrant plugins: 
+  ```
+  gem install ffi
+  ```
+  
+- Windows:
 
 
+  https://releases.hashicorp.com/vagrant/1.8.1/vagrant_1.8.1.msi
 
-Mac:
 
-https://releases.hashicorp.com/vagrant/1.8.1/vagrant_1.8.1.dmg
+
+- Mac:
+
+  https://releases.hashicorp.com/vagrant/1.8.1/vagrant_1.8.1.dmg
 
 
 Prepare Clinical3PO Cluster Planning file
