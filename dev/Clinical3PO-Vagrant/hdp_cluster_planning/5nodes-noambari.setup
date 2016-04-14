@@ -12,6 +12,6 @@
     { "hostname": "clinical3po-dn1", "ip": "240.0.0.12", "roles": [ "oozie", "slave", "zk" ] },
     { "hostname": "clinical3po-dn2", "ip": "240.0.0.13", "roles": [ "slave", "zk" ] },
     { "hostname": "clinical3po-dn3", "ip": "240.0.0.14", "roles": [ "slave", "zk" ] },
-    { "hostname": "clinical3po-gw", "ip": "240.0.0.10", "roles": [  "client", "tomcat", "maven", "nginx", "c3po" ] }
+    { "hostname": "clinical3po-gw", "ip": "240.0.0.10", "roles": [  "nginx", "tomcat", "maven", "client", "c3po" ] }
 ]
 }

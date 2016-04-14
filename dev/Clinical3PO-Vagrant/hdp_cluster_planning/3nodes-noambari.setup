@@ -10,6 +10,6 @@
     { "hostname": "clinical3po-nn", "ip": "240.0.0.11",
       "roles": [ "kdc", "hive-db", "hive-meta", "nn", "yarn", "zk" ] },
     { "hostname": "clinical3po-dn", "ip": "240.0.0.12", "roles": [ "oozie", "slave", "zk" ] },
-    { "hostname": "clinical3po-gw", "ip": "240.0.0.10", "roles": [  "client", "tomcat", "maven", "nginx", "c3po" ] }
+    { "hostname": "clinical3po-gw", "ip": "240.0.0.10", "roles": [  "nginx", "tomcat", "maven", "client", "c3po" ] }
 ]
 }

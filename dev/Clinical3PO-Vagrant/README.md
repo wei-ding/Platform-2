@@ -108,8 +108,8 @@ under hdp_cluster_palnning:
   "nodes": [
     { "hostname": "clinical3po-nn", "ip": "240.0.0.11",
       "roles": [ "kdc", "hive-db", "hive-meta", "nn", "yarn", "zk" ] },
-    { "hostname": "clinical3po-slave1", "ip": "240.0.0.12", "roles": [ "oozie", "slave" ] },
-    { "hostname": "clinical3po-gw", "ip": "240.0.0.10", "roles": [ "client", "tomcat", "nginx", "c3po", "maven" ] }
+    { "hostname": "clinical3po-dn", "ip": "240.0.0.12", "roles": [ "oozie", "slave", "zk" ] },
+    { "hostname": "clinical3po-gw", "ip": "240.0.0.10", "roles": [  "nginx", "tomcat", "maven", "client", "c3po" ] }
   ]
 }
 
@@ -132,10 +132,10 @@ under hdp_cluster_palnning:
   "nodes": [
     { "hostname": "clinical3po-nn", "ip": "240.0.0.11",
       "roles": [ "kdc", "hive-db", "hive-meta", "nn", "yarn", "zk" ] },
-    { "hostname": "clinical3po-slave1", "ip": "240.0.0.12", "roles": [ "oozie", "slave" ] },
-    { "hostname": "clinical3po-slave2", "ip": "240.0.0.13", "roles": [ "slave" ] },
-    { "hostname": "clinical3po-slave3", "ip": "240.0.0.14", "roles": [ "slave" ] },
-    { "hostname": "clinical3po-gw", "ip": "240.0.0.10", "roles": [ "client","tomcat", "maven", "nginx", "c3po" ] }
+    { "hostname": "clinical3po-dn1", "ip": "240.0.0.12", "roles": [ "oozie", "slave", "zk" ] },
+    { "hostname": "clinical3po-dn2", "ip": "240.0.0.13", "roles": [ "slave", "zk" ] },
+    { "hostname": "clinical3po-dn3", "ip": "240.0.0.14", "roles": [ "slave", "zk" ] },
+    { "hostname": "clinical3po-gw", "ip": "240.0.0.10", "roles": [  "nginx", "tomcat", "maven", "client", "c3po" ] }
   ]
 }
 
@@ -149,29 +149,48 @@ Start:
 vagrant up
 
 Access via ssh:
+```
 vagrant ssh clinical3po-nn
+```
+or
+```
 vagrant ssh clinical3po-gw
-vagrant ssh clinical3po-slave1
-vagrant ssh clinical3po-slave2
-vagrant ssh clinical3po-slave3
+```
 
-user: c3po
-password: %CannonStreetHospital%
+linux user: 
+    c3po
+linux password: 
+    %CannonStreetHospital%
 
+
+Stop VirtualBox Via Vagrant
+--------------
 Stop:
 stop all:
+```
 vagrant halt
+```
 or stop one:
+```
 vagrant halt clinical3po-gw
+```
 
+Delete VirtualBox Via Vagrant
+--------------
 Destroy it ( this command stops the running virutalbox machines and this command deletes all the files too:
 delete all:
+```
 vagrant destroy
+```
 or delete one:
+```
 vagrant destroy clinical3po-gw
+```
 
+Users
+--------------
 
-tomcat:
+Tomcat:
 user:admin
 password:PWc3po
 
@@ -181,4 +200,12 @@ password:PWc3po
 user:c3po
 password:PWc3po
 
+
+Remote Access to Clinical3PO
+login to your VirtalBox Host computer, start firefox and type this url:
+127.0.0.1:8888
+or 
+use other computer, start firefox, type this url:
+xxx:8888
+"xxx" should be your VirtalBox host computer name or ip address.
 
