@@ -19,7 +19,7 @@
                              }[0][:hostname] + "." + @domain;
 -%>
 #!/bin/bash
-mysql -u root -p -h <%= @db %> << EOF
+mysql -u root --password="" -h <%= @db %> << EOF
 UPDATE mysql.user SET Password = PASSWORD('PWc3po') WHERE User = 'root';
 DROP USER ''@'localhost';
 DROP DATABASE test;

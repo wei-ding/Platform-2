@@ -42,11 +42,11 @@ class hive_db {
     ensure => file,
     owner => root,
     mode => 0700,
-    content => template('hive_db/init-root-pwd.sh'),
+    content => template('hive_db/init-root-pwd.erb'),
   }
   ->
   exec { "c3po-mysqldb-init":
-    path => $path,
+    path => $PATH,
     command => "/tmp/init-root-pwd.sh",
   }
   ->
