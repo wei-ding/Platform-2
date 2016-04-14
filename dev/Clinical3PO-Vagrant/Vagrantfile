@@ -53,7 +53,7 @@ hdp_version = findVersion()
 rpm_version = hdp_version.gsub /[.-]/, '_'
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-  required_plugins = %w( vagrant-cachier vagrant-env)
+  required_plugins = %w( vagrant-cachier vagrant-env vagrant-vbguest)
 
 
   needs_restart = false
@@ -99,6 +99,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       node_config.ssh.forward_agent = true
       node_config.ssh.username = "c3po"
       node_config.ssh.password = "%CannonStreetHospital%"
+      if Vagrant.has_plugin?("vagrant-vbguest")
+        node_config.auto_update = true
+      end
       if Vagrant.has_plugin?("vagrant-env")
         node_config.env.enable # enable the plugin
       end 

@@ -1,6 +1,6 @@
 Notes
 -----
-HDP 2.3.4, OpenJDK 1.8, nginx, CentOS 64-bit VM, 400G disk, EPEL repo, Puppet 3, no SELinux, no firewall,
+HDP 2.3.4, OpenJDK 1.8, nginx, CentOS 6.7 64-bit VM, 400G disk, EPEL repo, Puppet 3, Tomcat, no SELinux, no firewall,
 
 
 Usage
@@ -95,6 +95,7 @@ Example for 3 nodes
 
 under hdp_cluster_palnning:
 
+```
 3nodes-noambari.setup
 
 {
@@ -112,6 +113,7 @@ under hdp_cluster_palnning:
     { "hostname": "clinical3po-gw", "ip": "240.0.0.10", "roles": [  "nginx", "tomcat", "maven", "client", "c3po" ] }
   ]
 }
+```
 
 Example for 5 nodes
 
@@ -119,6 +121,7 @@ Example for 5 nodes
 
 under hdp_cluster_palnning:
 
+```
 5nodes-noambari.setup
 
 {
@@ -138,7 +141,6 @@ under hdp_cluster_palnning:
     { "hostname": "clinical3po-gw", "ip": "240.0.0.10", "roles": [  "nginx", "tomcat", "maven", "client", "c3po" ] }
   ]
 }
-
 
 ```
 
