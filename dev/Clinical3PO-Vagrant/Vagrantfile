@@ -100,7 +100,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       node_config.ssh.username = "c3po"
       node_config.ssh.password = "%CannonStreetHospital%"
       if Vagrant.has_plugin?("vagrant-vbguest")
-        node_config.auto_update = true
+        node_config.vbguest.auto_update = true
       end
       if Vagrant.has_plugin?("vagrant-env")
         node_config.env.enable # enable the plugin
