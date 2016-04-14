@@ -80,28 +80,28 @@ class c3po_java {
   exec { "copyhdfsdata_concept":
     path => $path,
     unless => "hdfs dfs -test -e /data/C3PO_CDW/concept.txt",
-    command => "hdfs dfs -copyFromLocal /vagrant/modules/c3po_mysqldb/files/concept.txt /data/C3PO_CDW/concept.txt",
+    command => "hdfs dfs -copyFromLocal /vagrant/modules/c3po_java/files/concept.txt /data/C3PO_CDW/concept.txt",
     user => "c3po",
   }
   ->
   exec { "copyhdfsdata_person":
     path => $path,
     unless => "hdfs dfs -test -e /data/C3PO_CDW/person-merged.txt",
-    command => "hdfs dfs -copyFromLocal /vagrant/modules/c3po_mysqldb/files/person-merged.txt /data/C3PO_CDW/person-merged.txt",
+    command => "hdfs dfs -copyFromLocal /vagrant/modules/c3po_java/files/person-merged.txt /data/C3PO_CDW/person-merged.txt",
     user => "c3po",
   }
   ->
   exec { "copyhdfsdata_death":
     path => $path,
     unless => "hdfs dfs -test -e /data/C3PO_CDW/death-merged.txt",
-    command => "hdfs dfs -copyFromLocal /vagrant/modules/c3po_mysqldb/files/death-merged.txt /data/C3PO_CDW/death-merged.txt",
+    command => "hdfs dfs -copyFromLocal /vagrant/modules/c3po_java/files/death-merged.txt /data/C3PO_CDW/death-merged.txt",
     user => "c3po",
   }
   ->
   exec { "copyhdfsdata_obs":
     path => $path,
     unless => "hdfs dfs -test -e /data/C3PO_CDW/observation-merged.txt",
-    command => "hdfs dfs -copyFromLocal /vagrant/modules/c3po_mysqldb/files/observation-merged.txt /data/C3PO_CDW/observation-merged.txt",
+    command => "hdfs dfs -copyFromLocal /vagrant/modules/c3po_java/files/observation-merged.txt /data/C3PO_CDW/observation-merged.txt",
     user => "c3po",
   }
   ->

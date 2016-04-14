@@ -21,6 +21,12 @@
 #!/bin/bash
 mysql -u root -pPWc3po -h <%= @db %> << EOF
 use clinical3po;
+select "drop tables if exists";
+DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS accumuloroles;
+DROP TABLE IF EXISTS roles;
+DROP TABLE IF EXISTS searchparameters;
+DROP TABLE IF EXISTS searchrepository;
 select "Creating Schema Users";
 source /home/c3po/codebase/Clinical3PO-Platform/dev/clinical3PO/utilities/db-objects/users.sql;
 select "Creating Schema Accumulo Roles";
