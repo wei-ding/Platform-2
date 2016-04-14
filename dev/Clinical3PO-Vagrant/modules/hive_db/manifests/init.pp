@@ -32,10 +32,22 @@ class hive_db {
     enable => true,
   }
   ->
-  exec { "secure-mysqld":
-    command => "mysql_secure_installation < files/secure-mysql.txt",
-    path => "${PATH}",
-    cwd => "/vagrant/modules/hive_db",
+  #exec { "secure-mysqld":
+  #  command => "mysql_secure_installation < files/secure-mysql.txt",
+  #    path => "${PATH}",
+  #    cwd => "/vagrant/modules/hive_db",
+  #  }
+  #  ->
+  file { "/tmp/init-root-pwd.sh":
+    ensure => file,
+    owner => root,
+    mode => 0700,
+    content => template('hive_db/init-root-pwd.sh'),
+  }
+  ->
+  exec { "c3po-mysqldb-init":
+    path => $path,
+    command => "/tmp/init-root-pwd.sh",
   }
   ->
   exec { "add-remote-root":
