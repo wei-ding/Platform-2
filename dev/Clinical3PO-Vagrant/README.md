@@ -192,22 +192,26 @@ vagrant destroy clinical3po-gw
 Users
 --------------
 
-Tomcat:
+*Tomcat:
 user:admin
 password:PWc3po
 
-mysql:
+*mysql:
 user:root
 password:PWc3po
 user:c3po
 password:PWc3po
 
 
-Remote Access to Clinical3PO
+*Remote Access to Clinical3PO
 login to your VirtalBox Host computer, start firefox and type this url:
+```
 127.0.0.1:8888
+```
 or 
 use other computer, start firefox, type this url:
+```
 xxx:8888
+```
 "xxx" should be your VirtalBox host computer name or ip address.
 
