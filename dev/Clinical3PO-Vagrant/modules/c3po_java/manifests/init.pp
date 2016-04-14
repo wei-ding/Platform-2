@@ -61,19 +61,19 @@ class c3po_java {
   exec {"c3po-java-cdw-mkdir":
     command => "hadoop fs -mkdir -p /data/C3PO_CDW/care_site /data/C3PO_CDW/cohort /data/C3PO_CDW/condition_era /data/C3PO_CDW/death /data/C3PO_CDW/ drug_cost /data/C3PO_CDW/drug_era /data/C3PO_CDW/durg_exposure /data/C3PO_CDW/location /data/C3PO_CDW/measurement /data/C3PO_CDW/note /data/C3PO_CDW/observation /data/C3PO_CDW/observation_period /data/C3PO_CDW/organization /data/C3PO_CDW/payer_plan_period /data/C3PO_CDW/person /data/C3PO_CDW/procedure_cost /data/C3PO_CDW/procedure_occurrence /data/C3PO_CDW/provider /data/C3PO_CDW/specimen /data/C3PO_CDW/visit_occurrence",
     unless => "hdfs dfs -test -e /data/C3PO_CDW",
-    path => "$PATH",
+    path => "$path",
     user => "hdfs",
   }
   ->
   exec {"c3po-java-cdw-chown":
     command => "hdfs dfs -chown -R c3po:hadoop /data",
-    path => "$PATH",
+    path => "$path",
     user => "hdfs",
   }
   ->
   exec {"c3po-java-cdw-chmod":
     command => "hdfs dfs -chmod -R 775 /data",
-    path => "$PATH",
+    path => "$path",
     user => "hdfs",
   }
   ->
