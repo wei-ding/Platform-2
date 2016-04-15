@@ -151,16 +151,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       end
             
       # Install puppet modules
-      config.vm.provision :shell, path: 'bootstrap.sh', args: %w(
+      config.vm.provision :shell, binary: true, path: 'bootstrap.sh', args: %w(
           puppetlabs-stdlib
           puppetlabs/vcsrepo
       )
 
       node_config.vm.provision "puppet" do |puppet|
-        #puppet.manifests_path = "puppet/manifests"
-        #puppet.manifest_file = "default.pp"
-        #puppet.module_path = "puppet/modules"
-        puppet.binary = true
+        #puppet.binary = true
         puppet.module_path = "modules"
         puppet.options = ["--libdir", "/vagrant", 
 	    "--verbose", "--debug",

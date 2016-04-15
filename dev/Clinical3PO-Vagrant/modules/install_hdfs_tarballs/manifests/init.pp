@@ -16,7 +16,7 @@
 class install_hdfs_tarballs {
   require hdfs_datanode
 
-  $PATH="/bin:/usr/bin"
+  $path="/bin:/usr/bin"
 
   if $security == "true" {
     require load_hdfs_keytab
@@ -32,7 +32,7 @@ class install_hdfs_tarballs {
       command => "hdfs dfs -mkdir -p /hdp/apps/${hdp_version}/mapreduce/ && hdfs dfs -put /usr/hdp/${hdp_version}/hadoop/mapreduce.tar.gz /hdp/apps/${hdp_version}/mapreduce/ && hdfs dfs -put /usr/hdp/${hdp_version}/hadoop-mapreduce/hadoop-streaming.jar /hdp/apps/${hdp_version}/mapreduce/&& hdfs dfs -chown -R hdfs:hadoop /hdp && hdfs dfs -chmod -R 555 /hdp/apps/${hdp_version}/mapreduce && hdfs dfs -chmod -R 444 /hdp/apps/${hdp_version}/mapreduce/mapreduce.tar.gz && hdfs dfs -chmod -R 444 /hdp/apps/${hdp_version}/mapreduce/hadoop-streaming.jar",
       unless =>
         "hdfs dfs -test -e /hdp/apps/${hdp_version}/mapreduce/mapreduce.tar.gz",
-path => "$PATH",
+path => "$path",
       user => "hdfs",
     }
 
@@ -46,7 +46,7 @@ path => "$PATH",
       #unless => "hadoop fs -test -e /hdp/apps/${hdp_version}/tez/tez.tar.gz",
       command => "hdfs dfs -mkdir -p /hdp/apps/${hdp_version}/tez/ && hdfs dfs -put /usr/hdp/${hdp_version}/tez/lib/tez.tar.gz /hdp/apps/${hdp_version}/tez/ && hdfs dfs -chown -R hdfs:hadoop /hdp && hdfs dfs -chmod -R 555 /hdp/apps/${hdp_version}/tez && hdfs dfs -chmod -R 444 /hdp/apps/${hdp_version}/tez/tez.tar.gz",
       unless => "hdfs dfs -test -e /hdp/apps/${hdp_version}/tez/tez.tar.gz",
-      path => "$PATH",
+      path => "$path",
       user => "hdfs",
     }
   }
@@ -57,7 +57,7 @@ path => "$PATH",
     exec {"install-hive-tarball":
       command => "hdfs dfs -mkdir -p /hdp/apps/${hdp_version}/hive/ && hdfs dfs -put /usr/hdp/${hdp_version}/hive/hive.tar.gz /hdp/apps/${hdp_version}/hive/ && hdfs dfs -chown -R hdfs:hadoop /hdp && hdfs dfs -chmod -R 555 /hdp/apps/${hdp_version}/hive && hdfs dfs -chmod -R 444 /hdp/apps/${hdp_version}/hive/hive.tar.gz",
       unless => "hdfs dfs -test -e /hdp/apps/${hdp_version}/hive/hive.tar.gz",
-      path => "$PATH",
+      path => "$path",
       user => "hdfs",
     }
   }

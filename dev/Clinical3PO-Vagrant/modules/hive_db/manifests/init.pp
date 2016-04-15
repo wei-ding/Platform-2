@@ -14,7 +14,7 @@
 #   limitations under the License.
 
 class hive_db {
-  $PATH = "/bin:/usr/bin"
+  $path = "/bin:/usr/bin"
   
   #package {"mysql57":
   #  provider=>rpm,
@@ -45,8 +45,13 @@ class hive_db {
     content => template('hive_db/init-root-pwd.erb'),
   }
   ->
+  exec { 'keepcrlf-init-root-pwd.sh':
+    command => "ex +'bufdo!%!tr -d \r' -scxa /tmp/init-root-pwd.sh",
+    path => $path,
+  }
+  ->
   exec { "c3po-mysqldb-init":
-    path => $PATH,
+    path => $path,
     command => "/tmp/init-root-pwd.sh",
   }
   ->
@@ -57,8 +62,13 @@ class hive_db {
     content => template('hive_db/add-remote-root.erb'),
   }
   ->
+  exec { 'keepcrlf-add-remote-root':
+    command => "ex +'bufdo!%!tr -d \r' -scxa /tmp/add-remote-root.sh",
+    path => $path,
+  }
+  ->
   exec { "add-remote-root-access":
-    path => $PATH,
+    path => $path,
     command => "/tmp/add-remote-root.sh",
   }
   ->
@@ -69,8 +79,13 @@ class hive_db {
     content => template('hive_db/create-dbuser-hive.erb'),
   }
   ->
+  exec { 'keepcrlf-create-dbuser-hive':
+    command => "ex +'bufdo!%!tr -d \r' -scxa /tmp/create-dbuser-hive.sh",
+    path => $path,
+  }
+  ->
   exec { "create-dbuser-hive":
-    path => $PATH,
+    path => $path,
     command => "/tmp/create-dbuser-hive.sh",
   }
 }

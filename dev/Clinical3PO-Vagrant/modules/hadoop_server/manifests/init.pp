@@ -19,7 +19,7 @@ class hadoop_server {
   require hdfs_client
   require yarn_client
 
-  $path="/bin:/usr/bin"
+  $PATH="/bin:/usr/bin"
 
   file { "${hdfs_client::data_dir}":
     ensure => directory,
