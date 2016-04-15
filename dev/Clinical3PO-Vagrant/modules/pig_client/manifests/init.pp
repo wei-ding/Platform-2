@@ -45,7 +45,7 @@ class pig_client {
   }
 
   exec { 'keepcrlf-pig-env':
-    command => "dos2unix ${conf_dir}/pig-env.sh",
+    command => "sudo dos2unix ${conf_dir}/pig-env.sh",
     path => $path,
     onlyif => "test -f /usr/bin/dos2unix",
   }

@@ -66,7 +66,7 @@ class zookeeper_client {
   }
 
   exec { 'keepcrlf-zookeeper-env':
-    command => "dos2unix ${conf_dir}/zookeeper-env.sh",
+    command => "sudo dos2unix ${conf_dir}/zookeeper-env.sh",
     provider => "shell",
     path => $path,
     onlyif => "test -f /usr/bin/dos2unix",

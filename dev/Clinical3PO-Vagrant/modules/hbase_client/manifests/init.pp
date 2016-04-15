@@ -53,7 +53,7 @@ class hbase_client {
   }
   ->
   exec { 'keepcrlf-hbase-env':
-    command => "dos2unix /etc/hbase/conf/hbase-env.sh",
+    command => "sudo dos2unix /etc/hbase/conf/hbase-env.sh",
     path => $path,
     onlyif => "test -f /usr/bin/dos2unix",
   }

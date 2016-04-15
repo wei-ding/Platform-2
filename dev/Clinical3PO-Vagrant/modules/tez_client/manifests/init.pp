@@ -43,7 +43,7 @@ class tez_client {
   }
 
   exec { 'keepcrlf-tez-env':
-    command => "dos2unix ${conf_dir}/tez-env.sh",
+    command => "sudo dos2unix ${conf_dir}/tez-env.sh",
     path => $path,
     onlyif => "test -f /usr/bin/dos2unix",
   }

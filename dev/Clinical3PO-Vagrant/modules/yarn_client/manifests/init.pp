@@ -51,7 +51,7 @@ class yarn_client {
   }
 
   exec { 'keepcrlf-mapred-env':
-    command => "dos2unix ${hdfs_client::conf_dir}/mapred-env.sh",
+    command => "sudo dos2unix ${hdfs_client::conf_dir}/mapred-env.sh",
     path => $path,
     onlyif => "test -f /usr/bin/dos2unix",
   }
@@ -78,7 +78,7 @@ class yarn_client {
   }
 
   exec { 'keepcrlf-yarn-env':
-    command => "dos2unix ${hdfs_client::conf_dir}/yarn-env.sh", 
+    command => "sudo dos2unix ${hdfs_client::conf_dir}/yarn-env.sh", 
     path => $path,
     onlyif => "test -f /usr/bin/dos2unix",
   }

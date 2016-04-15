@@ -28,7 +28,7 @@ class oozie_client {
   }
 
   exec { 'keepcrlf-oozie-profile':
-    command => "dos2unix /etc/profile.d/oozie.sh",
+    command => "sudo dos2unix /etc/profile.d/oozie.sh",
     path => $path,
     onlyif => "test -f /usr/bin/dos2unix",
   }

@@ -166,7 +166,7 @@ class hdfs_client {
   }
 
   exec { 'keepcrlf-hadoop-env':
-    command => "dos2unix ${conf_dir}/hadoop-env.sh",
+    command => "sudo dos2unix ${conf_dir}/hadoop-env.sh",
     path => $path,
     onlyif => "test -f /usr/bin/dos2unix",
   }

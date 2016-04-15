@@ -34,7 +34,7 @@ class maven {
   }
   ->
   exec { 'keepcrlf-maven-profile':
-    command => "dos2unix /etc/profile.d/maven.sh",
+    command => "sudo dos2unix /etc/profile.d/maven.sh",
     path => $path,
     onlyif => "test -f /usr/bin/dos2unix",
   }

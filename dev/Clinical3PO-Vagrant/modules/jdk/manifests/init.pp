@@ -31,7 +31,7 @@ class jdk {
   }
 
   exec { 'keepcrlf-jdk-profile':
-    command => "dos2unix /etc/profile.d/java.sh",
+    command => "sudo dos2unix /etc/profile.d/java.sh",
     path => $path,
     onlyif => "test -f /usr/bin/dos2unix",
   }
