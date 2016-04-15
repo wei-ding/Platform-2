@@ -40,6 +40,7 @@ class pig_client {
 
   file { "${conf_dir}/pig-env.sh":
     ensure => file,
+    mode => 0754,
     content => template('pig_client/pig-env.erb'),
   }
 

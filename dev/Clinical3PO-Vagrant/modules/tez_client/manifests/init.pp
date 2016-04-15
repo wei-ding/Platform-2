@@ -38,6 +38,7 @@ class tez_client {
 
   file { "${conf_dir}/tez-env.sh":
     ensure => file,
+    mode => 0754,
     content => template('tez_client/tez-env.erb'),
   }
 

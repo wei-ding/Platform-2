@@ -26,6 +26,7 @@ class jdk {
 
   file { "/etc/profile.d/java.sh":
     ensure => "file",
+    mode => 0754,
     content => template('jdk/java.erb'),
   }
 

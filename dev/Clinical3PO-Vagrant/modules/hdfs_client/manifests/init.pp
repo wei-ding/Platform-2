@@ -161,6 +161,7 @@ class hdfs_client {
 
   file { "${conf_dir}/hadoop-env.sh":
     ensure => file,
+    mode => 0754,
     content => template('hdfs_client/hadoop-env.erb'),
   }
 

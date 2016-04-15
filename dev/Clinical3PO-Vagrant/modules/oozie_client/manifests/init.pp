@@ -23,6 +23,7 @@ class oozie_client {
 
   file { "/etc/profile.d/oozie.sh":
     ensure => file,
+    mode => 0754,
     content => template('oozie_client/oozie.erb'),
   }
 

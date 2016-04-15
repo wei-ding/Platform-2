@@ -46,6 +46,7 @@ class yarn_client {
 
   file { "${hdfs_client::conf_dir}/mapred-env.sh":
     ensure => file,
+    mode => 0754,
     content => template('yarn_client/mapred-env.erb'),
   }
 
@@ -72,6 +73,7 @@ class yarn_client {
 
   file { "${hdfs_client::conf_dir}/yarn-env.sh":
     ensure => file,
+    mode => 0754,
     content => template('yarn_client/yarn-env.erb'),
   }
 

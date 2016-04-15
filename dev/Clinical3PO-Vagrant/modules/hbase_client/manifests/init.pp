@@ -48,6 +48,7 @@ class hbase_client {
   ->
   file { '/etc/hbase/conf/hbase-env.sh':
     ensure => file,
+    mode => 0754,
     content => template('hbase_client/hbase-env.sh.erb'),
   }
   ->
