@@ -40,7 +40,6 @@ class hive_db {
   #  ->
   file { "/tmp/init-root-pwd.sh":
     ensure => file,
-    owner => root,
     mode => 0700,
     content => template('hive_db/init-root-pwd.erb'),
   }
@@ -58,7 +57,6 @@ class hive_db {
   ->
   file { "/tmp/add-remote-root.sh":
     ensure => file,
-    owner => root,
     mode => 0700,
     content => template('hive_db/add-remote-root.erb'),
   }
@@ -76,7 +74,6 @@ class hive_db {
   ->
   file { "/tmp/create-dbuser-hive.sh":
     ensure => file,
-    owner => root,
     mode => 0700,
     content => template('hive_db/create-dbuser-hive.erb'),
   }
