@@ -40,55 +40,64 @@ class hive_db {
   #  ->
   file { "/tmp/init-root-pwd.sh":
     ensure => file,
-    owner => c3po,
-    mode => 0700,
+    owner => 'c3po',
+    group => 'wheel',
+    mode => 0776,
     content => template('hive_db/init-root-pwd.erb'),
   }
   ->
   exec { 'keepcrlf-init-root-pwd':
     command => "dos2unix /tmp/init-root-pwd.sh",
+    user => 'c3po',
     path => $path,
     onlyif => "test -f /usr/bin/dos2unix",
   }
   ->
   exec { "c3po-mysqldb-init":
     path => $path,
+    user => 'c3po',
     command => "/tmp/init-root-pwd.sh",
   }
   ->
   file { "/tmp/add-remote-root.sh":
     ensure => file,
-    owner => c3po,
-    mode => 0700,
+    owner => 'c3po',
+    group => 'wheel',
+    mode => 0776,
     content => template('hive_db/add-remote-root.erb'),
   }
   ->
   exec { 'keepcrlf-add-remote-root':
     command => "dos2unix /tmp/add-remote-root.sh",
+    user => 'c3po',
     path => $path,
     onlyif => "test -f /usr/bin/dos2unix",
   }
   ->
   exec { "add-remote-root-access":
     path => $path,
+    user => 'c3po',
     command => "/tmp/add-remote-root.sh",
   }
   ->
   file { "/tmp/create-dbuser-hive.sh":
     ensure => file,
-    owner => c3po,
-    mode => 0700,
+    owner => 'c3po',
+    group => 'wheel',
+    mode => 0776,
     content => template('hive_db/create-dbuser-hive.erb'),
   }
   ->
   exec { 'keepcrlf-create-dbuser-hive':
     command => "dos2unix /tmp/create-dbuser-hive.sh",
+    user => 'c3po',
     path => $path,
     onlyif => "test -f /usr/bin/dos2unix",
   }
   ->
   exec { "create-dbuser-hive":
     path => $path,
+    user => 'c3po',
     command => "/tmp/create-dbuser-hive.sh",
   }
 }
