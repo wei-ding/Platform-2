@@ -33,6 +33,12 @@ class maven {
     content => template('maven/maven-env.erb'),
   }
   ->
+  exec { 'keepcrlf-maven-profile':
+    command => "dos2unix /etc/profile.d/maven.sh",
+    path => $path,
+    onlyif => "test -f /usr/bin/dos2unix",
+  }
+  ->
   exec { "chmodmaven":
     path => $path,
     command => "sudo chmod +x /etc/profile.d/maven.sh",

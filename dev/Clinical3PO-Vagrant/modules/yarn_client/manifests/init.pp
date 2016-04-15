@@ -49,6 +49,12 @@ class yarn_client {
     content => template('yarn_client/mapred-env.erb'),
   }
 
+  exec { 'keepcrlf-mapred-env':
+    command => "dos2unix ${hdfs_client::conf_dir}/mapred-env.sh",
+    path => $path,
+    onlyif => "test -f /usr/bin/dos2unix",
+  }
+
   file { "${hdfs_client::conf_dir}/mapred-site.xml":
     ensure => file,
     content => template('yarn_client/mapred-site.erb'),
@@ -67,6 +73,12 @@ class yarn_client {
   file { "${hdfs_client::conf_dir}/yarn-env.sh":
     ensure => file,
     content => template('yarn_client/yarn-env.erb'),
+  }
+
+  exec { 'keepcrlf-yarn-env':
+    command => "dos2unix ${hdfs_client::conf_dir}/yarn-env.sh", 
+    path => $path,
+    onlyif => "test -f /usr/bin/dos2unix",
   }
 
   file { "${hdfs_client::conf_dir}/yarn-site.xml":

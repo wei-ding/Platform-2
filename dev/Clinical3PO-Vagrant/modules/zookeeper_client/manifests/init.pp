@@ -64,6 +64,12 @@ class zookeeper_client {
     content => template('zookeeper_client/zookeeper-env.erb'),
   }
 
+  exec { 'keepcrlf-zookeeper-env':
+    command => "dos2unix ${conf_dir}/zookeeper-env.sh",
+    path => $path,
+    onlyif => "test -f /usr/bin/dos2unix",
+  }
+
   if $security == "true" {
     file { "${conf_dir}/zookeeper-client.jaas":
       ensure => file,

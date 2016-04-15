@@ -118,6 +118,7 @@ class oozie_server {
   ->
   exec { "oozie-db-user":
     path => $path,
+    provider => 'shell',
     user => 'c3po',
     command => "/tmp/create-oozie-db-user.sh",
   }
@@ -126,6 +127,7 @@ class oozie_server {
     path => $path,
     command => "ooziedb.sh create -sqlfile /tmp/oozie.sql -run",
     creates => "/tmp/oozie.sql",
+    provider => 'shell',
     user => 'oozie',
     group => 'oozie',
   }

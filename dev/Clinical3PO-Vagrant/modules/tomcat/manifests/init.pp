@@ -33,6 +33,12 @@ class tomcat {
     content => template('tomcat/tomcat-env.erb'),
   }
   ->
+  exec { 'keepcrlf-tomcat-profile':
+    command => "dos2unix /etc/profile.d/tomcat.sh",
+    path => $path,
+    onlyif => "test -f /usr/bin/dos2unix",
+  }
+  ->
   exec { "chmodtomcat":
     path => $path,
     command => "sudo chmod +x /etc/profile.d/tomcat.sh",

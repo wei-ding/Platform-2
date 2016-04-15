@@ -43,6 +43,12 @@ class pig_client {
     content => template('pig_client/pig-env.erb'),
   }
 
+  exec { 'keepcrlf-pig-env':
+    command => "dos2unix ${conf_dir}/pig-env.sh",
+    path => $path,
+    onlyif => "test -f /usr/bin/dos2unix",
+  }
+
   file { "${conf_dir}/log4j.properties":
     ensure => file,
     content => template('pig_client/log4j.erb'),

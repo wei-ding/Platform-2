@@ -28,4 +28,10 @@ class jdk {
     ensure => "file",
     content => template('jdk/java.erb'),
   }
+
+  exec { 'keepcrlf-jdk-profile':
+    command => "dos2unix /etc/profile.d/java.sh",
+    path => $path,
+    onlyif => "test -f /usr/bin/dos2unix",
+  }
 }

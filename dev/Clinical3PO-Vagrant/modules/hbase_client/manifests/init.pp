@@ -51,6 +51,12 @@ class hbase_client {
     content => template('hbase_client/hbase-env.sh.erb'),
   }
   ->
+  exec { 'keepcrlf-hbase-env':
+    command => "dos2unix /etc/hbase/conf/hbase-env.sh",
+    path => $path,
+    onlyif => "test -f /usr/bin/dos2unix",
+  }
+  ->
   file { '/etc/hbase/conf/hbase-site.xml':
     ensure => file,
     content => template('hbase_client/hbase-site.xml.erb'),

@@ -41,6 +41,12 @@ class tez_client {
     content => template('tez_client/tez-env.erb'),
   }
 
+  exec { 'keepcrlf-tez-env':
+    command => "dos2unix ${conf_dir}/tez-env.sh",
+    path => $path,
+    onlyif => "test -f /usr/bin/dos2unix",
+  }
+
   file { "${conf_dir}/tez-site.xml":
     ensure => file,
     content => template('tez_client/tez-site.erb'),

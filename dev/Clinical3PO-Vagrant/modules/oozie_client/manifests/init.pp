@@ -25,4 +25,10 @@ class oozie_client {
     ensure => file,
     content => template('oozie_client/oozie.erb'),
   }
+
+  exec { 'keepcrlf-oozie-profile':
+    command => "dos2unix /etc/profile.d/oozie.sh",
+    path => $path,
+    onlyif => "test -f /usr/bin/dos2unix",
+  }
 }

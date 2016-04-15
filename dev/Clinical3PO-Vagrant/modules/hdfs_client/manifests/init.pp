@@ -164,6 +164,12 @@ class hdfs_client {
     content => template('hdfs_client/hadoop-env.erb'),
   }
 
+  exec { 'keepcrlf-hadoop-env':
+    command => "dos2unix ${conf_dir}/hadoop-env.sh",
+    path => $path,
+    onlyif => "test -f /usr/bin/dos2unix",
+  }
+
   file { "${conf_dir}/hadoop-metrics2.properties":
     ensure => file,
     content => template('hdfs_client/hadoop-metrics2.erb'),
