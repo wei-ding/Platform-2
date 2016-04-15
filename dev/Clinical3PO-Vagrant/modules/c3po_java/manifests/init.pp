@@ -134,6 +134,12 @@ class c3po_java {
     content => template('c3po_java/mvnc3po-java.erb'),
   }
   ->
+  exec { 'keepcrlf-mvnc3po-java':
+    command => "dos2unix /tmp/mvnc3po-java.sh",
+    path => $path,
+    onlyif => "test -f /usr/bin/dos2unix",
+  }
+  ->
   exec { "c3po-java-mvn":
     path => $path,
     command => "/tmp/mvnc3po-java.sh",

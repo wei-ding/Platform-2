@@ -45,9 +45,10 @@ class hive_db {
     content => template('hive_db/init-root-pwd.erb'),
   }
   ->
-  exec { 'keepcrlf-init-root-pwd.sh':
-    command => "ex +'bufdo!%!tr -d \r' -scxa /tmp/init-root-pwd.sh",
+  exec { 'keepcrlf-init-root-pwd':
+    command => "dos2unix /tmp/init-root-pwd.sh",
     path => $path,
+    onlyif => "test -f /usr/bin/dos2unix",
   }
   ->
   exec { "c3po-mysqldb-init":
@@ -63,8 +64,9 @@ class hive_db {
   }
   ->
   exec { 'keepcrlf-add-remote-root':
-    command => "ex +'bufdo!%!tr -d \r' -scxa /tmp/add-remote-root.sh",
+    command => "dos2unix /tmp/add-remote-root.sh",
     path => $path,
+    onlyif => "test -f /usr/bin/dos2unix",
   }
   ->
   exec { "add-remote-root-access":
@@ -80,8 +82,9 @@ class hive_db {
   }
   ->
   exec { 'keepcrlf-create-dbuser-hive':
-    command => "ex +'bufdo!%!tr -d \r' -scxa /tmp/create-dbuser-hive.sh",
+    command => "dos2unix /tmp/create-dbuser-hive.sh",
     path => $path,
+    onlyif => "test -f /usr/bin/dos2unix",
   }
   ->
   exec { "create-dbuser-hive":

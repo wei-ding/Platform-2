@@ -109,6 +109,12 @@ class oozie_server {
     content => template('oozie_server/create-oozie-db-user.erb'),
   }
   ->
+  exec { 'keepcrlf-oozie-db-user':
+    command => "dos2unix /tmp/create-oozie-db-user.sh",
+    path => $path,
+    onlyif => "test -f /usr/bin/dos2unix",
+  }
+  ->
   exec { "oozie-db-user":
     path => $path,
     command => "/tmp/create-oozie-db-user.sh",

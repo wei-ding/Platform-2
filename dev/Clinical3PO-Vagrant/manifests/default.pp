@@ -20,6 +20,13 @@ include selinux
 include weak_random
 include ntp
 
+# install dos2unix package
+package { 'dos2unix':
+  ensure => installed,
+}
+
+
+
 # determine the required modules based on the roles.
 
 if $security == "true" {
