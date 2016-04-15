@@ -55,6 +55,7 @@ class hive_db {
   ->
   exec { "c3po-mysqldb-init":
     path => $path,
+    provider => 'shell',
     user => 'c3po',
     command => "/tmp/init-root-pwd.sh",
   }
@@ -77,6 +78,7 @@ class hive_db {
   exec { "add-remote-root-access":
     path => $path,
     user => 'c3po',
+    provider => 'shell',
     command => "/tmp/add-remote-root.sh",
   }
   ->
@@ -98,6 +100,7 @@ class hive_db {
   exec { "create-dbuser-hive":
     path => $path,
     user => 'c3po',
+    provider => 'shell',
     command => "/tmp/create-dbuser-hive.sh",
   }
 }

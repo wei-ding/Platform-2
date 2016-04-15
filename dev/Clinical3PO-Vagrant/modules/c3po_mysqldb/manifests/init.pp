@@ -37,6 +37,7 @@ class c3po_mysqldb {
   exec { "c3po-mysqldb-user":
     path => $path,
     user => 'c3po',
+    provider => 'shell',
     command => "/tmp/create-c3po-mysqldb-user.sh",
   }
   ->
@@ -56,6 +57,7 @@ class c3po_mysqldb {
   ->
   exec { "c3po-mysqldb-init":
     path => $path,
+    provider => 'shell',
     user => 'c3po',
     command => "/tmp/init-c3po-mysqldb.sh",
   }
