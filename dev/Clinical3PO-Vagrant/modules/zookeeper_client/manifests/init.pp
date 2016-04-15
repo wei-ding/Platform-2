@@ -38,6 +38,7 @@ class zookeeper_client {
   }
 
   file { "${conf_dir}":
+    mode => 777,
     ensure => 'directory',
   }
 

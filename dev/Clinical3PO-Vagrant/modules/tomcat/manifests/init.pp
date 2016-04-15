@@ -37,6 +37,7 @@ class tomcat {
   exec { 'keepcrlf-tomcat-profile':
     command => "dos2unix /etc/profile.d/tomcat.sh",
     user => 'root',
+    provider => 'shell',
     path => $path,
     onlyif => "test -f /usr/bin/dos2unix",
   }

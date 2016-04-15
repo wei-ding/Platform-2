@@ -27,6 +27,7 @@ class hbase_client {
     }
     ->
     file { "/etc/hbase/conf":
+      mode => 777,
       ensure => directory,
     }
     ->

@@ -22,26 +22,30 @@ class maven {
   exec { 'installmaven':
     path => $path,
     cwd => "/tmp",
-    command => "wget http://apache.cs.utah.edu/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.tar.gz && sudo tar xzvf apache-maven-3.3.9-bin.tar.gz -C /opt/ && sudo ln -s /opt/apache-maven-3.3.9/ /opt/maven",
+    user => 'root',
+    command => "wget http://apache.cs.utah.edu/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.tar.gz && tar xzvf apache-maven-3.3.9-bin.tar.gz -C /opt/ && ln -s /opt/apache-maven-3.3.9/ /opt/maven",
   }
   ->
   file { "/etc/profile.d/maven.sh":
     ensure => file,
-    owner => root,
     group => 'hadoop',
-    mode => 0765,
+    mode => 0777,
     content => template('maven/maven-env.erb'),
   }
   ->
   exec { 'keepcrlf-maven-profile':
-    command => "sudo dos2unix /etc/profile.d/maven.sh",
+    command => "dos2unix /etc/profile.d/maven.sh",
+    user => 'root',
+    provider => 'shell',
     path => $path,
     onlyif => "test -f /usr/bin/dos2unix",
   }
   ->
   exec { "chmodmaven":
     path => $path,
-    command => "sudo chmod +x /etc/profile.d/maven.sh",
+    user => 'root',
+    provider => 'shell',
+    command => "chmod +x /etc/profile.d/maven.sh",
   }
 
 }
