@@ -104,6 +104,7 @@ class oozie_server {
   ->
   file { "/tmp/create-oozie-db-user.sh":
     ensure => file,
+    owner => c3po,
     mode => 0700,
     content => template('oozie_server/create-oozie-db-user.erb'),
   }

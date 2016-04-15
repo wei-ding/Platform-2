@@ -129,7 +129,6 @@ class c3po_java {
   file { "/tmp/mvnc3po-java.sh":
     ensure => file,
     owner => c3po,
-    group => 'hadoop',
     mode => 0770,
     content => template('c3po_java/mvnc3po-java.erb'),
   }
