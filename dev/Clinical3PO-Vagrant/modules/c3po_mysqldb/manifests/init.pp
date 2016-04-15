@@ -22,37 +22,41 @@ class c3po_mysqldb {
 
   file { "/tmp/create-c3po-mysqldb-user.sh":
     ensure => file,
-    owner => c3po,
-    mode => 0700,
+    owner => 'c3po',
+    mode => 0776,
     content => template('c3po_mysqldb/create-c3po-mysqldb-user.erb'),
   }
   ->
   exec { 'keepcrlf-create-c3po-mysqldb-user':
     command => "dos2unix /tmp/create-c3po-mysqldb-user.sh",
+    user => 'c3po',
     path => $path,
     onlyif => "test -f /usr/bin/dos2unix",
   }
   ->
   exec { "c3po-mysqldb-user":
     path => $path,
+    user => 'c3po',
     command => "/tmp/create-c3po-mysqldb-user.sh",
   }
   ->
   file { "/tmp/init-c3po-mysqldb.sh":
     ensure => file,
-    owner => c3po,
-    mode => 0700,
+    owner => 'c3po',
+    mode => 0776,
     content => template('c3po_mysqldb/init-c3po-mysqldb.erb'),
   }
   ->
   exec { 'keepcrlf-init-c3po-mysqldb':
     command => "dos2unix /tmp/init-c3po-mysqldb.sh",
+    user => 'c3po',
     path => $path,
     onlyif => "test -f /usr/bin/dos2unix",
   }
   ->
   exec { "c3po-mysqldb-init":
     path => $path,
+    user => 'c3po',
     command => "/tmp/init-c3po-mysqldb.sh",
   }
 

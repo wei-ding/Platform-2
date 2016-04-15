@@ -128,19 +128,21 @@ class c3po_java {
   ->
   file { "/tmp/mvnc3po-java.sh":
     ensure => file,
-    owner => c3po,
-    mode => 0770,
+    owner => 'c3po',
+    mode => 0776,
     content => template('c3po_java/mvnc3po-java.erb'),
   }
   ->
   exec { 'keepcrlf-mvnc3po-java':
     command => "dos2unix /tmp/mvnc3po-java.sh",
+    user => 'c3po',
     path => $path,
     onlyif => "test -f /usr/bin/dos2unix",
   }
   ->
   exec { "c3po-java-mvn":
     path => $path,
+    user => 'c3po',
     command => "/tmp/mvnc3po-java.sh",
     user => "c3po",
   }

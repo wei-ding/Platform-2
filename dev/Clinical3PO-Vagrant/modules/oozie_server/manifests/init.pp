@@ -105,18 +105,20 @@ class oozie_server {
   file { "/tmp/create-oozie-db-user.sh":
     ensure => file,
     owner => c3po,
-    mode => 0700,
+    mode => 0776,
     content => template('oozie_server/create-oozie-db-user.erb'),
   }
   ->
   exec { 'keepcrlf-oozie-db-user':
     command => "dos2unix /tmp/create-oozie-db-user.sh",
+    user => 'c3po',
     path => $path,
     onlyif => "test -f /usr/bin/dos2unix",
   }
   ->
   exec { "oozie-db-user":
     path => $path,
+    user => 'c3po',
     command => "/tmp/create-oozie-db-user.sh",
   }
   ->
