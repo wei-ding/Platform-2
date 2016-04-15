@@ -145,7 +145,6 @@ class c3po_java {
     user => 'c3po',
     provider => 'shell',
     command => "/tmp/mvnc3po-java.sh",
-    user => "c3po",
   }
 
 }
