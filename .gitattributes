@@ -1,1 +1,9 @@
+# Declare files that will always have CRLF line endings on checkout.
 *.txt eol=crlf
+*.erb eol=crlf
+*.sh eol=crlf
+*.pp eol=crlf
+*.setup eol=crlf
+*.conf eol=crlf
+*.ldif eol=crlf
+*.xml eol=crlf
