@@ -23,12 +23,14 @@ class oozie_client {
 
   file { "/etc/profile.d/oozie.sh":
     ensure => file,
-    mode => 0754,
+    mode => 0765,
     content => template('oozie_client/oozie.erb'),
   }
 
   exec { 'keepcrlf-oozie-profile':
-    command => "sudo dos2unix /etc/profile.d/oozie.sh",
+    command => "dos2unix /etc/profile.d/oozie.sh",
+    user => 'root',
+    provider => 'shell',
     path => $path,
     onlyif => "test -f /usr/bin/dos2unix",
   }

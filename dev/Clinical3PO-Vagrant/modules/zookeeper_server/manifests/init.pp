@@ -78,7 +78,7 @@ class zookeeper_server {
     ensure => directory,
     owner => zookeeper,
     group => hadoop,
-    mode => '755',
+    mode => '765',
   }
   ->
   service { "zookeeper-server":

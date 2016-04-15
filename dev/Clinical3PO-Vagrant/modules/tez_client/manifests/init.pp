@@ -38,12 +38,14 @@ class tez_client {
 
   file { "${conf_dir}/tez-env.sh":
     ensure => file,
-    mode => 0754,
+    mode => 0765,
     content => template('tez_client/tez-env.erb'),
   }
 
   exec { 'keepcrlf-tez-env':
-    command => "sudo dos2unix ${conf_dir}/tez-env.sh",
+    command => "dos2unix ${conf_dir}/tez-env.sh",
+    user => 'root',
+    provider => 'shell',
     path => $path,
     onlyif => "test -f /usr/bin/dos2unix",
   }

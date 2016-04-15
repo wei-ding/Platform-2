@@ -26,13 +26,15 @@ class jdk {
 
   file { "/etc/profile.d/java.sh":
     ensure => "file",
-    mode => 0754,
+    mode => 0765,
     content => template('jdk/java.erb'),
   }
 
   exec { 'keepcrlf-jdk-profile':
-    command => "sudo dos2unix /etc/profile.d/java.sh",
+    command => "dos2unix /etc/profile.d/java.sh",
     path => $path,
+    user => 'root',
+    provider => 'shell',
     onlyif => "test -f /usr/bin/dos2unix",
   }
 }

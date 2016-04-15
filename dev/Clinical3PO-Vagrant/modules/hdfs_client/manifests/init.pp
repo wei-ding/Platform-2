@@ -161,12 +161,14 @@ class hdfs_client {
 
   file { "${conf_dir}/hadoop-env.sh":
     ensure => file,
-    mode => 0754,
+    mode => 0765,
     content => template('hdfs_client/hadoop-env.erb'),
   }
 
   exec { 'keepcrlf-hadoop-env':
-    command => "sudo dos2unix ${conf_dir}/hadoop-env.sh",
+    command => "dos2unix ${conf_dir}/hadoop-env.sh",
+    user => 'root',
+    provider => 'shell',
     path => $path,
     onlyif => "test -f /usr/bin/dos2unix",
   }

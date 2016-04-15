@@ -74,7 +74,7 @@ class oozie_server {
   file { "/etc/init.d/oozie":
     ensure => file,
     content => template('oozie_server/oozie-service.erb'),
-    mode => "0755",
+    mode => "0765",
   }
   ->
   package { "extjs":

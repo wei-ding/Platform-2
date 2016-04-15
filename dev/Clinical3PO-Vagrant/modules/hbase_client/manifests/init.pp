@@ -48,12 +48,14 @@ class hbase_client {
   ->
   file { '/etc/hbase/conf/hbase-env.sh':
     ensure => file,
-    mode => 0754,
+    mode => 0765,
     content => template('hbase_client/hbase-env.sh.erb'),
   }
   ->
   exec { 'keepcrlf-hbase-env':
-    command => "sudo dos2unix /etc/hbase/conf/hbase-env.sh",
+    command => "dos2unix /etc/hbase/conf/hbase-env.sh",
+    user => 'root',
+    provider => 'shell',
     path => $path,
     onlyif => "test -f /usr/bin/dos2unix",
   }

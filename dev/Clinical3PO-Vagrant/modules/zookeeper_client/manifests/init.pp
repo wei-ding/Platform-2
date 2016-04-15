@@ -61,12 +61,13 @@ class zookeeper_client {
 
   file { "${conf_dir}/zookeeper-env.sh":
     ensure => file,
-    mode => 0754,
+    mode => 0765,
     content => template('zookeeper_client/zookeeper-env.erb'),
   }
 
   exec { 'keepcrlf-zookeeper-env':
-    command => "sudo dos2unix ${conf_dir}/zookeeper-env.sh",
+    command => "dos2unix ${conf_dir}/zookeeper-env.sh",
+    user => 'root',
     provider => "shell",
     path => $path,
     onlyif => "test -f /usr/bin/dos2unix",

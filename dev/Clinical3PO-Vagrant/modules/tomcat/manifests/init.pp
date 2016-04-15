@@ -22,26 +22,29 @@ class tomcat {
   exec { 'installtomcat':
     path => $path,
     cwd => "/tmp",
-    command => "wget http://archive.apache.org/dist/tomcat/tomcat-7/v7.0.67/bin/apache-tomcat-7.0.67.tar.gz && sudo tar xzvf apache-tomcat-7.0.67.tar.gz -C /opt/ && sudo ln -s /opt/apache-tomcat-7.0.67 /opt/apache-tomcat",
+    user => 'root',
+    command => "wget http://archive.apache.org/dist/tomcat/tomcat-7/v7.0.67/bin/apache-tomcat-7.0.67.tar.gz && tar xzvf apache-tomcat-7.0.67.tar.gz -C /opt/ && ln -s /opt/apache-tomcat-7.0.67 /opt/apache-tomcat",
   }
   ->
   file { "/etc/profile.d/tomcat.sh":
     ensure => file,
     owner => root,
     group => 'hadoop',
-    mode => 0755,
+    mode => 0765,
     content => template('tomcat/tomcat-env.erb'),
   }
   ->
   exec { 'keepcrlf-tomcat-profile':
     command => "dos2unix /etc/profile.d/tomcat.sh",
+    user => 'root',
     path => $path,
     onlyif => "test -f /usr/bin/dos2unix",
   }
   ->
   exec { "chmodtomcat":
     path => $path,
-    command => "sudo chmod +x /etc/profile.d/tomcat.sh",
+    user => 'root',
+    command => "chmod +x /etc/profile.d/tomcat.sh",
   }
   ->
   file { "/opt/apache-tomcat-7.0.67/conf/tomcat-users.xml":
@@ -54,7 +57,8 @@ class tomcat {
   ->
   exec { "chowntomcat":
     path => $path,
-    command => "sudo chown -R c3po:hadoop /opt/apache-tomcat-7.0.67 && sudo chmod -R ug+rw /opt/apache-tomcat-7.0.67",
+    user => 'root',
+    command => "chown -R c3po:hadoop /opt/apache-tomcat-7.0.67 && chmod -R ug+rw /opt/apache-tomcat-7.0.67",
   }
   ->
   file { "/etc/init.d/tomcat":

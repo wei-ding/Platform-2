@@ -29,7 +29,7 @@ class maven {
     ensure => file,
     owner => root,
     group => 'hadoop',
-    mode => 0755,
+    mode => 0765,
     content => template('maven/maven-env.erb'),
   }
   ->

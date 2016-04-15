@@ -31,7 +31,8 @@ class knox_gateway {
   ->
   exec { 'start-ldap' :
     path   => "/usr/bin:/usr/sbin:/bin:/usr/hdp/current/know-server/bin",
-    command => 'sudo -u knox /usr/hdp/current/knox-server/bin/ldap.sh start',
+    user => "knox",
+    command => '/usr/hdp/current/knox-server/bin/ldap.sh start',
   }
   ->
   exec { 'setup-gateway' :
