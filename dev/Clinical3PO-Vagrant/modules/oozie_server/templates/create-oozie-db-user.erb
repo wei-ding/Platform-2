@@ -23,4 +23,6 @@ mysql -u root -pPWc3po -h <%= @db %> << EOF
 create database if not exists oozie;
 grant all privileges on oozie.* to 'oozie'@'localhost' identified by 'PWc3po';
 grant all privileges on oozie.* to 'oozie'@'%' identified by 'PWc3po';
+grant all privileges on oozie.* to 'oozie'@'<%= @db %>' identified by 'PWc3po';
+FLUSH PRIVILEGES;
 EOF

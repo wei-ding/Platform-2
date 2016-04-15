@@ -50,15 +50,27 @@ class hive_db {
     command => "/tmp/init-root-pwd.sh",
   }
   ->
-  exec { "add-remote-root":
-    command => "/vagrant/modules/hive_db/files/add-remote-root.sh",
-    path => $PATH,
+  file { "/tmp/add-remote-root.sh":
+    ensure => file,
+    owner => root,
+    mode => 0700,
+    content => template('hive_db/add-remote-root.erb'),
   }
   ->
-  exec { "create-hivedb":
-    command => "mysql -u root --password=PWc3po < files/setup-hive.txt",
-    path => "${PATH}",
-    cwd => "/vagrant/modules/hive_db",
-    creates => "/var/lib/mysql/hive",
+  exec { "add-remote-root-access":
+    path => $PATH,
+    command => "/tmp/add-remote-root.sh",
+  }
+  ->
+  file { "/tmp/create-dbuser-hive.sh":
+    ensure => file,
+    owner => root,
+    mode => 0700,
+    content => template('hive_db/create-dbuser-hive.erb'),
+  }
+  ->
+  exec { "create-dbuser-hive":
+    path => $PATH,
+    command => "/tmp/create-dbuser-hive.sh",
   }
 }

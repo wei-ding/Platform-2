@@ -6,7 +6,7 @@ HDP 2.3.4, OpenJDK 1.8, nginx, CentOS 6.7 64-bit VM, 400G disk, EPEL repo, Puppe
 Usage
 =====
 
-Installing VirtualBOX
+Step1: Installing VirtualBOX
 -----------------
 
 - Centos:
@@ -34,14 +34,14 @@ Installing VirtualBOX
 
 - Windows:
 
-  Download VirtualBox 5.0.14: 
+  Download VirtualBox 5.0.14 or or higher version: 
   [VirtualBox Download](http://download.virtualbox.org/virtualbox/5.0.14/VirtualBox-5.0.14-105127-Win.exe)
   After VirtualBox installation finishes you will have to restart your computer. 
 
 
   Install VBox on Windows. Using Windows VirtualBox Extension pack:
   
-  Download this:
+  Download VirutalBox Extension Pack for VirtualBox 5.0.14 or higher version to match your VirutalBox:
   [VirtualBox Extension Pack Download](http://download.virtualbox.org/virtualbox/5.0.14/Oracle_VM_VirtualBox_Extension_Pack-5.0.14.vbox-extpack)
   
   From VirtualBox main window, go to File->Preferences. This will open VirtualBox Preferences window. 
@@ -52,9 +52,11 @@ Installing VirtualBOX
 
 - Mac:
 
+
+  Download VirtualBox 5.0.14 or or higher version: 
   http://download.virtualbox.org/virtualbox/5.0.14/VirtualBox-5.0.14-105127-OSX.dmg
   
-  Download this:
+  Download VirutalBox Extension Pack:
   http://download.virtualbox.org/virtualbox/5.0.14/Oracle_VM_VirtualBox_Extension_Pack-5.0.14.vbox-extpack
 
   From VirtualBox main window, go to File->Preferences. This will open VirtualBox Preferences window. 
@@ -63,7 +65,7 @@ Installing VirtualBOX
   Click “Install” to complete VirtualBox Extension Pack installation. You will have to reboot your host effect for the changes to take effect. 
 
 
-Installing Vagrant
+Step 2: Installing Vagrant
 -----------------
 
 - Centos:
@@ -80,18 +82,40 @@ Installing Vagrant
   
 - Windows:
 
-
+  Download Vagrant 1.8 or higher version:
   https://releases.hashicorp.com/vagrant/1.8.1/vagrant_1.8.1.msi
 
 
 
 - Mac:
 
+  Download Vagrant 1.8 or higher version:
   https://releases.hashicorp.com/vagrant/1.8.1/vagrant_1.8.1.dmg
+
+
+Download Clinical3PO Source code
+----------------------
+Go to Clinical3PO Platform GitHub webpage, click [Download ZIP](https://github.com/Clinical3PO/Platform/archive/master.zip)
+ Button, the download file name is Platform-master.zip, unzip it, then go to Platform-master/dev/Clinical3PO-Vagrant/  folder.
 
 
 Prepare Clinical3PO Cluster Planning file
 ----------------------
+
+Your Clinical3PO Cluster Planing file is under Platform-master/dev/Clinical3PO-Vagrant/hdp_cluster_planning/ folder.
+
+The default planning file is 2nodes-noambari.setup, if you want to change it to 3 nodes or more, please modify 
+the Platform-master/dev/Clinical3PO-Vagrant/hdp_cluster_planning/Vagrantfile:
+
+You will find it in line 20 to line 22
+
+```
+# HDP Cluster Planning setup search path:
+$planning_path = ["current.planning",
+                 "hdp_cluster_planning/2nodes-noambari.setup"]
+```
+
+Replace "2nodes-noambari.setup" to other planning file name if you want to try install more data nodes in your host computer.
 
 Example for 3 nodes
 
@@ -145,6 +169,8 @@ under hdp_cluster_palnning:
     { "hostname": "clinical3po-gw", "ip": "240.0.0.10", "roles": [  "nginx", "tomcat", "maven", "client", "c3po" ] }
   ]
 }
+
+
 
 ```
 

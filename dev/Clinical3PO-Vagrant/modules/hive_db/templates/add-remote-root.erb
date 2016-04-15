@@ -20,17 +20,9 @@
 -%>
 #!/bin/bash
 # Change the root password
-mysqladmin -u root password PWc3po
 mysql -u root --password="PWc3po" -h localhost << EOF
-UPDATE mysql.user SET Password = PASSWORD('PWc3po') WHERE User = 'root';
-DELETE FROM mysql.user WHERE user = '';
-GRANT ALL PRIVILEGES on *.* to 'root'@'%' WITH GRANT OPTION;
-GRANT ALL PRIVILEGES on *.* to 'root'@'localhost' WITH GRANT OPTION;
-GRANT ALL PRIVILEGES on *.* to 'root'@'<%= @db %>' WITH GRANT OPTION;
-FLUSH PRIVILEGES;
-# Add c3po user
-GRANT ALL on *.* to 'c3po'@'localhost' IDENTIFIED BY 'PWc3po';
-GRANT ALL on *.* to 'c3po'@'%' IDENTIFIED BY 'PWc3po';
-GRANT ALL on *.* to 'c3po'@'<%= @db %>' IDENTIFIED BY 'PWc3po';
+# grant root privilleges for remote access
+GRANT ALL on *.* to 'root'@'%' IDENTIFIED BY 'PWc3po';
+GRANT ALL PRIVILEGES on *.* to 'root'@'%' with grant option;
 FLUSH PRIVILEGES;
 EOF
