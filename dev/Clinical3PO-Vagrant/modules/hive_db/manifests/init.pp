@@ -42,8 +42,7 @@ class hive_db {
     ensure => file,
     mode => 0776,
     owner => 'c3po',
-    group => 'wheel',
-    content => regsubst(template('hive_db/init-root-pwd.erb'), '\r\n', "\n", 'EMG'),
+    content => regsubst(template('hive_db/init-root-pwd.erb'), '(?<!\r)\n', "\n", 'G'),
   }
   ->
   exec { "c3po-mysqldb-init":
@@ -57,7 +56,6 @@ class hive_db {
     ensure => file,
     mode => 0776,
     owner => 'c3po',
-    group => 'wheel',
     content => regsubst(template('hive_db/add-remote-root.erb'), '\r\n', "\n", 'EMG'),
   }
   ->
@@ -72,7 +70,6 @@ class hive_db {
     ensure => file,
     mode => 0766,
     owner => 'c3po',
-    group => 'wheel',
     content => regsubst(template('hive_db/create-dbuser-hive.erb'), '\r\n', "\n", 'EMG'),
   }
   ->
