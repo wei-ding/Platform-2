@@ -28,23 +28,12 @@ class tomcat {
   ->
   file { "/etc/profile.d/tomcat.sh":
     ensure => file,
-    owner => root,
-    group => 'hadoop',
     mode => 0765,
-    content => template('tomcat/tomcat-env.erb'),
-  }
-  ->
-  exec { 'keepcrlf-tomcat-profile':
-    command => "dos2unix /etc/profile.d/tomcat.sh",
-    user => 'root',
-    provider => 'shell',
-    path => $path,
-    onlyif => "test -f /usr/bin/dos2unix",
+    content => regsubst(template('tomcat/tomcat-env.erb'), '\r\n', "\n", 'EMG'),
   }
   ->
   exec { "chmodtomcat":
     path => $path,
-    user => 'root',
     command => "chmod +x /etc/profile.d/tomcat.sh",
   }
   ->
@@ -53,7 +42,7 @@ class tomcat {
     owner => c3po,
     group => 'hadoop',
     mode => 0760,
-    content => template('tomcat/tomcat-users.erb'),
+    content => dos2unix(template('tomcat/tomcat-users.erb')),
   }
   ->
   exec { "chowntomcat":

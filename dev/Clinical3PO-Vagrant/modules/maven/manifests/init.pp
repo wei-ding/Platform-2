@@ -28,17 +28,8 @@ class maven {
   ->
   file { "/etc/profile.d/maven.sh":
     ensure => file,
-    group => 'hadoop',
-    mode => 0777,
-    content => template('maven/maven-env.erb'),
-  }
-  ->
-  exec { 'keepcrlf-maven-profile':
-    command => "dos2unix /etc/profile.d/maven.sh",
-    user => 'root',
-    provider => 'shell',
-    path => $path,
-    onlyif => "test -f /usr/bin/dos2unix",
+    mode => 0755,
+    content => dos2unix(template('maven/maven-env.erb')),
   }
   ->
   exec { "chmodmaven":

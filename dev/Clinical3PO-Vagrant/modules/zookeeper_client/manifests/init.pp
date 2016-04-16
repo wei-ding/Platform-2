@@ -59,27 +59,16 @@ class zookeeper_client {
     content => template('zookeeper_client/zoo.erb'),
   }
 
-  file { "/tmp/zookeeper-env.sh":
+  file { "${conf_dir}/zookeeper-env.sh":
     ensure => file,
-    ower => 'c3po',
-    group => 'wheel',
     mode => 0765,
-    content => template('zookeeper_client/zookeeper-env.erb'),
-  }
-
-  # If we're running on Windows, then git have converted line endings to CRLF upon cloning or downloading the
-  # repository. we're using dos2unix to make sure that they are LF.
-  exec { 'keeplf-zookeeper-env':
-    command => " sudo dos2unix -n /tmp/zookeeper-env.sh ${conf_dir}/zookeeper-env.sh",
-    provider => "shell",
-    path => $path,
-    onlyif => "test -f /usr/bin/dos2unix",
+    content => dos2unix(template('zookeeper_client/zookeeper-env.erb')),
   }
 
   if $security == "true" {
     file { "${conf_dir}/zookeeper-client.jaas":
       ensure => file,
-      content => template('zookeeper_client/zookeeper-client.erb'),
+      content => dos2unix(template('zookeeper_client/zookeeper-client.erb')),
     }
   }
 }

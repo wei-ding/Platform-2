@@ -152,7 +152,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
             
       # Install puppet modules
       config.vm.provision :shell, binary: true, path: 'bootstrap.sh', args: %w(
-          puppetlabs-stdlib
+          puppetlabs/stdlib
           puppetlabs/vcsrepo
       )
 

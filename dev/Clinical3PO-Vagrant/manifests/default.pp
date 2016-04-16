@@ -13,6 +13,7 @@
 #   See the License for the specific language governing permissions and
 #   limitations under the License.
 
+include stdlib
 include repos_setup
 include vm_users
 include ip_setup
@@ -24,8 +25,6 @@ include ntp
 package { 'dos2unix':
   ensure => installed,
 }
-
-
 
 # determine the required modules based on the roles.
 

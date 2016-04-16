@@ -27,7 +27,6 @@ class hbase_client {
     }
     ->
     file { "/etc/hbase/conf":
-      mode => 777,
       ensure => directory,
     }
     ->
@@ -50,29 +49,21 @@ class hbase_client {
   file { '/etc/hbase/conf/hbase-env.sh':
     ensure => file,
     mode => 0765,
-    content => template('hbase_client/hbase-env.sh.erb'),
-  }
-  ->
-  exec { 'keepcrlf-hbase-env':
-    command => "dos2unix /etc/hbase/conf/hbase-env.sh",
-    user => 'root',
-    provider => 'shell',
-    path => $path,
-    onlyif => "test -f /usr/bin/dos2unix",
+    content => dos2unix(template('hbase_client/hbase-env.sh.erb')),
   }
   ->
   file { '/etc/hbase/conf/hbase-site.xml':
     ensure => file,
-    content => template('hbase_client/hbase-site.xml.erb'),
+    content => dos2unix(template('hbase_client/hbase-site.xml.erb')),
   }
   ->
   file { '/etc/hbase/conf/log4j.properties':
     ensure => file,
-    content => template('hbase_client/log4j.properties.erb'),
+    content => dos2unix(template('hbase_client/log4j.properties.erb')),
   }
   ->
   file { '/etc/hbase/conf/regionservers':
     ensure => file,
-    content => template('hbase_client/regionservers.erb'),
+    content => dos2unix(template('hbase_client/regionservers.erb')),
   }
 }

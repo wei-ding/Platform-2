@@ -28,7 +28,6 @@ class pig_client {
   }
 
   file { "${conf_dir}":
-    mode => 777,
     ensure => 'directory',
   }
 
@@ -42,15 +41,7 @@ class pig_client {
   file { "${conf_dir}/pig-env.sh":
     ensure => file,
     mode => 0765,
-    content => template('pig_client/pig-env.erb'),
-  }
-
-  exec { 'keepcrlf-pig-env':
-    command => "dos2unix ${conf_dir}/pig-env.sh",
-    user => 'root',
-    provider => 'shell',
-    path => $path,
-    onlyif => "test -f /usr/bin/dos2unix",
+    content => dos2unix(template('pig_client/pig-env.erb')),
   }
 
   file { "${conf_dir}/log4j.properties":
