@@ -32,7 +32,7 @@ class hbase_client {
     ->
     file { "/etc/hbase/conf/zk-jaas.conf":
       ensure => file,
-      content => template('hbase_client/zk-jaas.erb'),
+      content => dos2unix(template('hbase_client/zk-jaas.erb')),
     }
     ->
     Package["hbase_${rpm_version}"]

@@ -28,12 +28,12 @@ class nginx {
   ->
   file { "/etc/nginx/conf.d/default.conf":
     ensure => "file",
-    content => template('nginx/defaultconf.erb'),
+    content => dos2unix(template('nginx/defaultconf.erb')),
   }
   ->
   file { "/etc/nginx/conf.d/c3po.conf":
     ensure => "file",
-    content => template('nginx/c3poconf.erb'),
+    content => dos2unix(template('nginx/c3poconf.erb')),
   }
   ->
   exec {"usermod_nginx":

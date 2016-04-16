@@ -24,55 +24,55 @@ class ldap::client::base(
     'RedHat': {
       file { '/etc/nsswitch.conf':
         ensure  => file,
-        content => template('ldap/client/redhat/nsswitch.conf.erb'),
+        content => dos2unix(template('ldap/client/redhat/nsswitch.conf.erb')),
       }
       file { '/etc/pam.d/system-auth':
         ensure  => file,
-        content => template('ldap/client/redhat/system-auth.erb'),
+        content => dos2unix(template('ldap/client/redhat/system-auth.erb')),
       }
     }
     'Debian': {
       file { '/etc/nsswitch.conf':
         ensure  => file,
-        content => template('ldap/client/debian/nsswitch.conf.erb'),
+        content => dos2unix(template('ldap/client/debian/nsswitch.conf.erb')),
       }
       file { '/etc/pam.d/common-auth':
         ensure  => file,
-        content => template('ldap/client/debian/common-auth.erb'),
+        content => dos2unix(template('ldap/client/debian/common-auth.erb')),
       }
       file { '/etc/pam.d/common-password':
         ensure  => file,
-        content => template('ldap/client/debian/common-password.erb'),
+        content => dos2unix(template('ldap/client/debian/common-password.erb')),
       }
       file { '/etc/pam.d/common-session':
         ensure  => file,
-        content => template('ldap/client/debian/common-session.erb'),
+        content => dos2unix(template('ldap/client/debian/common-session.erb')),
       }
       file { '/etc/pam.d/common-account':
         ensure  => file,
-        content => template('ldap/client/debian/common-account.erb'),
+        content => dos2unix(template('ldap/client/debian/common-account.erb')),
       }
     }
     'Suse': {
       file { '/etc/nsswitch.conf':
         ensure  => file,
-        content => template('ldap/client/suse/nsswitch.conf.erb'),
+        content => dos2unix(template('ldap/client/suse/nsswitch.conf.erb')),
       }
       file { '/etc/pam.d/common-auth':
         ensure  => file,
-        content => template('ldap/client/suse/common-auth.erb'),
+        content => dos2unix(template('ldap/client/suse/common-auth.erb')),
       }
       file { '/etc/pam.d/common-password':
         ensure  => file,
-        content => template('ldap/client/suse/common-password.erb'),
+        content => dos2unix(template('ldap/client/suse/common-password.erb')),
       }
       file { '/etc/pam.d/common-session':
         ensure  => file,
-        content => template('ldap/client/suse/common-session.erb'),
+        content => dos2unix(template('ldap/client/suse/common-session.erb')),
       }
       file { '/etc/pam.d/common-account':
         ensure  => file,
-        content => template('ldap/client/suse/common-account.erb'),
+        content => dos2unix(template('ldap/client/suse/common-account.erb')),
       }
     }
     default: { fail('Unsupported Operatingsystem') }

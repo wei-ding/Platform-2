@@ -42,7 +42,7 @@ class hive_meta {
   ->
   file { '/etc/init.d/hive-metastore':
     ensure => file,
-    content => template('hive_meta/hive-metastore.erb'),
+    content => dos2unix(template('hive_meta/hive-metastore.erb')),
     mode => 'a+rx',
   }
   ->

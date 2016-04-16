@@ -50,7 +50,7 @@ class kerberos_http {
   ->
   file { "/tmp/create-cert":
     ensure => file,
-    content => template('kerberos_http/create-cert.erb'),
+    content => dos2unix(template('kerberos_http/create-cert.erb')),
     mode => '700',
   }
   ->
@@ -66,6 +66,6 @@ class kerberos_http {
     owner => 'root',
     group => 'hadoop',
     mode => '640',
-    content => template('kerberos_http/ssl-server.erb'),
+    content => dos2unix(template('kerberos_http/ssl-server.erb')),
   }
 }

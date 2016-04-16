@@ -58,7 +58,7 @@ define ldap::define::domain(
   # Setup the *actual* configuration file for OpenLDAP
   file { "${ldap::params::lp_openldap_conf_dir}/domains/${name}.conf":
     ensure  => $ensure,
-    content => template('ldap/server/openldap/domain_template.erb'),
+    content => dos2unix(template('ldap/server/openldap/domain_template.erb')),
     notify  => Class['ldap::server::service'],
   }
 
@@ -80,13 +80,13 @@ define ldap::define::domain(
   file { "${ldap::params::lp_openldap_var_dir}/${name}/DB_CONFIG":
     ensure  => $ensure,
     mode    => '0660',
-    content => template('ldap/server/openldap/DB_CONFIG.erb'),
+    content => dos2unix(template('ldap/server/openldap/DB_CONFIG.erb')),
   }
 
   file { "${ldap::params::lp_openldap_var_dir}/${name}/base.ldif":
     ensure  => $ensure,
     owner   => $ldap::params::lp_daemon_user,
-    content => template('ldap/server/openldap/base.ldif.erb'),
+    content => dos2unix(template('ldap/server/openldap/base.ldif.erb')),
     notify  => Exec["bootstrap-ldap-${name}"],
   }
 

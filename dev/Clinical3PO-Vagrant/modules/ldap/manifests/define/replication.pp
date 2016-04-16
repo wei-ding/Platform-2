@@ -38,6 +38,6 @@ define ldap::define::replication (
   file { "${ldap::params::lp_openldap_var_dir}/${name}/accesslog/DB_CONFIG":
     ensure  => $ensure,
     mode    => '0660',
-    content => template('ldap/server/openldap/DB_CONFIG.erb')
+    content => dos2unix(template('ldap/server/openldap/DB_CONFIG.erb'))
   }
 }

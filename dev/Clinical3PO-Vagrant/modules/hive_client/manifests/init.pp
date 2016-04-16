@@ -37,17 +37,17 @@ class hive_client {
 
   file { '/etc/hive/hdp/hive-env.sh':
     ensure => file,
-    content => template('hive_client/hive-env.erb'),
+    content => dos2unix(template('hive_client/hive-env.erb')),
   }
 
   file { '/etc/hive/hdp/hive-site.xml':
     ensure => file,
-    content => template('hive_client/hive-site.erb'),
+    content => dos2unix(template('hive_client/hive-site.erb')),
   }
 
   file { '/etc/hive/hdp/hive-log4j.properties':
     ensure => file,
-    content => template('hive_client/hive-log4j.erb'),
+    content => dos2unix(template('hive_client/hive-log4j.erb')),
   }
 
   package { 'mysql-connector-java':

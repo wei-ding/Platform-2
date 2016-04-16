@@ -51,12 +51,12 @@ class zookeeper_client {
 
   file { "${conf_dir}/log4j.properties":
     ensure => file,
-    content => template('zookeeper_client/log4j.erb'),
+    content => dos2unix(template('zookeeper_client/log4j.erb')),
   }
 
   file { "${conf_dir}/zoo.cfg":
     ensure => file,
-    content => template('zookeeper_client/zoo.erb'),
+    content => dos2unix(template('zookeeper_client/zoo.erb')),
   }
 
   file { "${conf_dir}/zookeeper-env.sh":

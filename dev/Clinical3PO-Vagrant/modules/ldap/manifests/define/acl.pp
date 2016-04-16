@@ -20,7 +20,7 @@ define ldap::define::acl(
   file {
     "${ldap::params::lp_tmp_dir}/acl.d/${domain}-${order}-${unique_name}.conf":
     ensure  => $ensure,
-    content => template('ldap/server/openldap/acl_template.erb'),
+    content => dos2unix(template('ldap/server/openldap/acl_template.erb')),
     notify  => Class['ldap::server::rebuild'],
   }
 }

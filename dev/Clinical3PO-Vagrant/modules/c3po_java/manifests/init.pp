@@ -123,7 +123,7 @@ class c3po_java {
     owner => c3po,
     group => 'hadoop',
     mode  => 0770,
-    content => template('c3po_java/settingsxml.erb'),
+    content => dos2unix(template('c3po_java/settingsxml.erb')),
   }
   ->
   file { "/tmp/mvnc3po-java.sh":

@@ -24,7 +24,7 @@ class kerberos_kdc {
   ->
   file { '/var/kerberos/krb5kdc/kdc.conf':
     ensure => file,
-    content => template('kerberos_kdc/kdc.erb'),
+    content => dos2unix(template('kerberos_kdc/kdc.erb')),
   }
   ->
   file { '/vagrant/generated':
@@ -34,7 +34,7 @@ class kerberos_kdc {
   ->
   file { '/vagrant/generated/create-kerberos-db':
     ensure => file,
-    content => template('kerberos_kdc/create-kerberos-kdc.erb'),
+    content => dos2unix(template('kerberos_kdc/create-kerberos-kdc.erb')),
     mode => 'u=rwx,go=',
   }
   ->

@@ -44,6 +44,6 @@ class tez_client {
 
   file { "${conf_dir}/tez-site.xml":
     ensure => file,
-    content => template('tez_client/tez-site.erb'),
+    content => dos2unix(template('tez_client/tez-site.erb')),
   }
 }

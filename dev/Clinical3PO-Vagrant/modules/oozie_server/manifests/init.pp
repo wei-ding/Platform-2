@@ -58,22 +58,22 @@ class oozie_server {
   ->
   file { "${conf_dir}/adminusers.txt":
     ensure => file,
-    content => template('oozie_server/adminusers.erb'),
+    content => dos2unix(template('oozie_server/adminusers.erb')),
   }
   ->
   file { "${conf_dir}/oozie-site.xml":
     ensure => file,
-    content => template('oozie_server/oozie-site.erb'),
+    content => dos2unix(template('oozie_server/oozie-site.erb')),
   }
   ->
   file { "${conf_dir}/oozie-env.sh":
     ensure => file,
-    content => template('oozie_server/oozie-env.erb'),
+    content => dos2unix(template('oozie_server/oozie-env.erb')),
   }
   ->
   file { "/etc/init.d/oozie":
     ensure => file,
-    content => template('oozie_server/oozie-service.erb'),
+    content => dos2unix(template('oozie_server/oozie-service.erb')),
     mode => "0765",
   }
   ->

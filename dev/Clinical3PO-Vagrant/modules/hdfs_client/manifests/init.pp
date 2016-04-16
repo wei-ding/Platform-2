@@ -141,17 +141,17 @@ class hdfs_client {
 
   file { "${conf_dir}/commons-logging.properties":
     ensure => file,
-    content => template('hdfs_client/commons-logging.erb'),
+    content => dos2unix(template('hdfs_client/commons-logging.erb')),
   }
 
   file { "${conf_dir}/configuration.xsl":
     ensure => file,
-    content => template('hdfs_client/configuration.erb'),
+    content => dos2unix(template('hdfs_client/configuration.erb')),
   }
 
   file { "${conf_dir}/core-site.xml":
     ensure => file,
-    content => template('hdfs_client/core-site.erb'),
+    content => dos2unix(template('hdfs_client/core-site.erb')),
   }
 
   file { "${conf_dir}/dfs.exclude":
@@ -161,28 +161,27 @@ class hdfs_client {
 
   file { "${conf_dir}/hadoop-env.sh":
     ensure => file,
-    mode => 0765,
     content => dos2unix(template('hdfs_client/hadoop-env.erb')),
   }
 
   file { "${conf_dir}/hadoop-metrics2.properties":
     ensure => file,
-    content => template('hdfs_client/hadoop-metrics2.erb'),
+    content => dos2unix(template('hdfs_client/hadoop-metrics2.erb')),
   }
 
   file { "${conf_dir}/hadoop-policy.xml":
     ensure => file,
-    content => template('hdfs_client/hadoop-policy.erb'),
+    content => dos2unix(template('hdfs_client/hadoop-policy.erb')),
   }
 
   file { "${conf_dir}/hdfs-site.xml":
     ensure => file,
-    content => template('hdfs_client/hdfs-site.erb'),
+    content => dos2unix(template('hdfs_client/hdfs-site.erb')),
   }
 
   file { "${conf_dir}/log4j.properties":
     ensure => file,
-    content => template('hdfs_client/log4j.erb'),
+    content => dos2unix(template('hdfs_client/log4j.erb')),
   }
 
   if $security == "true" {
@@ -198,7 +197,7 @@ class hdfs_client {
 
     file {"${conf_dir}/ssl-client.xml":
       ensure => file,
-      content => template("hdfs_client/ssl-client.erb"),
+      content => dos2unix(template("hdfs_client/ssl-client.erb")),
     }
   }
 

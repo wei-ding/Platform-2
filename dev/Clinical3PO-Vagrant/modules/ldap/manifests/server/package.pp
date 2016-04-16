@@ -48,7 +48,7 @@ class ldap::server::package(
       owner   => 'root',
       group   => 'root',
       mode    => '0644',
-      content => template('ldap/server/openldap/slapd_default.erb'),
+      content => dos2unix(template('ldap/server/openldap/slapd_default.erb')),
       require => Package[$ldap::params::openldap_packages],
     }
   }

@@ -41,7 +41,7 @@ class yarn_client {
 
   file { "${hdfs_client::conf_dir}/capacity-scheduler.xml":
     ensure => file,
-    content => template('yarn_client/capacity-scheduler.erb'),
+    content => dos2unix(template('yarn_client/capacity-scheduler.erb')),
   }
 
   file { "${hdfs_client::conf_dir}/mapred-env.sh":
@@ -57,7 +57,7 @@ class yarn_client {
 
   file { "${hdfs_client::conf_dir}/task-log4j.properties":
     ensure => file,
-    content => template('yarn_client/task-log4j.erb'),
+    content => dos2unix(template('yarn_client/task-log4j.erb')),
   }
 
   file { "${hdfs_client::conf_dir}/yarn.exclude":
@@ -73,6 +73,6 @@ class yarn_client {
 
   file { "${hdfs_client::conf_dir}/yarn-site.xml":
     ensure => file,
-    content => template('yarn_client/yarn-site.erb'),
+    content => dos2unix(template('yarn_client/yarn-site.erb')),
   }
 }

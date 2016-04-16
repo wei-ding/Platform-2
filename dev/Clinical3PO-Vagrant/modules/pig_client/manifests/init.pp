@@ -46,11 +46,11 @@ class pig_client {
 
   file { "${conf_dir}/log4j.properties":
     ensure => file,
-    content => template('pig_client/log4j.erb'),
+    content => dos2unix(template('pig_client/log4j.erb')),
   }
 
   file { "${conf_dir}/pig.properties":
     ensure => file,
-    content => template('pig_client/pig.erb'),
+    content => dos2unix(template('pig_client/pig.erb')),
   }
 }

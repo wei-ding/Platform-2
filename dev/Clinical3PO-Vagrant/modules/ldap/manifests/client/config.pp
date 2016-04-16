@@ -41,35 +41,35 @@ define ldap::client::config (
     debian,ubuntu: {
       file { '/etc/ldap.conf':
         ensure  => file,
-        content => template('ldap/client/common/nss_pam_ldap.conf.erb'),
+        content => dos2unix(template('ldap/client/common/nss_pam_ldap.conf.erb')),
       }
       file { '/etc/ldap/ldap.conf':
         ensure  => file,
-        content => template('ldap/client/common/ldap.conf.erb'),
+        content => dos2unix(template('ldap/client/common/ldap.conf.erb')),
       }
       file { '/etc/libnss-ldap.conf':
         ensure  => file,
-        content => template(
+        content => dos2unix(template(
           'ldap/client/debian/pam-nss-base.conf.erb',
           'ldap/client/debian/libnss-ldap.conf.erb'
-        ),
+        )),
       }
       file { '/etc/pam_ldap.conf':
         ensure  => file,
-        content => template(
+        content => dos2unix(template(
           'ldap/client/debian/pam-nss-base.conf.erb',
           'ldap/client/debian/pam_ldap.conf.erb'
-        ),
+        )),
       }
     }
     default: {
       file { '/etc/ldap.conf':
         ensure  => file,
-        content => template('ldap/client/common/nss_pam_ldap.conf.erb'),
+        content => dos2unix(template('ldap/client/common/nss_pam_ldap.conf.erb')),
       }
       file { '/etc/openldap/ldap.conf':
         ensure  => file,
-        content => template('ldap/client/common/ldap.conf.erb'),
+        content => dos2unix(template('ldap/client/common/ldap.conf.erb')),
       }
     }
   }

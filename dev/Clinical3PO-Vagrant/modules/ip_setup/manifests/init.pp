@@ -27,6 +27,6 @@ class ip_setup {
 
   file { '/etc/hosts':
     ensure => file,
-    content => template('ip_setup/hosts.erb'),
+    content => dos2unix(template('ip_setup/hosts.erb')),
   }
 }

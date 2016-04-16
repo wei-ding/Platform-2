@@ -42,7 +42,7 @@ class ldap::server::config (
   file { "${ldap::params::lp_openldap_conf_dir}/slapd.conf":
     ensure  => file,
     group   => $ldap::params::lp_daemon_user,
-    content => template('ldap/server/openldap/slapd.conf.erb')
+    content => dos2unix(template('ldap/server/openldap/slapd.conf.erb'))
   }
 
   ## Directories to be used for File-Fragment Patterns.
@@ -116,7 +116,7 @@ class ldap::server::config (
   file { '/usr/local/bin/openldap_acl_rebuild':
     ensure  => file,
     mode    => '0700',
-    content => template('ldap/server/openldap/openldap_acl_rebuild.erb'),
+    content => dos2unix(template('ldap/server/openldap/openldap_acl_rebuild.erb')),
   }
 
   file {$ldap::params::lp_openldap_conf_dir:

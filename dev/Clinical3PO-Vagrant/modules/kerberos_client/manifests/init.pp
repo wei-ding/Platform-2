@@ -31,6 +31,6 @@ class kerberos_client {
   ->
   file { '/etc/krb5.conf':
     ensure => file,
-    content => template('kerberos_client/krb5.erb'),
+    content => dos2unix(template('kerberos_client/krb5.erb')),
   }
 }

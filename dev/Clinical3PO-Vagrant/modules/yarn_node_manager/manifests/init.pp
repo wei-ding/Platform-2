@@ -32,7 +32,7 @@ class yarn_node_manager {
     ->
     file { "${hdfs_client::conf_dir}/container-executor.cfg":
       ensure => file,
-      content => template('yarn_node_manager/container-executor.erb'),
+      content => dos2unix(template('yarn_node_manager/container-executor.erb')),
       owner => root,
       group => mapred,
       mode => 400,

@@ -21,7 +21,7 @@ class zookeeper_server {
   if $security == "true" {
     file { "${zookeeper_client::conf_dir}/zookeeper-server.jaas":
       ensure => file,
-      content => template('zookeeper_server/zookeeper-server.erb'),
+      content => dos2unix(template('zookeeper_server/zookeeper-server.erb')),
     }
     -> Package["zookeeper_${rpm_version}-server"]
 
@@ -47,7 +47,7 @@ class zookeeper_server {
   ->
   file { "${zookeeper_client::conf_dir}/configuration.xsl":
     ensure => file,
-    content => template('zookeeper_server/configuration.erb'),
+    content => dos2unix(template('zookeeper_server/configuration.erb')),
   }
   ->
   file { "/etc/init.d/zookeeper-server":
@@ -64,7 +64,7 @@ class zookeeper_server {
   ->
   file { "${zookeeper_client::data_dir}/myid":
     ensure => file,
-    content => template('zookeeper_server/myid.erb'),
+    content => dos2unix(template('zookeeper_server/myid.erb')),
   }
   ->
   file { "${zookeeper_client::log_dir}":

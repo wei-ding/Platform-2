@@ -33,7 +33,7 @@ class ambari_agent {
   ->  
   file { "${conf_dir}/ambari-agent.ini":
     ensure => file,
-    content => template('ambari_agent/ambari-agent.erb'),
+    content => dos2unix(template('ambari_agent/ambari-agent.erb')),
     owner => 'root',
     group => 'root',
     mode => '755',
