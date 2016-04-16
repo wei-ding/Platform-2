@@ -41,6 +41,8 @@ class hive_db {
   file { "/tmp/init-root-pwd.sh":
     ensure => file,
     mode => 0776,
+    owner => 'c3po',
+    group => 'wheel',
     content => dos2unix(template('hive_db/init-root-pwd.erb')),
   }
   ->
@@ -54,6 +56,8 @@ class hive_db {
   file { "/tmp/add-remote-root.sh":
     ensure => file,
     mode => 0776,
+    owner => 'c3po',
+    group => 'wheel',
     content => dos2unix(template('hive_db/add-remote-root.erb')),
   }
   ->
@@ -67,6 +71,8 @@ class hive_db {
   file { "/tmp/create-dbuser-hive.sh":
     ensure => file,
     mode => 0766,
+    owner => 'c3po',
+    group => 'wheel',
     content => dos2unix(template('hive_db/create-dbuser-hive.erb')),
   }
   ->
