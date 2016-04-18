@@ -53,8 +53,9 @@ class tomcat {
   ->
   file { "/tmp/tomcat.init":
     ensure => file,
-    mode => "0755",
     source => "puppet:///files/etc/init.d/tomcat",
+    owner => c3po,
+    group => hadoop,
   }
   ->
   exec {
@@ -62,16 +63,14 @@ class tomcat {
       path => $path,
       command => "dos2unix -n /tmp/tomcat.init /etc/init.d/tomcat",
       creates => "/etc/init.d/tomcat",
-      require => [File["/tmp/tomcat.init"], Package["dos2unix"]];
+      require => [Package["dos2unix"]];
   }
   ->
   exec {
     "chmod tomcat init.d":
       path => $path,
-      command => "chmod ugo+x /etc/init.d/tomcat",
-      require => [File["/etc/init.d/tomcat"]];
+      command => "chmod ugo+rwx /etc/init.d/tomcat",
   }
-
   ->
   service { "tomcat":
     ensure => running,
