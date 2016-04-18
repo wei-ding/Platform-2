@@ -54,7 +54,7 @@ class hbase_client {
   ->
   file { '/etc/hbase/conf/hbase-site.xml':
     ensure => file,
-    content => dos2unix(template('hbase_client/hbase-site.xml.erb')),
+    content => regsubst(dos2unix(template('hbase_client/hbase-site.xml.erb')), '\n\n\<?xml' ,'<?xml', 'EMG'),
   }
   ->
   file { '/etc/hbase/conf/log4j.properties':

@@ -21,7 +21,7 @@ class zookeeper_server {
   if $security == "true" {
     file { "${zookeeper_client::conf_dir}/zookeeper-server.jaas":
       ensure => file,
-      content => dos2unix(template('zookeeper_server/zookeeper-server.erb')),
+      content => regsubst(dos2unix(template('zookeeper_server/zookeeper-server.erb')), '\n\n\Server' ,'Server', 'EMG'),
     }
     -> Package["zookeeper_${rpm_version}-server"]
 
@@ -47,7 +47,7 @@ class zookeeper_server {
   ->
   file { "${zookeeper_client::conf_dir}/configuration.xsl":
     ensure => file,
-    content => dos2unix(template('zookeeper_server/configuration.erb')),
+    content => regsubst(dos2unix(template('zookeeper_server/configuration.erb')), '\n\n\<?xml' ,'<?xml', 'EMG'),
   }
   ->
   file { "/etc/init.d/zookeeper-server":

@@ -42,7 +42,7 @@ class hive_client {
 
   file { '/etc/hive/hdp/hive-site.xml':
     ensure => file,
-    content => dos2unix(template('hive_client/hive-site.erb')),
+    content => regsubst(dos2unix(template('hive_client/hive-site.erb')), '\n\n\<?xml' ,'<?xml', 'EMG'),
   }
 
   file { '/etc/hive/hdp/hive-log4j.properties':

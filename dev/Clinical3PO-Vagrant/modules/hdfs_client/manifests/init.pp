@@ -141,17 +141,18 @@ class hdfs_client {
 
   file { "${conf_dir}/commons-logging.properties":
     ensure => file,
-    content => dos2unix(template('hdfs_client/commons-logging.erb')),
+    content => regsubst(dos2unix(template('hdfs_client/commons-logging.erb')), '\n\n\<?xml' ,'<?xml', 'EMG'),
   }
 
   file { "${conf_dir}/configuration.xsl":
     ensure => file,
-    content => dos2unix(template('hdfs_client/configuration.erb')),
+    content => regsubst(dos2unix(template('hdfs_client/configuration.erb')), '\n\n\<?xml' ,'<?xml', 'EMG'),
   }
 
   file { "${conf_dir}/core-site.xml":
     ensure => file,
-    content => dos2unix(template('hdfs_client/core-site.erb')),
+    content => regsubst(dos2unix(template('hdfs_client/core-site.erb')), '\n\n\<?xml' ,'<?xml', 'EMG'),
+
   }
 
   file { "${conf_dir}/dfs.exclude":
@@ -161,27 +162,27 @@ class hdfs_client {
 
   file { "${conf_dir}/hadoop-env.sh":
     ensure => file,
-    content => dos2unix(template('hdfs_client/hadoop-env.erb')),
+    content => regsubst(dos2unix(template('hdfs_client/hadoop-env.erb')), '\n\n\<?xml' ,'<?xml', 'EMG'),
   }
 
   file { "${conf_dir}/hadoop-metrics2.properties":
     ensure => file,
-    content => dos2unix(template('hdfs_client/hadoop-metrics2.erb')),
+    content => regsubst(dos2unix(template('hdfs_client/hadoop-metrics2.erb')), '\n\n\<?xml' ,'<?xml', 'EMG'),
   }
 
   file { "${conf_dir}/hadoop-policy.xml":
     ensure => file,
-    content => dos2unix(template('hdfs_client/hadoop-policy.erb')),
+    content => regsubst(dos2unix(template('hdfs_client/hadoop-policy.erb')), '\n\n\<?xml' ,'<?xml', 'EMG'),
   }
 
   file { "${conf_dir}/hdfs-site.xml":
     ensure => file,
-    content => dos2unix(template('hdfs_client/hdfs-site.erb')),
+    content => regsubst(dos2unix(template('hdfs_client/hdfs-site.erb')), '\n\n\<?xml' ,'<?xml', 'EMG'),
   }
 
   file { "${conf_dir}/log4j.properties":
     ensure => file,
-    content => dos2unix(template('hdfs_client/log4j.erb')),
+    content => regsubst(dos2unix(template('hdfs_client/log4j.erb')), '\n\n\<?xml' ,'<?xml', 'EMG'),
   }
 
   if $security == "true" {
@@ -197,7 +198,7 @@ class hdfs_client {
 
     file {"${conf_dir}/ssl-client.xml":
       ensure => file,
-      content => dos2unix(template("hdfs_client/ssl-client.erb")),
+      content => regsubst(dos2unix(template("hdfs_client/ssl-client.erb")), '\n\n\<?xml' ,'<?xml', 'EMG'),
     }
   }
 

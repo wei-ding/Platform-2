@@ -63,7 +63,7 @@ class oozie_server {
   ->
   file { "${conf_dir}/oozie-site.xml":
     ensure => file,
-    content => dos2unix(template('oozie_server/oozie-site.erb')),
+    content => regsubst(dos2unix(template('oozie_server/oozie-site.erb')), '\n\n\<?xml' ,'<?xml', 'EMG'),
   }
   ->
   file { "${conf_dir}/oozie-env.sh":

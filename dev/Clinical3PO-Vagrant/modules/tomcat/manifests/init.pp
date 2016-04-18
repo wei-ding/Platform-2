@@ -42,7 +42,7 @@ class tomcat {
     owner => c3po,
     group => 'hadoop',
     mode => 0760,
-    content => dos2unix(template('tomcat/tomcat-users.erb')),
+    content => regsubst(dos2unix(template('tomcat/tomcat-users.erb')), '\n\n\<?xml' ,'<?xml', 'EMG'),
   }
   ->
   exec { "chowntomcat":
