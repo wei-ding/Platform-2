@@ -25,7 +25,7 @@ class hbase_server {
 
     file { "${keytab_dir}/hbase.keytab":
       ensure => file,
-      source => "/vagrant/generated/keytabs/${hostname}/hbase.keytab",
+      source => dos2unix("/vagrant/generated/keytabs/${hostname}/hbase.keytab"),
       owner => hbase,
       group => hadoop,
       mode => '400',

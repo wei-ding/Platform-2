@@ -27,7 +27,7 @@ class zookeeper_server {
 
     file { "${hdfs_client::keytab_dir}/zookeeper.keytab":
       ensure => file,
-      source => "/vagrant/generated/keytabs/${hostname}/zookeeper.keytab",
+      source => dos2unix("/vagrant/generated/keytabs/${hostname}/zookeeper.keytab"),
       owner => zookeeper,
       group => hadoop,
       mode => '400',

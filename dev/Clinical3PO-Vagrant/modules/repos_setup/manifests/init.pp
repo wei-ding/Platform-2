@@ -16,11 +16,11 @@
 class repos_setup {
   file { '/etc/yum.repos.d/hdp.repo':
     ensure => file,
-    source => 'puppet:///files/etc/repos/hdp.repo',
+    source => dos2unix('puppet:///files/etc/repos/hdp.repo'),
   }
   file { '/etc/yum.repos.d/ambari.repo':
     ensure => file,
-    source => 'puppet:///files/etc/repos/ambari.repo',
+    source => dos2unix('puppet:///files/etc/repos/ambari.repo'),
   }
     #package { 'epel-release-6-8':
     #    ensure => absent,

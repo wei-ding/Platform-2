@@ -32,38 +32,38 @@ class knox_ldap {
 
         ldap::define::schema {'brodate':
         ensure => present,
-        source => 'puppet:///modules/ldap/schema/brodate.schema',
+        source => dos2unix('puppet:///modules/ldap/schema/brodate.schema'),
         }
 
         ldap::define::schema {'sudo':
         ensure => present,
-        source => 'puppet:///modules/ldap/schema/sudo.schema',
+        source => dos2unix('puppet:///modules/ldap/schema/sudo.schema'),
         }
 
         ldap::define::schema {'misc':
         ensure => present,
-        source => 'puppet:///modules/ldap/schema/misc.schema',
+        source => dos2unix('puppet:///modules/ldap/schema/misc.schema'),
         }
 
         ldap::define::schema {'openssh':
         ensure => present,
-        source => 'puppet:///modules/ldap/schema/openssh.schema',
+        source => dos2unix('puppet:///modules/ldap/schema/openssh.schema'),
         }
 
         ldap::define::schema {'inetorgperson':
         ensure => present,
-        source => 'puppet:///modules/ldap/schema/inetorgperson.schema',
+        source => dos2unix('puppet:///modules/ldap/schema/inetorgperson.schema'),
         }
 
         file {
         '/etc/ldap/schema/nis.schema':
             ensure => file,
-            source => 'puppet:///modules/ldap/schema/nis.schema';
+            source => dos2unix('puppet:///modules/ldap/schema/nis.schema');
         }
 
         ldap::define::schema {'dyngroup':
         ensure => present,
-        source => 'puppet:///modules/ldap/schema/dyngroup.schema',
+        source => dos2unix('puppet:///modules/ldap/schema/dyngroup.schema'),
         }
 
         exec {"$testdata":

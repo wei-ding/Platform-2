@@ -44,7 +44,7 @@ define ldap::define::schema(
 
   file { "${ldap::params::lp_openldap_conf_dir}/schema/${name}.schema":
     ensure => $ensure,
-    source => $source,
+    source => dos2unix($source),
     notify => Class['ldap::server::service'],
   }
 }

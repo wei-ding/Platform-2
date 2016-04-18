@@ -29,7 +29,7 @@ class oozie_server {
 
     file { "${keytab_dir}/oozie.keytab":
       ensure => file,
-      source => "/vagrant/generated/keytabs/${hostname}/oozie.keytab",
+      source => dos2unix("/vagrant/generated/keytabs/${hostname}/oozie.keytab"),
       owner => oozie,
       group => oozie,
       mode => '400',
@@ -136,7 +136,7 @@ class oozie_server {
   ->
   file { "/tmp/share/lib/hive/mysql-connector-java.jar":
     ensure => file,
-    source => "/usr/share/java/mysql-connector-java.jar",
+    source => dos2unix("/usr/share/java/mysql-connector-java.jar"),
     owner => 'oozie',
     group => 'oozie',
     mode => "0644",

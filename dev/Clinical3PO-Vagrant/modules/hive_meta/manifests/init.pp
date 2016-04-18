@@ -22,7 +22,7 @@ class hive_meta {
   if $security == "true" {
     file { "${hdfs_client::keytab_dir}/hive.keytab":
       ensure => file,
-      source => "/vagrant/generated/keytabs/${hostname}/hive.keytab",
+      source => dos2unix("/vagrant/generated/keytabs/${hostname}/hive.keytab"),
       owner => hive,
       group => hadoop,
       mode => '400',

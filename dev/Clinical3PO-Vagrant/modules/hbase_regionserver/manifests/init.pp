@@ -29,7 +29,7 @@ class hbase_regionserver {
   ->
   file { "/etc/init.d/hbase-regionserver":
     ensure => file,
-    source => "puppet:///files/etc/init.d/hbase-regionserver",
+    source => dos2unix("puppet:///files/etc/init.d/hbase-regionserver"),
     owner => root,
     group => root,
   }

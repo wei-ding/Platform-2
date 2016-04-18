@@ -1,0 +1,19 @@
+{
+    "forwarded_port": [
+        {
+            "guest_port": 8080,
+            "host_port": 8181,
+            "protocol": "tcp"
+        },
+        {
+            "guest_port": 80,
+            "host_port": 8888,
+            "protocol": "tcp"
+        },
+        {
+            "guest_port": 8088,
+            "host_port": 8088,
+            "protocol": "tcp"
+        }
+    ]
+}

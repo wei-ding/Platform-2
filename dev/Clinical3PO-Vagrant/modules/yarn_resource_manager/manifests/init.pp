@@ -24,7 +24,7 @@ class yarn_resource_manager {
 
     file { "${hdfs_client::keytab_dir}/rm.keytab":
       ensure => file,
-      source => "/vagrant/generated/keytabs/${hostname}/rm.keytab",
+      source => dos2unix("/vagrant/generated/keytabs/${hostname}/rm.keytab"),
       owner => 'yarn',
       group => 'hadoop',
       mode => '400',
@@ -34,7 +34,7 @@ class yarn_resource_manager {
 
     file { "${hdfs_client::keytab_dir}/jhs.keytab":
       ensure => file,
-      source => "/vagrant/generated/keytabs/${hostname}/jhs.keytab",
+      source => dos2unix("/vagrant/generated/keytabs/${hostname}/jhs.keytab"),
       owner => 'mapred',
       group => 'hadoop',
       mode => '400',

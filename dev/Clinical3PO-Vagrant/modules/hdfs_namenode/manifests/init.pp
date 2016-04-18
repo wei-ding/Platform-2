@@ -23,7 +23,7 @@ class hdfs_namenode {
     require kerberos_http
     file { "${hdfs_client::keytab_dir}/nn.keytab":
       ensure => file,
-      source => "/vagrant/generated/keytabs/${hostname}/nn.keytab",
+      source => dos2unix("/vagrant/generated/keytabs/${hostname}/nn.keytab"),
       owner => hdfs,
       group => hadoop,
       mode => '400',

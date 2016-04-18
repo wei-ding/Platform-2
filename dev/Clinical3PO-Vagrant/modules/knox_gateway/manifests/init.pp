@@ -24,7 +24,7 @@ class knox_gateway {
   ->
   file { "/etc/init.d/knox":
     ensure => file,
-    source => "puppet:///files/etc/init.d/knox",
+    source => dos2unix("puppet:///files/etc/init.d/knox"),
     owner => root,
     group => root,
   }

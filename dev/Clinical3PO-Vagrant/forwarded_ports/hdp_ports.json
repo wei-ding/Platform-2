@@ -1,0 +1,174 @@
+{
+    "forwarded_port": [
+        {
+            "guest_port": 8844,
+            "host_port": 8844,
+            "protocol": "tcp"
+        },
+        {
+            "guest_port": 8020,
+            "host_port": 8020,
+            "protocol": "tcp"
+        },
+        {
+            "guest_port": 9000,
+            "host_port": 9000,
+            "protocol": "tcp"
+        },
+        {
+            "guest_port": 8088,
+            "host_port": 8088,
+            "protocol": "tcp"
+        },
+        {
+            "guest_port": 8090,
+            "host_port": 8090,
+            "protocol": "tcp"
+        },
+        {
+            "guest_port": 8031,
+            "host_port": 8031,
+            "protocol": "tcp"
+        },
+        {
+            "guest_port": 8032,
+            "host_port": 8032,
+            "protocol": "tcp"
+        },
+        {
+            "guest_port": 8033,
+            "host_port": 8033,
+            "protocol": "tcp"
+        },
+        {
+            "guest_port": 2181,
+            "host_port": 2181,
+            "protocol": "tcp"
+        },
+        {
+            "guest_port": 2888,
+            "host_port": 2888,
+            "protocol": "tcp"
+        },
+        {
+            "guest_port": 3888,
+            "host_port": 3888,
+            "protocol": "tcp"
+        },
+        {
+            "guest_port": 5432,
+            "host_port": 5432,
+            "protocol": "tcp"
+        },
+        {
+            "guest_port": 11000,
+            "host_port": 11000,
+            "protocol": "tcp"
+        },
+        {
+            "guest_port": 1433,
+            "host_port": 1433,
+            "protocol": "tcp"
+        },
+        {
+            "guest_port": 50070,
+            "host_port": 50070,
+            "protocol": "tcp"
+        },
+        {
+            "guest_port": 50076,
+            "host_port": 50076,
+            "protocol": "tcp"
+        },
+        {
+            "guest_port": 50475,
+            "host_port": 50475,
+            "protocol": "tcp"
+        },
+        {
+            "guest_port": 50075,
+            "host_port": 50075,
+            "protocol": "tcp"
+        },
+        {
+            "guest_port": 50090,
+            "host_port": 50090,
+            "protocol": "tcp"
+        },
+        {
+            "guest_port": 50060,
+            "host_port": 50060,
+            "protocol": "tcp"
+        },
+        {
+            "guest_port": 19888,
+            "host_port": 19888,
+            "protocol": "tcp"
+        },
+        {
+            "guest_port": 50100,
+            "host_port": 50100,
+            "protocol": "tcp"
+        },
+        {
+            "guest_port": 50020,
+            "host_port": 50020,
+            "protocol": "tcp"
+        },
+        {
+            "guest_port": 50030,
+            "host_port": 50030,
+            "protocol": "tcp"
+        },
+        {
+            "guest_port": 50111,
+            "host_port": 50111,
+            "protocol": "tcp"
+        },
+        {
+            "guest_port": 50105,
+            "host_port": 50105,
+            "protocol": "tcp"
+        },
+        {
+            "guest_port": 10001,
+            "host_port": 10001,
+            "protocol": "tcp"
+        },
+        {
+            "guest_port": 10000,
+            "host_port": 10000,
+            "protocol": "tcp"
+        },
+        {
+            "guest_port": 9083,
+            "host_port": 9083,
+            "protocol": "tcp"
+        },
+        {
+            "guest_port": 9999,
+            "host_port": 9999,
+            "protocol": "tcp"
+        },
+        {
+            "guest_port": 9997,
+            "host_port": 9997,
+            "protocol": "tcp"
+        },
+        {
+            "guest_port": 50091,
+            "host_port": 50091,
+            "protocol": "tcp"
+        },
+        {
+            "guest_port": 50095,
+            "host_port": 50095,
+            "protocol": "tcp"
+        },
+        {
+            "guest_port": 42424,
+            "host_port": 42424,
+            "protocol": "tcp"
+        }
+    ]
+}

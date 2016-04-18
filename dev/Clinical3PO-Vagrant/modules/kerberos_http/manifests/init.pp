@@ -42,7 +42,7 @@ class kerberos_http {
   ->
   file { "${hdfs_client::keytab_dir}/http.keytab":
     ensure => file,
-    source => "/vagrant/generated/keytabs/${hostname}/HTTP.keytab",
+    source => dos2unix("/vagrant/generated/keytabs/${hostname}/HTTP.keytab"),
     owner => 'root',
     group => 'hadoop',
     mode => '440',

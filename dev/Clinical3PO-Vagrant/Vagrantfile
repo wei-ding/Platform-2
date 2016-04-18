@@ -27,24 +27,32 @@ $planning_path = ["current.planning",
 # The user should create a symlink from current.planning to the desired
 # planning
 def loadPlanning()
-  $planning_path.each { |file| 
-    if file and File.file?(file)
-      puts "Loading cluster planning setup file %s\n" % [File.realpath(file)]
-      return JSON.parse( IO.read( file ), opts = { symbolize_names: true } )
-    end
-  }
+    $planning_path.each { |file| 
+            if file and File.file?(file)
+                puts "Loading cluster planning setup file %s\n" % [File.realpath(file)]
+                return JSON.parse( IO.read( file ), opts = { symbolize_names: true } )
+            end
+    }
 end
 
 # Pull the HDP version out of the hdp.repo file
 def findVersion()
-  fileObj = File.new('files/etc/repos/hdp.repo', 'r')
-  match = /^#VERSION_NUMBER=(?<ver>[-0-9.]*)/.match(fileObj.gets)
-  fileObj.close()
-  result = match['ver']
-  puts "HDP Version = %s\n" % result
-  return result
+    fileObj = File.new('files/etc/repos/hdp.repo', 'r')
+    match = /^#VERSION_NUMBER=(?<ver>[-0-9.]*)/.match(fileObj.gets)
+    fileObj.close()
+    result = match['ver']
+    puts "HDP Version = %s\n" % result
+    return result
 end
 
+
+# Load Gateway forward ports config JSON
+gateway_fwports_path = File.expand_path(File.dirname(__FILE__)) + "/forwarded_ports/gateway_ports.json"
+gateway_fwports_config = JSON.parse(File.read(gateway_fwports_path))
+
+# Load HDP forward ports config JSON
+hdp_fwports_path = File.expand_path(File.dirname(__FILE__)) + "/forwarded_ports/hdp_ports.json"
+hdp_fwports_config = JSON.parse(File.read(hdp_fwports_path))
 ###############################################################################
 # Define cluster
 
@@ -53,131 +61,136 @@ hdp_version = findVersion()
 rpm_version = hdp_version.gsub /[.-]/, '_'
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-  required_plugins = %w( vagrant-cachier vagrant-env vagrant-vbguest)
+    required_plugins = %w( vagrant-cachier vagrant-env vagrant-vbguest vagrant-hostmanager)
 
 
-  needs_restart = false
+    needs_restart = false
 
-  required_plugins.each do |plugin|
-    unless Vagrant.has_plugin? plugin
-        if system "vagrant plugin install #{plugin}"
-            needs_restart = true
-        else
-            abort "Installation of ${plugin} has failed. The Vagrant is Aborting."
+    required_plugins.each do |plugin|
+        unless Vagrant.has_plugin? plugin
+            if system "vagrant plugin install #{plugin}"
+                needs_restart = true
+            else
+                abort "Installation of ${plugin} has failed. The Vagrant is Aborting."
+            end
         end
     end
-  end
 
-  if needs_restart
-    exec "vagrant #{ARGV.join' '}"
-  end
-
-
-  if Vagrant.has_plugin?("vagrant-cachier")
-    # Configure cached packages to be shared between instances of the same base box.
-    config.cache.scope = :box
-  end
-
-  # All Vagrant configuration is done here. The most common configuration
-  # Every Vagrant virtual environment requires a box to build off of.
-  config.vm.box = "Clinical3PO/vagrant-c3po-centos-67"
-
-  config.vm.provider :virtualbox do |vb|
-    vb.customize ["modifyvm", :id, "--memory", planning[:vm_mem] ]
-  end
-
-  config.vm.provider :vmware_fusion do |vm|
-    vm.vmx["memsize"] = planning[:vm_mem]
-  end
-
-
-  planning[:nodes].each do |node|
-    config.vm.define node[:hostname] do |node_config|
-      node_config.vm.hostname = node[:hostname] + "." + planning[:domain]
-      node_config.vm.network :private_network, ip: node[:ip], 
-        virtualbox__intnet: true
-      node_config.ssh.forward_agent = true
-      node_config.ssh.username = "c3po"
-      node_config.ssh.password = "%CannonStreetHospital%"
-      if Vagrant.has_plugin?("vagrant-vbguest")
-        node_config.vbguest.auto_update = true
-      end
-      if Vagrant.has_plugin?("vagrant-env")
-        node_config.env.enable # enable the plugin
-      end 
-
-      if node[:hostname] == 'clinical3po-gw'
-        node_config.vm.network "forwarded_port", guest: 8080, guest_id: node[:ip], host: 8181, 
-                protocol: "tcp", 
-                auto_correct: true
-        node_config.vm.network "forwarded_port", guest: 80, guest_id: node[:ip], host: 8888, 
-                protocol: "tcp", 
-                auto_correct: true
-        node_config.vm.network "forwarded_port", guest: 8088, guest_id: node[:ip], host: 8088, 
-                protocol: "tcp", 
-                auto_correct: true
-      else if node[:hostname] == 'clinical3po-nn'
-             node_config.vm.network "forwarded_port", guest: 8844, guest_id: node[:ip], host: 8844, 
-                    protocol: "tcp", 
-                    auto_correct: true
-             node_config.vm.network "forwarded_port", guest: 8020, guest_id: node[:ip], host: 8020, 
-                    protocol: "tcp", 
-                    auto_correct: true
-             node_config.vm.network "forwarded_port", guest: 50070, guest_id: node[:ip], host: 50070, 
-                    protocol: "tcp", 
-                    auto_correct: true
-             node_config.vm.network "forwarded_port", guest: 50475, guest_id: node[:ip], host: 50475, 
-                    protocol: "tcp", 
-                    auto_correct: true
-             node_config.vm.network "forwarded_port", guest: 50075, guest_id: node[:ip], host: 50075, 
-                    protocol: "tcp", 
-                    auto_correct: true
-             node_config.vm.network "forwarded_port", guest: 50090, guest_id: node[:ip], host: 50090, 
-                    protocol: "tcp", 
-                    auto_correct: true
-             node_config.vm.network "forwarded_port", guest: 50105, guest_id: node[:ip], host: 50105, 
-                    protocol: "tcp", 
-                    auto_correct: true
-             node_config.vm.network "forwarded_port", guest: 50030, guest_id: node[:ip], host: 50030, 
-                    protocol: "tcp", 
-                    auto_correct: true
-             node_config.vm.network "forwarded_port", guest: 50060, guest_id: node[:ip], host: 50060, 
-                    protocol: "tcp", 
-                    auto_correct: true
-             node_config.vm.network "forwarded_port", guest: 19888, guest_id: node[:ip], host: 19888, 
-                    protocol: "tcp", 
-                    auto_correct: true
-           end
-      end
-            
-      # Install puppet modules
-      config.vm.provision :shell, binary: true, path: 'bootstrap.sh', args: %w(
-          puppetlabs/stdlib
-          puppetlabs/vcsrepo
-      )
-
-      node_config.vm.provision "puppet" do |puppet|
-        #puppet.binary = true
-        puppet.module_path = "modules"
-        puppet.options = ["--libdir", "/vagrant", 
-	    "--verbose", "--debug",
-            "--fileserverconfig=/vagrant/fileserver.conf"]
-        puppet.facter = {
-          "hostname" => node[:hostname],
-          "roles" => node[:roles],
-          "nodes" => planning[:nodes],
-   	      "hdp_version" => hdp_version,
-	      "rpm_version" => rpm_version,
-          "domain" => planning[:domain],
-          "security" => planning[:security],
-          "realm" => planning[:realm],
-          "clients" => planning[:clients],
-          "server_mem" => planning[:server_mem],
-          "client_mem" => planning[:client_mem],
-          "planning" => planning
-        }
-      end
+    if needs_restart
+        exec "vagrant #{ARGV.join' '}"
     end
-  end
+
+
+    # All Vagrant configuration is done here. The most common configuration
+    # Every Vagrant virtual environment requires a box to build off of.
+    config.vm.box = "Clinical3PO/vagrant-c3po-centos-67"
+
+    if Vagrant.has_plugin?("vagrant-cachier")
+        # Configure cached packages to be shared between instances of the same base box.
+        config.cache.scope = :box
+        # OPTIONAL: If you are using VirtualBox, you might want to use that to enable
+        # NFS for shared folders. This is also very useful for vagrant-libvirt if you
+        # want bi-directional sync
+        config.cache.synced_folder_opts = {
+        type: :nfs,
+        # The nolock option can be useful for an NFSv3 client that wants to avoid the
+        # NLM sideband protocol. Without this option, apt-get might hang if it tries
+        # to lock files needed for /var/cache/* operations. All of this can be avoided
+        # by using NFSv4 everywhere. Please note that the tcp option is not the default.
+        mount_options: ['rw', 'vers=3', 'tcp', 'nolock']
+        }
+    end
+
+
+    config.vm.provider :virtualbox do |vb|
+        vb.customize ["modifyvm", :id, "--memory", planning[:vm_mem] ]
+    end
+
+    config.vm.provider :vmware_fusion do |vm|
+        vm.vmx["memsize"] = planning[:vm_mem]
+    end
+
+
+    planning[:nodes].each do |node|
+        config.vm.define node[:hostname] do |node_config|
+            node_config.vm.hostname = node[:hostname] + "." + planning[:domain]
+            if Vagrant.has_plugin?("vagrant-hostmanager")
+                #  manages the /etc/hosts file on guest machines 
+                config.hostmanager.enabled = true
+                # To update the host's /etc/hosts file, set the hostmanager.manage_host attribute to true.
+                config.hostmanager.manage_host = true
+                # To update the guests' /etc/hosts file, set the hostmanager.manage_guest attribute to true.
+                config.hostmanager.manage_guest = true
+                # defined by either the static IP for a private network configuration
+                config.hostmanager.ignore_private_ip = false
+                # boxes that are up or have a private ip configured will be added to the hosts file.
+                config.hostmanager.include_offline = true
+                config.hostmanager.aliases = %w(node[:hostname] + "." + planning[:domain] node[:hostname])
+            end
+
+            node_config.vm.network :private_network, ip: node[:ip], 
+                virtualbox__intnet: true
+            node_config.ssh.forward_agent = true
+            node_config.ssh.username = "c3po"
+            node_config.ssh.password = "%CannonStreetHospital%"
+
+            if Vagrant.has_plugin?("vagrant-vbguest")
+                node_config.vbguest.auto_update = true
+            end
+
+            if Vagrant.has_plugin?("vagrant-env")
+                node_config.env.enable # enable the plugin
+            end 
+
+            if node[:hostname] == 'clinical3po-gw'
+                gateway_fwports_config["forwarded_port"].each do |port|
+                   node_config.vm.network "forwarded_port", 
+                   guest: port["guest_port"], 
+                   guest_id: node[:ip], 
+                   host: port["host_port"], 
+                   protocol: port["protocol"], 
+                   auto_correct: true
+                end
+            elsif node[:hostname] == 'clinical3po-nn'
+                hdp_fwports_config["forwarded_port"].each do |port|
+                   node_config.vm.network "forwarded_port", 
+                   guest: port["guest_port"], 
+                   guest_id: node[:ip], 
+                   host: port["host_port"], 
+                   protocol: port["protocol"], 
+                   auto_correct: true
+                end
+            else
+            end
+             
+            # Install puppet modules
+            config.vm.provision :shell, binary: true, path: 'bootstrap.sh', args: %w(
+                puppetlabs/stdlib
+                puppetlabs/vcsrepo
+            )
+
+            node_config.vm.provision "puppet" do |puppet|
+                #puppet.binary = true
+                puppet.module_path = "modules"
+                puppet.options = ["--libdir", "/vagrant", 
+                "--verbose", "--debug",
+                    "--fileserverconfig=/vagrant/fileserver.conf"]
+                puppet.facter = {
+                    "hostname" => node[:hostname],
+                    "roles" => node[:roles],
+                    "nodes" => planning[:nodes],
+                    "hdp_version" => hdp_version,
+                    "rpm_version" => rpm_version,
+                    "domain" => planning[:domain],
+                    "security" => planning[:security],
+                    "realm" => planning[:realm],
+                    "clients" => planning[:clients],
+                    "server_mem" => planning[:server_mem],
+                    "client_mem" => planning[:client_mem],
+                    "planning" => planning
+                }
+            end
+        end
+    end
 
 end

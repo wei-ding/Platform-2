@@ -29,7 +29,7 @@ class hbase_master {
   ->
   file { "/etc/init.d/hbase-master":
     ensure => file,
-    source => "puppet:///files/etc/init.d/hbase-master",
+    source => dos2unix("puppet:///files/etc/init.d/hbase-master"),
     owner => root,
     group => root,
   }

@@ -24,7 +24,7 @@ class hdfs_datanode {
 
     file { "${hdfs_client::keytab_dir}/dn.keytab":
       ensure => file,
-      source => "/vagrant/generated/keytabs/${hostname}/dn.keytab",
+      source => dos2unix("/vagrant/generated/keytabs/${hostname}/dn.keytab"),
       owner => hdfs,
       group => hadoop,
       mode => '400',

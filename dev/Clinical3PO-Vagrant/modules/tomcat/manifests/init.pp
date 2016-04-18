@@ -29,7 +29,7 @@ class tomcat {
   file { "/etc/profile.d/tomcat.sh":
     ensure => file,
     mode => 0765,
-    content => regsubst(template('tomcat/tomcat-env.erb'), '\r\n', "\n", 'EMG'),
+    content => dos2unix(template('tomcat/tomcat-env.erb')),
   }
   ->
   exec { "chmodtomcat":
@@ -53,7 +53,7 @@ class tomcat {
   ->
   file { "/etc/init.d/tomcat":
     ensure => file,
-    source => "puppet:///files/etc/init.d/tomcat",
+    source => dos2unix("puppet:///files/etc/init.d/tomcat"),
     owner => root,
     group => hadoop,
   }

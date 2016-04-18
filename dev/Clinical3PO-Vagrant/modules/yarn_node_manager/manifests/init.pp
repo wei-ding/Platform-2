@@ -24,7 +24,7 @@ class yarn_node_manager {
 
     file { "${hdfs_client::keytab_dir}/nm.keytab":
       ensure => file,
-      source => "/vagrant/generated/keytabs/${hostname}/nm.keytab",
+      source => dos2unix("/vagrant/generated/keytabs/${hostname}/nm.keytab"),
       owner => yarn,
       group => hadoop,
       mode => '400',
