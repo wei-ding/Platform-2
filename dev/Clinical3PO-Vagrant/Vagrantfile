@@ -168,6 +168,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
                 puppetlabs/stdlib
                 puppetlabs/vcsrepo
             )
+            # Development and operational package prereqs
+            #     master.vm.provision :shell, inline: "apt-get update"
+            config.vm.provision :shell, inline: "sudo yum install -y dos2unix"
+            config.vm.provision :shell, inline: "find /vagrant -type f -print0 | xargs -0 sudo dos2unix "
 
             node_config.vm.provision "puppet" do |puppet|
                 #puppet.binary = true
