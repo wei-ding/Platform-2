@@ -42,7 +42,8 @@ class hive_db {
     ensure => file,
     mode => 0776,
     owner => 'c3po',
-    content => regsubst(template('hive_db/init-root-pwd.erb'), '(?<!\r)\n', "\n", 'G'),
+    group => 'wheel',
+    content => dos2unix(template('hive_db/init-root-pwd.erb')),
   }
   ->
   exec { "c3po-mysqldb-init":
@@ -56,7 +57,8 @@ class hive_db {
     ensure => file,
     mode => 0776,
     owner => 'c3po',
-    content => regsubst(template('hive_db/add-remote-root.erb'), '\r\n', "\n", 'EMG'),
+    group => 'wheel',
+    content => dos2unix(template('hive_db/add-remote-root.erb')),
   }
   ->
   exec { "add-remote-root-access":
@@ -70,7 +72,8 @@ class hive_db {
     ensure => file,
     mode => 0766,
     owner => 'c3po',
-    content => regsubst(template('hive_db/create-dbuser-hive.erb'), '\r\n', "\n", 'EMG'),
+    group => 'wheel',
+    content => dos2unix(template('hive_db/create-dbuser-hive.erb')),
   }
   ->
   exec { "create-dbuser-hive":
