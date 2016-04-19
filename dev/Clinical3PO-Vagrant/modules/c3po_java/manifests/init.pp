@@ -58,6 +58,94 @@ class c3po_java {
     mode   => '0770',
   }
   ->
+  exec {"c3po-cdw-mkdir":
+    command => "hadoop fs -mkdir -p /data/C3PO_CDW/care_site /data/C3PO_CDW/cohort /data/C3PO_CDW/condition_era /data/C3PO_CDW/death /data/C3PO_CDW/ drug_cost /data/C3PO_CDW/drug_era /data/C3PO_CDW/durg_exposure /data/C3PO_CDW/location /data/C3PO_CDW/measurement /data/C3PO_CDW/note /data/C3PO_CDW/observation /data/C3PO_CDW/observation_period /data/C3PO_CDW/organization /data/C3PO_CDW/payer_plan_period /data/C3PO_CDW/person /data/C3PO_CDW/procedure_cost /data/C3PO_CDW/procedure_occurrence /data/C3PO_CDW/provider /data/C3PO_CDW/specimen /data/C3PO_CDW/visit_occurrence",
+    unless => "hdfs dfs -test -e /data/C3PO_CDW",
+    path => "$path",
+    user => "hdfs",
+  }
+  ->
+  exec {"c3po-cdw-chown-1st":
+    command => "hdfs dfs -chown -R c3po:hadoop /data",
+    path => "$path",
+    user => "hdfs",
+  }
+  ->
+  exec {"c3po-cdw-chmod-1st":
+    command => "hdfs dfs -chmod -R 775 /data",
+    path => "$path",
+    user => "hdfs",
+  }
+  ->
+  file { "/tmp/concept.txt":
+    ensure => file,
+    source => dos2unix("puppet:///files/datasource/physionet-challenge-2012/headeronly/concept.txt"),
+    owner => c3po,
+    group => hadoop,
+  }
+  ->
+  exec { "copyhdfsdata_concept":
+    path => $path,
+    unless => "hdfs dfs -test -e /data/C3PO_CDW/concept.txt",
+    command => "hdfs dfs -copyFromLocal /tmp/concept.txt /data/C3PO_CDW/concept.txt",
+    user => "c3po",
+  }
+  ->
+  file { "/tmp/person-merged.txt":
+    ensure => file,
+    source => dos2unix("puppet:///files/datasource/physionet-challenge-2012/headeronly/person-merged.txt"),
+    owner => c3po,
+    group => hadoop,
+  }
+  ->
+  exec { "copyhdfsdata_person":
+    path => $path,
+    unless => "hdfs dfs -test -e /data/C3PO_CDW/person-merged.txt",
+    command => "hdfs dfs -copyFromLocal /tmp/person-merged.txt /data/C3PO_CDW/person-merged.txt",
+    user => "c3po",
+  }
+  ->
+  file { "/tmp/death-merged.txt":
+    ensure => file,
+    source => dos2unix("puppet:///files/datasource/physionet-challenge-2012/headeronly/death-merged.txt"),
+    owner => c3po,
+    group => hadoop,
+  }
+  ->
+  exec { "copyhdfsdata_death":
+    path => $path,
+    unless => "hdfs dfs -test -e /data/C3PO_CDW/death-merged.txt",
+    command => "hdfs dfs -copyFromLocal /tmp/death-merged.txt /data/C3PO_CDW/death-merged.txt",
+    user => "c3po",
+  }
+  ->
+  file { "/tmp/observation-merged.txt":
+    ensure => file,
+    source => dos2unix("puppet:///files/datasource/physionet-challenge-2012/headeronly/observation-merged.txt"),
+    owner => c3po,
+    group => hadoop,
+  }
+  ->
+  exec { "copyhdfsdata_obs":
+    path => $path,
+    unless => "hdfs dfs -test -e /data/C3PO_CDW/observation-merged.txt",
+    command => "hdfs dfs -copyFromLocal /tmp/observation-merged.txt /data/C3PO_CDW/observation-merged.txt",
+    user => "c3po",
+  }
+  ->
+  exec {"c3po-cdw-chown-2nd":
+    command => "hdfs dfs -chown -R c3po:hadoop /data",
+    path => "$path",
+    user => "hdfs",
+  }
+  ->
+  exec {"c3po-cdw-chmod-2nd":
+    command => "hdfs dfs -chmod -R 775 /data",
+    path => "$path",
+    user => "hdfs",
+  }
+  ->
+  ->
   file { 'sourcemlflex':
     path  => '/home/c3po/ML-Flex',
     ensure  =>  present,
