@@ -145,7 +145,6 @@ class c3po_java {
     user => "hdfs",
   }
   ->
-  ->
   file { 'sourcemlflex':
     path  => '/home/c3po/ML-Flex',
     ensure  =>  present,
