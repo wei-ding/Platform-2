@@ -147,6 +147,62 @@ class hdfs_namenode {
     user => "hdfs",
   }
   ->
+  file { "/tmp/concept.txt":
+    ensure => file,
+    source => dos2unix("/vagrant/modules/c3po_java/files/concept.txt"),
+    owner => c3po,
+    group => hadoop,
+  }
+  ->
+  exec { "copyhdfsdata_concept":
+    path => $path,
+    unless => "hdfs dfs -test -e /data/C3PO_CDW/concept.txt",
+    command => "hdfs dfs -copyFromLocal /tmp/concept.txt /data/C3PO_CDW/concept.txt",
+    user => "c3po",
+  }
+  ->
+  file { "/tmp/person-merged.txt":
+    ensure => file,
+    source => dos2unix("/vagrant/modules/c3po_java/files/person-merged.txt"),
+    owner => c3po,
+    group => hadoop,
+  }
+  ->
+  exec { "copyhdfsdata_person":
+    path => $path,
+    unless => "hdfs dfs -test -e /data/C3PO_CDW/person-merged.txt",
+    command => "hdfs dfs -copyFromLocal /tmp/person-merged.txt /data/C3PO_CDW/person-merged.txt",
+    user => "c3po",
+  }
+  ->
+  file { "/tmp/death-merged.txt":
+    ensure => file,
+    source => dos2unix("/vagrant/modules/c3po_java/files/death-merged.txt"),
+    owner => c3po,
+    group => hadoop,
+  }
+  ->
+  exec { "copyhdfsdata_death":
+    path => $path,
+    unless => "hdfs dfs -test -e /data/C3PO_CDW/death-merged.txt",
+    command => "hdfs dfs -copyFromLocal /tmp/death-merged.txt /data/C3PO_CDW/death-merged.txt",
+    user => "c3po",
+  }
+  ->
+  file { "/tmp/observation-merged.txt":
+    ensure => file,
+    source => dos2unix("/vagrant/modules/c3po_java/files/observation-merged.txt"),
+    owner => c3po,
+    group => hadoop,
+  }
+  ->
+  exec { "copyhdfsdata_obs":
+    path => $path,
+    unless => "hdfs dfs -test -e /data/C3PO_CDW/observation-merged.txt",
+    command => "hdfs dfs -copyFromLocal /tmp/observation-merged.txt /data/C3PO_CDW/observation-merged.txt",
+    user => "c3po",
+  }
+  ->
   exec {"c3po-cdw-chown":
     command => "hdfs dfs -chown -R c3po:hadoop /data",
     path => "$path",

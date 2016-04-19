@@ -1,0 +1,1 @@
+DEATH	person_id	death_date	death_type_concept_id	cause_of_death_concept_id	cause_of_death_source_value
