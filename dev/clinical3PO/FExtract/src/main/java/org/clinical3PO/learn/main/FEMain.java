@@ -47,6 +47,8 @@ import com.google.gson.Gson;
  */
 public class FEMain {
 
+	private static String feAbsentValueReplaceWithNewSting = "?";
+	
 	public static void main(String[] args) throws Exception {
 
 		Configuration conf = new Configuration();	// initialize configuration
@@ -445,7 +447,7 @@ public class FEMain {
 						for(String pid : featureVectors.keySet()) {
 							//I THINK THIS IS RIGHT - this is a replace all of a with b, yes? And literal rather than regex
 							//for the match? That's what I want.
-							String vec = featureVectors.get(pid).replace(FEEvaluatorBase.absentFeatureValue, "?");
+							String vec = featureVectors.get(pid).replace(FEEvaluatorBase.absentFeatureValue, feAbsentValueReplaceWithNewSting);
 
 							//emit feature vector to our arff in progress.
 							//HERE IS WHERE WE LEAVE OUT UNKNOWN-CLASS VECTORS.
@@ -501,7 +503,7 @@ public class FEMain {
 					//we should have PID, tab, comma-sep vector data.
 					//toks[0] will be PID, toks[1] the entire vector as a string.
 					String[] toks = theLine.split("\t", 2); 
-
+					
 					//sanity check pid and stuff?
 					if(toks[0].isEmpty()) {
 						//error - no data - though just warn, this may come up
@@ -528,6 +530,17 @@ public class FEMain {
 							} else {
 								StringBuffer newValsVector = new StringBuffer();
 								for(int j=0;j<featvalsOld.length;j++) {
+									
+									if(j == (featvalsOld.length-1)) {
+										if(!featvalsOld[j].equals(FEEvaluatorBase.absentFeatureValue) && !featvalsOld[j].equals(feAbsentValueReplaceWithNewSting)) {
+											newValsVector.append(featvalsOld[j]);
+										} else if(!featvalsNew[j].equals(FEEvaluatorBase.absentFeatureValue) && !featvalsNew[j].equals(feAbsentValueReplaceWithNewSting)) {
+											newValsVector.append(featvalsNew[j]);
+										} else {
+											newValsVector.append(featvalsOld[j]);
+										}
+										break;
+									}
 									//for each value, there are four possibilities:
 									if(featvalsOld[j].equals(FEEvaluatorBase.absentFeatureValue)) {
 										if(featvalsNew[j].equals(FEEvaluatorBase.absentFeatureValue)) {
@@ -551,7 +564,7 @@ public class FEMain {
 										//and append a comma unless we're at the end of the vector.
 										if(j!=featvalsOld.length-1) newValsVector.append(",");
 									}
-								}
+								}	// for-loop
 								vecs.put(toks[0], newValsVector.toString());
 							}
 						}
