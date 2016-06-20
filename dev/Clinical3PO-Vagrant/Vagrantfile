@@ -17,6 +17,32 @@ require 'json'
 
 VAGRANTFILE_API_VERSION = "2"
 
+module OS
+    def OS.windows?
+        (/cygwin|mswin|mingw|bccwin|wince|emx/ =~ RUBY_PLATFORM) != nil
+    end
+
+    def OS.mac?
+        (/darwin/ =~ RUBY_PLATFORM) != nil
+    end
+
+    def OS.unix?
+        !OS.windows?
+    end
+
+    def OS.linux?
+        OS.unix? and not OS.mac?
+    end
+end
+
+is_windows_host = "#{OS.windows?}"
+puts "is_windows_host: #{OS.windows?}, "
+
+if OS.windows?
+    ENV['VBOX_INSTALL_PATH'] = ENV['VBOX_MSI_INSTALL_PATH']
+end
+ 
+
 # HDP Cluster Planning setup search path:
 $planning_path = ["current.planning",
                  "hdp_cluster_planning/2nodes-noambari.setup"]
@@ -46,6 +72,7 @@ def findVersion()
 end
 
 
+
 # Load Gateway forward ports config JSON
 gateway_fwports_path = File.expand_path(File.dirname(__FILE__)) + "/forwarded_ports/gateway_ports.json"
 gateway_fwports_config = JSON.parse(File.read(gateway_fwports_path))
@@ -61,6 +88,7 @@ hdp_version = findVersion()
 rpm_version = hdp_version.gsub /[.-]/, '_'
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+    puts "install vagrant plugins"
     required_plugins = %w( vagrant-cachier vagrant-env vagrant-vbguest vagrant-hostmanager)
 
 
@@ -116,15 +144,21 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
             node_config.vm.hostname = node[:hostname] + "." + planning[:domain]
             if Vagrant.has_plugin?("vagrant-hostmanager")
                 #  manages the /etc/hosts file on guest machines 
+                puts "Enable hostmanager"
                 config.hostmanager.enabled = true
                 # To update the host's /etc/hosts file, set the hostmanager.manage_host attribute to true.
+                puts "Enable hostmanager manage host"
                 config.hostmanager.manage_host = true
                 # To update the guests' /etc/hosts file, set the hostmanager.manage_guest attribute to true.
+                puts "Enable hostmanager manage guest"
                 config.hostmanager.manage_guest = true
                 # defined by either the static IP for a private network configuration
+                puts "hostmanager: don't ignore private ip"
                 config.hostmanager.ignore_private_ip = false
                 # boxes that are up or have a private ip configured will be added to the hosts file.
+                puts "hostmanager: include offline"
                 config.hostmanager.include_offline = true
+                puts "hostmanager: aliases setup"
                 config.hostmanager.aliases = %w(node[:hostname] + "." + planning[:domain] node[:hostname])
             end
 
@@ -142,7 +176,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
                 node_config.env.enable # enable the plugin
             end 
 
-            if node[:hostname] == 'clinical3po-gw'
+            if node[:hostname] == 'c3po-gw'
                 gateway_fwports_config["forwarded_port"].each do |port|
                    node_config.vm.network "forwarded_port", 
                    guest: port["guest_port"], 
@@ -151,7 +185,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
                    protocol: port["protocol"], 
                    auto_correct: true
                 end
-            elsif node[:hostname] == 'clinical3po-nn'
+            elsif node[:hostname] == 'c3po-nn'
                 hdp_fwports_config["forwarded_port"].each do |port|
                    node_config.vm.network "forwarded_port", 
                    guest: port["guest_port"], 
@@ -164,21 +198,43 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
             end
              
             # Install puppet modules
+            puts "Install puppet modules"
             config.vm.provision :shell, binary: true, path: 'bootstrap.sh', args: %w(
                 puppetlabs/stdlib
                 puppetlabs/vcsrepo
             )
             # Development and operational package prereqs
-            #     master.vm.provision :shell, inline: "apt-get update"
-            config.vm.provision :shell, inline: "sudo yum install -y dos2unix"
-            config.vm.provision :shell, inline: "find /vagrant -type f -print0 | xargs -0 sudo dos2unix "
+            #     master.vm.provision :shell, inline: "apt-get update or yum update"
 
+            puts "yum clean all"
+            config.vm.provision :shell, inline: "sudo yum clean all"
+
+            puts "install dos2unix"
+            config.vm.provision :shell, inline: "sudo yum install -y dos2unix"
+
+            if OS.windows?
+                puts "Vagrant launched from windows, we will run dos2unix the Vagrant script files to convert text files with DOS or MAC line breaks to Unix line breaks.."
+                config.vm.provision :shell, inline: "find /vagrant -type f -print0 | xargs -0 sudo dos2unix "
+            elsif OS.mac?
+                puts "Vagrant launched from mac."
+            elsif OS.unix?
+                puts "Vagrant launched from unix."
+            elsif OS.linux?
+                puts "Vagrant launched from linux."
+            else
+                puts "Vagrant launched from unknown platform."
+            end
+ 
+            puts "start puppet"
             node_config.vm.provision "puppet" do |puppet|
                 #puppet.binary = true
+                puts "setup puppet module_path"
                 puppet.module_path = "modules"
+                puts "setup puppet options"
                 puppet.options = ["--libdir", "/vagrant", 
                 "--verbose", "--debug",
                     "--fileserverconfig=/vagrant/fileserver.conf"]
+                puts "setup puppet facter"
                 puppet.facter = {
                     "hostname" => node[:hostname],
                     "roles" => node[:roles],
